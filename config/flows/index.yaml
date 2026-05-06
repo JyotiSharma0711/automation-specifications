@@ -137,7 +137,7 @@ flows:
     config:
       $ref: ./Metro/DELAYED_CANCELLATION_FLOW_ACCEPTED.yaml
   - type: playground
-    id: DELAYED_CANCELLATION_FLOW_ACCEPTED (W/O Select)
+    id: DELAYED_CANCELLATION_FLOW_ACCEPTED (W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -145,7 +145,7 @@ flows:
       - REPORTABLE
     description: A passenger searches for a metro route, confirms a ticket booking, and then successfully cancels the confirmed reservation.
     config:
-      $ref: ./Metro/DELAYED_CANCELLATION_FLOW_ACCEPTED__W_O_Select_.yaml
+      $ref: ./Metro/DELAYED_CANCELLATION_FLOW_ACCEPTED__W_O_Search_and_Select_.yaml
   - type: playground
     id: DELAYED_CANCELLATION_FLOW_REJECTED
     usecase: Metro
@@ -157,7 +157,7 @@ flows:
     config:
       $ref: ./Metro/DELAYED_CANCELLATION_FLOW_REJECTED.yaml
   - type: playground
-    id: DELAYED_CANCELLATION_FLOW_REJECTED (W/O Select)
+    id: DELAYED_CANCELLATION_FLOW_REJECTED (W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -165,7 +165,7 @@ flows:
       - REPORTABLE
     description: User requests cancellation of a confirmed metro booking, but the cancellation request is delayed and ultimately rejected due to timing or business constraints.
     config:
-      $ref: ./Metro/DELAYED_CANCELLATION_FLOW_REJECTED__W_O_Select_.yaml
+      $ref: ./Metro/DELAYED_CANCELLATION_FLOW_REJECTED__W_O_Search_and_Select_.yaml
   - type: playground
     id: END_STOP_UPDATE_FLOW
     usecase: Metro
@@ -177,7 +177,7 @@ flows:
     config:
       $ref: ./Metro/END_STOP_UPDATE_FLOW.yaml
   - type: playground
-    id: END_STOP_UPDATE_FLOW (W/O Select)
+    id: END_STOP_UPDATE_FLOW (W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -185,7 +185,7 @@ flows:
       - REPORTABLE
     description: Allows a metro passenger to search for transit routes, initiate a booking, and update their destination stop multiple times during the transaction before confirming and completing the payment, streamlining the ticket purchase flow without a separate selection confirmation step.
     config:
-      $ref: ./Metro/END_STOP_UPDATE_FLOW__W_O_Select_.yaml
+      $ref: ./Metro/END_STOP_UPDATE_FLOW__W_O_Search_and_Select_.yaml
   - type: playground
     id: STATION_CODE_FLOW_CATALOG
     usecase: Metro
@@ -207,7 +207,7 @@ flows:
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER.yaml
   - type: playground
-    id: STATION_CODE_FLOW_ORDER (W/O Select)
+    id: STATION_CODE_FLOW_ORDER (W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -215,7 +215,7 @@ flows:
       - REPORTABLE
     description: A metro passenger searches for and books a journey between stations using station codes, proceeding directly from search discovery through booking confirmation without an intermediate service selection step.
     config:
-      $ref: ./Metro/STATION_CODE_FLOW_ORDER__W_O_Select_.yaml
+      $ref: ./Metro/STATION_CODE_FLOW_ORDER__W_O_Search_and_Select_.yaml
   - type: playground
     id: STATION_CODE_FLOW_ORDER_IGM(v-2.0.0)
     usecase: Metro
@@ -227,7 +227,7 @@ flows:
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_v-2_0_0_.yaml
   - type: playground
-    id: STATION_CODE_FLOW_ORDER_IGM(v-2.0.0)(W/O Select)
+    id: STATION_CODE_FLOW_ORDER_IGM(v-2.0.0)(W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -235,7 +235,7 @@ flows:
       - REPORTABLE
     description: A customer books a metro ticket using station code search, confirms the booking, tracks order status, and resolves any transaction issues through the integrated grievance management process.
     config:
-      $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_v-2_0_0__W_O_Select_.yaml
+      $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_v-2_0_0__W_O_Search_and_Select_.yaml
   - type: playground
     id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-1.0.0)
     usecase: Metro
@@ -247,7 +247,7 @@ flows:
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-1_0_0_.yaml
   - type: playground
-    id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-1.0.0)(W/O Select)
+    id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-1.0.0)(W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -255,7 +255,7 @@ flows:
       - REPORTABLE
     description: A passenger searches for metro stations using station codes, confirms a ticket booking, and submits an unresolved issue to validate the issue management workflow.
     config:
-      $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-1_0_0__W_O_Select_.yaml
+      $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-1_0_0__W_O_Search_and_Select_.yaml
   - type: playground
     id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-2.0.0)
     usecase: Metro
@@ -267,7 +267,7 @@ flows:
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-2_0_0_.yaml
   - type: playground
-    id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-2.0.0)(W/O Select)
+    id: STATION_CODE_FLOW_ORDER_IGM_No_Action(v-2.0.0)(W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -275,7 +275,7 @@ flows:
       - REPORTABLE
     description: End-to-end metro ticketing transaction where customers search for transit routes using station codes, complete booking and order confirmation, track shipment status, and escalate service issues through automated grievance management.
     config:
-      $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-2_0_0__W_O_Select_.yaml
+      $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_No_Action_v-2_0_0__W_O_Search_and_Select_.yaml
   - type: playground
     id: STATION_CODE_FLOW_ORDER_IGM_Rejection(v-2.0.0)
     usecase: Metro
@@ -287,7 +287,7 @@ flows:
     config:
       $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_Rejection_v-2_0_0_.yaml
   - type: playground
-    id: STATION_CODE_FLOW_ORDER_IGM_Rejection(v-2.0.0)(W/O Select)
+    id: STATION_CODE_FLOW_ORDER_IGM_Rejection(v-2.0.0)(W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -295,7 +295,7 @@ flows:
       - REPORTABLE
     description: A passenger searches for metro tickets by station code, confirms the booking, then processes an order rejection through the issue and grievance management system.
     config:
-      $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_Rejection_v-2_0_0__W_O_Select_.yaml
+      $ref: ./Metro/STATION_CODE_FLOW_ORDER_IGM_Rejection_v-2_0_0__W_O_Search_and_Select_.yaml
   - type: playground
     id: TECHNICAL_CANCELLATION_FLOW
     usecase: Metro
@@ -307,7 +307,7 @@ flows:
     config:
       $ref: ./Metro/TECHNICAL_CANCELLATION_FLOW.yaml
   - type: playground
-    id: TECHNICAL_CANCELLATION_FLOW (W/O Select)
+    id: TECHNICAL_CANCELLATION_FLOW (W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -315,7 +315,7 @@ flows:
       - REPORTABLE
     description: A passenger searches for metro tickets, confirms a booking, and then cancels the confirmed order. The flow validates the technical cancellation workflow from ticket discovery through transaction reversal.
     config:
-      $ref: ./Metro/TECHNICAL_CANCELLATION_FLOW__W_O_Select_.yaml
+      $ref: ./Metro/TECHNICAL_CANCELLATION_FLOW__W_O_Search_and_Select_.yaml
   - type: playground
     id: USER_CANCELLATION_FLOW
     usecase: Metro
@@ -327,7 +327,7 @@ flows:
     config:
       $ref: ./Metro/USER_CANCELLATION_FLOW.yaml
   - type: playground
-    id: USER_CANCELLATION_FLOW (W/O Select)
+    id: USER_CANCELLATION_FLOW (W/O Search1 and Select)
     usecase: Metro
     tags:
       - WORKBENCH
@@ -335,4 +335,4 @@ flows:
       - REPORTABLE
     description: A user searches for metro services, initiates and confirms a booking, and then cancels the confirmed reservation. This flow validates the end-to-end cancellation experience for metro transit transactions on the ONDC network.
     config:
-      $ref: ./Metro/USER_CANCELLATION_FLOW__W_O_Select_.yaml
+      $ref: ./Metro/USER_CANCELLATION_FLOW__W_O_Search_and_Select_.yaml
