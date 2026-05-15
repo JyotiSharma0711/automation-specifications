@@ -52,6 +52,16 @@ steps:
         bppId: $.context.bpp_id
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
+        order: "$.message.order"
+        selected_items: "$.message.order.items[*]"
+        item: "$.message.order.items[0]"
+        selected_provider: "$.message.order.provider"
+        selected_items_xinput: "$.message.order.items[*].xinput"
+        last_select_status: "$.message.order.items[0].xinput.form_response.status"
+        submission_id: "$.message.order.items[0].xinput.form_response.submission_id"
+        form_id: "$.message.order.items[0].xinput.form.id"
+        lumpsum_fulfillment: "$.message.order.fulfillments[0]"
+        lumpsum_measure: "$.message.order.items[0].quantity.selected.measure"
       inputs:
         oldInputs:
           - name: select_input
@@ -97,6 +107,15 @@ steps:
         bppId: $.context.bpp_id
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
+        kyc_details_form: "$..form.url"
+        form_id: $.message.order.xinput.form.id
+        selected_provider: "$.message.order.provider"
+        selected_items: "$.message.order.items[*]"
+        item: "$.message.order.items[1]"
+        order: "$.message.order"
+        selected_fulfillments: "$.message.order.fulfillments[*]"
+        quote: "$.message.quote"
+        quote_price: "$.message.order.quote.price.value"
       inputs: {}
     examples: []
   - api: HTML_FORM
@@ -157,6 +176,8 @@ steps:
         bppId: $.context.bpp_id
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
+        selected_provider: "$.message.order.provider"
+        selected_items_1: "$.message.order.items[*]"
       inputs: {}
     examples: []
   - api: on_select
@@ -197,6 +218,15 @@ steps:
         bppId: $.context.bpp_id
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
+        verification_status: "$..form.url"
+        form_id: $.message.order.xinput.form.id
+        selected_provider: "$.message.order.provider"
+        selected_items: "$.message.order.items[*]"
+        item: "$.message.order.items[1]"
+        order: "$.message.order"
+        selected_fulfillments: "$.message.order.fulfillments[*]"
+        quote: "$.message.quote"
+        quote_price: "$.message.order.quote.price.value"
       inputs: {}
     examples: []
   - api: DYNAMIC_FORM

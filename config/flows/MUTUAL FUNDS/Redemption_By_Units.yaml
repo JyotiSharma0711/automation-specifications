@@ -21,16 +21,16 @@ steps:
     unsolicited: false
     description: please add relevant description
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBzZWxlY3QgYWN0aW9uIGluIHRoZSBtdXR1YWwgZnVuZHMgcmVkZW1wdGlvbiBmbG93LgogKiBUaGlzIGZ1bmN0aW9uIHByb2Nlc3NlcyB1c2VyIGlucHV0IGRhdGEgYW5kIHBvcHVsYXRlcyBwcm92aWRlciwgaXRlbXMsIGFuZCBmdWxmaWxsbWVudHMuCiAqCiAqIEBwYXJhbSB7T2JqZWN0fSBleGlzdGluZ1BheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YS51c2VyX2lucHV0cyAtIFVzZXItcHJvdmlkZWQgaW5wdXQgdmFsdWVzIGZvciB0aGlzIHN0ZXAuCiAqIEBwYXJhbSB7Kn0gc2Vzc2lvbkRhdGEuW2tleV0gLSBBbnkgc2F2ZWQgZGF0YSBmcm9tIHByZXZpb3VzIHN0ZXBzIChkZWZpbmVkIGluIHNhdmVEYXRhIGNvbmZpZykuCiAqCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKSB7CgogIGNvbnN0IHJhd0RhdGEgPSBzZXNzaW9uRGF0YT8udXNlcl9pbnB1dHM/LmRhdGE7CgogIGxldCB1c2VySW5wdXQ7CgogIGlmICh0eXBlb2YgcmF3RGF0YSA9PT0gInN0cmluZyIpIHsKICAgIHRyeSB7CiAgICAgIHVzZXJJbnB1dCA9IEpTT04ucGFyc2UocmF3RGF0YSk7CiAgICB9IGNhdGNoIChlcnIpIHsKICAgICAgY29uc29sZS5lcnJvcigiSW52YWxpZCBKU09OIHN0cmluZzoiLCBlcnIpOwogICAgICB1c2VySW5wdXQgPSB7fTsKICAgIH0KICB9IGVsc2UgewogICAgdXNlcklucHV0ID0gcmF3RGF0YTsKICB9CiAgY29uc3QgZnVsZmlsbG1lbnRfaWRzID0gdXNlcklucHV0Py5tZXNzYWdlPy5vcmRlcj8uZnVsZmlsbG1lbnRzPy5tYXAoCiAgICAoZnVsZmlsbG1lbnQpID0+IHsKICAgICAgcmV0dXJuIGZ1bGZpbGxtZW50Py5pZDsKICAgIH0sCiAgKSA/PyBbXTsKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlciA9CiAgICB1c2VySW5wdXQ/Lm1lc3NhZ2U/Lm9yZGVyPy5wcm92aWRlciA/PyB7fTsKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtcyA9CiAgICB1c2VySW5wdXQ/Lm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8ubWFwKChpdGVtKSA9PiB7CiAgCiAgICAgIHJldHVybiB7CiAgICAgICAgLi4uaXRlbSwKICAgICAgICBmdWxmaWxsbWVudF9pZHMsCiAgICAgIH07CiAgICB9KSA/PyBbXTsKCiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzID0KICAgIHVzZXJJbnB1dD8ubWVzc2FnZT8ub3JkZXI/LmZ1bGZpbGxtZW50cyA/PyBbXTsKCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS14
           action: select
-          timestamp: 2026-04-10T07:45:40.432Z
-          transaction_id: 5e0632ce-8275-4cd0-8705-884bb7c846be
-          message_id: 977f1ff8-0bb1-4525-b083-ee42d5a8a2da
+          timestamp: 2026-04-10T07:45:40.337Z
+          transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+          message_id: 7c99afeb-c733-4950-820b-6a512ea4d127
           bap_id: bap.example.com
           bap_uri: https://bap.example.com
           ttl: PT30S
@@ -42,8 +42,58 @@ steps:
               code: IND
             city:
               code: "*"
-        message: {}
+        message:
+          order:
+            provider:
+              id: sellerapp_id
+            items:
+              - id: "12391"
+                quantity:
+                  selected:
+                    measure:
+                      value: "3000"
+                      unit: INR
+            fulfillments:
+              - id: ff_123
+                type: SIP
+                customer:
+                  person:
+                    id: pan:arrpp7771n
+                agent:
+                  person:
+                    id: euin:E52432
+                  organization:
+                    creds:
+                      - id: ARN-124567
+                        type: ARN
+                      - id: ARN-123456
+                        type: SUB_BROKER_ARN
+                stops:
+                  - time:
+                      schedule:
+                        frequency: R6/2024-05-15/P1M
+            tags:
+              - display: false
+                descriptor:
+                  name: BAP Terms of Engagement
+                  code: BAP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
       saveData:
+        message_id: $.context.message_id
+        transaction_id: $.context.transaction_id
+        kyc_stage: $.message.order.xinput.head.index.cur
+        form_submission_id: $.message.order.xinput.form.submission_id
+        form_id: $.message.order.xinput.form.id
+        redemption_measure: $.message.order.items[0].quantity.selected.measure
+        redemption_fulfillment: $.message.order.fulfillments[0]
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
         latestTimestamp: $.context.timestamp
@@ -52,13 +102,53 @@ steps:
         bppId: $.context.bpp_id
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
+        provider_id: $.message.order.provider
+        selected_items: $.message.order.items[*]
+        payload_tags: $.message.order.tags[0]
       inputs:
-        oldInputs:
-          - name: redemption_select
-            label: Enter
-            type: fis14_mf_redemption_select
-        id: old_inputs
-    examples: []
+        id: fis14_mf_redemption_select
+        jsonSchema: {}
+    examples:
+      - name: example for select
+        payload:
+          context:
+            domain: ONDC:FIS14
+            action: select
+            timestamp: 2026-05-05T13:02:02.691Z
+            transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+            message_id: 5a78efb6-6280-43af-86fe-0c4f018bbdd8
+            bap_id: bap.example.com
+            bap_uri: https://bap.example.com
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: https://bpp.example.com
+            version: 2.1.0
+            location:
+              country:
+                code: IND
+              city:
+                code: "*"
+          message:
+            order:
+              provider: {}
+              items: []
+              fulfillments: []
+              tags:
+                - display: false
+                  descriptor:
+                    name: BAP Terms of Engagement
+                    code: BAP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+        type: request
+        description: please add relevant description
   - api: on_select
     action_id: on_select_redemption
     owner: BPP
@@ -66,16 +156,16 @@ steps:
     unsolicited: false
     description: please add relevant description
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgICBjb25zb2xlLmxvZygiPT09IG9uX3NlbGVjdF9yZWRlbXB0aW9uIEdlbmVyYXRvciBTdGFydCA9PT0iKTsKCgoKICAgIC8vIFVwZGF0ZSBwcm92aWRlciBmcm9tIHNlc3Npb24KICAgIGNvbnN0IHNlbGVjdGVkUHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlcl9pZD8uWzBdPy5pZDsKICAgIGlmIChzZWxlY3RlZFByb3ZpZGVyKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIuaWQgPSBzZWxlY3RlZFByb3ZpZGVyCiAgICB9CgogICAgLy8gVXBkYXRlIGl0ZW0gZnJvbSBzZXNzaW9uCiAgICBjb25zdCBzZWxlY3RlZEl0ZW0gPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcz8uWzBdOwogICAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXMgJiYgc2VsZWN0ZWRJdGVtKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0uaWQgPQogICAgICAgICAgICB0eXBlb2Ygc2VsZWN0ZWRJdGVtID09PSAnc3RyaW5nJyA/IHNlbGVjdGVkSXRlbSA6IHNlbGVjdGVkSXRlbT8uaWQ7CiAgICB9CgogICAgLy8gSW5qZWN0IHF1YW50aXR5LnNlbGVjdGVkLm1lYXN1cmUgZnJvbSBzZXNzaW9uIChzYXZlZCBhdCBzZWxlY3RfcmVkZW1wdGlvbiBzdGVwKQogICAgY29uc3QgbWVhc3VyZSA9IHNlc3Npb25EYXRhLnJlZGVtcHRpb25fbWVhc3VyZVswXTsKICAgIGlmIChtZWFzdXJlICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXMpIHsKICAgICAgICBpZiAoIWV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnF1YW50aXR5KSB7CiAgICAgICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnF1YW50aXR5ID0ge307CiAgICAgICAgfQogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnF1YW50aXR5LnNlbGVjdGVkID0gbWVhc3VyZTsKICAgIH0KCiAgICAvLyBJbmplY3QgZnVsZmlsbG1lbnQgKHdpdGggYWdlbnQvY3VzdG9tZXIgY3JlZHMpIGZyb20gc2Vzc2lvbgogICAgY29uc3QgcmVkZW1wdGlvbkZ1bGZpbGxtZW50ID0gc2Vzc2lvbkRhdGEucmVkZW1wdGlvbl9mdWxmaWxsbWVudFswXTsKICAgIGlmIChyZWRlbXB0aW9uRnVsZmlsbG1lbnQgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5mdWxmaWxsbWVudHMpIHsKICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0gPSB7CiAgICAgICAgICAgIC4uLmV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSwKICAgICAgICAgICAgLi4ucmVkZW1wdGlvbkZ1bGZpbGxtZW50LAogICAgICAgIH07CiAgICB9CiAgICBjb25zb2xlLmxvZygiPT09IG9uX3NlbGVjdF9yZWRlbXB0aW9uIEdlbmVyYXRvciBFbmQgPT09Iik7CiAgICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkOwp9
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS14
           action: on_select
-          timestamp: 2026-04-10T07:45:40.432Z
-          transaction_id: 5e0632ce-8275-4cd0-8705-884bb7c846be
-          message_id: 1e62f7c3-8a4f-4457-b104-96158808fb25
+          timestamp: 2026-04-10T07:45:40.337Z
+          transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+          message_id: f3ccb900-6b54-417b-9057-1a289fc111b3
           bap_id: bap.example.com
           bap_uri: https://bap.example.com
           ttl: PT30S
@@ -87,8 +177,228 @@ steps:
               code: IND
             city:
               code: "*"
-        message: {}
+        message:
+          order:
+            provider:
+              id: sellerapp_id
+              descriptor:
+                name: Seller App Name
+            items:
+              - id: "12391"
+                parent_item_id: "138"
+                descriptor:
+                  name: ABC Mid Cap Fund - Regular - Growth
+                  code: SCHEME_PLAN
+                creator:
+                  descriptor:
+                    name: ABC Mutual Fund
+                quantity:
+                  selected:
+                    measure:
+                      value: "3000"
+                      unit: INR
+                fulfillment_ids:
+                  - ff_789
+                tags:
+                  - display: true
+                    descriptor:
+                      name: Plan Information
+                      code: PLAN_INFORMATION
+                    list:
+                      - descriptor:
+                          name: Consumer Terms & Conditions
+                          code: CONSUMER_TNC
+                        value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                  - display: true
+                    descriptor:
+                      name: Plan Identifiers
+                      code: PLAN_IDENTIFIERS
+                    list:
+                      - descriptor:
+                          name: ISIN
+                          code: ISIN
+                        value: IN123214324
+                      - descriptor:
+                          name: RTA Identifier
+                          code: RTA_IDENTIFIER
+                        value: 02BZ
+                      - descriptor:
+                          name: AMFI Identifier
+                          code: AMFI_IDENTIFIER
+                        value: "125487"
+                  - display: true
+                    descriptor:
+                      name: Plan Options
+                      code: PLAN_OPTIONS
+                    list:
+                      - descriptor:
+                          name: Plan
+                          code: PLAN
+                        value: REGULAR
+                      - descriptor:
+                          name: Option
+                          code: OPTION
+                        value: IDCW
+                      - descriptor:
+                          name: IDCW Option
+                          code: IDCW_OPTION
+                        value: PAYOUT
+            fulfillments:
+              - id: ff_789
+                type: REDEMPTION
+                customer:
+                  person:
+                    id: pan:arrpp7771n
+                    creds:
+                      - id: 78953432/32
+                        type: FOLIO
+                agent:
+                  person:
+                    id: euin:E52432
+                  organization:
+                    creds:
+                      - id: ARN-124567
+                        type: ARN
+                      - id: ARN-123456
+                        type: SUB_BROKER_ARN
+                tags:
+                  - display: true
+                    descriptor:
+                      name: Thresholds
+                      code: THRESHOLDS
+                    list:
+                      - descriptor:
+                          name: Amount Minimum
+                          code: AMOUNT_MIN
+                        value: "1000"
+                      - descriptor:
+                          name: Amount Maximum
+                          code: AMOUNT_MAX
+                        value: "10000"
+                      - descriptor:
+                          name: Amount Multiples
+                          code: AMOUNT_MULTIPLES
+                        value: "1"
+                      - descriptor:
+                          name: Units Minimum
+                          code: UNITS_MIN
+                        value: "1"
+                      - descriptor:
+                          name: Units Maximum
+                          code: UNITS_MAX
+                        value: "500"
+                      - descriptor:
+                          name: Units Multiples
+                          code: UNITS_MULTIPLES
+                        value: "1"
+                  - display: true
+                    descriptor:
+                      name: Payout Bank Account
+                      code: PAYOUT_BANK_ACCOUNT
+                    list:
+                      - descriptor:
+                          name: Identifier
+                          code: IDENTIFIER
+                        value: ba_369823523564
+                      - descriptor:
+                          name: Account Number
+                          code: MASKED_ACCOUNT_NUMBER
+                        value: "******1234"
+                      - descriptor:
+                          name: Account Holder Name
+                          code: ACCOUNT_HOLDER_NAME
+                        value: Satish K Perala
+                      - descriptor:
+                          name: Account Type
+                          code: ACCOUNT_TYPE
+                        value: SAVINGS
+                      - descriptor:
+                          name: Bank Name
+                          code: BANK_NAME
+                        value: ICICI BANK
+                      - descriptor:
+                          name: Bank Code
+                          code: BANK_CODE
+                        value: ICIC0000047
+                  - display: true
+                    descriptor:
+                      name: Payout Bank Account
+                      code: PAYOUT_BANK_ACCOUNT
+                    list:
+                      - descriptor:
+                          name: Identifier
+                          code: IDENTIFIER
+                        value: ba_124234234234
+                      - descriptor:
+                          name: Account Number
+                          code: MASKED_ACCOUNT_NUMBER
+                        value: "******0245"
+                      - descriptor:
+                          name: Account Holder Name
+                          code: ACCOUNT_HOLDER_NAME
+                        value: Satish K Perala
+                      - descriptor:
+                          name: Account Type
+                          code: ACCOUNT_TYPE
+                        value: SAVINGS
+                      - descriptor:
+                          name: Bank Name
+                          code: BANK_NAME
+                        value: HDFC BANK
+                      - descriptor:
+                          name: Bank Code
+                          code: BANK_CODE
+                        value: HDFC0000091
+            tags:
+              - display: false
+                descriptor:
+                  name: BPP Terms of Engagement
+                  code: BPP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+            quote:
+              id: q1
+              price:
+                currency: INR
+                value: "2999.25"
+              breakup:
+                - item:
+                    id: "12391"
+                    fulfillment_ids:
+                      - ff_789
+                  title: REDEMPTION
+                  price:
+                    currency: INR
+                    value: "3000"
+                - item:
+                    id: "12391"
+                    fulfillment_ids:
+                      - ff_789
+                  title: SECURITIES_TRANSACTION_TAX
+                  price:
+                    currency: INR
+                    value: "-0.75"
       saveData:
+        transaction_id: $.context.transaction_id
+        message_id: $.context.message_id
+        selected_items: $.message.order.items[*]
+        item: $.message.order.items[0]
+        selected_fulfillments: $.message.order.fulfillments[*]
+        fulfillment: $.message.order.fulfillments[0]
+        payments: $.message.order.payments
+        form_id: $.message.order.xinput.form.id
+        investor_details_form: $..xinput.form.url
+        quote: $.message.order.quote
+        quote_price: $.message.order.quote.price.value
+        order: $.message.order
+        selected_provider: $.message.order.provider
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
         latestTimestamp: $.context.timestamp
@@ -98,7 +408,236 @@ steps:
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
       inputs: {}
-    examples: []
+    examples:
+      - name: example for on_select
+        payload:
+          context:
+            domain: ONDC:FIS14
+            action: on_select
+            timestamp: 2026-05-05T13:02:02.701Z
+            transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+            message_id: 5a78efb6-6280-43af-86fe-0c4f018bbdd8
+            bap_id: bap.example.com
+            bap_uri: https://bap.example.com
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: https://bpp.example.com
+            version: 2.1.0
+            location:
+              country:
+                code: IND
+              city:
+                code: "*"
+          message:
+            order:
+              provider:
+                id: sellerapp_id
+                descriptor:
+                  name: Seller App Name
+              items:
+                - id: "12391"
+                  parent_item_id: "138"
+                  descriptor:
+                    name: ABC Mid Cap Fund - Regular - Growth
+                    code: SCHEME_PLAN
+                  creator:
+                    descriptor:
+                      name: ABC Mutual Fund
+                  quantity:
+                    selected:
+                      measure:
+                        value: "3000"
+                        unit: INR
+                  fulfillment_ids:
+                    - ff_789
+                  tags:
+                    - display: true
+                      descriptor:
+                        name: Plan Information
+                        code: PLAN_INFORMATION
+                      list:
+                        - descriptor:
+                            name: Consumer Terms & Conditions
+                            code: CONSUMER_TNC
+                          value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                    - display: true
+                      descriptor:
+                        name: Plan Identifiers
+                        code: PLAN_IDENTIFIERS
+                      list:
+                        - descriptor:
+                            name: ISIN
+                            code: ISIN
+                          value: IN123214324
+                        - descriptor:
+                            name: RTA Identifier
+                            code: RTA_IDENTIFIER
+                          value: 02BZ
+                        - descriptor:
+                            name: AMFI Identifier
+                            code: AMFI_IDENTIFIER
+                          value: "125487"
+                    - display: true
+                      descriptor:
+                        name: Plan Options
+                        code: PLAN_OPTIONS
+                      list:
+                        - descriptor:
+                            name: Plan
+                            code: PLAN
+                          value: REGULAR
+                        - descriptor:
+                            name: Option
+                            code: OPTION
+                          value: IDCW
+                        - descriptor:
+                            name: IDCW Option
+                            code: IDCW_OPTION
+                          value: PAYOUT
+              fulfillments:
+                - id: ff_789
+                  type: REDEMPTION
+                  customer:
+                    person:
+                      id: pan:arrpp7771n
+                      creds:
+                        - id: 78953432/32
+                          type: FOLIO
+                  agent:
+                    person:
+                      id: euin:E52432
+                    organization:
+                      creds:
+                        - id: ARN-124567
+                          type: ARN
+                        - id: ARN-123456
+                          type: SUB_BROKER_ARN
+                  tags:
+                    - display: true
+                      descriptor:
+                        name: Thresholds
+                        code: THRESHOLDS
+                      list:
+                        - descriptor:
+                            name: Amount Minimum
+                            code: AMOUNT_MIN
+                          value: "1000"
+                        - descriptor:
+                            name: Amount Maximum
+                            code: AMOUNT_MAX
+                          value: "10000"
+                        - descriptor:
+                            name: Amount Multiples
+                            code: AMOUNT_MULTIPLES
+                          value: "1"
+                        - descriptor:
+                            name: Units Minimum
+                            code: UNITS_MIN
+                          value: "1"
+                        - descriptor:
+                            name: Units Maximum
+                            code: UNITS_MAX
+                          value: "500"
+                        - descriptor:
+                            name: Units Multiples
+                            code: UNITS_MULTIPLES
+                          value: "1"
+                    - display: true
+                      descriptor:
+                        name: Payout Bank Account
+                        code: PAYOUT_BANK_ACCOUNT
+                      list:
+                        - descriptor:
+                            name: Identifier
+                            code: IDENTIFIER
+                          value: ba_369823523564
+                        - descriptor:
+                            name: Account Number
+                            code: MASKED_ACCOUNT_NUMBER
+                          value: "******1234"
+                        - descriptor:
+                            name: Account Holder Name
+                            code: ACCOUNT_HOLDER_NAME
+                          value: Satish K Perala
+                        - descriptor:
+                            name: Account Type
+                            code: ACCOUNT_TYPE
+                          value: SAVINGS
+                        - descriptor:
+                            name: Bank Name
+                            code: BANK_NAME
+                          value: ICICI BANK
+                        - descriptor:
+                            name: Bank Code
+                            code: BANK_CODE
+                          value: ICIC0000047
+                    - display: true
+                      descriptor:
+                        name: Payout Bank Account
+                        code: PAYOUT_BANK_ACCOUNT
+                      list:
+                        - descriptor:
+                            name: Identifier
+                            code: IDENTIFIER
+                          value: ba_124234234234
+                        - descriptor:
+                            name: Account Number
+                            code: MASKED_ACCOUNT_NUMBER
+                          value: "******0245"
+                        - descriptor:
+                            name: Account Holder Name
+                            code: ACCOUNT_HOLDER_NAME
+                          value: Satish K Perala
+                        - descriptor:
+                            name: Account Type
+                            code: ACCOUNT_TYPE
+                          value: SAVINGS
+                        - descriptor:
+                            name: Bank Name
+                            code: BANK_NAME
+                          value: HDFC BANK
+                        - descriptor:
+                            name: Bank Code
+                            code: BANK_CODE
+                          value: HDFC0000091
+              tags:
+                - display: false
+                  descriptor:
+                    name: BPP Terms of Engagement
+                    code: BPP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              quote:
+                id: q1
+                price:
+                  currency: INR
+                  value: "2999.25"
+                breakup:
+                  - item:
+                      id: "12391"
+                      fulfillment_ids:
+                        - ff_789
+                    title: REDEMPTION
+                    price:
+                      currency: INR
+                      value: "3000"
+                  - item:
+                      id: "12391"
+                      fulfillment_ids:
+                        - ff_789
+                    title: SECURITIES_TRANSACTION_TAX
+                    price:
+                      currency: INR
+                      value: "-0.75"
+        type: request
+        description: please add relevant description
   - api: init
     action_id: init_redemption
     owner: BAP
@@ -106,16 +645,16 @@ steps:
     unsolicited: false
     description: please add relevant description
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgICBjb25zb2xlLmxvZygiPT09IGluaXQgR2VuZXJhdG9yIFN0YXJ0ID09PSIpOwoKICAgIC8vIFVwZGF0ZSBwcm92aWRlciBhbmQgaXRlbSBJRHMKICAgIGNvbnN0IHNlbGVjdGVkUHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlciB8fCBzZXNzaW9uRGF0YS5wcm92aWRlcl9pZDsKICAgIGlmIChzZWxlY3RlZFByb3ZpZGVyICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8ucHJvdmlkZXIpIHsKICAgICAgICBpZiAodHlwZW9mIHNlbGVjdGVkUHJvdmlkZXIgPT09ICdzdHJpbmcnKSB7CiAgICAgICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkID0gc2VsZWN0ZWRQcm92aWRlcjsKICAgICAgICB9IGVsc2UgaWYgKHNlbGVjdGVkUHJvdmlkZXIuaWQpIHsKICAgICAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIuaWQgPSBzZWxlY3RlZFByb3ZpZGVyLmlkOwogICAgICAgIH0KICAgIH0KCiAgICBjb25zdCBzZWxlY3RlZEl0ZW0gPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtX2lkIHx8IHNlc3Npb25EYXRhLml0ZW07CiAgICBpZiAoc2VsZWN0ZWRJdGVtICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXM/LlswXSkgewogICAgICAgIGlmICh0eXBlb2Ygc2VsZWN0ZWRJdGVtID09PSAnc3RyaW5nJykgewogICAgICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCA9IHNlbGVjdGVkSXRlbTsKICAgICAgICB9IGVsc2UgaWYgKHNlbGVjdGVkSXRlbS5pZCkgewogICAgICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCA9IHNlbGVjdGVkSXRlbS5pZDsKICAgICAgICB9CiAgICB9CgogICAgLy8gSW5qZWN0IHF1YW50aXR5LnNlbGVjdGVkLm1lYXN1cmUgZnJvbSBzZXNzaW9uIChzYXZlZCBhdCBzZWxlY3RfcmVkZW1wdGlvbiBzdGVwKQogICAgY29uc3QgbWVhc3VyZSA9IHNlc3Npb25EYXRhLnJlZGVtcHRpb25fbWVhc3VyZVswXTsKICAgIGlmIChtZWFzdXJlICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXM/LlswXSkgewogICAgICAgIGlmICghZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ucXVhbnRpdHkpIHsKICAgICAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ucXVhbnRpdHkgPSB7fTsKICAgICAgICB9CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ucXVhbnRpdHkuc2VsZWN0ZWQgPSB7IG1lYXN1cmUgfTsKICAgIH0KCiAgICAvLyBJbmplY3QgZnVsZmlsbG1lbnQgKHdpdGggYWdlbnQvY3VzdG9tZXIgY3JlZHMpIGZyb20gc2Vzc2lvbgogICAgY29uc3QgcmVkZW1wdGlvbkZ1bGZpbGxtZW50ID0gc2Vzc2lvbkRhdGEucmVkZW1wdGlvbl9mdWxmaWxsbWVudD8uWzBdOwoKICAgIGlmIChyZWRlbXB0aW9uRnVsZmlsbG1lbnQgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5mdWxmaWxsbWVudHM/LlswXSkgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSA9IHsKICAgICAgICAgICAgLi4uZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLAogICAgICAgICAgICAuLi5yZWRlbXB0aW9uRnVsZmlsbG1lbnQsCiAgICAgICAgfTsKICAgIH0KICAgIC8vIFVwZGF0ZSBxdW90ZSBJRCBmcm9tIHNlc3Npb24KICAgIGlmIChzZXNzaW9uRGF0YS5xdW90ZV9pZCAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnF1b3RlKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUuaWQgPSBzZXNzaW9uRGF0YS5xdW90ZV9pZDsKICAgIH0KCiAgICBjb25zb2xlLmxvZygiPT09IGluaXQgR2VuZXJhdG9yIEVuZCA9PT0iKTsKICAgIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0=
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS14
           action: init
-          timestamp: 2026-04-10T07:45:40.432Z
-          transaction_id: 5e0632ce-8275-4cd0-8705-884bb7c846be
-          message_id: d2a0de7b-fd1e-44bf-bd50-1fce3b68b77b
+          timestamp: 2026-04-10T07:45:40.337Z
+          transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+          message_id: b1d28557-b52c-43b4-b0de-ccc989bc9b07
           bap_id: bap.example.com
           bap_uri: https://bap.example.com
           ttl: PT30S
@@ -127,8 +666,72 @@ steps:
               code: IND
             city:
               code: "*"
-        message: {}
+        message:
+          order:
+            provider:
+              id: sellerapp_id
+            items:
+              - id: "12391"
+                quantity:
+                  selected:
+                    measure:
+                      value: "3000"
+                      unit: INR
+                fulfillment_ids:
+                  - ff_789
+            fulfillments:
+              - id: ff_789
+                type: REDEMPTION
+                customer:
+                  person:
+                    id: pan:arrpp7771n
+                    creds:
+                      - id: 1562162434/45
+                        type: FOLIO
+                      - id: 115.245.207.90
+                        type: IP_ADDRESS
+                  contact:
+                    phone: "9916599123"
+                agent:
+                  person:
+                    id: euin:E52432
+                  organization:
+                    creds:
+                      - id: ARN-124567
+                        type: ARN
+                      - id: ARN-123456
+                        type: SUB_BROKER_ARN
+                tags:
+                  - descriptor:
+                      name: Payout Bank Account
+                      code: PAYOUT_BANK_ACCOUNT
+                    list:
+                      - descriptor:
+                          name: Identifier
+                          code: IDENTIFIER
+                        value: ba_369823523564
+            tags:
+              - display: false
+                descriptor:
+                  name: BAP Terms of Engagement
+                  code: BAP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
       saveData:
+        selected_items: $.message.order.items[*]
+        item: $.message.order.items[0]
+        selected_fulfillments: $.message.order.fulfillments[*]
+        fulfillment: $.message.order.fulfillments[0]
+        payments: $.message.order.payments
+        form_id: $.message.order.xinput.form.id
+        order: $.message.order
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
         latestTimestamp: $.context.timestamp
@@ -138,7 +741,86 @@ steps:
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
       inputs: {}
-    examples: []
+    examples:
+      - name: example for init
+        payload:
+          context:
+            domain: ONDC:FIS14
+            action: init
+            timestamp: 2026-05-05T13:02:02.713Z
+            transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+            message_id: 1680dd96-36ef-42b1-9960-2f0f8f77d719
+            bap_id: bap.example.com
+            bap_uri: https://bap.example.com
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: https://bpp.example.com
+            version: 2.1.0
+            location:
+              country:
+                code: IND
+              city:
+                code: "*"
+          message:
+            order:
+              provider:
+                id: sellerapp_id
+              items:
+                - id: "12391"
+                  quantity:
+                    selected:
+                      measure:
+                        value: "3000"
+                        unit: INR
+                  fulfillment_ids:
+                    - ff_789
+              fulfillments:
+                - id: ff_789
+                  type: REDEMPTION
+                  customer:
+                    person:
+                      id: pan:arrpp7771n
+                      creds:
+                        - id: 1562162434/45
+                          type: FOLIO
+                        - id: 115.245.207.90
+                          type: IP_ADDRESS
+                    contact:
+                      phone: "9916599123"
+                  agent:
+                    person:
+                      id: euin:E52432
+                    organization:
+                      creds:
+                        - id: ARN-124567
+                          type: ARN
+                        - id: ARN-123456
+                          type: SUB_BROKER_ARN
+                  tags:
+                    - descriptor:
+                        name: Payout Bank Account
+                        code: PAYOUT_BANK_ACCOUNT
+                      list:
+                        - descriptor:
+                            name: Identifier
+                            code: IDENTIFIER
+                          value: ba_369823523564
+              tags:
+                - display: false
+                  descriptor:
+                    name: BAP Terms of Engagement
+                    code: BAP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+        type: request
+        description: please add relevant description
   - api: on_init
     action_id: on_init_redemption
     owner: BPP
@@ -146,16 +828,16 @@ steps:
     unsolicited: false
     description: please add relevant description
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgICBjb25zb2xlLmxvZygiPT09IG9uX2luaXRfcmVkZW1wdGlvbiBHZW5lcmF0b3IgU3RhcnQgPT09Iik7CgogICAgLy8gUHJvdmlkZXIKICAgIGNvbnN0IHNlbGVjdGVkUHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlciB8fCBzZXNzaW9uRGF0YS5wcm92aWRlcl9pZDsKICAgIGlmIChzZWxlY3RlZFByb3ZpZGVyICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8ucHJvdmlkZXIpIHsKICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlci5pZCA9CiAgICAgICAgICAgIHR5cGVvZiBzZWxlY3RlZFByb3ZpZGVyID09PSAnc3RyaW5nJyA/IHNlbGVjdGVkUHJvdmlkZXIgOiBzZWxlY3RlZFByb3ZpZGVyPy5pZDsKICAgIH0KCiAgICAvLyBJdGVtCiAgICBjb25zdCBzZWxlY3RlZEl0ZW0gPSBzZXNzaW9uRGF0YS5pdGVtIHx8IHNlc3Npb25EYXRhLnNlbGVjdGVkX2l0ZW1zPy5bMF07CiAgICBpZiAoc2VsZWN0ZWRJdGVtICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXM/LlswXSkgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLmlkID0KICAgICAgICAgICAgdHlwZW9mIHNlbGVjdGVkSXRlbSA9PT0gJ3N0cmluZycgPyBzZWxlY3RlZEl0ZW0gOiBzZWxlY3RlZEl0ZW0/LmlkOwogICAgfQoKICAgIC8vIOKchSBNZWFzdXJlIEZJWAogICAgY29uc3QgbWVhc3VyZSA9IHNlc3Npb25EYXRhLnJlZGVtcHRpb25fbWVhc3VyZT8uWzBdOwogICAgaWYgKG1lYXN1cmUgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICAgICAgaWYgKCFleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5xdWFudGl0eSkgewogICAgICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5xdWFudGl0eSA9IHt9OwogICAgICAgIH0KCiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ucXVhbnRpdHkuc2VsZWN0ZWQgPSB7CiAgICAgICAgICAgIG1lYXN1cmUKICAgICAgICB9OwogICAgfQoKICAgIC8vIOKchSBGdWxmaWxsbWVudCBGSVgKICAgIGNvbnN0IHJlZGVtcHRpb25GdWxmaWxsbWVudCA9IHNlc3Npb25EYXRhLnJlZGVtcHRpb25fZnVsZmlsbG1lbnQ/LlswXTsKICAgIGlmIChyZWRlbXB0aW9uRnVsZmlsbG1lbnQgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5mdWxmaWxsbWVudHM/LlswXSkgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSA9IHsKICAgICAgICAgICAgLi4uZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLAogICAgICAgICAgICAuLi5yZWRlbXB0aW9uRnVsZmlsbG1lbnQsCiAgICAgICAgfTsKICAgIH0KCiAgICAvLyBQYXltZW50cwogICAgaWYgKHNlc3Npb25EYXRhLnBheW1lbnRzICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8ucGF5bWVudHMpIHsKICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wYXltZW50cyA9IHNlc3Npb25EYXRhLnBheW1lbnRzOwogICAgfQoKICAgIC8vIOKchSBRdW90ZSBGSVgKICAgIGNvbnN0IHF1b3RlID0gc2Vzc2lvbkRhdGEucXVvdGU/LlswXTsKICAgIGlmIChxdW90ZSAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnF1b3RlKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUgPSB7CiAgICAgICAgICAgIC4uLmV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnF1b3RlLAogICAgICAgICAgICAuLi5xdW90ZSwKICAgICAgICB9OwogICAgfQoKICAgIC8vIFRpbWVzdGFtcAogICAgY29uc3Qgbm93ID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcikgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmNyZWF0ZWRfYXQgPSBub3c7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIudXBkYXRlZF9hdCA9IG5vdzsKICAgIH0KCiAgICBjb25zb2xlLmxvZygiPT09IG9uX2luaXRfcmVkZW1wdGlvbiBHZW5lcmF0b3IgRW5kID09PSIpOwogICAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQ==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS14
           action: on_init
-          timestamp: 2026-04-10T07:45:40.432Z
-          transaction_id: 5e0632ce-8275-4cd0-8705-884bb7c846be
-          message_id: 3bdbb462-ef4d-4b82-8098-71bc2819fb3f
+          timestamp: 2026-04-10T07:45:40.337Z
+          transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+          message_id: ee08f815-17de-464c-9633-43574045f3ce
           bap_id: bap.example.com
           bap_uri: https://bap.example.com
           ttl: PT30S
@@ -167,8 +849,237 @@ steps:
               code: IND
             city:
               code: "*"
-        message: {}
+        message:
+          order:
+            id: mfpp_213adf123af
+            status: CREATED
+            provider:
+              id: sellerapp_id
+              descriptor:
+                name: Seller App Name
+            items:
+              - id: "12391"
+                parent_item_id: "138"
+                descriptor:
+                  name: ABC Mid Cap Fund - Regular - Growth
+                  code: SCHEME_PLAN
+                creator:
+                  descriptor:
+                    name: ABC Mutual Fund
+                quantity:
+                  selected:
+                    measure:
+                      value: "3000"
+                      unit: INR
+                fulfillment_ids:
+                  - ff_123
+                payment_ids:
+                  - pmt_123
+                tags:
+                  - display: true
+                    descriptor:
+                      name: Plan Information
+                      code: PLAN_INFORMATION
+                    list:
+                      - descriptor:
+                          name: Consumer Terms & Conditions
+                          code: CONSUMER_TNC
+                        value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                  - display: true
+                    descriptor:
+                      name: Plan Identifiers
+                      code: PLAN_IDENTIFIERS
+                    list:
+                      - descriptor:
+                          name: ISIN
+                          code: ISIN
+                        value: IN123214324
+                      - descriptor:
+                          name: RTA Identifier
+                          code: RTA_IDENTIFIER
+                        value: 02BZ
+                      - descriptor:
+                          name: AMFI Identifier
+                          code: AMFI_IDENTIFIER
+                        value: "125487"
+                  - display: true
+                    descriptor:
+                      name: Plan Options
+                      code: PLAN_OPTIONS
+                    list:
+                      - descriptor:
+                          name: Plan
+                          code: PLAN
+                        value: REGULAR
+                      - descriptor:
+                          name: Option
+                          code: OPTION
+                        value: IDCW
+                      - descriptor:
+                          name: IDCW Option
+                          code: IDCW_OPTION
+                        value: PAYOUT
+                  - display: true
+                    descriptor:
+                      name: Checklists
+                      code: CHECKLISTS
+                    list:
+                      - descriptor:
+                          name: Application Form
+                          code: APPLICATION_FORM
+                        value: 6547-7456-7235-4386
+                      - descriptor:
+                          name: KYC
+                          code: KYC
+                        value: 1978-5697-3478-6547
+                      - descriptor:
+                          name: ESIGN
+                          code: ESIGN
+                        value: 8745-1247-6587-8647
+            fulfillments:
+              - id: ff_123
+                type: SIP
+                customer:
+                  person:
+                    id: pan:arrpp7771n
+                    creds:
+                      - id: 115.245.207.90
+                        type: IP_ADDRESS
+                  contact:
+                    phone: "9916599123"
+                agent:
+                  person:
+                    id: euin:E52432
+                  organization:
+                    creds:
+                      - id: ARN-124567
+                        type: ARN
+                      - id: ARN-123456
+                        type: SUB_BROKER_ARN
+                stops:
+                  - time:
+                      schedule:
+                        frequency: R6/2024-05-15/P1M
+                tags:
+                  - display: true
+                    descriptor:
+                      name: Thresholds
+                      code: THRESHOLDS
+                    list:
+                      - descriptor:
+                          name: Frequency
+                          code: FREQUENCY
+                        value: P1M
+                      - descriptor:
+                          name: Frequency Dates
+                          code: FREQUENCY_DATES
+                        value: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
+                      - descriptor:
+                          name: Amount Minimum
+                          code: AMOUNT_MIN
+                        value: "5000"
+                      - descriptor:
+                          name: Amount Maximum
+                          code: AMOUNT_MAX
+                        value: "50000"
+                      - descriptor:
+                          name: Amount Multiples
+                          code: AMOUNT_MULTIPLES
+                        value: "1"
+                      - descriptor:
+                          name: Installments Count Minimum
+                          code: INSTALMENTS_COUNT_MIN
+                        value: "6"
+                      - descriptor:
+                          name: Installments Count Maximum
+                          code: INSTALMENTS_COUNT_MAX
+                        value: "12"
+                      - descriptor:
+                          name: Cumulative Amount Minimum
+                          code: CUMULATIVE_AMOUNT_MIN
+                        value: "30000"
+            xinput:
+              form:
+                id: form_3
+              form_response:
+                status: SUCCESS
+                submission_id: 8745-1247-6587-8647
+            payments:
+              - id: pmt_123
+                collected_by: BPP
+                status: NOT-PAID
+                params:
+                  amount: "0"
+                  currency: INR
+                  source_bank_code: icic0000047
+                  source_bank_account_number: "004701563111"
+                  source_bank_account_name: harish gupta
+                type: PRE_FULFILLMENT
+                tags:
+                  - descriptor:
+                      name: Source bank account
+                      code: SOURCE_BANK_ACCOUNT
+                    list:
+                      - descriptor:
+                          name: Account Type
+                          code: ACCOUNT_TYPE
+                        value: SAVINGS
+                  - descriptor:
+                      name: Payment Method
+                      code: PAYMENT_METHOD
+                    list:
+                      - descriptor:
+                          code: MODE
+                        value: NACH
+                      - descriptor:
+                          code: AUTH
+                        value: NETBANKING
+                      - descriptor:
+                          code: MANDATE_LIMIT
+                        value: "50000"
+            tags:
+              - display: false
+                descriptor:
+                  name: BPP Terms of Engagement
+                  code: BPP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+            quote:
+              id: q1
+              price:
+                currency: INR
+                value: "0"
+              breakup:
+                - item:
+                    id: "12391"
+                    fulfillment_ids:
+                      - ff_123
+                  title: SIP
+                  price:
+                    currency: INR
+                    value: "0"
+            created_at: 2023-05-25T05:23:03.443Z
+            updated_at: 2023-05-25T05:23:03.443Z
       saveData:
+        transaction_id: $.context.transaction_id
+        message_id: $.context.message_id
+        selected_items: $.message.order.items[*]
+        item: $.message.order.items[0]
+        selected_fulfillments: $.message.order.fulfillments[*]
+        fulfillment: $.message.order.fulfillments[0]
+        payments: $.message.order.payments
+        form_id: $.message.order.xinput.form.id
+        checklist_form: $..xinput.form.url
+        quote: $.message.order.quote
+        quote_price: $.message.order.quote.price.value
+        order: $.message.order
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
         latestTimestamp: $.context.timestamp
@@ -178,7 +1089,220 @@ steps:
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
       inputs: {}
-    examples: []
+    examples:
+      - name: example for on_init
+        payload:
+          context:
+            domain: ONDC:FIS14
+            action: on_init
+            timestamp: 2026-05-05T13:02:02.727Z
+            transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+            message_id: 1680dd96-36ef-42b1-9960-2f0f8f77d719
+            bap_id: bap.example.com
+            bap_uri: https://bap.example.com
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: https://bpp.example.com
+            version: 2.1.0
+            location:
+              country:
+                code: IND
+              city:
+                code: "*"
+          message:
+            order:
+              id: mfpp_213adf123af
+              status: CREATED
+              provider:
+                descriptor:
+                  name: Seller App Name
+              items:
+                - parent_item_id: "138"
+                  descriptor:
+                    name: ABC Mid Cap Fund - Regular - Growth
+                    code: SCHEME_PLAN
+                  creator:
+                    descriptor:
+                      name: ABC Mutual Fund
+                  quantity:
+                    selected:
+                      measure:
+                        value: "3000"
+                        unit: INR
+                  fulfillment_ids:
+                    - ff_123
+                  payment_ids:
+                    - pmt_123
+                  tags:
+                    - display: true
+                      descriptor:
+                        name: Plan Information
+                        code: PLAN_INFORMATION
+                      list:
+                        - descriptor:
+                            name: Consumer Terms & Conditions
+                            code: CONSUMER_TNC
+                          value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                    - display: true
+                      descriptor:
+                        name: Plan Identifiers
+                        code: PLAN_IDENTIFIERS
+                      list:
+                        - descriptor:
+                            name: ISIN
+                            code: ISIN
+                          value: IN123214324
+                        - descriptor:
+                            name: RTA Identifier
+                            code: RTA_IDENTIFIER
+                          value: 02BZ
+                        - descriptor:
+                            name: AMFI Identifier
+                            code: AMFI_IDENTIFIER
+                          value: "125487"
+                    - display: true
+                      descriptor:
+                        name: Plan Options
+                        code: PLAN_OPTIONS
+                      list:
+                        - descriptor:
+                            name: Plan
+                            code: PLAN
+                          value: REGULAR
+                        - descriptor:
+                            name: Option
+                            code: OPTION
+                          value: IDCW
+                        - descriptor:
+                            name: IDCW Option
+                            code: IDCW_OPTION
+                          value: PAYOUT
+                    - display: true
+                      descriptor:
+                        name: Checklists
+                        code: CHECKLISTS
+                      list:
+                        - descriptor:
+                            name: Application Form
+                            code: APPLICATION_FORM
+                          value: 6547-7456-7235-4386
+                        - descriptor:
+                            name: KYC
+                            code: KYC
+                          value: 1978-5697-3478-6547
+                        - descriptor:
+                            name: ESIGN
+                            code: ESIGN
+                          value: 8745-1247-6587-8647
+              fulfillments:
+                - id: ff_123
+                  type: SIP
+                  customer:
+                    person:
+                      id: pan:arrpp7771n
+                      creds:
+                        - id: 115.245.207.90
+                          type: IP_ADDRESS
+                    contact:
+                      phone: "9916599123"
+                  agent:
+                    person:
+                      id: euin:E52432
+                    organization:
+                      creds:
+                        - id: ARN-124567
+                          type: ARN
+                        - id: ARN-123456
+                          type: SUB_BROKER_ARN
+                  stops:
+                    - time:
+                        schedule:
+                          frequency: R6/2024-05-15/P1M
+                  tags:
+                    - display: true
+                      descriptor:
+                        name: Thresholds
+                        code: THRESHOLDS
+                      list:
+                        - descriptor:
+                            name: Frequency
+                            code: FREQUENCY
+                          value: P1M
+                        - descriptor:
+                            name: Frequency Dates
+                            code: FREQUENCY_DATES
+                          value: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
+                        - descriptor:
+                            name: Amount Minimum
+                            code: AMOUNT_MIN
+                          value: "5000"
+                        - descriptor:
+                            name: Amount Maximum
+                            code: AMOUNT_MAX
+                          value: "50000"
+                        - descriptor:
+                            name: Amount Multiples
+                            code: AMOUNT_MULTIPLES
+                          value: "1"
+                        - descriptor:
+                            name: Installments Count Minimum
+                            code: INSTALMENTS_COUNT_MIN
+                          value: "6"
+                        - descriptor:
+                            name: Installments Count Maximum
+                            code: INSTALMENTS_COUNT_MAX
+                          value: "12"
+                        - descriptor:
+                            name: Cumulative Amount Minimum
+                            code: CUMULATIVE_AMOUNT_MIN
+                          value: "30000"
+              xinput:
+                form:
+                  id: form_3
+                form_response:
+                  status: SUCCESS
+                  submission_id: 8745-1247-6587-8647
+              payments: []
+              tags:
+                - display: false
+                  descriptor:
+                    name: BPP Terms of Engagement
+                    code: BPP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              quote:
+                id: q1
+                price:
+                  currency: INR
+                  value: "2999.25"
+                breakup:
+                  - item:
+                      id: "12391"
+                      fulfillment_ids:
+                        - ff_789
+                    title: REDEMPTION
+                    price:
+                      currency: INR
+                      value: "3000"
+                  - item:
+                      id: "12391"
+                      fulfillment_ids:
+                        - ff_789
+                    title: SECURITIES_TRANSACTION_TAX
+                    price:
+                      currency: INR
+                      value: "-0.75"
+              created_at: 2026-05-05T13:02:02.730Z
+              updated_at: 2026-05-05T13:02:02.730Z
+        type: request
+        description: please add relevant description
   - api: confirm
     action_id: confirm_redemption
     owner: BAP
@@ -186,16 +1310,16 @@ steps:
     unsolicited: false
     description: please add relevant description
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgICBjb25zb2xlLmxvZygiPT09IGNvbmZpcm0gR2VuZXJhdG9yIFN0YXJ0ID09PSIpOwoKICAgIC8vIFVwZGF0ZSBwcm92aWRlciBhbmQgaXRlbSBJRHMKICAgIGNvbnN0IHNlbGVjdGVkUHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlciB8fCBzZXNzaW9uRGF0YS5wcm92aWRlcl9pZDsKICAgIGlmIChzZWxlY3RlZFByb3ZpZGVyICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8ucHJvdmlkZXIpIHsKICAgICAgICBpZiAodHlwZW9mIHNlbGVjdGVkUHJvdmlkZXIgPT09ICdzdHJpbmcnKSB7CiAgICAgICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkID0gc2VsZWN0ZWRQcm92aWRlcjsKICAgICAgICB9IGVsc2UgaWYgKHNlbGVjdGVkUHJvdmlkZXIuaWQpIHsKICAgICAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIuaWQgPSBzZWxlY3RlZFByb3ZpZGVyLmlkOwogICAgICAgIH0KICAgIH0KCiAgICBjb25zdCBzZWxlY3RlZEl0ZW0gPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtX2lkIHx8IHNlc3Npb25EYXRhLml0ZW07CiAgICBpZiAoc2VsZWN0ZWRJdGVtICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXM/LlswXSkgewogICAgICAgIGlmICh0eXBlb2Ygc2VsZWN0ZWRJdGVtID09PSAnc3RyaW5nJykgewogICAgICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCA9IHNlbGVjdGVkSXRlbTsKICAgICAgICB9IGVsc2UgaWYgKHNlbGVjdGVkSXRlbS5pZCkgewogICAgICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCA9IHNlbGVjdGVkSXRlbS5pZDsKICAgICAgICB9CiAgICB9CgogICAgLy8gSW5qZWN0IHJlZGVtcHRpb24gbWVhc3VyZSAodW5pdCArIHZhbHVlKSBmcm9tIHNlbGVjdF9yZWRlbXB0aW9uIHN0ZXAKICAgIGlmIChzZXNzaW9uRGF0YS5yZWRlbXB0aW9uX21lYXN1cmUgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICAgICAgaWYgKCFleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5xdWFudGl0eSkKICAgICAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ucXVhbnRpdHkgPSB7fTsKCiAgICAgICAgaWYgKCFleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5xdWFudGl0eS5zZWxlY3RlZCkKICAgICAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ucXVhbnRpdHkuc2VsZWN0ZWQgPSB7fTsKCiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ucXVhbnRpdHkuc2VsZWN0ZWQubWVhc3VyZSA9CiAgICAgICAgICAgIHNlc3Npb25EYXRhLnJlZGVtcHRpb25fbWVhc3VyZT8uWzBdOwoKICAgICAgICBjb25zb2xlLmxvZygiSW5qZWN0ZWQgcmVkZW1wdGlvbl9tZWFzdXJlOiIsIHNlc3Npb25EYXRhLnJlZGVtcHRpb25fbWVhc3VyZSk7CiAgICB9CgogICAgLy8gVXBkYXRlIG9yZGVyIElEIGZyb20gc2Vzc2lvbiAoZnJvbSBvbl9pbml0KQogICAgaWYgKHNlc3Npb25EYXRhLm9yZGVyX2lkICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcikgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWQ7CiAgICB9CgogICAgLy8gVXBkYXRlIHF1b3RlIElECiAgICBpZiAoc2Vzc2lvbkRhdGEucXVvdGVfaWQgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5xdW90ZSkgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnF1b3RlLmlkID0gc2Vzc2lvbkRhdGEucXVvdGVfaWQ7CiAgICB9CgogICAgY29uc29sZS5sb2coIj09PSBjb25maXJtIEdlbmVyYXRvciBFbmQgPT09Iik7CiAgICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkOwp9Cg==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS14
           action: confirm
-          timestamp: 2026-04-10T07:45:40.432Z
-          transaction_id: 5e0632ce-8275-4cd0-8705-884bb7c846be
-          message_id: 117ad785-71b4-417b-bef0-167bcb388d11
+          timestamp: 2026-04-10T07:45:40.337Z
+          transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+          message_id: 7111567c-4b49-43d6-b550-50b0f2d7b5a1
           bap_id: bap.example.com
           bap_uri: https://bap.example.com
           ttl: PT30S
@@ -207,8 +1331,89 @@ steps:
               code: IND
             city:
               code: "*"
-        message: {}
+        message:
+          order:
+            id: mfr_213adf123af
+            provider:
+              id: sellerapp_id
+            items:
+              - id: "12391"
+                quantity:
+                  selected:
+                    measure:
+                      value: "3000"
+                      unit: INR
+                fulfillment_ids:
+                  - ff_789
+            fulfillments:
+              - id: ff_789
+                type: REDEMPTION
+                customer:
+                  person:
+                    id: pan:arrpp7771n
+                    creds:
+                      - id: 78953432/32
+                        type: FOLIO
+                      - id: 115.245.207.90
+                        type: IP_ADDRESS
+                  contact:
+                    phone: "9916599123"
+                agent:
+                  person:
+                    id: euin:E52432
+                  organization:
+                    creds:
+                      - id: ARN-124567
+                        type: ARN
+                      - id: ARN-123456
+                        type: SUB_BROKER_ARN
+                tags:
+                  - descriptor:
+                      name: Payout Bank Account
+                      code: PAYOUT_BANK_ACCOUNT
+                    list:
+                      - descriptor:
+                          name: Identifier
+                          code: IDENTIFIER
+                        value: ba_369823523564
+            tags:
+              - display: false
+                descriptor:
+                  name: BAP Terms of Engagement
+                  code: BAP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - display: false
+                descriptor:
+                  name: BPP Terms of Engagement
+                  code: BPP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
       saveData:
+        transaction_id: $.context.transaction_id
+        message_id: $.context.message_id
+        selected_items: $.message.order.items[*]
+        item: $.message.order.items[0]
+        selected_fulfillments: $.message.order.fulfillments[*]
+        fulfillment: $.message.order.fulfillments[0]
+        payments: $.message.order.payments
+        form_id: $.message.order.xinput.form.id
+        quote: $.message.order.quote
+        order: $.message.order
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
         latestTimestamp: $.context.timestamp
@@ -218,7 +1423,97 @@ steps:
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
       inputs: {}
-    examples: []
+    examples:
+      - name: example for confirm
+        payload:
+          context:
+            domain: ONDC:FIS14
+            action: confirm
+            timestamp: 2026-05-05T13:02:02.742Z
+            transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+            message_id: 7aa33e69-4d29-4f23-9a24-d845d29502c6
+            bap_id: bap.example.com
+            bap_uri: https://bap.example.com
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: https://bpp.example.com
+            version: 2.1.0
+            location:
+              country:
+                code: IND
+              city:
+                code: "*"
+          message:
+            order:
+              id: mfr_213adf123af
+              provider:
+                id: sellerapp_id
+              items:
+                - id: "12391"
+                  quantity:
+                    selected: {}
+                  fulfillment_ids:
+                    - ff_789
+              fulfillments:
+                - id: ff_789
+                  type: REDEMPTION
+                  customer:
+                    person:
+                      id: pan:arrpp7771n
+                      creds:
+                        - id: 78953432/32
+                          type: FOLIO
+                        - id: 115.245.207.90
+                          type: IP_ADDRESS
+                    contact:
+                      phone: "9916599123"
+                  agent:
+                    person:
+                      id: euin:E52432
+                    organization:
+                      creds:
+                        - id: ARN-124567
+                          type: ARN
+                        - id: ARN-123456
+                          type: SUB_BROKER_ARN
+                  tags:
+                    - descriptor:
+                        name: Payout Bank Account
+                        code: PAYOUT_BANK_ACCOUNT
+                      list:
+                        - descriptor:
+                            name: Identifier
+                            code: IDENTIFIER
+                          value: ba_369823523564
+              tags:
+                - display: false
+                  descriptor:
+                    name: BAP Terms of Engagement
+                    code: BAP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - display: false
+                  descriptor:
+                    name: BPP Terms of Engagement
+                    code: BPP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+        type: request
+        description: please add relevant description
   - api: on_confirm
     action_id: on_confirm_redemption
     owner: BPP
@@ -226,16 +1521,16 @@ steps:
     unsolicited: false
     description: please add relevant description
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgICBjb25zb2xlLmxvZygiPT09IG9uX2NvbmZpcm1fcmVkZW1wdGlvbiBHZW5lcmF0b3IgU3RhcnQgPT09Iik7CgogICAgLy8gVXBkYXRlIHByb3ZpZGVyIGZyb20gc2Vzc2lvbgogICAgY29uc3Qgc2VsZWN0ZWRQcm92aWRlciA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyIHx8IHNlc3Npb25EYXRhLnByb3ZpZGVyX2lkOwogICAgaWYgKHNlbGVjdGVkUHJvdmlkZXIgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5wcm92aWRlcikgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkID0KICAgICAgICAgICAgdHlwZW9mIHNlbGVjdGVkUHJvdmlkZXIgPT09ICdzdHJpbmcnID8gc2VsZWN0ZWRQcm92aWRlciA6IHNlbGVjdGVkUHJvdmlkZXIuaWQ7CiAgICB9CgogICAgLy8gU2V0IG9yZGVyIElEIChnZW5lcmF0ZSBpZiBub3Qgc2V0KQogICAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcikgewogICAgICAgIGlmIChzZXNzaW9uRGF0YS5vcmRlcl9pZCkgewogICAgICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkOwogICAgICAgIH0gZWxzZSBpZiAoIWV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmlkIHx8IGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmlkLnN0YXJ0c1dpdGgoIk9SREVSIikpIHsKICAgICAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaWQgPSBgb3JkZXJfJHtjcnlwdG8ucmFuZG9tVVVJRCgpfWA7CiAgICAgICAgICAgIGNvbnNvbGUubG9nKCJHZW5lcmF0ZWQgb3JkZXIuaWQ6IiwgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaWQpOwogICAgICAgIH0KICAgIH0KCiAgICAvLyBVcGRhdGUgaXRlbSBmcm9tIHNlc3Npb24KICAgIGNvbnN0IHNlbGVjdGVkSXRlbSA9IHNlc3Npb25EYXRhLml0ZW0gfHwgc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXM/LlswXTsKICAgIGlmIChzZWxlY3RlZEl0ZW0gJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0uaWQgPQogICAgICAgICAgICB0eXBlb2Ygc2VsZWN0ZWRJdGVtID09PSAnc3RyaW5nJyA/IHNlbGVjdGVkSXRlbSA6IHNlbGVjdGVkSXRlbS5pZDsKICAgIH0KCiAgICAvLyBJbmplY3QgcXVhbnRpdHkuc2VsZWN0ZWQubWVhc3VyZSBmcm9tIHNlc3Npb24gKHNhdmVkIGF0IHNlbGVjdF9yZWRlbXB0aW9uIHN0ZXApCiAgICBjb25zdCBtZWFzdXJlID0gc2Vzc2lvbkRhdGEucmVkZW1wdGlvbl9tZWFzdXJlPy5bMF07CiAgICBpZiAobWVhc3VyZSAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/Lml0ZW1zPy5bMF0pIHsKICAgICAgICBpZiAoIWV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnF1YW50aXR5KSB7CiAgICAgICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnF1YW50aXR5ID0ge307CiAgICAgICAgfQoKICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5xdWFudGl0eS5zZWxlY3RlZCA9IHsKICAgICAgICAgICAgbWVhc3VyZQogICAgICAgIH07CiAgICB9CgogICAgLy8gSW5qZWN0IGZ1bGZpbGxtZW50ICh3aXRoIGFnZW50L2N1c3RvbWVyIGNyZWRzKSBmcm9tIHNlc3Npb24KICAgIGNvbnN0IHJlZGVtcHRpb25GdWxmaWxsbWVudCA9IHNlc3Npb25EYXRhLnJlZGVtcHRpb25fZnVsZmlsbG1lbnQ/LlswXTsKICAgIGlmIChyZWRlbXB0aW9uRnVsZmlsbG1lbnQgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5mdWxmaWxsbWVudHM/LlswXSkgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSA9IHsKICAgICAgICAgICAgLi4uZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLAogICAgICAgICAgICAuLi5yZWRlbXB0aW9uRnVsZmlsbG1lbnQsCiAgICAgICAgfTsKICAgIH0KCiAgICAvLyBVcGRhdGUgZnVsZmlsbG1lbnQgZnJvbSBzZXNzaW9uIOKAlCBzZXQgdG8gQUNUSVZFIG9uIGNvbmZpcm0KICAgIC8vIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LmZ1bGZpbGxtZW50cz8uWzBdKSB7CiAgICAvLyAgICAgaWYgKHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50KSB7CiAgICAvLyAgICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXS5pZCA9CiAgICAvLyAgICAgICAgICAgICB0eXBlb2Ygc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnQgPT09ICdzdHJpbmcnCiAgICAvLyAgICAgICAgICAgICAgICAgPyBzZXNzaW9uRGF0YS5mdWxmaWxsbWVudAogICAgLy8gICAgICAgICAgICAgICAgIDogc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnQuaWQ7CiAgICAvLyAgICAgfQogICAgLy8gICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXS5zdGF0ZSA9IHsKICAgIC8vICAgICAgICAgZGVzY3JpcHRvcjogeyBjb2RlOiAiQUNUSVZFIiwgbmFtZTogIlJlZGVtcHRpb24gSW4gUHJvZ3Jlc3MiIH0KICAgIC8vICAgICB9OwogICAgLy8gfQoKICAgIC8vIEluamVjdCBwYXltZW50cyBmcm9tIHNlc3Npb24gKGNvbmZpcm1lZCBzZXR0bGVtZW50IHRlcm1zKQogICAgaWYgKHNlc3Npb25EYXRhLnBheW1lbnRzICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8ucGF5bWVudHMpIHsKICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wYXltZW50cyA9IHNlc3Npb25EYXRhLnBheW1lbnRzOwogICAgfQoKICAgIC8vIEluamVjdCBxdW90ZSBmcm9tIHNlc3Npb24KICAgIGlmIChzZXNzaW9uRGF0YS5xdW90ZSAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnF1b3RlKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUgPSB7CiAgICAgICAgICAgIC4uLmV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnF1b3RlLAogICAgICAgICAgICAuLi5zZXNzaW9uRGF0YS5xdW90ZSwKICAgICAgICB9OwogICAgfQoKICAgIC8vIFNldCB0aW1lc3RhbXBzCiAgICBjb25zdCBub3cgPSBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCk7CiAgICBpZiAoZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY3JlYXRlZF9hdCA9IG5vdzsKICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci51cGRhdGVkX2F0ID0gbm93OwogICAgfQoKICAgIGNvbnNvbGUubG9nKCI9PT0gb25fY29uZmlybV9yZWRlbXB0aW9uIEdlbmVyYXRvciBFbmQgPT09Iik7CiAgICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkOwp9Cg==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS14
           action: on_confirm
-          timestamp: 2026-04-10T07:45:40.433Z
-          transaction_id: 5e0632ce-8275-4cd0-8705-884bb7c846be
-          message_id: 449e2b4d-8ebe-4da3-ac81-0cc346a5df29
+          timestamp: 2026-04-10T07:45:40.337Z
+          transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+          message_id: ae4b87de-2793-4f73-9fb5-0f71e722cd09
           bap_id: bap.example.com
           bap_uri: https://bap.example.com
           ttl: PT30S
@@ -247,8 +1542,212 @@ steps:
               code: IND
             city:
               code: "*"
-        message: {}
+        message:
+          order:
+            id: mfr_213adf123af
+            status: ACCEPTED
+            provider:
+              id: sellerapp_id
+              descriptor:
+                name: Seller App Name
+            items:
+              - id: "12391"
+                parent_item_id: "138"
+                descriptor:
+                  name: ABC Mid Cap Fund - Regular - Growth
+                  code: SCHEME_PLAN
+                creator:
+                  descriptor:
+                    name: ABC Mutual Fund
+                quantity:
+                  selected:
+                    measure:
+                      value: "3000"
+                      unit: INR
+                fulfillment_ids:
+                  - ff_789
+                tags:
+                  - display: true
+                    descriptor:
+                      name: Plan Information
+                      code: PLAN_INFORMATION
+                    list:
+                      - descriptor:
+                          name: Consumer Terms & Conditions
+                          code: CONSUMER_TNC
+                        value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                  - display: true
+                    descriptor:
+                      name: Plan Identifiers
+                      code: PLAN_IDENTIFIERS
+                    list:
+                      - descriptor:
+                          name: ISIN
+                          code: ISIN
+                        value: IN123214324
+                      - descriptor:
+                          name: RTA Identifier
+                          code: RTA_IDENTIFIER
+                        value: 02BZ
+                      - descriptor:
+                          name: AMFI Identifier
+                          code: AMFI_IDENTIFIER
+                        value: "125487"
+                  - display: true
+                    descriptor:
+                      name: Plan Options
+                      code: PLAN_OPTIONS
+                    list:
+                      - descriptor:
+                          name: Plan
+                          code: PLAN
+                        value: REGULAR
+                      - descriptor:
+                          name: Option
+                          code: OPTION
+                        value: IDCW
+                      - descriptor:
+                          name: IDCW Option
+                          code: IDCW_OPTION
+                        value: PAYOUT
+            fulfillments:
+              - id: ff_789
+                type: REDEMPTION
+                state:
+                  descriptor:
+                    name: Initiated
+                    code: INITIATED
+                customer:
+                  person:
+                    id: pan:arrpp7771n
+                    creds:
+                      - id: 78953432/32
+                        type: FOLIO
+                      - id: 115.245.207.90
+                        type: IP_ADDRESS
+                  contact:
+                    phone: "9916599123"
+                agent:
+                  person:
+                    id: euin:E52432
+                  organization:
+                    creds:
+                      - id: ARN-124567
+                        type: ARN
+                      - id: ARN-123456
+                        type: SUB_BROKER_ARN
+                tags:
+                  - display: true
+                    descriptor:
+                      name: Thresholds
+                      code: THRESHOLDS
+                    list:
+                      - descriptor:
+                          name: Amount Minimum
+                          code: AMOUNT_MIN
+                        value: "1000"
+                      - descriptor:
+                          name: Amount Maximum
+                          code: AMOUNT_MAX
+                        value: "10000"
+                      - descriptor:
+                          name: Amount Multiples
+                          code: AMOUNT_MULTIPLES
+                        value: "1"
+                      - descriptor:
+                          name: Units Minimum
+                          code: UNITS_MIN
+                        value: "1"
+                      - descriptor:
+                          name: Units Maximum
+                          code: UNITS_MAX
+                        value: "500"
+                      - descriptor:
+                          name: Units Multiples
+                          code: UNITS_MULTIPLES
+                        value: "1"
+                  - descriptor:
+                      name: Payout Bank Account
+                      code: PAYOUT_BANK_ACCOUNT
+                    list:
+                      - descriptor:
+                          name: Identifier
+                          code: IDENTIFIER
+                        value: ba_369823523564
+                  - display: true
+                    descriptor:
+                      name: External Refs
+                      code: EXTERNAL_REFS
+                    list:
+                      - descriptor:
+                          name: RTA Source Ref
+                          code: RTA_SOURCE_REF
+                        value: "21432432"
+            tags:
+              - display: false
+                descriptor:
+                  name: BAP Terms of Engagement
+                  code: BAP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - display: false
+                descriptor:
+                  name: BPP Terms of Engagement
+                  code: BPP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+            quote:
+              id: q1
+              price:
+                currency: INR
+                value: "2999.25"
+              breakup:
+                - item:
+                    id: "12391"
+                    fulfillment_ids:
+                      - ff_789
+                  title: REDEMPTION
+                  price:
+                    currency: INR
+                    value: "3000"
+                - item:
+                    id: "12391"
+                    fulfillment_ids:
+                      - ff_789
+                  title: SECURITIES_TRANSACTION_TAX
+                  price:
+                    currency: INR
+                    value: "-0.75"
+            created_at: 2023-05-25T05:23:03.443Z
+            updated_at: 2023-05-25T05:23:03.443Z
       saveData:
+        selected_items: $.message.order.items[*]
+        item: $.message.order.items[0]
+        selected_fulfillments: $.message.order.fulfillments[*]
+        fulfillment: $.message.order.fulfillments[0]
+        fulfillment_state: $.message.order.fulfillments[0].state.descriptor.code
+        payments: $.message.order.payments
+        payment_status: $.message.order.payments[0].status
+        payment_transaction_id: $.message.order.payments[0].params.transaction_id
+        quote: $.message.order.quote
+        quote_price: $.message.order.quote.price.value
+        order_id: $.message.order.id
+        order_status: $.message.order.status
+        order: $.message.order
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
         latestTimestamp: $.context.timestamp
@@ -258,7 +1757,218 @@ steps:
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
       inputs: {}
-    examples: []
+    examples:
+      - name: example for on_confirm
+        payload:
+          context:
+            domain: ONDC:FIS14
+            action: on_confirm
+            timestamp: 2026-05-05T13:02:02.765Z
+            transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+            message_id: 7aa33e69-4d29-4f23-9a24-d845d29502c6
+            bap_id: bap.example.com
+            bap_uri: https://bap.example.com
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: https://bpp.example.com
+            version: 2.1.0
+            location:
+              country:
+                code: IND
+              city:
+                code: "*"
+          message:
+            order:
+              id: mfr_213adf123af
+              status: ACCEPTED
+              provider:
+                descriptor:
+                  name: Seller App Name
+              items:
+                - parent_item_id: "138"
+                  descriptor:
+                    name: ABC Mid Cap Fund - Regular - Growth
+                    code: SCHEME_PLAN
+                  creator:
+                    descriptor:
+                      name: ABC Mutual Fund
+                  quantity:
+                    selected:
+                      measure:
+                        value: "3000"
+                        unit: INR
+                  fulfillment_ids:
+                    - ff_789
+                  tags:
+                    - display: true
+                      descriptor:
+                        name: Plan Information
+                        code: PLAN_INFORMATION
+                      list:
+                        - descriptor:
+                            name: Consumer Terms & Conditions
+                            code: CONSUMER_TNC
+                          value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                    - display: true
+                      descriptor:
+                        name: Plan Identifiers
+                        code: PLAN_IDENTIFIERS
+                      list:
+                        - descriptor:
+                            name: ISIN
+                            code: ISIN
+                          value: IN123214324
+                        - descriptor:
+                            name: RTA Identifier
+                            code: RTA_IDENTIFIER
+                          value: 02BZ
+                        - descriptor:
+                            name: AMFI Identifier
+                            code: AMFI_IDENTIFIER
+                          value: "125487"
+                    - display: true
+                      descriptor:
+                        name: Plan Options
+                        code: PLAN_OPTIONS
+                      list:
+                        - descriptor:
+                            name: Plan
+                            code: PLAN
+                          value: REGULAR
+                        - descriptor:
+                            name: Option
+                            code: OPTION
+                          value: IDCW
+                        - descriptor:
+                            name: IDCW Option
+                            code: IDCW_OPTION
+                          value: PAYOUT
+              fulfillments:
+                - id: ff_789
+                  type: REDEMPTION
+                  state:
+                    descriptor:
+                      name: Initiated
+                      code: INITIATED
+                  customer:
+                    person:
+                      id: pan:arrpp7771n
+                      creds:
+                        - id: 78953432/32
+                          type: FOLIO
+                        - id: 115.245.207.90
+                          type: IP_ADDRESS
+                    contact:
+                      phone: "9916599123"
+                  agent:
+                    person:
+                      id: euin:E52432
+                    organization:
+                      creds:
+                        - id: ARN-124567
+                          type: ARN
+                        - id: ARN-123456
+                          type: SUB_BROKER_ARN
+                  tags:
+                    - display: true
+                      descriptor:
+                        name: Thresholds
+                        code: THRESHOLDS
+                      list:
+                        - descriptor:
+                            name: Amount Minimum
+                            code: AMOUNT_MIN
+                          value: "1000"
+                        - descriptor:
+                            name: Amount Maximum
+                            code: AMOUNT_MAX
+                          value: "10000"
+                        - descriptor:
+                            name: Amount Multiples
+                            code: AMOUNT_MULTIPLES
+                          value: "1"
+                        - descriptor:
+                            name: Units Minimum
+                            code: UNITS_MIN
+                          value: "1"
+                        - descriptor:
+                            name: Units Maximum
+                            code: UNITS_MAX
+                          value: "500"
+                        - descriptor:
+                            name: Units Multiples
+                            code: UNITS_MULTIPLES
+                          value: "1"
+                    - descriptor:
+                        name: Payout Bank Account
+                        code: PAYOUT_BANK_ACCOUNT
+                      list:
+                        - descriptor:
+                            name: Identifier
+                            code: IDENTIFIER
+                          value: ba_369823523564
+                    - display: true
+                      descriptor:
+                        name: External Refs
+                        code: EXTERNAL_REFS
+                      list:
+                        - descriptor:
+                            name: RTA Source Ref
+                            code: RTA_SOURCE_REF
+                          value: "21432432"
+              tags:
+                - display: false
+                  descriptor:
+                    name: BAP Terms of Engagement
+                    code: BAP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - display: false
+                  descriptor:
+                    name: BPP Terms of Engagement
+                    code: BPP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              quote:
+                id: q1
+                price:
+                  currency: INR
+                  value: "2999.25"
+                breakup:
+                  - item:
+                      id: "12391"
+                      fulfillment_ids:
+                        - ff_789
+                    title: REDEMPTION
+                    price:
+                      currency: INR
+                      value: "3000"
+                  - item:
+                      id: "12391"
+                      fulfillment_ids:
+                        - ff_789
+                    title: SECURITIES_TRANSACTION_TAX
+                    price:
+                      currency: INR
+                      value: "-0.75"
+              created_at: 2026-05-05T13:02:02.769Z
+              updated_at: 2026-05-05T13:02:02.769Z
+        type: request
+        description: please add relevant description
   - api: on_update
     action_id: on_update_redemption
     owner: BPP
@@ -266,16 +1976,16 @@ steps:
     unsolicited: true
     description: please add relevant description
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgICBjb25zb2xlLmxvZygiPT09IG9uX3VwZGF0ZV9yZWRlbXB0aW9uIEdlbmVyYXRvciBTdGFydCA9PT0iKTsKCgogICAgLy8gRGV0ZXJtaW5lIGZpbmFsIHN0YXR1cyBmcm9tIHVzZXIgaW5wdXQgKFN0YXR1cyBpbnB1dDogQ0FOQ0VMTEVEIG9yIENPTVBMRVRFRCkKICAgIGNvbnN0IGZpbmFsU3RhdHVzID0gc2Vzc2lvbkRhdGE/LnVzZXJfaW5wdXRzPy5yZWRlbXB0aW9uX3N0YXR1cyB8fCAiQ09NUExFVEVEIjsKICAgIGNvbnNvbGUubG9nKCJSZWRlbXB0aW9uIGZpbmFsIHN0YXR1czoiLCBmaW5hbFN0YXR1cyk7CgogICAgLy8gU2V0IG9yZGVyIHN0YXR1cwogICAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcikgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnN0YXR1cyA9IGZpbmFsU3RhdHVzOwogICAgfQoKICAgIC8vIFVwZGF0ZSBwYXltZW50IHN0YXR1cyBmcm9tIHNlc3Npb24KICAgIGlmIChzZXNzaW9uRGF0YS5wYXltZW50cyAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnBheW1lbnRzKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucGF5bWVudHMgPSBzZXNzaW9uRGF0YS5wYXltZW50czsKICAgIH0KICAgIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnBheW1lbnRzPy5bMF0pIHsKICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wYXltZW50c1swXS5zdGF0dXMgPQogICAgICAgICAgICBmaW5hbFN0YXR1cyA9PT0gIkNBTkNFTExFRCIgPyAiTk9ULVBBSUQiIDogIlBBSUQiOwogICAgfQoKICAgIC8vIFVwZGF0ZSBpdGVtIGZyb20gc2Vzc2lvbgogICAgY29uc3Qgc2VsZWN0ZWRJdGVtID0gc2Vzc2lvbkRhdGEuaXRlbSB8fCBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtcz8uWzBdOwogICAgaWYgKHNlbGVjdGVkSXRlbSAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/Lml0ZW1zPy5bMF0pIHsKICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCA9CiAgICAgICAgICAgIHR5cGVvZiBzZWxlY3RlZEl0ZW0gPT09ICdzdHJpbmcnID8gc2VsZWN0ZWRJdGVtIDogc2VsZWN0ZWRJdGVtLmlkOwogICAgfQoKICAgIC8vIEluamVjdCBxdWFudGl0eS5zZWxlY3RlZC5tZWFzdXJlIGZyb20gc2Vzc2lvbiAoc2F2ZWQgYXQgc2VsZWN0X3JlZGVtcHRpb24gc3RlcCkKICAgIGNvbnN0IG1lYXN1cmUgPSBzZXNzaW9uRGF0YS5yZWRlbXB0aW9uX21lYXN1cmU/LlswXTsKICAgIGlmIChtZWFzdXJlICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXM/LlswXSkgewogICAgICAgIGlmICghZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ucXVhbnRpdHkpIHsKICAgICAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ucXVhbnRpdHkgPSB7fTsKICAgICAgICB9CgogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnF1YW50aXR5LnNlbGVjdGVkID0gewogICAgICAgICAgICBtZWFzdXJlCiAgICAgICAgfTsKICAgIH0KCiAgICAvLyBJbmplY3QgZnVsZmlsbG1lbnQgKHdpdGggYWdlbnQvY3VzdG9tZXIgY3JlZHMpIGZyb20gc2Vzc2lvbgogICAgY29uc3QgcmVkZW1wdGlvbkZ1bGZpbGxtZW50ID0gc2Vzc2lvbkRhdGEucmVkZW1wdGlvbl9mdWxmaWxsbWVudD8uWzBdOwogICAgaWYgKHJlZGVtcHRpb25GdWxmaWxsbWVudCAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LmZ1bGZpbGxtZW50cz8uWzBdKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdID0gewogICAgICAgICAgICAuLi5leGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0sCiAgICAgICAgICAgIC4uLnJlZGVtcHRpb25GdWxmaWxsbWVudCwKICAgICAgICB9OwogICAgfQoKICAgIC8vIFVwZGF0ZSB1cGRhdGVkX2F0IHRpbWVzdGFtcAogICAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcikgewogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmNyZWF0ZWRfYXQgPSBzZXNzaW9uRGF0YS5vcmRlci5jcmVhdGVkX2F0OwogICAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnVwZGF0ZWRfYXQgPSBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCk7CiAgICB9CgogICAgY29uc29sZS5sb2coIj09PSBvbl91cGRhdGVfcmVkZW1wdGlvbiBHZW5lcmF0b3IgRW5kID09PSIpOwogICAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQ==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS14
           action: on_update
-          timestamp: 2026-04-10T07:45:40.433Z
-          transaction_id: 5e0632ce-8275-4cd0-8705-884bb7c846be
-          message_id: 638e11f8-fe4b-4ac3-a410-135b7ee79008
+          timestamp: 2026-04-10T07:45:40.337Z
+          transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+          message_id: 585eb492-30a1-4a1b-8fff-a78f2c64843c
           bap_id: bap.example.com
           bap_uri: https://bap.example.com
           ttl: PT30S
@@ -287,8 +1997,221 @@ steps:
               code: IND
             city:
               code: "*"
-        message: {}
+        message:
+          order:
+            id: mfr_3454dfadssf435345
+            status: COMPLETED
+            provider:
+              id: sellerapp_id
+              descriptor:
+                name: Seller App Name
+            items:
+              - id: "12391"
+                parent_item_id: "138"
+                descriptor:
+                  name: ABC Mid Cap Fund - Regular - Growth
+                  code: SCHEME_PLAN
+                creator:
+                  descriptor:
+                    name: ABC Mutual Fund
+                quantity:
+                  selected:
+                    measure:
+                      value: "3000"
+                      unit: INR
+                  allocated:
+                    measure:
+                      value: "150.0000"
+                      unit: MF_UNITS
+                fulfillment_ids:
+                  - ff_008
+                tags:
+                  - display: true
+                    descriptor:
+                      name: Plan Information
+                      code: PLAN_INFORMATION
+                    list:
+                      - descriptor:
+                          name: Consumer Terms & Conditions
+                          code: CONSUMER_TNC
+                        value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                  - display: true
+                    descriptor:
+                      name: Plan Identifiers
+                      code: PLAN_IDENTIFIERS
+                    list:
+                      - descriptor:
+                          name: ISIN
+                          code: ISIN
+                        value: IN123214324
+                      - descriptor:
+                          name: RTA Identifier
+                          code: RTA_IDENTIFIER
+                        value: 02BZ
+                      - descriptor:
+                          name: AMFI Identifier
+                          code: AMFI_IDENTIFIER
+                        value: "125487"
+                  - display: true
+                    descriptor:
+                      name: Plan Options
+                      code: PLAN_OPTIONS
+                    list:
+                      - descriptor:
+                          name: Plan
+                          code: PLAN
+                        value: REGULAR
+                      - descriptor:
+                          name: Option
+                          code: OPTION
+                        value: IDCW
+                      - descriptor:
+                          name: IDCW Option
+                          code: IDCW_OPTION
+                        value: PAYOUT
+                price:
+                  currency: INR
+                  value: "20.0000"
+                  listed_value: "20.2500"
+                time:
+                  label: NAV Date
+                  timestamp: 2024-07-23T00:00:00+05:30
+            fulfillments:
+              - id: ff_008
+                type: REDEMPTION
+                customer:
+                  person:
+                    id: pan:arrpp7771n
+                    creds:
+                      - id: 78953432/32
+                        type: FOLIO
+                      - id: 115.245.207.90
+                        type: IP_ADDRESS
+                  contact:
+                    phone: "9916599123"
+                agent:
+                  person:
+                    id: euin:E52432
+                  organization:
+                    creds:
+                      - id: ARN-124567
+                        type: ARN
+                      - id: ARN-123456
+                        type: SUB_BROKER_ARN
+                state:
+                  descriptor:
+                    name: Successful
+                    code: SUCCESSFUL
+                tags:
+                  - display: true
+                    descriptor:
+                      name: Thresholds
+                      code: THRESHOLDS
+                    list:
+                      - descriptor:
+                          name: Amount Minimum
+                          code: AMOUNT_MIN
+                        value: "1000"
+                      - descriptor:
+                          name: Amount Maximum
+                          code: AMOUNT_MAX
+                        value: "10000"
+                      - descriptor:
+                          name: Amount Multiples
+                          code: AMOUNT_MULTIPLES
+                        value: "1"
+                      - descriptor:
+                          name: Units Minimum
+                          code: UNITS_MIN
+                        value: "1"
+                      - descriptor:
+                          name: Units Maximum
+                          code: UNITS_MAX
+                        value: "500"
+                      - descriptor:
+                          name: Units Multiples
+                          code: UNITS_MULTIPLES
+                        value: "1"
+                  - display: true
+                    descriptor:
+                      name: Payout Bank Account
+                      code: PAYOUT_BANK_ACCOUNT
+                    list:
+                      - descriptor:
+                          name: Identifier
+                          code: IDENTIFIER
+                        value: ba_369823523564
+                  - display: true
+                    descriptor:
+                      name: External Refs
+                      code: EXTERNAL_REFS
+                    list:
+                      - descriptor:
+                          name: RTA Source Ref
+                          code: RTA_SOURCE_REF
+                        value: "21432432"
+            quote:
+              id: q1
+              price:
+                currency: INR
+                value: "2999.25"
+              breakup:
+                - item:
+                    id: "12391"
+                    fulfillment_ids:
+                      - ff_008
+                  title: REDEMPTION
+                  price:
+                    currency: INR
+                    value: "3000"
+                - item:
+                    id: "12391"
+                    fulfillment_ids:
+                      - ff_008
+                  title: SECURITIES_TRANSACTION_TAX
+                  price:
+                    currency: INR
+                    value: "-0.75"
+            tags:
+              - display: false
+                descriptor:
+                  name: BAP Terms of Engagement
+                  code: BAP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - display: false
+                descriptor:
+                  name: BPP Terms of Engagement
+                  code: BPP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+            created_at: 2023-05-25T05:23:03.443Z
+            updated_at: 2023-05-25T05:23:03.443Z
       saveData:
+        transaction_id: $.context.transaction_id
+        message_id: $.context.message_id
+        selected_fulfillments: $.message.order.fulfillments[*]
+        fulfillment: $.message.order.fulfillments[0]
+        fulfillment_state: $.message.order.fulfillments[0].state.descriptor.code
+        payments: $.message.order.payments
+        payment_status: $.message.order.payments[0].status
+        payment_transaction_id: $.message.order.payments[0].params.transaction_id
+        order_id: $.message.order.id
+        order_status: $.message.order.status
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
         latestTimestamp: $.context.timestamp
@@ -298,15 +2221,242 @@ steps:
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
       inputs:
-        oldInputs:
-          - name: redemption_status
-            label: Status
-            type: select
-            values:
-              - CANCELLED
-              - COMPLETED
-        id: old_inputs
-    examples: []
+        id: ExampleInputId
+        jsonSchema:
+          $schema: http://json-schema.org/draft-07/schema#
+          type: object
+          properties:
+            status:
+              type: string
+              enum:
+                - CANCELLED
+                - COMPLETED
+          required: []
+          additionalProperties: false
+    examples:
+      - name: example for on_update
+        payload:
+          context:
+            domain: ONDC:FIS14
+            action: on_update
+            timestamp: 2026-05-05T13:02:05.794Z
+            transaction_id: 223e1339-e6d3-4b6d-94fd-5f92835d038c
+            message_id: 588c0f19-75ee-4edb-ba53-7eb3932b8078
+            bap_id: bap.example.com
+            bap_uri: https://bap.example.com
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: https://bpp.example.com
+            version: 2.1.0
+            location:
+              country:
+                code: IND
+              city:
+                code: "*"
+          message:
+            order:
+              id: mfr_3454dfadssf435345
+              status: COMPLETED
+              provider:
+                id: sellerapp_id
+                descriptor:
+                  name: Seller App Name
+              items:
+                - parent_item_id: "138"
+                  descriptor:
+                    name: ABC Mid Cap Fund - Regular - Growth
+                    code: SCHEME_PLAN
+                  creator:
+                    descriptor:
+                      name: ABC Mutual Fund
+                  quantity:
+                    selected:
+                      measure:
+                        value: "3000"
+                        unit: INR
+                    allocated:
+                      measure:
+                        value: "150.0000"
+                        unit: MF_UNITS
+                  fulfillment_ids:
+                    - ff_008
+                  tags:
+                    - display: true
+                      descriptor:
+                        name: Plan Information
+                        code: PLAN_INFORMATION
+                      list:
+                        - descriptor:
+                            name: Consumer Terms & Conditions
+                            code: CONSUMER_TNC
+                          value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                    - display: true
+                      descriptor:
+                        name: Plan Identifiers
+                        code: PLAN_IDENTIFIERS
+                      list:
+                        - descriptor:
+                            name: ISIN
+                            code: ISIN
+                          value: IN123214324
+                        - descriptor:
+                            name: RTA Identifier
+                            code: RTA_IDENTIFIER
+                          value: 02BZ
+                        - descriptor:
+                            name: AMFI Identifier
+                            code: AMFI_IDENTIFIER
+                          value: "125487"
+                    - display: true
+                      descriptor:
+                        name: Plan Options
+                        code: PLAN_OPTIONS
+                      list:
+                        - descriptor:
+                            name: Plan
+                            code: PLAN
+                          value: REGULAR
+                        - descriptor:
+                            name: Option
+                            code: OPTION
+                          value: IDCW
+                        - descriptor:
+                            name: IDCW Option
+                            code: IDCW_OPTION
+                          value: PAYOUT
+                  price:
+                    currency: INR
+                    value: "20.0000"
+                    listed_value: "20.2500"
+                  time:
+                    label: NAV Date
+                    timestamp: 2024-07-23T00:00:00+05:30
+              fulfillments:
+                - id: ff_008
+                  type: REDEMPTION
+                  customer:
+                    person:
+                      id: pan:arrpp7771n
+                      creds:
+                        - id: 78953432/32
+                          type: FOLIO
+                        - id: 115.245.207.90
+                          type: IP_ADDRESS
+                    contact:
+                      phone: "9916599123"
+                  agent:
+                    person:
+                      id: euin:E52432
+                    organization:
+                      creds:
+                        - id: ARN-124567
+                          type: ARN
+                        - id: ARN-123456
+                          type: SUB_BROKER_ARN
+                  state:
+                    descriptor:
+                      name: Successful
+                      code: SUCCESSFUL
+                  tags:
+                    - display: true
+                      descriptor:
+                        name: Thresholds
+                        code: THRESHOLDS
+                      list:
+                        - descriptor:
+                            name: Amount Minimum
+                            code: AMOUNT_MIN
+                          value: "1000"
+                        - descriptor:
+                            name: Amount Maximum
+                            code: AMOUNT_MAX
+                          value: "10000"
+                        - descriptor:
+                            name: Amount Multiples
+                            code: AMOUNT_MULTIPLES
+                          value: "1"
+                        - descriptor:
+                            name: Units Minimum
+                            code: UNITS_MIN
+                          value: "1"
+                        - descriptor:
+                            name: Units Maximum
+                            code: UNITS_MAX
+                          value: "500"
+                        - descriptor:
+                            name: Units Multiples
+                            code: UNITS_MULTIPLES
+                          value: "1"
+                    - display: true
+                      descriptor:
+                        name: Payout Bank Account
+                        code: PAYOUT_BANK_ACCOUNT
+                      list:
+                        - descriptor:
+                            name: Identifier
+                            code: IDENTIFIER
+                          value: ba_369823523564
+                    - display: true
+                      descriptor:
+                        name: External Refs
+                        code: EXTERNAL_REFS
+                      list:
+                        - descriptor:
+                            name: RTA Source Ref
+                            code: RTA_SOURCE_REF
+                          value: "21432432"
+              quote:
+                id: q1
+                price:
+                  currency: INR
+                  value: "2999.25"
+                breakup:
+                  - item:
+                      id: "12391"
+                      fulfillment_ids:
+                        - ff_008
+                    title: REDEMPTION
+                    price:
+                      currency: INR
+                      value: "3000"
+                  - item:
+                      id: "12391"
+                      fulfillment_ids:
+                        - ff_008
+                    title: SECURITIES_TRANSACTION_TAX
+                    price:
+                      currency: INR
+                      value: "-0.75"
+              tags:
+                - display: false
+                  descriptor:
+                    name: BAP Terms of Engagement
+                    code: BAP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - display: false
+                  descriptor:
+                    name: BPP Terms of Engagement
+                    code: BPP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              updated_at: 2026-05-05T13:02:05.796Z
+        type: request
+        description: please add relevant description
 transaction_history: []
 validationLib: ""
 helperLib: LyoKCUN1c3RvbSBoZWxwZXIgZnVuY3Rpb25zIGF2YWlsYWJsZSBpbiBhbGwgbW9jayBnZW5lcmF0aW9uIGZ1bmN0aW9ucy4KCXRoZXNlIGFyZSBhcHBlbmRlZCBiZWxvdyB0aGUgZ2VuZXJhdGUgZnVuY3Rpb24gZm9yIGVhY2ggc3RlcC4KKi8KCmNvbnN0IGNyZWF0ZUZvcm1VUkwgPSAoZG9tYWluLGZvcm1JZCwgc2Vzc2lvbkRhdGEpID0+IHsKCWNvbnN0IGJhc2VVUkwgPSBzZXNzaW9uRGF0YS5tb2NrQmFzZVVybDsKCWNvbnN0IHRyYW5zYWN0aW9uSWQgPSBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkWzBdOwoJY29uc3Qgc2Vzc2lvbklkID0gc2Vzc2lvbkRhdGEuc2Vzc2lvbklkOwoJcmV0dXJuIGAke2Jhc2VVUkx9L2Zvcm1zLyR7ZG9tYWlufS8ke2Zvcm1JZH0vP3RyYW5zYWN0aW9uX2lkPSR7dHJhbnNhY3Rpb25JZH0mc2Vzc2lvbl9pZD0ke3Nlc3Npb25JZH1gOwp9CgovLyBHZW5lcmF0ZXMgYSBVVUlEIHY0CmZ1bmN0aW9uIHV1aWR2NCgpIHsKCXJldHVybiAneHh4eHh4eHgteHh4eC00eHh4LXl4eHgteHh4eHh4eHh4eHh4Jy5yZXBsYWNlKC9beHldL2csIGZ1bmN0aW9uIChjKSB7CgkgIGNvbnN0IHIgPSBNYXRoLnJhbmRvbSgpICogMTYgfCAwOwoJICBjb25zdCB2ID0gYyA9PT0gJ3gnID8gciA6IChyICYgMHgzIHwgMHg4KTsKCSAgcmV0dXJuIHYudG9TdHJpbmcoMTYpOwoJfSk7Cn0KCi8vIEdlbmVyYXRlIGEgNiBkaWdpdCBzdHJpbmcgSUQKZnVuY3Rpb24gZ2VuZXJhdGU2RGlnaXRJZCgpIHsKCXJldHVybiBNYXRoLmZsb29yKDEwMDAwMCArIE1hdGgucmFuZG9tKCkgKiA5MDAwMDApLnRvU3RyaW5nKCk7Cn0KCi8vIFJldHVybnMgdGhlIGN1cnJlbnQgSVNPIHRpbWVzdGFtcApmdW5jdGlvbiBjdXJyZW50VGltZXN0YW1wKCkgewoJcmV0dXJuIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKfQoKLy8gQ29udmVydHMgSVNPIDg2MDEgZHVyYXRpb24gc3RyaW5nIHRvIHRvdGFsIHNlY29uZHMKY29uc3QgaXNvRHVyVG9TZWMgPSAoZHVyYXRpb24pID0+IHsKICBjb25zdCBkdXJSRSA9IC9QKChkKylZKT8oKGQrKU0pPygoZCspVyk/KChkKylEKT9UPygoZCspSCk/KChkKylNKT8oKGQrKVMpPy87CiAgY29uc3QgcyA9IGR1clJFLmV4ZWMoZHVyYXRpb24pOwogIGlmICghcykgcmV0dXJuIDA7CiAgCiAgcmV0dXJuIChOdW1iZXIocz8uWzJdKSB8fCAwKSAqIDMxNTM2MDAwICsKCShOdW1iZXIocz8uWzRdKSB8fCAwKSAqIDI2MjgyODggKwoJKE51bWJlcihzPy5bNl0pIHx8IDApICogNjA0ODAwICsKCShOdW1iZXIocz8uWzhdKSB8fCAwKSAqIDg2NDAwICsKCShOdW1iZXIocz8uWzEwXSkgfHwgMCkgKiAzNjAwICsKCShOdW1iZXIocz8uWzEyXSkgfHwgMCkgKiA2MCArCgkoTnVtYmVyKHM/LlsxNF0pIHx8IDApOwp9OwoKY29uc3Qgc2V0Q2l0eUZyb21JbnB1dHMgPSAocGF5bG9hZCwgaW5wdXRzKSA9PiB7CglpZiAoIWlucHV0cykgcmV0dXJuICIqIjsKCWxldCB2ZXJzaW9uID0gcGF5bG9hZC5jb250ZXh0LnZlcnNpb24gfHwgcGF5bG9hZC5jb250ZXh0LmNvcmVfdmVyc2lvbiB8fCAiMi4wLjAiOwoJaWYgKHZlcnNpb24uc3RhcnRzV2l0aCgiMSIpKSB7CgkJcGF5bG9hZC5jb250ZXh0LmNpdHkgPSBpbnB1dHMuY2l0eV9jb2RlID8/ICIqIjsKCX0gZWxzZSB7CgkJcGF5bG9hZC5jb250ZXh0LmxvY2F0aW9uLmNpdHkuY29kZSA9IGlucHV0cy5jaXR5X2NvZGUgPz8gIioiOwoJfQp9Cg==
