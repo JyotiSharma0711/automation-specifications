@@ -40,7 +40,6 @@ supportedActions:
     - on_status
     - init
     - update
-    - confirm
   issue:
     - on_issue
     - issue
