@@ -1,7 +1,7 @@
 meta:
   domain: ONDC:FIS12
   version: 2.3.0
-  flowId: lamf_credit_line_with_pre_part
+  flowId: lamf_credit_line_with_mfc_pre_part
   config_version: 0.0.0001
   description: ""
   use_case_id: ""

@@ -111,7 +111,7 @@ flows:
       $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_missed_emi.yaml 
 
   - type: playground
-    id: lamf_credit_line_with_pre_part
+    id: lamf_credit_line_with_mfc_pre_part
     usecase: UNIFIED CREDIT
     tags:
       - WORKBENCH
