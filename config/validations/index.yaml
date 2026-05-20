@@ -445,6 +445,8 @@ _TESTS_:
           attr: $.message.order.provider.locations[*].address
           _RETURN_: attr are present
     - _NAME_: ON_SELECT_PROVIDER_TAGS
+      tagPath: $.message.order.provider.tags[*].descriptor.code
+      _CONTINUE_: "!(tagPath are present)"
       _RETURN_:
         - _NAME_: REQUIRED_CONTACT_INFO_TAG_GROUP
           validTags: *a6
@@ -488,6 +490,7 @@ _TESTS_:
             - LOAN
             - PERSONAL_LOAN
             - CREDIT_CARD
+            - PRE_QUALIFIER
           _RETURN_: attr all in enumList
         - _NAME_: REQUIRED_ITEM_DESCRIPTOR_NAME
           attr: $.message.order.items[*].descriptor.name
@@ -632,6 +635,7 @@ _TESTS_:
           attr: $.message.order.fulfillments[*].type
           enumList:
             - LOAN
+            - DEDUPE
           _CONTINUE_: "!(attr are present)"
           _RETURN_: attr all in enumList
         - _NAME_: REQUIRED_FULFILLMENT_AGENT_NAME
@@ -977,6 +981,7 @@ _TESTS_:
             - DISBURSED
             - SANCTIONED
             - DISPATCHED
+            - ACCEPTED
           _RETURN_: attr any in enumList
         - _NAME_: REQUIRED_FULFILLMENT_CUSTOMER
           attr: $.message.order.fulfillments[*].customer.person.name

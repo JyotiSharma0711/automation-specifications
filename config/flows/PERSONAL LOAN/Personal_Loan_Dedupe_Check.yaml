@@ -77,9 +77,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: search
-            timestamp: 2026-05-20T00:29:29.607Z
+            timestamp: 2026-05-20T06:22:14.758Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: a8936fc6-5dbd-4f0f-b422-eb1a905aaac3
+            message_id: a89934fc-5a5c-4168-9f3d-c0756bc2003d
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -465,9 +465,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_search
-            timestamp: 2026-05-20T00:29:29.643Z
+            timestamp: 2026-05-20T06:22:14.777Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: a8936fc6-5dbd-4f0f-b422-eb1a905aaac3
+            message_id: a89934fc-5a5c-4168-9f3d-c0756bc2003d
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -484,7 +484,7 @@ steps:
               descriptor:
                 name: ICICI Bank
               providers:
-                - id: personal_loan_provider_b63fcacb-a3dc-4d35-8240-bc8e6d8a0af7
+                - id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
                   descriptor:
                     images:
                       - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -493,33 +493,33 @@ steps:
                     short_desc: ICICI Bank Ltd
                     long_desc: ICICI Bank Ltd, India.
                   categories:
-                    - id: cat_loan_5db6dae1-1b37-473b-a78d-5df5d9738c0a
+                    - id: cat_loan_ce804843-752d-47cf-bb90-083570349f3f
                       descriptor:
                         code: LOAN
                         name: Loan
-                    - id: cat_personal_loan_b0a9d26e-40e8-4ee2-a72f-5000b3d83599
-                      parent_category_id: cat_loan_5db6dae1-1b37-473b-a78d-5df5d9738c0a
+                    - id: cat_personal_loan_e08d16a9-8ffc-4fb4-b6f6-a815d0f047f0
+                      parent_category_id: cat_loan_ce804843-752d-47cf-bb90-083570349f3f
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan
-                    - id: cat_bureau_loan_f4a05f35-a140-4803-8986-1bebcef2558e
-                      parent_category_id: cat_personal_loan_b0a9d26e-40e8-4ee2-a72f-5000b3d83599
+                    - id: cat_bureau_loan_5207a77e-1a8e-4fc0-a4e5-45e94c5e5c44
+                      parent_category_id: cat_personal_loan_e08d16a9-8ffc-4fb4-b6f6-a815d0f047f0
                       descriptor:
                         code: BUREAU_LOAN
                         name: Bureau Loan
-                    - id: cat_pre_qualifier_7e2894a0-8222-40e4-bd86-85bccc2551ec
-                      parent_category_id: cat_loan_5db6dae1-1b37-473b-a78d-5df5d9738c0a
+                    - id: cat_pre_qualifier_9e32dd40-b7af-4630-9de1-81715b50ba84
+                      parent_category_id: cat_loan_ce804843-752d-47cf-bb90-083570349f3f
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                   items:
-                    - id: bureau_personal_loan_15effd33-fc2b-4802-a7d5-344033ae8d8c
+                    - id: bureau_personal_loan_ad255c02-37f5-4ad0-ad0f-b395c095cd2f
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Offline Journey
                       category_ids:
-                        - cat_personal_loan_b0a9d26e-40e8-4ee2-a72f-5000b3d83599
-                        - cat_bureau_loan_f4a05f35-a140-4803-8986-1bebcef2558e
+                        - cat_personal_loan_e08d16a9-8ffc-4fb4-b6f6-a815d0f047f0
+                        - cat_bureau_loan_5207a77e-1a8e-4fc0-a4e5-45e94c5e5c44
                       fulfillment_ids:
                         - F1
                       tags:
@@ -571,19 +571,19 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: form_6573516b-26d4-4da0-ae05-32e8fc1a6e4f
+                          id: form_2e8f251c-3ec0-4587-8a18-b15bad7a9fa2
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: bureau_personal_loan_d6365e84-5f98-47b3-a758-6fcfb6d69296
+                    - id: bureau_personal_loan_4335ee3a-40e4-417d-b120-e4b62c70b981
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Single Redirection
                       category_ids:
-                        - cat_personal_loan_b0a9d26e-40e8-4ee2-a72f-5000b3d83599
-                        - cat_bureau_loan_f4a05f35-a140-4803-8986-1bebcef2558e
+                        - cat_personal_loan_e08d16a9-8ffc-4fb4-b6f6-a815d0f047f0
+                        - cat_bureau_loan_5207a77e-1a8e-4fc0-a4e5-45e94c5e5c44
                       fulfillment_ids:
                         - F2
                       tags:
@@ -635,18 +635,18 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: form_6573516b-26d4-4da0-ae05-32e8fc1a6e4f
+                          id: form_2e8f251c-3ec0-4587-8a18-b15bad7a9fa2
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: pre_qualifier_44ff542a-5ce4-4b4f-ab9d-8cb96cdf9676
+                    - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                       category_ids:
-                        - cat_pre_qualifier_7e2894a0-8222-40e4-bd86-85bccc2551ec
+                        - cat_pre_qualifier_9e32dd40-b7af-4630-9de1-81715b50ba84
                       fulfillment_ids:
                         - F3
                       matched: true
@@ -865,9 +865,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: select
-            timestamp: 2026-05-20T00:29:29.687Z
+            timestamp: 2026-05-20T06:22:14.807Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 52dcfa4b-516e-4833-a582-c2a6e0533a68
+            message_id: 03e15897-062b-4071-aab0-67d1edc8619e
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -882,9 +882,9 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_b63fcacb-a3dc-4d35-8240-bc8e6d8a0af7
+                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
               items:
-                - id: pre_qualifier_44ff542a-5ce4-4b4f-ab9d-8cb96cdf9676
+                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
               fulfillments:
                 - id: F3
                   type: DEDUPE
@@ -1001,9 +1001,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_select
-            timestamp: 2026-05-20T00:29:29.731Z
+            timestamp: 2026-05-20T06:22:14.838Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 52dcfa4b-516e-4833-a582-c2a6e0533a68
+            message_id: 03e15897-062b-4071-aab0-67d1edc8619e
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1018,7 +1018,7 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_b63fcacb-a3dc-4d35-8240-bc8e6d8a0af7
+                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1027,12 +1027,12 @@ steps:
                   short_desc: ICICI Bank Ltd
                   long_desc: ICICI Bank Ltd, India.
               items:
-                - id: pre_qualifier_44ff542a-5ce4-4b4f-ab9d-8cb96cdf9676
+                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
                   descriptor:
                     code: PRE_QUALIFIER
                     name: Pre Qualifier
                   category_ids:
-                    - cat_pre_qualifier_7e2894a0-8222-40e4-bd86-85bccc2551ec
+                    - cat_pre_qualifier_9e32dd40-b7af-4630-9de1-81715b50ba84
                   fulfillment_ids:
                     - F3
                   matched: true
@@ -1103,329 +1103,32 @@ steps:
                 name: ICICI Bank
                 short_desc: ICICI Bank Ltd
                 long_desc: ICICI Bank Ltd, India.
-              tags:
-                - descriptor:
-                    code: CONTACT_INFO
-                    name: Contact Info
-                  list:
-                    - descriptor:
-                        code: GRO_NAME
-                        name: Gro name
-                      value: ICICI
-                    - descriptor:
-                        code: GRO_EMAIL
-                        name: Gro email
-                      value: lifeline@iciciprulife.com
-                    - descriptor:
-                        code: GRO_CONTACT_NUMBER
-                        name: Gro contact number
-                      value: 1860 266 7766
-                    - descriptor:
-                        code: GRO_DESIGNATION
-                        name: Gro Designation
-                      value: Nodal Grievance Redressal Officer
-                    - descriptor:
-                        code: GRO_ADDRESS
-                        name: Gro Address
-                      value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
-                        Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
-                    - descriptor:
-                        code: CUSTOMER_SUPPORT_LINK
-                        name: Customer support link
-                      value: https://buy.iciciprulife.com/buy/GrievanceRedStep.htm?execution=e1s1
-                    - descriptor:
-                        code: CUSTOMER_SUPPORT_CONTACT_NUMBER
-                        name: Customer support contact number
-                      value: 1800 1080
-                    - descriptor:
-                        code: CUSTOMER_SUPPORT_EMAIL
-                        name: Customer support email
-                      value: customer.care@icicibank.com
-                - descriptor:
-                    code: LSP_INFO
-                    name: Lsp Info
-                  list:
-                    - descriptor:
-                        code: LSP_NAME
-                        name: Lsp name
-                      value: ICICI_LSP
-                    - descriptor:
-                        code: LSP_EMAIL
-                        name: Lsp email
-                      value: lsp@iciciprulife.com
-                    - descriptor:
-                        code: LSP_CONTACT_NUMBER
-                        name: Lsp contact number
-                      value: 1860 266 7766
-                    - descriptor:
-                        code: LSP_ADDRESS
-                        name: Lsp Address
-                      value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
-                        Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
             items:
-              - id: ITEM_ID_PERSONAL_LOAN_1
+              - id: ITEM_ID_PERSONAL_LOAN_3
                 descriptor:
-                  code: PERSONAL_LOAN
-                  name: Personal Loan without AA - Offline Journey
+                  code: PRE_QUALIFIER
+                  name: Pre Qualifier
                 category_ids:
-                  - "101123"
-                  - "101124"
+                  - "101125"
                 fulfillment_ids:
-                  - F1
-                price:
-                  currency: INR
-                  value: "233900"
-                tags:
-                  - descriptor:
-                      code: LOAN_INFO
-                      name: Loan Information
-                    list:
-                      - descriptor:
-                          code: INTEREST_RATE
-                          name: Interest Rate
-                          short_desc: Loans starting from 12% (p.a)
-                        value: 12%
-                      - descriptor:
-                          code: TERM
-                          name: Loan Term
-                          short_desc: Loans Duration 5 months
-                        value: 5 months
-                      - descriptor:
-                          code: INTEREST_RATE_TYPE
-                          name: Interest rate type
-                          short_desc: Fixed Interest type
-                        value: FIXED
-                      - descriptor:
-                          code: APPLICATION_FEE
-                          name: Application Fees
-                          short_desc: Application Fees
-                        value: 1000 INR
-                      - descriptor:
-                          code: FORECLOSURE_FEE
-                          name: Foreclosure Penalty
-                          short_desc: Loan Foreclosure Penalty
-                        value: 0.5%
-                      - descriptor:
-                          code: INTEREST_RATE_CONVERSION_CHARGE
-                          name: interest rate conversion charges
-                          short_desc: Interest rate conversion charges
-                        value: 1000 INR
-                      - descriptor:
-                          code: DELAY_PENALTY_FEE
-                          name: Delayed payments penalty
-                          short_desc: Delayed payments penalty
-                        value: 5%
-                      - descriptor:
-                          code: OTHER_PENALTY_FEE
-                          name: Other Penal Charges
-                          short_desc: Other Penal Charges
-                        value: 1%
-                      - descriptor:
-                          code: ANNUAL_PERCENTAGE_RATE
-                          name: Annual Percentage Rate
-                          short_desc: Effective annualized interest rate in percentage computed on net
-                            disbursed amount using IRR approach and reducing
-                            balance method
-                        value: 5%
-                      - descriptor:
-                          code: REPAYMENT_FREQUENCY
-                          name: Repayment Frequency
-                          short_desc: Repayment Frequency by borrower
-                        value: MONTHLY
-                      - descriptor:
-                          code: NUMBER_OF_INSTALLMENTS_OF_REPAYMENT
-                          name: Number of installments of repayment
-                          short_desc: Number of installments borrower has to make to payback the loan
-                        value: "45"
-                      - descriptor:
-                          code: TNC_LINK
-                          name: Terms & Conditions
-                          short_desc: Terms and Conditions
-                        value: https://icicibank.com/loan/tnc.html
-                      - descriptor:
-                          code: COOL_OFF_PERIOD
-                          name: cool off period
-                          short_desc: Cooling off/look-up period during which borrower shall not be
-                            charged any penalty
-                        value: P30D
-                      - descriptor:
-                          code: INSTALLMENT_AMOUNT
-                          name: Installment amount
-                          short_desc: Each installment amount of repayment
-                        value: "46360"
-                      - descriptor:
-                          code: KFS_LINK
-                          name: Key Facts Statement Link
-                          short_desc: A link provided by the BPP points to a Key Fact Statement (KFS)
-                            document related to a loan. When accessed, the
-                            document is returned in text/html format, with the
-                            loan details organized in a standard HTML table.
-                            This format makes it easy for the buyer's app to
-                            read and reformat the information as needed. For
-                            more details, refer to the "KFS_LINK format"
-                            document in the "feature-ui" section.
-                        value: https://icicibank.com/loan/kfs-terms
-                    display: true
-                xinput:
-                  form:
-                    id: FO3
-                  form_response:
-                    status: COMPLETED
-                    submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
+                  - F3
+                matched: true
+                recommended: true
             fulfillments:
-              - id: F1
-                type: LOAN
-                state:
-                  descriptor:
-                    code: DISBURSED
+              - id: F3
+                type: DEDUPE
                 customer:
                   person:
-                    name: John Doe
+                    dob: 1991-11-17T00:00:00.000Z
+                    creds:
+                      - id: RKUIS4815T
+                        type: PAN
                   contact:
                     phone: +91-9999999999
                     email: john.doe@example.com
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: SELECTED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: SUCCESSFUL
-            quote:
-              id: LOAN_LEAD_ID_OR_SIMILAR
-              price:
-                currency: INR
-                value: "232300"
-              breakup:
-                - title: PRINCIPAL
-                  price:
-                    value: "200000"
-                    currency: INR
-                - title: INTEREST
-                  price:
-                    value: "30000"
-                    currency: INR
-                - title: PROCESSING_FEE
-                  price:
-                    value: "1800"
-                    currency: INR
-                - title: OTHER_UPFRONT_CHARGES
-                  price:
-                    value: "0"
-                    currency: INR
-                - title: INSURANCE_CHARGES
-                  price:
-                    value: "500"
-                    currency: INR
-                - title: NET_DISBURSED_AMOUNT
-                  price:
-                    value: "197700"
-                    currency: INR
-                - title: OTHER_UPFRONT_CHARGES
-                  price:
-                    value: "0"
-                    currency: INR
-                - title: OTHER_CHARGES
-                  price:
-                    value: "0"
-                    currency: INR
-              ttl: PT15D
-            payments:
-              - type: ON_FULFILLMENT
-                id: LOAN_DISBURSMENT_ID
-                status: PAID
-                collected_by: CONSUMER
-                time:
-                  label: LOAN_DISBURSMENT
-                  timestamp: 2023-05-25T05:23:03.443Z
-                params:
-                  bank_code: XXXXXXXX
-                  bank_account_number: xxxxxxxxxxxxxx
-                  transaction_id: 4429e52c-5d41-4e24-ac2e-42eb2fa8f72b
-                  amount: "197700"
-                  currency: INR
-              - type: POST_FULFILLMENT
-                id: INSTALLMENT_ID_PERSONAL_LOAN
-                params:
-                  amount: "46360"
-                  currency: INR
-                status: NOT-PAID
-                time:
-                  label: INSTALLMENT
-                  range:
-                    start: 2023-06-01T00:00:00.000Z
-                    end: 2023-06-30T23:59:59.999Z
-              - type: POST_FULFILLMENT
-                id: INSTALLMENT_ID_PERSONAL_LOAN
-                params:
-                  amount: "46360"
-                  currency: INR
-                status: NOT-PAID
-                time:
-                  label: INSTALLMENT
-                  range:
-                    start: 2023-07-01T00:00:00.000Z
-                    end: 2023-07-31T23:59:59.999Z
-              - type: POST_FULFILLMENT
-                id: INSTALLMENT_ID_PERSONAL_LOAN
-                params:
-                  amount: "46360"
-                  currency: INR
-                status: NOT-PAID
-                time:
-                  label: INSTALLMENT
-                  range:
-                    start: 2023-08-01T00:00:00.000Z
-                    end: 2023-08-31T23:59:59.999Z
-              - type: POST_FULFILLMENT
-                id: INSTALLMENT_ID_PERSONAL_LOAN
-                params:
-                  amount: "46360"
-                  currency: INR
-                status: NOT-PAID
-                time:
-                  label: INSTALLMENT
-                  range:
-                    start: 2023-09-01T00:00:00.000Z
-                    end: 2023-09-30T23:59:59.999Z
-              - type: POST_FULFILLMENT
-                id: INSTALLMENT_ID_PERSONAL_LOAN
-                params:
-                  amount: "46360"
-                  currency: INR
-                status: NOT-PAID
-                time:
-                  label: INSTALLMENT
-                  range:
-                    start: 2023-10-01T00:00:00.000Z
-                    end: 2023-10-31T23:59:59.999Z
+                state:
+                  descriptor:
+                    code: ACCEPTED
       saveData:
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
@@ -1447,9 +1150,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-05-20T00:29:29.784Z
+            timestamp: 2026-05-20T06:22:14.861Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 7892519f-4d95-48bd-918c-eda6fe336b0e
+            message_id: 83900085-2b3c-4251-99df-b20008ba4d02
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1464,7 +1167,7 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_b63fcacb-a3dc-4d35-8240-bc8e6d8a0af7
+                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1473,7 +1176,7 @@ steps:
                   short_desc: ICICI Bank Ltd
                   long_desc: ICICI Bank Ltd, India.
               items:
-                - id: pre_qualifier_44ff542a-5ce4-4b4f-ab9d-8cb96cdf9676
+                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
               fulfillments:
                 - id: F3
                   type: DEDUPE
@@ -1575,9 +1278,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: confirm
-            timestamp: 2026-05-20T00:29:29.864Z
+            timestamp: 2026-05-20T06:22:14.881Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 7405c2dd-26ee-43b2-a3f7-3f939704ed22
+            message_id: 4e4059ac-3c1e-486a-b557-d648efc74974
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1592,9 +1295,9 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_b63fcacb-a3dc-4d35-8240-bc8e6d8a0af7
+                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
               items:
-                - id: pre_qualifier_44ff542a-5ce4-4b4f-ab9d-8cb96cdf9676
+                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
                   xinput:
                     form:
                       id: FO3
@@ -2000,9 +1703,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_confirm
-            timestamp: 2026-05-20T00:29:29.959Z
+            timestamp: 2026-05-20T06:22:14.906Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 7405c2dd-26ee-43b2-a3f7-3f939704ed22
+            message_id: 4e4059ac-3c1e-486a-b557-d648efc74974
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2016,9 +1719,9 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_1779236969968_DEFAULT
+              id: LOAN_ORDER_1779258134910_DEFAULT
               provider:
-                id: personal_loan_provider_b63fcacb-a3dc-4d35-8240-bc8e6d8a0af7
+                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -2086,12 +1789,12 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: pre_qualifier_44ff542a-5ce4-4b4f-ab9d-8cb96cdf9676
+                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
                   descriptor:
                     code: PRE_QUALIFIER
                     name: Pre Qualifier
                   category_ids:
-                    - cat_pre_qualifier_7e2894a0-8222-40e4-bd86-85bccc2551ec
+                    - cat_pre_qualifier_9e32dd40-b7af-4630-9de1-81715b50ba84
                   fulfillment_ids:
                     - F3
                   matched: true
@@ -2259,8 +1962,8 @@ steps:
                     long_desc: A Loan Agreement Document is a legal contract outlining terms...
                   mime_type: application/pdf
                   url: https://lender.com/loan/loan-agreement/O1.pdf
-              created_at: 2026-05-20T00:29:29.968Z
-              updated_at: 2026-05-20T00:29:29.968Z
+              created_at: 2026-05-20T06:22:14.910Z
+              updated_at: 2026-05-20T06:22:14.910Z
         type: request
         description: The /on_confirm API is the final response from the BPP confirming
           the successful processing of the loan application. It can include
