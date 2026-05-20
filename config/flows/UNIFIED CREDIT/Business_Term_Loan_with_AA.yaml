@@ -2,7 +2,7 @@ meta:
   domain: ONDC:FIS12
   version: 2.3.0
   flowId: business_term_loan_with_aa_loan_foreclosure
-  description: End-to-end personal loan origination enabling borrowers to discover
+  description: End-to-End personal loan origination enabling borrowers to discover
     offers, apply through dynamic forms with Account Aggregator-enabled
     financial verification, and receive loan confirmation.
 transaction_data:
