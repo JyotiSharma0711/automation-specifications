@@ -77,9 +77,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: search
-            timestamp: 2026-05-20T06:22:14.758Z
+            timestamp: 2026-05-21T12:24:34.665Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: a89934fc-5a5c-4168-9f3d-c0756bc2003d
+            message_id: f952b95e-c97d-41c1-b788-a4c40460eada
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -216,8 +216,6 @@ steps:
                               short_desc: Loan Amount upto form 50,00,000
                             value: "5000000"
                         display: true
-                    matched: true
-                    recommended: true
                     xinput:
                       head:
                         descriptor:
@@ -280,8 +278,6 @@ steps:
                               short_desc: Loan Amount upto form 50,00,000
                             value: "5000000"
                         display: true
-                    matched: true
-                    recommended: true
                     xinput:
                       head:
                         descriptor:
@@ -307,8 +303,6 @@ steps:
                       - "101125"
                     fulfillment_ids:
                       - F3
-                    matched: true
-                    recommended: true
                 fulfillments:
                   - id: F1
                     type: LOAN
@@ -465,9 +459,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_search
-            timestamp: 2026-05-20T06:22:14.777Z
+            timestamp: 2026-05-21T12:24:34.678Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: a89934fc-5a5c-4168-9f3d-c0756bc2003d
+            message_id: f952b95e-c97d-41c1-b788-a4c40460eada
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -484,7 +478,7 @@ steps:
               descriptor:
                 name: ICICI Bank
               providers:
-                - id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
+                - id: personal_loan_provider_f7b04f6b-1706-4189-8262-98a2a549c8eb
                   descriptor:
                     images:
                       - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -493,33 +487,33 @@ steps:
                     short_desc: ICICI Bank Ltd
                     long_desc: ICICI Bank Ltd, India.
                   categories:
-                    - id: cat_loan_ce804843-752d-47cf-bb90-083570349f3f
+                    - id: cat_loan_ebd37a91-1112-4dfd-9a4e-849e1d9926d6
                       descriptor:
                         code: LOAN
                         name: Loan
-                    - id: cat_personal_loan_e08d16a9-8ffc-4fb4-b6f6-a815d0f047f0
-                      parent_category_id: cat_loan_ce804843-752d-47cf-bb90-083570349f3f
+                    - id: cat_personal_loan_5b2f5ea8-f07a-4a64-a9a0-6892ccefe8d7
+                      parent_category_id: cat_loan_ebd37a91-1112-4dfd-9a4e-849e1d9926d6
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan
-                    - id: cat_bureau_loan_5207a77e-1a8e-4fc0-a4e5-45e94c5e5c44
-                      parent_category_id: cat_personal_loan_e08d16a9-8ffc-4fb4-b6f6-a815d0f047f0
+                    - id: cat_bureau_loan_1549600e-a0ce-436f-b132-a68f8406a328
+                      parent_category_id: cat_personal_loan_5b2f5ea8-f07a-4a64-a9a0-6892ccefe8d7
                       descriptor:
                         code: BUREAU_LOAN
                         name: Bureau Loan
-                    - id: cat_pre_qualifier_9e32dd40-b7af-4630-9de1-81715b50ba84
-                      parent_category_id: cat_loan_ce804843-752d-47cf-bb90-083570349f3f
+                    - id: cat_pre_qualifier_82a3cfa6-017e-480a-a90d-fc29e373f8fb
+                      parent_category_id: cat_loan_ebd37a91-1112-4dfd-9a4e-849e1d9926d6
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                   items:
-                    - id: bureau_personal_loan_ad255c02-37f5-4ad0-ad0f-b395c095cd2f
+                    - id: bureau_personal_loan_8bb9c354-f0d8-4d25-89fb-e7de2c79b0a7
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Offline Journey
                       category_ids:
-                        - cat_personal_loan_e08d16a9-8ffc-4fb4-b6f6-a815d0f047f0
-                        - cat_bureau_loan_5207a77e-1a8e-4fc0-a4e5-45e94c5e5c44
+                        - cat_personal_loan_5b2f5ea8-f07a-4a64-a9a0-6892ccefe8d7
+                        - cat_bureau_loan_1549600e-a0ce-436f-b132-a68f8406a328
                       fulfillment_ids:
                         - F1
                       tags:
@@ -558,8 +552,6 @@ steps:
                                 short_desc: Loan Amount upto form 50,00,000
                               value: "5000000"
                           display: true
-                      matched: true
-                      recommended: true
                       xinput:
                         head:
                           descriptor:
@@ -571,19 +563,19 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: form_2e8f251c-3ec0-4587-8a18-b15bad7a9fa2
+                          id: form_508d611b-4b9c-4ede-978d-ff975d0feaa4
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: bureau_personal_loan_4335ee3a-40e4-417d-b120-e4b62c70b981
+                    - id: bureau_personal_loan_5e5dc2b8-bc2e-4d95-bae5-f2cdc413ffcb
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Single Redirection
                       category_ids:
-                        - cat_personal_loan_e08d16a9-8ffc-4fb4-b6f6-a815d0f047f0
-                        - cat_bureau_loan_5207a77e-1a8e-4fc0-a4e5-45e94c5e5c44
+                        - cat_personal_loan_5b2f5ea8-f07a-4a64-a9a0-6892ccefe8d7
+                        - cat_bureau_loan_1549600e-a0ce-436f-b132-a68f8406a328
                       fulfillment_ids:
                         - F2
                       tags:
@@ -622,8 +614,6 @@ steps:
                                 short_desc: Loan Amount upto form 50,00,000
                               value: "5000000"
                           display: true
-                      matched: true
-                      recommended: true
                       xinput:
                         head:
                           descriptor:
@@ -635,22 +625,20 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: form_2e8f251c-3ec0-4587-8a18-b15bad7a9fa2
+                          id: form_508d611b-4b9c-4ede-978d-ff975d0feaa4
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
+                    - id: pre_qualifier_f315dc8d-f676-4deb-aeb8-4bb505f13e37
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                       category_ids:
-                        - cat_pre_qualifier_9e32dd40-b7af-4630-9de1-81715b50ba84
+                        - cat_pre_qualifier_82a3cfa6-017e-480a-a90d-fc29e373f8fb
                       fulfillment_ids:
                         - F3
-                      matched: true
-                      recommended: true
                   fulfillments:
                     - id: F1
                       type: LOAN
@@ -835,7 +823,7 @@ steps:
                 type: DEDUPE
                 customer:
                   person:
-                    dob: 1991-11-17T00:00:00.000Z
+                    dob: 1991-11-17
                     creds:
                       - id: RKUIS4815T
                         type: PAN
@@ -865,9 +853,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: select
-            timestamp: 2026-05-20T06:22:14.807Z
+            timestamp: 2026-05-21T12:24:34.698Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 03e15897-062b-4071-aab0-67d1edc8619e
+            message_id: 5c5c9231-5038-4ca8-8123-668fd3d91f86
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -882,15 +870,15 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
+                id: personal_loan_provider_f7b04f6b-1706-4189-8262-98a2a549c8eb
               items:
-                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
+                - id: pre_qualifier_f315dc8d-f676-4deb-aeb8-4bb505f13e37
               fulfillments:
                 - id: F3
                   type: DEDUPE
                   customer:
                     person:
-                      dob: 1991-11-17T00:00:00.000Z
+                      dob: 1991-11-17
                       creds:
                         - id: RKUIS4815T
                           type: PAN
@@ -956,14 +944,12 @@ steps:
                   - "101125"
                 fulfillment_ids:
                   - F3
-                matched: true
-                recommended: true
             fulfillments:
               - id: F3
                 type: DEDUPE
                 customer:
                   person:
-                    dob: 1991-11-17T00:00:00.000Z
+                    dob: 1991-11-17
                     creds:
                       - id: RKUIS4815T
                         type: PAN
@@ -1001,9 +987,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_select
-            timestamp: 2026-05-20T06:22:14.838Z
+            timestamp: 2026-05-21T12:24:34.715Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 03e15897-062b-4071-aab0-67d1edc8619e
+            message_id: 5c5c9231-5038-4ca8-8123-668fd3d91f86
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1018,7 +1004,7 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
+                id: personal_loan_provider_f7b04f6b-1706-4189-8262-98a2a549c8eb
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1027,22 +1013,20 @@ steps:
                   short_desc: ICICI Bank Ltd
                   long_desc: ICICI Bank Ltd, India.
               items:
-                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
+                - id: pre_qualifier_f315dc8d-f676-4deb-aeb8-4bb505f13e37
                   descriptor:
                     code: PRE_QUALIFIER
                     name: Pre Qualifier
                   category_ids:
-                    - cat_pre_qualifier_9e32dd40-b7af-4630-9de1-81715b50ba84
+                    - cat_pre_qualifier_82a3cfa6-017e-480a-a90d-fc29e373f8fb
                   fulfillment_ids:
                     - F3
-                  matched: true
-                  recommended: true
               fulfillments:
                 - id: F3
                   type: DEDUPE
                   customer:
                     person:
-                      dob: 1991-11-17T00:00:00.000Z
+                      dob: 1991-11-17
                       creds:
                         - id: RKUIS4815T
                           type: PAN
@@ -1150,9 +1134,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-05-20T06:22:14.861Z
+            timestamp: 2026-05-21T12:24:34.732Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 83900085-2b3c-4251-99df-b20008ba4d02
+            message_id: a5327a1a-ebc3-4bc6-bd62-dde24f42a9f4
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1167,7 +1151,7 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
+                id: personal_loan_provider_f7b04f6b-1706-4189-8262-98a2a549c8eb
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1176,13 +1160,13 @@ steps:
                   short_desc: ICICI Bank Ltd
                   long_desc: ICICI Bank Ltd, India.
               items:
-                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
+                - id: pre_qualifier_f315dc8d-f676-4deb-aeb8-4bb505f13e37
               fulfillments:
                 - id: F3
                   type: DEDUPE
                   customer:
                     person:
-                      dob: 1991-11-17T00:00:00.000Z
+                      dob: 1991-11-17
                       creds:
                         - id: RKUIS4815T
                           type: PAN
@@ -1278,9 +1262,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: confirm
-            timestamp: 2026-05-20T06:22:14.881Z
+            timestamp: 2026-05-21T12:24:34.774Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 4e4059ac-3c1e-486a-b557-d648efc74974
+            message_id: 8f1018f9-2a0c-4ec5-b926-f9ccc31aa922
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1295,9 +1279,9 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
+                id: personal_loan_provider_f7b04f6b-1706-4189-8262-98a2a549c8eb
               items:
-                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
+                - id: pre_qualifier_f315dc8d-f676-4deb-aeb8-4bb505f13e37
                   xinput:
                     form:
                       id: FO3
@@ -1703,9 +1687,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_confirm
-            timestamp: 2026-05-20T06:22:14.906Z
+            timestamp: 2026-05-21T12:24:34.795Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 4e4059ac-3c1e-486a-b557-d648efc74974
+            message_id: 8f1018f9-2a0c-4ec5-b926-f9ccc31aa922
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1719,9 +1703,9 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_1779258134910_DEFAULT
+              id: LOAN_ORDER_1779366274799_DEFAULT
               provider:
-                id: personal_loan_provider_d6ce500e-35d3-4d8f-951a-b15d545e5df5
+                id: personal_loan_provider_f7b04f6b-1706-4189-8262-98a2a549c8eb
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1789,16 +1773,14 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: pre_qualifier_3eb9e1b9-3a45-4a01-a6b8-837d6ef3c4ab
+                - id: pre_qualifier_f315dc8d-f676-4deb-aeb8-4bb505f13e37
                   descriptor:
                     code: PRE_QUALIFIER
                     name: Pre Qualifier
                   category_ids:
-                    - cat_pre_qualifier_9e32dd40-b7af-4630-9de1-81715b50ba84
+                    - cat_pre_qualifier_82a3cfa6-017e-480a-a90d-fc29e373f8fb
                   fulfillment_ids:
                     - F3
-                  matched: true
-                  recommended: true
               quote:
                 price:
                   currency: INR
@@ -1962,8 +1944,8 @@ steps:
                     long_desc: A Loan Agreement Document is a legal contract outlining terms...
                   mime_type: application/pdf
                   url: https://lender.com/loan/loan-agreement/O1.pdf
-              created_at: 2026-05-20T06:22:14.910Z
-              updated_at: 2026-05-20T06:22:14.910Z
+              created_at: 2026-05-21T12:24:34.799Z
+              updated_at: 2026-05-21T12:24:34.799Z
         type: request
         description: The /on_confirm API is the final response from the BPP confirming
           the successful processing of the loan application. It can include

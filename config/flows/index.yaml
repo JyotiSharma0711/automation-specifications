@@ -1,14 +1,5 @@
 flows:
   - type: playground
-    id: Credit_card
-    usecase: CREDIT CARD
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: Credit card
-    config:
-      $ref: ./CREDIT CARD/Credit_card.yaml
-  - type: playground
     id: Gold_Loan_Foreclosure_With_Account_Aggregator
     usecase: GOLD LOAN
     tags:
