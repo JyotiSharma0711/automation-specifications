@@ -11,7 +11,7 @@ attribute_set:
               usage: IND
               info: >-
                 It Explains the country code in accordance with the ISO 3166-1
-                and ISO 3166-2 formats.
+                and ISO 3166-2 formats. and
                  
                  The ISO 3166-1 standard includes 249 countries, with 193 sovereign states as UN members. Dependent territories in ISO 3166-1 are often detailed as subdivisions in ISO 3166-2 under their administering state.
               owner: BAP
