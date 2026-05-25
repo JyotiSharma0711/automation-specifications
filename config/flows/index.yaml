@@ -7,7 +7,7 @@ flows:
       tags:
           - WORKBENCH
           - REPORTABLE
-      description: The Personal Loan Offline flow represents a loan application process where initial digital steps are followed by offline verification or manual underwriting, with the lender asynchronously updating the application status through multiple on_status callbacks until the loan is finalized, rejected, or completed.
+      description: The Personal Loan Offline flow represents a loan application process where initial digital steps are followed by offline verification or manual underwriting, with the lender asynchronously updating the application status through multiple on_status callbacks until the loan is finalized, rejected, or completed
       config:
           $ref: ./PERSONAL LOAN/Personal_Loan_Offline.yaml
     - type: playground
