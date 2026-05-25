@@ -6,7 +6,7 @@ flows:
       - WORKBENCH
       - WITH_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan - Loan Foreclosure - Update and notification flow
+    description: This flow represents the end-to-end digital foreclosure process for gold loans, enabling borrowers to initiate full account settlement post-disbursal through automated payoff calculation and direct lender integration via the ONDC network. It supports dynamic form interactions and servicing tag updates to accurately compute and execute the exact closure amount while adhering to loan lifecycle rules and cool-off periods.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Foreclosure_With_Account_Aggregator.yaml
   - type: playground
@@ -16,7 +16,7 @@ flows:
       - WORKBENCH
       - WITHOUT_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan - Loan Foreclosure - Update and notification flow
+    description: This flow represents a gold loan foreclosure scenario where a borrower initiates full repayment of their loan before the scheduled tenure ends, triggering an automated settlement process that calculates and presents the exact payoff amount for immediate closure, all executed digitally within the ONDC network without involving an account aggregator.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Foreclosure_Without_Account_Aggregator.yaml
   - type: playground
@@ -26,7 +26,7 @@ flows:
       - WORKBENCH
       - WITH_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan - Loan Foreclosure - Update and notification flow
+    description: The Gold Loan Missed EMI flow enables borrowers to manually repay overdue EMIs when automatic deductions fail, by retrieving updated loan status, calculating pending dues including penalties, and confirming payment through the network.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Missed_EMI_With_Account_Aggregator.yaml
   - type: playground
@@ -36,7 +36,7 @@ flows:
       - WORKBENCH
       - WITHOUT_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan - Missed-EMI Payment - Update and notification flow
+    description: The flow represents a gold loan borrower's manual repayment of a missed EMI when automatic collection fails, involving lender-initiated calculation of dues, penalties, and fees, followed by borrower confirmation and status synchronization across the network.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Missed_EMI_Without_Account_Aggregator.yaml
   - type: playground
@@ -46,7 +46,7 @@ flows:
       - WORKBENCH
       - WITH_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan - Pre-Part Payment - Update and notification flow
+    description: The Gold Loan Pre-Part Payment flow enables borrowers to partially repay their outstanding gold loan principal ahead of schedule, with the lender validating the request, calculating revised repayment terms or charges, and providing a payment link; once completed, the lender updates the loan status to reflect the partial payment and adjusts the remaining schedule accordingly.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Pre_Part_Payment_With_Account_Aggregator.yaml
   - type: playground
@@ -56,7 +56,7 @@ flows:
       - WORKBENCH
       - WITHOUT_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan - Pre-Part Payment - Update and notification flow
+    description: The Gold Loan Pre-Part Payment flow enables borrowers to make partial repayments toward their outstanding gold loan principal outside the regular EMI cycle, with the lender validating the request, calculating revised repayment terms or charges, and providing a payment link or instructions through the protocol, culminating in an updated loan status reflecting the partial settlement.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Pre_Part_Payment_Without_Account_Aggregator.yaml
   - type: playground
@@ -66,7 +66,7 @@ flows:
       - WORKBENCH
       - WITH_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan without Account Aggregator - Selection and approval flow
+    description: The Gold Loan with Account Aggregator flow enables a borrower to discover and apply for a gold-backed loan by leveraging account aggregation for seamless KYC, bank verification, and mandate setup, while the lender provides real-time status updates through asynchronous callbacks until the loan is disbursed or closed.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_With_Account_Aggregator.yaml
   - type: playground
@@ -76,7 +76,7 @@ flows:
       - WORKBENCH
       - WITH_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan without Account Aggregator - Selection and approval flow
+    description: This flow represents the end-to-end process for a gold loan application where the borrower's account data is fetched via an Account Aggregator, followed by multi-stage form submissions, status checks, and final loan disbursal with real-time progress updates through asynchronous callbacks.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_With_Account_Aggregator_With_IGM_v-1_0_0_.yaml
   - type: playground
@@ -86,7 +86,7 @@ flows:
       - WORKBENCH
       - WITH_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan with Multiple offers(Bureau consent & AA)
+    description: The Gold Loan flow with multiple offers and account aggregator integration enables a borrower to discover, compare, and select gold-backed loan offers from multiple lenders, complete KYC and bank verification via the Account Aggregator framework, and proceed through underwriting, mandate setup, and loan disbursement while receiving real-time status updates. This end-to-end journey supports dedupe checks, offer selection, and formal loan confirmation with post-disbursement reporting.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_With_Multiple_offers_With_Account_Aggregator.yaml
   - type: playground
@@ -96,7 +96,7 @@ flows:
       - WORKBENCH
       - WITHOUT_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan without Account Aggregator - Selection and approval flow
+    description: The Gold Loan Without Account Aggregator flow represents a loan application process where the borrower discovers and selects a gold loan offer within the Buyer App, completes offline verification and documentation, and receives real-time status updates from the lender until the loan is approved, disbursed, or closed.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Without_Account_Aggregator.yaml
   - type: playground
@@ -106,7 +106,7 @@ flows:
       - WORKBENCH
       - WITHOUT_ACCOUNT_AGGREGATOR
       - REPORTABLE
-    description: Gold Loan without Account Aggregator - Selection and approval flow
+    description: The flow represents a gold loan origination process where the borrower applies for a loan without involving an account aggregator, proceeding through offline verification and manual checks, with the lender providing updates on the loan status and disbursement details via asynchronous callbacks until the loan is finalized or closed.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Without_Account_Aggregator_With_IGM_v-1_0_0_.yaml
   - type: playground
@@ -115,7 +115,7 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: Personal Loan - Dedupe Check
+    description: The Personal Loan Dedupe Check flow identifies and prevents duplicate loan applications by verifying borrower identifiers against existing records, ensuring efficient onboarding and avoiding redundant processing or unnecessary credit bureau inquiries.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Dedupe_Check.yaml
   - type: playground
@@ -124,7 +124,7 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: Personal Loan - Offline
+    description: The Personal Loan Offline flow represents a loan application process where initial digital steps are followed by offline verification or manual underwriting, with the lender asynchronously updating the application status through multiple on_status callbacks until the loan is finalized, rejected, or completed.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Offline.yaml
   - type: playground
@@ -133,7 +133,7 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: Personal Loan Foreclosure Offline
+    description: The Personal_Loan_Foreclosure_Offline flow represents the end-to-end process for manually initiating and managing the full repayment of a personal loan account through offline or non-digital channels, including borrower notification, manual verification, and lender-side processing until the loan is officially closed and marked as foreclosed in the core banking system.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Foreclosure_Offline.yaml
   - type: playground
@@ -142,7 +142,7 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: Personal Loan missed_emi_payment Offline
+    description: The "Personal_Loan_missed_emi_payment_Offline" flow represents a manual repayment process for overdue EMIs when automatic collections fail, allowing borrowers to settle pending dues, penalties, and charges through an offline reconciliation pathway while maintaining synchronized status updates across the network until the payment is confirmed and the loan account state is updated.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Missed_EMI_Offline.yaml
   - type: playground
@@ -151,7 +151,7 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: Personal Loan Pre Part Payment Offline
+    description: The Personal Loan Pre-Part Payment Offline flow enables borrowers to initiate and complete partial repayments of their outstanding loan principal outside the regular EMI cycle, with the lender validating the request, calculating revised repayment terms and charges, and providing a payment link or instructions via the protocol, culminating in an updated loan status upon successful payment execution.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Pre_Part_Payment_Offline.yaml
   - type: playground
@@ -160,6 +160,6 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: Personal Loan - Single Redirection
+    description: The Personal Loan Single Redirection flow enables a borrower to discover and select loan offers within the Buyer App, then redirects to the lender’s interface for KYC, bank verification, mandate setup, and agreement signing, with real-time status updates provided asynchronously via on_status calls throughout the loan processing lifecycle.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Single_Redirection.yaml
