@@ -3,21 +3,15 @@ meta:
 attribute_set:
     search:
         context:
-            domain: {}
-            action: {}
-            timestamp: {}
-            transaction_id:
+            action:
                 _description:
-                    required: false
-                    usage: 82f5e67f-1081-42c4-b553-ab4023d1e250
-                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
                     owner: BAP
                     type: string
-            message_id: {}
-            bap_id: {}
-            bap_uri: {}
-            ttl: {}
-            version: {}
             location:
                 country:
                     code:
@@ -28,9 +22,9 @@ attribute_set:
                             owner: BAP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -38,7 +32,18 @@ attribute_set:
                         owner: BAP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -51,6 +56,69 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BAP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: false
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+                    owner: BAP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -152,23 +220,15 @@ attribute_set:
                 type: object
     on_search:
         context:
-            domain: {}
-            action: {}
-            timestamp: {}
-            transaction_id:
+            action:
                 _description:
-                    required: false
-                    usage: 37495a18-da5d-42d2-ad74-db69a22618fe
-                    info: Unique session identifier that the BAP mints in search and the BPP echoes in on_search and all subsequent responses, allowing the BPP to correlate requests and send personalized recommendations or dynamic offerings without needing to know the BAP user's identity.
-                    owner: BPP
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
+                    owner: BAP
                     type: string
-            message_id: {}
-            bap_id: {}
-            bap_uri: {}
-            ttl: {}
-            bpp_id: {}
-            bpp_uri: {}
-            version: {}
             location:
                 country:
                     code:
@@ -179,9 +239,9 @@ attribute_set:
                             owner: BPP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -189,7 +249,18 @@ attribute_set:
                         owner: BPP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -202,6 +273,85 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BPP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: false
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: Unique session identifier that the BAP mints in search and the BPP echoes in on_search and all subsequent responses, allowing the BPP to correlate requests and send personalized recommendations or dynamic offerings without needing to know the BAP user's identity.
+                    owner: BPP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -677,23 +827,15 @@ attribute_set:
                 type: object
     select:
         context:
-            domain: {}
-            action: {}
-            timestamp: {}
-            transaction_id:
+            action:
                 _description:
-                    required: false
-                    usage: 37495a18-da5d-42d2-ad74-db69a22618fe
-                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
                     owner: BAP
                     type: string
-            message_id: {}
-            bap_id: {}
-            bap_uri: {}
-            ttl: {}
-            bpp_id: {}
-            bpp_uri: {}
-            version: {}
             location:
                 country:
                     code:
@@ -704,9 +846,9 @@ attribute_set:
                             owner: BAP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -714,7 +856,18 @@ attribute_set:
                         owner: BAP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -727,6 +880,85 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BAP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: false
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+                    owner: BAP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -893,23 +1125,15 @@ attribute_set:
                 type: object
     on_select:
         context:
-            domain: {}
-            action: {}
-            timestamp: {}
-            transaction_id:
+            action:
                 _description:
-                    required: false
-                    usage: 37495a18-da5d-42d2-ad74-db69a22618fe
-                    info: The BPP echoes back the transaction_id received in the select request to maintain the stable session identifier across all transaction steps from search through confirm, enabling personalized recommendations and dynamic offers.
-                    owner: BPP
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
+                    owner: BAP
                     type: string
-            message_id: {}
-            bap_id: {}
-            bap_uri: {}
-            ttl: {}
-            bpp_id: {}
-            bpp_uri: {}
-            version: {}
             location:
                 country:
                     code:
@@ -920,9 +1144,9 @@ attribute_set:
                             owner: BPP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -930,7 +1154,18 @@ attribute_set:
                         owner: BPP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -943,6 +1178,85 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BPP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: false
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: The BPP echoes back the transaction_id received in the select request to maintain the stable session identifier across all transaction steps from search through confirm, enabling personalized recommendations and dynamic offers.
+                    owner: BPP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -1490,23 +1804,15 @@ attribute_set:
                 type: object
     on_status:
         context:
-            domain: {}
-            action: {}
-            timestamp: {}
-            transaction_id:
+            action:
                 _description:
-                    required: false
-                    usage: 37495a18-da5d-42d2-ad74-db69a22618fe
-                    info: The BPP echoes this identifier in on_status responses to correlate the status update with the ongoing transaction minted by the BAP on search. The value persists across all API calls, enabling the BPP to maintain session context for personalized recommendations and dynamic offers.
-                    owner: BPP
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
+                    owner: BAP
                     type: string
-            message_id: {}
-            bap_id: {}
-            bap_uri: {}
-            ttl: {}
-            bpp_id: {}
-            bpp_uri: {}
-            version: {}
             location:
                 country:
                     code:
@@ -1517,9 +1823,9 @@ attribute_set:
                             owner: BPP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -1527,7 +1833,18 @@ attribute_set:
                         owner: BPP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -1540,6 +1857,85 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BPP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: false
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: The BPP echoes this identifier in on_status responses to correlate the status update with the ongoing transaction minted by the BAP on search. The value persists across all API calls, enabling the BPP to maintain session context for personalized recommendations and dynamic offers.
+                    owner: BPP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -1904,7 +2300,7 @@ attribute_set:
                             dob:
                                 _description:
                                     required: false
-                                    usage: 1991-11-17T00:00:00.000Z
+                                    usage: 1991-11-17T00:00:00Z
                                     info: Customer date of birth provided by the BAP when selecting a fulfillment option; this value is stored within the selected fulfillment's customer record.
                                     owner: BPP
                                     type: date-time
@@ -2121,7 +2517,7 @@ attribute_set:
                         timestamp:
                             _description:
                                 required: false
-                                usage: 2023-05-25T05:23:03.443Z
+                                usage: 2023-05-25T05:23:03.443000Z
                                 info: The BPP records the payment timestamp in on_status to indicate when each payment was recorded; this value is persisted and referenced in subsequent order updates and fulfillment tracking.
                                 owner: BPP
                                 type: date-time
@@ -2232,14 +2628,14 @@ attribute_set:
                 created_at:
                     _description:
                         required: false
-                        usage: 2023-05-25T05:23:03.443Z
+                        usage: 2023-05-25T05:23:03.443000Z
                         info: The BPP returns the order creation timestamp from session storage to maintain consistency across status updates; this field is included only when the response contains an order object.
                         owner: BPP
                         type: date-time
                 updated_at:
                     _description:
                         required: false
-                        usage: 2023-05-25T05:23:03.443Z
+                        usage: 2023-05-25T05:23:03.443000Z
                         info: The BPP sets this to the current timestamp whenever reporting order status; the value is saved in session and reused by later status checks.
                         owner: BPP
                         type: date-time
@@ -2257,23 +2653,15 @@ attribute_set:
                 type: object
     confirm:
         context:
-            domain: {}
-            action: {}
-            timestamp: {}
-            transaction_id:
+            action:
                 _description:
-                    required: false
-                    usage: 37495a18-da5d-42d2-ad74-db69a22618fe
-                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
                     owner: BAP
                     type: string
-            message_id: {}
-            bap_id: {}
-            bap_uri: {}
-            ttl: {}
-            bpp_id: {}
-            bpp_uri: {}
-            version: {}
             location:
                 country:
                     code:
@@ -2284,9 +2672,9 @@ attribute_set:
                             owner: BAP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -2294,7 +2682,18 @@ attribute_set:
                         owner: BAP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -2307,6 +2706,85 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BAP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: false
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+                    owner: BAP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -2377,7 +2855,7 @@ attribute_set:
                         timestamp:
                             _description:
                                 required: false
-                                usage: 2023-05-25T05:23:03.443Z
+                                usage: 2023-05-25T05:23:03.443000Z
                                 info: The BPP records the payment timestamp in on_status to indicate when each payment was recorded; this value is persisted and referenced in subsequent order updates and fulfillment tracking.
                                 owner: BAP
                                 type: date-time
@@ -2437,23 +2915,15 @@ attribute_set:
                 type: object
     on_confirm:
         context:
-            domain: {}
-            action: {}
-            timestamp: {}
-            transaction_id:
+            action:
                 _description:
-                    required: false
-                    usage: 37495a18-da5d-42d2-ad74-db69a22618fe
-                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
-                    owner: BPP
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
+                    owner: BAP
                     type: string
-            message_id: {}
-            bap_id: {}
-            bap_uri: {}
-            ttl: {}
-            bpp_id: {}
-            bpp_uri: {}
-            version: {}
             location:
                 country:
                     code:
@@ -2464,9 +2934,9 @@ attribute_set:
                             owner: BPP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -2474,7 +2944,18 @@ attribute_set:
                         owner: BPP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -2487,6 +2968,85 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BPP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: false
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+                    owner: BPP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -3111,7 +3671,7 @@ attribute_set:
                         timestamp:
                             _description:
                                 required: false
-                                usage: 2023-05-25T05:23:03.443Z
+                                usage: 2023-05-25T05:23:03.443000Z
                                 info: The BPP records the payment timestamp in on_status to indicate when each payment was recorded; this value is persisted and referenced in subsequent order updates and fulfillment tracking.
                                 owner: BPP
                                 type: date-time
@@ -3195,14 +3755,14 @@ attribute_set:
                 created_at:
                     _description:
                         required: false
-                        usage: 2023-05-25T05:23:03.443Z
+                        usage: 2023-05-25T05:23:03.443000Z
                         info: The BPP returns the order creation timestamp from session storage to maintain consistency across status updates; this field is included only when the response contains an order object.
                         owner: BPP
                         type: date-time
                 updated_at:
                     _description:
                         required: false
-                        usage: 2023-05-25T05:23:03.443Z
+                        usage: 2023-05-25T05:23:03.443000Z
                         info: The BPP sets this to the current timestamp whenever reporting order status; the value is saved in session and reused by later status checks.
                         owner: BPP
                         type: date-time
@@ -3383,23 +3943,15 @@ attribute_set:
                 type: string
     status:
         context:
-            domain: {}
-            action: {}
-            timestamp: {}
-            transaction_id:
+            action:
                 _description:
-                    required: false
-                    usage: 82f5e67f-1081-42c4-b553-ab4023d1e250
-                    info: The BPP echoes this identifier in on_status responses to correlate the status update with the ongoing transaction minted by the BAP on search. The value persists across all API calls, enabling the BPP to maintain session context for personalized recommendations and dynamic offers.
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
                     owner: BAP
                     type: string
-            message_id: {}
-            bap_id: {}
-            bap_uri: {}
-            ttl: {}
-            bpp_id: {}
-            bpp_uri: {}
-            version: {}
             location:
                 country:
                     code:
@@ -3410,9 +3962,9 @@ attribute_set:
                             owner: BAP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -3420,7 +3972,18 @@ attribute_set:
                         owner: BAP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -3433,6 +3996,85 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BAP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: false
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: The BPP echoes this identifier in on_status responses to correlate the status update with the ongoing transaction minted by the BAP on search. The value persists across all API calls, enabling the BPP to maintain session context for personalized recommendations and dynamic offers.
+                    owner: BAP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -3449,7 +4091,15 @@ attribute_set:
                 type: object
     update:
         context:
-            domain: {}
+            action:
+                _description:
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
+                    owner: BAP
+                    type: string
             location:
                 country:
                     code:
@@ -3460,9 +4110,9 @@ attribute_set:
                             owner: BAP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -3470,7 +4120,18 @@ attribute_set:
                         owner: BAP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -3483,22 +4144,85 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BAP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
             transaction_id:
                 _description:
                     required: false
-                    usage: 37495a18-da5d-42d2-ad74-db69a22618fe
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
                     info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
                     owner: BAP
                     type: string
-            message_id: {}
-            action: {}
-            timestamp: {}
-            version: {}
-            bap_uri: {}
-            bap_id: {}
-            ttl: {}
-            bpp_id: {}
-            bpp_uri: {}
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -3553,23 +4277,15 @@ attribute_set:
                 type: object
     on_update:
         context:
-            domain: {}
-            action: {}
-            timestamp: {}
-            transaction_id:
+            action:
                 _description:
-                    required: false
-                    usage: 37495a18-da5d-42d2-ad74-db69a22618fe
-                    info: The BPP echoes this identifier in on_status responses to correlate the status update with the ongoing transaction minted by the BAP on search. The value persists across all API calls, enabling the BPP to maintain session context for personalized recommendations and dynamic offers.
-                    owner: BPP
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
+                    owner: BAP
                     type: string
-            message_id: {}
-            bap_id: {}
-            bap_uri: {}
-            ttl: {}
-            bpp_id: {}
-            bpp_uri: {}
-            version: {}
             location:
                 country:
                     code:
@@ -3580,9 +4296,9 @@ attribute_set:
                             owner: BPP
                             type: enum
                             enums:
-                                - code: IND
-                                  description: Represents the country
-                                  reference: <PR/Issue/Discussion Links md format text>
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -3590,7 +4306,18 @@ attribute_set:
                         owner: BPP
                         type: object
                 city:
-                    code: {}
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
                     _description:
                         required: false
                         usage: ""
@@ -3603,6 +4330,85 @@ attribute_set:
                     info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
                     owner: BPP
                     type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: false
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: The BPP echoes this identifier in on_status responses to correlate the status update with the ongoing transaction minted by the BAP on search. The value persists across all API calls, enabling the BPP to maintain session context for personalized recommendations and dynamic offers.
+                    owner: BPP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
             _description:
                 required: false
                 usage: ""
@@ -4147,7 +4953,7 @@ attribute_set:
                         timestamp:
                             _description:
                                 required: false
-                                usage: 2023-05-25T05:23:03.443Z
+                                usage: 2023-05-25T05:23:03.443000Z
                                 info: The BPP records the payment timestamp in on_status to indicate when each payment was recorded; this value is persisted and referenced in subsequent order updates and fulfillment tracking.
                                 owner: BPP
                                 type: date-time
@@ -4242,14 +5048,14 @@ attribute_set:
                 created_at:
                     _description:
                         required: false
-                        usage: 2023-05-25T05:23:03.443Z
+                        usage: 2023-05-25T05:23:03.443000Z
                         info: The BPP returns the order creation timestamp from session storage to maintain consistency across status updates; this field is included only when the response contains an order object.
                         owner: BPP
                         type: date-time
                 updated_at:
                     _description:
                         required: false
-                        usage: 2023-05-25T05:23:03.443Z
+                        usage: 2023-05-25T05:23:03.443000Z
                         info: The BPP sets this to the current timestamp whenever reporting order status; the value is saved in session and reused by later status checks.
                         owner: BPP
                         type: date-time
@@ -4272,3 +5078,1550 @@ attribute_set:
                 info: (empty)
                 owner: BPP
                 type: object
+    init:
+        context:
+            action:
+                _description:
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
+                    owner: BAP
+                    type: string
+            location:
+                country:
+                    code:
+                        _description:
+                            required: true
+                            usage: IND
+                            info: Country code in ISO 3166-1 or ISO 3166-2 format that the BAP provides to define the geographic scope for the search request.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
+                    _description:
+                        required: true
+                        usage: ""
+                        info: The BAP specifies the country in the location context of a search request to define the geographical jurisdiction for service discovery.
+                        owner: BAP
+                        type: object
+                city:
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
+                    _description:
+                        required: true
+                        usage: ""
+                        info: The BAP specifies the city location in the search request to indicate where the transaction is intended to be completed.
+                        owner: BAP
+                        type: object
+                _description:
+                    required: true
+                    usage: ""
+                    info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
+                    owner: BAP
+                    type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: true
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+                    owner: BAP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            _description:
+                required: true
+                usage: ""
+                info: The BAP mints context in init with transaction identifiers, platform addressing, demographic information, and protocol version required for the BPP to identify and correlate the request.
+                owner: BAP
+                type: object
+        message:
+            order:
+                provider:
+                    id:
+                        _description:
+                            required: true
+                            usage: PROVIDER_ID
+                            info: The BAP provides the lending institution identifier, either from the previously selected provider (captured in the prior select action) or a newly generated UUID if no prior selection exists. This value anchors the order and persists through all subsequent transaction steps.
+                            owner: BAP
+                            type: string
+                    _description:
+                        required: true
+                        usage: ""
+                        info: The BPP echoes the selected provider's details in response to the BAP's select request, persisting the lender identity in the session so subsequent steps reference the same provider.
+                        owner: BAP
+                        type: object
+                items:
+                    id:
+                        _description:
+                            required: true
+                            usage: 66b7b9bad166-4a3f-ada6-ca063dc9d321
+                            info: This refers to the unique id of the item that are purchased or availed in that order.
+                            owner: BPP
+                            type: string
+                    xinput:
+                        form_response:
+                            status:
+                                _description:
+                                    required: false
+                                    usage: SUCCESS
+                                    info: This refers to the submission status of the additional information form.
+                                    owner: BPP
+                                    type: enum
+                                    enums:
+                                      - code: PENDING
+                                        description: Describes the current state of the request.
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: APPROVED
+                                        description: Describes the current state of the request.
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: REJECTED
+                                        description: Describes the current state of the request.
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: EXPIRED
+                                        description: Describes the current state of the request.
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: SUCCESS
+                                        description: When form gets submitted successfully
+                                        reference: <PR/Issue/Discussion Links md format text
+                            submission_id:
+                                _description:
+                                    required: false
+                                    usage: 73ef9742-c17d-4c4e-92e3-b057960863af
+                                    info: This refers to the id of the submitted form that a borrower gets after successful submission.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: The BPP uses form_response to return the form submission metadata within the selected item; the BAP persists this in session as part of selected_items for reuse in confirm and downstream steps.
+                                owner: BAP
+                                type: object
+                        form:
+                            id:
+                                _description:
+                                    required: false
+                                    usage: F02
+                                    info: This refers to the identifier of the generated form.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: The BPP returns this form container in on_select with a unique form identifier; it persists in the session to be reused across subsequent steps.
+                                owner: BAP
+                                type: object
+                        _description:
+                            required: true
+                            usage: ""
+                            info: Container for additional customer input required for this loan product, returned by the BPP in on_select and persisted in the transaction session for downstream steps.
+                            owner: BAP
+                            type: object
+                    _description:
+                        required: true
+                        usage: ""
+                        info: BPP returns the items array in on_select, which is persisted in session and anchored for reuse across init, confirm, and subsequent steps; validation requires a non-empty array.
+                        owner: BAP
+                        type: object
+                payments:
+                    id:
+                        _description:
+                            required: false
+                            usage: |+
+                                3609ff0b-7192-4ec2-91c0-36b07eb445cd
+
+                            info: It is a unique id for the payment term that can be referenced at either an item or order level within a catalog.
+                            owner: BPP
+                            type: string
+                    type:
+                        _description:
+                            required: true
+                            usage: ON-ORDER
+                            info: |-
+                                This defines the type of the payment. In this case it is "On-ORDER".
+                                 It can be: PRE-ORDER, PRE-FULFILLMENT, ON-FULFILLMENT, POST-FULFILLMENT, ON-ORDER, PRE_ORDER, PRE_FULFILLMENT, ON_FULFILLMENT, POST_FULFILLMENT, ON_ORDER.
+                            owner: BPP
+                            type: string
+                    status:
+                        _description:
+                            required: true
+                            usage: NOT-PAID
+                            info: |-
+                                This attribute defines the status of the payment.
+                                 It can be: PAID, NOT-PAID, DELAYED, DEFERRED.
+                            owner: BPP
+                            type: string
+                    collected_by:
+                        _description:
+                            required: true
+                            usage: BPP
+                            info: This defines the payment collection mode. This field indicates the payment collector. If set to 'bap,' BAP collects first and settles with BPP. If BPP agrees, no payment link is sent. If set to 'bpp,' BPP collects payment directly.
+                            owner: BPP
+                            type: enum
+                            enums:
+                              - code: BPP
+                                description: When seller app is collecting the payment
+                                reference: <PR/Issue/Discussion Links md format text
+                              - code: BAP
+                                description: When buyer app is collecting the payment
+                                reference: <PR/Issue/Discussion Links md format text
+                    params:
+                        bank_code:
+                            _description:
+                                required: false
+                                usage: SBION123
+                                info: It indicates the bank code.
+                                owner: BPP
+                                type: string
+                        bank_account_number:
+                            _description:
+                                required: false
+                                usage: xxxxxxxxxxxxxx
+                                info: It defines the the bank account number.
+                                owner: BPP
+                                type: string
+                        virtual_payment_address:
+                            _description:
+                                required: false
+                                usage: 9988199772@okici
+                                info: Explains the virtual payment address.
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: During init, the BAP supplies payment parameters in this container. These values are anchored in the session and reused across subsequent transaction steps.
+                            owner: BAP
+                            type: object
+                    _description:
+                        required: true
+                        usage: ""
+                        info: Array of settlement terms the BAP sends on init describing how the order will be paid; must be non-empty and persists with the order through subsequent steps.
+                        owner: BAP
+                        type: object
+                    tags:
+                        descriptor:
+                            code:
+                                _description:
+                                    required: true
+                                    usage: BUYER_FINDER_FEES
+                                    info: The BAP specifies a code in this descriptor to classify the payment term or fee type during init; the BPP echoes the code in on_init, and the payments array persists across the transaction to govern settlement and fee terms.
+                                    owner: BAP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: <no-enough-data>
+                                owner: BAP
+                                type: object
+                        display:
+                            _description:
+                                required: true
+                                usage: "false"
+                                info: The BAP sets this boolean during init; it persists in the payment record and is consumed across subsequent steps.
+                                owner: BAP
+                                type: boolean
+                        list:
+                            descriptor:
+                                code:
+                                    _description:
+                                        required: true
+                                        usage: BUYER_FINDER_FEES_TYPE
+                                        info: Code that identifies the category of each payment component in the order's payment structure, such as buyer fees, settlement amounts, or delay interest. These codes are included in the init request and persist within the order records across subsequent transaction steps for consistent reference.
+                                        owner: BAP
+                                        type: string
+                                _description:
+                                    required: true
+                                    usage: ""
+                                    info: The BAP provides payment tag descriptors during init; this metadata persists as part of the order's payment specification and flows through all subsequent steps.
+                                    owner: BAP
+                                    type: object
+                            value:
+                                _description:
+                                    required: true
+                                    usage: percent-annualized
+                                    info: Payment metadata the BAP provides on init to characterize loan terms (such as interest rate basis or settlement mode); it persists in the order session for reuse across subsequent steps.
+                                    owner: BAP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: BAP initializes these payment tags during init to attach metadata; the tags persist with the order and remain accessible through subsequent transaction steps.
+                                owner: BAP
+                                type: object
+                        _description:
+                            required: true
+                            usage: ""
+                            info: BAP furnishes tags in init to characterize the selected payment method; BPP echoes them in on_init and they persist through the order for subsequent steps.
+                            owner: BAP
+                            type: object
+                _description:
+                    required: true
+                    usage: ""
+                    info: The BAP populates the complete legal purchase order here, containing all contract details between buyer and seller, including the required provider identification that is validated at init.
+                    owner: BAP
+                    type: object
+            _description:
+                required: true
+                usage: ""
+                info: (empty)
+                owner: BAP
+                type: object
+        _description:
+            required: false
+            usage: --
+            info: <placeholder description>
+            owner: BAP
+            type: object
+    on_init:
+        context:
+            action:
+                _description:
+                    required: true
+                    usage: search
+                    info: |+
+                        Describes the Beckn protocol method being called by the sender and executed at the receiver. 
+
+                    owner: BAP
+                    type: string
+            location:
+                country:
+                    code:
+                        _description:
+                            required: true
+                            usage: IND
+                            info: Country code in ISO 3166-1 or ISO 3166-2 format that the BAP provides to define the geographic scope for the search request.
+                            owner: BPP
+                            type: enum
+                            enums:
+                              - code: IND
+                                description: Represents the country
+                                reference: <PR/Issue/Discussion Links md format text>
+                    _description:
+                        required: true
+                        usage: ""
+                        info: The BAP specifies the country in the location context of a search request to define the geographical jurisdiction for service discovery.
+                        owner: BPP
+                        type: object
+                city:
+                    code:
+                        _description:
+                            required: true
+                            usage: "*"
+                            info: |
+                                This attribute describes the city code relevant to the location or the area in which seller is situated. In case of '*' it will fetch all the cities where service is being provided.
+                            owner: BAP
+                            type: enum
+                            enums:
+                              - code: std:080
+                                description: Represent the city code that identifies the cities. In case of '*' it will fetch all the cities where service is being provided.
+                                reference: <PR/Issue/Discussion Links md format text>
+                    _description:
+                        required: true
+                        usage: ""
+                        info: The BAP specifies the city location in the search request to indicate where the transaction is intended to be completed.
+                        owner: BPP
+                        type: object
+                _description:
+                    required: true
+                    usage: ""
+                    info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
+                    owner: BPP
+                    type: object
+            domain:
+                _description:
+                    required: true
+                    usage: ONDC:FIS12
+                    info: This is the domain code relevant to the context of this transaction. Here, it is "ONDC:FIS12".
+                    owner: BAP
+                    type: enum
+                    enums:
+                      - code: ONDC:FIS12
+                        description: Updated domain namespace
+                        reference: <PR/Issue/Discussion Links md format text>
+            timestamp:
+                _description:
+                    required: true
+                    usage: 2023-03-23T04:41:16
+                    info: Describes time of request generation in RFC3339 format. This specifies the time when request is being made.
+                    owner: BAP
+                    type: string
+            bap_id:
+                _description:
+                    required: true
+                    usage: bap.credit.becknprotocol.io
+                    info: This the subscriber ID of the BAP. It is the unique id for the buyer app.
+                    owner: BAP
+                    type: string
+            transaction_id:
+                _description:
+                    required: true
+                    usage: e182db8d-997e-4d45-a29c-4827ae8943d5
+                    info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+                    owner: BPP
+                    type: string
+            message_id:
+                _description:
+                    required: true
+                    usage: 13ba8018f176
+                    info: |-
+                        This is a mandatory and unique identifier that persists consistently throughout a request/callback cycle.
+                         This value can be utilized to filter out and ignore duplicate messages coming from the BPP.
+                    owner: BAP
+                    type: string
+            version:
+                _description:
+                    required: true
+                    usage: 2.0.3
+                    info: It explains the transaction protocol version utilized by the sender.
+                    owner: BAP
+                    type: integer
+            bap_uri:
+                _description:
+                    required: true
+                    usage: https://bap.credit.becknprotocol.io/
+                    info: This is the subscriber URL of the Buyer App (BAP) is the endpoint that accepts callbacks from Seller App (BPPs).
+                    owner: BAP
+                    type: string
+            ttl:
+                _description:
+                    required: true
+                    usage: PT30S
+                    info: |
+                        Specifies the validity duration of this message in ISO8601 format, after timestamp.
+                    owner: BAP
+                    type: string
+            bpp_uri:
+                _description:
+                    required: true
+                    usage: https://bpp.credit.becknprotocol.org
+                    info: |2-
+
+                        The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            bpp_id:
+                _description:
+                    required: true
+                    usage: bpp.credit.becknprotocol.org
+                    info: The subscriber ID of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+                    owner: BPP
+                    type: string
+            _description:
+                required: true
+                usage: ""
+                info: The BAP sets context on search with demographic, addressing, protocol, and transaction information that uniquely identifies and frames this transaction for all subsequent interactions.
+                owner: BPP
+                type: object
+        message:
+            order:
+                provider:
+                    id:
+                        _description:
+                            required: true
+                            usage: PROVIDER_ID
+                            info: The BPP includes the provider ID in the status response to identify which lender is reporting the fulfillment update, reusing the value established during provider selection and persisted across the transaction.
+                            owner: BPP
+                            type: string
+                    descriptor:
+                        name:
+                            _description:
+                                required: true
+                                usage: ICICI Bank
+                                info: It refers to the financial institution that is involved in providing the loan.
+                                owner: BPP
+                                type: string
+                        short_desc:
+                            _description:
+                                required: false
+                                usage: ICICI Bank Ltd
+                                info: This is the concised description of the loan provider.
+                                owner: BPP
+                                type: string
+                        long_desc:
+                            _description:
+                                required: false
+                                usage: ICICI Bank Ltd, India
+                                info: This is the detailed description of the loan provider.
+                                owner: BPP
+                                type: string
+                        images:
+                            url:
+                                _description:
+                                    required: false
+                                    usage: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
+                                    info: This attribute defines the image url of the loan provider.
+                                    owner: BPP
+                                    type: string
+                            size_type:
+                                _description:
+                                    required: false
+                                    usage: sm
+                                    info: It defines the image size, and the network policy can determine the default dimensions for each type.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: The BPP includes the provider's images in the descriptor as part of on_select to communicate the selected provider's branding.
+                                owner: BPP
+                                type: object
+                        _description:
+                            required: true
+                            usage: ""
+                            info: In on_status, the BPP echoes the selected lender's descriptor to identify which provider's status is being reported; this descriptor is maintained in session for use in subsequent transaction steps.
+                            owner: BPP
+                            type: object
+                    tags:
+                        CONTACT_INFO:
+                            _description:
+                                required: true
+                                usage: false
+                                info: Describes the contact info of GRO.
+                                owner: BPP
+                                type: string
+                        LSP_INFO:
+                            _description:
+                                required: true
+                                usage: false
+                                info: Describes the lsp info
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: <no-enough-data>
+                            owner: BPP
+                            type: object
+                        descriptor:
+                            code:
+                                _description:
+                                    required: true
+                                    usage: CONTACT_INFO
+                                    info: Descriptor code categorizing the type of provider tag information. The BAP identifies the provider on select, the BPP echoes the provider with this descriptor code in on_select, and the code is anchored in the session context and reused in subsequent transaction steps.
+                                    owner: BPP
+                                    type: string
+                            name:
+                                _description:
+                                    required: true
+                                    usage: Contact Info
+                                    info: The BPP returns the tag descriptor name from the selected provider; this value persists as selected_provider across the transaction and is reused by the BAP in subsequent steps.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: <no-enough-data>
+                                owner: BPP
+                                type: object
+                        list:
+                            descriptor:
+                                code:
+                                    _description:
+                                        required: true
+                                        usage: GRO_NAME
+                                        info: <no-enough-data>
+                                        owner: BPP
+                                        type: string
+                                name:
+                                    _description:
+                                        required: true
+                                        usage: Gro name
+                                        info: Descriptor label identifying the type of provider contact information in each tag; the selected provider object persists in session for reuse in subsequent steps.
+                                        owner: BPP
+                                        type: string
+                                _description:
+                                    required: true
+                                    usage: ""
+                                    info: Metadata for each provider tag returned by the BPP in on_select; the provider object including these tag descriptors is persisted in session as selected_provider and used by subsequent steps.
+                                    owner: BPP
+                                    type: object
+                            value:
+                                _description:
+                                    required: true
+                                    usage: 1860 266 7766
+                                    info: Contact detail or identifier for the lender selected during purchase. BPP includes this in on_status to indicate which lender is servicing the order.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: The provider's tags are included in the on_select response and anchored in the transaction session, where they are consumed across subsequent steps.
+                                owner: BPP
+                                type: object
+                    _description:
+                        required: true
+                        usage: ""
+                        info: The BPP echoes the selected provider's details in response to the BAP's select request, persisting the lender identity in the session so subsequent steps reference the same provider.
+                        owner: BPP
+                        type: object
+                    locations:
+                        id:
+                            _description:
+                                required: true
+                                usage: L2
+                                info: The BPP returns the ID of each location within the selected provider in on_select, confirming which branch or fulfillment center will service the order. This location ID persists with the provider object and is carried forward through subsequent steps of the transaction.
+                                owner: BPP
+                                type: string
+                        gps:
+                            _description:
+                                required: true
+                                usage: 28.584909, 77.134029
+                                info: GPS coordinates of the selected provider's location. The BPP returns this in on_select as part of the confirmed provider specification and it persists in the session for reference across subsequent order steps.
+                                owner: BPP
+                                type: string
+                        descriptor:
+                            name:
+                                _description:
+                                    required: true
+                                    usage: Mumbai East
+                                    info: BPP returns the display name of the selected provider's location in on_select; this value is persisted in session and referenced in subsequent workflow steps.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: The BPP returns this container in on_select with descriptive information about the selected provider location, which persists in session and is referenced in subsequent steps.
+                                owner: BPP
+                                type: object
+                        address:
+                            _description:
+                                required: true
+                                usage: 162 Dadar, Mumbai, Maharashtra
+                                info: The physical address of the lender's location branch for the provider the BAP selected; the BPP includes this in on_select and it persists in the session for later workflow steps.
+                                owner: BPP
+                                type: string
+                        area_code:
+                            _description:
+                                required: true
+                                usage: "400001"
+                                info: BPP includes the area code of the selected provider's location in the on_select response; this value persists in the session for reference by subsequent steps.
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: The BPP includes branch locations of the selected provider in this response, persisting them for use in subsequent transaction steps.
+                            owner: BPP
+                            type: object
+                items:
+                    id:
+                        _description:
+                            required: false
+                            usage: 66b7b9bad166-4a3f-ada6-ca063dc9d321
+                            info: This refers to the unique id of the item that are purchased or availed in that order.
+                            owner: BPP
+                            type: string
+                    descriptor:
+                        name:
+                            _description:
+                                required: false
+                                usage: Gold Loan
+                                info: It refers to the explanation of the type of the loan.
+                                owner: BPP
+                                type: string
+                        short_desc:
+                            _description:
+                                required: false
+                                usage: ICICI Bank Ltd
+                                info: This is the concised description of the loan provider
+                                owner: BPP
+                                type: string
+                        long_desc:
+                            _description:
+                                required: false
+                                usage: ICICI Bank Ltd, India
+                                info: This is the detailed description of the loan provider.
+                                owner: BPP
+                                type: string
+                        images:
+                            url:
+                                _description:
+                                    required: false
+                                    usage: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
+                                    info: This attribute defines the image url of the loan provider.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: false
+                                usage: --
+                                info: <placeholder description>
+                                owner: BAP
+                                type: object
+                        code:
+                            _description:
+                                required: true
+                                usage: GOLD_LOAN
+                                info: It describes the used code for the item in process whether it is the personal loan or invoice based loan.
+                                owner: BPP
+                                type: enum
+                                enums:
+                                  - code: PERSONAL_LOAN
+                                    description: Describes an unsecured credit provided by financial institutions based on criteria like employment history, repayment capacity, income level, profession and credit history
+                                    reference: <PR/Issue/Discussion Links md format text
+                        _description:
+                            required: true
+                            usage: ""
+                            info: The BPP returns the descriptor of each selected item in the order status, echoing the attributes and identifiers from the session's selected_items record for BAP reconciliation during order fulfillment.
+                            owner: BPP
+                            type: object
+                    price:
+                        value:
+                            _description:
+                                required: true
+                                usage: "232800"
+                                info: BAP requests the loan amount in select; BPP confirms and echoes it in on_select. The value persists in session as selected_items and is replayed in init, confirm, and subsequent steps.
+                                owner: BPP
+                                type: string
+                        currency:
+                            _description:
+                                required: true
+                                usage: INR
+                                info: This refers to the value of used currency of the price value.
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: The price container carries the item's pricing details that the BAP selects in select and the BPP echoes in on_select, with values persisted in session for reuse across subsequent order steps.
+                            owner: BPP
+                            type: object
+                    xinput:
+                        head:
+                            descriptor:
+                                name:
+                                    _description:
+                                        required: false
+                                        usage: Customer Information
+                                        info: This describes the heading of the form where we are taking additioal information from the customer to purchase / avail this item.
+                                        owner: BPP
+                                        type: string
+                                _description:
+                                    required: false
+                                    usage: --
+                                    info: Describes the descriptor details
+                                    owner: BAP
+                                    type: object
+                            index:
+                                min:
+                                    _description:
+                                        required: false
+                                        usage: false
+                                        info: This refers to the minimum integer value of the xinput header which describes the additional information required from the customer to purchase/avail the item.
+                                        owner: BPP
+                                        type: number
+                                max:
+                                    _description:
+                                        required: false
+                                        usage: 1
+                                        info: This refers to the maximum integer value of the xinput header which describes the additional information required from the customer to purchase/avail the item.
+                                        owner: BPP
+                                        type: number
+                                cur:
+                                    _description:
+                                        required: false
+                                        usage: 1
+                                        info: This refers to the current integer value of the xinput header which describes the additional information required from the customer to purchase/avail the item.
+                                        owner: BPP
+                                        type: number
+                                _description:
+                                    required: false
+                                    usage: --
+                                    info: <placeholder description>
+                                    owner: BAP
+                                    type: object
+                            headings:
+                                _description:
+                                    required: false
+                                    usage: Personal Information
+                                    info: It describes the heading of the circulated form for the details
+                                    owner: BPP
+                                    type: enum
+                                    enums:
+                                      - code: KYC
+                                        description: Describes the form heading as KYC
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: KYC_OFFLINE
+                                        description: Describes the form heading as KYC_OFFLINE
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: JOURNEY_OFFLINE
+                                        description: Describes the form heading as JOURNEY_OFFLINE
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: SET_LOAN_AMOUNT
+                                        description: Describes the form heading as JOURNEY_OFFLINE
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: PERSONAL_INFORMATION
+                                        description: Describes the form heading as PERSONAL_INFORMATION
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: ACCOUNT_INFORMATION
+                                        description: Describes the form heading as ACCOUNT_INFORMATION
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: EMANDATE
+                                        description: Describes the form heading as EMANDATE
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: LOAN_AGREEMENT
+                                        description: Describes the form heading as LOAN_AGREEMENT
+                                        reference: <PR/Issue/Discussion Links md format text
+                            _description:
+                                required: false
+                                usage: --
+                                info: Describes the form's head details
+                                owner: BAP
+                                type: object
+                        form:
+                            url:
+                                _description:
+                                    required: false
+                                    usage: https://6vs8xnx5i7.icicibank.co.in/loans-kyc/xinput?formid=FO2
+                                    info: This refers to the url of the form where additional requirements to buy from the user is taken.
+                                    owner: BPP
+                                    type: string
+                            mime_type:
+                                _description:
+                                    required: false
+                                    usage: application/html
+                                    info: This describes the type of the form generated.
+                                    owner: BPP
+                                    type: string
+                            resubmit:
+                                _description:
+                                    required: false
+                                    usage: false
+                                    info: After reopening the form, this attribute keeps in check whether the form has been resubmitted or not
+                                    owner: BPP
+                                    type: boolean
+                            id:
+                                _description:
+                                    required: false
+                                    usage: F01
+                                    info: It describes the unique id of the generated form.
+                                    owner: BPP
+                                    type: string
+                            multiple_sumbissions:
+                                _description:
+                                    required: false
+                                    usage: false
+                                    info: It describes whether a form is allowed to be submitted again or not.
+                                    owner: BPP
+                                    type: boolean
+                            _description:
+                                required: false
+                                usage: --
+                                info: Describes the form details
+                                owner: BAP
+                                type: object
+                        _description:
+                            required: false
+                            usage: --
+                            info: Describes the additional input required from the seller to purchase / avail this item
+                            owner: BAP
+                            type: object
+                    fulfillment_ids:
+                        _description:
+                            required: false
+                            usage: F1
+                            info: Describes the fulfilment-ids associated to an item.
+                            owner: BPP
+                            type: string
+                    tags:
+                        INFO:
+                            _description:
+                                required: true
+                                usage: false
+                                info: Describes general info
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: Tags carry selection-time metadata for items in the order status response, maintaining context across workflow steps.
+                            owner: BPP
+                            type: object
+                        descriptor:
+                            code:
+                                _description:
+                                    required: true
+                                    usage: LOAN_INFO
+                                    info: Information type classifier for this item's tags (such as LOAN_INFO or CONSENT_INFO). The BPP returns the code in on_select; it persists in the selected_items and is consumed by subsequent steps like init and confirm.
+                                    owner: BPP
+                                    type: string
+                            name:
+                                _description:
+                                    required: true
+                                    usage: Loan Information
+                                    info: The BPP assigns category names to tags in on_select (e.g. 'Loan Information', 'Consent Information') so the BAP can organize loan product information and consent requirements for buyer presentation. These names persist in session and are reused across init and confirm to maintain consistency.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: Descriptor container for item tag metadata that the BPP returns in on_select; the descriptor persists as part of the selected item payload and is referenced in subsequent steps.
+                                owner: BPP
+                                type: object
+                        list:
+                            descriptor:
+                                code:
+                                    _description:
+                                        required: true
+                                        usage: INTEREST_RATE
+                                        info: BPP returns the descriptor code in on_select to identify each selected item's parameter category; the code rides along as part of selected_items in session through init, confirm, and subsequent steps.
+                                        owner: BPP
+                                        type: string
+                                name:
+                                    _description:
+                                        required: true
+                                        usage: Interest Rate
+                                        info: BPP echoes the loan parameter name for each selected item's attribute in the tags descriptor, which the BAP anchors in session for reuse across confirm and status steps.
+                                        owner: BPP
+                                        type: string
+                                short_desc:
+                                    _description:
+                                        required: true
+                                        usage: Loans starting from 12% (p.a)
+                                        info: Brief description of the selected loan product's terms or features that the BPP includes in the on_select response; this value is anchored in the session and reused in later steps like init and confirm.
+                                        owner: BPP
+                                        type: string
+                                _description:
+                                    required: true
+                                    usage: ""
+                                    info: <no-enough-data>
+                                    owner: BPP
+                                    type: object
+                            value:
+                                _description:
+                                    required: true
+                                    usage: 1000 INR
+                                    info: BPP returns the item tag value in on_status to reflect the BAP's selection, persisted as selected_items in session and reused across subsequent status requests.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: The tags container carries item metadata in the on_select response and is persisted in session under 'selected_items' for consumption by confirm and subsequent steps.
+                                owner: BPP
+                                type: object
+                        display:
+                            _description:
+                                required: true
+                                usage: "true"
+                                info: BPP returns the display flag for each selected loan product in on_select, controlling which terms remain visible to the buyer; these selected items persist in session and are consumed by subsequent steps to maintain consistent product presentation.
+                                owner: BPP
+                                type: boolean
+                    _description:
+                        required: true
+                        usage: ""
+                        info: BPP returns the items array in on_select, which is persisted in session and anchored for reuse across init, confirm, and subsequent steps; validation requires a non-empty array.
+                        owner: BPP
+                        type: object
+                    location_ids:
+                        _description:
+                            required: false
+                            usage: L2
+                            info: The BPP populates this with the location identifier the buyer selected and returns it in on_select; the value persists across later steps in the saved item payload, written only when a location selection has been made.
+                            owner: BPP
+                            type: string
+                quote:
+                    id:
+                        _description:
+                            required: true
+                            usage: Q1
+                            info: This refers to the id of the mutully agreed upon quotation for this order.
+                            owner: BPP
+                            type: object
+                    price:
+                        value:
+                            _description:
+                                required: true
+                                usage: "232800"
+                                info: The BPP returns the total quoted price as a decimal string in on_init; this value persists in the session and is referenced in subsequent operations.
+                                owner: BPP
+                                type: string
+                        currency:
+                            _description:
+                                required: true
+                                usage: INR
+                                info: This refers to the value of used currency of quoted price.
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: The BPP returns the total quoted price object in on_select, with this value anchored in session and reused by later confirm and update steps.
+                            owner: BPP
+                            type: object
+                    breakup:
+                        title:
+                            _description:
+                                required: true
+                                usage: Principal
+                                info: This attribute describes the breakup of the total quoted price.
+                                owner: BPP
+                                type: enum
+                                enums:
+                                  - code: PRINCIPAL
+                                    description: Describes the initial sum of money borrowed from a lender.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: INTEREST
+                                    description: Describes the amount need to be paid in addition to principal amount.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: PROCESSING_FEE
+                                    description: Describes the amount which is charged by the lender.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: OTHER_UPFRONT_CHARGES
+                                    description: Describes the other upfront charges which is charged by the lender.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: INSURANCE_CHARGES
+                                    description: Describes the insurance charges which is charged by the lender.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: NET_DISBURSED_AMOUNT
+                                    description: Describes the amount of money which is disbursed as final amount.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: OTHER_CHARGES
+                                    description: Describes the other charges which is charged by the lender.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: LATE_FEE_AMOUNT
+                                    description: Describes the late fee charges, in case of emi delays.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: OUTSTANDING_PRINCIPAL
+                                    description: Describes the the remaining amount of the original loan.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: FORCLOSUER_CHARGES
+                                    description: Describes the charges associated with early loan repayment.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: OUTSTANDING_INTEREST
+                                    description: Describes the remaining interest of the original loan.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: PRE_PAYMENT_CHARGE
+                                    description: Describes the amount charged by lender for pre payement.
+                                    reference: <PR/Issue/Discussion Links md format text
+                        price:
+                            value:
+                                _description:
+                                    required: true
+                                    usage: "0"
+                                    info: Rupee amount for each breakup item that the BPP returns in the on_select quote; this quote persists in the session and is referenced through confirm and update steps.
+                                    owner: BPP
+                                    type: string
+                            currency:
+                                _description:
+                                    required: true
+                                    usage: INR
+                                    info: This refers to the value of used currency of that particular quoted price breakup.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: The BPP returns the quote breakup prices in on_select, anchoring the quote in session for reuse across confirm and update steps.
+                                owner: BPP
+                                type: object
+                        _description:
+                            required: true
+                            usage: ""
+                            info: The BPP returns the breakup of the total quoted price in on_select, anchoring it in session for replay through confirm and update operations.
+                            owner: BPP
+                            type: object
+                    ttl:
+                        _description:
+                            required: false
+                            usage: PT15D
+                            info: It refers to the comprehensive or aggregate value of all elements within the quote.
+                            owner: BPP
+                            type: string
+                    _description:
+                        required: true
+                        usage: ""
+                        info: The BPP returns the mutually agreed quotation in on_select; this quote object is persisted in session and reused by the BAP in on_confirm, on_update, and downstream actions.
+                        owner: BPP
+                        type: object
+                fulfillments:
+                    customer:
+                        contact:
+                            phone:
+                                _description:
+                                    required: true
+                                    usage: 91-9999999999
+                                    info: It describes the relevant registered phone number of that entity.
+                                    owner: BPP
+                                    type: string
+                            email:
+                                _description:
+                                    required: true
+                                    usage: john.doe@example.com
+                                    info: It describes the relevant registered email number of that entity.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: In on_init, the BPP populates this container with the customer's contact details for the fulfillment.
+                                owner: BPP
+                                type: object
+                        person:
+                            name:
+                                _description:
+                                    required: true
+                                    usage: John Doe
+                                    info: It describes the name that entity.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: The BPP populates this in on_init with the customer's personal identification from session data to establish identity context for the fulfillment.
+                                owner: BPP
+                                type: object
+                        _description:
+                            required: true
+                            usage: ""
+                            info: The customer object contains details of the person who will ultimately receive the fulfillment.
+                            owner: BPP
+                            type: object
+                    state:
+                        descriptor:
+                            code:
+                                _description:
+                                    required: true
+                                    usage: INITIATED
+                                    info: It encapsulates the real time information on the progress and completion status of the fulfillment process.
+                                    owner: BPP
+                                    type: enum
+                                    enums:
+                                      - code: INITIATED
+                                        description: When loan gets initiated by lender
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: SANCTIONED
+                                        description: Loan sanction is the approval of the loan by lender
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: DISBURSED
+                                        description: When the lender delivers the amount to the borrower after verification and approval
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: PENDING
+                                        description: When the loan is in pending state
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: REJECTED
+                                        description: When the loan request gets rejected by lender due to some reason
+                                        reference: <PR/Issue/Discussion Links md format text
+                                      - code: COMPLETED
+                                        description: When the overall process for loan gets over
+                                        reference: <PR/Issue/Discussion Links md format text
+                            _description:
+                                required: true
+                                usage: ""
+                                info: <no-enough-data>
+                                owner: BPP
+                                type: object
+                        _description:
+                            required: true
+                            usage: ""
+                            info: (empty)
+                            owner: BPP
+                            type: object
+                    type:
+                        _description:
+                            required: true
+                            usage: LOAN
+                            info: Describes the fulfilment type
+                            owner: BPP
+                            type: enum
+                            enums:
+                              - code: GOLD
+                                description: Describes the fulfillment type as GOLD for gold loans
+                                reference: <PR/Issue/Discussion Links md format text
+                    id:
+                        _description:
+                            required: false
+                            usage: F1
+                            info: Describes the fulfilment id
+                            owner: BPP
+                            type: string
+                    _description:
+                        required: true
+                        usage: ""
+                        info: Fulfillment plans provided by the BPP in on_init for completing the order; these persist in the session for reference and reuse throughout the transaction.
+                        owner: BPP
+                        type: object
+                payments:
+                    id:
+                        _description:
+                            required: true
+                            usage: |+
+                                3609ff0b-7192-4ec2-91c0-36b07eb445cd
+
+                            info: This refers to the ID of the payment term that can be referred at an item or an order level in a catalog
+                            owner: BPP
+                            type: string
+                    type:
+                        _description:
+                            required: true
+                            usage: ON-ORDER
+                            info: This refers to the type of the payment happens on order placement
+                            owner: BPP
+                            type: enum
+                            enums:
+                              - code: ON-ORDER
+                                description: Payment happens on order placement
+                                reference: <PR/Issue/Discussion Links md format text
+                              - code: ON-FULFILLMENT
+                                description: Payment happens on completion of the service
+                                reference: <PR/Issue/Discussion Links md format text
+                              - code: POST-FULFILLMENT
+                                description: Payment happens post completion of the service
+                                reference: <PR/Issue/Discussion Links md format text
+                    url:
+                        _description:
+                            required: false
+                            usage: https://emandate.icicibank.in
+                            info: This refers to the url used to complete the payment which is called by the BAP.
+                            owner: BPP
+                            type: string
+                    params:
+                        amount:
+                            _description:
+                                required: true
+                                usage: "46360"
+                                info: Sum of money required from the borrower. BPP returns this in on_init; the BAP persists it in the order payments array and reuses it through confirm and update steps.
+                                owner: BPP
+                                type: string
+                        currency:
+                            _description:
+                                required: false
+                                usage: INR
+                                info: This refers to the value of used currency of quoted price.
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: During init, the BAP supplies payment parameters in this container. These values are anchored in the session and reused across subsequent transaction steps.
+                            owner: BPP
+                            type: object
+                    time:
+                        range:
+                            start:
+                                _description:
+                                    required: false
+                                    usage: 2023-06-01T00:00:00
+                                    info: This describes the start range time of the payment in various forms.
+                                    owner: BPP
+                                    type: string
+                            end:
+                                _description:
+                                    required: false
+                                    usage: 2023-06-30T23:59:59
+                                    info: This describes the end range time of the payment in various forms.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: Container for the time range boundaries of each payment installment, populated by the BPP in on_init and persisted in the order session for subsequent confirm and update steps.
+                                owner: BPP
+                                type: object
+                        label:
+                            _description:
+                                required: false
+                                usage: INSTALLMENT
+                                info: It refers to the involvment of identifying and categorizing the time- related information relevant to the payment process.
+                                owner: BPP
+                                type: enum
+                                enums:
+                                  - code: MISSED_EMI_PAYMENT
+                                    description: Describes, when buyer missed to make a scheduled installment payment.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: FORECLOSURE
+                                    description: Describes, when buyer initates the foreclose intent.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: PRE_PART_PAYMENT
+                                    description: Describes, when buyer initates the pre part intent.
+                                    reference: <PR/Issue/Discussion Links md format text
+                                  - code: INSTALLMENT
+                                    description: Describes, an amount that a borrower makes over a period of time in order to pay off a loan.
+                                    reference: <PR/Issue/Discussion Links md format text
+                        _description:
+                            required: true
+                            usage: ""
+                            info: Container specifying payment timing as a single date, duration, or operational schedule; provided by the BPP in on_init and carried forward by the BAP across subsequent transaction steps.
+                            owner: BPP
+                            type: object
+                    status:
+                        _description:
+                            required: true
+                            usage: NOT-PAID
+                            info: It provides details on whether the payment is pending, processed, completed, or if there are any specific issues or actions required.
+                            owner: BPP
+                            type: enum
+                            enums:
+                              - code: PAID
+                                description: Reflects current status wheteher installment has been paid or not
+                                reference: <PR/Issue/Discussion Links md format text
+                              - code: NOT-PAID
+                                description: Reflects current status wheteher installment has been paid or not
+                                reference: <PR/Issue/Discussion Links md format text
+                              - code: DEFERRED
+                                description: Reflects current payment status when the installment is deferred.
+                                reference: <PR/Issue/Discussion Links md format text
+                              - code: DELAYED
+                                description: Reflects current payment status when the installment is delayed.
+                                reference: <PR/Issue/Discussion Links md format text
+                    collected_by:
+                        _description:
+                            required: false
+                            usage: BPP
+                            info: It encompasses the detailed process or mechanism employed for gathering payments.
+                            owner: BPP
+                            type: enum
+                            enums:
+                              - code: BPP
+                                description: When seller app is collecting the payment
+                                reference: <PR/Issue/Discussion Links md format text
+                              - code: BAP
+                                description: When buyer app is collecting the payment
+                                reference: <PR/Issue/Discussion Links md format text
+                    tags:
+                        BUYER_FINDER_FEES:
+                            _description:
+                                required: false
+                                usage: 0.05
+                                info: Describes Buyer finder fee
+                                owner: BPP
+                                type: string
+                        SETTLEMENT_TERMS:
+                            _description:
+                                required: false
+                                usage: false
+                                info: Describes settlement terms
+                                owner: BPP
+                                type: string
+                        BREAKUP:
+                            _description:
+                                required: false
+                                usage: false
+                                info: Describes Buyer finder fee
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: BAP furnishes tags in init to characterize the selected payment method; BPP echoes them in on_init and they persist through the order for subsequent steps.
+                            owner: BPP
+                            type: object
+                        descriptor:
+                            code:
+                                _description:
+                                    required: true
+                                    usage: BUYER_FINDER_FEES
+                                    info: The BAP specifies a code in this descriptor to classify the payment term or fee type during init; the BPP echoes the code in on_init, and the payments array persists across the transaction to govern settlement and fee terms.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: <no-enough-data>
+                                owner: BPP
+                                type: object
+                        display:
+                            _description:
+                                required: true
+                                usage: "false"
+                                info: The BAP sets this boolean during init; it persists in the payment record and is consumed across subsequent steps.
+                                owner: BPP
+                                type: boolean
+                        list:
+                            descriptor:
+                                code:
+                                    _description:
+                                        required: true
+                                        usage: BUYER_FINDER_FEES_TYPE
+                                        info: Code that identifies the category of each payment component in the order's payment structure, such as buyer fees, settlement amounts, or delay interest. These codes are included in the init request and persist within the order records across subsequent transaction steps for consistent reference.
+                                        owner: BPP
+                                        type: string
+                                _description:
+                                    required: true
+                                    usage: ""
+                                    info: The BAP provides payment tag descriptors during init; this metadata persists as part of the order's payment specification and flows through all subsequent steps.
+                                    owner: BPP
+                                    type: object
+                            value:
+                                _description:
+                                    required: true
+                                    usage: percent-annualized
+                                    info: Payment metadata the BAP provides on init to characterize loan terms (such as interest rate basis or settlement mode); it persists in the order session for reuse across subsequent steps.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: BAP initializes these payment tags during init to attach metadata; the tags persist with the order and remain accessible through subsequent transaction steps.
+                                owner: BPP
+                                type: object
+                    _description:
+                        required: true
+                        usage: ""
+                        info: Array of settlement terms the BPP provides for this order in on_init, which the BAP anchors in session for use across subsequent transaction steps.
+                        owner: BPP
+                        type: object
+                cancellation_terms:
+                    cancellation_fee:
+                        percentage:
+                            _description:
+                                required: true
+                                usage: 3%
+                                info: BPP provides the percentage-based cancellation fee for this order in on_init. The value is anchored in the session order object and reused by subsequent steps like confirm and update.
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: BPP returns the cancellation fee terms as part of the order in on_init; the BAP stores this order in session and references the fee terms during confirm and update.
+                            owner: BPP
+                            type: object
+                    external_ref:
+                        mimetype:
+                            _description:
+                                required: false
+                                usage: text/html
+                                info: This indicated the nature and format of the document, file, or assortment of bytes.
+                                owner: BPP
+                                type: string
+                        url:
+                            _description:
+                                required: false
+                                usage: https://icicibank.com/loan/tnc.html
+                                info: This refers to the url of cancellation terms file.
+                                owner: BPP
+                                type: string
+                        _description:
+                            required: true
+                            usage: ""
+                            info: BPP includes external reference to cancellation terms in the order, which persists for reuse across subsequent steps.
+                            owner: BPP
+                            type: object
+                    fulfillment_state:
+                        descriptor:
+                            code:
+                                _description:
+                                    required: false
+                                    usage: SANCTIONED
+                                    info: It encapsulates the real time information on the progress and completion status of the fulfillment process.
+                                    owner: BPP
+                                    type: string
+                            _description:
+                                required: true
+                                usage: ""
+                                info: Metadata identifying the fulfillment state to which these cancellation terms apply; the BPP provides it in on_init as part of the order that persists through subsequent steps.
+                                owner: BPP
+                                type: object
+                        _description:
+                            required: true
+                            usage: ""
+                            info: The BPP populates this container in on_init to describe the fulfillment state applicable to cancellation terms; it persists as part of the order and is referenced in subsequent status and update steps.
+                            owner: BPP
+                            type: object
+                    _description:
+                        required: true
+                        usage: ""
+                        info: The BPP returns cancellation terms in the order to specify the conditions governing order cancellation. The order is anchored in the session and referenced in later steps such as on_confirm and on_update.
+                        owner: BPP
+                        type: object
+                _description:
+                    required: true
+                    usage: ""
+                    info: The BAP populates the complete legal purchase order here, containing all contract details between buyer and seller, including the required provider identification that is validated at init.
+                    owner: BPP
+                    type: object
+            _description:
+                required: true
+                usage: ""
+                info: (empty)
+                owner: BPP
+                type: object
+        _description:
+            required: false
+            usage: --
+            info: <placeholder description>
+            owner: BAP
+            type: object
