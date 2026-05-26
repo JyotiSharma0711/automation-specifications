@@ -45,6 +45,33 @@ flows:
     config:
       $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_Offline_Journey.yaml
   - type: playground
+    id: lamf_credit_line_with_mfc_drawdown
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Credit line origination flow enabling customers to apply for credit products through merchant channels with dynamic form-based verification and offline-capable operations. The journey encompasses product discovery, application submission, adaptive KYC verification, and confirmation across both online and offline touchpoints.
+    config:
+      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_Offline_Journey_Drawdown.yaml
+  - type: playground
+    id: lamf_credit_line_with_mfc_drawdown_missed_emi
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Credit line origination flow enabling customers to apply for credit products through merchant channels with dynamic form-based verification and offline-capable operations. The journey encompasses product discovery, application submission, adaptive KYC verification, and confirmation across both online and offline touchpoints.
+    config:
+      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_Offline_Journey_Drawdown_missed_emi.yaml
+  - type: playground
+    id: lamf_credit_line_with_mfc_drawdown_foreclosure
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Credit line origination flow enabling customers to apply for credit products through merchant channels with dynamic form-based verification and offline-capable operations. The journey encompasses product discovery, application submission, adaptive KYC verification, and confirmation across both online and offline touchpoints.
+    config:
+      $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_Offline_Journey_Drawdown_foreclosure.yaml            
+  - type: playground
     id: lamf_credit_line_with_mfc_foreclosure
     usecase: UNIFIED CREDIT
     tags:
@@ -71,3 +98,4 @@ flows:
     description: LAMF credit line enabling borrowers with previous EMI payment gaps to access revolving credit through dynamic multi-step pre-qualification and form-based underwriting.
     config:
       $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_pre_part.yaml
+      
