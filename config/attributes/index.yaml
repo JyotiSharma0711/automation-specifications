@@ -1,2 +1,2 @@
-- $ref: ./GOLD_LOAN.yaml
 - $ref: ./PERSONAL_LOAN.yaml
+- $ref: ./GOLD_LOAN.yaml

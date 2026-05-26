@@ -1272,7 +1272,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BAP identifies the provider whose product or offer was selected from the search results; the provider is anchored in session state and reused by subsequent transaction steps.
+            info: The BAP specifies the provider whose product or offer was selected from the search results. The BPP validates this provider in on_select, and the value persists in session state for reuse by subsequent steps.
             owner: BAP
             type: object
         items:
@@ -1344,7 +1344,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Items the BAP selects to represent what the consumer wishes to avail; these selections are validated by the BPP in on_select and anchored in session for reuse across all subsequent transaction steps.
+            info: Items the BAP selects to represent what the consumer wishes to avail; the BPP validates these selections in on_select and anchors them in session for reuse across all subsequent transaction steps.
             owner: BAP
             type: object
           location_ids:
@@ -1568,7 +1568,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Provider identifying information returned by the BPP in on_select; the BAP persists it in session and carries it forward through subsequent transaction steps, gated on the descriptor being present.
+              info: BPP returns the selected provider's identifying information in on_select; the BAP persists it in session and carries it forward through subsequent transaction steps whenever the descriptor is present.
               owner: BPP
               type: object
           locations:
@@ -1637,7 +1637,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BPP echoes the selected provider's details in response to the BAP's select request, persisting the lender identity in the session so subsequent steps reference the same provider.
+            info: The BPP echoes the selected provider details, persisting the lender identity across the transaction so subsequent steps reference the same provider.
             owner: BPP
             type: object
           tags:
@@ -2046,7 +2046,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: BPP returns the items array in on_select, which is persisted in session and anchored for reuse across init, confirm, and subsequent steps; validation requires a non-empty array.
+            info: BPP returns the items array in on_select, which is persisted in session and reused across init, confirm, and subsequent steps; the array must be non-empty.
             owner: BPP
             type: object
           location_ids:
@@ -2133,14 +2133,14 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BPP returns the mutually agreed quotation in on_select; this quote object is persisted in session and reused by the BAP in on_confirm, on_update, and downstream actions.
+            info: The BPP returns the mutually agreed quotation in on_select; this quote is anchored in session and reused by the BAP in on_confirm, on_update, and downstream actions.
             owner: BPP
             type: object
         fulfillments:
           _description:
             required: false
             usage: ""
-            info: The BPP populates fulfillments to specify the service delivery plan for the selected offer, which is persisted in session and validated for non-empty lists with correct location associations before proceeding to confirm and update steps.
+            info: The BPP populates fulfillments in on_select to specify the service delivery plan for the selected offer; the array must be non-empty with each item having exactly one location_id, and is validated and persisted in session for use in confirm and update steps.
             owner: BPP
             type: object
           type:
@@ -2188,7 +2188,7 @@ attribute_set:
         _description:
           required: false
           usage: ""
-          info: BPP returns the order object containing the complete legal purchase contract with all negotiated terms and buyer-selected parameters in the on_select response. The BAP persists this order in session and uses it as the authoritative reference through confirm and update steps.
+          info: BPP returns the order object containing the complete legal purchase contract with all negotiated terms and buyer-selected parameters. The BAP persists this in session and uses it as the authoritative reference through confirm and subsequent steps.
           owner: BPP
           type: object
       _description:
@@ -2356,7 +2356,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: The BPP echoes the selected provider's details in response to the BAP's select request, persisting the lender identity in the session so subsequent steps reference the same provider.
+            info: The BPP echoes the selected provider details, persisting the lender identity across the transaction so subsequent steps reference the same provider.
             owner: BAP
             type: object
         items:
@@ -2428,7 +2428,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BPP returns the items array in on_select, which is persisted in session and anchored for reuse across init, confirm, and subsequent steps; validation requires a non-empty array.
+            info: BPP returns the items array in on_select, which is persisted in session and reused across init, confirm, and subsequent steps; the array must be non-empty.
             owner: BAP
             type: object
         payments:
@@ -2504,7 +2504,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: Array of settlement terms the BAP sends on init describing how the order will be paid; must be non-empty and persists with the order through subsequent steps.
+            info: Array of settlement terms the BAP provides on init describing how the order will be paid; must be non-empty and persists with the order through subsequent steps.
             owner: BAP
             type: object
           tags:
@@ -2860,7 +2860,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: The BPP echoes the selected provider's details in response to the BAP's select request, persisting the lender identity in the session so subsequent steps reference the same provider.
+            info: The BPP echoes the selected provider details, persisting the lender identity across the transaction so subsequent steps reference the same provider.
             owner: BPP
             type: object
           locations:
@@ -3218,7 +3218,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: BPP returns the items array in on_select, which is persisted in session and anchored for reuse across init, confirm, and subsequent steps; validation requires a non-empty array.
+            info: BPP returns the items array in on_select, which is persisted in session and reused across init, confirm, and subsequent steps; the array must be non-empty.
             owner: BPP
             type: object
           location_ids:
@@ -3339,7 +3339,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: The BPP returns the mutually agreed quotation in on_select; this quote object is persisted in session and reused by the BAP in on_confirm, on_update, and downstream actions.
+            info: The BPP returns the mutually agreed quotation in on_select; this quote is anchored in session and reused by the BAP in on_confirm, on_update, and downstream actions.
             owner: BPP
             type: object
         fulfillments:
@@ -3666,7 +3666,7 @@ attribute_set:
           _description:
             required: true
             usage: ""
-            info: Array of settlement terms the BPP provides for this order in on_init, which the BAP anchors in session for use across subsequent transaction steps.
+            info: Array of payment settlement terms the BPP returns in on_init, which the BAP stores in session and uses throughout all subsequent transaction steps.
             owner: BPP
             type: object
         cancellation_terms:
@@ -3903,7 +3903,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BPP echoes the selected provider's details in response to the BAP's select request, persisting the lender identity in the session so subsequent steps reference the same provider.
+            info: The BPP echoes the selected provider details, persisting the lender identity across the transaction so subsequent steps reference the same provider.
             owner: BAP
             type: object
         items:
@@ -4044,7 +4044,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BAP sends the payment settlement terms array in confirm, carrying forward the negotiated terms from earlier steps and anchored in session state; the array must be non-empty.
+            info: The BAP submits the payment settlement terms array (non-empty) in confirm, carrying terms negotiated in select and anchored in session state; the BPP echoes these in on_confirm.
             owner: BAP
             type: object
           tags:
@@ -4323,7 +4323,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The provider container identifies which financial institution's loan status is being reported. The BPP sources the provider ID from session state (gated by the provider having been selected in prior steps), and this value persists with the order across the transaction.
+            info: The BPP includes the provider container in on_status to identify the financial institution for which loan status is being reported, sourcing the provider ID from session state (established during prior select/confirm steps) and persisting it with the order across subsequent transaction steps.
             owner: BPP
             type: object
           tags:
@@ -4537,7 +4537,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Items the BAP selected and the BPP confirms in the on_confirm response, finalized with the fulfillment details necessary to proceed with order execution.
+            info: The BPP confirms the loan items the BAP selected, with final pricing and fulfillment details required for order execution, persisting them in the order session for downstream fulfillment processing.
             owner: BPP
             type: object
           location_ids:
@@ -4735,7 +4735,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BPP returns the mutually agreed quotation in on_select; this quote object is persisted in session and reused by the BAP in on_confirm, on_update, and downstream actions.
+            info: The BPP returns the mutually agreed quotation in on_select; this quote is anchored in session and reused by the BAP in on_confirm, on_update, and downstream actions.
             owner: BPP
             type: object
         fulfillments:
@@ -4851,7 +4851,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Fulfillment plans the BPP returns to confirm the order, reaffirming the execution approach established in prior steps.
+            info: The BPP returns fulfillment plans describing the order execution approach, persisting these in the session for reference in downstream operations.
             owner: BPP
             type: object
         payments:
@@ -4994,7 +4994,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: In on_confirm, the BPP returns the array of payment settlement terms applicable to this order, sourced from session and validated as non-empty; this persists in session for reuse in later actions.
+            info: The BPP returns the array of payment settlement terms for this order, sourced from session and validated as non-empty; this persists in session for reuse in subsequent steps.
             owner: BPP
             type: object
           tags:
@@ -5177,7 +5177,7 @@ attribute_set:
         _description:
           required: false
           usage: ""
-          info: The BPP returns the legal purchase order containing complete contract details, drawn from session data established during earlier confirmation and update phases.
+          info: The BPP returns the legal purchase order with complete contract details, established in on_select and on_confirm and reused across subsequent status and payment steps.
           owner: BPP
           type: object
       _description:
@@ -5561,7 +5561,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The provider container identifies which financial institution's loan status is being reported. The BPP sources the provider ID from session state (gated by the provider having been selected in prior steps), and this value persists with the order across the transaction.
+            info: The BPP includes the provider container in on_status to identify the financial institution for which loan status is being reported, sourcing the provider ID from session state (established during prior select/confirm steps) and persisting it with the order across subsequent transaction steps.
             owner: BPP
             type: object
           tags:
@@ -5903,7 +5903,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Items array of loan or service details returned by the BPP in on_status with values updated from the transaction session, persisting in the order session for consumption across subsequent steps.
+            info: Loan or service details selected in on_select, updated by the BPP in on_status with current transaction state and persisted in the order session for downstream processing.
             owner: BPP
             type: object
           location_ids:
@@ -6017,7 +6017,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BPP returns the mutually agreed quotation in on_select; this quote object is persisted in session and reused by the BAP in on_confirm, on_update, and downstream actions.
+            info: The BPP returns the mutually agreed quotation in on_select; this quote is anchored in session and reused by the BAP in on_confirm, on_update, and downstream actions.
             owner: BPP
             type: object
           ttl:
@@ -6140,7 +6140,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: BPP reports fulfillment plans in on_status detailing how the order will be serviced; persisted in session, these are referenced across subsequent status and update operations.
+            info: BPP returns fulfillment plans in on_status detailing how the order will be serviced; persisted in the session order, these plans are referenced across subsequent status and update operations.
             owner: BPP
             type: object
           agent:
@@ -6480,7 +6480,7 @@ attribute_set:
         _description:
           required: false
           usage: ""
-          info: The BPP returns the legal purchase order containing complete contract details, drawn from session data established during earlier confirmation and update phases.
+          info: The BPP returns the legal purchase order with complete contract details, established in on_select and on_confirm and reused across subsequent status and payment steps.
           owner: BPP
           type: object
       _description:
@@ -6818,7 +6818,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BPP populates this settlement terms array during update with entries tagged by a time label indicating the payment scenario type. The array is validated to be non-empty and persists in the order session for downstream steps.
+            info: Array of settlement terms that the BPP populates in the update response, with each entry tagged by a time label indicating the payment scenario type; the array must be non-empty and persists within the order session for downstream steps.
             owner: BAP
             type: object
       _description:
@@ -7042,7 +7042,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The provider container identifies which financial institution's loan status is being reported. The BPP sources the provider ID from session state (gated by the provider having been selected in prior steps), and this value persists with the order across the transaction.
+            info: The BPP includes the provider container in on_status to identify the financial institution for which loan status is being reported, sourcing the provider ID from session state (established during prior select/confirm steps) and persisting it with the order across subsequent transaction steps.
             owner: BPP
             type: object
           tags:
@@ -7203,7 +7203,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: Array of items in the order being updated; the BPP returns these with their identities for the BAP to reference.
+            info: The BPP returns the items with their identities confirmed in the on_update response; the items array must be non-empty for the transaction to proceed.
             owner: BPP
             type: object
           fulfillment_ids:
@@ -7330,7 +7330,7 @@ attribute_set:
             _description:
               required: false
               usage: ""
-              info: Container for the total quoted price that the BPP returns in on_update, persisted in session and reused in subsequent transaction steps.
+              info: The BPP returns the total quoted price in this container during on_update; the BAP persists it in session for reuse in subsequent transaction steps.
               owner: BPP
               type: object
           breakup:
@@ -7371,7 +7371,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BPP returns the quotation reflecting the loan scenario; this quote is persisted within the session order and consumed by subsequent BAP actions.
+            info: The BPP returns the quotation reflecting the specific loan scenario; this quote is persisted within the session order and reused by subsequent BAP actions.
             owner: BPP
             type: object
           ttl:
@@ -7596,7 +7596,7 @@ attribute_set:
           _description:
             required: false
             usage: ""
-            info: The BPP populates this settlement terms array during update with entries tagged by a time label indicating the payment scenario type. The array is validated to be non-empty and persists in the order session for downstream steps.
+            info: Array of settlement terms that the BPP populates in the update response, with each entry tagged by a time label indicating the payment scenario type; the array must be non-empty and persists within the order session for downstream steps.
             owner: BPP
             type: object
           status:
@@ -7778,7 +7778,7 @@ attribute_set:
         _description:
           required: false
           usage: ""
-          info: BPP returns the order object containing the complete legal purchase contract with all negotiated terms and buyer-selected parameters in the on_select response. The BAP persists this order in session and uses it as the authoritative reference through confirm and update steps.
+          info: BPP returns the order object containing the complete legal purchase contract with all negotiated terms and buyer-selected parameters. The BAP persists this in session and uses it as the authoritative reference through confirm and subsequent steps.
           owner: BPP
           type: object
         documents:
@@ -8487,7 +8487,7 @@ attribute_set:
         _description:
           required: true
           usage: ""
-          info: Container for an issue or complaint raised by a buyer or network participant for an order, transaction, or fulfillment, including supplementary information and evidence that may be escalated as a Grievance or Dispute.
+          info: Container for issue or complaint details and supplementary information that may escalate to Grievance or Dispute resolution.
           owner: BAP
           type: object
       _description:
