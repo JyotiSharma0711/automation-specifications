@@ -106,7 +106,7 @@ apiProperties:
       - init
       - on_init
   on_confirm:
-    async_predecessor: confirm
+    async_predecessor: null
     # transaction_partner:
     #   - init
     #   - on_init
