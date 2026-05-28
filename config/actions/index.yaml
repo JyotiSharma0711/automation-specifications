@@ -19,17 +19,17 @@ supportedActions:
     - init
     - confirm
     - on_status
-  confirm:
-    - on_confirm
-    - status
-    - on_status
-  on_confirm:
-    - status
-    - cancel
-    - on_status
-    - on_update
-    - update
-    - on_cancel
+  # confirm:
+  #   - on_confirm
+  #   - status
+  #   - on_status
+  # on_confirm:
+  #   - status
+  #   - cancel
+  #   - on_status
+  #   - on_update
+  #   - update
+  #   - on_cancel
   status:
     - on_status
   on_status:
