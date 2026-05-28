@@ -13,23 +13,26 @@ supportedActions:
     - select
     - init
     - on_status
+    - on_confirm
+
   init:
     - on_init
   on_init:
     - init
     - confirm
     - on_status
-  # confirm:
-  #   - on_confirm
-  #   - status
-  #   - on_status
-  # on_confirm:
-  #   - status
-  #   - cancel
-  #   - on_status
-  #   - on_update
-  #   - update
-  #   - on_cancel
+  confirm:
+    - on_confirm
+    - status
+    - on_status
+  on_confirm:
+    - status
+    - cancel
+    - on_status
+    - on_update
+    - update
+    - on_cancel
+    - on_confirm
   status:
     - on_status
   on_status:
