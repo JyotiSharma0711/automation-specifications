@@ -91,6 +91,7 @@ enums:
       - SET_LOAN_AMOUNT
       - SET_DOWN_PAYMENT
       - MANUAL_VERIFICATION
+      - SINGLE_REDIRECTION
   documents: &documents
     - LOAN_AGREEMENT
     - LOAN_CANCELLATION
@@ -1240,55 +1241,56 @@ _TESTS_:
               validValues: *checkListTags
               _RETURN_: subTags all in validValues
 
-    - _NAME_: ON_SEARCH_PAYMENTS
-      _RETURN_:
-        - _NAME_: REQUIRED_PAYMENT_ITEMS
-          _RETURN_:
-            - _NAME_: REQUIRED_PAYMENT_TYPE
-              attr: $.message.catalog.providers[*].payments[*].type
-              _RETURN_: attr are present
+    #commenting for LAMF single redirection
+    # - _NAME_: ON_SEARCH_PAYMENTS
+    #   _RETURN_:
+    #     - _NAME_: REQUIRED_PAYMENT_ITEMS
+    #       _RETURN_:
+    #         - _NAME_: REQUIRED_PAYMENT_TYPE
+    #           attr: $.message.catalog.providers[*].payments[*].type
+    #           _RETURN_: attr are present
 
-            - _NAME_: REQUIRED_PAYMENT_ID
-              attr: $.message.catalog.providers[*].payments[*].id
-              _RETURN_: attr are present
+    #         - _NAME_: REQUIRED_PAYMENT_ID
+    #           attr: $.message.catalog.providers[*].payments[*].id
+    #           _RETURN_: attr are present
 
-            - _NAME_: REQUIRED_PAYMENT_STATUS
-              attr: $.message.catalog.providers[*].payments[*].status
-              _RETURN_: attr are present
+    #         - _NAME_: REQUIRED_PAYMENT_STATUS
+    #           attr: $.message.catalog.providers[*].payments[*].status
+    #           _RETURN_: attr are present
 
-            - _NAME_: REQUIRED_PAYMENT_COLLECTED_BY
-              attr: $.message.catalog.providers[*].payments[*].collected_by
-              _RETURN_: attr are present
+    #         - _NAME_: REQUIRED_PAYMENT_COLLECTED_BY
+    #           attr: $.message.catalog.providers[*].payments[*].collected_by
+    #           _RETURN_: attr are present
 
-            - _NAME_: REQUIRED_PAYMENT_TIME_LABEL
-              attr: $.message.catalog.providers[*].payments[*].time.label
-              _RETURN_: attr are present        
+    #         - _NAME_: REQUIRED_PAYMENT_TIME_LABEL
+    #           attr: $.message.catalog.providers[*].payments[*].time.label
+    #           _RETURN_: attr are present        
 
-        - _NAME_: VALID_PAYMENT_ITEMS
-          _RETURN_:
-            - _NAME_: VALID_PAYMENT_TYPE
-              attr: $.message.catalog.providers[*].payments[*].type
-              _CONTINUE_: '!(attr are present)'
-              enumList: *paymentType
-              _RETURN_:  attr all in enumList
+    #     - _NAME_: VALID_PAYMENT_ITEMS
+    #       _RETURN_:
+    #         - _NAME_: VALID_PAYMENT_TYPE
+    #           attr: $.message.catalog.providers[*].payments[*].type
+    #           _CONTINUE_: '!(attr are present)'
+    #           enumList: *paymentType
+    #           _RETURN_:  attr all in enumList
 
-            - _NAME_: VALID_PAYMENT_STATUS
-              attr: $.message.catalog.providers[*].payments[*].status
-              _CONTINUE_: '!(attr are present)'
-              enumList: *paymentStatus
-              _RETURN_:  attr all in enumList
+    #         - _NAME_: VALID_PAYMENT_STATUS
+    #           attr: $.message.catalog.providers[*].payments[*].status
+    #           _CONTINUE_: '!(attr are present)'
+    #           enumList: *paymentStatus
+    #           _RETURN_:  attr all in enumList
 
-            - _NAME_: VALID_PAYMENT_COLLECTOR
-              attr: $.message.catalog.providers[*].payments[*].collected_by
-              _CONTINUE_: '!(attr are present)'
-              enumList: *paymentCollector
-              _RETURN_:  attr all in enumList
+    #         - _NAME_: VALID_PAYMENT_COLLECTOR
+    #           attr: $.message.catalog.providers[*].payments[*].collected_by
+    #           _CONTINUE_: '!(attr are present)'
+    #           enumList: *paymentCollector
+    #           _RETURN_:  attr all in enumList
 
-            - _NAME_: VALID_PAYMENT_LABEL
-              attr: $.message.catalog.providers[*].payments[*].time.label
-              _CONTINUE_: '!(attr are present)'
-              enumList: *paymentLabel
-              _RETURN_:  enumList all in attr       
+    #         - _NAME_: VALID_PAYMENT_LABEL
+    #           attr: $.message.catalog.providers[*].payments[*].time.label
+    #           _CONTINUE_: '!(attr are present)'
+    #           enumList: *paymentLabel
+    #           _RETURN_:  enumList all in attr       
 
     - _NAME_: ON_SEARCH_TAGS
       action:
@@ -2284,7 +2286,7 @@ _TESTS_:
     - *ON_ACTION_FULFILLMENTS
     - *COMMON_QUOTE_ITEMS
 
-    - *ON_INIT_PAYMENTS
+    # - *ON_INIT_PAYMENTS
     - *ON_INIT_PAYMENT_TAGS
     - *ON_INIT_CANCELLATION_TERMS
     - *BAP_BPP_TERMS
