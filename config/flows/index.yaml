@@ -107,4 +107,13 @@ flows:
     description: LAMF credit line enabling borrowers with previous EMI payment gaps to access revolving credit through dynamic multi-step pre-qualification and form-based underwriting.
     config:
       $ref: ./UNIFIED CREDIT/LAMF_Credit_Line_with_MFC_pre_part.yaml
+  - type: playground
+    id: lamf_credit_line_with_mfc_single_redirection
+    usecase: UNIFIED CREDIT
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: LAMF credit line enabling borrowers with previous EMI payment gaps to access revolving credit through dynamic multi-step pre-qualification and form-based underwriting.
+    config:
+      $ref: ./UNIFIED CREDIT/lamf_credit_line_with_mfc_single_redirection_deployment_config.yaml    
       
