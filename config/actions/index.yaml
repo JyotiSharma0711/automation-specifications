@@ -68,93 +68,42 @@ supportedActions:
     - on_update
   update:
     - on_update
+
 apiProperties:
   search:
     async_predecessor: null
     transaction_partner: []
   on_search:
-    async_predecessor: null
-    transaction_partner:
-      - search
+    async_predecessor: "search"
+    transaction_partner: ["search"]
   select:
     async_predecessor: null
-    transaction_partner:
-      - search
+    transaction_partner: ["on_search"]
   on_select:
     async_predecessor: null
-    transaction_partner:
-      - select
-      - search
-      - on_search
+    transaction_partner: ["select"]
   init:
     async_predecessor: null
-    # transaction_partner:
-    #   - select
-    #   - search
-    #   - on_search
-    #   - on_select
+    # transaction_partner: ["on_select"]
     transaction_partner: []
   on_init:
-    async_predecessor: init
-    # transaction_partner:
-    #   - init
-    #   - select
-    #   - search
-    #   - on_search
-    #   - on_select
+    async_predecessor: "init"
     transaction_partner: []
   confirm:
-    # async_predecessor: null
-    # transaction_partner:
-    #   - init
-    #   - on_init
     async_predecessor: null
     transaction_partner: []
   on_confirm:
     async_predecessor: null
-    # transaction_partner:
-    #   - init
-    #   - on_init
-    #   - confirm
+    transaction_partner: []
+  update:
+    async_predecessor: null
+    transaction_partner: ["on_confirm"] 
+  on_update:
+    async_predecessor: null
     transaction_partner: []
   status:
     async_predecessor: null
-    transaction_partner:
-      - on_status
+    transaction_partner: []
   on_status:
     async_predecessor: null
-    transaction_partner:
-      - on_select
-  cancel:
-    async_predecessor: null
-    transaction_partner:
-      - confirm
-      - on_confirm
-      - on_update
-  on_cancel:
-    async_predecessor: null
-    transaction_partner:
-      - confirm
-      - on_confirm
-      - cancel
-  track:
-    async_predecessor: null
-    transaction_partner:
-      - init
-      - on_init
-      - confirm
-      - on_confirm
-  on_track:
-    async_predecessor: null
-    transaction_partner:
-      - init
-      - on_init
-      - confirm
-      - on_confirm
-  update:
-    async_predecessor: null
     transaction_partner: []
-  on_update:
-    async_predecessor: null
-    transaction_partner:
-      - on_confirm
