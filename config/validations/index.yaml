@@ -146,6 +146,7 @@ _TESTS_:
           enumList: &a2
             - BPP
             - BAP
+            - CONSUMER
           _CONTINUE_: "!(attr are present)"
           _RETURN_: attr any in enumList
   on_search:
