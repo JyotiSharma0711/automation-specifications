@@ -1,12 +1,12 @@
 name: Build and Deploy ONIX Service
 
 # ── Triggers ─────────────────────────────────────────────────────────
-# 1. Push to draft-* with config/ changes → auto build + deploy to DEV
-# 2. Manual workflow_dispatch (GitHub UI) → promote dev image to PROD
+# 1. Push to draft-* → auto build + deploy to DEV
+# 2. Manual workflow_dispatch (GitHub UI) → build DEV or promote to PROD
 on:
   push:
     branches:
-      - "draft-*"
+      - "release-*"
 
   workflow_dispatch:
     inputs:
@@ -14,19 +14,21 @@ on:
         description: "Action to perform"
         required: true
         type: choice
+        default: build-dev
         options:
+          - build-dev
           - promote-to-prod
       image_tag:
-        description: "Dev image tag to promote to prod (e.g. dev-abc1234)"
-        required: true
+        description: "Dev image tag to promote to prod (required for promote-to-prod)"
+        required: false
         type: string
       domain:
-        description: "Domain name (e.g. ONDC:TRV11)"
-        required: true
+        description: "Domain name (e.g. ONDC:TRV11, required for promote-to-prod)"
+        required: false
         type: string
       version:
-        description: "Domain version (e.g. 2.0.1)"
-        required: true
+        description: "Domain version (e.g. 2.0.1, required for promote-to-prod)"
+        required: false
         type: string
 
 env:
@@ -37,7 +39,7 @@ env:
 jobs:
   # ──────────────────────────────────────────────────────────────────
   # JOB 1: Build image and deploy to DEV
-  # Runs on: push to draft-* with config/ changes
+  # Runs on: push to draft-* or manual build-dev dispatch
   # ──────────────────────────────────────────────────────────────────
   build-and-deploy-dev:
     runs-on: ubuntu-latest
@@ -142,8 +144,8 @@ jobs:
 
       - name: Push to DB
         env:
-          API_KEY: ${{ secrets.EKS_DB_SERVICE_API_KEY }}
-          API_BASE_URL: ${{ secrets.EKS_DB_SERVICE_BASE_URL }}
+          API_KEY: ${{ secrets.STAGING_EKS_DB_SERVICE_API_KEY }}
+          API_BASE_URL: ${{ vars.STAGING_EKS_DB_SERVICE_BASE_URL }}
         run: |
           npx -y @ondc/build-tools@latest push-to-db -f build.yaml -t generated/raw_table.json -u "$API_BASE_URL" -k "$API_KEY"
 
@@ -166,7 +168,7 @@ jobs:
 
           echo "✅ Pushed dev image: ${IMAGE_NAME}:${IMAGE_TAG}"
 
-      # ── Update automation-iac values.yaml ──────────────────
+      # ── Update automation-iac values-staging.yaml ──────────────────
       - name: Checkout automation-iac
         uses: actions/checkout@v4
         with:
@@ -174,7 +176,7 @@ jobs:
           token: ${{ secrets.IAC_REPO_PAT }}
           path: automation-iac
 
-      - name: Update values.yaml
+      - name: Update values-staging.yaml
         run: |
           cd automation-iac
 
@@ -182,7 +184,7 @@ jobs:
           VERSION="${{ steps.spec.outputs.version }}"
           NEW_IMAGE="${{ steps.meta.outputs.image_name }}"
           NEW_TAG="${{ steps.meta.outputs.image_tag }}"
-          VALUES_FILE="k8/aws/helm/domain-layer/values.yaml"
+          VALUES_FILE="k8/aws/helm/domain-layer/values-staging.yaml"
 
           python3 - <<EOF
           import yaml, sys
@@ -223,7 +225,7 @@ jobs:
 
           git config user.email "ci-bot@ondc.org"
           git config user.name "CI Bot"
-          git add k8/aws/helm/domain-layer/values.yaml
+          git add k8/aws/helm/domain-layer/values-staging.yaml
           git diff --staged --quiet && echo "No changes to commit" && exit 0
           git commit -m "chore(dev): ${{ steps.spec.outputs.domain }} ${{ steps.spec.outputs.version }} → ${{ steps.meta.outputs.image_tag }}"
           git push
@@ -255,6 +257,12 @@ jobs:
       packages: write
 
     steps:
+      - name: Validate promote-to-prod inputs
+        run: |
+          test -n "${{ inputs.image_tag }}" || { echo "image_tag is required for promote-to-prod"; exit 1; }
+          test -n "${{ inputs.domain }}" || { echo "domain is required for promote-to-prod"; exit 1; }
+          test -n "${{ inputs.version }}" || { echo "version is required for promote-to-prod"; exit 1; }
+
       - name: Log in to GHCR
         uses: docker/login-action@v3
         with:
