@@ -3,7 +3,7 @@ flows:
     id: master_search
     meta:
       order: 0
-    usecase: BUSINESS_LOAN
+    usecase: BUSINESS LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -14,7 +14,7 @@ flows:
     id: business_term_loan_with_offline_online_foreclosure
     meta:
       order: 1
-    usecase: BUSINESS_LOAN
+    usecase: BUSINESS LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -24,7 +24,7 @@ flows:
       $ref:  "./BUSINESS_LOAN/business_term_loan_with_offline_online_foreclosure.yaml"
   - type: playground
     id: business_term_loan_with_offline_online_missed_emi
-    usecase: BUSINESS_LOAN
+    usecase: BUSINESS LOAN
     meta:
       order: 2
     tags:
@@ -38,7 +38,7 @@ flows:
     id: business_term_loan_with_offline_online_pre_part
     meta:
       order: 3
-    usecase: BUSINESS_LOAN
+    usecase: BUSINESS LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -51,7 +51,7 @@ flows:
     id: master_search
     meta:
       order: 0
-    usecase: LAMF_LOAN
+    usecase: LAMF LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -62,7 +62,7 @@ flows:
     id: lamf_credit_line_with_mfc_offline_journey
     meta:
       order: 1
-    usecase: LAMF_LOAN
+    usecase: LAMF LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -73,7 +73,7 @@ flows:
     id: lamf_credit_line_with_mfc_single_redirection
     meta:
       order: 2
-    usecase: LAMF_LOAN
+    usecase: LAMF LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -84,7 +84,7 @@ flows:
     id: lamf_credit_line_with_mfc
     meta:
       order: 3
-    usecase: LAMF_LOAN
+    usecase: LAMF LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -96,7 +96,7 @@ flows:
     id: lamf_credit_line_with_mfc_offline_journey_drawdown
     meta:
       order: 4
-    usecase: LAMF_LOAN
+    usecase: LAMF LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -107,7 +107,7 @@ flows:
     id: lamf_credit_line_with_mfc_offline_journey_drawdown_foreclosure
     meta:
       order: 5
-    usecase: LAMF_LOAN
+    usecase: LAMF LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -118,7 +118,7 @@ flows:
     id: lamf_credit_line_with_mfc_offline_journey_drawdown_missed_emi
     meta:
       order: 6
-    usecase: LAMF_LOAN
+    usecase: LAMF LOAN
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -129,7 +129,7 @@ flows:
     id: lamf_credit_line_with_mfc_offline_journey_drawdown_pre_part
     meta:
       order: 7
-    usecase: LAMF_LOAN
+    usecase: LAMF LOAN
     tags:
       - WORKBENCH
       - REPORTABLE

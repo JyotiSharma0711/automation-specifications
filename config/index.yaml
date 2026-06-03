@@ -5,8 +5,9 @@ info:
   description: ONDC Specification
   version: 2.3.0
   x-usecases: 
-    - BUSINESS_LOAN
-    - LAMF_LOAN
+    - BUSINESS LOAN
+    - LAMF LOAN
+    - UNIFIED CREDIT
   x-branch-name: draft-FIS12-2.3.0
   x-reporting: true
 security: 
