@@ -7,7 +7,6 @@ info:
   x-usecases: 
     - BUSINESS LOAN
     - LAMF LOAN
-    - UNIFIED CREDIT
   x-branch-name: draft-FIS12-2.3.0
   x-reporting: true
 security: 
