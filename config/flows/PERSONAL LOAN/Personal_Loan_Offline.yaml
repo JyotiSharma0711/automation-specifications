@@ -54,6 +54,18 @@ steps:
                 code: PERSONAL_LOAN
             payment:
               collected_by: BPP
+            tags:
+              - descriptor:
+                  code: BAP_TERMS
+                  name: BAP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
       saveData:
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
@@ -78,9 +90,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: search
-            timestamp: 2026-06-02T10:50:53.988Z
+            timestamp: 2026-06-04T08:59:10.171Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: ca9747e6-6edb-4feb-a4f7-a13ee8fe83ad
+            message_id: a366f2e0-81f4-4668-ad7d-a627cb5f9e6f
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -97,6 +109,18 @@ steps:
                   code: PERSONAL_LOAN
               payment:
                 collected_by: BPP
+              tags:
+                - descriptor:
+                    code: BAP_TERMS
+                    name: BAP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
         type: request
         description: The BAP initiates the personal loan foreclosure offline journey by
           broadcasting a search request to the network, specifying the loan
@@ -301,78 +325,107 @@ steps:
                       - F3
                 fulfillments:
                   - id: F1
-                    type: LOAN
-                    tags:
-                      - descriptor:
-                          name: Checklist
-                          code: CHECKLISTS
-                        display: false
-                        list:
-                          - descriptor:
-                              code: PERSONAL_INFORMATION
-                              name: Personal Information
-                            value: PENDING
-                          - descriptor:
-                              code: LOAN_OFFER
-                              name: Loan Offer
-                            value: PENDING
-                          - descriptor:
-                              code: JOURNEY_OFFLINE
-                              name: Journey Offline
-                            value: PENDING
-                          - descriptor:
-                              code: KYC
-                              name: OFFLINE
-                            value: PENDING
-                          - descriptor:
-                              code: REPAYMENT
-                              name: E-MANDATE
-                            value: PENDING
-                          - descriptor:
-                              code: BANK_ACCOUNT_VERIFICATION
-                              name: PENNY DROP
-                            value: PENDING
-                          - descriptor:
-                              code: LOAN_AGREEMENT
-                              name: CLICKWRAP
-                            value: PENDING
+                    type: SEMI_ONLINE
+                    stops:
+                      - id: "1"
+                        type: PERSONAL_INFORMATION
+                        instructions:
+                          name: Personal Information
+                          code: PENDING
+                          short_desc: Short desc about personal info checklist
+                      - id: "2"
+                        parent_stop_id: "1"
+                        type: LOAN_OFFER
+                        instructions:
+                          name: Loan Offer
+                          code: PENDING
+                          short_desc: Short desc about loan offer checklist
+                      - id: "3"
+                        parent_stop_id: "2"
+                        type: JOURNEY_OFFLINE
+                        instructions:
+                          name: Journey Offline
+                          code: PENDING
+                          short_desc: Short desc about Journey Offline checklist
+                      - id: "4"
+                        parent_stop_id: "3"
+                        type: KYC
+                        instructions:
+                          name: OFFLINE
+                          code: PENDING
+                          short_desc: Short desc about KYC checklist
+                      - id: "5"
+                        parent_stop_id: "4"
+                        type: REPAYMENT
+                        instructions:
+                          name: E-MANDATE
+                          code: PENDING
+                          short_desc: Short desc about repayment checklist
+                      - id: "6"
+                        parent_stop_id: "5"
+                        type: BANK_ACCOUNT_VERIFICATION
+                        instructions:
+                          name: PENNY DROP
+                          code: PENDING
+                          short_desc: Short desc about Bank Account Verification checklist
+                      - id: "7"
+                        parent_stop_id: "6"
+                        type: LOAN_AGREEMENT
+                        instructions:
+                          name: CLICKWRAP
+                          code: PENDING
+                          short_desc: Short desc about LOAN_AGREEMENT checklist
                   - id: F2
-                    type: LOAN
-                    tags:
-                      - descriptor:
-                          name: Checklist
-                          code: CHECKLISTS
-                        display: false
-                        list:
-                          - descriptor:
-                              code: PERSONAL_INFORMATION
-                              name: Personal Information
-                              short_desc: Provide your Personal Info to proceed further
-                            value: PENDING
-                          - descriptor:
-                              code: LOAN_OFFER
-                              name: Loan Offer
-                            value: PENDING
-                          - descriptor:
-                              code: SINGLE_REDIRECTION
-                              name: Single Redirection
-                            value: PENDING
-                          - descriptor:
-                              code: KYC
-                              name: VKYC
-                            value: PENDING
-                          - descriptor:
-                              code: REPAYMENT
-                              name: E-MANDATE
-                            value: PENDING
-                          - descriptor:
-                              code: BANK_ACCOUNT_VERIFICATION
-                              name: PENNY DROP
-                            value: PENDING
-                          - descriptor:
-                              code: LOAN_AGREEMENT
-                              name: CLICKWRAP
-                            value: PENDING
+                    type: ONLINE
+                    stops:
+                      - id: "1"
+                        type: PERSONAL_INFORMATION
+                        instructions:
+                          name: Personal Information
+                          code: PENDING
+                          short_desc: Short desc about personal info checklist
+                      - id: "2"
+                        parent_stop_id: "1"
+                        type: LOAN_OFFER
+                        instructions:
+                          name: Loan Offer
+                          code: PENDING
+                          short_desc: Short desc about loan offer checklist
+                      - id: "3"
+                        parent_stop_id: "2"
+                        type: SINGLE_REDIRECTION
+                        instructions:
+                          name: Single Redirection
+                          code: PENDING
+                          short_desc: Short desc about Single Redirection checklist
+                      - id: "4"
+                        parent_stop_id: "3"
+                        type: KYC
+                        instructions:
+                          name: VKYC
+                          code: PENDING
+                          short_desc: Short desc about KYC checklist
+                      - id: "5"
+                        parent_stop_id: "4"
+                        type: REPAYMENT
+                        instructions:
+                          name: E-MANDATE
+                          code: PENDING
+                          short_desc: Short desc about repayment checklist
+                      - id: "6"
+                        parent_stop_id: "5"
+                        type: BANK_ACCOUNT_VERIFICATION
+                        instructions:
+                          name: PENNY DROP
+                          code: PENDING
+                          short_desc: Short desc about Bank Account Verification checklist
+                      - id: "7"
+                        parent_stop_id: "6"
+                        type: LOAN_AGREEMENT
+                        instructions:
+                          name: CLICKWRAP
+                          code: PENDING
+                          short_desc: Short desc about LOAN_AGREEMENT checklist
                   - id: F3
                     type: DEDUPE
                 payments:
@@ -432,6 +485,18 @@ steps:
                           name: Lsp Address
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
+            tags:
+              - descriptor:
+                  code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
       saveData:
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
@@ -456,9 +521,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_search
-            timestamp: 2026-06-02T10:50:54.017Z
+            timestamp: 2026-06-04T08:59:10.197Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: ca9747e6-6edb-4feb-a4f7-a13ee8fe83ad
+            message_id: a366f2e0-81f4-4668-ad7d-a627cb5f9e6f
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -475,7 +540,7 @@ steps:
               descriptor:
                 name: ICICI Bank
               providers:
-                - id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                - id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                   descriptor:
                     images:
                       - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -484,33 +549,33 @@ steps:
                     short_desc: ICICI Bank Ltd
                     long_desc: ICICI Bank Ltd, India.
                   categories:
-                    - id: cat_loan_54512df9-de37-4278-9b7b-9296bc289400
+                    - id: cat_loan_0ea0ff72-c40d-4cec-8996-cfef1e1aeb09
                       descriptor:
                         code: LOAN
                         name: Loan
-                    - id: cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                      parent_category_id: cat_loan_54512df9-de37-4278-9b7b-9296bc289400
+                    - id: cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                      parent_category_id: cat_loan_0ea0ff72-c40d-4cec-8996-cfef1e1aeb09
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan
-                    - id: cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
-                      parent_category_id: cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
+                    - id: cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
+                      parent_category_id: cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
                       descriptor:
                         code: BUREAU_LOAN
                         name: Bureau Loan
-                    - id: cat_pre_qualifier_41154955-dac8-45b8-a1f0-332ce1857441
-                      parent_category_id: cat_loan_54512df9-de37-4278-9b7b-9296bc289400
+                    - id: cat_pre_qualifier_c03c83ac-086d-4123-a656-e391290d8f41
+                      parent_category_id: cat_loan_0ea0ff72-c40d-4cec-8996-cfef1e1aeb09
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                   items:
-                    - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                    - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Offline Journey
                       category_ids:
-                        - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                        - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                        - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                        - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                       fulfillment_ids:
                         - F1
                       tags:
@@ -560,19 +625,19 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: form_e7364014-a79f-48f1-9d20-d8e05db4d7fc
+                          id: form_a5664bf0-2051-424f-8123-da7d0830a36c
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: bureau_personal_loan_fcb0f0bc-8ae2-40df-8ff3-621d6eadafe3
+                    - id: bureau_personal_loan_c0ee41bd-115c-430b-84ae-3c777b7a27de
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Single Redirection
                       category_ids:
-                        - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                        - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                        - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                        - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                       fulfillment_ids:
                         - F2
                       tags:
@@ -622,94 +687,123 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: form_e7364014-a79f-48f1-9d20-d8e05db4d7fc
+                          id: form_a5664bf0-2051-424f-8123-da7d0830a36c
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: personal_loan_61b8599a-8c66-4894-adee-eee315db62d9
+                    - id: personal_loan_0776f8c0-df42-46c4-923f-2e3de585409c
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                       category_ids:
-                        - cat_pre_qualifier_41154955-dac8-45b8-a1f0-332ce1857441
+                        - cat_pre_qualifier_c03c83ac-086d-4123-a656-e391290d8f41
                       fulfillment_ids:
                         - F3
                   fulfillments:
                     - id: F1
-                      type: LOAN
-                      tags:
-                        - descriptor:
-                            name: Checklist
-                            code: CHECKLISTS
-                          display: false
-                          list:
-                            - descriptor:
-                                code: PERSONAL_INFORMATION
-                                name: Personal Information
-                              value: PENDING
-                            - descriptor:
-                                code: LOAN_OFFER
-                                name: Loan Offer
-                              value: PENDING
-                            - descriptor:
-                                code: JOURNEY_OFFLINE
-                                name: Journey Offline
-                              value: PENDING
-                            - descriptor:
-                                code: KYC
-                                name: OFFLINE
-                              value: PENDING
-                            - descriptor:
-                                code: REPAYMENT
-                                name: E-MANDATE
-                              value: PENDING
-                            - descriptor:
-                                code: BANK_ACCOUNT_VERIFICATION
-                                name: PENNY DROP
-                              value: PENDING
-                            - descriptor:
-                                code: LOAN_AGREEMENT
-                                name: CLICKWRAP
-                              value: PENDING
+                      type: SEMI_ONLINE
+                      stops:
+                        - id: "1"
+                          type: PERSONAL_INFORMATION
+                          instructions:
+                            name: Personal Information
+                            code: PENDING
+                            short_desc: Short desc about personal info checklist
+                        - id: "2"
+                          parent_stop_id: "1"
+                          type: LOAN_OFFER
+                          instructions:
+                            name: Loan Offer
+                            code: PENDING
+                            short_desc: Short desc about loan offer checklist
+                        - id: "3"
+                          parent_stop_id: "2"
+                          type: JOURNEY_OFFLINE
+                          instructions:
+                            name: Journey Offline
+                            code: PENDING
+                            short_desc: Short desc about Journey Offline checklist
+                        - id: "4"
+                          parent_stop_id: "3"
+                          type: KYC
+                          instructions:
+                            name: OFFLINE
+                            code: PENDING
+                            short_desc: Short desc about KYC checklist
+                        - id: "5"
+                          parent_stop_id: "4"
+                          type: REPAYMENT
+                          instructions:
+                            name: E-MANDATE
+                            code: PENDING
+                            short_desc: Short desc about repayment checklist
+                        - id: "6"
+                          parent_stop_id: "5"
+                          type: BANK_ACCOUNT_VERIFICATION
+                          instructions:
+                            name: PENNY DROP
+                            code: PENDING
+                            short_desc: Short desc about Bank Account Verification checklist
+                        - id: "7"
+                          parent_stop_id: "6"
+                          type: LOAN_AGREEMENT
+                          instructions:
+                            name: CLICKWRAP
+                            code: PENDING
+                            short_desc: Short desc about LOAN_AGREEMENT checklist
                     - id: F2
-                      type: LOAN
-                      tags:
-                        - descriptor:
-                            name: Checklist
-                            code: CHECKLISTS
-                          display: false
-                          list:
-                            - descriptor:
-                                code: PERSONAL_INFORMATION
-                                name: Personal Information
-                                short_desc: Provide your Personal Info to proceed further
-                              value: PENDING
-                            - descriptor:
-                                code: LOAN_OFFER
-                                name: Loan Offer
-                              value: PENDING
-                            - descriptor:
-                                code: SINGLE_REDIRECTION
-                                name: Single Redirection
-                              value: PENDING
-                            - descriptor:
-                                code: KYC
-                                name: VKYC
-                              value: PENDING
-                            - descriptor:
-                                code: REPAYMENT
-                                name: E-MANDATE
-                              value: PENDING
-                            - descriptor:
-                                code: BANK_ACCOUNT_VERIFICATION
-                                name: PENNY DROP
-                              value: PENDING
-                            - descriptor:
-                                code: LOAN_AGREEMENT
-                                name: CLICKWRAP
-                              value: PENDING
+                      type: ONLINE
+                      stops:
+                        - id: "1"
+                          type: PERSONAL_INFORMATION
+                          instructions:
+                            name: Personal Information
+                            code: PENDING
+                            short_desc: Short desc about personal info checklist
+                        - id: "2"
+                          parent_stop_id: "1"
+                          type: LOAN_OFFER
+                          instructions:
+                            name: Loan Offer
+                            code: PENDING
+                            short_desc: Short desc about loan offer checklist
+                        - id: "3"
+                          parent_stop_id: "2"
+                          type: SINGLE_REDIRECTION
+                          instructions:
+                            name: Single Redirection
+                            code: PENDING
+                            short_desc: Short desc about Single Redirection checklist
+                        - id: "4"
+                          parent_stop_id: "3"
+                          type: KYC
+                          instructions:
+                            name: VKYC
+                            code: PENDING
+                            short_desc: Short desc about KYC checklist
+                        - id: "5"
+                          parent_stop_id: "4"
+                          type: REPAYMENT
+                          instructions:
+                            name: E-MANDATE
+                            code: PENDING
+                            short_desc: Short desc about repayment checklist
+                        - id: "6"
+                          parent_stop_id: "5"
+                          type: BANK_ACCOUNT_VERIFICATION
+                          instructions:
+                            name: PENNY DROP
+                            code: PENDING
+                            short_desc: Short desc about Bank Account Verification checklist
+                        - id: "7"
+                          parent_stop_id: "6"
+                          type: LOAN_AGREEMENT
+                          instructions:
+                            name: CLICKWRAP
+                            code: PENDING
+                            short_desc: Short desc about LOAN_AGREEMENT checklist
                     - id: F3
                       type: DEDUPE
                   payments:
@@ -769,6 +863,18 @@ steps:
                             name: Lsp Address
                           value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                             Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
+              tags:
+                - descriptor:
+                    code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
         type: request
         description: The BPP responds to the BAP's search request by providing a catalog
           of personal loan offerings, including provider details, terms, and an
@@ -800,12 +906,12 @@ steps:
       - name: example for html_form
         payload:
           panName: Jyoti Sharma
-          personalemail: jyoti.sharma@thewitslab.com
-          officialemail: jyoti.sharma@thewitslab.com
-          dob: 2026-06-08
+          personalemail: jyoti.sharma@ab.com
+          officialemail: jyoti.sharma@ab.com
+          dob: 2026-06-17
           gender: female
           pan: BAJPC4350M
-          contactNumber: "6284770148"
+          contactNumber: "6284870148"
           employmentType: selfEmployed
           income: "78"
           companyName: wits
@@ -890,9 +996,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: select
-            timestamp: 2026-06-02T10:51:18.377Z
+            timestamp: 2026-06-04T08:59:38.346Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 44e411d4-0600-4709-bd67-41cfb8231cbf
+            message_id: c19b0da0-056a-4a4a-a730-af80904c1e8e
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -907,18 +1013,18 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   xinput:
                     form:
-                      id: form_e7364014-a79f-48f1-9d20-d8e05db4d7fc
+                      id: form_a5664bf0-2051-424f-8123-da7d0830a36c
                     form_response:
                       status: SUCCESS
-                      submission_id: 83092d5d-ee26-49b8-a978-c94870dca2ff
+                      submission_id: b38f1644-de34-42c9-a1d3-faf1611eaf17
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
         type: request
@@ -1151,47 +1257,62 @@ steps:
                   required: true
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 customer:
                   person:
                     name: John Doe
                   contact:
                     phone: +91-9999999999
                     email: john.doe@example.com
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: FINALIZED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: PENDING
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: PENDING
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: PENDING
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: PENDING
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: PENDING
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: FINALIZED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: PENDING
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: PENDING
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: PENDING
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: PENDING
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: PENDING
+                      short_desc: Short desc about KYC checklist
             quote:
               id: LOAN_LEAD_ID_OR_SIMILAR
               price:
@@ -1259,9 +1380,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_select
-            timestamp: 2026-06-02T10:51:18.409Z
+            timestamp: 2026-06-04T08:59:38.372Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 44e411d4-0600-4709-bd67-41cfb8231cbf
+            message_id: c19b0da0-056a-4a4a-a730-af80904c1e8e
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1276,7 +1397,7 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1344,13 +1465,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -1458,7 +1579,7 @@ steps:
                       headings:
                         - JOURNEY_OFFLINE
                     form:
-                      id: ekyc_details_7211e505-30cb-424b-b26b-eed1c4d944cb
+                      id: ekyc_details_4497ffd5-c612-42dd-905b-31bfe621a798
                       mime_type: application/html
                       url: undefined/forms/ONDC:FIS12/Ekyc_details_form/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined
                       resubmit: false
@@ -1466,47 +1587,62 @@ steps:
                     required: true
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   customer:
                     person:
                       name: John Doe
                     contact:
                       phone: +91-9999999999
                       email: john.doe@example.com
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: FINALIZED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: PENDING
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: PENDING
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: PENDING
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: PENDING
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: PENDING
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: FINALIZED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: PENDING
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: PENDING
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: PENDING
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: PENDING
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: PENDING
+                        short_desc: Short desc about KYC checklist
               quote:
                 id: LOAN_LEAD_ID_OR_SIMILAR
                 price:
@@ -1792,7 +1928,7 @@ steps:
                     submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 customer:
                   person:
                     name: John Doe
@@ -1802,40 +1938,55 @@ steps:
                 state:
                   descriptor:
                     code: INITIATED
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: FINALIZED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: IN_PROGRESS
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: INITIATED
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: PENDING
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: PENDING
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: PENDING
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: FINALIZED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: IN_PROGRESS
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: INITIATED
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: PENDING
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: PENDING
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: PENDING
+                      short_desc: Short desc about loan agreement checklist
             quote:
               id: LOAN_LEAD_ID_OR_SIMILAR
               price:
@@ -1900,9 +2051,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-06-02T10:51:22.274Z
+            timestamp: 2026-06-04T08:59:40.922Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: b63eb6e8-2720-4ee2-8135-3cc595ddf2f7
+            message_id: ae6e59e7-1843-4858-9eb1-e896e553dd0e
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1917,7 +2068,7 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1985,13 +2136,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -2090,13 +2241,13 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_7211e505-30cb-424b-b26b-eed1c4d944cb
+                      id: ekyc_details_4497ffd5-c612-42dd-905b-31bfe621a798
                     form_response:
                       status: OFFLINE_PENDING
                       submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   customer:
                     person:
                       name: John Doe
@@ -2106,40 +2257,55 @@ steps:
                   state:
                     descriptor:
                       code: INITIATED
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: FINALIZED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: IN_PROGRESS
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: INITIATED
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: PENDING
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: PENDING
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: PENDING
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: FINALIZED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: IN_PROGRESS
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: INITIATED
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: PENDING
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: PENDING
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: PENDING
+                        short_desc: Short desc about loan agreement checklist
               quote:
                 id: LOAN_LEAD_ID_OR_SIMILAR
                 price:
@@ -2236,9 +2402,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: status
-            timestamp: 2026-06-02T10:51:22.302Z
+            timestamp: 2026-06-04T08:59:40.949Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 79fa9875-b660-4558-9ffd-e6b4d29d813b
+            message_id: 70fa1480-584e-4c46-a488-f5cc1c8de70b
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2474,7 +2640,7 @@ steps:
                     submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 customer:
                   person:
                     name: John Doe
@@ -2484,40 +2650,55 @@ steps:
                 state:
                   descriptor:
                     code: INITIATED
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: SELECTED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: IN_PROGRESS
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: IN_PROGRESS
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: IN_PROGRESS
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: IN_PROGRESS
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: IN_PROGRESS
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: SELECTED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: IN_PROGRESS
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: IN_PROGRESS
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: IN_PROGRESS
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: IN_PROGRESS
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: IN_PROGRESS
+                      short_desc: Short desc about loan agreement checklist
             quote:
               id: LOAN_LEAD_ID_OR_SIMILAR
               price:
@@ -2581,9 +2762,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-06-02T10:51:22.332Z
+            timestamp: 2026-06-04T08:59:40.975Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 79fa9875-b660-4558-9ffd-e6b4d29d813b
+            message_id: 70fa1480-584e-4c46-a488-f5cc1c8de70b
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2598,7 +2779,7 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -2666,13 +2847,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -2771,13 +2952,13 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_7211e505-30cb-424b-b26b-eed1c4d944cb
+                      id: ekyc_details_4497ffd5-c612-42dd-905b-31bfe621a798
                     form_response:
                       status: OFFLINE_PENDING
                       submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   customer:
                     person:
                       name: John Doe
@@ -2787,40 +2968,55 @@ steps:
                   state:
                     descriptor:
                       code: INITIATED
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: SELECTED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: IN_PROGRESS
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: IN_PROGRESS
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: IN_PROGRESS
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: IN_PROGRESS
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: IN_PROGRESS
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: SELECTED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: IN_PROGRESS
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: IN_PROGRESS
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: IN_PROGRESS
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: IN_PROGRESS
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: IN_PROGRESS
+                        short_desc: Short desc about loan agreement checklist
               quote:
                 id: LOAN_LEAD_ID_OR_SIMILAR
                 price:
@@ -3079,7 +3275,7 @@ steps:
                     submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 state:
                   descriptor:
                     code: DISBURSED
@@ -3089,40 +3285,55 @@ steps:
                   contact:
                     phone: +91-9999999999
                     email: john.doe@example.com
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: SELECTED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: SUCCESSFUL
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: SELECTED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about loan agreement checklist
             quote:
               id: LOAN_LEAD_ID_OR_SIMILAR
               price:
@@ -3184,9 +3395,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-06-02T10:51:22.375Z
+            timestamp: 2026-06-04T08:59:41.002Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: e3cc89d9-ca09-4bd7-aba3-8dea38c5de01
+            message_id: c162debd-1b38-43af-8ff1-4054efe6867f
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3201,7 +3412,7 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -3269,13 +3480,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -3374,13 +3585,13 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_7211e505-30cb-424b-b26b-eed1c4d944cb
+                      id: ekyc_details_4497ffd5-c612-42dd-905b-31bfe621a798
                     form_response:
                       status: COMPLETED
                       submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   state:
                     descriptor:
                       code: DISBURSED
@@ -3390,40 +3601,55 @@ steps:
                     contact:
                       phone: +91-9999999999
                       email: john.doe@example.com
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: SELECTED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: SUCCESSFUL
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: SELECTED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about loan agreement checklist
               quote:
                 id: LOAN_LEAD_ID_OR_SIMILAR
                 price:
@@ -3510,6 +3736,29 @@ steps:
                   form_response:
                     status: SUCCESS
                     submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
+            tags:
+              - descriptor:
+                  code: BAP_TERMS
+                  name: BAP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - descriptor:
+                  code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
       saveData:
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
@@ -3532,9 +3781,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: confirm
-            timestamp: 2026-06-02T10:51:22.409Z
+            timestamp: 2026-06-04T08:59:41.034Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 088f7368-ba9e-4e8b-bd4d-777e95b773bb
+            message_id: 4ec65bbc-2138-409c-8276-826231fa067f
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3549,15 +3798,38 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   xinput:
                     form:
-                      id: ekyc_details_7211e505-30cb-424b-b26b-eed1c4d944cb
+                      id: ekyc_details_4497ffd5-c612-42dd-905b-31bfe621a798
                     form_response:
                       status: SUCCESS
                       submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
+              tags:
+                - descriptor:
+                    code: BAP_TERMS
+                    name: BAP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - descriptor:
+                    code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
         type: request
         description: The BAP sends a confirm request to the BPP to formally finalize the
           personal loan application and trigger fund disbursement, marking the
@@ -3805,7 +4077,7 @@ steps:
               ttl: PT15D
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 customer:
                   person:
                     name: John Doe
@@ -3815,40 +4087,55 @@ steps:
                 state:
                   descriptor:
                     code: DISBURSED
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: SELECTED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: SUCCESSFUL
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: SELECTED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about KYC checklist
             payments:
               - type: ON_FULFILLMENT
                 id: LOAN_DISBURSMENT_ID
@@ -3952,6 +4239,29 @@ steps:
                     obligations and confirming the loan's cancellation.
                 mime_type: application/pdf
                 url: https://lender.com/loan/loan-cancellation/O1.pdf
+            tags:
+              - descriptor:
+                  code: BAP_TERMS
+                  name: BAP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - descriptor:
+                  code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
             created_at: 2023-05-25T05:23:03.443Z
             updated_at: 2023-05-25T05:23:03.443Z
       saveData:
@@ -3978,9 +4288,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_confirm
-            timestamp: 2026-06-02T10:51:22.445Z
+            timestamp: 2026-06-04T08:59:41.064Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 088f7368-ba9e-4e8b-bd4d-777e95b773bb
+            message_id: 4ec65bbc-2138-409c-8276-826231fa067f
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3994,10 +4304,10 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_1780397482453_DEFAULT
+              id: LOAN_ORDER_1780563581069_DEFAULT
               status: ACTIVE
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -4065,13 +4375,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -4205,7 +4515,7 @@ steps:
                 ttl: PT15D
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   customer:
                     person:
                       name: John Doe
@@ -4215,40 +4525,55 @@ steps:
                   state:
                     descriptor:
                       code: DISBURSED
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: SELECTED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: SUCCESSFUL
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: SELECTED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about KYC checklist
               payments:
                 - type: ON_FULFILLMENT
                   id: LOAN_DISBURSMENT_ID
@@ -4256,7 +4581,7 @@ steps:
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-06-02T10:51:22.453Z
+                    timestamp: 2026-06-04T08:59:41.069Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -4352,8 +4677,31 @@ steps:
                       obligations and confirming the loan's cancellation.
                   mime_type: application/pdf
                   url: https://lender.com/loan/loan-cancellation/O1.pdf
-              created_at: 2026-06-02T10:51:22.453Z
-              updated_at: 2026-06-02T10:51:22.453Z
+              tags:
+                - descriptor:
+                    code: BAP_TERMS
+                    name: BAP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - descriptor:
+                    code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              created_at: 2026-06-04T08:59:41.069Z
+              updated_at: 2026-06-04T08:59:41.069Z
         type: request
         description: The BPP confirms the loan booking in its core banking system and
           provides the official Loan Account ID, remittance values, and
@@ -4603,7 +4951,7 @@ steps:
               ttl: PT15D
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 customer:
                   person:
                     name: John Doe
@@ -4613,40 +4961,55 @@ steps:
                 state:
                   descriptor:
                     code: DISBURSED
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: SELECTED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: SUCCESSFUL
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: SELECTED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about loan agreement checklist
             payments:
               - type: ON_FULFILLMENT
                 id: LOAN_DISBURSMENT_ID
@@ -4750,6 +5113,29 @@ steps:
                     obligations and confirming the loan's cancellation.
                 mime_type: application/pdf
                 url: https://lender.com/loan/loan-cancellation/O1.pdf
+            tags:
+              - descriptor:
+                  code: BAP_TERMS
+                  name: BAP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - descriptor:
+                  code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
             created_at: 2023-05-25T05:23:03.443Z
             updated_at: 2023-05-25T05:23:03.443Z
       saveData:
@@ -4769,9 +5155,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-06-02T10:51:22.482Z
+            timestamp: 2026-06-04T08:59:41.097Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 84555f33-4b15-4c7b-b604-3cab0ee2546c
+            message_id: 3a9d431e-e8bd-4d66-a5c2-5cfd10c97048
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -4785,10 +5171,10 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_1780397482453_DEFAULT
+              id: LOAN_ORDER_1780563581069_DEFAULT
               status: ACTIVE
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -4856,13 +5242,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -4996,7 +5382,7 @@ steps:
                 ttl: PT15D
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   customer:
                     person:
                       name: John Doe
@@ -5006,40 +5392,55 @@ steps:
                   state:
                     descriptor:
                       code: DISBURSED
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: SELECTED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: SUCCESSFUL
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: SELECTED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
                   id: LOAN_DISBURSMENT_ID
@@ -5047,7 +5448,7 @@ steps:
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-06-02T10:51:22.489Z
+                    timestamp: 2026-06-04T08:59:41.103Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -5143,8 +5544,31 @@ steps:
                       obligations and confirming the loan's cancellation.
                   mime_type: application/pdf
                   url: https://lender.com/loan/loan-cancellation/O1.pdf
-              created_at: 2026-06-02T10:51:22.453Z
-              updated_at: 2026-06-02T10:51:22.490Z
+              tags:
+                - descriptor:
+                    code: BAP_TERMS
+                    name: BAP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - descriptor:
+                    code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              created_at: 2026-06-04T08:59:41.069Z
+              updated_at: 2026-06-04T08:59:41.103Z
         type: request
         description: The BPP sends an unsolicited on_status callback to the BAP to
           asynchronously update the loan application status, conveying either a
@@ -5395,7 +5819,7 @@ steps:
               ttl: PT15D
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 customer:
                   person:
                     name: John Doe
@@ -5405,40 +5829,55 @@ steps:
                 state:
                   descriptor:
                     code: DISBURSED
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: SELECTED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: SUCCESSFUL
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: SELECTED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about loan agreement checklist
             payments:
               - type: ON_FULFILLMENT
                 id: LOAN_DISBURSMENT_ID
@@ -5542,6 +5981,29 @@ steps:
                     obligations and confirming the loan's cancellation.
                 mime_type: application/pdf
                 url: https://lender.com/loan/loan-cancellation/O1.pdf
+            tags:
+              - descriptor:
+                  code: BAP_TERMS
+                  name: BAP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - descriptor:
+                  code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
             created_at: 2023-05-25T05:23:03.443Z
             updated_at: 2023-05-25T05:23:03.443Z
       saveData:
@@ -5561,9 +6023,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-06-02T10:51:22.519Z
+            timestamp: 2026-06-04T08:59:41.128Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 977877db-f7d6-47ed-93c6-b1774edd112e
+            message_id: 30da027d-b5e2-4cc6-9c95-f4846f11a32c
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -5577,10 +6039,10 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_1780397482453_DEFAULT
+              id: LOAN_ORDER_1780563581069_DEFAULT
               status: ACTIVE
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -5648,13 +6110,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -5788,7 +6250,7 @@ steps:
                 ttl: PT15D
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   customer:
                     person:
                       name: John Doe
@@ -5798,40 +6260,55 @@ steps:
                   state:
                     descriptor:
                       code: DISBURSED
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: SELECTED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: SUCCESSFUL
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: SELECTED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
                   id: LOAN_DISBURSMENT_ID
@@ -5839,7 +6316,7 @@ steps:
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-06-02T10:51:22.527Z
+                    timestamp: 2026-06-04T08:59:41.134Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -5935,8 +6412,31 @@ steps:
                       obligations and confirming the loan's cancellation.
                   mime_type: application/pdf
                   url: https://lender.com/loan/loan-cancellation/O1.pdf
-              created_at: 2026-06-02T10:51:22.453Z
-              updated_at: 2026-06-02T10:51:22.527Z
+              tags:
+                - descriptor:
+                    code: BAP_TERMS
+                    name: BAP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - descriptor:
+                    code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              created_at: 2026-06-04T08:59:41.069Z
+              updated_at: 2026-06-04T08:59:41.134Z
         type: request
         description: The BPP sends an unsolicited on_status callback to inform the BAP
           about the current state of the personal loan application, including
@@ -6187,7 +6687,7 @@ steps:
               ttl: PT15D
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 customer:
                   person:
                     name: John Doe
@@ -6197,40 +6697,55 @@ steps:
                 state:
                   descriptor:
                     code: DISBURSED
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: SELECTED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: SUCCESSFUL
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: SELECTED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about loan agreement checklist
             payments:
               - type: ON_FULFILLMENT
                 id: LOAN_DISBURSMENT_ID
@@ -6334,6 +6849,29 @@ steps:
                     obligations and confirming the loan's cancellation.
                 mime_type: application/pdf
                 url: https://lender.com/loan/loan-cancellation/O1.pdf
+            tags:
+              - descriptor:
+                  code: BAP_TERMS
+                  name: BAP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - descriptor:
+                  code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
             created_at: 2023-05-25T05:23:03.443Z
             updated_at: 2023-05-25T05:23:03.443Z
       saveData:
@@ -6353,9 +6891,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-06-02T10:51:22.559Z
+            timestamp: 2026-06-04T08:59:41.160Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 09030732-6f4b-4607-9d29-e8e1a9bca6a1
+            message_id: bccf7a12-7114-4356-add3-7e7c5ca1fecc
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -6369,10 +6907,10 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_1780397482453_DEFAULT
+              id: LOAN_ORDER_1780563581069_DEFAULT
               status: ACTIVE
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -6440,13 +6978,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -6580,7 +7118,7 @@ steps:
                 ttl: PT15D
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   customer:
                     person:
                       name: John Doe
@@ -6590,40 +7128,55 @@ steps:
                   state:
                     descriptor:
                       code: DISBURSED
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: SELECTED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: SUCCESSFUL
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: SELECTED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
                   id: LOAN_DISBURSMENT_ID
@@ -6631,7 +7184,7 @@ steps:
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-06-02T10:51:22.566Z
+                    timestamp: 2026-06-04T08:59:41.166Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -6727,8 +7280,31 @@ steps:
                       obligations and confirming the loan's cancellation.
                   mime_type: application/pdf
                   url: https://lender.com/loan/loan-cancellation/O1.pdf
-              created_at: 2026-06-02T10:51:22.453Z
-              updated_at: 2026-06-02T10:51:22.566Z
+              tags:
+                - descriptor:
+                    code: BAP_TERMS
+                    name: BAP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - descriptor:
+                    code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              created_at: 2026-06-04T08:59:41.069Z
+              updated_at: 2026-06-04T08:59:41.166Z
         type: request
         description: The BPP sends an unsolicited on_status callback to the BAP to
           asynchronously update the loan application status, reflecting either
@@ -6980,7 +7556,7 @@ steps:
               ttl: PT15D
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 customer:
                   person:
                     name: John Doe
@@ -6990,40 +7566,55 @@ steps:
                 state:
                   descriptor:
                     code: DISBURSED
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: SELECTED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: SUCCESSFUL
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: SELECTED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about loan agreement checklist
             payments:
               - type: ON_FULFILLMENT
                 id: LOAN_DISBURSMENT_ID
@@ -7127,6 +7718,29 @@ steps:
                     obligations and confirming the loan's cancellation.
                 mime_type: application/pdf
                 url: https://lender.com/loan/loan-cancellation/O1.pdf
+            tags:
+              - descriptor:
+                  code: BAP_TERMS
+                  name: BAP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - descriptor:
+                  code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
             created_at: 2023-05-25T05:23:03.443Z
             updated_at: 2023-05-25T05:23:03.443Z
       saveData:
@@ -7147,9 +7761,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-06-02T10:51:22.605Z
+            timestamp: 2026-06-04T08:59:41.193Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 600d0e3c-f0e8-4d2e-a848-78b1479e8c15
+            message_id: b7f031b8-d241-4dc7-9e55-058a161ee004
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -7163,10 +7777,10 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_1780397482453_DEFAULT
+              id: LOAN_ORDER_1780563581069_DEFAULT
               status: ACTIVE
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -7234,13 +7848,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -7374,7 +7988,7 @@ steps:
                 ttl: PT15D
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   customer:
                     person:
                       name: John Doe
@@ -7384,40 +7998,55 @@ steps:
                   state:
                     descriptor:
                       code: DISBURSED
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: SELECTED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: SUCCESSFUL
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: SELECTED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
                   id: LOAN_DISBURSMENT_ID
@@ -7425,7 +8054,7 @@ steps:
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-06-02T10:51:22.610Z
+                    timestamp: 2026-06-04T08:59:41.201Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -7521,8 +8150,31 @@ steps:
                       obligations and confirming the loan's cancellation.
                   mime_type: application/pdf
                   url: https://lender.com/loan/loan-cancellation/O1.pdf
-              created_at: 2026-06-02T10:51:22.453Z
-              updated_at: 2026-06-02T10:51:22.611Z
+              tags:
+                - descriptor:
+                    code: BAP_TERMS
+                    name: BAP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - descriptor:
+                    code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              created_at: 2026-06-04T08:59:41.069Z
+              updated_at: 2026-06-04T08:59:41.210Z
         type: request
         description: The BPP sends an unsolicited on_status callback to the BAP to
           asynchronously update the loan application status, reflecting either
@@ -7774,7 +8426,7 @@ steps:
               ttl: PT15D
             fulfillments:
               - id: F1
-                type: LOAN
+                type: SEMI_ONLINE
                 customer:
                   person:
                     name: John Doe
@@ -7784,40 +8436,55 @@ steps:
                 state:
                   descriptor:
                     code: COMPLETED
-                tags:
-                  - descriptor:
-                      name: Checklist
-                      code: CHECKLISTS
-                    display: false
-                    list:
-                      - descriptor:
-                          code: PERSONAL_INFORMATION
-                          name: Personal Information
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_OFFER
-                          name: Loan Offer
-                        value: SELECTED
-                      - descriptor:
-                          code: JOURNEY_OFFLINE
-                          name: Journey Offline
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: KYC
-                          name: OFFLINE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: REPAYMENT
-                          name: E-MANDATE
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: BANK_ACCOUNT_VERIFICATION
-                          name: PENNY DROP
-                        value: SUCCESSFUL
-                      - descriptor:
-                          code: LOAN_AGREEMENT
-                          name: CLICKWRAP
-                        value: SUCCESSFUL
+                stops:
+                  - id: "1"
+                    type: PERSONAL_INFORMATION
+                    instructions:
+                      name: Personal Information
+                      code: SUCCESSFUL
+                      short_desc: Short desc about personal info checklist
+                  - id: "2"
+                    parent_stop_id: "1"
+                    type: LOAN_OFFER
+                    instructions:
+                      name: Loan Offer
+                      code: SELECTED
+                      short_desc: Short desc about loan offer checklist
+                  - id: "3"
+                    parent_stop_id: "2"
+                    type: JOURNEY_OFFLINE
+                    instructions:
+                      name: Journey Offline
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Journey Offline checklist
+                  - id: "4"
+                    parent_stop_id: "3"
+                    type: KYC
+                    instructions:
+                      name: OFFLINE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about KYC checklist
+                  - id: "5"
+                    parent_stop_id: "4"
+                    type: REPAYMENT
+                    instructions:
+                      name: E-MANDATE
+                      code: SUCCESSFUL
+                      short_desc: Short desc about repayment checklist
+                  - id: "6"
+                    parent_stop_id: "5"
+                    type: BANK_ACCOUNT_VERIFICATION
+                    instructions:
+                      name: PENNY DROP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about Bank Account Verification checklist
+                  - id: "7"
+                    parent_stop_id: "6"
+                    type: LOAN_AGREEMENT
+                    instructions:
+                      name: CLICKWRAP
+                      code: SUCCESSFUL
+                      short_desc: Short desc about loan agreement checklist
             payments:
               - type: ON_FULFILLMENT
                 id: LOAN_DISBURSMENT_ID
@@ -7921,6 +8588,29 @@ steps:
                     obligations and confirming the loan's cancellation.
                 mime_type: application/pdf
                 url: https://lender.com/loan/loan-cancellation/O1.pdf
+            tags:
+              - descriptor:
+                  code: BAP_TERMS
+                  name: BAP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - descriptor:
+                  code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
             created_at: 2023-05-25T05:23:03.443Z
             updated_at: 2023-05-25T05:23:03.443Z
       saveData:
@@ -7939,9 +8629,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-06-02T10:51:22.669Z
+            timestamp: 2026-06-04T08:59:41.252Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 3c4ecb41-d184-4b58-9e4a-bf4f691d5e22
+            message_id: 41faae6b-c6b1-4561-8715-996fe6f4f5ad
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -7955,10 +8645,10 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_1780397482453_DEFAULT
+              id: LOAN_ORDER_1780563581069_DEFAULT
               status: COMPLETED
               provider:
-                id: personal_loan_provider_eaa30235-438f-43fe-94cd-02661497d979
+                id: personal_loan_provider_ddfb0dfb-ddec-49e9-9fa9-fccbd0d2621b
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -8026,13 +8716,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a6ee82cd-d8b1-462a-9b68-169e7ba67cfe
+                - id: bureau_personal_loan_de382ca2-3714-47ab-b3b5-876bb70f02d7
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_ca34d4ad-7832-4cbd-a182-d59eb6ab2188
-                    - cat_bureau_loan_2cb97153-8c76-40af-bb19-7faf90b2194d
+                    - cat_personal_loan_92d295b9-b9df-41ad-98a6-f9125e8166ea
+                    - cat_bureau_loan_d3af5e33-67b2-481c-a3b2-412e470124f7
                   fulfillment_ids:
                     - F1
                   price:
@@ -8166,7 +8856,7 @@ steps:
                 ttl: PT15D
               fulfillments:
                 - id: F1
-                  type: LOAN
+                  type: SEMI_ONLINE
                   customer:
                     person:
                       name: John Doe
@@ -8176,40 +8866,55 @@ steps:
                   state:
                     descriptor:
                       code: COMPLETED
-                  tags:
-                    - descriptor:
-                        name: Checklist
-                        code: CHECKLISTS
-                      display: false
-                      list:
-                        - descriptor:
-                            code: PERSONAL_INFORMATION
-                            name: Personal Information
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_OFFER
-                            name: Loan Offer
-                          value: SELECTED
-                        - descriptor:
-                            code: JOURNEY_OFFLINE
-                            name: Journey Offline
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: KYC
-                            name: OFFLINE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: REPAYMENT
-                            name: E-MANDATE
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: BANK_ACCOUNT_VERIFICATION
-                            name: PENNY DROP
-                          value: SUCCESSFUL
-                        - descriptor:
-                            code: LOAN_AGREEMENT
-                            name: CLICKWRAP
-                          value: SUCCESSFUL
+                  stops:
+                    - id: "1"
+                      type: PERSONAL_INFORMATION
+                      instructions:
+                        name: Personal Information
+                        code: SUCCESSFUL
+                        short_desc: Short desc about personal info checklist
+                    - id: "2"
+                      parent_stop_id: "1"
+                      type: LOAN_OFFER
+                      instructions:
+                        name: Loan Offer
+                        code: SELECTED
+                        short_desc: Short desc about loan offer checklist
+                    - id: "3"
+                      parent_stop_id: "2"
+                      type: JOURNEY_OFFLINE
+                      instructions:
+                        name: Journey Offline
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Journey Offline checklist
+                    - id: "4"
+                      parent_stop_id: "3"
+                      type: KYC
+                      instructions:
+                        name: OFFLINE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about KYC checklist
+                    - id: "5"
+                      parent_stop_id: "4"
+                      type: REPAYMENT
+                      instructions:
+                        name: E-MANDATE
+                        code: SUCCESSFUL
+                        short_desc: Short desc about repayment checklist
+                    - id: "6"
+                      parent_stop_id: "5"
+                      type: BANK_ACCOUNT_VERIFICATION
+                      instructions:
+                        name: PENNY DROP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about Bank Account Verification checklist
+                    - id: "7"
+                      parent_stop_id: "6"
+                      type: LOAN_AGREEMENT
+                      instructions:
+                        name: CLICKWRAP
+                        code: SUCCESSFUL
+                        short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
                   id: LOAN_DISBURSMENT_ID
@@ -8217,7 +8922,7 @@ steps:
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-06-02T10:51:22.675Z
+                    timestamp: 2026-06-04T08:59:41.256Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -8313,8 +9018,31 @@ steps:
                       obligations and confirming the loan's cancellation.
                   mime_type: application/pdf
                   url: https://lender.com/loan/loan-cancellation/O1.pdf
-              created_at: 2026-06-02T10:51:22.453Z
-              updated_at: 2026-06-02T10:51:22.675Z
+              tags:
+                - descriptor:
+                    code: BAP_TERMS
+                    name: BAP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - descriptor:
+                    code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+              created_at: 2026-06-04T08:59:41.069Z
+              updated_at: 2026-06-04T08:59:41.256Z
         type: request
         description: The BPP sends an unsolicited on_status callback to the BAP to
           asynchronously update the loan application status, reflecting either
