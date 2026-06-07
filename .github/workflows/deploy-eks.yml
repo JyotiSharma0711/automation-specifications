@@ -12,11 +12,9 @@ jobs:
       contents: read
       packages: write
     with:
-      action: build-dev
       source_ref: ${{ github.sha }}
       db_api_base_url: ${{ vars.STAGING_EKS_DB_SERVICE_BASE_URL }}
       deploy_values_file: k8/aws/helm/domain-layer/values-staging.yaml
-      promote_values_file: k8/aws/helm/domain-layer/values-preprod.yaml
     secrets:
       db_api_key: ${{ secrets.STAGING_EKS_DB_SERVICE_API_KEY }}
       redis_password: ${{ secrets.REDIS_PASSWORD }}
