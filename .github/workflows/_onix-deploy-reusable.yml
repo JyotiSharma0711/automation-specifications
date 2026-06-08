@@ -20,6 +20,11 @@ on:
         required: false
         type: string
         default: "k8/aws/helm/domain-layer/values.yaml"
+      image_tag_prefix:
+        description: "Image tag prefix, for example dev or prod"
+        required: false
+        type: string
+        default: "dev"
     secrets:
       db_api_key:
         required: false
@@ -103,9 +108,10 @@ jobs:
             | tr -d ':')
           VERSION_NORM=$(echo "${VERSION}" | tr '.' '-')
           SHORT_SHA=$(git rev-parse --short=7 HEAD)
+          TAG_PREFIX="${{ inputs.image_tag_prefix }}"
 
           IMAGE_NAME="${{ env.REGISTRY }}/${{ env.REGISTRY_NAMESPACE }}/ondc-onix-${DOMAIN_NORM}-${VERSION_NORM}"
-          IMAGE_TAG="dev-v${VERSION}-${SHORT_SHA}"
+          IMAGE_TAG="${TAG_PREFIX}-v${VERSION}-${SHORT_SHA}"
 
           echo "image_name=${IMAGE_NAME}" >> "$GITHUB_OUTPUT"
           echo "image_tag=${IMAGE_TAG}" >> "$GITHUB_OUTPUT"
@@ -145,7 +151,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ github.token }}
 
-      - name: Build and push dev image
+      - name: Build and push image
         run: |
           IMAGE_NAME="${{ steps.meta.outputs.image_name }}"
           IMAGE_TAG="${{ steps.meta.outputs.image_tag }}"
@@ -154,7 +160,7 @@ jobs:
           docker build -t "${IMAGE_NAME}:${IMAGE_TAG}" .
           docker push "${IMAGE_NAME}:${IMAGE_TAG}"
 
-          echo "Pushed dev image: ${IMAGE_NAME}:${IMAGE_TAG}"
+          echo "Pushed image: ${IMAGE_NAME}:${IMAGE_TAG}"
 
       - name: Checkout automation-iac
         uses: actions/checkout@v4
@@ -214,6 +220,6 @@ jobs:
           git config user.name "CI Bot"
           git add "${VALUES_FILE}"
           git diff --staged --quiet && echo "No changes to commit" && exit 0
-          git commit -m "chore(dev): ${{ steps.spec.outputs.domain }} ${{ steps.spec.outputs.version }} -> ${{ steps.meta.outputs.image_tag }}"
+          git commit -m "chore(${{ inputs.image_tag_prefix }}): ${{ steps.spec.outputs.domain }} ${{ steps.spec.outputs.version }} -> ${{ steps.meta.outputs.image_tag }}"
           git push
           echo "Deployment updated; ArgoCD will auto-sync"

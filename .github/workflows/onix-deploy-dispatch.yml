@@ -27,6 +27,7 @@ jobs:
       packages: write
     with:
       source_ref: ${{ inputs.source_ref || github.sha }}
+      image_tag_prefix: dev
       deploy_values_file: k8/aws/helm/domain-layer/values.yaml
     secrets:
       db_api_key: ${{ secrets.EKS_DB_SERVICE_API_KEY }}
@@ -42,6 +43,7 @@ jobs:
       packages: write
     with:
       source_ref: ${{ inputs.source_ref || github.sha }}
+      image_tag_prefix: prod
       db_api_base_url: ${{ vars.STAGING_EKS_DB_SERVICE_BASE_URL }}
       deploy_values_file: k8/aws/helm/domain-layer/values-staging.yaml
     secrets:
