@@ -1,0 +1,48 @@
+name: ONIX Deploy Dispatcher
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Deployment configuration to use"
+        required: true
+        type: choice
+        default: draft
+        options:
+          - draft
+          - release
+      source_ref:
+        description: "Branch, tag, or SHA to build. Defaults to the workflow ref."
+        required: false
+        type: string
+
+jobs:
+  draft:
+    if: inputs.target == 'draft'
+    uses: ONDC-Official/automation-specifications/.github/workflows/_onix-deploy-reusable.yml@main
+    permissions:
+      contents: read
+      packages: write
+    with:
+      source_ref: ${{ inputs.source_ref || github.sha }}
+      deploy_values_file: k8/aws/helm/domain-layer/values.yaml
+    secrets:
+      db_api_key: ${{ secrets.EKS_DB_SERVICE_API_KEY }}
+      db_api_base_url: ${{ secrets.EKS_DB_SERVICE_BASE_URL }}
+      redis_password: ${{ secrets.REDIS_PASSWORD }}
+      iac_repo_pat: ${{ secrets.IAC_REPO_PAT }}
+
+  release:
+    if: inputs.target == 'release'
+    uses: ONDC-Official/automation-specifications/.github/workflows/_onix-deploy-reusable.yml@main
+    permissions:
+      contents: read
+      packages: write
+    with:
+      source_ref: ${{ inputs.source_ref || github.sha }}
+      db_api_base_url: ${{ vars.STAGING_EKS_DB_SERVICE_BASE_URL }}
+      deploy_values_file: k8/aws/helm/domain-layer/values-staging.yaml
+    secrets:
+      db_api_key: ${{ secrets.STAGING_EKS_DB_SERVICE_API_KEY }}
+      redis_password: ${{ secrets.REDIS_PASSWORD }}
+      iac_repo_pat: ${{ secrets.IAC_REPO_PAT }}
