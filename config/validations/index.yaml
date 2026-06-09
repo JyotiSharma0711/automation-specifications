@@ -637,6 +637,8 @@ _TESTS_:
           enumList:
             - LOAN
             - DEDUPE
+            - SEMI_ONLINE
+            - ONLINE
           _CONTINUE_: "!(attr are present)"
           _RETURN_: attr all in enumList
         - _NAME_: REQUIRED_FULFILLMENT_AGENT_NAME
