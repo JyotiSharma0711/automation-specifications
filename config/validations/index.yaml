@@ -650,7 +650,7 @@ _TESTS_:
           _CONTINUE_: "!(attr are present)"
           _RETURN_: attr are present
     - _NAME_: ON_SELECT_2_OFFER_XINPUT_COMMON
-      xinputpath: $.message.order.items[*].xinput
+      xinputpath: $.message.order.items[*].xinput.form.id
       usecasepath: $.message.order.items[*].price.value
       _CONTINUE_: "!(usecasepath are present) || !(xinputpath are present)"
       _RETURN_:
@@ -666,7 +666,7 @@ _TESTS_:
     - _NAME_: ON_SELECT_2_OFFER_XINPUT_PERSONAL_LOAN
       item_code: $.message.order.items[*].descriptor.code
       loan_type_match: *a11
-      xinputpath: $.message.order.items[*].xinput
+      xinputpath: $.message.order.items[*].xinput.form.id
       usecasepath: $.message.order.items[*].price.value
       _CONTINUE_: "!(item_code any in loan_type_match) || !(usecasepath are present) || !(xinputpath are present)"
       _RETURN_:
@@ -690,7 +690,7 @@ _TESTS_:
     - _NAME_: ON_SELECT_2_OFFER_XINPUT_GOLD
       item_code: $.message.order.items[*].descriptor.code
       loan_type_match: *a10
-      xinputpath: $.message.order.items[*].xinput
+      xinputpath: $.message.order.items[*].xinput.form.id
       usecasepath: $.message.order.items[*].price.value
       _CONTINUE_: "!(item_code any in loan_type_match) || !(usecasepath are present) || !(xinputpath are present)"
       _RETURN_:
