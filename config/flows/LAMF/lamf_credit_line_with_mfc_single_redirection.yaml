@@ -3248,7 +3248,7 @@ steps:
   - api: on_select
     action_id: on_select_2
     owner: BPP
-    responseFor: null
+    responseFor: select_2
     unsolicited: false
     description: The BPP returns the finalized order with all verification steps
       complete and the xinput removed, indicating no further forms are pending
