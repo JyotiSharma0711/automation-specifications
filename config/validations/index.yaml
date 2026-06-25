@@ -172,6 +172,7 @@ tags:
       - SUBVENTION_RATE
       - SELLER_SUBVENTION_RATE
       - MARGIN_CALL
+      - LTV_PERCENT
     
     loanOffer: &loanOffer
       - PRINCIPAL_AMOUNT
