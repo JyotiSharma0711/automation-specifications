@@ -91,29 +91,15 @@ steps:
         transaction_id: $.context.transaction_id
         order: $.message.order
         message_id: $.context.message_id
-        selected_items: '$.message.order.items[*
-]'
-        item: '$.message.order.items[
-    0
-]'
+        selected_items: '$.message.order.items[*]'
+        item: '$.message.order.items[0]'
         selected_provider: $.message.order.provider
-        selected_items_xinput: '$.message.order.items[*
-].xinput'
-        last_select_status: '$.message.order.items[
-    0
-].xinput.form_response.status'
-        submission_id: '$.message.order.items[
-    0
-].xinput.form_response.submission_id'
-        form_id: '$.message.order.items[
-    0
-].xinput.form.id'
-        lumpsum_fulfillment: '$.message.order.fulfillments[
-    0
-]'
-        lumpsum_measure: '$.message.order.items[
-    0
-].quantity.selected.measure'
+        selected_items_xinput: '$.message.order.items[*].xinput'
+        last_select_status: '$.message.order.items[0].xinput.form_response.status'
+        submission_id: '$.message.order.items[0].xinput.form_response.submission_id'
+        form_id: '$.message.order.items[0].xinput.form.id'
+        lumpsum_fulfillment: '$.message.order.fulfillments[0]'
+        lumpsum_measure: '$.message.order.items[0].quantity.selected.measure'
       inputs:
         oldInputs:
           - name: select_input
@@ -402,15 +388,9 @@ steps:
       saveData:
         selected_provider: $.message.order.provider
         provider_id: $.message.order.provider.id
-        selected_item_id: '$.message.order.items[
-    0
-].id'
-        item: '$.message.order.items[
-    0
-]'
-        fulfillment_ids: '$.message.order.items[
-    0
-].fulfillment_ids'
+        selected_item_id: '$.message.order.items[0].id'
+        item: '$.message.order.items[0]'
+        fulfillment_ids: '$.message.order.items[0].fulfillment_ids'
       inputs: {}
     examples: []
   - api: init
@@ -525,26 +505,14 @@ steps:
       saveData:
         message_id: $.context.message_id
         transaction_id: $.context.transaction_id
-        payment_collected_by: '$.message.order.payments[
-    0
-].collected_by'
-        folio_number: >-
-          $.message.order.fulfillments[
-    0
-].customer.person.creds[?(@.type=='FOLIO')
-].id
-        selected_items: '$.message.order.items[*
-]'
-        item: '$.message.order.items[
-    1
-]'
-        selected_fulfillments: '$.message.order.fulfillments[*
-]'
+        payment_collected_by: '$.message.order.payments[0].collected_by'
+        folio_number: "$.message.order.fulfillments[0].customer.person.creds[?(@.type=='FOLIO')].id"
+        selected_items: '$.message.order.items[*]'
+        item: '$.message.order.items[1]'
+        selected_fulfillments: '$.message.order.fulfillments[*]'
         selected_provider: $.message.order.provider
-        selected_items_id: '$.message.order.items[*
-].id'
-        tags: '$.message.order.tags[*
-]'
+        selected_items_id: '$.message.order.items[*].id'
+        tags: '$.message.order.tags[*]'
     examples: []
   - api: on_init
     action_id: on_init_existing_folio
@@ -915,19 +883,13 @@ steps:
       saveData:
         transaction_id: $.context.transaction_id
         message_id: $.context.message_id
-        selected_items: '$.message.order.items[*
-]'
-        selected_fulfillments: '$.message.order.fulfillments[*
-]'
+        selected_items: '$.message.order.items[*]'
+        selected_fulfillments: '$.message.order.fulfillments[*]'
         selected_provider: $.message.order.provider
-        tags: '$.message.order.tags[*
-]'
-        payments: '$.message.order.payments[*
-]'
+        tags: '$.message.order.tags[*]'
+        payments: '$.message.order.payments[*]'
         quote: $.message.order.quote
-        item: '$.message.order.items[
-    1
-]'
+        item: '$.message.order.items[1]'
       inputs: {}
     examples: []
   - api: on_confirm
@@ -1202,17 +1164,13 @@ steps:
         transaction_id: $.context.transaction_id
         message_id: $.context.message_id
         order: $.message.order
-        item: '$.message.order.items[
-    0
-]'
+        item: '$.message.order.items[0]'
         quote: $.message.order.quote
         payments: $.message.order.payments
         order_id: $.message.order.id
         created_at: $.message.order.created_at
         updated_at: $.message.order.updated_at
-        payment_url_form: '$.message.order.payments[
-    0
-].url'
+        payment_url_form: '$.message.order.payments[0].url'
       inputs: {}
     examples: []
   - api: update
@@ -1309,23 +1267,13 @@ steps:
         city_code: $.context.location.city.code
         message_id: $.context.message_id
         transaction_id: $.context.transaction_id
-        payment_collected_by: '$.message.order.payments[
-    0
-].collected_by'
-        folio_number: >-
-          $.message.order.fulfillments[
-    0
-].customer.person.creds[?(@.type=='FOLIO')
-].id
-        selected_items: '$.message.order.items[*
-]'
-        selected_fulfillments: '$.message.order.fulfillments[*
-]'
+        payment_collected_by: '$.message.order.payments[0].collected_by'
+        folio_number: "$.message.order.fulfillments[0].customer.person.creds[?(@.type=='FOLIO')].id"
+        selected_items: '$.message.order.items[*]'
+        selected_fulfillments: '$.message.order.fulfillments[*]'
         selected_provider: $.message.order.provider
-        selected_items_id: '$.message.order.items[*
-].id'
-        tags: '$.message.order.tags[*
-]'
+        selected_items_id: '$.message.order.items[*].id'
+        tags: '$.message.order.tags[*]'
       inputs: {}
     examples: []
   - api: on_update
