@@ -41,6 +41,7 @@ supportedActions:
     - init
     - update
     - confirm
+    - issue
   issue:
     - on_issue
     - issue
