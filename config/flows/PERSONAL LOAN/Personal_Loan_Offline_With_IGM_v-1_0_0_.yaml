@@ -1791,7 +1791,7 @@ steps:
       lending decision.
     mock:
       generate: >-
-        YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IHNlc3Npb25EYXRhPy5Fa3ljX2RldGFpbHNfZm9ybT8uZm9ybV9zdWJtaXNzaW9uX2lkOwoKICAvKioKICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgKiBJVEVNIEVOUklDSE1FTlQKICAgKiBQdWxsIGNhdGVnb3J5X2lkcyBhbmQgZnVsZmlsbG1lbnRfaWRzIGZyb20gc2VsZWN0IHN0ZXAgc2Vzc2lvbgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqLwoKICBjb25zdCBzZXNzaW9uSXRlbSA9CiAgICBzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfaXRlbXM/LlswXSB8fAogICAgc2Vzc2lvbkRhdGE/Lml0ZW0/LlswXTsKCiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwoKICAgIGlmIChzZXNzaW9uSXRlbS5pZCkgewogICAgICBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgICBjb25zb2xlLmxvZygi4pyFIFtvbl9zdGF0dXNdIGl0ZW0uaWQgbWFwcGVkOiIsIGl0ZW0wLmlkKTsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuY2F0ZWdvcnlfaWRzID0gWy4uLnNlc3Npb25JdGVtLmNhdGVnb3J5X2lkc107CiAgICAgIGNvbnNvbGUubG9nKCLinIUgW29uX3N0YXR1c10gY2F0ZWdvcnlfaWRzIG1hcHBlZDoiLCBpdGVtMC5jYXRlZ29yeV9pZHMpOwogICAgfSBlbHNlIHsKICAgICAgY29uc29sZS53YXJuKCLimqDvuI8gW29uX3N0YXR1c10gTm8gY2F0ZWdvcnlfaWRzIGZvdW5kIGluIHNlc3Npb24gaXRlbSIpOwogICAgfQoKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgewogICAgICBpdGVtMC5mdWxmaWxsbWVudF9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uZnVsZmlsbG1lbnRfaWRzXTsKICAgICAgY29uc29sZS5sb2coIuKchSBbb25fc3RhdHVzXSBmdWxmaWxsbWVudF9pZHMgbWFwcGVkOiIsIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyk7CiAgICB9CiAgfQoKICAvKioKICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgKiBQUk9WSURFUiBNQVBQSU5HCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICovCgogIGNvbnN0IHNlbGVjdGVkUHJvdmlkZXIgPSBzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXSB8fCBzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI7CgogIGlmIChzZWxlY3RlZFByb3ZpZGVyPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2VsZWN0ZWRQcm92aWRlci5pZDsKICAgIGNvbnNvbGUubG9nKCLinIUgW29uX3N0YXR1c10gUHJvdmlkZXIgbWFwcGVkOiIsIHNlbGVjdGVkUHJvdmlkZXIuaWQpOwogIH0KCiAgLyoqCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICogWElOUFVUIEZPUk0gTUFQUElORwogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqLwoKICBpZiAob3JkZXI/Lml0ZW1zPy5bMF0/LnhpbnB1dD8uZm9ybSkgewogICAgY29uc3QgZXNpZ25Gb3JtSWQgPSBBcnJheS5pc0FycmF5KHNlc3Npb25EYXRhLmZvcm1faWQpCiAgICAgID8gc2Vzc2lvbkRhdGEuZm9ybV9pZFswXQogICAgICA6IHNlc3Npb25EYXRhLmZvcm1faWQgfHwgIkYwNiI7CgogICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm0uaWQgPSBlc2lnbkZvcm1JZDsKICAgIGNvbnNvbGUubG9nKCLinIUgW29uX3N0YXR1c10gVXBkYXRlZCBmb3JtLmlkOiIsIGVzaWduRm9ybUlkKTsKICB9CgogIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN1Ym1pc3Npb25faWQgPSBzdWJtaXNzaW9uX2lkOwogICAgY29uc29sZS5sb2coIuKchSBbb25fc3RhdHVzXSBVcGRhdGVkIHN1Ym1pc3Npb25faWQ6Iiwgc3VibWlzc2lvbl9pZCk7CiAgfQoKICAvKioKICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgKiBQQVlNRU5UUyBNQVBQSU5HCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICovCgogIGNvbnN0IHNhdmVkUGF5bWVudHMgPSBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzIHx8IHNlc3Npb25EYXRhPy5wYXltZW50czsKCiAgaWYgKEFycmF5LmlzQXJyYXkoc2F2ZWRQYXltZW50cykgJiYgc2F2ZWRQYXltZW50cy5sZW5ndGggPiAwICYmIG9yZGVyKSB7CiAgICBvcmRlci5wYXltZW50cyA9IHNhdmVkUGF5bWVudHM7CiAgICBjb25zb2xlLmxvZygi4pyFIFtvbl9zdGF0dXNdIFBheW1lbnRzIGNhcnJpZWQgZm9yd2FyZCIpOwogIH0KCiAgLyoqCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICogUVVPVEUgTUFQUElORwogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqLwoKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBpZiAoc2Vzc2lvbkRhdGE/LnF1b3RlX2lkKSB7CiAgICAgIG9yZGVyLnF1b3RlLmlkID0gQXJyYXkuaXNBcnJheShzZXNzaW9uRGF0YS5xdW90ZV9pZCkKICAgICAgICA/IHNlc3Npb25EYXRhLnF1b3RlX2lkWzBdCiAgICAgICAgOiBzZXNzaW9uRGF0YS5xdW90ZV9pZDsKICAgICAgY29uc29sZS5sb2coIuKchSBbb25fc3RhdHVzXSBRdW90ZSBpZCBtYXBwZWQ6Iiwgb3JkZXIucXVvdGUuaWQpOwogICAgfSBlbHNlIHsKICAgICAgY29uc29sZS53YXJuKCLimqDvuI8gW29uX3N0YXR1c10gcXVvdGVfaWQgbm90IGZvdW5kIGluIHNlc3Npb24iKTsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkRhdGE/LnF1b3RlX3ByaWNlKSB7CiAgICAgIG9yZGVyLnF1b3RlLnByaWNlLnZhbHVlID0gQXJyYXkuaXNBcnJheShzZXNzaW9uRGF0YS5xdW90ZV9wcmljZSkKICAgICAgICA/IHNlc3Npb25EYXRhLnF1b3RlX3ByaWNlWzBdCiAgICAgICAgOiBzZXNzaW9uRGF0YS5xdW90ZV9wcmljZTsKICAgICAgY29uc29sZS5sb2coIuKchSBbb25fc3RhdHVzXSBRdW90ZSBwcmljZSBtYXBwZWQ6Iiwgb3JkZXIucXVvdGUucHJpY2UudmFsdWUpOwogICAgfQogIH0KCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQ==
+        YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IGBzdWJfaWRfJHt1dWlkdjQoKX1gCgogIC8qKgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqIElURU0gRU5SSUNITUVOVAogICAqIFB1bGwgY2F0ZWdvcnlfaWRzIGFuZCBmdWxmaWxsbWVudF9pZHMgZnJvbSBzZWxlY3Qgc3RlcCBzZXNzaW9uCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICovCgogIGNvbnN0IHNlc3Npb25JdGVtID0KICAgIHNlc3Npb25EYXRhPy5zZWxlY3RlZF9pdGVtcz8uWzBdIHx8CiAgICBzZXNzaW9uRGF0YT8uaXRlbT8uWzBdOwoKICBpZiAoc2Vzc2lvbkl0ZW0gJiYgb3JkZXI/Lml0ZW1zPy5bMF0pIHsKICAgIGNvbnN0IGl0ZW0wID0gb3JkZXIuaXRlbXNbMF07CgogICAgaWYgKHNlc3Npb25JdGVtLmlkKSB7CiAgICAgIGl0ZW0wLmlkID0gc2Vzc2lvbkl0ZW0uaWQ7CiAgICAgIGNvbnNvbGUubG9nKCLinIUgW29uX3N0YXR1c10gaXRlbS5pZCBtYXBwZWQ6IiwgaXRlbTAuaWQpOwogICAgfQoKICAgIGlmIChzZXNzaW9uSXRlbS5jYXRlZ29yeV9pZHM/Lmxlbmd0aCkgewogICAgICBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgICAgY29uc29sZS5sb2coIuKchSBbb25fc3RhdHVzXSBjYXRlZ29yeV9pZHMgbWFwcGVkOiIsIGl0ZW0wLmNhdGVnb3J5X2lkcyk7CiAgICB9IGVsc2UgewogICAgICBjb25zb2xlLndhcm4oIuKaoO+4jyBbb25fc3RhdHVzXSBObyBjYXRlZ29yeV9pZHMgZm91bmQgaW4gc2Vzc2lvbiBpdGVtIik7CiAgICB9CgogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHNdOwogICAgICBjb25zb2xlLmxvZygi4pyFIFtvbl9zdGF0dXNdIGZ1bGZpbGxtZW50X2lkcyBtYXBwZWQ6IiwgaXRlbTAuZnVsZmlsbG1lbnRfaWRzKTsKICAgIH0KICB9CgogIC8qKgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqIFBST1ZJREVSIE1BUFBJTkcKICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgKi8KCiAgY29uc3Qgc2VsZWN0ZWRQcm92aWRlciA9IHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdIHx8IHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcjsKCiAgaWYgKHNlbGVjdGVkUHJvdmlkZXI/LmlkICYmIG9yZGVyPy5wcm92aWRlcikgewogICAgb3JkZXIucHJvdmlkZXIuaWQgPSBzZWxlY3RlZFByb3ZpZGVyLmlkOwogICAgY29uc29sZS5sb2coIuKchSBbb25fc3RhdHVzXSBQcm92aWRlciBtYXBwZWQ6Iiwgc2VsZWN0ZWRQcm92aWRlci5pZCk7CiAgfQoKICAvKioKICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgKiBYSU5QVVQgRk9STSBNQVBQSU5HCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICovCgogIGlmIChvcmRlcj8uaXRlbXM/LlswXT8ueGlucHV0Py5mb3JtKSB7CiAgICBjb25zdCBlc2lnbkZvcm1JZCA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGEuZm9ybV9pZCkKICAgICAgPyBzZXNzaW9uRGF0YS5mb3JtX2lkWzBdCiAgICAgIDogc2Vzc2lvbkRhdGEuZm9ybV9pZCB8fCAiRjA2IjsKCiAgICBvcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybS5pZCA9IGVzaWduRm9ybUlkOwogICAgY29uc29sZS5sb2coIuKchSBbb25fc3RhdHVzXSBVcGRhdGVkIGZvcm0uaWQ6IiwgZXNpZ25Gb3JtSWQpOwogIH0KCiAgaWYgKHN1Ym1pc3Npb25faWQgJiYgb3JkZXI/Lml0ZW1zPy5bMF0/LnhpbnB1dD8uZm9ybV9yZXNwb25zZSkgewogICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCA9IHN1Ym1pc3Npb25faWQ7CiAgICBjb25zb2xlLmxvZygi4pyFIFtvbl9zdGF0dXNdIFVwZGF0ZWQgc3VibWlzc2lvbl9pZDoiLCBzdWJtaXNzaW9uX2lkKTsKICB9CgogIC8qKgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqIFBBWU1FTlRTIE1BUFBJTkcKICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgKi8KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5vcmRlcj8ucGF5bWVudHMgfHwgc2Vzc2lvbkRhdGE/LnBheW1lbnRzOwoKICBpZiAoQXJyYXkuaXNBcnJheShzYXZlZFBheW1lbnRzKSAmJiBzYXZlZFBheW1lbnRzLmxlbmd0aCA+IDAgJiYgb3JkZXIpIHsKICAgIG9yZGVyLnBheW1lbnRzID0gc2F2ZWRQYXltZW50czsKICAgIGNvbnNvbGUubG9nKCLinIUgW29uX3N0YXR1c10gUGF5bWVudHMgY2FycmllZCBmb3J3YXJkIik7CiAgfQoKICAvKioKICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgKiBRVU9URSBNQVBQSU5HCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICovCgogIGlmIChvcmRlcj8ucXVvdGUpIHsKICAgIGlmIChzZXNzaW9uRGF0YT8ucXVvdGVfaWQpIHsKICAgICAgb3JkZXIucXVvdGUuaWQgPSBBcnJheS5pc0FycmF5KHNlc3Npb25EYXRhLnF1b3RlX2lkKQogICAgICAgID8gc2Vzc2lvbkRhdGEucXVvdGVfaWRbMF0KICAgICAgICA6IHNlc3Npb25EYXRhLnF1b3RlX2lkOwogICAgICBjb25zb2xlLmxvZygi4pyFIFtvbl9zdGF0dXNdIFF1b3RlIGlkIG1hcHBlZDoiLCBvcmRlci5xdW90ZS5pZCk7CiAgICB9IGVsc2UgewogICAgICBjb25zb2xlLndhcm4oIuKaoO+4jyBbb25fc3RhdHVzXSBxdW90ZV9pZCBub3QgZm91bmQgaW4gc2Vzc2lvbiIpOwogICAgfQoKICAgIGlmIChzZXNzaW9uRGF0YT8ucXVvdGVfcHJpY2UpIHsKICAgICAgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBBcnJheS5pc0FycmF5KHNlc3Npb25EYXRhLnF1b3RlX3ByaWNlKQogICAgICAgID8gc2Vzc2lvbkRhdGEucXVvdGVfcHJpY2VbMF0KICAgICAgICA6IHNlc3Npb25EYXRhLnF1b3RlX3ByaWNlOwogICAgICBjb25zb2xlLmxvZygi4pyFIFtvbl9zdGF0dXNdIFF1b3RlIHByaWNlIG1hcHBlZDoiLCBvcmRlci5xdW90ZS5wcmljZS52YWx1ZSk7CiAgICB9CiAgfQoKICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkOwp9
       validate: >-
         LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQ/LmNvbnRleHQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgY29udGV4dCBpbiBwYXlsb2FkIiB9OwogIH0KCiAgaWYgKHRhcmdldFBheWxvYWQuY29udGV4dC5hY3Rpb24gIT09ICJvbl9zdGF0dXMiKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJJbnZhbGlkIGFjdGlvbiBpbiBjb250ZXh0IiB9OwogIH0KCiAgaWYgKCF0YXJnZXRQYXlsb2FkPy5tZXNzYWdlPy5vcmRlcikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBtZXNzYWdlLm9yZGVyIGluIHBheWxvYWQiIH07CiAgfQogY29uc3Qgb3JkZXI9dGFyZ2V0UGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgaWYgKCFvcmRlci5wcm92aWRlcj8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcHJvdmlkZXIuaWQgaW4gcGF5bG9hZCIgfTsKICB9CgogCiAgaWYgKCFBcnJheS5pc0FycmF5KG9yZGVyLml0ZW1zKSB8fCBvcmRlci5pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgaXRlbXMgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IGl0ZW0gPSBvcmRlci5pdGVtc1swXTsKCiAgaWYgKCFpdGVtLmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1zWzBdLmlkIGluIHBheWxvYWQiIH07CiAgfQoKICBpZiAoIW9yZGVyPy5xdW90ZT8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcXVvdGUuaWQgaW4gcGF5bG9hZCIgfTsKICB9CgogCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
       requirements: >-
@@ -2130,9 +2130,9 @@ steps:
           context:
             domain: 'ONDC:FIS12'
             action: on_status
-            timestamp: '2026-06-09T10:10:57.972Z'
+            timestamp: '2026-06-30T01:41:26.179Z'
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: d5bd63aa-6f07-4657-b54f-30fba52be328
+            message_id: 8f406fa9-8ba4-4ad5-b396-18eb2f76fcff
             bap_id: bap.example.com
             bap_uri: 'https://bap.example.com'
             ttl: PT30S
@@ -2147,7 +2147,7 @@ steps:
           message:
             order:
               provider:
-                id: personal_loan_provider_89c4fab6-9ed0-4992-94c7-17372c26546d
+                id: personal_loan_provider_f514e6ad-9bb8-424b-ad43-49a5aea6daae
                 descriptor:
                   images:
                     - url: >-
@@ -2221,13 +2221,13 @@ steps:
                           mill compound 841, Senapati Bapat Marg, Elphinstone
                           Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_60455cf0-955f-4be4-bc53-d87ad6bd92ae
+                - id: bureau_personal_loan_9be9cc86-b8dc-40f2-a530-81e6328642f6
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_d920491c-df46-457d-9679-26ff6f03214b
-                    - cat_bureau_loan_36e3b956-57e7-40d5-8094-33d4baa7cc2e
+                    - cat_personal_loan_49fff7fa-c93b-4735-93d8-5fcfc6b7c3db
+                    - cat_bureau_loan_ba203ce5-1195-4607-820d-17fc288ad4f3
                   fulfillment_ids:
                     - F1
                   price:
@@ -2307,8 +2307,8 @@ steps:
                             code: COOL_OFF_PERIOD
                             name: cool off period
                             short_desc: >-
-                              Cooling off look up period during which borrower
-                              shall charged any penalty
+                              Cooling off look-up period during which borrower
+                              shall not be charged any penalty
                           value: P30D
                         - descriptor:
                             code: INSTALLMENT_AMOUNT
@@ -2332,7 +2332,7 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_6db202f2-305d-4c18-b04b-d37915b3873e
+                      id: ekyc_details_b782f4e2-a282-4aa3-8f77-0dee7a6a2081
                     form_response:
                       status: OFFLINE_PENDING
                       submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
@@ -2438,11 +2438,9 @@ steps:
                 ttl: PT15D
         type: request
         description: >-
-          The BPP sends an unsolicited on_status callback to the BAP to update
-          the loan application status, reflecting either successful offline
-          verification and credit approval or failure with explicit rejection
-          codes, thereby enabling the BAP to inform the borrower about the next
-          steps in the personal loan offline journey.
+          The BPP asynchronously notifies the BAP of the loan application's
+          status as it progresses through offline verification and underwriting
+          toward a lending decision.
   - api: status
     action_id: status_personal_loan_3
     owner: BAP
