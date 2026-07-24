@@ -204,6 +204,28 @@ flows:
     config:
       $ref: ./MUTUAL FUNDS/SIP_Manual_Trigger_Instalment.yaml
   - type: playground
+    id: SIP_Modification_Change_Amount
+    usecase: MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+      - SIP_LIFECYCLE_FLOWS
+      - USER_INITIATED
+    description: SIP Modification Change Amount
+    config:
+      $ref: ./MUTUAL FUNDS/SIP_Modification_Change_Amount.yaml
+  - type: playground
+    id: SIP_Modification_Pause
+    usecase: MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+      - SIP_LIFECYCLE_FLOWS
+      - USER_INITIATED
+    description: SIP Modification Pause
+    config:
+      $ref: ./MUTUAL FUNDS/SIP_Modification_Pause.yaml
+  - type: playground
     id: Search_Incremental_Pull
     usecase: MUTUAL FUNDS
     tags:
