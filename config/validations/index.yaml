@@ -1041,6 +1041,27 @@ _TESTS_:
         - DISBURSED
       _CONTINUE_: "!(attr are present)"
       _RETURN_: attr all in enumList
+    
+    - &REQUIRED_ORDER_CREATED_AT
+      _NAME_: REQUIRED_ORDER_CREATED_AT
+      attr: $.message.order.created_at
+      _RETURN_: attr are present
+
+    - &REQUIRED_ORDER_UPDATED_AT
+      _NAME_: REQUIRED_ORDER_UPDATED_AT
+      attr: $.message.order.updated_at
+      _RETURN_: attr are present
+    
+    - &REQUIRED_ORDER_ID
+      _NAME_: REQUIRED_ORDER_ID
+      attr: $.message.order.id
+      _RETURN_: attr are present
+
+    - &REQUIRED_ORDER_STATUS
+      _NAME_: REQUIRED_ORDER_STATUS
+      attr: $.message.order.status
+      _RETURN_: attr are present
+
   update:
     - _NAME_: UPDATE_CONTEXT
       action:
@@ -1166,6 +1187,9 @@ _TESTS_:
           _RETURN_: attr all in enumList
     - _NAME_: ON_UPDATE_QUOTE
       _RETURN_:
+        - _NAME_: REQUIRED_QUOTE_ID
+          attr: $.message.order.quote.id
+          _RETURN_: attr are present
         - _NAME_: REQUIRED_QUOTE_BREAKUP_TITLE
           attr: $.message.order.quote.breakup[*].title
           _RETURN_: attr are present
@@ -1191,6 +1215,9 @@ _TESTS_:
         - _NAME_: REQUIRED_QUOTE_BREAKUP_PRICE
           attr: $.message.order.quote.breakup[*].price.value
           _RETURN_: attr are present
+    - *REQUIRED_ORDER_CREATED_AT
+    - *REQUIRED_ORDER_UPDATED_AT
+    - *REQUIRED_ORDER_STATUS
   status:
     - _NAME_: STATUS_CONTEXT
       action:
