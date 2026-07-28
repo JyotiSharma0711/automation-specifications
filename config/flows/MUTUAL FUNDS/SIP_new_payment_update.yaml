@@ -1,11 +1,11 @@
 meta:
   domain: ONDC:FIS14
   version: 2.1.0
-  flowId: SIP_update_new_payment_update.yaml
+  flowId: SIP_new_payment_update.yaml
   config_version: 0.0.0001
-  description: SIP update new payment update
+  description: SIP new payment update
   use_case_id: MUTUAL FUNDS
-  flowName: SIP update new payment update
+  flowName: SIP new payment update
 transaction_data:
   transaction_id: c811550d-effb-435b-a62b-6eb30e355fb7
   latest_timestamp: 1970-01-01T00:00:00.000Z
