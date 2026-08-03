@@ -312,3 +312,51 @@ flows:
     description: Regular STP instalment transfer and confirmation
     config:
       $ref: ./MUTUAL FUNDS/STP_installment.yaml
+  - type: playground
+    id: Cart_Lumpsum_Investment_Part_Failure
+    usecase: MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+      - LUMPSUM_FLOWS
+      - CART_FLOWS
+      - USER_INITIATED
+    description: Cart Lumpsum Investment Part Failure
+    config:
+      $ref: ./MUTUAL FUNDS/Cart_Lumpsum_Investment_Part_Failure.yaml
+  - type: playground
+    id: Cart_Lumpsum_Investment
+    usecase: MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+      - LUMPSUM_FLOWS
+      - CART_FLOWS
+      - USER_INITIATED
+    description: Cart lumpsum Investment
+    config:
+      $ref: ./MUTUAL FUNDS/Cart_lumpsum_Investment.yaml
+  - type: playground
+    id: Cart_SIP_Creation
+    usecase: MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+      - SIP_SETUP_FLOWS
+      - CART_FLOWS
+      - USER_INITIATED
+    description: Cart SIP Creation
+    config:
+      $ref: ./MUTUAL FUNDS/Cart_SIP_Creation.yaml
+  - type: playground
+    id: Cart_SIP_Installment
+    usecase: MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+      - SIP_LIFECYCLE_FLOWS
+      - CART_FLOWS
+      - UNSOLICITED
+    description: Cart SIP Installment
+    config:
+      $ref: ./MUTUAL FUNDS/Cart_SIP_Installment.yaml

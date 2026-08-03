@@ -1038,7 +1038,8 @@ _TESTS_:
             - ACCEPTED
             - SUCCESSFUL
             - PAUSED
-            - CANCELLED                        
+            - CANCELLED
+            - ONGOING                        
           _RETURN_: attr all in enumList
         - _NAME_: REQUIRED_FULFILLMENT_CUSTOMER
           attr: $.message.order.fulfillments[*].customer.person.id
