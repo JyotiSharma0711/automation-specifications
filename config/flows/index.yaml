@@ -257,7 +257,7 @@ flows:
       - USER_INITIATED
     description: Update SIP with new payment mandate details
     config:
-      $ref: ./MUTUAL FUNDS/SIP_new_payment_update.yaml
+      $ref: ./MUTUAL FUNDS/SIP_update_new_payment_update.yaml
   - type: playground
     id: SIP_Without_Payment_Mandate
     usecase: MUTUAL FUNDS
