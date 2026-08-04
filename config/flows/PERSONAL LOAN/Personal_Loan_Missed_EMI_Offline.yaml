@@ -935,9 +935,9 @@ steps:
       from the BPP and submits the borrower information necessary for lender
       verification and early repayment account closure.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CgogIGNvbnN0IHVzZXJJbnB1dHMgPSBzZXNzaW9uRGF0YT8udXNlcl9pbnB1dHM7CiAgY29uc3QgcHJvdmlkZXIgPSB1c2VySW5wdXRzPy5wcm92aWRlciA/IEpTT04ucGFyc2UodXNlcklucHV0cy5wcm92aWRlcikgOiBudWxsOwogIGNvbnN0IGl0ZW1zICAgID0gdXNlcklucHV0cz8uaXRlbXMgICAgPyBKU09OLnBhcnNlKHVzZXJJbnB1dHMuaXRlbXMpICAgIDogbnVsbDsKCiAgaWYgKHByb3ZpZGVyPy5pZCkgewogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlciA9IHsgaWQ6IHByb3ZpZGVyLmlkIH07CiAgfQoKICBpZiAoaXRlbXM/LlswXT8uaWQpIHsKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXMgPSBbeyBpZDogaXRlbXNbMF0uaWQgfV07CiAgfQoKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0K
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgdXNlcklucHV0cyA9IHNlc3Npb25EYXRhPy51c2VyX2lucHV0czsKICBjb25zdCBwcm92aWRlciA9IHVzZXJJbnB1dHM/LnByb3ZpZGVyID8gSlNPTi5wYXJzZSh1c2VySW5wdXRzLnByb3ZpZGVyKSA6IG51bGw7CiAgY29uc3Qgc2VsZWN0ZWRJdGVtcyA9IHVzZXJJbnB1dHM/Lml0ZW1zID8gSlNPTi5wYXJzZSh1c2VySW5wdXRzLml0ZW1zKSA6IG51bGw7CgogIGlmIChwcm92aWRlcj8uaWQpIHsKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSB7IGlkOiBwcm92aWRlci5pZCB9OwogIH0KCiAgY29uc3Qgc2VsZWN0ZWRJdGVtSWQgPSBzZWxlY3RlZEl0ZW1zPy5bMF0/LmlkOwogIGNvbnN0IHNlc3Npb25JdGVtcyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/Lml0ZW1zKSA/IHNlc3Npb25EYXRhLml0ZW1zIDogW107CiAgY29uc3QgZnVsbEl0ZW0gPSBzZXNzaW9uSXRlbXMuZmluZCgoaXRlbSkgPT4gaXRlbS5pZCA9PT0gc2VsZWN0ZWRJdGVtSWQpID8/IHNlc3Npb25JdGVtcy5maW5kKChpdGVtKSA9PiBpdGVtPy54aW5wdXQ/LmZvcm0/LmlkKTsKCiAgaWYgKGZ1bGxJdGVtKSB7CiAgICBjb25zdCBmb3JtSWQgPSBmdWxsSXRlbT8ueGlucHV0Py5mb3JtPy5pZDsKICAgIGNvbnN0IHN1Ym1pc3Npb25JZCA9IHNlc3Npb25EYXRhPy5wZXJzb25hbF9sb2FuX2luZm9ybWF0aW9uX2Zvcm07CgogICAgY29uc3QgaXRlbVBheWxvYWQgPSB7IGlkOiBmdWxsSXRlbS5pZCB9OwoKICAgIGlmIChmb3JtSWQgJiYgc3VibWlzc2lvbklkKSB7CiAgICAgIGl0ZW1QYXlsb2FkLnhpbnB1dCA9IHsKICAgICAgICBmb3JtOiB7IGlkOiBmb3JtSWQgfSwKICAgICAgICBmb3JtX3Jlc3BvbnNlOiB7CiAgICAgICAgICBzdGF0dXM6ICJTVUNDRVNTIiwKICAgICAgICAgIHN1Ym1pc3Npb25faWQ6IHN1Ym1pc3Npb25JZCwKICAgICAgICB9LAogICAgICB9OwogICAgfQoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXMgPSBbaXRlbVBheWxvYWRdOwogIH0KCiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9Cg==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQgfHwgIXRhcmdldFBheWxvYWQubWVzc2FnZSB8fCAhdGFyZ2V0UGF5bG9hZC5tZXNzYWdlLm9yZGVyKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2UgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG9yZGVyID0gdGFyZ2V0UGF5bG9hZC5tZXNzYWdlLm9yZGVyOwoKICBpZiAoIW9yZGVyLnByb3ZpZGVyIHx8ICFvcmRlci5wcm92aWRlci5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwcm92aWRlci5pZCBpbiBwYXlsb2FkIiB9OwogIH0KCiAgaWYgKCFBcnJheS5pc0FycmF5KG9yZGVyLml0ZW1zKSB8fCBvcmRlci5pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgaXRlbXMgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IGl0ZW0gPSBvcmRlci5pdGVtc1swXTsKICBjb25zdCBleHBlY3RlZFByb3ZpZGVySWQgPSBzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQ7CiAgaWYgKGV4cGVjdGVkUHJvdmlkZXJJZCAmJiBvcmRlci5wcm92aWRlci5pZCAhPT0gZXhwZWN0ZWRQcm92aWRlcklkKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246ICJNaXNtYXRjaCBpbiBwcm92aWRlci5pZCB3aXRoIHNlc3Npb25EYXRhIgogICAgfTsKICB9CgogICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
-      requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKCiAgaWYgKCFzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIXNlc3Npb25EYXRhPy5pdGVtPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1bMF0uaWQgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
+      requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS12
@@ -995,9 +995,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: select
-            timestamp: 2026-07-13T01:40:22.538Z
+            timestamp: 2026-08-04T11:38:40.366Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: e46d2ab4-8cbe-43c6-b4a5-c3be6ed561ce
+            message_id: 70ef4fba-8668-4c8e-bb67-51254032005c
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1014,13 +1014,13 @@ steps:
               provider:
                 id: PROVIDER_ID
               items:
-                - id: ITEM_ID_PERSONAL_LOAN_1
+                - id: bureau_personal_loan_323b0de9-c502-4fba-8e35-4861a8d7d56f
                   xinput:
                     form:
-                      id: F01
+                      id: personal_loan_info_01a1f35a-6b7d-4da4-9e69-aa4733c2168a
                     form_response:
                       status: SUCCESS
-                      submission_id: F01_SUBMISSION_ID
+                      submission_id: b0f56fb5-4c42-4ed1-8995-79dfaa0f105c
         type: request
         description: The BAP selects a specific personal loan product for foreclosure
           from the BPP and submits the borrower information necessary for lender
