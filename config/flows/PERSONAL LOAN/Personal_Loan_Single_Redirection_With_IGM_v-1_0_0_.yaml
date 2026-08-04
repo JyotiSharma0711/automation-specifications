@@ -4834,7 +4834,7 @@ steps:
                     form:
                       id: ekyc_details_4dda4e84-b8d5-4e1d-822b-481e0cbc6b03
                     form_response:
-                      status: OFFLINE_PENDING
+                      status: COMPLETED
                       submission_id: sub_id_6e89b127-4a77-4e42-b607-2778bcd0741e
               fulfillments:
                 - id: F2
