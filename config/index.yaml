@@ -7,6 +7,11 @@ info:
   x-usecases:
     - GOLD LOAN
     - PERSONAL LOAN
+  x-status:
+    - use_case: GOLD LOAN
+      status: DRAFT
+    - use_case: PERSONAL LOAN
+      status: DRAFT
   x-branch-name: draft-FIS12-2.0.3
   x-reporting: true
 security:
