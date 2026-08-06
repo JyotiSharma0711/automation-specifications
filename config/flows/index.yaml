@@ -112,3 +112,39 @@ flows:
     description: A borrower discovers and selects a personal loan offer within an ONDC marketplace, then completes the full loan origination process—including KYC verification, account validation, mandate setup, and documentation—through seamless single-platform redirection with continuous status updates throughout the application lifecycle.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Single_Redirection_With_IGM_v-1_0_0_.yaml
+
+  - type: playground
+    id: Personal_Loan_Foreclosure_Single_Redirection
+    usecase: PERSONAL LOAN
+    meta:
+      order: 8
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Enables borrowers to request and process early settlement of a personal loan through online channels, incorporating lender verification and official account closure.
+    config:
+      $ref: ./PERSONAL LOAN/Personal_Loan_Foreclosure_Single_Redirection.yaml
+
+  - type: playground
+    id: Personal_Loan_Missed_EMI_Single_Redirection
+    usecase: PERSONAL LOAN
+    meta:
+      order: 9
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: A borrower settles a missed personal loan EMI payment online, including applicable penalties, while the lender validates the settlement and updates the loan account status.
+    config:
+      $ref: ./PERSONAL LOAN/Personal_Loan_Missed_EMI_Single_Redirection.yaml
+
+  - type: playground
+    id: Personal_Loan_Pre_Part_Payment_Single_Redirection
+    usecase: PERSONAL LOAN
+    meta:
+      order: 10
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: A borrower initiates a partial prepayment of their personal loan principal outside the regular EMI schedule to reduce outstanding debt, with the lender validating the prepayment amount, recalculating revised repayment terms and associated charges, and updating the loan account status upon successful payment completion.
+    config:
+      $ref: ./PERSONAL LOAN/Personal_Loan_Pre_Part_Payment_Single_Redirection.yaml
