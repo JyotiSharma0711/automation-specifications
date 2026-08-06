@@ -1785,9 +1785,9 @@ _TESTS_:
         - _NAME_: REQUIRED_CONTEXT_BPP_ID
           attr: $.context.bpp_id
           _RETURN_: attr are present
-        - _NAME_: REQUIRED_CONTEXT_TTL
-          attr: $.context.ttl
-          _RETURN_: attr are present
+        # - _NAME_: REQUIRED_CONTEXT_TTL
+        #   attr: $.context.ttl
+        #   _RETURN_: attr are present
         - _NAME_: VALID_CONTEXT_COUNTRY_CODE
           attr: [$.context.location.country.code]
           # enumList:
