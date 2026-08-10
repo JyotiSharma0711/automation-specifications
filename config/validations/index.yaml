@@ -906,7 +906,7 @@ _TESTS_:
           attr: $.message.order.items[*].id
           _RETURN_: attr are present
     - _NAME_: CONFIRM_XINPUT
-      usecasepath: $.message.order.items[*].xinput
+      usecasepath: $.message.order.items[*].xinput.form.id
       _CONTINUE_: "!(usecasepath are present)"
       _RETURN_:
         - _NAME_: REQUIRED_XINPUT_FORM_ID
