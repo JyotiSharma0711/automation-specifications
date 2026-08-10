@@ -628,6 +628,8 @@ _TESTS_:
           attr: $.message.order.billing.email
           _RETURN_: attr are present
     - _NAME_: CONFIRM_OFFERS
+      usecasepath: $.message.order.offers[*].id
+      _CONTINUE_: "!(usecasepath are present)"
       _RETURN_:
         - _NAME_: REQUIRED_OFFER_ID
           attr: $.message.order.offers[*].id
