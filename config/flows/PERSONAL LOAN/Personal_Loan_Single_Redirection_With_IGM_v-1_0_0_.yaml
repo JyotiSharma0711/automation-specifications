@@ -31,7 +31,7 @@ steps:
     mock:
       generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CgogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQgfHwgIXRhcmdldFBheWxvYWQubWVzc2FnZSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTUlTU0lOR19QQVlMT0FEIiB9OwogIH0KICBjb25zdCBpbnRlbnQgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2UuaW50ZW50OwoKICBpZiAoaW50ZW50LmNhdGVnb3J5LmRlc2NyaXB0b3IuY29kZSAhPT0gIlBFUlNPTkFMX0xPQU4iKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJJbnZhbGlkIGNhdGVnb3J5IGNvZGUiIH07CiAgfQoKICBpZiAoIWludGVudC5wYXltZW50LmNvbGxlY3RlZF9ieSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBjb2xsZWN0ZWRfYnkiIH07CiAgfQogcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
-      requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
       defaultPayload:
         context:
           domain: ONDC:FIS12
@@ -92,9 +92,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: search
-            timestamp: 2026-08-06T01:00:24.838Z
+            timestamp: 2026-08-11T04:26:35.808Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 71f5f9db-d4c8-48da-b6d7-938d8630f19f
+            message_id: 1113d939-2e81-4d46-93c4-fe906ad869a8
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -524,9 +524,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_search
-            timestamp: 2026-08-06T01:00:24.875Z
+            timestamp: 2026-08-11T04:26:35.890Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 71f5f9db-d4c8-48da-b6d7-938d8630f19f
+            message_id: 1113d939-2e81-4d46-93c4-fe906ad869a8
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -543,7 +543,7 @@ steps:
               descriptor:
                 name: ICICI Bank
               providers:
-                - id: provider_b3be58e0-30ee-4789-9771-547516daf800
+                - id: provider_4ba1c2fa-4c51-49f7-8364-035133370226
                   descriptor:
                     images:
                       - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -552,33 +552,33 @@ steps:
                     short_desc: ICICI Bank Ltd
                     long_desc: ICICI Bank Ltd, India.
                   categories:
-                    - id: cat_loan_663e0c91-251e-4fbd-bcb2-32a95f106efb
+                    - id: cat_loan_37453926-1d88-4f35-b3cd-43be782f06da
                       descriptor:
                         code: LOAN
                         name: Loan
-                    - id: cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                      parent_category_id: cat_loan_663e0c91-251e-4fbd-bcb2-32a95f106efb
+                    - id: cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                      parent_category_id: cat_loan_37453926-1d88-4f35-b3cd-43be782f06da
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan
-                    - id: cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
-                      parent_category_id: cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
+                    - id: cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                      parent_category_id: cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
                       descriptor:
                         code: BUREAU_LOAN
                         name: Bureau Loan
-                    - id: cat_pre_qualifier_74c86abd-df54-4fe0-9b1e-44bee12102a0
-                      parent_category_id: cat_loan_663e0c91-251e-4fbd-bcb2-32a95f106efb
+                    - id: cat_pre_qualifier_35b56dea-a3b5-42b5-84eb-ca9a6ff0fdf5
+                      parent_category_id: cat_loan_37453926-1d88-4f35-b3cd-43be782f06da
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                   items:
-                    - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                    - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Offline Journey
                       category_ids:
-                        - cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                        - cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
+                        - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                        - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
                       fulfillment_ids:
                         - F1
                       tags:
@@ -628,19 +628,19 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: personal_loan_info_c93a772c-c39e-441c-9d48-3496f9dedcb2
+                          id: personal_loan_info_00b7fb71-9e19-4b01-a28c-355ab4831d54
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=b0b9338d-e381-43ab-95ff-e2b40cf49447&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: bureau_personal_loan_d55d80f9-85da-427b-b3f1-f15079467b7f
+                    - id: bureau_personal_loan_5cb03721-254a-45a7-8b1e-2cf8d5d4fadf
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Single Redirection
                       category_ids:
-                        - cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                        - cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
+                        - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                        - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
                       fulfillment_ids:
                         - F2
                       tags:
@@ -690,18 +690,18 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: personal_loan_info_c93a772c-c39e-441c-9d48-3496f9dedcb2
+                          id: personal_loan_info_00b7fb71-9e19-4b01-a28c-355ab4831d54
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=b0b9338d-e381-43ab-95ff-e2b40cf49447&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: personal_loan_75068ec0-fcdc-4520-9324-e104d2800f48
+                    - id: personal_loan_b178e340-5ac1-41d8-a9a2-7bd3ee3c26cf
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                       category_ids:
-                        - cat_pre_qualifier_74c86abd-df54-4fe0-9b1e-44bee12102a0
+                        - cat_pre_qualifier_35b56dea-a3b5-42b5-84eb-ca9a6ff0fdf5
                       fulfillment_ids:
                         - F3
                   fulfillments:
@@ -912,8 +912,8 @@ steps:
           panName: John Doe
           personalemail: john.doe@gmail.com
           officialemail: john.doe@gmail.com
-          dob: 2026-08-05
-          gender: male
+          dob: 2026-08-19
+          gender: female
           pan: BAJPC4350M
           contactNumber: "9284770148"
           employmentType: salaried
@@ -926,7 +926,7 @@ steps:
           state: Delhi
           pincode: "160103"
           aa_id: ""
-          endUse: travel
+          endUse: health
           derivedData: {}
           formId: FO1
         type: request
@@ -1003,9 +1003,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: select
-            timestamp: 2026-08-06T01:00:47.273Z
+            timestamp: 2026-08-11T04:26:58.840Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 6bf6e6c7-f31a-40f7-964e-6246a0107b7d
+            message_id: bd904d77-554b-423f-9277-b76cbb5cdad6
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1022,13 +1022,13 @@ steps:
               provider:
                 id: PROVIDER_ID
               items:
-                - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                   xinput:
                     form:
-                      id: personal_loan_info_c93a772c-c39e-441c-9d48-3496f9dedcb2
+                      id: personal_loan_info_00b7fb71-9e19-4b01-a28c-355ab4831d54
                     form_response:
                       status: SUCCESS
-                      submission_id: 6f97dfbc-9a08-4409-a2c2-c0f822460417
+                      submission_id: c745de52-4814-4ebb-9729-c070f0c1ae13
         type: request
         description: The BAP selects a specific personal loan product for foreclosure
           from the BPP and submits the borrower information necessary for lender
@@ -1380,9 +1380,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_select
-            timestamp: 2026-08-06T01:00:47.303Z
+            timestamp: 2026-08-11T04:26:58.866Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 6bf6e6c7-f31a-40f7-964e-6246a0107b7d
+            message_id: bd904d77-554b-423f-9277-b76cbb5cdad6
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1465,13 +1465,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                    - cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
+                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
                   fulfillment_ids:
                     - F1
                   price:
@@ -1579,7 +1579,7 @@ steps:
                       headings:
                         - SINGLE_REDIRECTION
                     form:
-                      id: ekyc_details_4603702a-e815-400b-b061-03148ebd8c1e
+                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
                       mime_type: application/html
                       url: undefined/forms/ONDC:FIS12/Ekyc_details_verification_status/?transaction_id=b0b9338d-e381-43ab-95ff-e2b40cf49447&session_id=undefined&bap_uri=https%3A%2F%2Fbap.example.com
                       resubmit: false
@@ -1644,7 +1644,7 @@ steps:
                         code: PENDING
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_369d6239-b593-47d0-b576-8f90af260976
+                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
                 price:
                   currency: INR
                   value: "232300"
@@ -2022,9 +2022,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-06T01:00:47.362Z
+            timestamp: 2026-08-11T04:26:58.940Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 1d4d38ab-83af-4042-a1d3-f9a48011e431
+            message_id: 072ba6ae-c417-48f5-87db-524e64f8b33b
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2107,13 +2107,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                    - cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
+                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
                   fulfillment_ids:
                     - F1
                   price:
@@ -2212,10 +2212,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_4603702a-e815-400b-b061-03148ebd8c1e
+                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
                     form_response:
                       status: OFFLINE_PENDING
-                      submission_id: sub_id_f7636324-00f9-4214-b12f-17cb0250df0a
+                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -2278,7 +2278,7 @@ steps:
                         code: PENDING
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_369d6239-b593-47d0-b576-8f90af260976
+                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
                 price:
                   currency: INR
                   value: "232300"
@@ -2649,9 +2649,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-06T01:00:47.449Z
+            timestamp: 2026-08-11T04:26:59.028Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: beaac501-9306-4cc8-93db-89c9d93de6f3
+            message_id: e7940681-7fc7-4110-a369-34443790dde7
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2734,13 +2734,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                    - cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
+                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
                   fulfillment_ids:
                     - F1
                   price:
@@ -2839,10 +2839,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_4603702a-e815-400b-b061-03148ebd8c1e
+                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
                     form_response:
                       status: OFFLINE_PENDING
-                      submission_id: sub_id_f7636324-00f9-4214-b12f-17cb0250df0a
+                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -2905,7 +2905,7 @@ steps:
                         code: PENDING
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_369d6239-b593-47d0-b576-8f90af260976
+                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
                 price:
                   currency: INR
                   value: "232300"
@@ -3159,7 +3159,7 @@ steps:
                   form:
                     id: FO3
                   form_response:
-                    status: COMPLETED
+                    status: OFFLINE_PENDING
                     submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
             fulfillments:
               - id: F2
@@ -3277,9 +3277,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-06T01:00:47.503Z
+            timestamp: 2026-08-11T04:26:59.148Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: fc17fc56-77de-40f6-acdf-2955b3f534b1
+            message_id: e9a5eea8-8d37-4d2c-9813-caaadc279ea6
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3362,13 +3362,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                    - cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
+                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
                   fulfillment_ids:
                     - F1
                   price:
@@ -3467,10 +3467,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_4603702a-e815-400b-b061-03148ebd8c1e
+                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
                     form_response:
-                      status: COMPLETED
-                      submission_id: sub_id_f7636324-00f9-4214-b12f-17cb0250df0a
+                      status: OFFLINE_PENDING
+                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -3533,7 +3533,7 @@ steps:
                         code: IN_PROGRESS
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_369d6239-b593-47d0-b576-8f90af260976
+                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
                 price:
                   currency: INR
                   value: "232300"
@@ -3907,9 +3907,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-06T01:00:47.593Z
+            timestamp: 2026-08-11T04:26:59.307Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: c05c4a09-cc34-4985-a089-2abc7664384f
+            message_id: fd15b1ba-d27a-4749-820d-5b9d2223db69
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3992,13 +3992,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                    - cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
+                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
                   fulfillment_ids:
                     - F1
                   price:
@@ -4097,10 +4097,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_4603702a-e815-400b-b061-03148ebd8c1e
+                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
                     form_response:
                       status: COMPLETED
-                      submission_id: sub_id_f7636324-00f9-4214-b12f-17cb0250df0a
+                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -4163,7 +4163,7 @@ steps:
                         code: SUCCESSFUL
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_369d6239-b593-47d0-b576-8f90af260976
+                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
                 price:
                   currency: INR
                   value: "232300"
@@ -4287,9 +4287,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: status
-            timestamp: 2026-08-06T01:00:56.668Z
+            timestamp: 2026-08-11T04:27:09.916Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 17cba4ec-ed4d-4f5c-894b-d855e0ad3ad4
+            message_id: 787cf2af-8db8-4ffa-9f1e-49da8e24c6e3
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -4320,8 +4320,8 @@ steps:
       to the borrower.
     mock:
       generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IHNlc3Npb25EYXRhPy5zZWxlY3RlZF9pdGVtc194aW5wdXQ/LlswXT8uZm9ybV9yZXNwb25zZT8uc3VibWlzc2lvbl9pZDsKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CgogIGlmIChzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQgJiYgb3JkZXI/LnByb3ZpZGVyKSB7CiAgICBvcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwoKICB9CiBvcmRlci5mdWxmaWxsbWVudHM9c2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzOwogIGlmIChzZXNzaW9uSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpZiAoc2Vzc2lvbkl0ZW0uaWQpIHsKICAgICAgaXRlbTAuaWQgPSBzZXNzaW9uSXRlbS5pZDsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuY2F0ZWdvcnlfaWRzID0gWy4uLnNlc3Npb25JdGVtLmNhdGVnb3J5X2lkc107CiAgICB9CgogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHNdOwogICAgfQogIH0KCiAgaWYgKG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGZvcm1JZCA9IHNlc3Npb25EYXRhPy5mb3JtX2lkPy5bMF07CiAgICBpZiAoZm9ybUlkKSB7CiAgICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtLmlkID0gZm9ybUlkOwogICAgfQoKICAgIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCA9IHN1Ym1pc3Npb25faWQ7CiAgICB9CiAgfQoKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBjb25zdCBxdW90ZUlkID0gc2Vzc2lvbkRhdGE/LnF1b3RlX2lkPy5bMF07CiAgICBpZiAocXVvdGVJZCkgewogICAgICBvcmRlci5xdW90ZS5pZCA9IHF1b3RlSWQ7CiAgICB9CgogICAgY29uc3QgcXVvdGVQcmljZSA9IHNlc3Npb25EYXRhPy5xdW90ZV9wcmljZT8uWzBdOwogICAgaWYgKHF1b3RlUHJpY2UgJiYgb3JkZXIucXVvdGUucHJpY2UpIHsKICAgICAgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBxdW90ZVByaWNlOwogICAgfQogIH0KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5wYXltZW50cyB8fCBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzOwogIGlmIChBcnJheS5pc0FycmF5KHNhdmVkUGF5bWVudHMpICYmIHNhdmVkUGF5bWVudHMubGVuZ3RoID4gMCAmJiBvcmRlcikgewogICAgb3JkZXIucGF5bWVudHMgPSBzYXZlZFBheW1lbnRzOwogIH0KCiAgaWYgKHNlc3Npb25EYXRhPy5vcmRlcl9pZD8uWzBdICYmIG9yZGVyKSB7CiAgICBvcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwogIH0KCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
-      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQ/LmNvbnRleHQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgY29udGV4dCBpbiBwYXlsb2FkIiB9OwogIH0KCiAKICBpZiAoIXRhcmdldFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2Uub3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CiAgY29uc3Qgb3JkZXI9dGFyZ2V0UGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIGlmICghb3JkZXIucHJvdmlkZXI/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHByb3ZpZGVyLmlkIGluIHBheWxvYWQiIH07CiAgfQoKIAogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci5pdGVtcykgfHwgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1zIGluIHBheWxvYWQiIH07CiAgfQoKICBjb25zdCBpdGVtID0gb3JkZXIuaXRlbXNbMF07CgogIGlmICghaXRlbS5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtc1swXS5pZCBpbiBwYXlsb2FkIiB9OwogIH0KCiAgaWYgKCFvcmRlcj8ucXVvdGU/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHF1b3RlLmlkIGluIHBheWxvYWQiIH07CiAgfQogIGlmIChvcmRlci5pdGVtcy5zb21lKGl0ZW0gPT4gaXRlbT8ueGlucHV0Py5mb3JtX3Jlc3BvbnNlPy5zdGF0dXMgIT09ICJDT01QTEVURUQiKSkgewogIHJldHVybiB7CiAgICB2YWxpZDogZmFsc2UsCiAgICBjb2RlOiA0MDAsCiAgICBkZXNjcmlwdGlvbjogIkFsbCBpdGVtcyBtdXN0IGhhdmUgeGlucHV0LmZvcm1fcmVzcG9uc2Uuc3RhdHVzIGFzIENPTVBMRVRFRCIKICB9Owp9CgoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
-      requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8ucXVvdGVfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBxdW90ZV9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CiAgY29uc3QgaXRlbVhJbnB1dHMgPSBzZXNzaW9uRGF0YT8uaXRlbV94aW5wdXQ7CgppZiAoCiAgQXJyYXkuaXNBcnJheShpdGVtWElucHV0cykgJiYKICBpdGVtWElucHV0cy5zb21lKAogICAgaXRlbSA9PiBpdGVtPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2U/LnN0YXR1cyAhPT0gIkNPTVBMRVRFRCIKICApCikgewogIHJldHVybiB7CiAgICB2YWxpZDogZmFsc2UsCiAgICBjb2RlOiA0MDAsCiAgICBkZXNjcmlwdGlvbjogIkFsbCBpdGVtcyBtdXN0IGhhdmUgeGlucHV0LmZvcm1fcmVzcG9uc2Uuc3RhdHVzIGFzIENPTVBMRVRFRCIKICB9Owp9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQ/LmNvbnRleHQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgY29udGV4dCBpbiBwYXlsb2FkIiB9OwogIH0KCiAKICBpZiAoIXRhcmdldFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2Uub3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CiAgY29uc3Qgb3JkZXI9dGFyZ2V0UGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIGlmICghb3JkZXIucHJvdmlkZXI/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHByb3ZpZGVyLmlkIGluIHBheWxvYWQiIH07CiAgfQoKIAogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci5pdGVtcykgfHwgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1zIGluIHBheWxvYWQiIH07CiAgfQoKICBjb25zdCBpdGVtID0gb3JkZXIuaXRlbXNbMF07CgogIGlmICghaXRlbS5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtc1swXS5pZCBpbiBwYXlsb2FkIiB9OwogIH0KCiAgaWYgKCFvcmRlcj8ucXVvdGU/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHF1b3RlLmlkIGluIHBheWxvYWQiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
+      requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKCiAgaWYgKCFzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIXNlc3Npb25EYXRhPy5pdGVtPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1bMF0uaWQgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIXNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHF1b3RlX2lkWzBdIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS12
@@ -4337,8 +4337,8 @@ steps:
           bpp_id: bpp.credit.becknprotocol.org
           bpp_uri: https://bpp.credit.becknprotocol.org
           transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62195
-          message_id: 40e7ee84-dc66-45a3-8072-8890a6147d67
-          timestamp: 2023-05-25T05:23:03.443Z
+          message_id: a11c69a8-b154-480b-b226-78e59781e852
+          timestamp: 2023-05-25T05:23:05.443Z
           ttl: P30M
         message:
           order:
@@ -4523,15 +4523,15 @@ steps:
             fulfillments:
               - id: F2
                 type: ONLINE
+                state:
+                  descriptor:
+                    code: DISBURSED
                 customer:
                   person:
                     name: John Doe
                   contact:
                     phone: +91-9999999999
                     email: john.doe@example.com
-                state:
-                  descriptor:
-                    code: INITIATED
                 stops:
                   - id: "1"
                     type: PERSONAL_INFORMATION
@@ -4544,13 +4544,13 @@ steps:
                     type: LOAN_OFFER
                     instructions:
                       name: Loan Offer
-                      code: FINALIZED
+                      code: SELECTED
                       short_desc: Short desc about loan offer checklist
                   - id: "3"
                     parent_stop_id: "2"
                     type: SINGLE_REDIRECTION
                     instructions:
-                      code: IN_PROGRESS
+                      code: SUCCESSFUL
                       name: Single Redirection
                       short_desc: Short desc about Single Redirection checklist
                   - id: "4"
@@ -4558,28 +4558,28 @@ steps:
                     type: KYC
                     instructions:
                       name: VKYC
-                      code: IN_PROGRESS
+                      code: SUCCESSFUL
                       short_desc: Short desc about KYC checklist
                   - id: "5"
                     parent_stop_id: "4"
                     type: BANK_ACCOUNT_VERIFICATION
                     instructions:
                       name: PENNY DROP
-                      code: PENDING
+                      code: SUCCESSFUL
                       short_desc: Short desc about Bank Account Verification checklist
                   - id: "6"
                     parent_stop_id: "5"
                     type: REPAYMENT
                     instructions:
                       name: E-MANDATE
-                      code: PENDING
+                      code: SUCCESSFUL
                       short_desc: Short desc about repayment checklist
                   - id: "7"
                     parent_stop_id: "6"
                     type: LOAN_AGREEMENT
                     instructions:
                       name: CLICKWRAP
-                      code: PENDING
+                      code: SUCCESSFUL
                       short_desc: Short desc about LOAN AGREEMENT checklist
             quote:
               id: LOAN_LEAD_ID_OR_SIMILAR
@@ -4636,6 +4636,8 @@ steps:
         quote: $.message.order.quote
         form_id: $.message.order.items[0].xinput.form.id
         payments: $.message.order.payments[*]
+        items: $.message.order.items
+        submission_id: $.message.order.items[0].xinput.form_response.submission_id
       inputs: {}
     examples:
       - name: example for on_status
@@ -4643,9 +4645,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-06T01:00:56.705Z
+            timestamp: 2026-08-11T04:27:09.988Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 17cba4ec-ed4d-4f5c-894b-d855e0ad3ad4
+            message_id: 787cf2af-8db8-4ffa-9f1e-49da8e24c6e3
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -4728,13 +4730,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                    - cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
+                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
                   fulfillment_ids:
                     - F1
                   price:
@@ -4833,10 +4835,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_4603702a-e815-400b-b061-03148ebd8c1e
+                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
                     form_response:
                       status: COMPLETED
-                      submission_id: sub_id_f7636324-00f9-4214-b12f-17cb0250df0a
+                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -4899,7 +4901,7 @@ steps:
                         code: SUCCESSFUL
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_369d6239-b593-47d0-b576-8f90af260976
+                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
                 price:
                   currency: INR
                   value: "232300"
@@ -4953,9 +4955,9 @@ steps:
       specifications, and fulfillment details necessary for the lender to
       proceed with KYC verification and account validation.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGlmIChzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlciAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnByb3ZpZGVyKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwogIH0KICAKICBpZiAoZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGVzaWduRm9ybUlkID0gc2Vzc2lvbkRhdGEuZm9ybV9pZFswXTsKICAgIGlmIChlc2lnbkZvcm1JZCkgewogICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybS5pZCA9IGVzaWduRm9ybUlkOwogICAgfQogIH0KCgogIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/Lml0ZW1zPy5bMF0/LmlkKSB7CiAgICBjb25zdCBzZWxlY3RlZF9pdGVtX2lkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXNbMF0uaWQ7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCA9IHNlbGVjdGVkX2l0ZW1faWQKICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0=
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGlmIChzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlciAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnByb3ZpZGVyKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwogIH0KCiAgY29uc3Qgc2Vzc2lvbkl0ZW0gPSBzZXNzaW9uRGF0YT8uaXRlbXM/LlswXT8uWzBdOwogIGNvbnNvbGUubG9nKCJzZXNzaW9uSXRlbSIsIEpTT04uc3RyaW5naWZ5KHNlc3Npb25JdGVtKSk7CgogIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/Lml0ZW1zPy5bMF0/LnhpbnB1dD8uZm9ybSkgewogICAgY29uc3QgZXNpZ25Gb3JtSWQgPSBzZXNzaW9uRGF0YS5mb3JtX2lkPy5bMF07CiAgICBjb25zdCBlc2lnblN1YklkID0gc2Vzc2lvbkl0ZW0/LnhpbnB1dD8uZm9ybV9yZXNwb25zZT8uc3VibWlzc2lvbl9pZDsKICAgIGNvbnN0IGVzaWduU3RhdHVzID0gc2Vzc2lvbkl0ZW0/LnhpbnB1dD8uZm9ybV9yZXNwb25zZT8uc3RhdHVzOwoKICAgIGlmIChlc2lnbkZvcm1JZCkgewogICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybS5pZCA9IGVzaWduRm9ybUlkOwogICAgfQogICAgaWYgKGVzaWduU3ViSWQpIHsKICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCA9IGVzaWduU3ViSWQ7CiAgICB9CiAgICBpZiAoZXNpZ25TdGF0dXMpIHsKICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3RhdHVzID0gZXNpZ25TdGF0dXM7ICAKICAgIH0KICB9CgogIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/Lml0ZW1zPy5bMF0/LmlkICYmIHNlc3Npb25JdGVtPy5pZCkgewogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0uaWQgPSBzZXNzaW9uSXRlbS5pZDsKICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2Uub3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG9yZGVyID0gdGFyZ2V0UGF5bG9hZC5tZXNzYWdlLm9yZGVyOwoKICBpZiAoIW9yZGVyPy5wcm92aWRlcj8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcHJvdmlkZXIuaWQgaW4gcGF5bG9hZCIgfTsKICB9CgogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci5pdGVtcykgfHwgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1zIGluIHBheWxvYWQiIH07CiAgfQoKCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
-      requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8ucXVvdGVfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBxdW90ZV9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CgogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
+      requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKCiAgaWYgKCFzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIXNlc3Npb25EYXRhPy5pdGVtPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1bMF0uaWQgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIXNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHF1b3RlX2lkWzBdIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
           domain: ONDC:FIS12
@@ -5031,9 +5033,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: confirm
-            timestamp: 2026-08-06T01:00:56.776Z
+            timestamp: 2026-08-11T04:27:10.061Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 7aa08bd4-0311-49bd-80dc-6b5775b520f4
+            message_id: 4af28f34-c281-446b-bee1-68f65c032eb0
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -5050,13 +5052,13 @@ steps:
               provider:
                 id: PROVIDER_ID
               items:
-                - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                   xinput:
                     form:
-                      id: ekyc_details_4603702a-e815-400b-b061-03148ebd8c1e
+                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
                     form_response:
-                      status: SUCCESS
-                      submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
+                      status: COMPLETED
+                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
               tags:
                 - descriptor:
                     code: BAP_TERMS
@@ -5539,9 +5541,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_confirm
-            timestamp: 2026-08-06T01:00:56.830Z
+            timestamp: 2026-08-11T04:27:10.162Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 7aa08bd4-0311-49bd-80dc-6b5775b520f4
+            message_id: 4af28f34-c281-446b-bee1-68f65c032eb0
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -5555,7 +5557,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_ce19ca1d-7fe5-418e-ba38-f37a063793fa
+              id: LOAN_ORDER_8676e1dd-1a55-43b6-836b-d83104372308
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -5626,13 +5628,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_c34992b4-d8e2-4279-9615-2e96d696df9f
+                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_c05066ba-09a2-4753-8463-230a0645e941
-                    - cat_bureau_loan_bad3567b-21b6-40c9-9a08-b805d3e2f848
+                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
                   fulfillment_ids:
                     - F1
                   price:
@@ -5730,7 +5732,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_369d6239-b593-47d0-b576-8f90af260976
+                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
                 price:
                   currency: INR
                   value: "232300"
@@ -5827,12 +5829,12 @@ steps:
                         short_desc: Short desc about LOAN AGREEMENT checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_16adfef3-0947-4e4c-8e8f-53cffed1ad98
+                  id: disbursement_c2638987-2d4b-4c1f-8b7f-435dc4b90330
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-08-06T01:00:56.836Z
+                    timestamp: 2026-08-11T04:27:10.167Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -5840,7 +5842,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_64e12b22-f9f3-47f1-9a40-7cb4e32c5976
+                  id: installment_806adc14-3811-477e-840d-1896e500a048
                   params:
                     amount: "46360"
                     currency: INR
@@ -5851,7 +5853,7 @@ steps:
                       start: 2026-08-31T00:00:00.000Z
                       end: 2026-09-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_26dac094-ab43-4a3e-95a2-97b766318ae2
+                  id: installment_c3883b3d-9062-41af-8332-18e61c080085
                   params:
                     amount: "46360"
                     currency: INR
@@ -5862,7 +5864,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_3bbe925a-79f6-43e2-b7e2-b6fe79f845c6
+                  id: installment_8e043139-f00e-4a92-aa3c-78d3623c8ff9
                   params:
                     amount: "46360"
                     currency: INR
@@ -5873,7 +5875,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_fd1cc9cf-13a1-4bef-8684-f0a3573f364c
+                  id: installment_18b0cab4-e05f-4923-803d-e9856be4dd6a
                   params:
                     amount: "46360"
                     currency: INR
@@ -5884,7 +5886,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_c75dae5c-1220-4acb-ba70-0212b64ea39f
+                  id: installment_8acb3612-44b1-4639-b563-138cd18764fe
                   params:
                     amount: "46360"
                     currency: INR
@@ -5951,8 +5953,8 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-08-06T01:00:56.836Z
-              updated_at: 2026-08-06T01:00:56.836Z
+              created_at: 2026-08-11T04:27:10.167Z
+              updated_at: 2026-08-11T04:27:10.167Z
         type: request
         description: The BPP acknowledges and confirms the borrower's loan application,
           returning the finalized order with quote details and payment
