@@ -92,9 +92,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: search
-            timestamp: 2026-08-11T04:26:35.808Z
+            timestamp: 2026-08-11T11:02:40.632Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 1113d939-2e81-4d46-93c4-fe906ad869a8
+            message_id: ab1cdf7f-ea72-43f0-a88e-c4763ea80fd2
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -524,9 +524,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_search
-            timestamp: 2026-08-11T04:26:35.890Z
+            timestamp: 2026-08-11T11:02:40.658Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 1113d939-2e81-4d46-93c4-fe906ad869a8
+            message_id: ab1cdf7f-ea72-43f0-a88e-c4763ea80fd2
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -543,7 +543,7 @@ steps:
               descriptor:
                 name: ICICI Bank
               providers:
-                - id: provider_4ba1c2fa-4c51-49f7-8364-035133370226
+                - id: provider_e486faf6-266c-4cfa-bc59-968fe30ff317
                   descriptor:
                     images:
                       - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -552,33 +552,33 @@ steps:
                     short_desc: ICICI Bank Ltd
                     long_desc: ICICI Bank Ltd, India.
                   categories:
-                    - id: cat_loan_37453926-1d88-4f35-b3cd-43be782f06da
+                    - id: cat_loan_0d38c635-55c0-4470-866d-eda2d8190023
                       descriptor:
                         code: LOAN
                         name: Loan
-                    - id: cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                      parent_category_id: cat_loan_37453926-1d88-4f35-b3cd-43be782f06da
+                    - id: cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                      parent_category_id: cat_loan_0d38c635-55c0-4470-866d-eda2d8190023
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan
-                    - id: cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
-                      parent_category_id: cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
+                    - id: cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
+                      parent_category_id: cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
                       descriptor:
                         code: BUREAU_LOAN
                         name: Bureau Loan
-                    - id: cat_pre_qualifier_35b56dea-a3b5-42b5-84eb-ca9a6ff0fdf5
-                      parent_category_id: cat_loan_37453926-1d88-4f35-b3cd-43be782f06da
+                    - id: cat_pre_qualifier_62438c89-ecf5-4f39-958a-3addabb8b99d
+                      parent_category_id: cat_loan_0d38c635-55c0-4470-866d-eda2d8190023
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                   items:
-                    - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                    - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Offline Journey
                       category_ids:
-                        - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                        - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                        - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                        - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                       fulfillment_ids:
                         - F1
                       tags:
@@ -628,19 +628,19 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: personal_loan_info_00b7fb71-9e19-4b01-a28c-355ab4831d54
+                          id: personal_loan_info_8f1025ad-116e-44bf-8d0a-ff38b9e2c631
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=b0b9338d-e381-43ab-95ff-e2b40cf49447&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: bureau_personal_loan_5cb03721-254a-45a7-8b1e-2cf8d5d4fadf
+                    - id: bureau_personal_loan_708d30ef-f10b-4a9b-97da-ef2e7b4fc72e
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Single Redirection
                       category_ids:
-                        - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                        - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                        - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                        - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                       fulfillment_ids:
                         - F2
                       tags:
@@ -690,18 +690,18 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: personal_loan_info_00b7fb71-9e19-4b01-a28c-355ab4831d54
+                          id: personal_loan_info_8f1025ad-116e-44bf-8d0a-ff38b9e2c631
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=b0b9338d-e381-43ab-95ff-e2b40cf49447&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: personal_loan_b178e340-5ac1-41d8-a9a2-7bd3ee3c26cf
+                    - id: personal_loan_5afc92f8-4cc9-4c98-b75a-fd99ec7d848b
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                       category_ids:
-                        - cat_pre_qualifier_35b56dea-a3b5-42b5-84eb-ca9a6ff0fdf5
+                        - cat_pre_qualifier_62438c89-ecf5-4f39-958a-3addabb8b99d
                       fulfillment_ids:
                         - F3
                   fulfillments:
@@ -909,21 +909,21 @@ steps:
     examples:
       - name: example for html_form
         payload:
-          panName: John Doe
-          personalemail: john.doe@gmail.com
-          officialemail: john.doe@gmail.com
-          dob: 2026-08-19
+          panName: Jyoti
+          personalemail: jyoti@gmail.com
+          officialemail: ""
+          dob: 2026-08-09
           gender: female
-          pan: BAJPC4350M
-          contactNumber: "9284770148"
-          employmentType: salaried
+          pan: ABCDE1234Z
+          contactNumber: "9098979879"
+          employmentType: selfEmployed
           income: "78"
-          companyName: rue
+          companyName: ondc
           udyamNumber: ""
-          addressL1: hlkjlkj
-          addressL2: hkkhll
+          addressL1: ""
+          addressL2: ""
           city: delhi
-          state: Delhi
+          state: delhi
           pincode: "160103"
           aa_id: ""
           endUse: health
@@ -1003,9 +1003,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: select
-            timestamp: 2026-08-11T04:26:58.840Z
+            timestamp: 2026-08-11T11:03:43.448Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: bd904d77-554b-423f-9277-b76cbb5cdad6
+            message_id: fd7fa73f-6c41-421c-bbc4-c931aa18251c
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1022,13 +1022,13 @@ steps:
               provider:
                 id: PROVIDER_ID
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   xinput:
                     form:
-                      id: personal_loan_info_00b7fb71-9e19-4b01-a28c-355ab4831d54
+                      id: personal_loan_info_8f1025ad-116e-44bf-8d0a-ff38b9e2c631
                     form_response:
                       status: SUCCESS
-                      submission_id: c745de52-4814-4ebb-9729-c070f0c1ae13
+                      submission_id: 6947200d-9f0a-4022-9c2a-1001b1a04f79
         type: request
         description: The BAP selects a specific personal loan product for foreclosure
           from the BPP and submits the borrower information necessary for lender
@@ -1380,9 +1380,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_select
-            timestamp: 2026-08-11T04:26:58.866Z
+            timestamp: 2026-08-11T11:03:43.469Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: bd904d77-554b-423f-9277-b76cbb5cdad6
+            message_id: fd7fa73f-6c41-421c-bbc4-c931aa18251c
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1465,13 +1465,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -1579,7 +1579,7 @@ steps:
                       headings:
                         - SINGLE_REDIRECTION
                     form:
-                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
+                      id: ekyc_details_9c83dc17-d527-4553-a2ea-c2cd6fe81dcf
                       mime_type: application/html
                       url: undefined/forms/ONDC:FIS12/Ekyc_details_verification_status/?transaction_id=b0b9338d-e381-43ab-95ff-e2b40cf49447&session_id=undefined&bap_uri=https%3A%2F%2Fbap.example.com
                       resubmit: false
@@ -1644,7 +1644,7 @@ steps:
                         code: PENDING
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -2022,9 +2022,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:26:58.940Z
+            timestamp: 2026-08-11T11:03:43.493Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 072ba6ae-c417-48f5-87db-524e64f8b33b
+            message_id: e875ead2-1a64-4d99-8bb2-487b999a202f
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2107,13 +2107,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -2212,10 +2212,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
+                      id: ekyc_details_9c83dc17-d527-4553-a2ea-c2cd6fe81dcf
                     form_response:
                       status: OFFLINE_PENDING
-                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
+                      submission_id: sub_id_4881f62b-f2de-4666-9e5e-2b19e55b2bb4
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -2278,7 +2278,7 @@ steps:
                         code: PENDING
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -2649,9 +2649,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:26:59.028Z
+            timestamp: 2026-08-11T11:03:43.512Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: e7940681-7fc7-4110-a369-34443790dde7
+            message_id: 5b279e52-d44c-4fbc-9ea2-948e2f25ec69
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2734,13 +2734,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -2839,10 +2839,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
+                      id: ekyc_details_9c83dc17-d527-4553-a2ea-c2cd6fe81dcf
                     form_response:
                       status: OFFLINE_PENDING
-                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
+                      submission_id: sub_id_4881f62b-f2de-4666-9e5e-2b19e55b2bb4
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -2905,7 +2905,7 @@ steps:
                         code: PENDING
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -3277,9 +3277,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:26:59.148Z
+            timestamp: 2026-08-11T11:03:43.533Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: e9a5eea8-8d37-4d2c-9813-caaadc279ea6
+            message_id: f55770cd-31df-4a13-af5c-6b064874f2cd
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3362,13 +3362,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -3467,10 +3467,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
+                      id: ekyc_details_9c83dc17-d527-4553-a2ea-c2cd6fe81dcf
                     form_response:
                       status: OFFLINE_PENDING
-                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
+                      submission_id: sub_id_4881f62b-f2de-4666-9e5e-2b19e55b2bb4
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -3533,7 +3533,7 @@ steps:
                         code: IN_PROGRESS
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -3907,9 +3907,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:26:59.307Z
+            timestamp: 2026-08-11T11:03:43.553Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: fd15b1ba-d27a-4749-820d-5b9d2223db69
+            message_id: b681473c-83e1-46ab-8bb8-9f8f2bfecfac
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3992,13 +3992,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -4097,10 +4097,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
+                      id: ekyc_details_9c83dc17-d527-4553-a2ea-c2cd6fe81dcf
                     form_response:
                       status: COMPLETED
-                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
+                      submission_id: sub_id_4881f62b-f2de-4666-9e5e-2b19e55b2bb4
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -4163,7 +4163,7 @@ steps:
                         code: SUCCESSFUL
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -4287,9 +4287,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: status
-            timestamp: 2026-08-11T04:27:09.916Z
+            timestamp: 2026-08-11T11:03:51.913Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 787cf2af-8db8-4ffa-9f1e-49da8e24c6e3
+            message_id: 92c7f1d8-a64e-488f-a9dd-cea7c0f07359
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -4645,9 +4645,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:27:09.988Z
+            timestamp: 2026-08-11T11:03:51.932Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 787cf2af-8db8-4ffa-9f1e-49da8e24c6e3
+            message_id: 92c7f1d8-a64e-488f-a9dd-cea7c0f07359
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -4730,13 +4730,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -4835,10 +4835,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
+                      id: ekyc_details_9c83dc17-d527-4553-a2ea-c2cd6fe81dcf
                     form_response:
                       status: COMPLETED
-                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
+                      submission_id: sub_id_4881f62b-f2de-4666-9e5e-2b19e55b2bb4
               fulfillments:
                 - id: F2
                   type: ONLINE
@@ -4901,7 +4901,7 @@ steps:
                         code: SUCCESSFUL
                         short_desc: Short desc about LOAN AGREEMENT checklist
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -5033,9 +5033,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: confirm
-            timestamp: 2026-08-11T04:27:10.061Z
+            timestamp: 2026-08-11T11:03:51.958Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 4af28f34-c281-446b-bee1-68f65c032eb0
+            message_id: e3aa0939-7500-4b28-aa05-d709bcb78916
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -5052,13 +5052,13 @@ steps:
               provider:
                 id: PROVIDER_ID
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   xinput:
                     form:
-                      id: ekyc_details_5211a6a8-4581-4159-898e-153c5a3707a7
+                      id: ekyc_details_9c83dc17-d527-4553-a2ea-c2cd6fe81dcf
                     form_response:
                       status: COMPLETED
-                      submission_id: sub_id_43271a25-7bdc-4527-b070-3f15a0c4250d
+                      submission_id: sub_id_4881f62b-f2de-4666-9e5e-2b19e55b2bb4
               tags:
                 - descriptor:
                     code: BAP_TERMS
@@ -5541,9 +5541,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_confirm
-            timestamp: 2026-08-11T04:27:10.162Z
+            timestamp: 2026-08-11T11:03:51.983Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 4af28f34-c281-446b-bee1-68f65c032eb0
+            message_id: e3aa0939-7500-4b28-aa05-d709bcb78916
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -5557,7 +5557,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_8676e1dd-1a55-43b6-836b-d83104372308
+              id: LOAN_ORDER_41fd4e28-7821-42d2-99c7-148653041399
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -5628,13 +5628,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -5732,7 +5732,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -5829,12 +5829,12 @@ steps:
                         short_desc: Short desc about LOAN AGREEMENT checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_c2638987-2d4b-4c1f-8b7f-435dc4b90330
+                  id: disbursement_8519f6d2-73b1-4b1c-aec8-909c230a42d0
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-08-11T04:27:10.167Z
+                    timestamp: 2026-08-11T11:03:51.985Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -5842,7 +5842,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_806adc14-3811-477e-840d-1896e500a048
+                  id: installment_46f2d703-7989-4773-966c-3d5d024a87ca
                   params:
                     amount: "46360"
                     currency: INR
@@ -5853,7 +5853,7 @@ steps:
                       start: 2026-08-31T00:00:00.000Z
                       end: 2026-09-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_c3883b3d-9062-41af-8332-18e61c080085
+                  id: installment_5d021c2a-c3c0-4d0f-aa56-826c276fdfd5
                   params:
                     amount: "46360"
                     currency: INR
@@ -5864,7 +5864,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8e043139-f00e-4a92-aa3c-78d3623c8ff9
+                  id: installment_81f670cd-7c49-4efe-ab9b-7e0ee5a94ff3
                   params:
                     amount: "46360"
                     currency: INR
@@ -5875,7 +5875,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_18b0cab4-e05f-4923-803d-e9856be4dd6a
+                  id: installment_a4fad58c-851e-4a55-9c81-c4626ac887a7
                   params:
                     amount: "46360"
                     currency: INR
@@ -5886,7 +5886,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8acb3612-44b1-4639-b563-138cd18764fe
+                  id: installment_ce2d2efd-aa1d-4ca5-bde8-6f3ad9b79021
                   params:
                     amount: "46360"
                     currency: INR
@@ -5953,8 +5953,8 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-08-11T04:27:10.167Z
-              updated_at: 2026-08-11T04:27:10.167Z
+              created_at: 2026-08-11T11:03:51.985Z
+              updated_at: 2026-08-11T11:03:51.985Z
         type: request
         description: The BPP acknowledges and confirms the borrower's loan application,
           returning the finalized order with quote details and payment
@@ -6408,9 +6408,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:27:10.329Z
+            timestamp: 2026-08-11T11:03:52.004Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 058fd322-e8bd-4c2a-941a-adad9552c2cf
+            message_id: 50233f8b-a482-4987-8384-c8bcf56bf7d3
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -6424,7 +6424,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_8676e1dd-1a55-43b6-836b-d83104372308
+              id: LOAN_ORDER_41fd4e28-7821-42d2-99c7-148653041399
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -6495,13 +6495,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -6599,7 +6599,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -6696,12 +6696,12 @@ steps:
                         short_desc: Short desc about LOAN AGREEMENT checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_c2638987-2d4b-4c1f-8b7f-435dc4b90330
+                  id: disbursement_8519f6d2-73b1-4b1c-aec8-909c230a42d0
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-08-11T04:27:10.334Z
+                    timestamp: 2026-08-11T11:03:52.006Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -6709,7 +6709,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_806adc14-3811-477e-840d-1896e500a048
+                  id: installment_46f2d703-7989-4773-966c-3d5d024a87ca
                   params:
                     amount: "46360"
                     currency: INR
@@ -6720,7 +6720,7 @@ steps:
                       start: 2026-08-31T00:00:00.000Z
                       end: 2026-09-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_c3883b3d-9062-41af-8332-18e61c080085
+                  id: installment_5d021c2a-c3c0-4d0f-aa56-826c276fdfd5
                   params:
                     amount: "46360"
                     currency: INR
@@ -6731,7 +6731,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8e043139-f00e-4a92-aa3c-78d3623c8ff9
+                  id: installment_81f670cd-7c49-4efe-ab9b-7e0ee5a94ff3
                   params:
                     amount: "46360"
                     currency: INR
@@ -6742,7 +6742,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_18b0cab4-e05f-4923-803d-e9856be4dd6a
+                  id: installment_a4fad58c-851e-4a55-9c81-c4626ac887a7
                   params:
                     amount: "46360"
                     currency: INR
@@ -6753,7 +6753,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8acb3612-44b1-4639-b563-138cd18764fe
+                  id: installment_ce2d2efd-aa1d-4ca5-bde8-6f3ad9b79021
                   params:
                     amount: "46360"
                     currency: INR
@@ -6820,8 +6820,8 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-08-11T04:27:10.167Z
-              updated_at: 2026-08-11T04:27:10.334Z
+              created_at: 2026-08-11T11:03:51.985Z
+              updated_at: 2026-08-11T11:03:52.006Z
         type: request
         description: The BPP sends an unsolicited status update to the BAP providing the
           current state of the loan application as the borrower progresses
@@ -7276,9 +7276,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:27:10.437Z
+            timestamp: 2026-08-11T11:03:52.025Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 98ed21d4-cc13-407c-b508-41a525349d56
+            message_id: 562187c4-f6a8-450c-bd99-afb82a4e4963
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -7292,7 +7292,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_8676e1dd-1a55-43b6-836b-d83104372308
+              id: LOAN_ORDER_41fd4e28-7821-42d2-99c7-148653041399
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -7363,13 +7363,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -7467,7 +7467,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -7564,12 +7564,12 @@ steps:
                         short_desc: Short desc about LOAN AGREEMENT checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_c2638987-2d4b-4c1f-8b7f-435dc4b90330
+                  id: disbursement_8519f6d2-73b1-4b1c-aec8-909c230a42d0
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-08-11T04:27:10.440Z
+                    timestamp: 2026-08-11T11:03:52.027Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -7577,7 +7577,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_806adc14-3811-477e-840d-1896e500a048
+                  id: installment_46f2d703-7989-4773-966c-3d5d024a87ca
                   params:
                     amount: "46360"
                     currency: INR
@@ -7588,7 +7588,7 @@ steps:
                       start: 2026-08-31T00:00:00.000Z
                       end: 2026-09-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_c3883b3d-9062-41af-8332-18e61c080085
+                  id: installment_5d021c2a-c3c0-4d0f-aa56-826c276fdfd5
                   params:
                     amount: "46360"
                     currency: INR
@@ -7599,7 +7599,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8e043139-f00e-4a92-aa3c-78d3623c8ff9
+                  id: installment_81f670cd-7c49-4efe-ab9b-7e0ee5a94ff3
                   params:
                     amount: "46360"
                     currency: INR
@@ -7610,7 +7610,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_18b0cab4-e05f-4923-803d-e9856be4dd6a
+                  id: installment_a4fad58c-851e-4a55-9c81-c4626ac887a7
                   params:
                     amount: "46360"
                     currency: INR
@@ -7621,7 +7621,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8acb3612-44b1-4639-b563-138cd18764fe
+                  id: installment_ce2d2efd-aa1d-4ca5-bde8-6f3ad9b79021
                   params:
                     amount: "46360"
                     currency: INR
@@ -7688,8 +7688,8 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-08-11T04:27:10.167Z
-              updated_at: 2026-08-11T04:27:10.440Z
+              created_at: 2026-08-11T11:03:51.985Z
+              updated_at: 2026-08-11T11:03:52.027Z
         type: request
         description: The BPP sends an unsolicited status update to the BAP regarding the
           borrower's loan application, including the current processing stage
@@ -8143,9 +8143,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:27:10.564Z
+            timestamp: 2026-08-11T11:03:52.046Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: b58ee95f-dad4-4405-a89b-8db674da9694
+            message_id: 7c66577c-bbe0-419a-9d36-bdbc4341eec5
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -8159,7 +8159,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_8676e1dd-1a55-43b6-836b-d83104372308
+              id: LOAN_ORDER_41fd4e28-7821-42d2-99c7-148653041399
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -8230,13 +8230,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -8334,7 +8334,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -8431,12 +8431,12 @@ steps:
                         short_desc: Short desc about LOAN AGREEMENT checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_c2638987-2d4b-4c1f-8b7f-435dc4b90330
+                  id: disbursement_8519f6d2-73b1-4b1c-aec8-909c230a42d0
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-08-11T04:27:10.571Z
+                    timestamp: 2026-08-11T11:03:52.048Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -8444,7 +8444,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_806adc14-3811-477e-840d-1896e500a048
+                  id: installment_46f2d703-7989-4773-966c-3d5d024a87ca
                   params:
                     amount: "46360"
                     currency: INR
@@ -8455,7 +8455,7 @@ steps:
                       start: 2026-08-31T00:00:00.000Z
                       end: 2026-09-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_c3883b3d-9062-41af-8332-18e61c080085
+                  id: installment_5d021c2a-c3c0-4d0f-aa56-826c276fdfd5
                   params:
                     amount: "46360"
                     currency: INR
@@ -8466,7 +8466,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8e043139-f00e-4a92-aa3c-78d3623c8ff9
+                  id: installment_81f670cd-7c49-4efe-ab9b-7e0ee5a94ff3
                   params:
                     amount: "46360"
                     currency: INR
@@ -8477,7 +8477,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_18b0cab4-e05f-4923-803d-e9856be4dd6a
+                  id: installment_a4fad58c-851e-4a55-9c81-c4626ac887a7
                   params:
                     amount: "46360"
                     currency: INR
@@ -8488,7 +8488,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8acb3612-44b1-4639-b563-138cd18764fe
+                  id: installment_ce2d2efd-aa1d-4ca5-bde8-6f3ad9b79021
                   params:
                     amount: "46360"
                     currency: INR
@@ -8555,8 +8555,8 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-08-11T04:27:10.167Z
-              updated_at: 2026-08-11T04:27:10.571Z
+              created_at: 2026-08-11T11:03:51.985Z
+              updated_at: 2026-08-11T11:03:52.048Z
         type: request
         description: The BPP proactively communicates real-time status updates of the
           borrower's loan application to the BAP, conveying progress through KYC
@@ -9010,9 +9010,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:27:10.688Z
+            timestamp: 2026-08-11T11:03:52.067Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: f5ac47fd-d9a9-4f76-a907-0b5f24bca129
+            message_id: 0d4c65a1-f614-463d-bdb1-237929697248
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -9026,7 +9026,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_8676e1dd-1a55-43b6-836b-d83104372308
+              id: LOAN_ORDER_41fd4e28-7821-42d2-99c7-148653041399
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -9097,13 +9097,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -9201,7 +9201,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -9298,12 +9298,12 @@ steps:
                         short_desc: Short desc about LOAN AGREEMENT checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_c2638987-2d4b-4c1f-8b7f-435dc4b90330
+                  id: disbursement_8519f6d2-73b1-4b1c-aec8-909c230a42d0
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-08-11T04:27:10.692Z
+                    timestamp: 2026-08-11T11:03:52.069Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -9311,7 +9311,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_806adc14-3811-477e-840d-1896e500a048
+                  id: installment_46f2d703-7989-4773-966c-3d5d024a87ca
                   params:
                     amount: "46360"
                     currency: INR
@@ -9322,7 +9322,7 @@ steps:
                       start: 2026-08-31T00:00:00.000Z
                       end: 2026-09-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_c3883b3d-9062-41af-8332-18e61c080085
+                  id: installment_5d021c2a-c3c0-4d0f-aa56-826c276fdfd5
                   params:
                     amount: "46360"
                     currency: INR
@@ -9333,7 +9333,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8e043139-f00e-4a92-aa3c-78d3623c8ff9
+                  id: installment_81f670cd-7c49-4efe-ab9b-7e0ee5a94ff3
                   params:
                     amount: "46360"
                     currency: INR
@@ -9344,7 +9344,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_18b0cab4-e05f-4923-803d-e9856be4dd6a
+                  id: installment_a4fad58c-851e-4a55-9c81-c4626ac887a7
                   params:
                     amount: "46360"
                     currency: INR
@@ -9355,7 +9355,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8acb3612-44b1-4639-b563-138cd18764fe
+                  id: installment_ce2d2efd-aa1d-4ca5-bde8-6f3ad9b79021
                   params:
                     amount: "46360"
                     currency: INR
@@ -9422,8 +9422,8 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-08-11T04:27:10.167Z
-              updated_at: 2026-08-11T04:27:10.692Z
+              created_at: 2026-08-11T11:03:51.985Z
+              updated_at: 2026-08-11T11:03:52.069Z
         type: request
         description: The BPP sends an unsolicited status message to the BAP updating the
           loan application's current state as it progresses through KYC
@@ -9877,9 +9877,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-08-11T04:27:10.803Z
+            timestamp: 2026-08-11T11:03:52.089Z
             transaction_id: b0b9338d-e381-43ab-95ff-e2b40cf49447
-            message_id: 55ff381c-83b0-41ec-9d7b-f9fffda0fa27
+            message_id: 2e802948-3387-492b-ade6-c9c7673da3a4
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -9893,7 +9893,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_8676e1dd-1a55-43b6-836b-d83104372308
+              id: LOAN_ORDER_41fd4e28-7821-42d2-99c7-148653041399
               status: COMPLETED
               provider:
                 id: PROVIDER_ID
@@ -9964,13 +9964,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_a7d38c32-9d7b-4699-94d1-fbc420dfbbd0
+                - id: bureau_personal_loan_e354eca2-7e6a-4614-bd28-9f68feec7187
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Single Redirection
                   category_ids:
-                    - cat_personal_loan_68407ae1-5546-4b26-b695-84371f004e10
-                    - cat_bureau_loan_56773aa4-36b1-4824-b10f-ffb8931fbeaa
+                    - cat_personal_loan_8d98142b-4ac2-4038-9695-2c292a0e5520
+                    - cat_bureau_loan_99505c45-6305-487e-b5fb-0361d8d1d2ba
                   fulfillment_ids:
                     - F1
                   price:
@@ -10068,7 +10068,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_1faa5126-798e-4e6e-9fe8-a1338e79811c
+                id: quote_12aa145a-fd2e-48b1-9ac4-380df81b36ce
                 price:
                   currency: INR
                   value: "232300"
@@ -10165,12 +10165,12 @@ steps:
                         short_desc: Short desc about LOAN AGREEMENT checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_c2638987-2d4b-4c1f-8b7f-435dc4b90330
+                  id: disbursement_8519f6d2-73b1-4b1c-aec8-909c230a42d0
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-08-11T04:27:10.807Z
+                    timestamp: 2026-08-11T11:03:52.091Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -10178,7 +10178,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_806adc14-3811-477e-840d-1896e500a048
+                  id: installment_46f2d703-7989-4773-966c-3d5d024a87ca
                   params:
                     amount: "46360"
                     currency: INR
@@ -10189,7 +10189,7 @@ steps:
                       start: 2026-08-31T00:00:00.000Z
                       end: 2026-09-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_c3883b3d-9062-41af-8332-18e61c080085
+                  id: installment_5d021c2a-c3c0-4d0f-aa56-826c276fdfd5
                   params:
                     amount: "46360"
                     currency: INR
@@ -10200,7 +10200,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8e043139-f00e-4a92-aa3c-78d3623c8ff9
+                  id: installment_81f670cd-7c49-4efe-ab9b-7e0ee5a94ff3
                   params:
                     amount: "46360"
                     currency: INR
@@ -10211,7 +10211,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_18b0cab4-e05f-4923-803d-e9856be4dd6a
+                  id: installment_a4fad58c-851e-4a55-9c81-c4626ac887a7
                   params:
                     amount: "46360"
                     currency: INR
@@ -10222,7 +10222,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_8acb3612-44b1-4639-b563-138cd18764fe
+                  id: installment_ce2d2efd-aa1d-4ca5-bde8-6f3ad9b79021
                   params:
                     amount: "46360"
                     currency: INR
@@ -10289,8 +10289,8 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-08-11T04:27:10.167Z
-              updated_at: 2026-08-11T04:27:10.807Z
+              created_at: 2026-08-11T11:03:51.985Z
+              updated_at: 2026-08-11T11:03:52.091Z
         type: request
         description: The BPP delivers an unsolicited status update to the BAP reflecting
           the current progress of the loan application through KYC verification,
