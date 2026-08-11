@@ -905,6 +905,22 @@ _TESTS_:
         - _NAME_: REQUIRED_ITEM_ID
           attr: $.message.order.items[*].id
           _RETURN_: attr are present
+    - _NAME_: CONFIRM_XINPUT
+      usecasepath: $.message.order.items[*].xinput.form.id
+      _CONTINUE_: "!(usecasepath are present)"
+      _RETURN_:
+        - _NAME_: REQUIRED_XINPUT_FORM_ID
+          attr: $.message.order.items[*].xinput.form.id
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_XINPUT_FORM_RESPONSE_STATUS
+          attr: $.message.order.items[*].xinput.form_response.status
+          enumList:
+            - SUCCESS
+            - COMPLETED
+          _RETURN_: attr are present && attr all in enumList
+        - _NAME_: REQUIRED_XINPUT_FORM_RESPONSE_SUBMISSION_ID
+          attr: $.message.order.items[*].xinput.form_response.submission_id
+          _RETURN_: attr are present
     - _NAME_: CONFIRM_PAYMENTS
       _SCOPE_: $.message.order.payments[?(@.type=='ON_ORDER')]
       _RETURN_:
