@@ -918,7 +918,7 @@ _TESTS_:
             - SUCCESS
             - COMPLETED
             - EXPIRED
-            - PENDING
+            - OFFLINE_PENDING
           _RETURN_: attr are present && attr all in enumList
         - _NAME_: REQUIRED_XINPUT_FORM_RESPONSE_SUBMISSION_ID
           attr: $.message.order.items[*].xinput.form_response.submission_id
