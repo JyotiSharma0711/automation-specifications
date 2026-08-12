@@ -6,6 +6,9 @@ info:
   version: 2.1.0
   x-usecases:
     - MUTUAL FUNDS
+  x-status:
+    - use_case: MUTUAL FUNDS
+      status: RELEASED
   x-branch-name: draft-FIS14-2.1.0
   x-reporting: true
 security:
