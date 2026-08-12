@@ -21,7 +21,7 @@ steps:
     unsolicited: false
     description: please add relevant description
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGlmIChleGlzdGluZ1BheWxvYWQuY29udGV4dCkgewogICAgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpCiAgfQoKICBpZiAoc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25faWQgJiYgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQpIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5jb250ZXh0LnRyYW5zYWN0aW9uX2lkID0gc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25faWQKICB9CiAgaWYgKHNlc3Npb25EYXRhLm1lc3NhZ2VfaWQgJiYgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQpIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5jb250ZXh0Lm1lc3NhZ2VfaWQgPSB1dWlkdjQoKQogIH0KICBjb25zdCByYXdEYXRhID0gc2Vzc2lvbkRhdGE/LnVzZXJfaW5wdXRzPy5kYXRhCgogIGxldCB1c2VySW5wdXQKCiAgaWYgKHR5cGVvZiByYXdEYXRhID09PSAic3RyaW5nIikgewogICAgdHJ5IHsKICAgICAgdXNlcklucHV0ID0gSlNPTi5wYXJzZShyYXdEYXRhKQogICAgfSBjYXRjaCAoZXJyKSB7CiAgICAgIGNvbnNvbGUuZXJyb3IoIkludmFsaWQgSlNPTiBzdHJpbmc6IiwgZXJyKQogICAgICB1c2VySW5wdXQgPSB7fQogICAgfQogIH0gZWxzZSB7CiAgICB1c2VySW5wdXQgPSByYXdEYXRhCiAgfQogIGNvbnN0IGZ1bGZpbGxtZW50X2lkcyA9CiAgICB1c2VySW5wdXQ/Lm1lc3NhZ2U/Lm9yZGVyPy5mdWxmaWxsbWVudHM/Lm1hcChmdWxmaWxsbWVudCA9PiB7CiAgICAgIHJldHVybiBmdWxmaWxsbWVudD8uaWQKICAgIH0pID8/IFtdCiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPQogICAgdXNlcklucHV0Py5tZXNzYWdlPy5vcmRlcj8ucHJvdmlkZXIgPz8ge30KICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtcyA9CiAgICB1c2VySW5wdXQ/Lm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8ubWFwKGl0ZW0gPT4gewogICAgICByZXR1cm4gewogICAgICAgIC4uLml0ZW0sCiAgICAgICAgZnVsZmlsbG1lbnRfaWRzCiAgICAgIH0KICAgIH0pID8/IFtdCiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzID0KICAgIHVzZXJJbnB1dD8ubWVzc2FnZT8ub3JkZXI/LmZ1bGZpbGxtZW50cyA/PyBbXQoKICAvL0FkaW5nIHBheW1lbnQgYXJyYXkgZm9yIGJ1eWVyIGZsb3cKCiAgLy8gVXBkYXRlIHRpbWVzdGFtcAogIC8vIGlmIChleGlzdGluZ1BheWxvYWQuY29udGV4dCkgewogIC8vICAgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogIC8vIH0KCiAgLy8gLy8gTWFwIHByb3ZpZGVyLmlkIGZyb20gc2Vzc2lvbiBkYXRhIChmcm9tIG9uX3NlYXJjaCkKICAvLyBjb25zdCBzZWxlY3RlZFByb3ZpZGVyID0KICAvLyAgIHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyIHx8IHNlc3Npb25EYXRhLnByb3ZpZGVyX2lkOwogIC8vIGlmIChzZWxlY3RlZFByb3ZpZGVyKSB7CiAgLy8gICBpZiAodHlwZW9mIHNlbGVjdGVkUHJvdmlkZXIgPT09ICJzdHJpbmciKSB7CiAgLy8gICAgIGlmICghZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2UpIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlID0ge307CiAgLy8gICAgIGlmICghZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIpIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyID0ge307CiAgLy8gICAgIGlmICghZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIpCiAgLy8gICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSB7fTsKICAvLyAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIuaWQgPSBzZWxlY3RlZFByb3ZpZGVyOwogIC8vICAgfSBlbHNlIGlmIChzZWxlY3RlZFByb3ZpZGVyLmlkKSB7CiAgLy8gICAgIGlmICghZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2UpIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlID0ge307CiAgLy8gICAgIGlmICghZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIpIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyID0ge307CiAgLy8gICAgIGlmICghZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIpCiAgLy8gICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSB7fTsKICAvLyAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIuaWQgPSBzZWxlY3RlZFByb3ZpZGVyLmlkOwogIC8vICAgfQogIC8vICAgY29uc29sZS5sb2coIlVwZGF0ZWQgcHJvdmlkZXIuaWQgZnJvbSBzZXNzaW9uOiIsIHNlbGVjdGVkUHJvdmlkZXIpOwogIC8vIH0KCiAgLy8gLy8gTWFwIGl0ZW0uaWQgZnJvbSBzZXNzaW9uIGRhdGEKICAvLyBjb25zdCBzZWxlY3RlZEl0ZW0gPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9pdGVtX2lkIHx8IHNlc3Npb25EYXRhLml0ZW07CiAgLy8gaWYgKHNlbGVjdGVkSXRlbSkgewogIC8vICAgY29uc3QgaXRlbTAgPSBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/Lml0ZW1zPy5bMF07CiAgLy8gICBpZiAoaXRlbTApIHsKICAvLyAgICAgaWYgKHR5cGVvZiBzZWxlY3RlZEl0ZW0gPT09ICJzdHJpbmciKSB7CiAgLy8gICAgICAgaXRlbTAuaWQgPSBzZWxlY3RlZEl0ZW07CiAgLy8gICAgIH0gZWxzZSBpZiAoc2VsZWN0ZWRJdGVtLmlkKSB7CiAgLy8gICAgICAgaXRlbTAuaWQgPSBzZWxlY3RlZEl0ZW0uaWQ7CiAgLy8gICAgIH0KICAvLyAgICAgY29uc29sZS5sb2coIlVwZGF0ZWQgaXRlbS5pZCBmcm9tIHNlc3Npb246IiwgaXRlbTAuaWQpOwogIC8vICAgfQogIC8vIH0KCiAgLy8gLy8gVXBkYXRlIGZ1bGZpbGxtZW50IElEcyBmcm9tIHNlc3Npb24KICAvLyBpZiAoCiAgLy8gICBzZXNzaW9uRGF0YS5mdWxmaWxsbWVudF9pZHMgJiYKICAvLyAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXM/LlswXQogIC8vICkgewogIC8vICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0uZnVsZmlsbG1lbnRfaWRzID0KICAvLyAgICAgc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRfaWRzOwogIC8vIH0KCiAgLy8gLy8gVXBkYXRlIGludmVzdG1lbnQgZGV0YWlscyBmcm9tIHNlc3Npb24KICAvLyBpZiAoCiAgLy8gICBzZXNzaW9uRGF0YS5pbnZlc3RtZW50X2Ftb3VudCAmJgogIC8vICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdPy50YWdzCiAgLy8gKSB7CiAgLy8gICBjb25zdCBpbnZlc3RtZW50VGFnID0gZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0udGFncy5maW5kKAogIC8vICAgICAodGFnOiBhbnkpID0+CiAgLy8gICAgICAgdGFnLmRlc2NyaXB0b3I/LmNvZGUgPT09ICJDT05UQUNUX0lORk8iIHx8CiAgLy8gICAgICAgdGFnLmRlc2NyaXB0b3I/LmNvZGUgPT09ICJJTkZPIiwKICAvLyAgICk7CiAgLy8gICBpZiAoaW52ZXN0bWVudFRhZyAmJiBpbnZlc3RtZW50VGFnLmxpc3QpIHsKICAvLyAgICAgY29uc3QgYW1vdW50SXRlbSA9IGludmVzdG1lbnRUYWcubGlzdC5maW5kKAogIC8vICAgICAgIChpdGVtOiBhbnkpID0+IGl0ZW0uZGVzY3JpcHRvcj8uY29kZSA9PT0gIklOVkVTVE1FTlRfQU1PVU5UIiwKICAvLyAgICAgKTsKICAvLyAgICAgaWYgKGFtb3VudEl0ZW0pIHsKICAvLyAgICAgICBhbW91bnRJdGVtLnZhbHVlID0gc2Vzc2lvbkRhdGEuaW52ZXN0bWVudF9hbW91bnQ7CiAgLy8gICAgICAgY29uc29sZS5sb2coCiAgLy8gICAgICAgICAiVXBkYXRlZCBpbnZlc3RtZW50IGFtb3VudDoiLAogIC8vICAgICAgICAgc2Vzc2lvbkRhdGEuaW52ZXN0bWVudF9hbW91bnQsCiAgLy8gICAgICAgKTsKICAvLyAgICAgfQogIC8vICAgfQogIC8vIH0KCiAgLy8gY29uc29sZS5sb2coIj09PSBzZWxlY3QgR2VuZXJhdG9yIEVuZCA9PT0iKTsKICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkCn0=
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIGlmICghb3JkZXIpIHsKICAgIGNvbnNvbGUuZXJyb3IoIk9yZGVyIG9iamVjdCBub3QgZm91bmQgaW4gZXhpc3RpbmdQYXlsb2FkIik7CiAgICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkOwogIH0KCiAgaWYgKGV4aXN0aW5nUGF5bG9hZC5jb250ZXh0KSB7CiAgICBleGlzdGluZ1BheWxvYWQuY29udGV4dC50aW1lc3RhbXAgPSBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCk7CiAgfQogIGlmIChzZXNzaW9uRGF0YS50cmFuc2FjdGlvbl9pZCAmJiBleGlzdGluZ1BheWxvYWQuY29udGV4dCkgewogICAgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQudHJhbnNhY3Rpb25faWQgPSBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbl9pZDsKICB9CiAgaWYgKHNlc3Npb25EYXRhLm1lc3NhZ2VfaWQgJiYgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQpIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5jb250ZXh0Lm1lc3NhZ2VfaWQgPSB1dWlkdjQoKTsKICB9CgogIC8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgLy8gUGFyc2UgdXNlciBpbnB1dHMKICAvLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKICBjb25zdCB1c2VySW5wdXQgPSBzZXNzaW9uRGF0YT8udXNlcl9pbnB1dHM7CgogIGlmICh1c2VySW5wdXQ/LnByb3ZpZGVySWQpIHsKICAgIG9yZGVyLnByb3ZpZGVyID0gewogICAgICAuLi5vcmRlci5wcm92aWRlciwKICAgICAgaWQ6IHVzZXJJbnB1dC5wcm92aWRlcklkCiAgICB9OwogIH0KCiAgLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAvLyBVcGRhdGUgSXRlbQogIC8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgogIGlmICh1c2VySW5wdXQ/Lml0ZW1JZCAmJiBvcmRlci5pdGVtcz8ubGVuZ3RoKSB7CiAgICBjb25zdCBpdGVtID0gb3JkZXIuaXRlbXNbMF07CgogICAgaXRlbS5pZCA9IHVzZXJJbnB1dC5pdGVtSWQ7CgogICAgaWYgKHVzZXJJbnB1dC5pdGVtVmFsdWUgIT09IHVuZGVmaW5lZCkgewogICAgICBpdGVtLnF1YW50aXR5ID0gewogICAgICAgIC4uLml0ZW0ucXVhbnRpdHksCiAgICAgICAgc2VsZWN0ZWQ6IHsKICAgICAgICAgIC4uLml0ZW0ucXVhbnRpdHk/LnNlbGVjdGVkLAogICAgICAgICAgbWVhc3VyZTogewogICAgICAgICAgICAuLi5pdGVtLnF1YW50aXR5Py5zZWxlY3RlZD8ubWVhc3VyZSwKICAgICAgICAgICAgdmFsdWU6IFN0cmluZyh1c2VySW5wdXQuaXRlbVZhbHVlKSwKICAgICAgICAgICAgdW5pdDoKICAgICAgICAgICAgICBpdGVtLnF1YW50aXR5Py5zZWxlY3RlZD8ubWVhc3VyZT8udW5pdCB8fCAiSU5SIgogICAgICAgICAgfQogICAgICAgIH0KICAgICAgfTsKICAgIH0KCiAgICAvLyBVcGRhdGUgZnVsZmlsbG1lbnQgcmVmZXJlbmNlIG9uIGl0ZW0KICAgIGlmICh1c2VySW5wdXQuZnVsZmlsbG1lbnRJZCkgewogICAgICBpdGVtLmZ1bGZpbGxtZW50X2lkcyA9IFt1c2VySW5wdXQuZnVsZmlsbG1lbnRJZF07CiAgICB9CiAgfQoKICAvLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogIC8vIFVwZGF0ZSBGdWxmaWxsbWVudAogIC8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgogIGlmIChvcmRlci5mdWxmaWxsbWVudHM/Lmxlbmd0aCkgewogICAgY29uc3QgZnVsZmlsbG1lbnQgPSBvcmRlci5mdWxmaWxsbWVudHNbMF07CgogICAgaWYgKHVzZXJJbnB1dD8uZnVsZmlsbG1lbnRJZCkgewogICAgICBmdWxmaWxsbWVudC5pZCA9IHVzZXJJbnB1dC5mdWxmaWxsbWVudElkOwogICAgfQoKICAgIC8vIEFnZW50IFBlcnNvbgogICAgaWYgKHVzZXJJbnB1dD8ucGVyc29uSWQpIHsKICAgICAgZnVsZmlsbG1lbnQuYWdlbnQgPSB7CiAgICAgICAgLi4uZnVsZmlsbG1lbnQuYWdlbnQsCiAgICAgICAgcGVyc29uOiB7CiAgICAgICAgICAuLi5mdWxmaWxsbWVudC5hZ2VudD8ucGVyc29uLAogICAgICAgICAgaWQ6IHVzZXJJbnB1dC5wZXJzb25JZAogICAgICAgIH0KICAgICAgfTsKICAgIH0KCiAgICAvLyBBZ2VudCBPcmdhbml6YXRpb24gQ3JlZGVudGlhbHMKICAgIGlmIChBcnJheS5pc0FycmF5KHVzZXJJbnB1dD8uY3JlZHMpKSB7CiAgICAgIGZ1bGZpbGxtZW50LmFnZW50ID0gewogICAgICAgIC4uLmZ1bGZpbGxtZW50LmFnZW50LAogICAgICAgIG9yZ2FuaXphdGlvbjogewogICAgICAgICAgLi4uZnVsZmlsbG1lbnQuYWdlbnQ/Lm9yZ2FuaXphdGlvbiwKICAgICAgICAgIGNyZWRzOiB1c2VySW5wdXQuY3JlZHMKICAgICAgICB9CiAgICAgIH07CiAgICB9CgogICAgLy8gQ3VzdG9tZXIgUGVyc29uCiAgICBpZiAodXNlcklucHV0Py5jdXN0b21lclBlcnNvbklkKSB7CiAgICAgIGZ1bGZpbGxtZW50LmN1c3RvbWVyID0gewogICAgICAgIC4uLmZ1bGZpbGxtZW50LmN1c3RvbWVyLAogICAgICAgIHBlcnNvbjogewogICAgICAgICAgLi4uZnVsZmlsbG1lbnQuY3VzdG9tZXI/LnBlcnNvbiwKICAgICAgICAgIGlkOiB1c2VySW5wdXQuY3VzdG9tZXJQZXJzb25JZAogICAgICAgIH0KICAgICAgfTsKICAgIH0KICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0=
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkLgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
       requirements: LyoqCiAqIENoZWNrcyBpZiByZXF1aXJlbWVudHMgZm9yIHByb2NlZWRpbmcgYXJlIG1ldC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiBtZWV0c1JlcXVpcmVtZW50cyhzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
       defaultPayload:
@@ -99,7 +99,61 @@ steps:
         lumpsum_measure: $.message.order.items[0].quantity.selected.measure
       inputs:
         id: fis14_mutul_fund_select
-        jsonSchema: {}
+        jsonSchema:
+          $schema: http://json-schema.org/draft-07/schema#
+          type: object
+          properties:
+            providerId:
+              type: string
+              description: Select Provider ID
+              default: sellerapp_id
+            itemId:
+              type: string
+              description: Select Item ID
+              default: "123"
+            itemValue:
+              type: string
+              description: Investment Amount (INR)
+              default: "3000"
+            fulfillmentId:
+              type: string
+              description: Select Fulfillment ID
+              default: ff_122
+            creds:
+              type: array
+              description: Agent Organization Credentials
+              default:
+                - id: ARN-124567
+                  type: ARN
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Credential ID
+                    default: ARN-124567
+                  type:
+                    type: string
+                    description: Credential Type
+                    default: ARN
+                required:
+                  - id
+                  - type
+                additionalProperties: false
+            personId:
+              type: string
+              description: Agent Person ID
+              default: euin:E52432
+            customerPersonId:
+              type: string
+              description: Customer Person ID
+              default: pan:ARRPP7771N
+          required:
+            - providerId
+            - itemId
+            - itemValue
+            - fulfillmentId
+          additionalProperties: false
     examples:
       - name: example for select
         payload:
