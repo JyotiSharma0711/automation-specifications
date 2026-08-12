@@ -23,7 +23,7 @@ steps:
     mock:
       generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGFwcGx5Q29udGV4dERlZmF1bHRzKGV4aXN0aW5nUGF5bG9hZCwgc2Vzc2lvbkRhdGEpOwoKICBpZiAoZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyKSB7CiAgICBjb25zdCBvcmRlciA9IGJ1aWxkT3JkZXJGcm9tVXNlcklucHV0cyhzZXNzaW9uRGF0YT8udXNlcl9pbnB1dHMpOwogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIgPSBvcmRlci5wcm92aWRlcjsKICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zID0gb3JkZXIuaXRlbXM7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMgPSBvcmRlci5mdWxmaWxsbWVudHM7CiAgfQoKICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkOwp9CgovKioKICogUmVmcmVzaGVzIGNvbnRleHQudGltZXN0YW1wL21lc3NhZ2VfaWQsIGFuZCBlY2hvZXMgdGhlIG9uZ29pbmcKICogdHJhbnNhY3Rpb25faWQvYmFwX3VyaS9icHBfdXJpIGZyb20gc2Vzc2lvbiBpZiBwcmVzZW50LgogKi8KZnVuY3Rpb24gYXBwbHlDb250ZXh0RGVmYXVsdHMoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGlmICghZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQpIHJldHVybjsKCiAgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogIGV4aXN0aW5nUGF5bG9hZC5jb250ZXh0Lm1lc3NhZ2VfaWQgPSB1dWlkdjQoKTsKCiAgaWYgKHNlc3Npb25EYXRhPy50cmFuc2FjdGlvbl9pZCkgewogICAgZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQudHJhbnNhY3Rpb25faWQgPSBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbl9pZDsKICB9CiAgaWYgKHNlc3Npb25EYXRhPy5iYXBVcmkpIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5jb250ZXh0LmJhcF91cmkgPSBzZXNzaW9uRGF0YS5iYXBVcmk7CiAgfQogIGlmIChzZXNzaW9uRGF0YT8uYnBwVXJpKSB7CiAgICBleGlzdGluZ1BheWxvYWQuY29udGV4dC5icHBfdXJpID0gc2Vzc2lvbkRhdGEuYnBwVXJpOwogIH0KfQoKLyoqCiAqIEJ1aWxkcyBwcm92aWRlci9pdGVtcy9mdWxmaWxsbWVudHMgZnJvbSB0aGUgZmxhdCB1c2VyX2lucHV0cyBmaWVsZHMKICogKHByb3ZpZGVySWQsIGl0ZW1JZCwgaXRlbVZhbHVlLCBmdWxmaWxsbWVudElkLCBjcmVkcywgcGVyc29uSWQsCiAqIGN1c3RvbWVyUGVyc29uSWQpLiBEb2VzIE5PVCB0b3VjaCB0YWdzIG9yIGFueSBvdGhlciBvcmRlciBmaWVsZCDigJQKICogY2FsbGVyIG1lcmdlcyB0aGVzZSB0aHJlZSBrZXlzIG9udG8gdGhlIGV4aXN0aW5nIG9yZGVyIGluZGl2aWR1YWxseS4KICovCmZ1bmN0aW9uIGJ1aWxkT3JkZXJGcm9tVXNlcklucHV0cyh1c2VySW5wdXRzKSB7CiAgaWYgKCF1c2VySW5wdXRzKSB7CiAgICByZXR1cm4geyBwcm92aWRlcjoge30sIGl0ZW1zOiBbXSwgZnVsZmlsbG1lbnRzOiBbXSB9OwogIH0KCiAgY29uc3QgewogICAgcHJvdmlkZXJJZCwKICAgIGl0ZW1JZCwKICAgIGl0ZW1WYWx1ZSwKICAgIGZ1bGZpbGxtZW50SWQsCiAgICBjcmVkcywKICAgIHBlcnNvbklkLAogICAgY3VzdG9tZXJQZXJzb25JZAogIH0gPSB1c2VySW5wdXRzOwoKICByZXR1cm4gewogICAgcHJvdmlkZXI6IHsgaWQ6IHByb3ZpZGVySWQgfSwKICAgIGl0ZW1zOiBbCiAgICAgIHsKICAgICAgICBpZDogaXRlbUlkLAogICAgICAgIHF1YW50aXR5OiB7CiAgICAgICAgICBzZWxlY3RlZDogewogICAgICAgICAgICBtZWFzdXJlOiB7IHZhbHVlOiBpdGVtVmFsdWUsIHVuaXQ6ICJJTlIiIH0KICAgICAgICAgIH0KICAgICAgICB9LAogICAgICAgIGZ1bGZpbGxtZW50X2lkczogW2Z1bGZpbGxtZW50SWRdCiAgICAgIH0KICAgIF0sCiAgICBmdWxmaWxsbWVudHM6IFsKICAgICAgewogICAgICAgIGlkOiBmdWxmaWxsbWVudElkLAogICAgICAgIHR5cGU6ICJMVU1QU1VNIiwKICAgICAgICBjdXN0b21lcjogewogICAgICAgICAgcGVyc29uOiB7IGlkOiBjdXN0b21lclBlcnNvbklkIH0KICAgICAgICB9LAogICAgICAgIGFnZW50OiB7CiAgICAgICAgICBwZXJzb246IHsgaWQ6IHBlcnNvbklkIH0sCiAgICAgICAgICBvcmdhbml6YXRpb246IHsgY3JlZHM6IGNyZWRzID8/IFtdIH0KICAgICAgICB9CiAgICAgIH0KICAgIF0KICB9Owp9
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgc2VsZWN0IHJlcXVlc3QgYWdhaW5zdCB0aGUgcmF3IHVzZXJfaW5wdXRzIGl0IHdhcyBidWlsdAogKiBmcm9tOiBwcm92aWRlci9pdGVtcy9mdWxmaWxsbWVudHMgbXVzdCBiZSBwcmVzZW50IGFuZCBub24tZW1wdHkuCiAqCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICoKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgdHJ5IHsKICAgIGNvbnN0IGNvbnRleHQgPSB0YXJnZXRQYXlsb2FkPy5jb250ZXh0OwogICAgaWYgKCFjb250ZXh0IHx8IGNvbnRleHQuYWN0aW9uICE9PSAic2VsZWN0IikgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJjb250ZXh0LmFjdGlvbiBtdXN0IGJlIHNlbGVjdCIgfTsKICAgIH0KCiAgICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyOwogICAgaWYgKCFvcmRlcj8ucHJvdmlkZXI/LmlkKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIucHJvdmlkZXIuaWQgaXMgcmVxdWlyZWQiIH07CiAgICB9CiAgICBpZiAoIW9yZGVyPy5pdGVtcz8ubGVuZ3RoKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIuaXRlbXMgaXMgcmVxdWlyZWQgYW5kIG11c3Qgbm90IGJlIGVtcHR5IiB9OwogICAgfQogICAgaWYgKCFvcmRlcj8uZnVsZmlsbG1lbnRzPy5sZW5ndGgpIHsKICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMgaXMgcmVxdWlyZWQgYW5kIG11c3Qgbm90IGJlIGVtcHR5IiB9OwogICAgfQoKICAgIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA1MDAsIGRlc2NyaXB0aW9uOiBlcnJvci5tZXNzYWdlIHx8ICJJbnRlcm5hbCB2YWxpZGF0aW9uIGVycm9yIiB9OwogIH0KfQo=
-      requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggc2VsZWN0IGFyZSBtZXQuCiAqIEVuc3VyZXMgdGhlIHVzZXIgaGFzIGFjdHVhbGx5IHN1cHBsaWVkIHNlbGVjdGlvbiBkYXRhICh1c2VyX2lucHV0cykuCiAqCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiBtZWV0c1JlcXVpcmVtZW50cyhzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICBpZiAoIXNlc3Npb25EYXRhPy51c2VyX2lucHV0cz8uZGF0YSkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ1c2VyX2lucHV0cy5kYXRhIGlzIG1pc3NpbmciIH07CiAgICB9CiAgICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNTAwLCBkZXNjcmlwdGlvbjogIkludGVybmFsIHJlcXVpcmVtZW50cyBlcnJvciIgfTsKICB9Cn0K
+      requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggc2VsZWN0IGFyZSBtZXQuCiAqIEVuc3VyZXMgdGhlIHVzZXIgaGFzIGFjdHVhbGx5IHN1cHBsaWVkIHNlbGVjdGlvbiBkYXRhICh1c2VyX2lucHV0cykuCiAqCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiBtZWV0c1JlcXVpcmVtZW50cyhzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNTAwLCBkZXNjcmlwdGlvbjogIkludGVybmFsIHJlcXVpcmVtZW50cyBlcnJvciIgfTsKICB9Cn0K
       defaultPayload:
         context:
           domain: ONDC:FIS14
@@ -162,9 +162,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: select
-            timestamp: 2026-08-03T10:36:19.453Z
+            timestamp: 2026-08-12T16:21:26.550Z
             transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
-            message_id: 4c53b25f-11ae-46a9-a479-370a5a8bfa7a
+            message_id: c7650850-bc12-43a8-86ca-93e3a80d1d23
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -508,9 +508,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: on_select
-            timestamp: 2026-08-03T10:36:19.464Z
+            timestamp: 2026-08-12T16:21:26.564Z
             transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
-            message_id: 4c53b25f-11ae-46a9-a479-370a5a8bfa7a
+            message_id: c7650850-bc12-43a8-86ca-93e3a80d1d23
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -880,9 +880,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: init
-            timestamp: 2026-08-03T10:36:19.479Z
+            timestamp: 2026-08-12T16:21:26.588Z
             transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
-            message_id: 27fafc02-e6d8-42f6-a32f-53eeeb476a61
+            message_id: a42fdc8b-c6f5-417f-8bc3-25137cc2cbf4
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -912,14 +912,12 @@ steps:
                   type: LUMPSUM
                   customer:
                     person:
-                      id: pan:arrpp7771n
+                      id: pan:ARRPP7771N
                       creds:
                         - id: 1562162434/45
                           type: FOLIO
                         - id: 115.245.207.90
                           type: IP_ADDRESS
-                    contact:
-                      phone: "9916599123"
                   agent:
                     person:
                       id: euin:E52432
@@ -1213,9 +1211,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: on_init
-            timestamp: 2026-08-03T10:36:19.554Z
+            timestamp: 2026-08-12T16:21:26.628Z
             transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
-            message_id: 27fafc02-e6d8-42f6-a32f-53eeeb476a61
+            message_id: a42fdc8b-c6f5-417f-8bc3-25137cc2cbf4
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1302,14 +1300,12 @@ steps:
                   type: LUMPSUM
                   customer:
                     person:
-                      id: pan:arrpp7771n
+                      id: pan:ARRPP7771N
                       creds:
                         - id: 1562162434/45
                           type: FOLIO
                         - id: 115.245.207.90
                           type: IP_ADDRESS
-                    contact:
-                      phone: "9916599123"
                   agent:
                     person:
                       id: euin:E52432
@@ -1429,8 +1425,8 @@ steps:
                     price:
                       currency: INR
                       value: "0.15"
-              created_at: 2026-08-03T10:36:19.557Z
-              updated_at: 2026-08-03T10:36:19.557Z
+              created_at: 2026-08-12T16:21:26.630Z
+              updated_at: 2026-08-12T16:21:26.630Z
         type: request
         description: please add relevant description
   - api: confirm
@@ -1559,9 +1555,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: confirm
-            timestamp: 2026-08-03T10:36:19.600Z
+            timestamp: 2026-08-12T16:21:26.670Z
             transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
-            message_id: 2d84793e-67ae-4296-b70c-18638ba50667
+            message_id: 33194875-efe3-4874-9bee-3d74f0f6fb36
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1594,14 +1590,12 @@ steps:
                   type: LUMPSUM
                   customer:
                     person:
-                      id: pan:arrpp7771n
+                      id: pan:ARRPP7771N
                       creds:
                         - id: 1562162434/45
                           type: FOLIO
                         - id: 115.245.207.90
                           type: IP_ADDRESS
-                    contact:
-                      phone: "9916599123"
                   agent:
                     person:
                       id: euin:E52432
@@ -1719,9 +1713,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: on_confirm
-            timestamp: 2026-08-03T10:36:19.633Z
+            timestamp: 2026-08-12T16:21:26.710Z
             transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
-            message_id: 2d84793e-67ae-4296-b70c-18638ba50667
+            message_id: 33194875-efe3-4874-9bee-3d74f0f6fb36
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1808,14 +1802,12 @@ steps:
                   type: LUMPSUM
                   customer:
                     person:
-                      id: pan:arrpp7771n
+                      id: pan:ARRPP7771N
                       creds:
                         - id: 1562162434/45
                           type: FOLIO
                         - id: 115.245.207.90
                           type: IP_ADDRESS
-                    contact:
-                      phone: "9916599123"
                   agent:
                     person:
                       id: euin:E52432
@@ -1940,8 +1932,8 @@ steps:
                     price:
                       currency: INR
                       value: "0.15"
-              created_at: 2026-08-03T10:36:19.635Z
-              updated_at: 2026-08-03T10:36:19.635Z
+              created_at: 2026-08-12T16:21:26.712Z
+              updated_at: 2026-08-12T16:21:26.712Z
         type: request
         description: please add relevant description
   - api: dynamic_form
@@ -2119,9 +2111,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: on_status
-            timestamp: 2026-08-03T10:36:22.237Z
+            timestamp: 2026-08-12T16:21:29.205Z
             transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
-            message_id: 064ee7ba-f061-489d-bcf9-7ab8afc2a158
+            message_id: 7013d8e2-1ebc-4a33-901f-c5a3b3932c08
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2349,8 +2341,8 @@ steps:
                     price:
                       currency: INR
                       value: "0.15"
-              created_at: 2026-08-03T10:36:19.635Z
-              updated_at: 2026-08-03T10:36:22.239Z
+              created_at: 2026-08-12T16:21:26.712Z
+              updated_at: 2026-08-12T16:21:29.207Z
         type: request
         description: please add relevant description
   - api: on_update
@@ -2391,9 +2383,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: on_update
-            timestamp: 2026-08-03T10:36:22.246Z
+            timestamp: 2026-08-12T16:21:29.215Z
             transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
-            message_id: 64a4a328-c4fc-4227-aebe-8a08c0c4204b
+            message_id: 34a4df7b-7584-486a-ae22-bfcb55845ab8
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2621,8 +2613,8 @@ steps:
                     price:
                       currency: INR
                       value: "0.15"
-              created_at: 2026-08-03T10:36:19.635Z
-              updated_at: 2026-08-03T10:36:22.249Z
+              created_at: 2026-08-12T16:21:26.712Z
+              updated_at: 2026-08-12T16:21:29.218Z
         type: request
         description: please add relevant description
 transaction_history: []
