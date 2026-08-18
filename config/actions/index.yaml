@@ -1,6 +1,7 @@
 supportedActions:
   "null":
     - search
+    - select
   search:
     - on_search
   on_search:
