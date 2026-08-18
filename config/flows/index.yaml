@@ -2,7 +2,7 @@ flows:
   - type: playground
     id: Personal_Loan_Offline
     meta:
-      order: 0
+      order: 1
     usecase: PERSONAL LOAN
     tags:
       - WORKBENCH
@@ -13,7 +13,7 @@ flows:
   - type: playground
     id: Personal_Loan_Single_Redirection
     meta:
-      order: 1
+      order: 2
     usecase: PERSONAL LOAN
     tags:
       - WORKBENCH
@@ -24,7 +24,7 @@ flows:
   - type: playground
     id: Personal_Loan_Dedupe_Check
     meta:
-      order: 2
+      order: 3
     usecase: PERSONAL LOAN
     tags:
       - WORKBENCH
@@ -57,7 +57,7 @@ flows:
     id: Personal_Loan_Foreclosure_Offline
     usecase: PERSONAL LOAN
     meta:
-      order: 3
+      order: 4
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -67,7 +67,7 @@ flows:
   - type: playground
     id: Personal_Loan_missed_emi_payment_Offline
     meta:
-      order: 5
+      order: 6
     usecase: PERSONAL LOAN
     tags:
       - WORKBENCH
@@ -79,7 +79,7 @@ flows:
     id: Personal_Loan_Pre_Part_Payment_Offline
     usecase: PERSONAL LOAN
     meta:
-      order: 4
+      order: 5
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -93,7 +93,7 @@ flows:
     id: Personal_Loan_Offline_With_IGM(v-1.0.0)
     usecase: PERSONAL LOAN
     meta:
-      order: 6
+      order: 7
     tags:
       - WORKBENCH
       # - REPORTABLE
@@ -105,7 +105,7 @@ flows:
     id: Personal_Loan_Single_Redirection_With_IGM(v-1.0.0)
     usecase: PERSONAL LOAN
     meta:
-      order: 7
+      order: 8
     tags:
       - WORKBENCH
       # - REPORTABLE
@@ -117,7 +117,7 @@ flows:
     id: Personal_Loan_Foreclosure_Single_Redirection
     usecase: PERSONAL LOAN
     meta:
-      order: 8
+      order: 9
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -129,7 +129,7 @@ flows:
     id: Personal_Loan_Missed_EMI_Single_Redirection
     usecase: PERSONAL LOAN
     meta:
-      order: 9
+      order: 10
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -141,10 +141,22 @@ flows:
     id: Personal_Loan_Pre_Part_Payment_Single_Redirection
     usecase: PERSONAL LOAN
     meta:
-      order: 10
+      order: 11
     tags:
       - WORKBENCH
       - REPORTABLE
     description: A borrower initiates a partial prepayment of their personal loan principal outside the regular EMI schedule to reduce outstanding debt, with the lender validating the prepayment amount, recalculating revised repayment terms and associated charges, and updating the loan account status upon successful payment completion.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Pre_Part_Payment_Single_Redirection.yaml
+
+  - type: playground
+    id: Master_search
+    usecase: PERSONAL LOAN
+    meta:
+      order: 0
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: A personal loan origination flow enabling borrowers to search for available personal loan products, discover providers and their offerings including application forms and fulfillment options needed to initiate a loan request.
+    config:
+      $ref: ./PERSONAL LOAN/Master_search.yaml
