@@ -1,5 +1,5 @@
 meta:
-  domain: ONDC:FIS12
+  domain: ONDC:FIS12:BL
   version: 2.3.0
   flowId: master_search
   config_version: 0.0.0001
@@ -25,7 +25,7 @@ steps:
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: search
           timestamp: 2026-04-21T06:23:40.312Z
           transaction_id: 4179de3c-7088-4732-9786-e1fdba540b56
@@ -54,7 +54,7 @@ steps:
       - name: example for search
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: search
             timestamp: 2026-08-05T07:42:04.702Z
             transaction_id: 4179de3c-7088-4732-9786-e1fdba540b56
@@ -101,7 +101,7 @@ steps:
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: on_search
           timestamp: 2026-06-05T09:08:26.058Z
           transaction_id: 4179de3c-7088-4732-9786-e1fdba540b56
@@ -772,7 +772,7 @@ steps:
       - name: example for on_search
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: on_search
             timestamp: 2026-08-05T07:42:04.740Z
             transaction_id: 4179de3c-7088-4732-9786-e1fdba540b56

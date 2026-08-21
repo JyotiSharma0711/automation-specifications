@@ -1,5 +1,5 @@
 meta:
-  domain: ONDC:FIS12
+  domain: ONDC:FIS12:BL
   version: 2.3.0
   flowId: business_term_loan_without_aa
   config_version: 0.0.0001
@@ -33,7 +33,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIGlucHV0cyA9IHNlc3Npb25EYXRhICYmIHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzOwogICAgaWYgKCFpbnB1dHMpIHsKICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAidXNlcl9pbnB1dHMgbWlzc2luZyBmcm9tIHNlc3Npb24iIH07CiAgICB9CiAgICB2YXIgcmVxdWlyZWQgPSBbIml0ZW1faWQiLCAicHJvdmlkZXJfaWQiLCAiYnBwX2lkIiwgImJwcF91cmkiLCAicGFuIiwgImZ1bGxOYW1lIiwgImRvYiIsICJjb25zdGl0dXRpb24iLCAiYnVzaW5lc3NQYW4iLCAiZG9pIiwgIm5hdHVyZU9mQnVzaW5lc3MiLCAiYW5udWFsVHVybm92ZXIiLCAiYnVzaW5lc3NQaW5jb2RlIiwgImJ1cmVhdUNvbnNlbnQiXTsKICAgIGZvciAodmFyIGkgPSAwOyBpIDwgcmVxdWlyZWQubGVuZ3RoOyBpKyspIHsKICAgICAgdmFyIHZhbCA9IGlucHV0c1tyZXF1aXJlZFtpXV07CiAgICAgIGlmICh2YWwgPT09IHVuZGVmaW5lZCB8fCB2YWwgPT09IG51bGwgfHwgdmFsID09PSAiIikgewogICAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogcmVxdWlyZWRbaV0gKyAiIGlzIHJlcXVpcmVkIGluIHVzZXJfaW5wdXRzIiB9OwogICAgICB9CiAgICB9CiAgICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNTAwLCBkZXNjcmlwdGlvbjogIkludGVybmFsIHJlcXVpcmVtZW50cyBlcnJvciIgfTsKICB9Cn0K
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           location:
             country:
               code: IND
@@ -148,14 +148,6 @@ steps:
               type: string
               description: Enter provider id
               default: PROVIDER_ID
-            bpp_id:
-              type: string
-              description: Enter bpp id
-              default: dev-workbench.ondc.tech
-            bpp_uri:
-              type: string
-              description: Enter bpp uri
-              default: https://dev-workbench.ondc.tech/api-service/ONDC:FIS12/2.3.0/seller
             pan:
               type: string
               pattern: ^[A-Z]{5}[0-9]{4}[A-Z]$
@@ -274,7 +266,7 @@ steps:
       - name: example for search
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: search
             timestamp: 2026-07-08T08:14:19.390Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -289,7 +281,7 @@ steps:
               city:
                 code: "*"
             bpp_id: dev-workbench.ondc.tech
-            bpp_uri: https://dev-workbench.ondc.tech/api-service/ONDC:FIS12/2.3.0/seller
+            bpp_uri: https://dev-workbench.ondc.tech/api-service/ONDC:FIS12:BL/2.3.0/seller
           message:
             intent:
               provider:
@@ -387,7 +379,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIHBpY2sgPSBmdW5jdGlvbih2YWwpIHsgcmV0dXJuIEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbFswXSA6IHZhbDsgfTsKICAgIHZhciB0cmFuc2FjdGlvbklkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkKTsKICAgIGlmICghdHJhbnNhY3Rpb25JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIGJhcElkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS5iYXBJZCk7CiAgICBpZiAoIWJhcElkKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImJhcElkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIGJhcFVyaSA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEuYmFwVXJpKTsKICAgIGlmICghYmFwVXJpKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImJhcFVyaSBpcyBtaXNzaW5nIOKAlCBzZWFyY2hfMSBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICAgIH0KICAgIHZhciBicHBJZCA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEuYnBwSWQpOwogICAgaWYgKCFicHBJZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJicHBJZCBpcyBtaXNzaW5nIOKAlCBzZWFyY2hfMSBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICAgIH0KICAgIHZhciBicHBVcmkgPSBwaWNrKHNlc3Npb25EYXRhICYmIHNlc3Npb25EYXRhLmJwcFVyaSk7CiAgICBpZiAoIWJwcFVyaSkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJicHBVcmkgaXMgbWlzc2luZyDigJQgc2VhcmNoXzEgaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgICB9CiAgICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNTAwLCBkZXNjcmlwdGlvbjogIkludGVybmFsIHJlcXVpcmVtZW50cyBlcnJvciIgfTsKICB9Cn0K
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           location:
             country:
               code: IND
@@ -714,7 +706,7 @@ steps:
       - name: example for on_search
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: on_search
             timestamp: 2026-07-08T08:14:19.403Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -1047,7 +1039,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIHBpY2sgPSBmdW5jdGlvbih2YWwpIHsgcmV0dXJuIEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbFswXSA6IHZhbDsgfTsKICAgIHZhciB0cmFuc2FjdGlvbklkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkKTsKICAgIGlmICghdHJhbnNhY3Rpb25JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIGNhdGFsb2cgPSBwaWNrKHNlc3Npb25EYXRhICYmIHNlc3Npb25EYXRhLmNhdGFsb2cpOwogICAgaWYgKCFjYXRhbG9nIHx8ICFjYXRhbG9nLnByb3ZpZGVycyB8fCAhY2F0YWxvZy5wcm92aWRlcnMubGVuZ3RoKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNhdGFsb2cgaXMgbWlzc2luZyDigJQgb25fc2VhcmNoXzEgaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgICB9CiAgICB2YXIgaW5wdXRzID0gc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEudXNlcl9pbnB1dHM7CiAgICBpZiAoIWlucHV0cyB8fCAhaW5wdXRzLml0ZW1faWQpIHsKICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAidXNlcl9pbnB1dHMuaXRlbV9pZCBpcyByZXF1aXJlZCIgfTsKICAgIH0KICAgIGlmICghaW5wdXRzLmZ1bGZpbGxtZW50X2lkKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogInVzZXJfaW5wdXRzLmZ1bGZpbGxtZW50X2lkIGlzIHJlcXVpcmVkIiB9OwogICAgfQogICAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9OwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDUwMCwgZGVzY3JpcHRpb246ICJJbnRlcm5hbCByZXF1aXJlbWVudHMgZXJyb3IiIH07CiAgfQp9Cg==
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: select
           timestamp: 2026-06-28T23:49:50.140Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -1096,7 +1088,7 @@ steps:
       - name: example for select
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: select
             timestamp: 2026-07-08T08:14:20.528Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -1141,7 +1133,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIHBpY2sgPSBmdW5jdGlvbih2YWwpIHsgcmV0dXJuIEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbFswXSA6IHZhbDsgfTsKICAgIHZhciB0cmFuc2FjdGlvbklkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkKTsKICAgIGlmICghdHJhbnNhY3Rpb25JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIGNhdGFsb2cgPSBwaWNrKHNlc3Npb25EYXRhICYmIHNlc3Npb25EYXRhLmNhdGFsb2cpOwogICAgaWYgKCFjYXRhbG9nIHx8ICFjYXRhbG9nLnByb3ZpZGVycyB8fCAhY2F0YWxvZy5wcm92aWRlcnMubGVuZ3RoKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNhdGFsb2cgaXMgbWlzc2luZyDigJQgb25fc2VhcmNoXzEgaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgICB9CiAgICB2YXIgYWN0aW9uT3JkZXIgPSBwaWNrKHNlc3Npb25EYXRhICYmIHNlc3Npb25EYXRhLmFjdGlvbl9vcmRlcik7CiAgICBpZiAoIWFjdGlvbk9yZGVyIHx8ICFhY3Rpb25PcmRlci5pdGVtcyB8fCAhYWN0aW9uT3JkZXIuaXRlbXNbMF0gfHwgIWFjdGlvbk9yZGVyLml0ZW1zWzBdLmlkKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImFjdGlvbl9vcmRlciBpcyBtaXNzaW5nIOKAlCBzZWxlY3RfMSBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICAgIH0KICAgIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA1MDAsIGRlc2NyaXB0aW9uOiAiSW50ZXJuYWwgcmVxdWlyZW1lbnRzIGVycm9yIiB9OwogIH0KfQo=
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: on_select
           timestamp: 2026-06-28T23:49:50.148Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -1175,7 +1167,7 @@ steps:
       - name: example for on_select
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: on_select
             timestamp: 2026-07-08T08:14:20.541Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -1376,7 +1368,7 @@ steps:
                     form:
                       id: F03
                       mime_type: application/html
-                      url: undefined/forms/ONDC:FIS12/single_redirection/?transaction_id=97c8aa10-3357-4514-ae11-6bf97a72b677&session_id=undefined&bap_uri=https%3A%2F%2Fbap.example.com
+                      url: undefined/forms/ONDC:FIS12:BL/single_redirection/?transaction_id=97c8aa10-3357-4514-ae11-6bf97a72b677&session_id=undefined&bap_uri=https%3A%2F%2Fbap.example.com
                       resubmit: false
                       multiple_sumbissions: false
                     required: true
@@ -1473,7 +1465,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIHBpY2sgPSBmdW5jdGlvbih2YWwpIHsgcmV0dXJuIEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbFswXSA6IHZhbDsgfTsKICAgIHZhciB0cmFuc2FjdGlvbklkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkKTsKICAgIGlmICghdHJhbnNhY3Rpb25JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIG9yZGVyUGF5bG9hZCA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEub3JkZXJfcGF5bG9hZCk7CiAgICBpZiAoIW9yZGVyUGF5bG9hZCB8fCAhb3JkZXJQYXlsb2FkLml0ZW1zIHx8ICFvcmRlclBheWxvYWQuaXRlbXNbMF0gfHwgIW9yZGVyUGF5bG9hZC5pdGVtc1swXS5pZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJvcmRlcl9wYXlsb2FkIGlzIG1pc3Npbmcg4oCUIG9uX3NlbGVjdF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIGZvcm1JZCA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEuZm9ybV9pZCk7CiAgICBpZiAoIWZvcm1JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJmb3JtX2lkIGlzIG1pc3Npbmcg4oCUIG9uX3NlbGVjdF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9OwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDUwMCwgZGVzY3JpcHRpb246ICJJbnRlcm5hbCByZXF1aXJlbWVudHMgZXJyb3IiIH07CiAgfQp9Cg==
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: on_status
           timestamp: 2026-06-28T23:49:50.180Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -1518,7 +1510,7 @@ steps:
       - name: example for on_status
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: on_status
             timestamp: 2026-07-08T08:14:20.566Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -1812,7 +1804,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIHBpY2sgPSBmdW5jdGlvbih2YWwpIHsgcmV0dXJuIEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbFswXSA6IHZhbDsgfTsKICAgIHZhciB0cmFuc2FjdGlvbklkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkKTsKICAgIGlmICghdHJhbnNhY3Rpb25JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIG9yZGVyUGF5bG9hZCA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEub3JkZXJfcGF5bG9hZCk7CiAgICBpZiAoIW9yZGVyUGF5bG9hZCB8fCAhb3JkZXJQYXlsb2FkLml0ZW1zIHx8ICFvcmRlclBheWxvYWQuaXRlbXNbMF0gfHwgIW9yZGVyUGF5bG9hZC5pdGVtc1swXS5pZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJvcmRlcl9wYXlsb2FkIGlzIG1pc3Npbmcg4oCUIG9uX3NlbGVjdF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIHN1Ym1pc3Npb25JZCA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEuc2luZ2xlX3JlZGlyZWN0aW9uX3N1Ym1pc3Npb25faWQpOwogICAgaWYgKCFzdWJtaXNzaW9uSWQpIHsKICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAic2luZ2xlX3JlZGlyZWN0aW9uX3N1Ym1pc3Npb25faWQgaXMgbWlzc2luZyDigJQgb25fc3RhdHVzXzEgKEtZQykgaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgICB9CiAgICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNTAwLCBkZXNjcmlwdGlvbjogIkludGVybmFsIHJlcXVpcmVtZW50cyBlcnJvciIgfTsKICB9Cn0K
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: on_status
           timestamp: 2026-06-28T23:49:50.210Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -1857,7 +1849,7 @@ steps:
       - name: example for on_status
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: on_status
             timestamp: 2026-07-08T08:14:20.594Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -2152,7 +2144,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIHBpY2sgPSBmdW5jdGlvbih2YWwpIHsgcmV0dXJuIEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbFswXSA6IHZhbDsgfTsKICAgIHZhciB0cmFuc2FjdGlvbklkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkKTsKICAgIGlmICghdHJhbnNhY3Rpb25JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIG9yZGVyUGF5bG9hZCA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEub3JkZXJfcGF5bG9hZCk7CiAgICBpZiAoIW9yZGVyUGF5bG9hZCB8fCAhb3JkZXJQYXlsb2FkLml0ZW1zIHx8ICFvcmRlclBheWxvYWQuaXRlbXNbMF0gfHwgIW9yZGVyUGF5bG9hZC5pdGVtc1swXS5pZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJvcmRlcl9wYXlsb2FkIGlzIG1pc3Npbmcg4oCUIG9uX3NlbGVjdF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIHN1Ym1pc3Npb25JZCA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEuc2luZ2xlX3JlZGlyZWN0aW9uX3N1Ym1pc3Npb25faWQpOwogICAgaWYgKCFzdWJtaXNzaW9uSWQpIHsKICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAic2luZ2xlX3JlZGlyZWN0aW9uX3N1Ym1pc3Npb25faWQgaXMgbWlzc2luZyDigJQgb25fc3RhdHVzXzIgKEVNQU5EQVRFKSBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICAgIH0KICAgIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA1MDAsIGRlc2NyaXB0aW9uOiAiSW50ZXJuYWwgcmVxdWlyZW1lbnRzIGVycm9yIiB9OwogIH0KfQo=
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: on_status
           timestamp: 2026-06-28T23:49:50.240Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -2198,7 +2190,7 @@ steps:
       - name: example for on_status
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: on_status
             timestamp: 2026-07-08T08:14:20.617Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -2526,7 +2518,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIHBpY2sgPSBmdW5jdGlvbih2YWwpIHsgcmV0dXJuIEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbFswXSA6IHZhbDsgfTsKICAgIHZhciB0cmFuc2FjdGlvbklkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkKTsKICAgIGlmICghdHJhbnNhY3Rpb25JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIGNvbXBsZXRlZE9yZGVyID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS5jb21wbGV0ZWRfb3JkZXIpOwogICAgaWYgKCFjb21wbGV0ZWRPcmRlciB8fCAhY29tcGxldGVkT3JkZXIuaXRlbXMgfHwgIWNvbXBsZXRlZE9yZGVyLml0ZW1zWzBdIHx8ICFjb21wbGV0ZWRPcmRlci5pdGVtc1swXS5pZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJjb21wbGV0ZWRfb3JkZXIgaXMgbWlzc2luZyDigJQgb25fc3RhdHVzXzMgKGxvYW4gYWdyZWVtZW50KSBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICAgIH0KICAgIHZhciBhY3Rpb25PcmRlciA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEuYWN0aW9uX29yZGVyKTsKICAgIGlmICghYWN0aW9uT3JkZXIgfHwgIWFjdGlvbk9yZGVyLml0ZW1zIHx8ICFhY3Rpb25PcmRlci5pdGVtc1swXSB8fCAhYWN0aW9uT3JkZXIuaXRlbXNbMF0uaWQpIHsKICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiYWN0aW9uX29yZGVyIGlzIG1pc3Npbmcg4oCUIHNlbGVjdF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIHN1Ym1pc3Npb25JZCA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEuc2luZ2xlX3JlZGlyZWN0aW9uX3N1Ym1pc3Npb25faWQpOwogICAgaWYgKCFzdWJtaXNzaW9uSWQpIHsKICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAic2luZ2xlX3JlZGlyZWN0aW9uX3N1Ym1pc3Npb25faWQgaXMgbWlzc2luZyDigJQgb25fc3RhdHVzXzMgaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgICB9CiAgICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNTAwLCBkZXNjcmlwdGlvbjogIkludGVybmFsIHJlcXVpcmVtZW50cyBlcnJvciIgfTsKICB9Cn0K
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: select
           timestamp: 2026-06-28T23:49:58.134Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -2557,7 +2549,7 @@ steps:
       - name: example for select
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: select
             timestamp: 2026-07-08T08:14:24.714Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -2612,7 +2604,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIHBpY2sgPSBmdW5jdGlvbih2YWwpIHsgcmV0dXJuIEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbFswXSA6IHZhbDsgfTsKICAgIHZhciB0cmFuc2FjdGlvbklkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkKTsKICAgIGlmICghdHJhbnNhY3Rpb25JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIGNvbXBsZXRlZE9yZGVyID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS5jb21wbGV0ZWRfb3JkZXIpOwogICAgaWYgKCFjb21wbGV0ZWRPcmRlciB8fCAhY29tcGxldGVkT3JkZXIuaXRlbXMgfHwgIWNvbXBsZXRlZE9yZGVyLml0ZW1zWzBdIHx8ICFjb21wbGV0ZWRPcmRlci5pdGVtc1swXS5pZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJjb21wbGV0ZWRfb3JkZXIgaXMgbWlzc2luZyDigJQgb25fc3RhdHVzXzMgaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgICB9CiAgICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNTAwLCBkZXNjcmlwdGlvbjogIkludGVybmFsIHJlcXVpcmVtZW50cyBlcnJvciIgfTsKICB9Cn0K
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: on_select
           timestamp: 2026-06-28T23:49:58.140Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -2642,7 +2634,7 @@ steps:
       - name: example for on_select
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: on_select
             timestamp: 2026-07-08T08:14:24.738Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -2929,7 +2921,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgdmFyIHBpY2sgPSBmdW5jdGlvbih2YWwpIHsgcmV0dXJuIEFycmF5LmlzQXJyYXkodmFsKSA/IHZhbFswXSA6IHZhbDsgfTsKICAgIHZhciB0cmFuc2FjdGlvbklkID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkKTsKICAgIGlmICghdHJhbnNhY3Rpb25JZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIG9yZGVyUGF5bG9hZCA9IHBpY2soc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEub3JkZXJfcGF5bG9hZCk7CiAgICBpZiAoIW9yZGVyUGF5bG9hZCB8fCAhb3JkZXJQYXlsb2FkLml0ZW1zIHx8ICFvcmRlclBheWxvYWQuaXRlbXNbMF0gfHwgIW9yZGVyUGF5bG9hZC5pdGVtc1swXS5pZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJvcmRlcl9wYXlsb2FkIGlzIG1pc3Npbmcg4oCUIG9uX3NlbGVjdF8xIGhhcyBub3QgY29tcGxldGVkIiB9OwogICAgfQogICAgdmFyIGNvbXBsZXRlZE9yZGVyID0gcGljayhzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS5jb21wbGV0ZWRfb3JkZXIpOwogICAgaWYgKCFjb21wbGV0ZWRPcmRlciB8fCAhY29tcGxldGVkT3JkZXIuaXRlbXMgfHwgIWNvbXBsZXRlZE9yZGVyLml0ZW1zWzBdIHx8ICFjb21wbGV0ZWRPcmRlci5pdGVtc1swXS5pZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJjb21wbGV0ZWRfb3JkZXIgaXMgbWlzc2luZyDigJQgb25fc3RhdHVzXzMgKGxvYW4gYWdyZWVtZW50KSBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICAgIH0KICAgIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA1MDAsIGRlc2NyaXB0aW9uOiAiSW50ZXJuYWwgcmVxdWlyZW1lbnRzIGVycm9yIiB9OwogIH0KfQo=
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: on_confirm
           timestamp: 2026-06-28T23:49:58.150Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -3183,7 +3175,7 @@ steps:
       - name: example for on_confirm
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: on_confirm
             timestamp: 2026-07-08T08:14:24.767Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677

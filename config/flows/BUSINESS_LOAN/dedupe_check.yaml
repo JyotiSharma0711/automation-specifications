@@ -1,5 +1,5 @@
 meta:
-  domain: ONDC:FIS12
+  domain: ONDC:FIS12:BL
   version: 2.3.0
   flowId: dedupe_check
   config_version: 0.0.0001
@@ -25,7 +25,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9OwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDUwMCwgZGVzY3JpcHRpb246ICJJbnRlcm5hbCByZXF1aXJlbWVudHMgZXJyb3IiIH07CiAgfQp9Cg==
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: select
           timestamp: 2026-06-28T23:49:50.140Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -58,14 +58,6 @@ steps:
           $schema: http://json-schema.org/draft-07/schema#
           type: object
           properties:
-            bpp_id:
-              type: string
-              description: Enter bpp id
-              default: dev-workbench.ondc.tech
-            bpp_uri:
-              type: string
-              description: Enter bpp uri
-              default: https://dev-workbench.ondc.tech/api-service/ONDC:FIS12/2.3.0/seller
             provider:
               type: object
               description: Provider details
@@ -174,7 +166,7 @@ steps:
       - name: example for select
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: select
             timestamp: 2026-08-14T14:29:08.575Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -183,7 +175,7 @@ steps:
             bap_uri: https://bap.example.com
             ttl: PT30S
             bpp_id: dev-workbench.ondc.tech
-            bpp_uri: https://dev-workbench.ondc.tech/api-service/ONDC:FIS12/2.3.0/seller
+            bpp_uri: https://dev-workbench.ondc.tech/api-service/ONDC:FIS12:BL/2.3.0/seller
             version: 2.3.0
             location:
               country:
@@ -222,7 +214,7 @@ steps:
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgdHJhbnNhY3Rpb25JZCA9IHNlc3Npb25EYXRhPy50cmFuc2FjdGlvbklkOwogICAgaWYgKCF0cmFuc2FjdGlvbklkKSB7CiAgICAgIHJldHVybiB7CiAgICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICAgIGNvZGU6IDQwMCwKICAgICAgICBkZXNjcmlwdGlvbjogInRyYW5zYWN0aW9uSWQgaXMgbWlzc2luZyDigJQgc2VhcmNoXzEgaGFzIG5vdCBjb21wbGV0ZWQiCiAgICAgIH07CiAgICB9CgogICAgY29uc3QgYWN0aW9uT3JkZXIgPQogICAgICBzZXNzaW9uRGF0YT8uYWN0aW9uX29yZGVyPy5bMF0/Lm1lc3NhZ2U/Lm9yZGVyIHx8CiAgICAgIHNlc3Npb25EYXRhPy5hY3Rpb25fb3JkZXI/LlswXTsKCiAgICBpZiAoIWFjdGlvbk9yZGVyKSB7CiAgICAgIHJldHVybiB7CiAgICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICAgIGNvZGU6IDQwMCwKICAgICAgICBkZXNjcmlwdGlvbjogImFjdGlvbl9vcmRlciBpcyBtaXNzaW5nIOKAlCBzZWxlY3RfMSBoYXMgbm90IGNvbXBsZXRlZCIKICAgICAgfTsKICAgIH0KCiAgICBpZiAoIWFjdGlvbk9yZGVyLnByb3ZpZGVyPy5pZCkgewogICAgICByZXR1cm4gewogICAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgICBjb2RlOiA0MDAsCiAgICAgICAgZGVzY3JpcHRpb246ICJhY3Rpb25fb3JkZXIucHJvdmlkZXIuaWQgaXMgbWlzc2luZyIKICAgICAgfTsKICAgIH0KCiAgICBpZiAoIUFycmF5LmlzQXJyYXkoYWN0aW9uT3JkZXIuaXRlbXMpIHx8IGFjdGlvbk9yZGVyLml0ZW1zLmxlbmd0aCA9PT0gMCkgewogICAgICByZXR1cm4gewogICAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgICBjb2RlOiA0MDAsCiAgICAgICAgZGVzY3JpcHRpb246ICJhY3Rpb25fb3JkZXIuaXRlbXMgaXMgbWlzc2luZyIKICAgICAgfTsKICAgIH0KCiAgICBpZiAoCiAgICAgICFBcnJheS5pc0FycmF5KGFjdGlvbk9yZGVyLmZ1bGZpbGxtZW50cykgfHwKICAgICAgYWN0aW9uT3JkZXIuZnVsZmlsbG1lbnRzLmxlbmd0aCA9PT0gMAogICAgKSB7CiAgICAgIHJldHVybiB7CiAgICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICAgIGNvZGU6IDQwMCwKICAgICAgICBkZXNjcmlwdGlvbjogImFjdGlvbl9vcmRlci5mdWxmaWxsbWVudHMgaXMgbWlzc2luZyIKICAgICAgfTsKICAgIH0KCiAgICByZXR1cm4gewogICAgICB2YWxpZDogdHJ1ZSwKICAgICAgY29kZTogMjAwLAogICAgICBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiCiAgICB9OwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDUwMCwKICAgICAgZGVzY3JpcHRpb246ICJJbnRlcm5hbCByZXF1aXJlbWVudHMgZXJyb3IiCiAgICB9OwogIH0KfQ==
       defaultPayload:
         context:
-          domain: ONDC:FIS12
+          domain: ONDC:FIS12:BL
           action: on_select
           timestamp: 2026-06-28T23:49:50.148Z
           transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
@@ -272,7 +264,7 @@ steps:
       - name: example for on_select
         payload:
           context:
-            domain: ONDC:FIS12
+            domain: ONDC:FIS12:BL
             action: on_select
             timestamp: 2026-08-14T14:29:11.038Z
             transaction_id: 97c8aa10-3357-4514-ae11-6bf97a72b677
