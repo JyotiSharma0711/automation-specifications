@@ -149,14 +149,3 @@ flows:
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Pre_Part_Payment_Single_Redirection.yaml
 
-  - type: playground
-    id: Master_search
-    usecase: PERSONAL LOAN
-    meta:
-      order: 0
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A personal loan origination flow enabling borrowers to search for available personal loan products, discover providers and their offerings including application forms and fulfillment options needed to initiate a loan request.
-    config:
-      $ref: ./PERSONAL LOAN/Master_search.yaml
