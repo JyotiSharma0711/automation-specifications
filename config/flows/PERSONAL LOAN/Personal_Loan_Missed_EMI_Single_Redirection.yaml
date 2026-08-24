@@ -5967,10 +5967,27 @@ steps:
       then validates, reconciles, and confirms the settlement to update the
       borrower's loan account status.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZSkgewogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2UudXBkYXRlX3RhcmdldCA9IHNlc3Npb25EYXRhLnVwZGF0ZV90YXJnZXQ/LlswXSA/PyAncGF5bWVudHMnOwogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaWQgPSBzZXNzaW9uRGF0YS5vcmRlcl9pZFswXTsKCiAgICBjb25zdCBsYWJlbEZyb21TZXNzaW9uID0gc2Vzc2lvbkRhdGE/LnVwZGF0ZV9sYWJlbD8uWzBdCiAgICAgIHx8IGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnRzWzBdPy50aW1lPy5sYWJlbDsKCiAgICBpZiAobGFiZWxGcm9tU2Vzc2lvbikgewogICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wYXltZW50c1swXSA9IHsKICAgICAgICB0aW1lOiB7CiAgICAgICAgICBsYWJlbDogbGFiZWxGcm9tU2Vzc2lvbgogICAgICAgIH0KICAgICAgfTsKICAgIH0KICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
-      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKCiAgaWYgKCF0YXJnZXRQYXlsb2FkPy5tZXNzYWdlKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2UgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG1lc3NhZ2UgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2U7CiAgaWYgKCFtZXNzYWdlLnVwZGF0ZV90YXJnZXQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgdXBkYXRlX3RhcmdldCBpbiBwYXlsb2FkIiB9OwogIH0KICBpZiAoIW1lc3NhZ2Uub3JkZXIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG9yZGVyID0gbWVzc2FnZS5vcmRlcjsKCiAgaWYgKCFBcnJheS5pc0FycmF5KG9yZGVyLnBheW1lbnRzKSB8fCBvcmRlci5wYXltZW50cy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcGF5bWVudHMgaW4gcGF5bG9hZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
-      requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhPy5vcmRlcl9pZD8uWzBdKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG9yZGVyX2lkWzBdIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9Cg==
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZSkgewogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2UudXBkYXRlX3RhcmdldCA9IHNlc3Npb25EYXRhLnVwZGF0ZV90YXJnZXQ/LlswXSA/PyAncGF5bWVudHMnOwogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaWQgPSBzZXNzaW9uRGF0YS5vcmRlcl9pZFswXTsKCiAgICBjb25zdCBsYWJlbEZyb21TZXNzaW9uID0gc2Vzc2lvbkRhdGE/LnVwZGF0ZV9sYWJlbD8uWzBdCiAgICAgIHx8IGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnRzWzBdPy50aW1lPy5sYWJlbDsKCiAgICBjb25zb2xlLmxvZygibGFiZWxGcm9tU2Vzc2lvbiIsIGxhYmVsRnJvbVNlc3Npb24pOwoKICAgIGlmIChsYWJlbEZyb21TZXNzaW9uKSB7CiAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnRzWzBdID0gewogICAgICAgIHRpbWU6IHsKICAgICAgICAgIGxhYmVsOiBsYWJlbEZyb21TZXNzaW9uCiAgICAgICAgfQogICAgICB9OwogICAgfQoKICAgIGNvbnNvbGUubG9nKCJwYXltZW50c1swXSIsIEpTT04uc3RyaW5naWZ5KGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnRzWzBdKSk7CiAgfQoKICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkOwp9Cg==
+      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKCiAgaWYgKCF0YXJnZXRQYXlsb2FkPy5tZXNzYWdlKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2UgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG1lc3NhZ2UgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2U7CiAgaWYgKCFtZXNzYWdlLnVwZGF0ZV90YXJnZXQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgdXBkYXRlX3RhcmdldCBpbiBwYXlsb2FkIiB9OwogIH0KICBpZiAoIW1lc3NhZ2Uub3JkZXIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG9yZGVyID0gbWVzc2FnZS5vcmRlcjsKCiAgaWYgKCFBcnJheS5pc0FycmF5KG9yZGVyLnBheW1lbnRzKSB8fCBvcmRlci5wYXltZW50cy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcGF5bWVudHMgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IGxhYmVsID0gb3JkZXIucGF5bWVudHNbMF0/LnRpbWU/LmxhYmVsOwogIGlmIChsYWJlbCAhPT0gIk1JU1NFRF9FTUlfUEFZTUVOVCIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogYEludmFsaWQgcGF5bWVudHNbMF0udGltZS5sYWJlbDogZXhwZWN0ZWQgIk1JU1NFRF9FTUlfUEFZTUVOVCIsIGdvdCAke0pTT04uc3RyaW5naWZ5KGxhYmVsKX1gIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0K
+      requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgaWYgKCFzZXNzaW9uRGF0YT8ub3JkZXJfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBvcmRlcl9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CgogIGlmICghc2Vzc2lvbkRhdGE/LnF1b3RlPy5bMF0gJiYgIXNlc3Npb25EYXRhPy5wYXltZW50cz8uWzBdKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJPcmRlciBtdXN0IGJlIGNvbmZpcm1lZCAocXVvdGUvcGF5bWVudHMgbWlzc2luZyBpbiBzZXNzaW9uRGF0YSkgYmVmb3JlIHJlcXVlc3RpbmcgYSBtaXNzZWQgRU1JIHNldHRsZW1lbnQiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0K
       defaultPayload:
+        context:
+          domain: ONDC:FIS12
+          location:
+            country:
+              code: IND
+            city:
+              code: "*"
+          transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62196
+          message_id: bb579fb8-cb82-4824-be12-fcbc405b6608
+          action: update
+          timestamp: 2023-09-05T05:23:03.443Z
+          version: 2.0.3
+          bap_uri: https://bap.credit.becknprotocol.io/
+          bap_id: bap.credit.becknprotocol.io
+          ttl: PT10M
+          bpp_id: bpp.credit.becknprotocol.org
+          bpp_uri: https://bpp.credit.becknprotocol.org
         message:
           update_target: payments
           order:
@@ -5994,19 +6011,12 @@ steps:
     examples:
       - name: example for update
         payload:
-          message:
-            update_target: payments
-            order:
-              id: LOAN_ORDER_bb4f9a73-73cd-40fb-a592-031b7e845b0e
-              payments:
-                - time:
-                    label: MISSED_EMI_PAYMENT
           context:
             domain: ONDC:FIS12
             action: update
-            timestamp: 2026-08-07T10:16:05.903Z
+            timestamp: 2026-08-07T10:12:11.739Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 919be37e-4433-4749-9c18-7acc1a3ac5b1
+            message_id: af8f29ff-c4e7-4b7a-b708-b415ba89f768
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -6018,6 +6028,13 @@ steps:
                 code: IND
               city:
                 code: "*"
+          message:
+            update_target: payments
+            order:
+              id: LOAN_ORDER_41ca0cf4-43d2-4754-8de1-f726337ed09b
+              payments:
+                - time:
+                    label: MISSED_EMI_PAYMENT
         type: request
         description: The BAP updates the loan order with the offline missed EMI
           settlement details, including the settlement amount and timing. The

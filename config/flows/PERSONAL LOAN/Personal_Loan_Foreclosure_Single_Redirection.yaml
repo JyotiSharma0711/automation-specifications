@@ -5967,9 +5967,26 @@ steps:
       closure.
     mock:
       generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBtZXNzYWdlID0gZXhpc3RpbmdQYXlsb2FkPy5tZXNzYWdlOwoKICAvLyBVUERBVEUgVEFSR0VUCiAgbWVzc2FnZS51cGRhdGVfdGFyZ2V0ID0gc2Vzc2lvbkRhdGE/LnVwZGF0ZV90YXJnZXQgfHwgJ3BheW1lbnRzJzsKCiAgY29uc3Qgb3JkZXIgPSBtZXNzYWdlLm9yZGVyOwogIGlmIChzZXNzaW9uRGF0YT8ub3JkZXJfaWQ/LlswXSAmJiBvcmRlcikgewogICAgb3JkZXIuaWQgPSBzZXNzaW9uRGF0YS5vcmRlcl9pZFswXTsKICB9CiAgaWYgKG9yZGVyPy5wYXltZW50cykgewogICAgb3JkZXIucGF5bWVudHNbMF0gPSB7CiAgICAgIHRpbWU6IHsKICAgICAgICBsYWJlbDogJ0ZPUkVDTE9TVVJFJwogICAgICB9CiAgICB9OwogIH0KCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
-      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKCiAgaWYgKCF0YXJnZXRQYXlsb2FkPy5tZXNzYWdlKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2UgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG1lc3NhZ2UgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2U7CiAgaWYgKCFtZXNzYWdlLnVwZGF0ZV90YXJnZXQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgdXBkYXRlX3RhcmdldCBpbiBwYXlsb2FkIiB9OwogIH0KICBpZiAoIW1lc3NhZ2Uub3JkZXIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG9yZGVyID0gbWVzc2FnZS5vcmRlcjsKCiAgaWYgKCFBcnJheS5pc0FycmF5KG9yZGVyLnBheW1lbnRzKSB8fCBvcmRlci5wYXltZW50cy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcGF5bWVudHMgaW4gcGF5bG9hZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
-      requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhPy5vcmRlcl9pZD8uWzBdKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG9yZGVyX2lkWzBdIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9Cg==
+      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKCiAgaWYgKCF0YXJnZXRQYXlsb2FkPy5tZXNzYWdlKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2UgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG1lc3NhZ2UgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2U7CiAgaWYgKCFtZXNzYWdlLnVwZGF0ZV90YXJnZXQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgdXBkYXRlX3RhcmdldCBpbiBwYXlsb2FkIiB9OwogIH0KICBpZiAoIW1lc3NhZ2Uub3JkZXIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG9yZGVyID0gbWVzc2FnZS5vcmRlcjsKCiAgaWYgKCFBcnJheS5pc0FycmF5KG9yZGVyLnBheW1lbnRzKSB8fCBvcmRlci5wYXltZW50cy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcGF5bWVudHMgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IGxhYmVsID0gb3JkZXIucGF5bWVudHNbMF0/LnRpbWU/LmxhYmVsOwogIGlmIChsYWJlbCAhPT0gIkZPUkVDTE9TVVJFIikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiBgSW52YWxpZCBwYXltZW50c1swXS50aW1lLmxhYmVsOiBleHBlY3RlZCAiRk9SRUNMT1NVUkUiLCBnb3QgJHtKU09OLnN0cmluZ2lmeShsYWJlbCl9YCB9OwogIH0KCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9Cg==
+      requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgaWYgKCFzZXNzaW9uRGF0YT8ub3JkZXJfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBvcmRlcl9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CgogIGlmICghc2Vzc2lvbkRhdGE/LnF1b3RlPy5bMF0gJiYgIXNlc3Npb25EYXRhPy5wYXltZW50cz8uWzBdKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJPcmRlciBtdXN0IGJlIGNvbmZpcm1lZCAocXVvdGUvcGF5bWVudHMgbWlzc2luZyBpbiBzZXNzaW9uRGF0YSkgYmVmb3JlIHJlcXVlc3RpbmcgZm9yZWNsb3N1cmUiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0K
       defaultPayload:
+        context:
+          domain: ONDC:FIS12
+          location:
+            country:
+              code: IND
+            city:
+              code: "*"
+          transaction_id: a9aaecca-10b7-4d19-b640-b047a7c62196
+          message_id: bb579fb8-cb82-4824-be12-fcbc405b6608
+          action: update
+          timestamp: 2023-09-05T05:23:03.443Z
+          version: 2.0.3
+          bap_uri: https://bap.credit.becknprotocol.io/
+          bap_id: bap.credit.becknprotocol.io
+          ttl: PT10M
+          bpp_id: bpp.credit.becknprotocol.org
+          bpp_uri: https://bpp.credit.becknprotocol.org
         message:
           update_target: payments
           order:
@@ -5993,19 +6010,12 @@ steps:
     examples:
       - name: example for update
         payload:
-          message:
-            update_target: payments
-            order:
-              id: LOAN_ORDER_bf16bd13-8f45-466c-9e67-1a1e3010d3b2
-              payments:
-                - time:
-                    label: FORECLOSURE
           context:
             domain: ONDC:FIS12
             action: update
-            timestamp: 2026-08-06T04:41:41.727Z
+            timestamp: 2026-08-19T01:54:38.131Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 752bfe08-ca35-44e0-9046-4197444a0a7e
+            message_id: ee13ffda-19c8-46b1-a292-f9bf7a3ddee0
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -6017,6 +6027,13 @@ steps:
                 code: IND
               city:
                 code: "*"
+          message:
+            update_target: payments
+            order:
+              id: LOAN_ORDER_dd177375-204d-4408-8aba-912ee494a9b0
+              payments:
+                - time:
+                    label: FORECLOSURE
         type: request
         description: The BAP updates the loan foreclosure request with confirmed
           repayment amount and terms for the BPP's processing toward final
