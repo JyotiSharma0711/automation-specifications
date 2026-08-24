@@ -268,9 +268,7 @@ steps:
                   - APPLICATION_FORM
               form:
                 id: form_1
-                url: >-
-                  https:
-                  //forms.sellerapp.com/account-opening-kyc/data?k=234sadf234
+                url: https://forms.sellerapp.com/account-opening-kyc/data?k=234sadf234
                 mime_type: text/html
             fulfillments:
               - id: ff_122
@@ -2070,9 +2068,7 @@ transaction_history:
                 - APPLICATION_FORM
             form:
               id: form_1
-              url: >-
-                https:
-                //forms.sellerapp.com/account-opening-kyc/data?k=234sadf234
+              url: https://forms.sellerapp.com/account-opening-kyc/data?k=234sadf234
               mime_type: text/html
           fulfillments:
             - id: ff_122
