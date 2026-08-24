@@ -10,9 +10,9 @@ transaction_data:
   transaction_id: b685d3e1-d2c9-4bfe-b512-80000be96a03
   latest_timestamp: '1970-01-01T00: 00: 00.000Z'
   bap_id: bap.example.com
-  bap_uri: 'https: //bap.example.com'
+  bap_uri: 'https://bap.example.com'
   bpp_id: bpp.example.com
-  bpp_uri: 'https: //bpp.example.com'
+  bpp_uri: 'https://bpp.example.com'
 steps:
   - api: select
     action_id: select
@@ -35,10 +35,10 @@ steps:
           transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
           message_id: 39fe5e16-38c0-4229-ba24-a36deced9a74
           bap_id: bap.example.com
-          bap_uri: 'https: //bap.example.com'
+          bap_uri: 'https://bap.example.com'
           ttl: PT30S
           bpp_id: bpp.example.com
-          bpp_uri: 'https: //bpp.example.com'
+          bpp_uri: 'https://bpp.example.com'
           version: 2.1.0
           location:
             country:
@@ -82,7 +82,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -179,10 +179,10 @@ steps:
           transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
           message_id: b0a5e6e7-196c-4930-8c97-0bdc3be9e364
           bap_id: bap.example.com
-          bap_uri: 'https: //bap.example.com'
+          bap_uri: 'https://bap.example.com'
           ttl: PT30S
           bpp_id: bpp.example.com
-          bpp_uri: 'https: //bpp.example.com'
+          bpp_uri: 'https://bpp.example.com'
           version: 2.1.0
           location:
             country:
@@ -220,9 +220,7 @@ steps:
                       - descriptor:
                           name: Consumer Terms & Conditions
                           code: CONSUMER_TNC
-                        value: >-
-                          https:
-                          //sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                        value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
                   - display: true
                     descriptor:
                       name: Plan Identifiers
@@ -409,7 +407,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -465,10 +463,10 @@ steps:
           transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
           message_id: fbe88804-cae8-457f-acbc-c57cff246525
           bap_id: bap.example.com
-          bap_uri: 'https: //bap.example.com'
+          bap_uri: 'https://bap.example.com'
           ttl: PT30S
           bpp_id: bpp.example.com
-          bpp_uri: 'https: //bpp.example.com'
+          bpp_uri: 'https://bpp.example.com'
           version: 2.1.0
           location:
             country:
@@ -547,7 +545,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -587,10 +585,10 @@ steps:
           transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
           message_id: 0052bf1b-653c-44c2-b4ed-c535ad2a86b4
           bap_id: bap.example.com
-          bap_uri: 'https: //bap.example.com'
+          bap_uri: 'https://bap.example.com'
           ttl: PT30S
           bpp_id: bpp.example.com
-          bpp_uri: 'https: //bpp.example.com'
+          bpp_uri: 'https://bpp.example.com'
           version: 2.1.0
           location:
             country:
@@ -632,9 +630,7 @@ steps:
                       - descriptor:
                           name: Consumer Terms & Conditions
                           code: CONSUMER_TNC
-                        value: >-
-                          https:
-                          //sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                        value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
                   - display: true
                     descriptor:
                       name: Plan Identifiers
@@ -774,7 +770,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -828,10 +824,10 @@ steps:
           transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
           message_id: c20eea91-1bbc-40b0-8f33-cb51aa459199
           bap_id: bap.example.com
-          bap_uri: 'https: //bap.example.com'
+          bap_uri: 'https://bap.example.com'
           ttl: PT30S
           bpp_id: bpp.example.com
-          bpp_uri: 'https: //bpp.example.com'
+          bpp_uri: 'https://bpp.example.com'
           version: 2.1.0
           location:
             country:
@@ -915,7 +911,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -928,7 +924,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -966,10 +962,10 @@ steps:
           transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
           message_id: 265efc02-1b69-4602-8994-fb178641dfa3
           bap_id: bap.example.com
-          bap_uri: 'https: //bap.example.com'
+          bap_uri: 'https://bap.example.com'
           ttl: PT30S
           bpp_id: bpp.example.com
-          bpp_uri: 'https: //bpp.example.com'
+          bpp_uri: 'https://bpp.example.com'
           version: 2.1.0
           location:
             country:
@@ -1011,9 +1007,7 @@ steps:
                       - descriptor:
                           name: Consumer Terms & Conditions
                           code: CONSUMER_TNC
-                        value: >-
-                          https:
-                          //sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                        value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
                   - display: true
                     descriptor:
                       name: Plan Identifiers
@@ -1133,7 +1127,7 @@ steps:
             payments:
               - id: pmt_123
                 collected_by: BPP
-                url: 'https: //api.sellerapp.com/payment?k=abdafaf'
+                url: 'https://api.sellerapp.com/payment?k=abdafaf'
                 status: NOT-PAID
                 params:
                   amount: '3000'
@@ -1167,7 +1161,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -1180,7 +1174,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -1188,7 +1182,7 @@ steps:
             cancellation_terms:
               - reason_required: true
                 external_ref:
-                  url: 'https: //api.sellerapp.com/cterms?id=214werw3w4'
+                  url: 'https://api.sellerapp.com/cterms?id=214werw3w4'
                   mimetype: text/html
             quote:
               id: q1
@@ -1248,10 +1242,10 @@ steps:
           transaction_id: b685d3e1-d2c9-4bfe-b512-80000be96a03
           message_id: 5d90d8e2-e2f8-4845-801e-7cb028661a65
           bap_id: bap.example.com
-          bap_uri: 'https: //bap.example.com'
+          bap_uri: 'https://bap.example.com'
           ttl: PT30S
           bpp_id: bpp.example.com
-          bpp_uri: 'https: //bpp.example.com'
+          bpp_uri: 'https://bpp.example.com'
           version: 2.1.0
           location:
             country:
@@ -1352,10 +1346,10 @@ steps:
           transaction_id: b685d3e1-d2c9-4bfe-b512-80000be96a03
           message_id: dc608f5d-4c71-4aa2-b550-5af236d53d06
           bap_id: bap.example.com
-          bap_uri: 'https: //bap.example.com'
+          bap_uri: 'https://bap.example.com'
           ttl: PT30S
           bpp_id: bpp.example.com
-          bpp_uri: 'https: //bpp.example.com'
+          bpp_uri: 'https://bpp.example.com'
           version: 2.1.0
           location:
             country:
@@ -1397,9 +1391,7 @@ steps:
                       - descriptor:
                           name: Consumer Terms & Conditions
                           code: CONSUMER_TNC
-                        value: >-
-                          https:
-                          //sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                        value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
                   - display: true
                     descriptor:
                       name: Plan Identifiers
@@ -1587,7 +1579,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -1600,7 +1592,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -1608,7 +1600,7 @@ steps:
             cancellation_terms:
               - reason_required: true
                 external_ref:
-                  url: 'https: //api.sellerapp.com/cterms?id=214werw3w4'
+                  url: 'https://api.sellerapp.com/cterms?id=214werw3w4'
                   mimetype: text/html
             created_at: '2023-05-25T05: 23: 03.443Z'
             updated_at: '2023-05-25T05: 23: 03.443Z'
@@ -1645,10 +1637,10 @@ steps:
           transaction_id: a0257f36-5515-4716-bb45-a723ce1e500a
           message_id: ed939341-4543-4aba-98d9-388a248e816a
           bap_id: bap.example.com
-          bap_uri: 'https: //bap.example.com'
+          bap_uri: 'https://bap.example.com'
           ttl: PT30S
           bpp_id: bpp.example.com
-          bpp_uri: 'https: //bpp.example.com'
+          bpp_uri: 'https://bpp.example.com'
           version: 2.1.0
           location:
             country:
@@ -1694,9 +1686,7 @@ steps:
                       - descriptor:
                           name: Consumer Terms & Conditions
                           code: CONSUMER_TNC
-                        value: >-
-                          https:
-                          //sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                        value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
                   - display: true
                     descriptor:
                       name: Plan Identifiers
@@ -1879,7 +1869,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -1892,7 +1882,7 @@ steps:
                   - descriptor:
                       name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
-                    value: 'https: //sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                    value: 'https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                   - descriptor:
                       name: Offline Contract
                       code: OFFLINE_CONTRACT
@@ -1900,7 +1890,7 @@ steps:
             cancellation_terms:
               - reason_required: true
                 external_ref:
-                  url: 'https: //api.sellerapp.com/cterms?id=214werw3w4'
+                  url: 'https://api.sellerapp.com/cterms?id=214werw3w4'
                   mimetype: text/html
             created_at: '2023-05-25T05: 23: 03.443Z'
             updated_at: '2023-05-25T05: 23: 03.443Z'
@@ -1918,10 +1908,10 @@ transaction_history:
         transaction_id: b685d3e1-d2c9-4bfe-b512-80000be96a03
         message_id: ae98f819-c354-4b24-915f-1052338ef3c5
         bap_id: bap.example.com
-        bap_uri: 'https: //bap.example.com'
+        bap_uri: 'https://bap.example.com'
         ttl: PT30S
         bpp_id: bpp.example.com
-        bpp_uri: 'https: //bpp.example.com'
+        bpp_uri: 'https://bpp.example.com'
         version: 2.1.0
         location:
           country:
@@ -1963,7 +1953,7 @@ transaction_history:
                 - descriptor:
                     name: Static Terms (Transaction Level)
                     code: STATIC_TERMS
-                  value: 'https: //buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                  value: 'https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                 - descriptor:
                     name: Offline Contract
                     code: OFFLINE_CONTRACT
@@ -1979,10 +1969,10 @@ transaction_history:
         transaction_id: b685d3e1-d2c9-4bfe-b512-80000be96a03
         message_id: ae98f819-c354-4b24-915f-1052338ef3c5
         bap_id: bap.example.com
-        bap_uri: 'https: //bap.example.com'
+        bap_uri: 'https://bap.example.com'
         ttl: PT30S
         bpp_id: bpp.example.com
-        bpp_uri: 'https: //bpp.example.com'
+        bpp_uri: 'https://bpp.example.com'
         version: 2.1.0
         location:
           country:
@@ -2020,9 +2010,7 @@ transaction_history:
                     - descriptor:
                         name: Consumer Terms & Conditions
                         code: CONSUMER_TNC
-                      value: >-
-                        https:
-                        //sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                      value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
                 - display: true
                   descriptor:
                     name: Plan Identifiers
@@ -2172,7 +2160,7 @@ transaction_history:
                 - descriptor:
                     name: Static Terms (Transaction Level)
                     code: STATIC_TERMS
-                  value: 'https: //sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                  value: 'https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                 - descriptor:
                     name: Offline Contract
                     code: OFFLINE_CONTRACT
@@ -2210,10 +2198,10 @@ transaction_history:
         transaction_id: b685d3e1-d2c9-4bfe-b512-80000be96a03
         message_id: 0ccd893c-b831-40fb-86b6-e9ad8aac86e2
         bap_id: bap.example.com
-        bap_uri: 'https: //bap.example.com'
+        bap_uri: 'https://bap.example.com'
         ttl: PT30S
         bpp_id: bpp.example.com
-        bpp_uri: 'https: //bpp.example.com'
+        bpp_uri: 'https://bpp.example.com'
         version: 2.1.0
         location:
           country:
@@ -2267,7 +2255,7 @@ transaction_history:
                 - descriptor:
                     name: Static Terms (Transaction Level)
                     code: STATIC_TERMS
-                  value: 'https: //buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                  value: 'https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                 - descriptor:
                     name: Offline Contract
                     code: OFFLINE_CONTRACT
@@ -2283,10 +2271,10 @@ transaction_history:
         transaction_id: b685d3e1-d2c9-4bfe-b512-80000be96a03
         message_id: 0ccd893c-b831-40fb-86b6-e9ad8aac86e2
         bap_id: bap.example.com
-        bap_uri: 'https: //bap.example.com'
+        bap_uri: 'https://bap.example.com'
         ttl: PT30S
         bpp_id: bpp.example.com
-        bpp_uri: 'https: //bpp.example.com'
+        bpp_uri: 'https://bpp.example.com'
         version: 2.1.0
         location:
           country:
@@ -2328,9 +2316,7 @@ transaction_history:
                     - descriptor:
                         name: Consumer Terms & Conditions
                         code: CONSUMER_TNC
-                      value: >-
-                        https:
-                        //sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                      value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
                 - display: true
                   descriptor:
                     name: Plan Identifiers
@@ -2442,7 +2428,7 @@ transaction_history:
                 - descriptor:
                     name: Static Terms (Transaction Level)
                     code: STATIC_TERMS
-                  value: 'https: //sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                  value: 'https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                 - descriptor:
                     name: Offline Contract
                     code: OFFLINE_CONTRACT
@@ -2482,10 +2468,10 @@ transaction_history:
         transaction_id: b685d3e1-d2c9-4bfe-b512-80000be96a03
         message_id: e876f2e3-34f7-40a0-bb18-68e46da86b13
         bap_id: bap.example.com
-        bap_uri: 'https: //bap.example.com'
+        bap_uri: 'https://bap.example.com'
         ttl: PT30S
         bpp_id: bpp.example.com
-        bpp_uri: 'https: //bpp.example.com'
+        bpp_uri: 'https://bpp.example.com'
         version: 2.1.0
         location:
           country:
@@ -2543,7 +2529,7 @@ transaction_history:
                 - descriptor:
                     name: Static Terms (Transaction Level)
                     code: STATIC_TERMS
-                  value: 'https: //buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                  value: 'https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                 - descriptor:
                     name: Offline Contract
                     code: OFFLINE_CONTRACT
@@ -2556,7 +2542,7 @@ transaction_history:
                 - descriptor:
                     name: Static Terms (Transaction Level)
                     code: STATIC_TERMS
-                  value: 'https: //sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
+                  value: 'https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1'
                 - descriptor:
                     name: Offline Contract
                     code: OFFLINE_CONTRACT
