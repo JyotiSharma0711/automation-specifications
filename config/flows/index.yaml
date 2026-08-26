@@ -37,6 +37,7 @@ flows:
     usecase: MUTUAL FUNDS
     tags:
       - WORKBENCH
+      - REPORTABLE
       - LUMPSUM_FLOWS
       - USER_INITIATED
     description: Lumpsum investment where payment is handled by buyer app
@@ -47,6 +48,7 @@ flows:
     usecase: MUTUAL FUNDS
     tags:
       - WORKBENCH
+      - REPORTABLE
       - LUMPSUM_FLOWS
       - HYBRID
     description: Lumpsum investment with payment retry mechanism
@@ -167,6 +169,7 @@ flows:
     usecase: MUTUAL FUNDS
     tags:
       - WORKBENCH
+      - REPORTABLE
       - SIP_SETUP_FLOWS
       - USER_INITIATED
     description: SIP creation without setting up payment mandate (6 APIs)
@@ -188,6 +191,7 @@ flows:
     usecase: MUTUAL FUNDS
     tags:
       - WORKBENCH
+      - REPORTABLE
       - SIP_LIFECYCLE_FLOWS
       - UNSOLICITED
     description: SIP instalment with failure scenario (5 APIs)
@@ -198,6 +202,7 @@ flows:
     usecase: MUTUAL FUNDS
     tags:
       - WORKBENCH
+      - REPORTABLE
       - SIP_SETUP_FLOWS
       - USER_INITIATED
     description: Manually trigger SIP instalment payment (4 APIs)
@@ -263,6 +268,7 @@ flows:
     usecase: MUTUAL FUNDS
     tags:
       - WORKBENCH
+      - REPORTABLE
       - SIP_SETUP_FLOWS
       - USER_INITIATED
     description: SIP creation and execution without payment mandate
