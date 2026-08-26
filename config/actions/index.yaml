@@ -67,6 +67,7 @@ supportedActions:
     - on_update
     - update
     - issue_status
+    - on_issue_status
 
   issue_status:
     - on_issue 
