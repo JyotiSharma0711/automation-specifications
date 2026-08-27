@@ -1509,10 +1509,7 @@ paths:
                 message:
                   type: object
                   properties:
-                    issue:
-                      type: object
-                      properties:
-                        id:
-                          type: string
+                    issue_id:
+                      type: string
       responses: *responses
       

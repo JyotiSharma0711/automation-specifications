@@ -9365,14 +9365,13 @@ attribute_set:
         owner: BAP
         type: object
     message:
-      issue:
-        id:
-          _description:
-            required: true
-            usage: I1
-            info: Unique complaint identifier minted by the initiating application and held immutable throughout the issue lifecycle. Enables correlation and traversal of the complaint across systems and related cascaded issues.
-            owner: BAP
-            type: string    
+      issue_id:
+        _description:
+          required: true
+          usage: I1
+          info: Unique complaint identifier minted by the initiating application and held immutable throughout the issue lifecycle. Enables correlation and traversal of the complaint across systems and related cascaded issues.
+          owner: BAP
+          type: string    
   on_issue_status:
     context:
       domain:

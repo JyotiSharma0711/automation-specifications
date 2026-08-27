@@ -2026,7 +2026,7 @@ _TESTS_:
         - issue_status
       _RETURN_:
         - _NAME_: REQUIRED_ISSUE_ID
-          attr: $.message.issue.id
+          attr: $.message.issue_id
           _RETURN_: attr are present
 
   on_issue_status:
