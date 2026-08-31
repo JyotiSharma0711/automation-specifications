@@ -9,10 +9,13 @@ supportedActions:
   select:
     - on_select
     - select
+    - status
+    - on_status
   on_select:
     - init
     - select
     - on_status
+    - status
   init:
     - on_init
   on_init:
