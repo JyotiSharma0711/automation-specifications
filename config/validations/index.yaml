@@ -934,6 +934,36 @@ _TESTS_:
         - _NAME_: REQUIRED_PAYMENT_PARAMS_VPA
           attr: $.message.order.payments[*].params.virtual_payment_address
           _RETURN_: attr are present
+    - _NAME_: CONFIRM_TAGS
+      _RETURN_:
+        - _NAME_: REQUIRED_ORDER_TAGS
+          attr: $.message.order.tags[*].descriptor.code
+          enumList:
+            - BAP_TERMS
+            - BPP_TERMS
+          _RETURN_: attr are present && attr all in enumList
+
+        - _NAME_: REQUIRED_BAP_TERMS
+          _SCOPE_: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BAP_TERMS_STATIC_TERMS
+              attr: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BAP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
+
+        - _NAME_: REQUIRED_BPP_TERMS
+          _SCOPE_: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BPP_TERMS_STATIC_TERMS
+              attr: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BPP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present      
   on_confirm:
     - _NAME_: ON_CONFIRM_CONTEXT
       action:
@@ -1058,7 +1088,36 @@ _TESTS_:
         - DISBURSED
       _CONTINUE_: "!(attr are present)"
       _RETURN_: attr all in enumList
-    
+    - _NAME_: ON_CONFIRM_TAGS
+      _RETURN_:
+        - _NAME_: REQUIRED_ORDER_TAGS
+          attr: $.message.order.tags[*].descriptor.code
+          enumList:
+            - BAP_TERMS
+            - BPP_TERMS
+          _RETURN_: attr are present && attr all in enumList
+
+        - _NAME_: REQUIRED_BAP_TERMS
+          _SCOPE_: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BAP_TERMS_STATIC_TERMS
+              attr: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BAP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
+
+        - _NAME_: REQUIRED_BPP_TERMS
+          _SCOPE_: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BPP_TERMS_STATIC_TERMS
+              attr: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BPP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
     - &REQUIRED_ORDER_CREATED_AT
       _NAME_: REQUIRED_ORDER_CREATED_AT
       attr: $.message.order.created_at
