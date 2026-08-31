@@ -1,7 +1,7 @@
 meta:
   domain: ONDC:FIS14
   version: 2.1.0
-  flowId: SIP_New_Folio_With_KYC
+  flowId: SIP_Creation_New_Folio_With_KYC
   config_version: 0.0.0001
   description: SIP (New Folio w/ KYC)
   use_case_id: MUTUAL FUNDS
