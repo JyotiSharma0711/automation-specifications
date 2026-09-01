@@ -1236,7 +1236,7 @@ extra_steps:
       description: please add relevant description
       mock:
         generate: >-
-          ZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgbGF0ZXN0T3JkZXIgPSBzZXNzaW9uRGF0YS5vcmRlclswXTsKCiAgaWYgKCFsYXRlc3RPcmRlcikgewogICAgdGhyb3cgbmV3IEVycm9yKCJObyBsYXRlc3Qgb3JkZXIgZm91bmQgaW4gc2Vzc2lvbiIpOwogIH0KCiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlciA9IGxhdGVzdE9yZGVyCiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
+          ZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgbGF0ZXN0T3JkZXIgPSBzZXNzaW9uRGF0YS5vcmRlclswXTsKCiAgaWYgKCFsYXRlc3RPcmRlcikgewogICAgdGhyb3cgbmV3IEVycm9yKCJObyBsYXRlc3Qgb3JkZXIgZm91bmQgaW4gc2Vzc2lvbiIpOwogIH0KCiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlciA9IGxhdGVzdE9yZGVyCmNvbnN0IGV4dHJhU3RlcE1lc3NhZ2VJZCA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGEuZXh0cmFTdGVwTWVzc2FnZUlkKQogID8gc2Vzc2lvbkRhdGEuZXh0cmFTdGVwTWVzc2FnZUlkWzBdCiAgOiBzZXNzaW9uRGF0YS5leHRyYVN0ZXBNZXNzYWdlSWQ7CgppZiAoZXh0cmFTdGVwTWVzc2FnZUlkKSB7CiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gZXh0cmFTdGVwTWVzc2FnZUlkCnNlc3Npb25EYXRhLmV4dHJhU3RlcE1lc3NhZ2VJZCA9IG51bGwKfWVsc2V7CiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gYCR7dXVpZHY0KCl9YAp9CgogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
         validate: >-
           LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
         requirements: >-
@@ -1493,13 +1493,14 @@ extra_steps:
                 ttl: P15D
         saveData:
           transactionId: $.context.transaction_id
-          extraStepMessageId: $.context.message_id
+          extraStepMessageId: $.context.random_key
           latestTimestamp: $.context.timestamp
           bapId: $.context.bap_id
           bapUri: $.context.bap_uri
           bppId: $.context.bpp_id
           bppUri: $.context.bpp_uri
           city_code: $.context.location.city.code
+          order: $.message.order
         inputs: {}
       examples:
         - name: example for on_status
