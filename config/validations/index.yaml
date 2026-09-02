@@ -149,6 +149,24 @@ _TESTS_:
             - CONSUMER
           _CONTINUE_: "!(attr are present)"
           _RETURN_: attr any in enumList
+    - _NAME_: SEARCH_TAGS
+      _RETURN_:
+        - _NAME_: REQUIRED_INTENT_TAGS
+          attr: $.message.intent.tags[*].descriptor.code
+          enumList:
+            - BAP_TERMS
+          _RETURN_: attr are present && attr all in enumList
+
+        - _NAME_: REQUIRED_BAP_TERMS
+          _SCOPE_: $.message.intent.tags[?(@.descriptor.code=='BAP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BAP_TERMS_STATIC_TERMS
+              attr: $.message.intent.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BAP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.intent.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
   on_search:
     - _NAME_: ON_SEARCH_CONTEXT
       action:
@@ -379,6 +397,24 @@ _TESTS_:
             - LSP_ADDRESS
           _CONTINUE_: "!(subTags are present)"
           _RETURN_: subTags all in validValues
+    - _NAME_: ON_SEARCH_TAGS
+      _RETURN_:
+        - _NAME_: REQUIRED_CATALOG_TAGS
+          attr: $.message.catalog.tags[*].descriptor.code
+          enumList:
+            - BPP_TERMS
+          _RETURN_: attr are present && attr all in enumList
+
+        - _NAME_: REQUIRED_BPP_TERMS
+          _SCOPE_: $.message.catalog.tags[?(@.descriptor.code=='BPP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BPP_TERMS_STATIC_TERMS
+              attr: $.message.catalog.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BPP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.catalog.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
   select:
     - _NAME_: SELECT_CONTEXT
       action:
