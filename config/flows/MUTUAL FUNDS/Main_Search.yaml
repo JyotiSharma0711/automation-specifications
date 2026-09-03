@@ -81,9 +81,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: search
-            timestamp: 2026-07-03T11:38:08.298Z
+            timestamp: 2026-09-03T09:32:47.199Z
             transaction_id: fa3d9290-0991-4a10-8ac2-4012f7d58d3f
-            message_id: b2e2db5b-7454-4d82-bba3-9e8ae757b455
+            message_id: 99df8a94-937d-4a07-9e73-9b1b62b80a70
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -141,375 +141,437 @@ steps:
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
-          domain: ONDC:FIS14
           action: on_search
-          timestamp: 2026-04-10 07:45:39.830000+00:00
-          transaction_id: fa3d9290-0991-4a10-8ac2-4012f7d58d3f
-          message_id: 34091236-5f47-4d83-8a8c-bda769d83182
-          bap_id: bap.example.com
-          bap_uri: https://bap.example.com
-          ttl: PT30S
-          bpp_id: bpp.example.com
-          bpp_uri: https://bpp.example.com
-          version: 2.1.0
+          bap_id: workbench.ondc.tech
+          bap_uri: https://workbench.ondc.tech/api-service/ONDC:FIS14/2.1.0/buyer
+          bpp_id: workbench.ondc.tech
+          bpp_uri: https://workbench.ondc.tech/api-service/ONDC:FIS14/2.1.0/seller
+          domain: ONDC:FIS14
           location:
-            country:
-              code: IND
             city:
               code: "*"
+            country:
+              code: IND
+          message_id: b1c67d46-dd56-43e1-a810-ad9053e6a3d5
+          timestamp: 2026-08-17T05:46:04.260Z
+          transaction_id: c39fb357-c1de-4652-a72b-4f1a0e464dc3
+          ttl: PT30S
+          version: 2.1.0
         message:
           catalog:
             descriptor:
               name: BPP Name
             providers:
-              - id: sellerapp_id
+              - categories:
+                  - descriptor:
+                      code: MUTUAL_FUNDS
+                      name: Mutual Funds
+                    id: CAT_MUTUAL_FUNDS_2235c0b9-d35c-4449-9a74-224c4061a830
+                  - descriptor:
+                      code: OPEN_ENDED
+                      name: Open Ended
+                    id: CAT_OPEN_ENDED_31ac353d-03b4-4acc-8a7e-2c2aa19f34ec
+                    parent_category_id: CAT_MUTUAL_FUNDS_2235c0b9-d35c-4449-9a74-224c4061a830
+                  - descriptor:
+                      code: OPEN_ENDED_EQUITY
+                      name: Equity
+                    id: CAT_OPEN_ENDED_EQUITY_7e4db459-167f-434f-8714-11d478a7b173
+                    parent_category_id: CAT_OPEN_ENDED_31ac353d-03b4-4acc-8a7e-2c2aa19f34ec
+                  - descriptor:
+                      code: OPEN_ENDED_EQUITY_MIDCAP
+                      name: Mid Cap Fund
+                    id: CAT_OPEN_ENDED_EQUITY_MIDCAP_86ae1811-48c0-446b-ad8c-0a4d96427900
+                    parent_category_id: CAT_OPEN_ENDED_EQUITY_7e4db459-167f-434f-8714-11d478a7b173
                 descriptor:
                   name: Seller App Name
-                categories:
-                  - id: "0"
-                    descriptor:
-                      name: Mutual Funds
-                      code: MUTUAL_FUNDS
-                  - id: "1"
-                    descriptor:
-                      name: Open Ended
-                      code: OPEN_ENDED
-                    parent_category_id: "0"
-                  - id: "11"
-                    descriptor:
-                      name: Equity
-                      code: OPEN_ENDED_EQUITY
-                    parent_category_id: "1"
-                  - id: "1101"
-                    descriptor:
-                      name: Mid Cap Fund
-                      code: OPEN_ENDED_EQUITY_MIDCAP
-                    parent_category_id: "11"
-                items:
-                  - id: "138"
-                    descriptor:
-                      name: ABC Mid Cap Fund
-                      code: SCHEME
-                    category_ids:
-                      - "1101"
-                    creator:
-                      descriptor:
-                        name: ABC Mutual Fund
-                    matched: true
-                    tags:
-                      - display: true
-                        descriptor:
-                          name: Scheme Information
-                          code: SCHEME_INFORMATION
-                        list:
-                          - descriptor:
-                              name: Status
-                              code: STATUS
-                            value: active
-                          - descriptor:
-                              name: Lockin Period (days)
-                              code: LOCKIN_PERIOD_IN_DAYS
-                            value: "365"
-                          - descriptor:
-                              name: NFO Start
-                              code: NFO_START_DATE
-                            value: 2024-07-25
-                          - descriptor:
-                              name: NFO End
-                              code: NFO_END_DATE
-                            value: 2024-08-10
-                          - descriptor:
-                              name: NFO Allotment Date
-                              code: NFO_ALLOTMENT_DATE
-                            value: 2024-08-15
-                          - descriptor:
-                              name: NFO Reopen Date
-                              code: NFO_REOPEN_DATE
-                            value: 2024-08-16
-                          - descriptor:
-                              name: Entry Load
-                              code: ENTRY_LOAD
-                            value: no entry load
-                          - descriptor:
-                              name: Exit Load
-                              code: EXIT_LOAD
-                            value: 1% on exit
-                          - descriptor:
-                              name: Scheme Offer Documents
-                              code: OFFER_DOCUMENTS
-                            value: https://sellerapp.com/docs/scheme-offer.pdf
-                          - descriptor:
-                              name: Investor Allow List
-                              code: INVESTOR_ALLOW_LIST
-                            value: empty
-                          - descriptor:
-                              name: Investor Black List
-                              code: INVESTOR_BLACK_LIST
-                            value: empty
-                  - id: "12391"
-                    descriptor:
-                      name: ABC Mid Cap Fund - Regular - Growth
-                      code: SCHEME_PLAN
-                    creator:
-                      descriptor:
-                        name: ABC Mutual Fund
-                    category_ids:
-                      - "1101"
-                    parent_item_id: "138"
-                    fulfillment_ids:
-                      - ff_122
-                      - ff_123
-                      - ff_124
-                      - ff_125
-                      - ff_023
-                      - ff_789
-                    matched: true
-                    tags:
-                      - display: true
-                        descriptor:
-                          name: Plan Information
-                          code: PLAN_INFORMATION
-                        list:
-                          - descriptor:
-                              name: Consumer Terms & Conditions
-                              code: CONSUMER_TNC
-                            value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
-                      - display: true
-                        descriptor:
-                          name: Plan Identifiers
-                          code: PLAN_IDENTIFIERS
-                        list:
-                          - descriptor:
-                              name: ISIN
-                              code: ISIN
-                            value: IN123214324
-                          - descriptor:
-                              name: RTA Identifier
-                              code: RTA_IDENTIFIER
-                            value: 02BZ
-                          - descriptor:
-                              name: AMFI Identifier
-                              code: AMFI_IDENTIFIER
-                            value: "125487"
-                      - display: true
-                        descriptor:
-                          name: Plan Options
-                          code: PLAN_OPTIONS
-                        list:
-                          - descriptor:
-                              name: Plan
-                              code: PLAN
-                            value: REGULAR
-                          - descriptor:
-                              name: Option
-                              code: OPTION
-                            value: IDCW
-                          - descriptor:
-                              name: IDCW Option
-                              code: IDCW_OPTION
-                            value: PAYOUT
                 fulfillments:
-                  - id: ff_122
-                    type: LUMPSUM
+                  - id: FF_LUMPSUM_9d4c7bcd-3baf-4e8b-91fb-82fdf4666d26
                     tags:
-                      - display: true
-                        descriptor:
-                          name: Thresholds
+                      - descriptor:
                           code: THRESHOLDS
+                          name: Thresholds
+                        display: true
                         list:
                           - descriptor:
-                              name: Amount Minimum
                               code: AMOUNT_MIN
+                              name: Amount Minimum
                             value: "1000"
                           - descriptor:
-                              name: Amount Maximum
                               code: AMOUNT_MAX
+                              name: Amount Maximum
                             value: "10000"
                           - descriptor:
-                              name: Amount Multiples
                               code: AMOUNT_MULTIPLES
+                              name: Amount Multiples
                             value: "1"
-                  - id: ff_123
-                    type: SIP
+                    type: LUMPSUM
+                  - id: FF_SIP_MONTHLY_07d6480f-1704-4000-b079-845db4085afd
                     tags:
-                      - display: true
-                        descriptor:
-                          name: Thresholds
+                      - descriptor:
                           code: THRESHOLDS
+                          name: Thresholds
+                        display: true
                         list:
                           - descriptor:
-                              name: Frequency
                               code: FREQUENCY
+                              name: Frequency
                             value: P1M
                           - descriptor:
-                              name: Frequency Dates
                               code: FREQUENCY_DATES
+                              name: Frequency Dates
                             value: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
                           - descriptor:
-                              name: Amount Minimum
                               code: AMOUNT_MIN
+                              name: Amount Minimum
                             value: "5000"
                           - descriptor:
-                              name: Amount Maximum
                               code: AMOUNT_MAX
+                              name: Amount Maximum
                             value: "50000"
                           - descriptor:
-                              name: Amount Multiples
                               code: AMOUNT_MULTIPLES
+                              name: Amount Multiples
                             value: "1"
                           - descriptor:
-                              name: Installments Count Minimum
                               code: INSTALMENTS_COUNT_MIN
+                              name: Installments Count Minimum
                             value: "6"
                           - descriptor:
-                              name: Installments Count Maximum
                               code: INSTALMENTS_COUNT_MAX
+                              name: Installments Count Maximum
                             value: "12"
                           - descriptor:
-                              name: Cumulative Amount Minimum
                               code: CUMULATIVE_AMOUNT_MIN
+                              name: Cumulative Amount Minimum
                             value: "30000"
-                  - id: ff_124
                     type: SIP
+                  - id: FF_SIP_DAILY_BUSINESS_a2d9657f-21f8-42cf-9265-f9e6baa68cea
                     tags:
-                      - display: true
-                        descriptor:
-                          name: Thresholds
+                      - descriptor:
                           code: THRESHOLDS
+                          name: Thresholds
+                        display: true
                         list:
                           - descriptor:
-                              name: Frequency
                               code: FREQUENCY
+                              name: Frequency
                             value: P1D
                           - descriptor:
-                              name: Frequency Day Type
                               code: FREQUENCY_DAY_TYPE
+                              name: Frequency Day Type
                             value: BUSINESS
                           - descriptor:
-                              name: Amount Minimum
                               code: AMOUNT_MIN
+                              name: Amount Minimum
                             value: "1000"
                           - descriptor:
-                              name: Amount Maximum
                               code: AMOUNT_MAX
+                              name: Amount Maximum
                             value: "10000"
                           - descriptor:
-                              name: Amount Multiples
                               code: AMOUNT_MULTIPLES
+                              name: Amount Multiples
                             value: "1"
                           - descriptor:
-                              name: Installments Count Minimum
                               code: INSTALMENTS_COUNT_MIN
+                              name: Installments Count Minimum
                             value: "30"
                           - descriptor:
-                              name: Installments Count Maximum
                               code: INSTALMENTS_COUNT_MAX
+                              name: Installments Count Maximum
                             value: "300"
                           - descriptor:
-                              name: Cumulative Amount Minimum
                               code: CUMULATIVE_AMOUNT_MIN
+                              name: Cumulative Amount Minimum
                             value: "30000"
-                  - id: ff_125
                     type: SIP
+                  - id: FF_SIP_DAILY_CALENDAR_86a2e45a-4867-4dee-944c-0cb482f40796
                     tags:
-                      - display: true
-                        descriptor:
-                          name: Thresholds
+                      - descriptor:
                           code: THRESHOLDS
+                          name: Thresholds
+                        display: true
                         list:
                           - descriptor:
-                              name: Frequency
                               code: FREQUENCY
+                              name: Frequency
                             value: P1D
                           - descriptor:
-                              name: Frequency Day Type
                               code: FREQUENCY_DAY_TYPE
+                              name: Frequency Day Type
                             value: CALENDAR
                           - descriptor:
-                              name: Amount Minimum
                               code: AMOUNT_MIN
+                              name: Amount Minimum
                             value: "1000"
                           - descriptor:
-                              name: Amount Maximum
                               code: AMOUNT_MAX
+                              name: Amount Maximum
                             value: "10000"
                           - descriptor:
-                              name: Amount Multiples
                               code: AMOUNT_MULTIPLES
+                              name: Amount Multiples
                             value: "1"
                           - descriptor:
-                              name: Installments Count Minimum
                               code: INSTALMENTS_COUNT_MIN
+                              name: Installments Count Minimum
                             value: "30"
                           - descriptor:
-                              name: Installments Count Maximum
                               code: INSTALMENTS_COUNT_MAX
+                              name: Installments Count Maximum
                             value: "300"
                           - descriptor:
-                              name: Cumulative Amount Minimum
                               code: CUMULATIVE_AMOUNT_MIN
+                              name: Cumulative Amount Minimum
                             value: "30000"
-                  - id: ff_789
-                    type: REDEMPTION
+                    type: SIP
+                  - id: FF_REDEMPTION_fce201e7-cd68-4217-bb43-c183517fb4c4
                     tags:
-                      - display: true
-                        descriptor:
-                          name: Thresholds
+                      - descriptor:
                           code: THRESHOLDS
+                          name: Thresholds
+                        display: true
                         list:
                           - descriptor:
-                              name: Amount Minimum
                               code: AMOUNT_MIN
+                              name: Amount Minimum
                             value: "1000"
                           - descriptor:
-                              name: Amount Maximum
                               code: AMOUNT_MAX
+                              name: Amount Maximum
                             value: "10000"
                           - descriptor:
-                              name: Amount Multiples
                               code: AMOUNT_MULTIPLES
+                              name: Amount Multiples
                             value: "1"
                           - descriptor:
-                              name: Units Minimum
                               code: UNITS_MIN
+                              name: Units Minimum
                             value: "1"
                           - descriptor:
-                              name: Units Maximum
                               code: UNITS_MAX
+                              name: Units Maximum
                             value: "500"
                           - descriptor:
-                              name: Units Multiples
                               code: UNITS_MULTIPLES
+                              name: Units Multiples
                             value: "1"
-                  - id: ff_023
-                    type: INSTANT_REDEMPTION
+                    type: REDEMPTION
+                  - id: FF_INSTANT_REDEMPTION_16c0b3ab-f5f5-431b-aa22-b72a31ac587c
                     tags:
-                      - display: true
-                        descriptor:
-                          name: Thresholds
+                      - descriptor:
                           code: THRESHOLDS
+                          name: Thresholds
+                        display: true
                         list:
                           - descriptor:
-                              name: Amount Minimum
                               code: AMOUNT_MIN
+                              name: Amount Minimum
                             value: "1000"
                           - descriptor:
-                              name: Amount Maximum
                               code: AMOUNT_MAX
+                              name: Amount Maximum
                             value: "50000"
+                    type: INSTANT_REDEMPTION
+                id: SCH_PROVIDER_eb2cae3b-2a43-4099-9539-db22ee198e0e
+                items:
+                  - category_ids:
+                      - CAT_OPEN_ENDED_EQUITY_MIDCAP_86ae1811-48c0-446b-ad8c-0a4d96427900
+                    creator:
+                      descriptor:
+                        name: ABC Mutual Fund
+                    descriptor:
+                      code: SCHEME
+                      name: ABC Mid Cap Fund
+                    id: SCH_ABC_MID_CAP_FUND_d76c5cfd-b777-422b-86d0-d37a44fa12fc
+                    matched: true
+                    tags:
+                      - descriptor:
+                          code: SCHEME_INFORMATION
+                          name: Scheme Information
+                        display: true
+                        list:
+                          - descriptor:
+                              code: STATUS
+                              name: Status
+                            value: active
+                          - descriptor:
+                              code: LOCKIN_PERIOD_IN_DAYS
+                              name: Lockin Period (days)
+                            value: "365"
+                          - descriptor:
+                              code: NFO_START_DATE
+                              name: NFO Start
+                            value: 2024-07-25
+                          - descriptor:
+                              code: NFO_END_DATE
+                              name: NFO End
+                            value: 2024-08-10
+                          - descriptor:
+                              code: NFO_ALLOTMENT_DATE
+                              name: NFO Allotment Date
+                            value: 2024-08-15
+                          - descriptor:
+                              code: NFO_REOPEN_DATE
+                              name: NFO Reopen Date
+                            value: 2024-08-16
+                          - descriptor:
+                              code: ENTRY_LOAD
+                              name: Entry Load
+                            value: no entry load
+                          - descriptor:
+                              code: EXIT_LOAD
+                              name: Exit Load
+                            value: 1% on exit
+                          - descriptor:
+                              code: OFFER_DOCUMENTS
+                              name: Scheme Offer Documents
+                            value: https://sellerapp.com/docs/scheme-offer.pdf
+                          - descriptor:
+                              code: INVESTOR_ALLOW_LIST
+                              name: Investor Allow List
+                            value: empty
+                          - descriptor:
+                              code: INVESTOR_BLACK_LIST
+                              name: Investor Black List
+                            value: empty
+                  - category_ids:
+                      - CAT_OPEN_ENDED_EQUITY_MIDCAP_86ae1811-48c0-446b-ad8c-0a4d96427900
+                    creator:
+                      descriptor:
+                        name: ABC Mutual Fund
+                    descriptor:
+                      code: SCHEME_PLAN
+                      name: ABC Mid Cap Fund - Regular - Growth
+                    fulfillment_ids:
+                      - FF_LUMPSUM_9d4c7bcd-3baf-4e8b-91fb-82fdf4666d26
+                      - FF_SIP_MONTHLY_07d6480f-1704-4000-b079-845db4085afd
+                      - FF_SIP_DAILY_BUSINESS_a2d9657f-21f8-42cf-9265-f9e6baa68cea
+                      - FF_SIP_DAILY_CALENDAR_86a2e45a-4867-4dee-944c-0cb482f40796
+                      - FF_INSTANT_REDEMPTION_16c0b3ab-f5f5-431b-aa22-b72a31ac587c
+                      - FF_REDEMPTION_fce201e7-cd68-4217-bb43-c183517fb4c4
+                    id: PLAN_ABC_MID_CAP_FUND_REGULAR_GROWT_43f90c53-723d-4916-961e-fc5971fe53fa
+                    matched: true
+                    parent_item_id: SCH_ABC_MID_CAP_FUND_d76c5cfd-b777-422b-86d0-d37a44fa12fc
+                    tags:
+                      - descriptor:
+                          code: PLAN_INFORMATION
+                          name: Plan Information
+                        display: true
+                        list:
+                          - descriptor:
+                              code: CONSUMER_TNC
+                              name: Consumer Terms & Conditions
+                            value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                      - descriptor:
+                          code: PLAN_IDENTIFIERS
+                          name: Plan Identifiers
+                        display: true
+                        list:
+                          - descriptor:
+                              code: ISIN
+                              name: ISIN
+                            value: IN123214324
+                          - descriptor:
+                              code: RTA_IDENTIFIER
+                              name: RTA Identifier
+                            value: 02BZ
+                          - descriptor:
+                              code: AMFI_IDENTIFIER
+                              name: AMFI Identifier
+                            value: "125487"
+                      - descriptor:
+                          code: PLAN_OPTIONS
+                          name: Plan Options
+                        display: true
+                        list:
+                          - descriptor:
+                              code: PLAN
+                              name: Plan
+                            value: REGULAR
+                          - descriptor:
+                              code: OPTION
+                              name: Option
+                            value: IDCW
+                          - descriptor:
+                              code: IDCW_OPTION
+                              name: IDCW Option
+                            value: PAYOUT
+                  - category_ids:
+                      - CAT_OPEN_ENDED_EQUITY_MIDCAP_86ae1811-48c0-446b-ad8c-0a4d96427900
+                    creator:
+                      descriptor:
+                        name: ABC Mutual Fund
+                    descriptor:
+                      code: SCHEME_PLAN
+                      name: ABC Mid Cap Fund - Regular - Growth
+                    fulfillment_ids:
+                      - FF_LUMPSUM_9d4c7bcd-3baf-4e8b-91fb-82fdf4666d26
+                      - FF_SIP_MONTHLY_07d6480f-1704-4000-b079-845db4085afd
+                      - FF_SIP_DAILY_BUSINESS_a2d9657f-21f8-42cf-9265-f9e6baa68cea
+                      - FF_SIP_DAILY_CALENDAR_86a2e45a-4867-4dee-944c-0cb482f40796
+                      - FF_INSTANT_REDEMPTION_16c0b3ab-f5f5-431b-aa22-b72a31ac587c
+                      - FF_REDEMPTION_fce201e7-cd68-4217-bb43-c183517fb4c4
+                    id: PLAN_ABC_MID_CAP_FUND_REGULAR_GROWT_43f90c53-723d-4916-96457586699
+                    matched: true
+                    parent_item_id: SCH_ABC_MID_CAP_FUND_d76c5cfd-b777-422b-86d0-d37a44fa12fc
+                    tags:
+                      - descriptor:
+                          code: PLAN_INFORMATION
+                          name: Plan Information
+                        display: true
+                        list:
+                          - descriptor:
+                              code: CONSUMER_TNC
+                              name: Consumer Terms & Conditions
+                            value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                      - descriptor:
+                          code: PLAN_IDENTIFIERS
+                          name: Plan Identifiers
+                        display: true
+                        list:
+                          - descriptor:
+                              code: ISIN
+                              name: ISIN
+                            value: IN123214324
+                          - descriptor:
+                              code: RTA_IDENTIFIER
+                              name: RTA Identifier
+                            value: 02BZ
+                          - descriptor:
+                              code: AMFI_IDENTIFIER
+                              name: AMFI Identifier
+                            value: "125487"
+                      - descriptor:
+                          code: PLAN_OPTIONS
+                          name: Plan Options
+                        display: true
+                        list:
+                          - descriptor:
+                              code: PLAN
+                              name: Plan
+                            value: REGULAR
+                          - descriptor:
+                              code: OPTION
+                              name: Option
+                            value: IDCW
+                          - descriptor:
+                              code: IDCW_OPTION
+                              name: IDCW Option
+                            value: PAYOUT
             tags:
-              - display: false
-                descriptor:
-                  name: BPP Terms of Engagement
+              - descriptor:
                   code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
                 list:
                   - descriptor:
-                      name: Static Terms (Transaction Level)
                       code: STATIC_TERMS
+                      name: Static Terms (Transaction Level)
                     value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
                   - descriptor:
-                      name: Offline Contract
                       code: OFFLINE_CONTRACT
+                      name: Offline Contract
                     value: "true"
       inputs: {}
     examples:
@@ -518,9 +580,9 @@ steps:
           context:
             domain: ONDC:FIS14
             action: on_search
-            timestamp: 2026-07-03T11:38:08.384Z
+            timestamp: 2026-09-03T09:32:47.227Z
             transaction_id: fa3d9290-0991-4a10-8ac2-4012f7d58d3f
-            message_id: b2e2db5b-7454-4d82-bba3-9e8ae757b455
+            message_id: 99df8a94-937d-4a07-9e73-9b1b62b80a70
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -537,354 +599,416 @@ steps:
               descriptor:
                 name: BPP Name
               providers:
-                - id: SCH_PROVIDER_1bc80e8d-cc90-4652-89a7-3e75aac66297
+                - categories:
+                    - descriptor:
+                        code: MUTUAL_FUNDS
+                        name: Mutual Funds
+                      id: CAT_MUTUAL_FUNDS_fa3bf404-cb55-4b20-9b5e-82f44802a3f9
+                    - descriptor:
+                        code: OPEN_ENDED
+                        name: Open Ended
+                      id: CAT_OPEN_ENDED_6e475a0f-74d4-487d-9a03-1a03f4d28402
+                      parent_category_id: CAT_MUTUAL_FUNDS_fa3bf404-cb55-4b20-9b5e-82f44802a3f9
+                    - descriptor:
+                        code: OPEN_ENDED_EQUITY
+                        name: Equity
+                      id: CAT_OPEN_ENDED_EQUITY_19420a38-6c9c-49bb-8dae-5943dc11591c
+                      parent_category_id: CAT_OPEN_ENDED_6e475a0f-74d4-487d-9a03-1a03f4d28402
+                    - descriptor:
+                        code: OPEN_ENDED_EQUITY_MIDCAP
+                        name: Mid Cap Fund
+                      id: CAT_OPEN_ENDED_EQUITY_MIDCAP_cce734a2-a8b4-43a2-9cfe-905183a221e2
+                      parent_category_id: CAT_OPEN_ENDED_EQUITY_19420a38-6c9c-49bb-8dae-5943dc11591c
                   descriptor:
                     name: Seller App Name
-                  categories:
-                    - id: CAT_MUTUAL_FUNDS_8d81adf3-47e5-4499-80fd-4545d8aaa285
-                      descriptor:
-                        name: Mutual Funds
-                        code: MUTUAL_FUNDS
-                    - id: CAT_OPEN_ENDED_04ddcf7d-7a32-47fb-8fca-d36ff5248e93
-                      descriptor:
-                        name: Open Ended
-                        code: OPEN_ENDED
-                      parent_category_id: CAT_MUTUAL_FUNDS_8d81adf3-47e5-4499-80fd-4545d8aaa285
-                    - id: CAT_OPEN_ENDED_EQUITY_e44325fb-1727-4bf9-bd24-98d9b5127ea3
-                      descriptor:
-                        name: Equity
-                        code: OPEN_ENDED_EQUITY
-                      parent_category_id: CAT_OPEN_ENDED_04ddcf7d-7a32-47fb-8fca-d36ff5248e93
-                    - id: CAT_OPEN_ENDED_EQUITY_MIDCAP_3bd6b9b8-50ab-4a01-ab2c-05f03938b42f
-                      descriptor:
-                        name: Mid Cap Fund
-                        code: OPEN_ENDED_EQUITY_MIDCAP
-                      parent_category_id: CAT_OPEN_ENDED_EQUITY_e44325fb-1727-4bf9-bd24-98d9b5127ea3
-                  items:
-                    - id: SCH_ABC_MID_CAP_FUND_f4c51d8c-bb2d-43e8-ba74-4ac937266ec4
-                      descriptor:
-                        name: ABC Mid Cap Fund
-                        code: SCHEME
-                      category_ids:
-                        - CAT_OPEN_ENDED_EQUITY_MIDCAP_3bd6b9b8-50ab-4a01-ab2c-05f03938b42f
-                      creator:
-                        descriptor:
-                          name: ABC Mutual Fund
-                      matched: true
-                      tags:
-                        - display: true
-                          descriptor:
-                            name: Scheme Information
-                            code: SCHEME_INFORMATION
-                          list:
-                            - descriptor:
-                                name: Status
-                                code: STATUS
-                              value: active
-                            - descriptor:
-                                name: Lockin Period (days)
-                                code: LOCKIN_PERIOD_IN_DAYS
-                              value: "365"
-                            - descriptor:
-                                name: NFO Start
-                                code: NFO_START_DATE
-                              value: 2024-07-25
-                            - descriptor:
-                                name: NFO End
-                                code: NFO_END_DATE
-                              value: 2024-08-10
-                            - descriptor:
-                                name: NFO Allotment Date
-                                code: NFO_ALLOTMENT_DATE
-                              value: 2024-08-15
-                            - descriptor:
-                                name: NFO Reopen Date
-                                code: NFO_REOPEN_DATE
-                              value: 2024-08-16
-                            - descriptor:
-                                name: Entry Load
-                                code: ENTRY_LOAD
-                              value: no entry load
-                            - descriptor:
-                                name: Exit Load
-                                code: EXIT_LOAD
-                              value: 1% on exit
-                            - descriptor:
-                                name: Scheme Offer Documents
-                                code: OFFER_DOCUMENTS
-                              value: https://sellerapp.com/docs/scheme-offer.pdf
-                            - descriptor:
-                                name: Investor Allow List
-                                code: INVESTOR_ALLOW_LIST
-                              value: empty
-                            - descriptor:
-                                name: Investor Black List
-                                code: INVESTOR_BLACK_LIST
-                              value: empty
-                    - id: PLAN_ABC_MID_CAP_FUND_REGULAR_GROWT_4401c5ae-cf4d-41c1-8304-dbec328e9449
-                      descriptor:
-                        name: ABC Mid Cap Fund - Regular - Growth
-                        code: SCHEME_PLAN
-                      creator:
-                        descriptor:
-                          name: ABC Mutual Fund
-                      category_ids:
-                        - CAT_OPEN_ENDED_EQUITY_MIDCAP_3bd6b9b8-50ab-4a01-ab2c-05f03938b42f
-                      parent_item_id: SCH_ABC_MID_CAP_FUND_f4c51d8c-bb2d-43e8-ba74-4ac937266ec4
-                      fulfillment_ids:
-                        - FF_LUMPSUM_e37d1e48-67e2-425b-b04f-fb432a2e50f6
-                        - FF_SIP_MONTHLY_d1251318-7126-4e96-bcd6-dbef71d24899
-                        - FF_SIP_DAILY_BUSINESS_066ef0bb-c677-4ecc-9b72-1b46175993cf
-                        - FF_SIP_DAILY_CALENDAR_b3e6ee9c-481e-48d9-930e-3e663af03ad3
-                        - FF_INSTANT_REDEMPTION_75659952-67f4-4112-a5c2-2ba78d4be579
-                        - FF_REDEMPTION_56e3f856-3fec-4971-a63d-afab2a543bd2
-                      matched: true
-                      tags:
-                        - display: true
-                          descriptor:
-                            name: Plan Information
-                            code: PLAN_INFORMATION
-                          list:
-                            - descriptor:
-                                name: Consumer Terms & Conditions
-                                code: CONSUMER_TNC
-                              value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
-                        - display: true
-                          descriptor:
-                            name: Plan Identifiers
-                            code: PLAN_IDENTIFIERS
-                          list:
-                            - descriptor:
-                                name: ISIN
-                                code: ISIN
-                              value: IN123214324
-                            - descriptor:
-                                name: RTA Identifier
-                                code: RTA_IDENTIFIER
-                              value: 02BZ
-                            - descriptor:
-                                name: AMFI Identifier
-                                code: AMFI_IDENTIFIER
-                              value: "125487"
-                        - display: true
-                          descriptor:
-                            name: Plan Options
-                            code: PLAN_OPTIONS
-                          list:
-                            - descriptor:
-                                name: Plan
-                                code: PLAN
-                              value: REGULAR
-                            - descriptor:
-                                name: Option
-                                code: OPTION
-                              value: IDCW
-                            - descriptor:
-                                name: IDCW Option
-                                code: IDCW_OPTION
-                              value: PAYOUT
                   fulfillments:
-                    - id: FF_LUMPSUM_e37d1e48-67e2-425b-b04f-fb432a2e50f6
-                      type: LUMPSUM
+                    - id: FF_LUMPSUM_63938cf2-1f50-4ee5-8876-695c993b988f
                       tags:
-                        - display: true
-                          descriptor:
-                            name: Thresholds
+                        - descriptor:
                             code: THRESHOLDS
+                            name: Thresholds
+                          display: true
                           list:
                             - descriptor:
-                                name: Amount Minimum
                                 code: AMOUNT_MIN
+                                name: Amount Minimum
                               value: "1000"
                             - descriptor:
-                                name: Amount Maximum
                                 code: AMOUNT_MAX
+                                name: Amount Maximum
                               value: "10000"
                             - descriptor:
-                                name: Amount Multiples
                                 code: AMOUNT_MULTIPLES
+                                name: Amount Multiples
                               value: "1"
-                    - id: FF_SIP_MONTHLY_d1251318-7126-4e96-bcd6-dbef71d24899
-                      type: SIP
+                      type: LUMPSUM
+                    - id: FF_SIP_MONTHLY_077333bd-b09e-4f14-af91-39f34ebdd7ea
                       tags:
-                        - display: true
-                          descriptor:
-                            name: Thresholds
+                        - descriptor:
                             code: THRESHOLDS
+                            name: Thresholds
+                          display: true
                           list:
                             - descriptor:
-                                name: Frequency
                                 code: FREQUENCY
+                                name: Frequency
                               value: P1M
                             - descriptor:
-                                name: Frequency Dates
                                 code: FREQUENCY_DATES
+                                name: Frequency Dates
                               value: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
                             - descriptor:
-                                name: Amount Minimum
                                 code: AMOUNT_MIN
+                                name: Amount Minimum
                               value: "5000"
                             - descriptor:
-                                name: Amount Maximum
                                 code: AMOUNT_MAX
+                                name: Amount Maximum
                               value: "50000"
                             - descriptor:
-                                name: Amount Multiples
                                 code: AMOUNT_MULTIPLES
+                                name: Amount Multiples
                               value: "1"
                             - descriptor:
-                                name: Installments Count Minimum
                                 code: INSTALMENTS_COUNT_MIN
+                                name: Installments Count Minimum
                               value: "6"
                             - descriptor:
-                                name: Installments Count Maximum
                                 code: INSTALMENTS_COUNT_MAX
+                                name: Installments Count Maximum
                               value: "12"
                             - descriptor:
-                                name: Cumulative Amount Minimum
                                 code: CUMULATIVE_AMOUNT_MIN
+                                name: Cumulative Amount Minimum
                               value: "30000"
-                    - id: FF_SIP_DAILY_BUSINESS_066ef0bb-c677-4ecc-9b72-1b46175993cf
                       type: SIP
+                    - id: FF_SIP_DAILY_BUSINESS_2a3c0337-4e3f-4d57-9add-354e5f282ef6
                       tags:
-                        - display: true
-                          descriptor:
-                            name: Thresholds
+                        - descriptor:
                             code: THRESHOLDS
+                            name: Thresholds
+                          display: true
                           list:
                             - descriptor:
-                                name: Frequency
                                 code: FREQUENCY
+                                name: Frequency
                               value: P1D
                             - descriptor:
-                                name: Frequency Day Type
                                 code: FREQUENCY_DAY_TYPE
+                                name: Frequency Day Type
                               value: BUSINESS
                             - descriptor:
-                                name: Amount Minimum
                                 code: AMOUNT_MIN
+                                name: Amount Minimum
                               value: "1000"
                             - descriptor:
-                                name: Amount Maximum
                                 code: AMOUNT_MAX
+                                name: Amount Maximum
                               value: "10000"
                             - descriptor:
-                                name: Amount Multiples
                                 code: AMOUNT_MULTIPLES
+                                name: Amount Multiples
                               value: "1"
                             - descriptor:
-                                name: Installments Count Minimum
                                 code: INSTALMENTS_COUNT_MIN
+                                name: Installments Count Minimum
                               value: "30"
                             - descriptor:
-                                name: Installments Count Maximum
                                 code: INSTALMENTS_COUNT_MAX
+                                name: Installments Count Maximum
                               value: "300"
                             - descriptor:
-                                name: Cumulative Amount Minimum
                                 code: CUMULATIVE_AMOUNT_MIN
+                                name: Cumulative Amount Minimum
                               value: "30000"
-                    - id: FF_SIP_DAILY_CALENDAR_b3e6ee9c-481e-48d9-930e-3e663af03ad3
                       type: SIP
+                    - id: FF_SIP_DAILY_CALENDAR_ab366458-6f1e-4aee-b275-4f2e09cc2ac8
                       tags:
-                        - display: true
-                          descriptor:
-                            name: Thresholds
+                        - descriptor:
                             code: THRESHOLDS
+                            name: Thresholds
+                          display: true
                           list:
                             - descriptor:
-                                name: Frequency
                                 code: FREQUENCY
+                                name: Frequency
                               value: P1D
                             - descriptor:
-                                name: Frequency Day Type
                                 code: FREQUENCY_DAY_TYPE
+                                name: Frequency Day Type
                               value: CALENDAR
                             - descriptor:
-                                name: Amount Minimum
                                 code: AMOUNT_MIN
+                                name: Amount Minimum
                               value: "1000"
                             - descriptor:
-                                name: Amount Maximum
                                 code: AMOUNT_MAX
+                                name: Amount Maximum
                               value: "10000"
                             - descriptor:
-                                name: Amount Multiples
                                 code: AMOUNT_MULTIPLES
+                                name: Amount Multiples
                               value: "1"
                             - descriptor:
-                                name: Installments Count Minimum
                                 code: INSTALMENTS_COUNT_MIN
+                                name: Installments Count Minimum
                               value: "30"
                             - descriptor:
-                                name: Installments Count Maximum
                                 code: INSTALMENTS_COUNT_MAX
+                                name: Installments Count Maximum
                               value: "300"
                             - descriptor:
-                                name: Cumulative Amount Minimum
                                 code: CUMULATIVE_AMOUNT_MIN
+                                name: Cumulative Amount Minimum
                               value: "30000"
-                    - id: FF_REDEMPTION_56e3f856-3fec-4971-a63d-afab2a543bd2
-                      type: REDEMPTION
+                      type: SIP
+                    - id: FF_REDEMPTION_01e83167-bfdb-49eb-822e-fd8fc1b7d018
                       tags:
-                        - display: true
-                          descriptor:
-                            name: Thresholds
+                        - descriptor:
                             code: THRESHOLDS
+                            name: Thresholds
+                          display: true
                           list:
                             - descriptor:
-                                name: Amount Minimum
                                 code: AMOUNT_MIN
+                                name: Amount Minimum
                               value: "1000"
                             - descriptor:
-                                name: Amount Maximum
                                 code: AMOUNT_MAX
+                                name: Amount Maximum
                               value: "10000"
                             - descriptor:
-                                name: Amount Multiples
                                 code: AMOUNT_MULTIPLES
+                                name: Amount Multiples
                               value: "1"
                             - descriptor:
-                                name: Units Minimum
                                 code: UNITS_MIN
+                                name: Units Minimum
                               value: "1"
                             - descriptor:
-                                name: Units Maximum
                                 code: UNITS_MAX
+                                name: Units Maximum
                               value: "500"
                             - descriptor:
-                                name: Units Multiples
                                 code: UNITS_MULTIPLES
+                                name: Units Multiples
                               value: "1"
-                    - id: FF_INSTANT_REDEMPTION_75659952-67f4-4112-a5c2-2ba78d4be579
-                      type: INSTANT_REDEMPTION
+                      type: REDEMPTION
+                    - id: FF_INSTANT_REDEMPTION_748a7d3f-7a2e-4195-ab6d-699be43c9410
                       tags:
-                        - display: true
-                          descriptor:
-                            name: Thresholds
+                        - descriptor:
                             code: THRESHOLDS
+                            name: Thresholds
+                          display: true
                           list:
                             - descriptor:
-                                name: Amount Minimum
                                 code: AMOUNT_MIN
+                                name: Amount Minimum
                               value: "1000"
                             - descriptor:
-                                name: Amount Maximum
                                 code: AMOUNT_MAX
+                                name: Amount Maximum
                               value: "50000"
+                      type: INSTANT_REDEMPTION
+                  id: SCH_PROVIDER_dc1a2811-30e6-4228-a9f4-a9f20e42c106
+                  items:
+                    - category_ids:
+                        - CAT_OPEN_ENDED_EQUITY_MIDCAP_cce734a2-a8b4-43a2-9cfe-905183a221e2
+                      creator:
+                        descriptor:
+                          name: ABC Mutual Fund
+                      descriptor:
+                        code: SCHEME
+                        name: ABC Mid Cap Fund
+                      id: SCH_ABC_MID_CAP_FUND_2dd2879c-25ae-470c-9eac-2153e83dba99
+                      matched: true
+                      tags:
+                        - descriptor:
+                            code: SCHEME_INFORMATION
+                            name: Scheme Information
+                          display: true
+                          list:
+                            - descriptor:
+                                code: STATUS
+                                name: Status
+                              value: active
+                            - descriptor:
+                                code: LOCKIN_PERIOD_IN_DAYS
+                                name: Lockin Period (days)
+                              value: "365"
+                            - descriptor:
+                                code: NFO_START_DATE
+                                name: NFO Start
+                              value: 2024-07-25
+                            - descriptor:
+                                code: NFO_END_DATE
+                                name: NFO End
+                              value: 2024-08-10
+                            - descriptor:
+                                code: NFO_ALLOTMENT_DATE
+                                name: NFO Allotment Date
+                              value: 2024-08-15
+                            - descriptor:
+                                code: NFO_REOPEN_DATE
+                                name: NFO Reopen Date
+                              value: 2024-08-16
+                            - descriptor:
+                                code: ENTRY_LOAD
+                                name: Entry Load
+                              value: no entry load
+                            - descriptor:
+                                code: EXIT_LOAD
+                                name: Exit Load
+                              value: 1% on exit
+                            - descriptor:
+                                code: OFFER_DOCUMENTS
+                                name: Scheme Offer Documents
+                              value: https://sellerapp.com/docs/scheme-offer.pdf
+                            - descriptor:
+                                code: INVESTOR_ALLOW_LIST
+                                name: Investor Allow List
+                              value: empty
+                            - descriptor:
+                                code: INVESTOR_BLACK_LIST
+                                name: Investor Black List
+                              value: empty
+                    - category_ids:
+                        - CAT_OPEN_ENDED_EQUITY_MIDCAP_cce734a2-a8b4-43a2-9cfe-905183a221e2
+                      creator:
+                        descriptor:
+                          name: ABC Mutual Fund
+                      descriptor:
+                        code: SCHEME_PLAN
+                        name: ABC Mid Cap Fund - Regular - Growth
+                      fulfillment_ids:
+                        - FF_LUMPSUM_63938cf2-1f50-4ee5-8876-695c993b988f
+                        - FF_SIP_MONTHLY_077333bd-b09e-4f14-af91-39f34ebdd7ea
+                        - FF_SIP_DAILY_BUSINESS_2a3c0337-4e3f-4d57-9add-354e5f282ef6
+                        - FF_SIP_DAILY_CALENDAR_ab366458-6f1e-4aee-b275-4f2e09cc2ac8
+                        - FF_INSTANT_REDEMPTION_748a7d3f-7a2e-4195-ab6d-699be43c9410
+                        - FF_REDEMPTION_01e83167-bfdb-49eb-822e-fd8fc1b7d018
+                      id: PLAN_ABC_MID_CAP_FUND_REGULAR_GROWT_0c772037-3856-4ca5-a4d5-942ee47b46f4
+                      matched: true
+                      parent_item_id: SCH_ABC_MID_CAP_FUND_2dd2879c-25ae-470c-9eac-2153e83dba99
+                      tags:
+                        - descriptor:
+                            code: PLAN_INFORMATION
+                            name: Plan Information
+                          display: true
+                          list:
+                            - descriptor:
+                                code: CONSUMER_TNC
+                                name: Consumer Terms & Conditions
+                              value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                        - descriptor:
+                            code: PLAN_IDENTIFIERS
+                            name: Plan Identifiers
+                          display: true
+                          list:
+                            - descriptor:
+                                code: ISIN
+                                name: ISIN
+                              value: IN123214324
+                            - descriptor:
+                                code: RTA_IDENTIFIER
+                                name: RTA Identifier
+                              value: 02BZ
+                            - descriptor:
+                                code: AMFI_IDENTIFIER
+                                name: AMFI Identifier
+                              value: "125487"
+                        - descriptor:
+                            code: PLAN_OPTIONS
+                            name: Plan Options
+                          display: true
+                          list:
+                            - descriptor:
+                                code: PLAN
+                                name: Plan
+                              value: REGULAR
+                            - descriptor:
+                                code: OPTION
+                                name: Option
+                              value: IDCW
+                            - descriptor:
+                                code: IDCW_OPTION
+                                name: IDCW Option
+                              value: PAYOUT
+                    - category_ids:
+                        - CAT_OPEN_ENDED_EQUITY_MIDCAP_cce734a2-a8b4-43a2-9cfe-905183a221e2
+                      creator:
+                        descriptor:
+                          name: ABC Mutual Fund
+                      descriptor:
+                        code: SCHEME_PLAN
+                        name: ABC Mid Cap Fund - Regular - Growth
+                      fulfillment_ids:
+                        - FF_LUMPSUM_63938cf2-1f50-4ee5-8876-695c993b988f
+                        - FF_SIP_MONTHLY_077333bd-b09e-4f14-af91-39f34ebdd7ea
+                        - FF_SIP_DAILY_BUSINESS_2a3c0337-4e3f-4d57-9add-354e5f282ef6
+                        - FF_SIP_DAILY_CALENDAR_ab366458-6f1e-4aee-b275-4f2e09cc2ac8
+                        - FF_INSTANT_REDEMPTION_748a7d3f-7a2e-4195-ab6d-699be43c9410
+                        - FF_REDEMPTION_01e83167-bfdb-49eb-822e-fd8fc1b7d018
+                      id: PLAN_ABC_MID_CAP_FUND_REGULAR_GROWT_5dd81e3e-426f-49ef-9f07-5e4fad90c679
+                      matched: true
+                      parent_item_id: SCH_ABC_MID_CAP_FUND_2dd2879c-25ae-470c-9eac-2153e83dba99
+                      tags:
+                        - descriptor:
+                            code: PLAN_INFORMATION
+                            name: Plan Information
+                          display: true
+                          list:
+                            - descriptor:
+                                code: CONSUMER_TNC
+                                name: Consumer Terms & Conditions
+                              value: https://sellerapp.com/legal/ondc:fis14/consumer_tnc.html
+                        - descriptor:
+                            code: PLAN_IDENTIFIERS
+                            name: Plan Identifiers
+                          display: true
+                          list:
+                            - descriptor:
+                                code: ISIN
+                                name: ISIN
+                              value: IN123214324
+                            - descriptor:
+                                code: RTA_IDENTIFIER
+                                name: RTA Identifier
+                              value: 02BZ
+                            - descriptor:
+                                code: AMFI_IDENTIFIER
+                                name: AMFI Identifier
+                              value: "125487"
+                        - descriptor:
+                            code: PLAN_OPTIONS
+                            name: Plan Options
+                          display: true
+                          list:
+                            - descriptor:
+                                code: PLAN
+                                name: Plan
+                              value: REGULAR
+                            - descriptor:
+                                code: OPTION
+                                name: Option
+                              value: IDCW
+                            - descriptor:
+                                code: IDCW_OPTION
+                                name: IDCW Option
+                              value: PAYOUT
               tags:
-                - display: false
-                  descriptor:
-                    name: BPP Terms of Engagement
+                - descriptor:
                     code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
                   list:
                     - descriptor:
-                        name: Static Terms (Transaction Level)
                         code: STATIC_TERMS
+                        name: Static Terms (Transaction Level)
                       value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
                     - descriptor:
-                        name: Offline Contract
                         code: OFFLINE_CONTRACT
+                        name: Offline Contract
                       value: "true"
         type: request
         description: please add relevant description
