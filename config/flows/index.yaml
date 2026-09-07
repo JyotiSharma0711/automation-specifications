@@ -96,7 +96,7 @@ flows:
       order: 7
     tags:
       - WORKBENCH
-      # - REPORTABLE
+      - REPORTABLE
     description: A personal loan origination flow enabling borrowers to search, apply, and track their application while lenders perform offline verification and underwriting to deliver a lending decision.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Offline_With_IGM_v-1_0_0_.yaml
@@ -108,7 +108,7 @@ flows:
       order: 8
     tags:
       - WORKBENCH
-      # - REPORTABLE
+      - REPORTABLE
     description: A borrower discovers and selects a personal loan offer within an ONDC marketplace, then completes the full loan origination process—including KYC verification, account validation, mandate setup, and documentation—through seamless single-platform redirection with continuous status updates throughout the application lifecycle.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Single_Redirection_With_IGM_v-1_0_0_.yaml
