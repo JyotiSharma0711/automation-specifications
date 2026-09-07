@@ -88,9 +88,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: search
-            timestamp: 2026-09-02T12:40:49.553Z
+            timestamp: 2026-09-07T18:06:51.684Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 42461d05-b69a-482e-aab4-287f56905aaf
+            message_id: f9cac3d7-2e53-4077-9db5-75abafcc5bd1
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -519,9 +519,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_search
-            timestamp: 2026-09-02T12:40:49.685Z
+            timestamp: 2026-09-07T18:06:51.726Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 42461d05-b69a-482e-aab4-287f56905aaf
+            message_id: f9cac3d7-2e53-4077-9db5-75abafcc5bd1
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -538,7 +538,7 @@ steps:
               descriptor:
                 name: ICICI Bank
               providers:
-                - id: provider_5eca47b7-290f-41c3-9b1a-58363c969d37
+                - id: provider_c2b8f6ea-86fe-45b0-962d-307a02374cb0
                   descriptor:
                     images:
                       - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -547,33 +547,33 @@ steps:
                     short_desc: ICICI Bank Ltd
                     long_desc: ICICI Bank Ltd, India.
                   categories:
-                    - id: cat_loan_a2dcd2ab-a446-40c6-bf28-75f9e5600f08
+                    - id: cat_loan_d31d81f6-2337-444e-a115-e16455634404
                       descriptor:
                         code: LOAN
                         name: Loan
-                    - id: cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                      parent_category_id: cat_loan_a2dcd2ab-a446-40c6-bf28-75f9e5600f08
+                    - id: cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                      parent_category_id: cat_loan_d31d81f6-2337-444e-a115-e16455634404
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan
-                    - id: cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
-                      parent_category_id: cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
+                    - id: cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
+                      parent_category_id: cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
                       descriptor:
                         code: BUREAU_LOAN
                         name: Bureau Loan
-                    - id: cat_pre_qualifier_074af912-ff0b-4272-857b-3272c7a1d661
-                      parent_category_id: cat_loan_a2dcd2ab-a446-40c6-bf28-75f9e5600f08
+                    - id: cat_pre_qualifier_885a6b56-8d96-4938-89b4-727fa52a713f
+                      parent_category_id: cat_loan_d31d81f6-2337-444e-a115-e16455634404
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                   items:
-                    - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                    - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Offline Journey
                       category_ids:
-                        - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                        - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                        - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                        - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                       fulfillment_ids:
                         - F1
                       tags:
@@ -623,19 +623,19 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: personal_loan_info_3edc8155-e219-4e89-9a6c-d6ee15198b6a
+                          id: personal_loan_info_3c225e93-e8c3-4e36-b66f-3d304343ace4
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: bureau_personal_loan_b360a193-936d-4cfe-8573-79f691f3ff48
+                    - id: bureau_personal_loan_33ec07c4-264f-476d-bd5a-d25386d05c05
                       descriptor:
                         code: PERSONAL_LOAN
                         name: Personal Loan without AA - Single Redirection
                       category_ids:
-                        - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                        - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                        - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                        - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                       fulfillment_ids:
                         - F2
                       tags:
@@ -685,18 +685,18 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: personal_loan_info_3edc8155-e219-4e89-9a6c-d6ee15198b6a
+                          id: personal_loan_info_3c225e93-e8c3-4e36-b66f-3d304343ace4
                           mime_type: text/html
                           url: undefined/forms/ONDC:FIS12/personal_loan_information_form/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined
                           resubmit: false
                           multiple_sumbissions: false
                         required: true
-                    - id: personal_loan_61b99763-b571-4c4b-91a1-03d3b4d037fe
+                    - id: personal_loan_03619a50-7246-4cdd-935a-a68f6fc69940
                       descriptor:
                         code: PRE_QUALIFIER
                         name: Pre Qualifier
                       category_ids:
-                        - cat_pre_qualifier_074af912-ff0b-4272-857b-3272c7a1d661
+                        - cat_pre_qualifier_885a6b56-8d96-4938-89b4-727fa52a713f
                       fulfillment_ids:
                         - F3
                   fulfillments:
@@ -902,23 +902,23 @@ steps:
     examples:
       - name: example for html_form
         payload:
-          panName: John Doe
-          personalemail: john.doe@gmail.com
-          officialemail: john.doe@gmail.com
-          dob: 2026-09-23
-          gender: female
-          pan: BAJPC4350M
-          contactNumber: "9284770148"
+          panName: Devender Dhyani
+          personalemail: devender.dhyani+19@thewitslab.com
+          officialemail: devender.dhyani+19@thewitslab.com
+          dob: 2026-08-31
+          gender: male
+          pan: GHUEJ3647V
+          contactNumber: "9876543212"
           employmentType: salaried
-          income: "78"
-          companyName: rue
-          udyamNumber: ""
-          addressL1: hlkjlkj
-          addressL2: hkkhll
-          city: delhi
-          state: Delhi
-          pincode: "160103"
-          endUse: travel
+          income: "121223"
+          companyName: witsinnovationlab
+          udyamNumber: "1234"
+          addressL1: Sixth
+          addressL2: "21"
+          city: Masury
+          state: Ohio
+          pincode: "121005"
+          endUse: consumerDurablePurchase
           derivedData: {}
           bureauConsent: on
           formId: <%= formId %>
@@ -996,9 +996,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: select
-            timestamp: 2026-09-02T12:41:11.699Z
+            timestamp: 2026-09-07T18:07:32.849Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: e52944de-1919-4613-ab77-859402c9b3b1
+            message_id: e4066e4e-12be-462e-aa1f-689555c31635
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1015,13 +1015,13 @@ steps:
               provider:
                 id: PROVIDER_ID
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   xinput:
                     form:
-                      id: personal_loan_info_3edc8155-e219-4e89-9a6c-d6ee15198b6a
+                      id: personal_loan_info_3c225e93-e8c3-4e36-b66f-3d304343ace4
                     form_response:
                       status: SUCCESS
-                      submission_id: 5c8276ef-6dd2-4cf6-b6a4-ee2acf656e44
+                      submission_id: 27b83315-3c9a-49e3-a3e6-792998ee6008
         type: request
         description: The BAP selects a specific personal loan product for foreclosure
           from the BPP and submits the borrower information necessary for lender
@@ -1036,7 +1036,7 @@ steps:
       disbursement terms, loan duration, and the e-KYC form required to initiate
       offline verification and underwriting.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIFBST1ZJREVSIE1BUFBJTkcKICBjb25zdCBwcm92aWRlcklkID0gc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkOwoKICBpZiAocHJvdmlkZXJJZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gcHJvdmlkZXJJZDsKICB9CgogIGlmIChwcm92aWRlcklkICYmIG9yZGVyPy5wcm92aWRlcikgewogICAgb3JkZXIucHJvdmlkZXIuaWQgPSBwcm92aWRlcklkOwogIH0KCiAgLy8gSVRFTSBNQVBQSU5HCiAgY29uc3Qgc2VsZWN0ZWRJdGVtID0gc2Vzc2lvbkRhdGE/Lml0ZW0/LlswXTsKCiAgaWYgKHNlbGVjdGVkSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpdGVtMC5pZCA9IHNlbGVjdGVkSXRlbS5pZDsKICAgIGNvbnN0IG9uU2VhcmNoSXRlbSA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/Lml0ZW1zKQogICAgICA/IHNlc3Npb25EYXRhLml0ZW1zLmZpbmQoKGkpID0+IGk/LmlkID09PSBzZWxlY3RlZEl0ZW0uaWQpCiAgICAgIDogbnVsbDsKCiAgICBjb25zdCBzb3VyY2VJdGVtID0gb25TZWFyY2hJdGVtIHx8IHNlbGVjdGVkSXRlbTsKCiAgICBpZiAoc291cmNlSXRlbS5jYXRlZ29yeV9pZHM/Lmxlbmd0aCkgewogICAgICBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc291cmNlSXRlbS5jYXRlZ29yeV9pZHNdOwogICAgfQoKICAgIGlmIChzb3VyY2VJdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zb3VyY2VJdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgICB9CiAgfQoKICAvLyBYSU5QVVQgRk9STSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IHVuaXF1ZUZvcm1JZCA9IGBla3ljX2RldGFpbHNfJHt1dWlkdjQoKX1gOwogICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm0uaWQgPSB1bmlxdWVGb3JtSWQ7CiAgICBvcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybS51cmwgPQogICAgICBjcmVhdGVGb3JtVVJMKCJPTkRDOkZJUzEyIiwgIkVreWNfZGV0YWlsc192ZXJpZmljYXRpb25fc3RhdHVzIiwgc2Vzc2lvbkRhdGEpICsKICAgICAgIiZiYXBfdXJpPSIgKwogICAgICBlbmNvZGVVUklDb21wb25lbnQoZXhpc3RpbmdQYXlsb2FkPy5jb250ZXh0Py5iYXBfdXJpIHx8ICIiKTsKICB9CgogIC8vIFFVT1RFIE1BUFBJTkcKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBvcmRlci5xdW90ZS5pZCA9IGBxdW90ZV8ke3V1aWR2NCgpfWA7CiAgICBzZXNzaW9uRGF0YS5xdW90ZV9pZCA9IG9yZGVyLnF1b3RlLmlkOwogIH0KCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIFBST1ZJREVSIE1BUFBJTkcKICBjb25zdCBwcm92aWRlcklkID0gc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkOwoKICBpZiAocHJvdmlkZXJJZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gcHJvdmlkZXJJZDsKICB9CgogIGlmIChwcm92aWRlcklkICYmIG9yZGVyPy5wcm92aWRlcikgewogICAgb3JkZXIucHJvdmlkZXIuaWQgPSBwcm92aWRlcklkOwogIH0KCiAgLy8gSVRFTSBNQVBQSU5HCiAgY29uc3Qgc2VsZWN0ZWRJdGVtID0gc2Vzc2lvbkRhdGE/Lml0ZW0/LlswXTsKCiAgaWYgKHNlbGVjdGVkSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpdGVtMC5pZCA9IHNlbGVjdGVkSXRlbS5pZDsKICAgIGNvbnN0IG9uU2VhcmNoSXRlbSA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/Lml0ZW1zKQogICAgICA/IHNlc3Npb25EYXRhLml0ZW1zLmZpbmQoKGkpID0+IGk/LmlkID09PSBzZWxlY3RlZEl0ZW0uaWQpCiAgICAgIDogbnVsbDsKCiAgICBjb25zdCBzb3VyY2VJdGVtID0gb25TZWFyY2hJdGVtIHx8IHNlbGVjdGVkSXRlbTsKCiAgICBpZiAoc291cmNlSXRlbS5jYXRlZ29yeV9pZHM/Lmxlbmd0aCkgewogICAgICBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc291cmNlSXRlbS5jYXRlZ29yeV9pZHNdOwogICAgfQoKICAgIGlmIChzb3VyY2VJdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zb3VyY2VJdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgICB9CiAgfQoKICAvLyBYSU5QVVQgRk9STSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IHVuaXF1ZUZvcm1JZCA9IGBla3ljX2RldGFpbHNfJHt1dWlkdjQoKX1gOwogICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm0uaWQgPSB1bmlxdWVGb3JtSWQ7CiAgICBvcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybS51cmwgPQogICAgICBjcmVhdGVGb3JtVVJMKCJPTkRDOkZJUzEyIiwgIkVreWNfZGV0YWlsc192ZXJpZmljYXRpb25fc3RhdHVzIiwgc2Vzc2lvbkRhdGEpICsKICAgICAgIiZiYXBfdXJpPSIgKwogICAgICBlbmNvZGVVUklDb21wb25lbnQoZXhpc3RpbmdQYXlsb2FkPy5jb250ZXh0Py5iYXBfdXJpIHx8ICIiKTsKICB9CgogIC8vIFFVT1RFIE1BUFBJTkcKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBvcmRlci5xdW90ZS5pZCA9IGBxdW90ZV8ke3V1aWR2NCgpfWA7CiAgICBzZXNzaW9uRGF0YS5xdW90ZV9pZCA9IG9yZGVyLnF1b3RlLmlkOwogIH0KY29uc3QgY29udGFjdERldGFpbHMgPQogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcjsKCmlmIChjb250YWN0RGV0YWlscykgewogIGNvbnN0IGxvYW5Gb3JtID0KICAgIHNlc3Npb25EYXRhLmZvcm1EYXRhLnBlcnNvbmFsX2xvYW5faW5mb3JtYXRpb25fZm9ybTsKCiAgaWYgKGxvYW5Gb3JtKSB7CiAgICBpZiAoY29udGFjdERldGFpbHMuY29udGFjdCkgewogICAgICBpZiAobG9hbkZvcm0uY29udGFjdE51bWJlcikgewogICAgICAgIGNvbnRhY3REZXRhaWxzLmNvbnRhY3QucGhvbmUgPSBsb2FuRm9ybS5jb250YWN0TnVtYmVyOwogICAgICB9CgogICAgICBpZiAobG9hbkZvcm0ub2ZmaWNpYWxlbWFpbCkgewogICAgICAgIGNvbnRhY3REZXRhaWxzLmNvbnRhY3QuZW1haWwgPSBsb2FuRm9ybS5vZmZpY2lhbGVtYWlsOwogICAgICB9CiAgICB9CgogICAgaWYgKGNvbnRhY3REZXRhaWxzLnBlcnNvbikgewogICAgICBpZiAobG9hbkZvcm0ucGFuTmFtZSkgewogICAgICAgIGNvbnRhY3REZXRhaWxzLnBlcnNvbi5uYW1lID0gbG9hbkZvcm0ucGFuTmFtZTsKICAgICAgfQogICAgfQogIH0KfQogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwoKZnVuY3Rpb24gdmFsaWRhdGUodGFyZ2V0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKCiAgLyoqCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICogT1JERVIgVkFMSURBVElPTgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqLwoKICBpZiAoIXRhcmdldFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2Uub3JkZXIgaW4gcGF5bG9hZCIKICAgIH07CiAgfQoKICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZS5vcmRlcjsKCiAgLyoqCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICogUFJPVklERVIgVkFMSURBVElPTgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqLwoKICBpZiAoIW9yZGVyLnByb3ZpZGVyPy5pZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwcm92aWRlci5pZCBpbiBwYXlsb2FkIgogICAgfTsKICB9CgogIGNvbnN0IGV4cGVjdGVkUHJvdmlkZXJJZCA9CiAgICBzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQ7CgogIGlmICgKICAgIGV4cGVjdGVkUHJvdmlkZXJJZCAmJgogICAgb3JkZXIucHJvdmlkZXIuaWQgIT09IGV4cGVjdGVkUHJvdmlkZXJJZAogICkgewoKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjoKICAgICAgICAiTWlzbWF0Y2ggcHJvdmlkZXIuaWQgd2l0aCBzZXNzaW9uRGF0YSIKICAgIH07CiAgfQoKICAvKioKICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgKiBJVEVNUyBWQUxJREFUSU9OCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICovCgogIGlmICgKICAgICFBcnJheS5pc0FycmF5KG9yZGVyLml0ZW1zKSB8fAogICAgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwCiAgKSB7CgogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtcyBpbiBwYXlsb2FkIgogICAgfTsKICB9CgogIGNvbnN0IGl0ZW0wID0gb3JkZXIuaXRlbXNbMF07CgogIC8qKgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqIElURU0gSUQgVkFMSURBVElPTgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqLwoKICBpZiAoIWl0ZW0wPy5pZCkgewoKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjogIk1pc3NpbmcgaXRlbS5pZCBpbiBwYXlsb2FkIgogICAgfTsKICB9CgogIC8qKgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqIEVYUEVDVEVEIElURU0gVkFMSURBVElPTgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqLwoKICBsZXQgZXhwZWN0ZWRJdGVtOwoKICBpZiAoCiAgICBBcnJheS5pc0FycmF5KHNlc3Npb25EYXRhPy5pdGVtcykgJiYKICAgIHNlc3Npb25EYXRhLml0ZW1zLmxlbmd0aCA+IDAKICApIHsKCiAgICAvKioKICAgICAqIFZhbGlkYXRlIGFnYWluc3Q6CiAgICAgKiAtIEJ1cmVhdSBMb2FuIGl0ZW0KICAgICAqIC0gTm9uLUFBIFBlcnNvbmFsIExvYW4gaXRlbQogICAgICovCgogICAgZXhwZWN0ZWRJdGVtID0KICAgICAgc2Vzc2lvbkRhdGEuaXRlbXMuZmluZCgKICAgICAgICAoaXRlbSkgPT4KICAgICAgICAgIGl0ZW0/LmRlc2NyaXB0b3I/LmNvZGUgPT09CiAgICAgICAgICAgICJQRVJTT05BTF9MT0FOIiAmJgogICAgICAgICAgaXRlbT8uY2F0ZWdvcnlfaWRzPy5zb21lKChjYXRJZCkgPT4KICAgICAgICAgICAgU3RyaW5nKGNhdElkKQogICAgICAgICAgICAgIC50b0xvd2VyQ2FzZSgpCiAgICAgICAgICAgICAgLmluY2x1ZGVzKCJidXJlYXUiKQogICAgICAgICAgKSAmJgogICAgICAgICAgaXRlbT8uZGVzY3JpcHRvcj8ubmFtZQogICAgICAgICAgICA/LnRvTG93ZXJDYXNlKCkKICAgICAgICAgICAgLmluY2x1ZGVzKCJ3aXRob3V0IGFhIikKICAgICAgKTsKCiAgICAvKioKICAgICAqIEZhbGxiYWNrCiAgICAgKi8KCiAgICBpZiAoIWV4cGVjdGVkSXRlbSkgewoKICAgICAgZXhwZWN0ZWRJdGVtID0KICAgICAgICBzZXNzaW9uRGF0YS5pdGVtcy5maW5kKAogICAgICAgICAgKGl0ZW0pID0+CiAgICAgICAgICAgIGl0ZW0/LmRlc2NyaXB0b3I/LmNvZGUgIT09CiAgICAgICAgICAgICJQUkVfUVVBTElGSUVSIgogICAgICAgICk7CiAgICB9CiAgfQoKICBpZiAoCiAgICBleHBlY3RlZEl0ZW0/LmlkICYmCiAgICBpdGVtMC5pZCAhPT0gZXhwZWN0ZWRJdGVtLmlkCiAgKSB7CgogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgIGBNaXNtYXRjaCBpdGVtLmlkIHdpdGggZXhwZWN0ZWQgc2VsZWN0ZWQgaXRlbS4gRXhwZWN0ZWQ6ICR7ZXhwZWN0ZWRJdGVtLmlkfSwgUmVjZWl2ZWQ6ICR7aXRlbTAuaWR9YAogICAgfTsKICB9CgogIC8qKgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqIENBVEVHT1JZIElEUyBWQUxJREFUSU9OCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICovCgogIGlmICgKICAgIGV4cGVjdGVkSXRlbT8uY2F0ZWdvcnlfaWRzICYmCiAgICBBcnJheS5pc0FycmF5KGl0ZW0wPy5jYXRlZ29yeV9pZHMpCiAgKSB7CgogICAgY29uc3QgZXhwZWN0ZWRDYXRlZ29yeUlkcyA9CiAgICAgIFsuLi5leHBlY3RlZEl0ZW0uY2F0ZWdvcnlfaWRzXS5zb3J0KCk7CgogICAgY29uc3QgcmVjZWl2ZWRDYXRlZ29yeUlkcyA9CiAgICAgIFsuLi5pdGVtMC5jYXRlZ29yeV9pZHNdLnNvcnQoKTsKCiAgICBjb25zdCBpc0NhdGVnb3J5TWF0Y2hlZCA9CiAgICAgIEpTT04uc3RyaW5naWZ5KGV4cGVjdGVkQ2F0ZWdvcnlJZHMpID09PQogICAgICBKU09OLnN0cmluZ2lmeShyZWNlaXZlZENhdGVnb3J5SWRzKTsKCiAgICBpZiAoIWlzQ2F0ZWdvcnlNYXRjaGVkKSB7CgogICAgICByZXR1cm4gewogICAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgICBjb2RlOiA0MDAsCiAgICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgICAiTWlzbWF0Y2ggY2F0ZWdvcnlfaWRzIHdpdGggc2VsZWN0ZWQgaXRlbSIKICAgICAgfTsKICAgIH0KICB9CgogIC8qKgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqIEZPUk0gVkFMSURBVElPTgogICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAqLwoKICBpZiAoCiAgICBpdGVtMD8ueGlucHV0Py5mb3JtPy5pZCAmJgogICAgdHlwZW9mIGl0ZW0wLnhpbnB1dC5mb3JtLmlkICE9PSAic3RyaW5nIgogICkgewoKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjoKICAgICAgICAieGlucHV0LmZvcm0uaWQgbXVzdCBiZSBhIHN0cmluZyIKICAgIH07CiAgfQoKICAvKioKICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgKiBTVUNDRVNTCiAgICogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICovCgogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGNvZGU6IDIwMCwKICAgIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIKICB9Owp9
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KICAKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
       defaultPayload:
@@ -1373,9 +1373,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_select
-            timestamp: 2026-09-02T12:41:11.736Z
+            timestamp: 2026-09-07T18:07:32.875Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: e52944de-1919-4613-ab77-859402c9b3b1
+            message_id: e4066e4e-12be-462e-aa1f-689555c31635
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1458,13 +1458,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -1572,7 +1572,7 @@ steps:
                       headings:
                         - JOURNEY_OFFLINE
                     form:
-                      id: ekyc_details_790da860-0542-4aa0-b665-84095391ca97
+                      id: ekyc_details_ad96feb8-2696-4fca-96f9-7ad93397eab7
                       mime_type: application/html
                       url: undefined/forms/ONDC:FIS12/Ekyc_details_verification_status/?transaction_id=37495a18-da5d-42d2-ad74-db69a22618fe&session_id=undefined&bap_uri=https%3A%2F%2Fbap.example.com
                       resubmit: false
@@ -1583,10 +1583,10 @@ steps:
                   type: SEMI_ONLINE
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   stops:
                     - id: "1"
                       type: PERSONAL_INFORMATION
@@ -1637,7 +1637,7 @@ steps:
                         code: PENDING
                         short_desc: Short desc about KYC checklist
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -1689,7 +1689,7 @@ steps:
       status as it progresses through offline verification and underwriting
       toward a lending decision.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IGBzdWJfaWRfJHt1dWlkdjQoKX1gOwogIGNvbnN0IHNlc3Npb25JdGVtID0gc2Vzc2lvbkRhdGE/Lml0ZW0/LlswXTsKCiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwoKICAgIGlmIChzZXNzaW9uSXRlbS5pZCkgewogICAgICBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgfQoKICAgIGlmIChzZXNzaW9uSXRlbS5jYXRlZ29yeV9pZHM/Lmxlbmd0aCkgewogICAgICBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uZnVsZmlsbG1lbnRfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgICB9CiAgfQoKICBpZiAoc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkICYmIG9yZGVyPy5wcm92aWRlcikgewogICAgb3JkZXIucHJvdmlkZXIuaWQgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlclswXS5pZDsKICB9CgogIGlmIChvcmRlcj8uaXRlbXM/LlswXT8ueGlucHV0Py5mb3JtKSB7CiAgICBjb25zdCBmb3JtSWQgPSBzZXNzaW9uRGF0YT8uZm9ybV9pZD8uWzBdOwogICAgaWYgKGZvcm1JZCkgewogICAgICBvcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybS5pZCA9IGZvcm1JZDsKICAgIH0KICB9CgogIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN1Ym1pc3Npb25faWQgPSBzdWJtaXNzaW9uX2lkOwogIH0KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5wYXltZW50cyB8fCBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzOwogIGlmIChBcnJheS5pc0FycmF5KHNhdmVkUGF5bWVudHMpICYmIHNhdmVkUGF5bWVudHMubGVuZ3RoID4gMCAmJiBvcmRlcikgewogICAgb3JkZXIucGF5bWVudHMgPSBzYXZlZFBheW1lbnRzOwogIH0KCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIHsKICAgICAgb3JkZXIucXVvdGUuaWQgPSBxdW90ZUlkOwogICAgfQoKICAgIGNvbnN0IHF1b3RlUHJpY2UgPSBzZXNzaW9uRGF0YT8ucXVvdGVfcHJpY2U/LlswXTsKICAgIGlmIChxdW90ZVByaWNlICYmIG9yZGVyLnF1b3RlLnByaWNlKSB7CiAgICAgIG9yZGVyLnF1b3RlLnByaWNlLnZhbHVlID0gcXVvdGVQcmljZTsKICAgIH0KICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IGBzdWJfaWRfJHt1dWlkdjQoKX1gOwogIGNvbnN0IHNlc3Npb25JdGVtID0gc2Vzc2lvbkRhdGE/Lml0ZW0/LlswXTsKCiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwoKICAgIGlmIChzZXNzaW9uSXRlbS5pZCkgewogICAgICBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgfQoKICAgIGlmIChzZXNzaW9uSXRlbS5jYXRlZ29yeV9pZHM/Lmxlbmd0aCkgewogICAgICBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uZnVsZmlsbG1lbnRfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgICB9CiAgfQoKICBpZiAoc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkICYmIG9yZGVyPy5wcm92aWRlcikgewogICAgb3JkZXIucHJvdmlkZXIuaWQgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlclswXS5pZDsKICB9CgogIGlmIChvcmRlcj8uaXRlbXM/LlswXT8ueGlucHV0Py5mb3JtKSB7CiAgICBjb25zdCBmb3JtSWQgPSBzZXNzaW9uRGF0YT8uZm9ybV9pZD8uWzBdOwogICAgaWYgKGZvcm1JZCkgewogICAgICBvcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybS5pZCA9IGZvcm1JZDsKICAgIH0KICB9CgogIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN1Ym1pc3Npb25faWQgPSBzdWJtaXNzaW9uX2lkOwogIH0KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5wYXltZW50cyB8fCBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzOwogIGlmIChBcnJheS5pc0FycmF5KHNhdmVkUGF5bWVudHMpICYmIHNhdmVkUGF5bWVudHMubGVuZ3RoID4gMCAmJiBvcmRlcikgewogICAgb3JkZXIucGF5bWVudHMgPSBzYXZlZFBheW1lbnRzOwogIH0KCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIHsKICAgICAgb3JkZXIucXVvdGUuaWQgPSBxdW90ZUlkOwogICAgfQoKICAgIGNvbnN0IHF1b3RlUHJpY2UgPSBzZXNzaW9uRGF0YT8ucXVvdGVfcHJpY2U/LlswXTsKICAgIGlmIChxdW90ZVByaWNlICYmIG9yZGVyLnF1b3RlLnByaWNlKSB7CiAgICAgIG9yZGVyLnF1b3RlLnByaWNlLnZhbHVlID0gcXVvdGVQcmljZTsKICAgIH0KICB9CiAgaWYgKAogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSAmJgogIHNlc3Npb25EYXRhLm9yZGVyWzBdLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcgopIHsKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIgPQogICAgc2Vzc2lvbkRhdGEub3JkZXJbMF0uZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyOwp9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQ/LmNvbnRleHQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgY29udGV4dCBpbiBwYXlsb2FkIiB9OwogIH0KCiAgaWYgKHRhcmdldFBheWxvYWQuY29udGV4dC5hY3Rpb24gIT09ICJvbl9zdGF0dXMiKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJJbnZhbGlkIGFjdGlvbiBpbiBjb250ZXh0IiB9OwogIH0KCiAgaWYgKCF0YXJnZXRQYXlsb2FkPy5tZXNzYWdlPy5vcmRlcikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBtZXNzYWdlLm9yZGVyIGluIHBheWxvYWQiIH07CiAgfQogY29uc3Qgb3JkZXI9dGFyZ2V0UGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgaWYgKCFvcmRlci5wcm92aWRlcj8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcHJvdmlkZXIuaWQgaW4gcGF5bG9hZCIgfTsKICB9CgogCiAgaWYgKCFBcnJheS5pc0FycmF5KG9yZGVyLml0ZW1zKSB8fCBvcmRlci5pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgaXRlbXMgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IGl0ZW0gPSBvcmRlci5pdGVtc1swXTsKCiAgaWYgKCFpdGVtLmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1zWzBdLmlkIGluIHBheWxvYWQiIH07CiAgfQoKICBpZiAoIW9yZGVyPy5xdW90ZT8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcXVvdGUuaWQgaW4gcGF5bG9hZCIgfTsKICB9CgogCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8ucXVvdGVfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBxdW90ZV9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CgogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
       defaultPayload:
@@ -2016,9 +2016,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-02T12:41:11.787Z
+            timestamp: 2026-09-07T18:07:32.908Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 19b4e15e-04e8-4613-aab5-56fefaaf52ca
+            message_id: 562af436-3c35-4d66-bd71-ec40fdc6830e
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2101,13 +2101,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -2206,19 +2206,19 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_790da860-0542-4aa0-b665-84095391ca97
+                      id: ekyc_details_ad96feb8-2696-4fca-96f9-7ad93397eab7
                     form_response:
                       status: OFFLINE_PENDING
-                      submission_id: sub_id_d7229f6b-ff65-4064-baa2-729ae1545e1e
+                      submission_id: sub_id_3a290e3c-2994-4618-90c2-80700f8bb912
               fulfillments:
                 - id: F1
                   type: SEMI_ONLINE
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   state:
                     descriptor:
                       code: INITIATED
@@ -2272,7 +2272,7 @@ steps:
                         code: PENDING
                         short_desc: Short desc about loan agreement checklist
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -2323,7 +2323,7 @@ steps:
       the BAP, conveying the progress of offline verification and underwriting
       toward a final lending decision.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IHNlc3Npb25EYXRhPy5zZWxlY3RlZF9pdGVtc194aW5wdXQ/LlswXT8uZm9ybV9yZXNwb25zZT8uc3VibWlzc2lvbl9pZDsKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CgogIGlmIChzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQgJiYgb3JkZXI/LnByb3ZpZGVyKSB7CiAgICBvcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwoKICB9CgogIGlmIChzZXNzaW9uSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpZiAoc2Vzc2lvbkl0ZW0uaWQpIHsKICAgICAgaXRlbTAuaWQgPSBzZXNzaW9uSXRlbS5pZDsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuY2F0ZWdvcnlfaWRzID0gWy4uLnNlc3Npb25JdGVtLmNhdGVnb3J5X2lkc107CiAgICB9CgogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHNdOwogICAgfQogIH0KCiAgaWYgKG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGZvcm1JZCA9IHNlc3Npb25EYXRhPy5mb3JtX2lkPy5bMF07CiAgICBpZiAoZm9ybUlkKSB7CiAgICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtLmlkID0gZm9ybUlkOwogICAgfQoKICAgIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCA9IHN1Ym1pc3Npb25faWQ7CiAgICB9CiAgfQoKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBjb25zdCBxdW90ZUlkID0gc2Vzc2lvbkRhdGE/LnF1b3RlX2lkPy5bMF07CiAgICBpZiAocXVvdGVJZCkgewogICAgICBvcmRlci5xdW90ZS5pZCA9IHF1b3RlSWQ7CiAgICB9CgogICAgY29uc3QgcXVvdGVQcmljZSA9IHNlc3Npb25EYXRhPy5xdW90ZV9wcmljZT8uWzBdOwogICAgaWYgKHF1b3RlUHJpY2UgJiYgb3JkZXIucXVvdGUucHJpY2UpIHsKICAgICAgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBxdW90ZVByaWNlOwogICAgfQogIH0KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5wYXltZW50cyB8fCBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzOwogIGlmIChBcnJheS5pc0FycmF5KHNhdmVkUGF5bWVudHMpICYmIHNhdmVkUGF5bWVudHMubGVuZ3RoID4gMCAmJiBvcmRlcikgewogICAgb3JkZXIucGF5bWVudHMgPSBzYXZlZFBheW1lbnRzOwogIH0KCiAgaWYgKHNlc3Npb25EYXRhPy5vcmRlcl9pZD8uWzBdICYmIG9yZGVyKSB7CiAgICBvcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwogIH0KCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IHNlc3Npb25EYXRhPy5zZWxlY3RlZF9pdGVtc194aW5wdXQ/LlswXT8uZm9ybV9yZXNwb25zZT8uc3VibWlzc2lvbl9pZDsKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CgogIGlmIChzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQgJiYgb3JkZXI/LnByb3ZpZGVyKSB7CiAgICBvcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwoKICB9CgogIGlmIChzZXNzaW9uSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpZiAoc2Vzc2lvbkl0ZW0uaWQpIHsKICAgICAgaXRlbTAuaWQgPSBzZXNzaW9uSXRlbS5pZDsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuY2F0ZWdvcnlfaWRzID0gWy4uLnNlc3Npb25JdGVtLmNhdGVnb3J5X2lkc107CiAgICB9CgogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHNdOwogICAgfQogIH0KCiAgaWYgKG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGZvcm1JZCA9IHNlc3Npb25EYXRhPy5mb3JtX2lkPy5bMF07CiAgICBpZiAoZm9ybUlkKSB7CiAgICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtLmlkID0gZm9ybUlkOwogICAgfQoKICAgIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCA9IHN1Ym1pc3Npb25faWQ7CiAgICB9CiAgfQoKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBjb25zdCBxdW90ZUlkID0gc2Vzc2lvbkRhdGE/LnF1b3RlX2lkPy5bMF07CiAgICBpZiAocXVvdGVJZCkgewogICAgICBvcmRlci5xdW90ZS5pZCA9IHF1b3RlSWQ7CiAgICB9CgogICAgY29uc3QgcXVvdGVQcmljZSA9IHNlc3Npb25EYXRhPy5xdW90ZV9wcmljZT8uWzBdOwogICAgaWYgKHF1b3RlUHJpY2UgJiYgb3JkZXIucXVvdGUucHJpY2UpIHsKICAgICAgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBxdW90ZVByaWNlOwogICAgfQogIH0KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5wYXltZW50cyB8fCBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzOwogIGlmIChBcnJheS5pc0FycmF5KHNhdmVkUGF5bWVudHMpICYmIHNhdmVkUGF5bWVudHMubGVuZ3RoID4gMCAmJiBvcmRlcikgewogICAgb3JkZXIucGF5bWVudHMgPSBzYXZlZFBheW1lbnRzOwogIH0KCiAgaWYgKHNlc3Npb25EYXRhPy5vcmRlcl9pZD8uWzBdICYmIG9yZGVyKSB7CiAgICBvcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwogIH0KaWYgKAogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSAmJgogIHNlc3Npb25EYXRhLm9yZGVyWzBdLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcgopIHsKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIgPQogICAgc2Vzc2lvbkRhdGEub3JkZXJbMF0uZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyOwp9CiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQ/LmNvbnRleHQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgY29udGV4dCBpbiBwYXlsb2FkIiB9OwogIH0KCiAKICBpZiAoIXRhcmdldFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2Uub3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CiAgY29uc3Qgb3JkZXI9dGFyZ2V0UGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIGlmICghb3JkZXIucHJvdmlkZXI/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHByb3ZpZGVyLmlkIGluIHBheWxvYWQiIH07CiAgfQoKIAogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci5pdGVtcykgfHwgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1zIGluIHBheWxvYWQiIH07CiAgfQoKICBjb25zdCBpdGVtID0gb3JkZXIuaXRlbXNbMF07CgogIGlmICghaXRlbS5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtc1swXS5pZCBpbiBwYXlsb2FkIiB9OwogIH0KCiAgaWYgKCFvcmRlcj8ucXVvdGU/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHF1b3RlLmlkIGluIHBheWxvYWQiIH07CiAgfQoKCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8ucXVvdGVfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBxdW90ZV9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CgogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
       defaultPayload:
@@ -2648,9 +2648,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-02T12:41:11.819Z
+            timestamp: 2026-09-07T18:07:33.098Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 91049c87-f3eb-499f-a8ba-4dab3c95fe5f
+            message_id: 7cd6cc4c-b2b9-4ed4-b890-ef4619080da8
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2733,13 +2733,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -2838,19 +2838,19 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_790da860-0542-4aa0-b665-84095391ca97
+                      id: ekyc_details_ad96feb8-2696-4fca-96f9-7ad93397eab7
                     form_response:
                       status: OFFLINE_PENDING
-                      submission_id: sub_id_d7229f6b-ff65-4064-baa2-729ae1545e1e
+                      submission_id: sub_id_3a290e3c-2994-4618-90c2-80700f8bb912
               fulfillments:
                 - id: F1
                   type: SEMI_ONLINE
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   state:
                     descriptor:
                       code: INITIATED
@@ -2904,7 +2904,7 @@ steps:
                         code: IN_PROGRESS
                         short_desc: Short desc about loan agreement checklist
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -2957,7 +2957,7 @@ steps:
       application state as the lender conducts assessment and reaches a final
       lending decision.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IHNlc3Npb25EYXRhPy5zZWxlY3RlZF9pdGVtc194aW5wdXQ/LlswXT8uZm9ybV9yZXNwb25zZT8uc3VibWlzc2lvbl9pZDsKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CgogIGlmIChzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQgJiYgb3JkZXI/LnByb3ZpZGVyKSB7CiAgICBvcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwoKICB9CgogIGlmIChzZXNzaW9uSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpZiAoc2Vzc2lvbkl0ZW0uaWQpIHsKICAgICAgaXRlbTAuaWQgPSBzZXNzaW9uSXRlbS5pZDsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuY2F0ZWdvcnlfaWRzID0gWy4uLnNlc3Npb25JdGVtLmNhdGVnb3J5X2lkc107CiAgICB9CgogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHNdOwogICAgfQogIH0KCiAgaWYgKG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGZvcm1JZCA9IHNlc3Npb25EYXRhPy5mb3JtX2lkPy5bMF07CiAgICBpZiAoZm9ybUlkKSB7CiAgICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtLmlkID0gZm9ybUlkOwogICAgfQoKICAgIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCA9IHN1Ym1pc3Npb25faWQ7CiAgICB9CiAgfQoKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBjb25zdCBxdW90ZUlkID0gc2Vzc2lvbkRhdGE/LnF1b3RlX2lkPy5bMF07CiAgICBpZiAocXVvdGVJZCkgewogICAgICBvcmRlci5xdW90ZS5pZCA9IHF1b3RlSWQ7CiAgICB9CgogICAgY29uc3QgcXVvdGVQcmljZSA9IHNlc3Npb25EYXRhPy5xdW90ZV9wcmljZT8uWzBdOwogICAgaWYgKHF1b3RlUHJpY2UgJiYgb3JkZXIucXVvdGUucHJpY2UpIHsKICAgICAgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBxdW90ZVByaWNlOwogICAgfQogIH0KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5wYXltZW50cyB8fCBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzOwogIGlmIChBcnJheS5pc0FycmF5KHNhdmVkUGF5bWVudHMpICYmIHNhdmVkUGF5bWVudHMubGVuZ3RoID4gMCAmJiBvcmRlcikgewogICAgb3JkZXIucGF5bWVudHMgPSBzYXZlZFBheW1lbnRzOwogIH0KCiAgaWYgKHNlc3Npb25EYXRhPy5vcmRlcl9pZD8uWzBdICYmIG9yZGVyKSB7CiAgICBvcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwogIH0KCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IHNlc3Npb25EYXRhPy5zZWxlY3RlZF9pdGVtc194aW5wdXQ/LlswXT8uZm9ybV9yZXNwb25zZT8uc3VibWlzc2lvbl9pZDsKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CgogIGlmIChzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQgJiYgb3JkZXI/LnByb3ZpZGVyKSB7CiAgICBvcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwoKICB9CgogIGlmIChzZXNzaW9uSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpZiAoc2Vzc2lvbkl0ZW0uaWQpIHsKICAgICAgaXRlbTAuaWQgPSBzZXNzaW9uSXRlbS5pZDsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuY2F0ZWdvcnlfaWRzID0gWy4uLnNlc3Npb25JdGVtLmNhdGVnb3J5X2lkc107CiAgICB9CgogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHNdOwogICAgfQogIH0KCiAgaWYgKG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGZvcm1JZCA9IHNlc3Npb25EYXRhPy5mb3JtX2lkPy5bMF07CiAgICBpZiAoZm9ybUlkKSB7CiAgICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtLmlkID0gZm9ybUlkOwogICAgfQoKICAgIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCA9IHN1Ym1pc3Npb25faWQ7CiAgICB9CiAgfQoKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBjb25zdCBxdW90ZUlkID0gc2Vzc2lvbkRhdGE/LnF1b3RlX2lkPy5bMF07CiAgICBpZiAocXVvdGVJZCkgewogICAgICBvcmRlci5xdW90ZS5pZCA9IHF1b3RlSWQ7CiAgICB9CgogICAgY29uc3QgcXVvdGVQcmljZSA9IHNlc3Npb25EYXRhPy5xdW90ZV9wcmljZT8uWzBdOwogICAgaWYgKHF1b3RlUHJpY2UgJiYgb3JkZXIucXVvdGUucHJpY2UpIHsKICAgICAgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBxdW90ZVByaWNlOwogICAgfQogIH0KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5wYXltZW50cyB8fCBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzOwogIGlmIChBcnJheS5pc0FycmF5KHNhdmVkUGF5bWVudHMpICYmIHNhdmVkUGF5bWVudHMubGVuZ3RoID4gMCAmJiBvcmRlcikgewogICAgb3JkZXIucGF5bWVudHMgPSBzYXZlZFBheW1lbnRzOwogIH0KCiAgaWYgKHNlc3Npb25EYXRhPy5vcmRlcl9pZD8uWzBdICYmIG9yZGVyKSB7CiAgICBvcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwogIH0KCmlmICgKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0gJiYKICBzZXNzaW9uRGF0YS5vcmRlclswXS5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIKKSB7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyID0KICAgIHNlc3Npb25EYXRhLm9yZGVyWzBdLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcjsKfQogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8ucXVvdGVfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBxdW90ZV9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CgogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
       defaultPayload:
@@ -3280,9 +3280,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-02T12:41:11.870Z
+            timestamp: 2026-09-07T18:07:33.144Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 5df239f8-dc9b-4747-8474-b5a832c28c5a
+            message_id: 92324221-5f8f-4222-b6b7-0fdbd19e01f2
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3365,13 +3365,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -3470,10 +3470,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_790da860-0542-4aa0-b665-84095391ca97
+                      id: ekyc_details_ad96feb8-2696-4fca-96f9-7ad93397eab7
                     form_response:
                       status: COMPLETED
-                      submission_id: sub_id_d7229f6b-ff65-4064-baa2-729ae1545e1e
+                      submission_id: sub_id_3a290e3c-2994-4618-90c2-80700f8bb912
               fulfillments:
                 - id: F1
                   type: SEMI_ONLINE
@@ -3482,10 +3482,10 @@ steps:
                       code: DISBURSED
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   stops:
                     - id: "1"
                       type: PERSONAL_INFORMATION
@@ -3536,7 +3536,7 @@ steps:
                         code: SUCCESSFUL
                         short_desc: Short desc about loan agreement checklist
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -3659,9 +3659,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: status
-            timestamp: 2026-09-02T12:41:18.166Z
+            timestamp: 2026-09-07T18:07:40.648Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: e8c54090-2dd0-4f74-91b9-1c770588f8a9
+            message_id: 19e309e5-4391-43e6-a2e9-adaab4f540c2
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3691,7 +3691,7 @@ steps:
       application state as the lender conducts assessment and reaches a final
       lending decision.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IHNlc3Npb25EYXRhPy5zZWxlY3RlZF9pdGVtc194aW5wdXQ/LlswXT8uZm9ybV9yZXNwb25zZT8uc3VibWlzc2lvbl9pZDsKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CgogIGlmIChzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQgJiYgb3JkZXI/LnByb3ZpZGVyKSB7CiAgICBvcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwoKICB9CgogIGlmIChzZXNzaW9uSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpZiAoc2Vzc2lvbkl0ZW0uaWQpIHsKICAgICAgaXRlbTAuaWQgPSBzZXNzaW9uSXRlbS5pZDsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuY2F0ZWdvcnlfaWRzID0gWy4uLnNlc3Npb25JdGVtLmNhdGVnb3J5X2lkc107CiAgICB9CgogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHNdOwogICAgfQogIH0KCiAgaWYgKG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGZvcm1JZCA9IHNlc3Npb25EYXRhPy5mb3JtX2lkPy5bMF07CiAgICBpZiAoZm9ybUlkKSB7CiAgICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtLmlkID0gZm9ybUlkOwogICAgfQoKICAgIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCA9IHN1Ym1pc3Npb25faWQ7CiAgICB9CiAgfQoKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBjb25zdCBxdW90ZUlkID0gc2Vzc2lvbkRhdGE/LnF1b3RlX2lkPy5bMF07CiAgICBpZiAocXVvdGVJZCkgewogICAgICBvcmRlci5xdW90ZS5pZCA9IHF1b3RlSWQ7CiAgICB9CgogICAgY29uc3QgcXVvdGVQcmljZSA9IHNlc3Npb25EYXRhPy5xdW90ZV9wcmljZT8uWzBdOwogICAgaWYgKHF1b3RlUHJpY2UgJiYgb3JkZXIucXVvdGUucHJpY2UpIHsKICAgICAgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBxdW90ZVByaWNlOwogICAgfQogIH0KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5wYXltZW50cyB8fCBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzOwogIGlmIChBcnJheS5pc0FycmF5KHNhdmVkUGF5bWVudHMpICYmIHNhdmVkUGF5bWVudHMubGVuZ3RoID4gMCAmJiBvcmRlcikgewogICAgb3JkZXIucGF5bWVudHMgPSBzYXZlZFBheW1lbnRzOwogIH0KCiAgaWYgKHNlc3Npb25EYXRhPy5vcmRlcl9pZD8uWzBdICYmIG9yZGVyKSB7CiAgICBvcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwogIH0KCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9IHNlc3Npb25EYXRhPy5zZWxlY3RlZF9pdGVtc194aW5wdXQ/LlswXT8uZm9ybV9yZXNwb25zZT8uc3VibWlzc2lvbl9pZDsKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CgogIGlmIChzZXNzaW9uRGF0YT8uc2VsZWN0ZWRfcHJvdmlkZXI/LlswXT8uaWQgJiYgb3JkZXI/LnByb3ZpZGVyKSB7CiAgICBvcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwoKICB9CgogIGlmIChzZXNzaW9uSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpZiAoc2Vzc2lvbkl0ZW0uaWQpIHsKICAgICAgaXRlbTAuaWQgPSBzZXNzaW9uSXRlbS5pZDsKICAgIH0KCiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIHsKICAgICAgaXRlbTAuY2F0ZWdvcnlfaWRzID0gWy4uLnNlc3Npb25JdGVtLmNhdGVnb3J5X2lkc107CiAgICB9CgogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSB7CiAgICAgIGl0ZW0wLmZ1bGZpbGxtZW50X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHNdOwogICAgfQogIH0KCiAgaWYgKG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGZvcm1JZCA9IHNlc3Npb25EYXRhPy5mb3JtX2lkPy5bMF07CiAgICBpZiAoZm9ybUlkKSB7CiAgICAgIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtLmlkID0gZm9ybUlkOwogICAgfQoKICAgIGlmIChzdWJtaXNzaW9uX2lkICYmIG9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgICAgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCA9IHN1Ym1pc3Npb25faWQ7CiAgICB9CiAgfQoKICBpZiAob3JkZXI/LnF1b3RlKSB7CiAgICBjb25zdCBxdW90ZUlkID0gc2Vzc2lvbkRhdGE/LnF1b3RlX2lkPy5bMF07CiAgICBpZiAocXVvdGVJZCkgewogICAgICBvcmRlci5xdW90ZS5pZCA9IHF1b3RlSWQ7CiAgICB9CgogICAgY29uc3QgcXVvdGVQcmljZSA9IHNlc3Npb25EYXRhPy5xdW90ZV9wcmljZT8uWzBdOwogICAgaWYgKHF1b3RlUHJpY2UgJiYgb3JkZXIucXVvdGUucHJpY2UpIHsKICAgICAgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBxdW90ZVByaWNlOwogICAgfQogIH0KCiAgY29uc3Qgc2F2ZWRQYXltZW50cyA9IHNlc3Npb25EYXRhPy5wYXltZW50cyB8fCBzZXNzaW9uRGF0YT8ub3JkZXI/LnBheW1lbnRzOwogIGlmIChBcnJheS5pc0FycmF5KHNhdmVkUGF5bWVudHMpICYmIHNhdmVkUGF5bWVudHMubGVuZ3RoID4gMCAmJiBvcmRlcikgewogICAgb3JkZXIucGF5bWVudHMgPSBzYXZlZFBheW1lbnRzOwogIH0KCiAgaWYgKHNlc3Npb25EYXRhPy5vcmRlcl9pZD8uWzBdICYmIG9yZGVyKSB7CiAgICBvcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwogIH0KaWYgKAogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSAmJgogIHNlc3Npb25EYXRhLm9yZGVyWzBdLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcgopIHsKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIgPQogICAgc2Vzc2lvbkRhdGEub3JkZXJbMF0uZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyOwp9CiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8ucXVvdGVfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBxdW90ZV9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CgogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
       defaultPayload:
@@ -4014,9 +4014,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-02T12:41:18.187Z
+            timestamp: 2026-09-07T18:07:40.703Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: e8c54090-2dd0-4f74-91b9-1c770588f8a9
+            message_id: 19e309e5-4391-43e6-a2e9-adaab4f540c2
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -4099,13 +4099,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -4204,10 +4204,10 @@ steps:
                       display: true
                   xinput:
                     form:
-                      id: ekyc_details_790da860-0542-4aa0-b665-84095391ca97
+                      id: ekyc_details_ad96feb8-2696-4fca-96f9-7ad93397eab7
                     form_response:
                       status: COMPLETED
-                      submission_id: sub_id_d7229f6b-ff65-4064-baa2-729ae1545e1e
+                      submission_id: sub_id_3a290e3c-2994-4618-90c2-80700f8bb912
               fulfillments:
                 - id: F1
                   type: SEMI_ONLINE
@@ -4216,10 +4216,10 @@ steps:
                       code: DISBURSED
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   stops:
                     - id: "1"
                       type: PERSONAL_INFORMATION
@@ -4270,7 +4270,7 @@ steps:
                         code: SUCCESSFUL
                         short_desc: Short desc about loan agreement checklist
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -4323,7 +4323,7 @@ steps:
       BPP, formally committing to the negotiated early repayment terms,
       disbursement amounts, and fulfillment arrangements for account settlement.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGlmIChzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlciAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnByb3ZpZGVyKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwogIH0KCiAgY29uc3Qgc2Vzc2lvbkl0ZW0gPSBzZXNzaW9uRGF0YT8uaXRlbXM/LlswXTsgIAoKICBpZiAoZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGVzaWduRm9ybUlkID0gc2Vzc2lvbkRhdGEuZm9ybV9pZD8uWzBdOwogICAgY29uc3QgZXNpZ25TdWJJZCA9IHNlc3Npb25JdGVtPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2U/LnN1Ym1pc3Npb25faWQ7ICAKICAgIGNvbnN0IGVzaWduU3RhdHVzID0gc2Vzc2lvbkl0ZW0/LnhpbnB1dD8uZm9ybV9yZXNwb25zZT8uc3RhdHVzOyAKCiAgICBpZiAoZXNpZ25Gb3JtSWQpIHsKICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm0uaWQgPSBlc2lnbkZvcm1JZDsKICAgIH0KICAgIGlmIChlc2lnblN1YklkKSB7CiAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN1Ym1pc3Npb25faWQgPSBlc2lnblN1YklkOwogICAgfQogICAgaWYgKGVzaWduU3RhdHVzKSB7CiAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN0YXR1cyA9IGVzaWduU3RhdHVzOwogICAgfQogIH0KCiAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXM/LlswXT8uaWQgJiYgc2Vzc2lvbkl0ZW0/LmlkKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCA9IHNlc3Npb25JdGVtLmlkOwogIH0KCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGlmIChzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlciAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnByb3ZpZGVyKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5wcm92aWRlci5pZCA9IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkOwogIH0KCiAgY29uc3Qgc2Vzc2lvbkl0ZW0gPSBzZXNzaW9uRGF0YT8uaXRlbXM/LlswXTsgIAoKICBpZiAoZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdPy54aW5wdXQ/LmZvcm0pIHsKICAgIGNvbnN0IGVzaWduRm9ybUlkID0gc2Vzc2lvbkRhdGEuZm9ybV9pZD8uWzBdOwogICAgY29uc3QgZXNpZ25TdWJJZCA9IHNlc3Npb25JdGVtPy54aW5wdXQ/LmZvcm1fcmVzcG9uc2U/LnN1Ym1pc3Npb25faWQ7ICAKICAgIGNvbnN0IGVzaWduU3RhdHVzID0gc2Vzc2lvbkl0ZW0/LnhpbnB1dD8uZm9ybV9yZXNwb25zZT8uc3RhdHVzOyAKCiAgICBpZiAoZXNpZ25Gb3JtSWQpIHsKICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm0uaWQgPSBlc2lnbkZvcm1JZDsKICAgIH0KICAgIGlmIChlc2lnblN1YklkKSB7CiAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN1Ym1pc3Npb25faWQgPSBlc2lnblN1YklkOwogICAgfQogICAgaWYgKGVzaWduU3RhdHVzKSB7CiAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN0YXR1cyA9IGVzaWduU3RhdHVzOwogICAgfQogIH0KCiAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uaXRlbXM/LlswXT8uaWQgJiYgc2Vzc2lvbkl0ZW0/LmlkKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCA9IHNlc3Npb25JdGVtLmlkOwogIH0KCgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2Uub3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG9yZGVyID0gdGFyZ2V0UGF5bG9hZC5tZXNzYWdlLm9yZGVyOwoKICBpZiAoIW9yZGVyPy5wcm92aWRlcj8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcHJvdmlkZXIuaWQgaW4gcGF5bG9hZCIgfTsKICB9CgogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci5pdGVtcykgfHwgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1zIGluIHBheWxvYWQiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8ucXVvdGVfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBxdW90ZV9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CgogIGlmICghc2Vzc2lvbkRhdGE/LmZvcm1faWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBmb3JtX2lkWzBdIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
@@ -4401,9 +4401,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: confirm
-            timestamp: 2026-09-02T12:41:18.237Z
+            timestamp: 2026-09-07T18:07:40.818Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 2edcfa93-f033-4d54-affe-b1f5fabecfec
+            message_id: 518e2d12-c348-49b2-8a36-e737b8bd737e
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -4420,13 +4420,13 @@ steps:
               provider:
                 id: PROVIDER_ID
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   xinput:
                     form:
-                      id: ekyc_details_790da860-0542-4aa0-b665-84095391ca97
+                      id: ekyc_details_ad96feb8-2696-4fca-96f9-7ad93397eab7
                     form_response:
                       status: COMPLETED
-                      submission_id: sub_id_d7229f6b-ff65-4064-baa2-729ae1545e1e
+                      submission_id: sub_id_3a290e3c-2994-4618-90c2-80700f8bb912
               tags:
                 - descriptor:
                     code: BAP_TERMS
@@ -4464,7 +4464,7 @@ steps:
       returning the updated loan order with recalculated repayment terms,
       adjusted charges, and payment settlement details.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgaWYgKG9yZGVyKSB7CiAgICBvcmRlci5pZCA9IGBMT0FOX09SREVSXyR7dXVpZHY0KCl9YDsKICAgIGNvbnN0IG5vdyA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICAgIG9yZGVyLmNyZWF0ZWRfYXQgPSBub3c7CiAgICBvcmRlci51cGRhdGVkX2F0ID0gbm93OwogIH0KCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CgogIGlmIChzZXNzaW9uSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpZiAoc2Vzc2lvbkl0ZW0uaWQpIGl0ZW0wLmlkID0gc2Vzc2lvbkl0ZW0uaWQ7CiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIGl0ZW0wLmNhdGVnb3J5X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5jYXRlZ29yeV9pZHNdOwogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSBpdGVtMC5mdWxmaWxsbWVudF9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uZnVsZmlsbG1lbnRfaWRzXTsKCiAgICBpZiAoaXRlbTAueGlucHV0KSBkZWxldGUgaXRlbTAueGlucHV0OwogIH0KCiAgLy8gQ1VTVE9NRVIgTUFQUElORwogIGNvbnN0IGZ1bGZpbGxtZW50MCA9IG9yZGVyPy5mdWxmaWxsbWVudHM/LlswXTsKCiAgaWYgKGZ1bGZpbGxtZW50MD8uY3VzdG9tZXI/LnBlcnNvbiAmJiBzZXNzaW9uRGF0YT8uY3VzdG9tZXJfbmFtZT8uWzBdKSB7CiAgICBmdWxmaWxsbWVudDAuY3VzdG9tZXIucGVyc29uLm5hbWUgPSBzZXNzaW9uRGF0YS5jdXN0b21lcl9uYW1lWzBdOwogIH0KCiAgaWYgKGZ1bGZpbGxtZW50MD8uY3VzdG9tZXI/LmNvbnRhY3QpIHsKICAgIGlmIChzZXNzaW9uRGF0YT8uY3VzdG9tZXJfcGhvbmU/LlswXSkgewogICAgICBmdWxmaWxsbWVudDAuY3VzdG9tZXIuY29udGFjdC5waG9uZSA9IHNlc3Npb25EYXRhLmN1c3RvbWVyX3Bob25lWzBdOwogICAgfQogICAgaWYgKHNlc3Npb25EYXRhPy5jdXN0b21lcl9lbWFpbD8uWzBdKSB7CiAgICAgIGZ1bGZpbGxtZW50MC5jdXN0b21lci5jb250YWN0LmVtYWlsID0gc2Vzc2lvbkRhdGEuY3VzdG9tZXJfZW1haWxbMF07CiAgICB9CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBxdW90ZVByaWNlID0gc2Vzc2lvbkRhdGE/LnF1b3RlX3ByaWNlPy5bMF07CiAgICBpZiAocXVvdGVQcmljZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBxdW90ZVByaWNlOwogIH0KCiAgLy8gUEFZTUVOVFMg4oCUIHJlYnVpbGQgd2l0aCB1bmlxdWUgSURzICsgZHluYW1pYyBpbnN0YWxsbWVudCB0aW1lbGluZXMKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IG5vdyA9IG5ldyBEYXRlKCk7CiAgICBsZXQgaW5zdGFsbG1lbnRDb3VudCA9IDA7CgogICAgb3JkZXIucGF5bWVudHMgPSBvcmRlci5wYXltZW50cy5tYXAoKHBheW1lbnQpID0+IHsKCiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJPTl9GVUxGSUxMTUVOVCIgJiYgcGF5bWVudC50aW1lPy5sYWJlbCA9PT0gIkxPQU5fRElTQlVSU01FTlQiKSB7CiAgICAgICAgcmV0dXJuIHsKICAgICAgICAgIC4uLnBheW1lbnQsCiAgICAgICAgICBpZDogYGRpc2J1cnNlbWVudF8ke3V1aWR2NCgpfWAsCiAgICAgICAgICB0aW1lOiB7IC4uLnBheW1lbnQudGltZSwgdGltZXN0YW1wOiBub3cudG9JU09TdHJpbmcoKSB9CiAgICAgICAgfTsKICAgICAgfQoKICAgICAgaWYgKHBheW1lbnQudHlwZSA9PT0gIlBPU1RfRlVMRklMTE1FTlQiICYmIHBheW1lbnQudGltZT8ubGFiZWwgPT09ICJJTlNUQUxMTUVOVCIpIHsKICAgICAgICBjb25zdCBpZHggPSBpbnN0YWxsbWVudENvdW50Kys7CiAgICAgICAgY29uc3Qgc3RhcnREYXRlID0gbmV3IERhdGUobm93LmdldEZ1bGxZZWFyKCksIG5vdy5nZXRNb250aCgpICsgMSArIGlkeCwgMSk7CiAgICAgICAgY29uc3QgZW5kRGF0ZSA9IG5ldyBEYXRlKG5vdy5nZXRGdWxsWWVhcigpLCBub3cuZ2V0TW9udGgoKSArIDIgKyBpZHgsIDApOwoKICAgICAgICByZXR1cm4gewogICAgICAgICAgLi4ucGF5bWVudCwKICAgICAgICAgIGlkOiBgaW5zdGFsbG1lbnRfJHt1dWlkdjQoKX1gLAogICAgICAgICAgc3RhdHVzOiAiTk9ULVBBSUQiLAogICAgICAgICAgdGltZTogewogICAgICAgICAgICBsYWJlbDogIklOU1RBTExNRU5UIiwKICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICBzdGFydDogc3RhcnREYXRlLnRvSVNPU3RyaW5nKCkucmVwbGFjZSgvVC4qLywgIlQwMDowMDowMC4wMDBaIiksCiAgICAgICAgICAgICAgZW5kOiBlbmREYXRlLnRvSVNPU3RyaW5nKCkucmVwbGFjZSgvVC4qLywgIlQyMzo1OTo1OS45OTlaIikKICAgICAgICAgICAgfQogICAgICAgICAgfQogICAgICAgIH07CiAgICAgIH0KCiAgICAgIHJldHVybiBwYXltZW50OwogICAgfSk7CiAgICBzZXNzaW9uRGF0YS5vcmRlciA9IFsKICAgICAgSlNPTi5wYXJzZShKU09OLnN0cmluZ2lmeSh7CiAgICAgICAgLi4uKHNlc3Npb25EYXRhLm9yZGVyPy5bMF0gfHwge30pLAogICAgICAgIHBheW1lbnRzOiBvcmRlci5wYXltZW50cwogICAgICB9KSkKICAgIF07CiAgfQoKICAvLyBTRVRUTEVNRU5UCiAgaW5qZWN0U2V0dGxlbWVudEFtb3VudChleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKTsKCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgaWYgKG9yZGVyKSB7CiAgICBvcmRlci5pZCA9IGBMT0FOX09SREVSXyR7dXVpZHY0KCl9YDsKICAgIGNvbnN0IG5vdyA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICAgIG9yZGVyLmNyZWF0ZWRfYXQgPSBub3c7CiAgICBvcmRlci51cGRhdGVkX2F0ID0gbm93OwogIH0KCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CgogIGlmIChzZXNzaW9uSXRlbSAmJiBvcmRlcj8uaXRlbXM/LlswXSkgewogICAgY29uc3QgaXRlbTAgPSBvcmRlci5pdGVtc1swXTsKCiAgICBpZiAoc2Vzc2lvbkl0ZW0uaWQpIGl0ZW0wLmlkID0gc2Vzc2lvbkl0ZW0uaWQ7CiAgICBpZiAoc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzPy5sZW5ndGgpIGl0ZW0wLmNhdGVnb3J5X2lkcyA9IFsuLi5zZXNzaW9uSXRlbS5jYXRlZ29yeV9pZHNdOwogICAgaWYgKHNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkcz8ubGVuZ3RoKSBpdGVtMC5mdWxmaWxsbWVudF9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uZnVsZmlsbG1lbnRfaWRzXTsKCiAgICBpZiAoaXRlbTAueGlucHV0KSBkZWxldGUgaXRlbTAueGlucHV0OwogIH0KCiAgLy8gQ1VTVE9NRVIgTUFQUElORwogIGNvbnN0IGZ1bGZpbGxtZW50MCA9IG9yZGVyPy5mdWxmaWxsbWVudHM/LlswXTsKCiAgaWYgKGZ1bGZpbGxtZW50MD8uY3VzdG9tZXI/LnBlcnNvbiAmJiBzZXNzaW9uRGF0YT8uY3VzdG9tZXJfbmFtZT8uWzBdKSB7CiAgICBmdWxmaWxsbWVudDAuY3VzdG9tZXIucGVyc29uLm5hbWUgPSBzZXNzaW9uRGF0YS5jdXN0b21lcl9uYW1lWzBdOwogIH0KCiAgaWYgKGZ1bGZpbGxtZW50MD8uY3VzdG9tZXI/LmNvbnRhY3QpIHsKICAgIGlmIChzZXNzaW9uRGF0YT8uY3VzdG9tZXJfcGhvbmU/LlswXSkgewogICAgICBmdWxmaWxsbWVudDAuY3VzdG9tZXIuY29udGFjdC5waG9uZSA9IHNlc3Npb25EYXRhLmN1c3RvbWVyX3Bob25lWzBdOwogICAgfQogICAgaWYgKHNlc3Npb25EYXRhPy5jdXN0b21lcl9lbWFpbD8uWzBdKSB7CiAgICAgIGZ1bGZpbGxtZW50MC5jdXN0b21lci5jb250YWN0LmVtYWlsID0gc2Vzc2lvbkRhdGEuY3VzdG9tZXJfZW1haWxbMF07CiAgICB9CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBxdW90ZVByaWNlID0gc2Vzc2lvbkRhdGE/LnF1b3RlX3ByaWNlPy5bMF07CiAgICBpZiAocXVvdGVQcmljZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBxdW90ZVByaWNlOwogIH0KCiAgLy8gUEFZTUVOVFMg4oCUIHJlYnVpbGQgd2l0aCB1bmlxdWUgSURzICsgZHluYW1pYyBpbnN0YWxsbWVudCB0aW1lbGluZXMKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IG5vdyA9IG5ldyBEYXRlKCk7CiAgICBsZXQgaW5zdGFsbG1lbnRDb3VudCA9IDA7CgogICAgb3JkZXIucGF5bWVudHMgPSBvcmRlci5wYXltZW50cy5tYXAoKHBheW1lbnQpID0+IHsKCiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJPTl9GVUxGSUxMTUVOVCIgJiYgcGF5bWVudC50aW1lPy5sYWJlbCA9PT0gIkxPQU5fRElTQlVSU01FTlQiKSB7CiAgICAgICAgcmV0dXJuIHsKICAgICAgICAgIC4uLnBheW1lbnQsCiAgICAgICAgICBpZDogYGRpc2J1cnNlbWVudF8ke3V1aWR2NCgpfWAsCiAgICAgICAgICB0aW1lOiB7IC4uLnBheW1lbnQudGltZSwgdGltZXN0YW1wOiBub3cudG9JU09TdHJpbmcoKSB9CiAgICAgICAgfTsKICAgICAgfQoKICAgICAgaWYgKHBheW1lbnQudHlwZSA9PT0gIlBPU1RfRlVMRklMTE1FTlQiICYmIHBheW1lbnQudGltZT8ubGFiZWwgPT09ICJJTlNUQUxMTUVOVCIpIHsKICAgICAgICBjb25zdCBpZHggPSBpbnN0YWxsbWVudENvdW50Kys7CiAgICAgICAgY29uc3Qgc3RhcnREYXRlID0gbmV3IERhdGUobm93LmdldEZ1bGxZZWFyKCksIG5vdy5nZXRNb250aCgpICsgMSArIGlkeCwgMSk7CiAgICAgICAgY29uc3QgZW5kRGF0ZSA9IG5ldyBEYXRlKG5vdy5nZXRGdWxsWWVhcigpLCBub3cuZ2V0TW9udGgoKSArIDIgKyBpZHgsIDApOwoKICAgICAgICByZXR1cm4gewogICAgICAgICAgLi4ucGF5bWVudCwKICAgICAgICAgIGlkOiBgaW5zdGFsbG1lbnRfJHt1dWlkdjQoKX1gLAogICAgICAgICAgc3RhdHVzOiAiTk9ULVBBSUQiLAogICAgICAgICAgdGltZTogewogICAgICAgICAgICBsYWJlbDogIklOU1RBTExNRU5UIiwKICAgICAgICAgICAgcmFuZ2U6IHsKICAgICAgICAgICAgICBzdGFydDogc3RhcnREYXRlLnRvSVNPU3RyaW5nKCkucmVwbGFjZSgvVC4qLywgIlQwMDowMDowMC4wMDBaIiksCiAgICAgICAgICAgICAgZW5kOiBlbmREYXRlLnRvSVNPU3RyaW5nKCkucmVwbGFjZSgvVC4qLywgIlQyMzo1OTo1OS45OTlaIikKICAgICAgICAgICAgfQogICAgICAgICAgfQogICAgICAgIH07CiAgICAgIH0KCiAgICAgIHJldHVybiBwYXltZW50OwogICAgfSk7CiAgICBzZXNzaW9uRGF0YS5vcmRlciA9IFsKICAgICAgSlNPTi5wYXJzZShKU09OLnN0cmluZ2lmeSh7CiAgICAgICAgLi4uKHNlc3Npb25EYXRhLm9yZGVyPy5bMF0gfHwge30pLAogICAgICAgIHBheW1lbnRzOiBvcmRlci5wYXltZW50cwogICAgICB9KSkKICAgIF07CiAgfQoKICAvLyBTRVRUTEVNRU5UCiAgaW5qZWN0U2V0dGxlbWVudEFtb3VudChleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKTsKICBpZiAoCiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdICYmCiAgc2Vzc2lvbkRhdGEub3JkZXJbMF0uZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyCikgewogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lciA9CiAgICBzZXNzaW9uRGF0YS5vcmRlclswXS5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXI7Cn0KCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoIXRhcmdldFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG1lc3NhZ2Uub3JkZXIgaW4gcGF5bG9hZCIgfTsKICB9CgogIGNvbnN0IG9yZGVyID0gdGFyZ2V0UGF5bG9hZC5tZXNzYWdlLm9yZGVyOwoKICBpZiAoIW9yZGVyLmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG9yZGVyLmlkIGluIHBheWxvYWQiIH07CiAgfQoKICAKICBpZiAoIW9yZGVyPy5wcm92aWRlcj8uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcHJvdmlkZXIuaWQgaW4gcGF5bG9hZCIgfTsKICB9CgogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci5pdGVtcykgfHwgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1zIGluIHBheWxvYWQiIH07CiAgfQoKCiAgaWYgKCFvcmRlcj8ucXVvdGU/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHF1b3RlLmlkIGluIHBheWxvYWQiIH07CiAgfQoKICBpZiAoIW9yZGVyPy5xdW90ZT8ucHJpY2U/LnZhbHVlKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHF1b3RlLnByaWNlLnZhbHVlIGluIHBheWxvYWQiIH07CiAgfQoKICBpZiAoIUFycmF5LmlzQXJyYXkob3JkZXIuZnVsZmlsbG1lbnRzKSB8fCBvcmRlci5mdWxmaWxsbWVudHMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGZ1bGZpbGxtZW50cyBpbiBwYXlsb2FkIiB9OwogIH0KCiAKICBpZiAoIUFycmF5LmlzQXJyYXkob3JkZXIucGF5bWVudHMpIHx8IG9yZGVyLnBheW1lbnRzLmxlbmd0aCA9PT0gMCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwYXltZW50cyBpbiBwYXlsb2FkIiB9OwogIH0KCiAgCiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/LnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0/LmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX3Byb3ZpZGVyWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8uaXRlbT8uWzBdPy5pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBpdGVtWzBdLmlkIGluIHNlc3Npb25EYXRhIiB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YT8ucXVvdGVfaWQ/LlswXSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBxdW90ZV9pZFswXSBpbiBzZXNzaW9uRGF0YSIgfTsKICB9CgogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
       defaultPayload:
@@ -4909,9 +4909,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_confirm
-            timestamp: 2026-09-02T12:41:18.275Z
+            timestamp: 2026-09-07T18:07:40.852Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 2edcfa93-f033-4d54-affe-b1f5fabecfec
+            message_id: 518e2d12-c348-49b2-8a36-e737b8bd737e
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -4925,7 +4925,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_7316961c-4c56-4b40-8cd2-8b9fad61da5e
+              id: LOAN_ORDER_4adac7e3-5291-41cb-9a56-91512d2fdf25
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -4996,13 +4996,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -5100,7 +5100,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -5139,10 +5139,10 @@ steps:
                   type: SEMI_ONLINE
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   state:
                     descriptor:
                       code: DISBURSED
@@ -5197,12 +5197,12 @@ steps:
                         short_desc: Short desc about KYC checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_3191b7a0-4382-4320-9b5f-23f185261508
+                  id: disbursement_f40133ec-b169-4bc5-b0ce-80608e0e2aa7
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-09-02T12:41:18.281Z
+                    timestamp: 2026-09-07T18:07:40.855Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -5210,7 +5210,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_17f19d1d-1cb8-4868-bbef-f9b9f796c00e
+                  id: installment_31acd5d9-e496-45a3-a474-80104effa7c0
                   params:
                     amount: "46360"
                     currency: INR
@@ -5221,7 +5221,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_7dfa8b8b-1580-4eb8-a4d0-4b1817586a20
+                  id: installment_8d94767d-05e7-4441-829e-c58b49f50602
                   params:
                     amount: "46360"
                     currency: INR
@@ -5232,7 +5232,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_2b9cda65-c3b1-45a5-b253-21f51f5319a2
+                  id: installment_af6200af-8215-470b-b9bc-0ce3bed0c1b1
                   params:
                     amount: "46360"
                     currency: INR
@@ -5243,7 +5243,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_03cdb98b-8fda-41c2-ab2a-a0c160bbd9be
+                  id: installment_a281466c-27bf-430f-a395-05f066e35e19
                   params:
                     amount: "46360"
                     currency: INR
@@ -5254,7 +5254,7 @@ steps:
                       start: 2026-12-31T00:00:00.000Z
                       end: 2027-01-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_ff716a35-823d-4cf9-8c1c-a9f2a533f663
+                  id: installment_3ef32172-208d-4b3b-9327-14238b3799f3
                   params:
                     amount: "46360"
                     currency: INR
@@ -5321,8 +5321,8 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-09-02T12:41:18.281Z
-              updated_at: 2026-09-02T12:41:18.281Z
+              created_at: 2026-09-07T18:07:40.855Z
+              updated_at: 2026-09-07T18:07:40.855Z
         type: request
         description: The BPP confirms the borrower's partial prepayment request by
           returning the updated loan order with recalculated repayment terms,
@@ -5336,7 +5336,7 @@ steps:
       tracking the borrower's loan application as it progresses through offline
       verification and underwriting toward a final lending decision.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDEgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDEgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CmlmICgKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0gJiYKICBzZXNzaW9uRGF0YS5vcmRlclswXS5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIKKSB7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyID0KICAgIHNlc3Npb25EYXRhLm9yZGVyWzBdLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcjsKfQoKICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkOwp9Cg==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0pIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJfaWRbMF0gaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIUFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/Lm9yZGVyPy5bMF0/LnBheW1lbnRzKSB8fCBzZXNzaW9uRGF0YS5vcmRlclswXS5wYXltZW50cy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJbMF0ucGF5bWVudHMgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
       defaultPayload:
@@ -5774,9 +5774,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-02T12:41:18.331Z
+            timestamp: 2026-09-07T18:07:40.944Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 1901e81a-9274-4ebc-84d7-d971576f0856
+            message_id: 822b0381-7baa-4855-afae-c1d0761e740a
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -5790,7 +5790,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_7316961c-4c56-4b40-8cd2-8b9fad61da5e
+              id: LOAN_ORDER_4adac7e3-5291-41cb-9a56-91512d2fdf25
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -5861,13 +5861,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -5965,7 +5965,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -6004,10 +6004,10 @@ steps:
                   type: SEMI_ONLINE
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   state:
                     descriptor:
                       code: DISBURSED
@@ -6062,12 +6062,12 @@ steps:
                         short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_3191b7a0-4382-4320-9b5f-23f185261508
+                  id: disbursement_f40133ec-b169-4bc5-b0ce-80608e0e2aa7
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-09-02T12:41:18.339Z
+                    timestamp: 2026-09-07T18:07:40.947Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -6075,7 +6075,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_17f19d1d-1cb8-4868-bbef-f9b9f796c00e
+                  id: installment_31acd5d9-e496-45a3-a474-80104effa7c0
                   params:
                     amount: "46360"
                     currency: INR
@@ -6086,7 +6086,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_7dfa8b8b-1580-4eb8-a4d0-4b1817586a20
+                  id: installment_8d94767d-05e7-4441-829e-c58b49f50602
                   params:
                     amount: "46360"
                     currency: INR
@@ -6097,7 +6097,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_2b9cda65-c3b1-45a5-b253-21f51f5319a2
+                  id: installment_af6200af-8215-470b-b9bc-0ce3bed0c1b1
                   params:
                     amount: "46360"
                     currency: INR
@@ -6108,7 +6108,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_03cdb98b-8fda-41c2-ab2a-a0c160bbd9be
+                  id: installment_a281466c-27bf-430f-a395-05f066e35e19
                   params:
                     amount: "46360"
                     currency: INR
@@ -6119,7 +6119,7 @@ steps:
                       start: 2026-12-31T00:00:00.000Z
                       end: 2027-01-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_ff716a35-823d-4cf9-8c1c-a9f2a533f663
+                  id: installment_3ef32172-208d-4b3b-9327-14238b3799f3
                   params:
                     amount: "46360"
                     currency: INR
@@ -6187,7 +6187,7 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
               created_at: 2023-05-25T05:23:03.443Z
-              updated_at: 2026-09-02T12:41:18.339Z
+              updated_at: 2026-09-07T18:07:40.947Z
         type: request
         description: The BPP proactively sends unsolicited status updates to the BAP
           tracking the borrower's loan application as it progresses through
@@ -6203,7 +6203,7 @@ steps:
       borrower to track the lender's lending decision process as they move
       toward a final determination.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDIgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDIgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CmlmICgKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0gJiYKICBzZXNzaW9uRGF0YS5vcmRlclswXS5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIKKSB7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyID0KICAgIHNlc3Npb25EYXRhLm9yZGVyWzBdLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcjsKfQogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0pIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJfaWRbMF0gaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIUFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/Lm9yZGVyPy5bMF0/LnBheW1lbnRzKSB8fCBzZXNzaW9uRGF0YS5vcmRlclswXS5wYXltZW50cy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJbMF0ucGF5bWVudHMgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
       defaultPayload:
@@ -6641,9 +6641,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-02T12:41:18.367Z
+            timestamp: 2026-09-07T18:07:40.972Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: a60754b5-2562-499b-a45a-a9856aec67a8
+            message_id: 4c871a34-bd65-4c1e-b588-c07d3e7618e5
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -6657,7 +6657,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_7316961c-4c56-4b40-8cd2-8b9fad61da5e
+              id: LOAN_ORDER_4adac7e3-5291-41cb-9a56-91512d2fdf25
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -6728,13 +6728,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -6832,7 +6832,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -6871,10 +6871,10 @@ steps:
                   type: SEMI_ONLINE
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   state:
                     descriptor:
                       code: DISBURSED
@@ -6929,12 +6929,12 @@ steps:
                         short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_3191b7a0-4382-4320-9b5f-23f185261508
+                  id: disbursement_f40133ec-b169-4bc5-b0ce-80608e0e2aa7
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-09-02T12:41:18.371Z
+                    timestamp: 2026-09-07T18:07:40.975Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -6942,7 +6942,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_17f19d1d-1cb8-4868-bbef-f9b9f796c00e
+                  id: installment_31acd5d9-e496-45a3-a474-80104effa7c0
                   params:
                     amount: "46360"
                     currency: INR
@@ -6953,7 +6953,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_7dfa8b8b-1580-4eb8-a4d0-4b1817586a20
+                  id: installment_8d94767d-05e7-4441-829e-c58b49f50602
                   params:
                     amount: "46360"
                     currency: INR
@@ -6964,7 +6964,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_2b9cda65-c3b1-45a5-b253-21f51f5319a2
+                  id: installment_af6200af-8215-470b-b9bc-0ce3bed0c1b1
                   params:
                     amount: "46360"
                     currency: INR
@@ -6975,7 +6975,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_03cdb98b-8fda-41c2-ab2a-a0c160bbd9be
+                  id: installment_a281466c-27bf-430f-a395-05f066e35e19
                   params:
                     amount: "46360"
                     currency: INR
@@ -6986,7 +6986,7 @@ steps:
                       start: 2026-12-31T00:00:00.000Z
                       end: 2027-01-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_ff716a35-823d-4cf9-8c1c-a9f2a533f663
+                  id: installment_3ef32172-208d-4b3b-9327-14238b3799f3
                   params:
                     amount: "46360"
                     currency: INR
@@ -7054,7 +7054,7 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
               created_at: 2023-05-25T05:23:03.443Z
-              updated_at: 2026-09-02T12:41:18.371Z
+              updated_at: 2026-09-07T18:07:40.975Z
         type: request
         description: The BPP proactively sends an unsolicited status update to the BAP
           regarding the personal loan application's progress through offline
@@ -7070,7 +7070,7 @@ steps:
       personal loan application's verification progress and current payment
       status as offline underwriting proceeds.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDMgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDMgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CmlmICgKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0gJiYKICBzZXNzaW9uRGF0YS5vcmRlclswXS5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIKKSB7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyID0KICAgIHNlc3Npb25EYXRhLm9yZGVyWzBdLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcjsKfQogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0pIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJfaWRbMF0gaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIUFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/Lm9yZGVyPy5bMF0/LnBheW1lbnRzKSB8fCBzZXNzaW9uRGF0YS5vcmRlclswXS5wYXltZW50cy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJbMF0ucGF5bWVudHMgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
       defaultPayload:
@@ -7508,9 +7508,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-02T12:41:18.410Z
+            timestamp: 2026-09-07T18:07:41.008Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: f27bcea0-f31f-4a99-a4b8-5272b14a9f42
+            message_id: efb1ea57-8010-42f3-977a-9681b9115343
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -7524,7 +7524,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_7316961c-4c56-4b40-8cd2-8b9fad61da5e
+              id: LOAN_ORDER_4adac7e3-5291-41cb-9a56-91512d2fdf25
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -7595,13 +7595,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -7699,7 +7699,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -7738,10 +7738,10 @@ steps:
                   type: SEMI_ONLINE
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   state:
                     descriptor:
                       code: DISBURSED
@@ -7796,12 +7796,12 @@ steps:
                         short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_3191b7a0-4382-4320-9b5f-23f185261508
+                  id: disbursement_f40133ec-b169-4bc5-b0ce-80608e0e2aa7
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-09-02T12:41:18.414Z
+                    timestamp: 2026-09-07T18:07:41.010Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -7809,7 +7809,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_17f19d1d-1cb8-4868-bbef-f9b9f796c00e
+                  id: installment_31acd5d9-e496-45a3-a474-80104effa7c0
                   params:
                     amount: "46360"
                     currency: INR
@@ -7820,7 +7820,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_7dfa8b8b-1580-4eb8-a4d0-4b1817586a20
+                  id: installment_8d94767d-05e7-4441-829e-c58b49f50602
                   params:
                     amount: "46360"
                     currency: INR
@@ -7831,7 +7831,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_2b9cda65-c3b1-45a5-b253-21f51f5319a2
+                  id: installment_af6200af-8215-470b-b9bc-0ce3bed0c1b1
                   params:
                     amount: "46360"
                     currency: INR
@@ -7842,7 +7842,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_03cdb98b-8fda-41c2-ab2a-a0c160bbd9be
+                  id: installment_a281466c-27bf-430f-a395-05f066e35e19
                   params:
                     amount: "46360"
                     currency: INR
@@ -7853,7 +7853,7 @@ steps:
                       start: 2026-12-31T00:00:00.000Z
                       end: 2027-01-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_ff716a35-823d-4cf9-8c1c-a9f2a533f663
+                  id: installment_3ef32172-208d-4b3b-9327-14238b3799f3
                   params:
                     amount: "46360"
                     currency: INR
@@ -7921,7 +7921,7 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
               created_at: 2023-05-25T05:23:03.443Z
-              updated_at: 2026-09-02T12:41:18.414Z
+              updated_at: 2026-09-07T18:07:41.010Z
         type: request
         description: The BPP sends an unsolicited status update to the BAP regarding the
           personal loan application's verification progress and current payment
@@ -7935,7 +7935,7 @@ steps:
       loan application's progress during offline verification and underwriting,
       including payment details and application timeline.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDQgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDQgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CmlmICgKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0gJiYKICBzZXNzaW9uRGF0YS5vcmRlclswXS5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIKKSB7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyID0KICAgIHNlc3Npb25EYXRhLm9yZGVyWzBdLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcjsKfQogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0pIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJfaWRbMF0gaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIUFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/Lm9yZGVyPy5bMF0/LnBheW1lbnRzKSB8fCBzZXNzaW9uRGF0YS5vcmRlclswXS5wYXltZW50cy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJbMF0ucGF5bWVudHMgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
       defaultPayload:
@@ -8374,9 +8374,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-02T12:41:18.505Z
+            timestamp: 2026-09-07T18:07:41.073Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: f0a792ce-1d72-4550-9ba5-dc869446668c
+            message_id: a9e6b00e-3737-473c-b9d9-ad8f1a416190
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -8390,7 +8390,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_7316961c-4c56-4b40-8cd2-8b9fad61da5e
+              id: LOAN_ORDER_4adac7e3-5291-41cb-9a56-91512d2fdf25
               status: ACTIVE
               provider:
                 id: PROVIDER_ID
@@ -8461,13 +8461,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -8565,7 +8565,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -8604,10 +8604,10 @@ steps:
                   type: SEMI_ONLINE
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   state:
                     descriptor:
                       code: DISBURSED
@@ -8662,12 +8662,12 @@ steps:
                         short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_3191b7a0-4382-4320-9b5f-23f185261508
+                  id: disbursement_f40133ec-b169-4bc5-b0ce-80608e0e2aa7
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-09-02T12:41:18.511Z
+                    timestamp: 2026-09-07T18:07:41.076Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -8675,7 +8675,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_17f19d1d-1cb8-4868-bbef-f9b9f796c00e
+                  id: installment_31acd5d9-e496-45a3-a474-80104effa7c0
                   params:
                     amount: "46360"
                     currency: INR
@@ -8686,7 +8686,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_7dfa8b8b-1580-4eb8-a4d0-4b1817586a20
+                  id: installment_8d94767d-05e7-4441-829e-c58b49f50602
                   params:
                     amount: "46360"
                     currency: INR
@@ -8697,7 +8697,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_2b9cda65-c3b1-45a5-b253-21f51f5319a2
+                  id: installment_af6200af-8215-470b-b9bc-0ce3bed0c1b1
                   params:
                     amount: "46360"
                     currency: INR
@@ -8708,7 +8708,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_03cdb98b-8fda-41c2-ab2a-a0c160bbd9be
+                  id: installment_a281466c-27bf-430f-a395-05f066e35e19
                   params:
                     amount: "46360"
                     currency: INR
@@ -8719,7 +8719,7 @@ steps:
                       start: 2026-12-31T00:00:00.000Z
                       end: 2027-01-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_ff716a35-823d-4cf9-8c1c-a9f2a533f663
+                  id: installment_3ef32172-208d-4b3b-9327-14238b3799f3
                   params:
                     amount: "46360"
                     currency: INR
@@ -8787,7 +8787,7 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
               created_at: 2023-05-25T05:23:03.443Z
-              updated_at: 2026-09-02T12:41:18.511Z
+              updated_at: 2026-09-07T18:07:41.076Z
         type: request
         description: The BPP sends an unsolicited status update to the BAP about the
           loan application's progress during offline verification and
@@ -8802,7 +8802,7 @@ steps:
       conveying the lending decision and current application state to the
       borrower.
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDUgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CgogIC8vIE9SREVSIElEIE1BUFBJTkcKICBpZiAoc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0gJiYgb3JkZXIpIHsKICAgIG9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF07CiAgfQoKICAvLyBQUk9WSURFUiBNQVBQSU5HCiAgaWYgKHNlc3Npb25EYXRhPy5zZWxlY3RlZF9wcm92aWRlcj8uWzBdPy5pZCAmJiBvcmRlcj8ucHJvdmlkZXIpIHsKICAgIG9yZGVyLnByb3ZpZGVyLmlkID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfcHJvdmlkZXJbMF0uaWQ7CiAgfQoKICAvLyBJVEVNIE1BUFBJTkcKICBjb25zdCBzZXNzaW9uSXRlbSA9IHNlc3Npb25EYXRhPy5pdGVtPy5bMF07CiAgaWYgKHNlc3Npb25JdGVtICYmIG9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBjb25zdCBpdGVtMCA9IG9yZGVyLml0ZW1zWzBdOwogICAgaWYgKHNlc3Npb25JdGVtLmlkKSBpdGVtMC5pZCA9IHNlc3Npb25JdGVtLmlkOwogICAgaWYgKHNlc3Npb25JdGVtLmNhdGVnb3J5X2lkcz8ubGVuZ3RoKSBpdGVtMC5jYXRlZ29yeV9pZHMgPSBbLi4uc2Vzc2lvbkl0ZW0uY2F0ZWdvcnlfaWRzXTsKICAgIGlmIChzZXNzaW9uSXRlbS5mdWxmaWxsbWVudF9pZHM/Lmxlbmd0aCkgaXRlbTAuZnVsZmlsbG1lbnRfaWRzID0gWy4uLnNlc3Npb25JdGVtLmZ1bGZpbGxtZW50X2lkc107CiAgfQoKICAvLyBRVU9URSBNQVBQSU5HCiAgaWYgKG9yZGVyPy5xdW90ZSkgewogICAgY29uc3QgcXVvdGVJZCA9IHNlc3Npb25EYXRhPy5xdW90ZV9pZD8uWzBdOwogICAgaWYgKHF1b3RlSWQpIG9yZGVyLnF1b3RlLmlkID0gcXVvdGVJZDsKCiAgICBjb25zdCBzZXNzaW9uUXVvdGUgPSBzZXNzaW9uRGF0YT8ucXVvdGU/LlswXTsKICAgIGlmIChzZXNzaW9uUXVvdGU/LnByaWNlPy52YWx1ZSAmJiBvcmRlci5xdW90ZS5wcmljZSkgb3JkZXIucXVvdGUucHJpY2UudmFsdWUgPSBzZXNzaW9uUXVvdGUucHJpY2UudmFsdWU7CiAgICBpZiAoc2Vzc2lvblF1b3RlPy5icmVha3VwPy5sZW5ndGgpIG9yZGVyLnF1b3RlLmJyZWFrdXAgPSBzZXNzaW9uUXVvdGUuYnJlYWt1cDsKICB9CgogIC8vIFBBWU1FTlRTIE1BUFBJTkcKICBpZiAob3JkZXI/LnBheW1lbnRzPy5sZW5ndGgpIHsKICAgIGNvbnN0IHNlc3Npb25QYXltZW50cyA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/LnBheW1lbnRzKSA/IHNlc3Npb25EYXRhLnBheW1lbnRzIDogW107CiAgICBjb25zdCBkaXNidXJzZW1lbnQgPSBzZXNzaW9uUGF5bWVudHMuZmluZChwID0+IHAudHlwZSA9PT0gIk9OX0ZVTEZJTExNRU5UIik7CiAgICBjb25zdCBpbnN0YWxsbWVudHMgPSBzZXNzaW9uUGF5bWVudHMuZmlsdGVyKHAgPT4gcC50eXBlID09PSAiUE9TVF9GVUxGSUxMTUVOVCIgJiYgcC50aW1lPy5sYWJlbCA9PT0gIklOU1RBTExNRU5UIik7CiAgICBsZXQgaWR4ID0gMDsKCiAgICBvcmRlci5wYXltZW50cyA9IG9yZGVyLnBheW1lbnRzLm1hcCgocGF5bWVudCkgPT4gewogICAgICBpZiAocGF5bWVudC50eXBlID09PSAiT05fRlVMRklMTE1FTlQiICYmIGRpc2J1cnNlbWVudCkgewogICAgICAgIGlmIChkaXNidXJzZW1lbnQuaWQpIHBheW1lbnQuaWQgPSBkaXNidXJzZW1lbnQuaWQ7CiAgICAgICAgaWYgKGRpc2J1cnNlbWVudC5wYXJhbXMpIHBheW1lbnQucGFyYW1zID0gZGlzYnVyc2VtZW50LnBhcmFtczsKICAgICAgICBpZiAocGF5bWVudC50aW1lKSBwYXltZW50LnRpbWUudGltZXN0YW1wID0gbmV3IERhdGUoKS50b0lTT1N0cmluZygpOwogICAgICAgIHBheW1lbnQuc3RhdHVzID0gIlBBSUQiOwogICAgICB9CiAgICAgIGlmIChwYXltZW50LnR5cGUgPT09ICJQT1NUX0ZVTEZJTExNRU5UIiAmJiBwYXltZW50LnRpbWU/LmxhYmVsID09PSAiSU5TVEFMTE1FTlQiKSB7CiAgICAgICAgY29uc3Qgc2kgPSBpbnN0YWxsbWVudHNbaWR4XTsKICAgICAgICBpZiAoc2kpIHsKICAgICAgICAgIGlmIChzaS5pZCkgcGF5bWVudC5pZCA9IHNpLmlkOwogICAgICAgICAgaWYgKHNpLnBhcmFtcykgcGF5bWVudC5wYXJhbXMgPSBzaS5wYXJhbXM7CiAgICAgICAgICBpZiAoc2kudGltZT8ucmFuZ2UpIHsgcGF5bWVudC50aW1lID0gcGF5bWVudC50aW1lIHx8IHt9OyBwYXltZW50LnRpbWUubGFiZWwgPSAiSU5TVEFMTE1FTlQiOyBwYXltZW50LnRpbWUucmFuZ2UgPSBzaS50aW1lLnJhbmdlOyB9CiAgICAgICAgICBwYXltZW50LnN0YXR1cyA9IGlkeCA8IDUgPyAiUEFJRCIgOiAiTk9ULVBBSUQiOwogICAgICAgIH0KICAgICAgICBpZHgrKzsKICAgICAgfQogICAgICByZXR1cm4gcGF5bWVudDsKICAgIH0pOwogIH0KCiAgLy8gVElNRVNUQU1QUwogIGlmIChvcmRlcikgewogICAgb3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKICB9CmlmICgKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHNbMF0gJiYKICBzZXNzaW9uRGF0YS5vcmRlclswXS5mdWxmaWxsbWVudHNbMF0uY3VzdG9tZXIKKSB7CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLmN1c3RvbWVyID0KICAgIHNlc3Npb25EYXRhLm9yZGVyWzBdLmZ1bGZpbGxtZW50c1swXS5jdXN0b21lcjsKfQogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CgogIGlmICghc2Vzc2lvbkRhdGE/Lm9yZGVyX2lkPy5bMF0pIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJfaWRbMF0gaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICBpZiAoIUFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGE/Lm9yZGVyPy5bMF0/LnBheW1lbnRzKSB8fCBzZXNzaW9uRGF0YS5vcmRlclswXS5wYXltZW50cy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgb3JkZXJbMF0ucGF5bWVudHMgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
       defaultPayload:
@@ -9239,9 +9239,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-02T12:41:18.546Z
+            timestamp: 2026-09-07T18:07:41.109Z
             transaction_id: 37495a18-da5d-42d2-ad74-db69a22618fe
-            message_id: 06834f67-41b9-48db-a6fa-d047d622e7c9
+            message_id: d75a8007-b7c8-46e6-82c7-8701cfabaf65
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -9255,7 +9255,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: LOAN_ORDER_7316961c-4c56-4b40-8cd2-8b9fad61da5e
+              id: LOAN_ORDER_4adac7e3-5291-41cb-9a56-91512d2fdf25
               status: COMPLETED
               provider:
                 id: PROVIDER_ID
@@ -9326,13 +9326,13 @@ steps:
                         value: One Indiabulls centre, Tower 1, 18th Floor Jupiter mill compound 841,
                           Senapati Bapat Marg, Elphinstone Road, Mumbai 400013
               items:
-                - id: bureau_personal_loan_616f4340-76bc-4601-94ca-ad0d503680ff
+                - id: bureau_personal_loan_59131e64-d92f-4a63-84d0-498ac6a47b9b
                   descriptor:
                     code: PERSONAL_LOAN
                     name: Personal Loan without AA - Offline Journey
                   category_ids:
-                    - cat_personal_loan_5eeca438-247e-428a-babc-74b4fdaf925d
-                    - cat_bureau_loan_33b489b1-cb4a-453d-b88f-a4091a70d9c4
+                    - cat_personal_loan_b74ac7f0-99d5-40e4-8306-00132bd53f14
+                    - cat_bureau_loan_8cc7ad39-59dd-4d91-b639-e0745d8f69e0
                   fulfillment_ids:
                     - F1
                   price:
@@ -9430,7 +9430,7 @@ steps:
                           value: https://icicibank.com/loan/kfs-terms
                       display: true
               quote:
-                id: quote_770c48e3-3f58-40aa-8fe9-044ffaa99f9a
+                id: quote_8d7ed782-1ff0-4eba-85a3-5ba6f81086fb
                 price:
                   currency: INR
                   value: "232300"
@@ -9469,10 +9469,10 @@ steps:
                   type: SEMI_ONLINE
                   customer:
                     person:
-                      name: John Doe
+                      name: Devender Dhyani
                     contact:
-                      phone: +91-9999999999
-                      email: john.doe@example.com
+                      phone: "9876543212"
+                      email: devender.dhyani+19@thewitslab.com
                   state:
                     descriptor:
                       code: COMPLETED
@@ -9527,12 +9527,12 @@ steps:
                         short_desc: Short desc about loan agreement checklist
               payments:
                 - type: ON_FULFILLMENT
-                  id: disbursement_3191b7a0-4382-4320-9b5f-23f185261508
+                  id: disbursement_f40133ec-b169-4bc5-b0ce-80608e0e2aa7
                   status: PAID
                   collected_by: CONSUMER
                   time:
                     label: LOAN_DISBURSMENT
-                    timestamp: 2026-09-02T12:41:18.550Z
+                    timestamp: 2026-09-07T18:07:41.111Z
                   params:
                     bank_code: XXXXXXXX
                     bank_account_number: xxxxxxxxxxxxxx
@@ -9540,7 +9540,7 @@ steps:
                     amount: "197700"
                     currency: INR
                 - type: POST_FULFILLMENT
-                  id: installment_17f19d1d-1cb8-4868-bbef-f9b9f796c00e
+                  id: installment_31acd5d9-e496-45a3-a474-80104effa7c0
                   params:
                     amount: "46360"
                     currency: INR
@@ -9551,7 +9551,7 @@ steps:
                       start: 2026-09-30T00:00:00.000Z
                       end: 2026-10-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_7dfa8b8b-1580-4eb8-a4d0-4b1817586a20
+                  id: installment_8d94767d-05e7-4441-829e-c58b49f50602
                   params:
                     amount: "46360"
                     currency: INR
@@ -9562,7 +9562,7 @@ steps:
                       start: 2026-10-31T00:00:00.000Z
                       end: 2026-11-29T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_2b9cda65-c3b1-45a5-b253-21f51f5319a2
+                  id: installment_af6200af-8215-470b-b9bc-0ce3bed0c1b1
                   params:
                     amount: "46360"
                     currency: INR
@@ -9573,7 +9573,7 @@ steps:
                       start: 2026-11-30T00:00:00.000Z
                       end: 2026-12-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_03cdb98b-8fda-41c2-ab2a-a0c160bbd9be
+                  id: installment_a281466c-27bf-430f-a395-05f066e35e19
                   params:
                     amount: "46360"
                     currency: INR
@@ -9584,7 +9584,7 @@ steps:
                       start: 2026-12-31T00:00:00.000Z
                       end: 2027-01-30T23:59:59.999Z
                 - type: POST_FULFILLMENT
-                  id: installment_ff716a35-823d-4cf9-8c1c-a9f2a533f663
+                  id: installment_3ef32172-208d-4b3b-9327-14238b3799f3
                   params:
                     amount: "46360"
                     currency: INR
@@ -9652,7 +9652,7 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
               created_at: 2023-05-25T05:23:03.443Z
-              updated_at: 2026-09-02T12:41:18.550Z
+              updated_at: 2026-09-07T18:07:41.111Z
         type: request
         description: The BPP sends an unsolicited status update to the BAP communicating
           the outcome of its offline verification and underwriting process,
