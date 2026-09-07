@@ -1469,3 +1469,47 @@ paths:
                             properties:
                               state: *fulfillment_state
       responses: *responses
+  /issue_status:
+    post:
+      operationId: issue_status
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                context:
+                  type: object
+                  properties:
+                    domain:
+                      type: string
+                    transaction_id:
+                      type: string
+                    message_id:
+                      type: string
+                    action:
+                      type: string
+                    timestamp:
+                      type: string
+                    bap_uri:
+                      type: string
+                    bap_id:
+                      type: string
+                    bpp_uri:
+                      type: string
+                    bpp_id:
+                      type: string
+                    ttl:
+                      type: string
+                    location:
+                      type: object
+                      properties:
+                        country: *country
+                message:
+                  type: object
+                  properties:
+                    issue_id:
+                      type: string
+      responses: *responses
+      

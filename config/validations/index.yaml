@@ -149,6 +149,24 @@ _TESTS_:
             - CONSUMER
           _CONTINUE_: "!(attr are present)"
           _RETURN_: attr any in enumList
+    - _NAME_: SEARCH_TAGS
+      _RETURN_:
+        - _NAME_: REQUIRED_INTENT_TAGS
+          attr: $.message.intent.tags[*].descriptor.code
+          enumList:
+            - BAP_TERMS
+          _RETURN_: attr are present && attr all in enumList
+
+        - _NAME_: REQUIRED_BAP_TERMS
+          _SCOPE_: $.message.intent.tags[?(@.descriptor.code=='BAP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BAP_TERMS_STATIC_TERMS
+              attr: $.message.intent.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BAP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.intent.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
   on_search:
     - _NAME_: ON_SEARCH_CONTEXT
       action:
@@ -379,6 +397,24 @@ _TESTS_:
             - LSP_ADDRESS
           _CONTINUE_: "!(subTags are present)"
           _RETURN_: subTags all in validValues
+    - _NAME_: ON_SEARCH_TAGS
+      _RETURN_:
+        - _NAME_: REQUIRED_CATALOG_TAGS
+          attr: $.message.catalog.tags[*].descriptor.code
+          enumList:
+            - BPP_TERMS
+          _RETURN_: attr are present && attr all in enumList
+
+        - _NAME_: REQUIRED_BPP_TERMS
+          _SCOPE_: $.message.catalog.tags[?(@.descriptor.code=='BPP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BPP_TERMS_STATIC_TERMS
+              attr: $.message.catalog.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BPP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.catalog.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
   select:
     - _NAME_: SELECT_CONTEXT
       action:
@@ -934,6 +970,36 @@ _TESTS_:
         - _NAME_: REQUIRED_PAYMENT_PARAMS_VPA
           attr: $.message.order.payments[*].params.virtual_payment_address
           _RETURN_: attr are present
+    - _NAME_: CONFIRM_TAGS
+      _RETURN_:
+        - _NAME_: REQUIRED_ORDER_TAGS
+          attr: $.message.order.tags[*].descriptor.code
+          enumList:
+            - BAP_TERMS
+            - BPP_TERMS
+          _RETURN_: attr are present && attr all in enumList
+
+        - _NAME_: REQUIRED_BAP_TERMS
+          _SCOPE_: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BAP_TERMS_STATIC_TERMS
+              attr: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BAP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
+
+        - _NAME_: REQUIRED_BPP_TERMS
+          _SCOPE_: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BPP_TERMS_STATIC_TERMS
+              attr: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BPP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present      
   on_confirm:
     - _NAME_: ON_CONFIRM_CONTEXT
       action:
@@ -1058,7 +1124,36 @@ _TESTS_:
         - DISBURSED
       _CONTINUE_: "!(attr are present)"
       _RETURN_: attr all in enumList
-    
+    - _NAME_: ON_CONFIRM_TAGS
+      _RETURN_:
+        - _NAME_: REQUIRED_ORDER_TAGS
+          attr: $.message.order.tags[*].descriptor.code
+          enumList:
+            - BAP_TERMS
+            - BPP_TERMS
+          _RETURN_: attr are present && attr all in enumList
+
+        - _NAME_: REQUIRED_BAP_TERMS
+          _SCOPE_: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BAP_TERMS_STATIC_TERMS
+              attr: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BAP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.order.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
+
+        - _NAME_: REQUIRED_BPP_TERMS
+          _SCOPE_: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')]
+          _RETURN_:
+            - _NAME_: REQUIRED_BPP_TERMS_STATIC_TERMS
+              attr: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='STATIC_TERMS')].value
+              _RETURN_: attr are present
+
+            - _NAME_: REQUIRED_BPP_TERMS_OFFLINE_CONTRACT
+              attr: $.message.order.tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='OFFLINE_CONTRACT')].value
+              _RETURN_: attr are present
     - &REQUIRED_ORDER_CREATED_AT
       _NAME_: REQUIRED_ORDER_CREATED_AT
       attr: $.message.order.created_at
@@ -1334,6 +1429,7 @@ _TESTS_:
             - BANK_ACCOUNT_VERIFICATION
             - LOAN_AGREEMENT
           _RETURN_: attr all in enumList
+          
   issue:
     - _NAME_: REQUIRED_CONTEXT_FIELDS
       _RETURN_:
@@ -1970,6 +2066,64 @@ _TESTS_:
           attr: $.message.issue.updated_at
           _RETURN_: attr are present
 
+  issue_status:
+    - _NAME_: REQUIRED_CONTEXT_FIELDS
+      _RETURN_:
+        - _NAME_: REQUIRED_CONTEXT_DOMAIN
+          attr: $.context.domain
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_COUNTRY
+          attr: [$.context.location.country.code]
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_CITY
+          attr: [$.context.location.city.code]
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_TRANSACTION_ID
+          attr: $.context.transaction_id
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_MESSAGE_ID
+          attr: $.context.message_id
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_ACTION
+          attr: $.context.action
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_TIMESTAMP
+          attr: $.context.timestamp
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_VERSION
+          attr: [$.context.version]
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_BAP_URI
+          attr: $.context.bap_uri
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_BAP_ID
+          attr: $.context.bap_id
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_BPP_URI
+          attr: $.context.bpp_uri
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_BPP_ID
+          attr: $.context.bpp_id
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_CONTEXT_TTL
+          attr: $.context.ttl
+          _RETURN_: attr are present
+        - _NAME_: VALID_CONTEXT_COUNTRY_CODE
+          attr: $.context.location.country.code
+          # enumList:
+          #   - IND
+          _RETURN_: attr are present
+        # - _NAME_: VALID_CONTEXT_COUNTRY_CODE
+        #   attr: $.context.country
+        #   _RETURN_: attr are present
+    - _NAME_: ISSUE_STATUS_VALIDATION
+      action:
+        - issue_status
+      _RETURN_:
+        - _NAME_: REQUIRED_ISSUE_ID
+          attr: $.message.issue_id
+          _RETURN_: attr are present
+
   on_issue_status:
     - _NAME_: REQUIRED_CONTEXT_FIELDS
       _RETURN_:
@@ -2061,30 +2215,7 @@ _TESTS_:
 
         - _NAME_: REQUIRED_ISSUE_UPDATED_AT
           attr: $.message.issue.updated_at
-          _RETURN_: attr are present
-
-        - _NAME_: REQUIRED_RESOLUTION_SHORT_DESC
-          attr: [$.message.issue.resolution.short_desc]
-          _RETURN_: attr are present
-
-        - _NAME_: REQUIRED_RESOLUTION_LONG_DESC
-          attr: [$.message.issue.resolution.long_desc]
-          _RETURN_: attr are present
-
-        - _NAME_: REQUIRED_RESOLUTION_ACTION_TRIGGERED
-          attr: [$.message.issue.resolution.action_triggered]
-          _RETURN_: attr are present
-
-        - _NAME_: REQUIRED_RESOLUTION_PROVIDER_TYPE
-          attr: $.message.issue.resolution_provider.respondent_info.type
-          _RETURN_: attr are present
-
-        - _NAME_: REQUIRED_RESOLUTION_PROVIDER_ORG_NAME
-          attr: $.message.issue.resolution_provider.respondent_info.organization.org.name
-          _RETURN_: attr are present
-
-        - _NAME_: REQUIRED_RESOLUTION_PROVIDER_PERSON_NAME
-          attr: $.message.issue.resolution_provider.respondent_info.organization.person.name
           _RETURN_: attr are present    
+
 _SESSION_DATA_:
   trans: {}

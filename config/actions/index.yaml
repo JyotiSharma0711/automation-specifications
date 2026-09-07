@@ -9,33 +9,44 @@ supportedActions:
   select:
     - on_select
     - select
+    - status
+    - on_status
   on_select:
     - init
     - select
     - on_status
+    - status
   init:
     - on_init
+    - status
+    - on_status
   on_init:
     - confirm
     - init
     - on_status
+    - status
   confirm:
     - on_confirm
+    - on_status
+    - status
   on_confirm:
     - update
     - on_update
     - on_status
     - status
     - issue
-    
   update:
     - on_update
+    - on_status
+    - status
   on_update:
     - update
     - on_update
     - status
+    - on_status
   status:
     - on_status
+    - status
   on_status:
     - status
     - on_status
@@ -51,6 +62,7 @@ supportedActions:
     - on_confirm
     - on_issue_status
     - update
+    - status
 
   on_issue:
     - issue
@@ -59,12 +71,24 @@ supportedActions:
     - on_issue_status
     - update
     - on_update
+    - issue_status
+    - status
 
   on_issue_status:
     - on_issue
     - issue
     - on_update
     - update
+    - issue_status
+    - on_issue_status
+    - on_status
+    - status
+
+  issue_status:
+    - on_issue 
+    - on_issue_status
+    - on_status
+    - status
 apiProperties:
   search:
     async_predecessor: null
@@ -114,6 +138,9 @@ apiProperties:
   on_issue:
     async_predecessor: null
     transaction_partner: []  
+  issue_status:
+    async_predecessor: null
+    transaction_partner: []   
   on_issue_status:
     async_predecessor: null
     transaction_partner: [] 

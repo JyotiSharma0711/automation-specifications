@@ -1160,3 +1160,631 @@ steps:
 transaction_history: []
 validationLib: ""
 helperLib: LyoKCUN1c3RvbSBoZWxwZXIgZnVuY3Rpb25zIGF2YWlsYWJsZSBpbiBhbGwgbW9jayBnZW5lcmF0aW9uIGZ1bmN0aW9ucy4KCXRoZXNlIGFyZSBhcHBlbmRlZCBiZWxvdyB0aGUgZ2VuZXJhdGUgZnVuY3Rpb24gZm9yIGVhY2ggc3RlcC4KKi8KCmNvbnN0IGNyZWF0ZUZvcm1VUkwgPSAoZG9tYWluLCBmb3JtSWQsIHNlc3Npb25EYXRhKSA9PiB7Cgljb25zdCBiYXNlVVJMID0gc2Vzc2lvbkRhdGEubW9ja0Jhc2VVcmw7Cgljb25zdCB0cmFuc2FjdGlvbklkID0gc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZFswXTsKCWNvbnN0IHNlc3Npb25JZCA9IHNlc3Npb25EYXRhLnNlc3Npb25JZDsKCXJldHVybiBgJHtiYXNlVVJMfS9mb3Jtcy8ke2RvbWFpbn0vJHtmb3JtSWR9Lz90cmFuc2FjdGlvbl9pZD0ke3RyYW5zYWN0aW9uSWR9JnNlc3Npb25faWQ9JHtzZXNzaW9uSWR9YDsKfQoKCi8vIEdlbmVyYXRlcyBhIFVVSUQgdjQKZnVuY3Rpb24gdXVpZHY0KCkgewoJcmV0dXJuICd4eHh4eHh4eC14eHh4LTR4eHgteXh4eC14eHh4eHh4eHh4eHgnLnJlcGxhY2UoL1t4eV0vZywgZnVuY3Rpb24gKGMpIHsKCQljb25zdCByID0gTWF0aC5yYW5kb20oKSAqIDE2IHwgMDsKCQljb25zdCB2ID0gYyA9PT0gJ3gnID8gciA6IChyICYgMHgzIHwgMHg4KTsKCQlyZXR1cm4gdi50b1N0cmluZygxNik7Cgl9KTsKfQpmdW5jdGlvbiBnZW5lcmF0ZVRpbWVSYW5nZUZyb21Db250ZXh0KGNvbnRleHRUaW1lc3RhbXApIHsKCWNvbnN0IGNvbnRleHREYXRlID0gbmV3IERhdGUoY29udGV4dFRpbWVzdGFtcCk7Cgljb25zdCB5ZWFyID0gY29udGV4dERhdGUuZ2V0VVRDRnVsbFllYXIoKTsKCWNvbnN0IG1vbnRoID0gY29udGV4dERhdGUuZ2V0VVRDTW9udGgoKTsKCgkvLyBDcmVhdGUgc3RhcnQgb2YgbW9udGgKCWNvbnN0IHN0YXJ0ID0gbmV3IERhdGUoRGF0ZS5VVEMoeWVhciwgbW9udGgsIDEsIDAsIDAsIDAsIDApKTsKCS8vIENyZWF0ZSBlbmQgb2YgbW9udGgKCWNvbnN0IGVuZCA9IG5ldyBEYXRlKERhdGUuVVRDKHllYXIsIG1vbnRoICsgMSwgMCwgMjMsIDU5LCA1OSwgOTk5KSk7CgoJcmV0dXJuIHsKCQlzdGFydDogc3RhcnQudG9JU09TdHJpbmcoKSwKCQllbmQ6IGVuZC50b0lTT1N0cmluZygpCgl9Owp9CmZ1bmN0aW9uIHBhcnNlSVNPRHVyYXRpb25Ub01vbnRocyh0ZXJtKSB7CglpZiAoIXRlcm0pIHJldHVybiAxMjsKCWNvbnN0IHMgPSBTdHJpbmcodGVybSkudHJpbSgpOwoKCWNvbnN0IHllYXJXb3JkTWF0Y2ggPSBzLm1hdGNoKC8oXGQrKVxzKnllYXIvaSk7Cgljb25zdCBtb250aFdvcmRNYXRjaCA9IHMubWF0Y2goLyhcZCspXHMqbW9udGgvaSk7CgoJaWYgKHllYXJXb3JkTWF0Y2ggfHwgbW9udGhXb3JkTWF0Y2gpIHsKCQljb25zdCB5ZWFycyA9IHllYXJXb3JkTWF0Y2ggPyBwYXJzZUludCh5ZWFyV29yZE1hdGNoWzFdLCAxMCkgOiAwOwoJCWNvbnN0IG1vbnRocyA9IG1vbnRoV29yZE1hdGNoID8gcGFyc2VJbnQobW9udGhXb3JkTWF0Y2hbMV0sIDEwKSA6IDA7CgkJcmV0dXJuIHllYXJzICogMTIgKyBtb250aHMgfHwgMTI7Cgl9CgoJaWYgKHMuc3RhcnRzV2l0aCgnUCcpKSB7CgkJY29uc3QgeWVhck1hdGNoID0gcy5tYXRjaCgvKFxkKylZLyk7CgkJY29uc3QgbW9udGhNYXRjaCA9IHMubWF0Y2goLyhcZCspTS8pOwoKCQljb25zdCB5ZWFycyA9IHllYXJNYXRjaCA/IHBhcnNlSW50KHllYXJNYXRjaFsxXSwgMTApIDogMDsKCQljb25zdCBtb250aHMgPSBtb250aE1hdGNoID8gcGFyc2VJbnQobW9udGhNYXRjaFsxXSwgMTApIDogMDsKCgkJcmV0dXJuIHllYXJzICogMTIgKyBtb250aHMgfHwgMTI7Cgl9CgoJY29uc3QgbnVtZXJpYyA9IHBhcnNlSW50KHMsIDEwKTsKCXJldHVybiBpc05hTihudW1lcmljKSA/IDEyIDogbnVtZXJpYzsKfQphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZUNvbnNlbnRIYW5kbGVyKAoJc2Vzc2lvbkRhdGEsCgl7CgkJY3VzdElkLAoJCXRlbXBsYXRlTmFtZSA9ICJGSU5WVURFTU9fVEVTVElORyIsCgkJY29uc2VudERlc2NyaXB0aW9uID0gIkdvbGQgTG9hbiBBY2NvdW50IEFnZ3JlZ2F0b3IgQ29uc2VudCIsCgkJcmVkaXJlY3RVcmwgPSAiaHR0cHM6Ly9nb29nbGUuY28uaW4iLAoJfSwKKSB7CglpZiAoIWN1c3RJZCkgewoJCXRocm93IG5ldyBFcnJvcigiY3VzdElkIGlzIHJlcXVpcmVkIik7Cgl9Cgljb25zdCBiYXNlVXJsID0gc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEuZmludnVVcmw7CglpZiAoIWJhc2VVcmwpIHsKCQl0aHJvdyBuZXcgRXJyb3IoInNlc3Npb25EYXRhLmZpbnZ1VXJsIGlzIHJlcXVpcmVkIik7Cgl9CgoJY29uc3QgdXJsID0gYCR7YmFzZVVybH0vZmludnUtYWEvY29uc2VudC9nZW5lcmF0ZWA7CgoJY29uc3QgcGF5bG9hZCA9IHsKCQljdXN0SWQsCgkJdGVtcGxhdGVOYW1lLAoJCWNvbnNlbnREZXNjcmlwdGlvbiwKCQlyZWRpcmVjdFVybCwKCX07CgoJY29uc29sZS5sb2coIkNhbGxpbmcgRmludnUgQUEgU2VydmljZToiLCB1cmwpOwoJY29uc29sZS5sb2coIkNvbnNlbnQgcmVxdWVzdCBwYXlsb2FkOiIsIHBheWxvYWQpOwoKCWNvbnN0IGNvbnRyb2xsZXIgPSBuZXcgQWJvcnRDb250cm9sbGVyKCk7Cgljb25zdCB0aW1lb3V0ID0gc2V0VGltZW91dCgoKSA9PiBjb250cm9sbGVyLmFib3J0KCksIDEwMDAwKTsKCgl0cnkgewoJCWNvbnN0IHJlcyA9IGF3YWl0IGZldGNoKHVybCwgewoJCQltZXRob2Q6ICJQT1NUIiwKCQkJaGVhZGVyczogewoJCQkJIkNvbnRlbnQtVHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiwKCQkJfSwKCQkJYm9keTogSlNPTi5zdHJpbmdpZnkocGF5bG9hZCksCgkJCXNpZ25hbDogY29udHJvbGxlci5zaWduYWwsCgkJfSk7CgoJCWlmICghcmVzLm9rKSB7CgkJCWNvbnN0IHRleHQgPSBhd2FpdCByZXMudGV4dCgpOwoJCQl0aHJvdyBuZXcgRXJyb3IoYFJlcXVlc3QgZmFpbGVkOiAke3Jlcy5zdGF0dXN9ICR7dGV4dH1gKTsKCQl9CgoJCWNvbnN0IGRhdGEgPSBhd2FpdCByZXMuanNvbigpOwoKCQlpZiAoIWRhdGEgfHwgIWRhdGEuY29uc2VudEhhbmRsZXIpIHsKCQkJdGhyb3cgbmV3IEVycm9yKCJJbnZhbGlkIHJlc3BvbnNlOiBjb25zZW50SGFuZGxlciBtaXNzaW5nIik7CgkJfQoKCQlyZXR1cm4gZGF0YS5jb25zZW50SGFuZGxlcjsKCX0gY2F0Y2ggKGVycikgewoJCWlmIChlcnIgJiYgZXJyLm5hbWUgPT09ICJBYm9ydEVycm9yIikgewoJCQl0aHJvdyBuZXcgRXJyb3IoIlJlcXVlc3QgdGltZWQgb3V0IGFmdGVyIDEwIHNlY29uZHMiKTsKCQl9CgkJdGhyb3cgZXJyOwoJfSBmaW5hbGx5IHsKCQljbGVhclRpbWVvdXQodGltZW91dCk7Cgl9Cn0KCmZ1bmN0aW9uIGdlbmVyYXRlNkRpZ2l0SWQoKSB7CglyZXR1cm4gTWF0aC5mbG9vcigxMDAwMDAgKyBNYXRoLnJhbmRvbSgpICogOTAwMDAwKS50b1N0cmluZygpOwp9CgpmdW5jdGlvbiBjdXJyZW50VGltZXN0YW1wKCkgewoJcmV0dXJuIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKfQoKY29uc3QgaXNvRHVyVG9TZWMgPSAoZHVyYXRpb24pID0+IHsKCWNvbnN0IGR1clJFID0gL1AoKGQrKVkpPygoZCspTSk/KChkKylXKT8oKGQrKUQpP1Q/KChkKylIKT8oKGQrKU0pPygoZCspUyk/LzsKCWNvbnN0IHMgPSBkdXJSRS5leGVjKGR1cmF0aW9uKTsKCWlmICghcykgcmV0dXJuIDA7CgoJcmV0dXJuIChOdW1iZXIocz8uWzJdKSB8fCAwKSAqIDMxNTM2MDAwICsKCQkoTnVtYmVyKHM/Lls0XSkgfHwgMCkgKiAyNjI4Mjg4ICsKCQkoTnVtYmVyKHM/Lls2XSkgfHwgMCkgKiA2MDQ4MDAgKwoJCShOdW1iZXIocz8uWzhdKSB8fCAwKSAqIDg2NDAwICsKCQkoTnVtYmVyKHM/LlsxMF0pIHx8IDApICogMzYwMCArCgkJKE51bWJlcihzPy5bMTJdKSB8fCAwKSAqIDYwICsKCQkoTnVtYmVyKHM/LlsxNF0pIHx8IDApOwp9OwoKY29uc3Qgc2V0Q2l0eUZyb21JbnB1dHMgPSAocGF5bG9hZCwgaW5wdXRzKSA9PiB7CglpZiAoIWlucHV0cykgcmV0dXJuICIqIjsKCWxldCB2ZXJzaW9uID0gcGF5bG9hZC5jb250ZXh0LnZlcnNpb24gfHwgcGF5bG9hZC5jb250ZXh0LmNvcmVfdmVyc2lvbiB8fCAiMi4wLjAiOwoJaWYgKHZlcnNpb24uc3RhcnRzV2l0aCgiMSIpKSB7CgkJcGF5bG9hZC5jb250ZXh0LmNpdHkgPSBpbnB1dHMuY2l0eV9jb2RlID8/ICIqIjsKCX0gZWxzZSB7CgkJcGF5bG9hZC5jb250ZXh0LmxvY2F0aW9uLmNpdHkuY29kZSA9IGlucHV0cy5jaXR5X2NvZGUgPz8gIioiOwoJfQp9CgpmdW5jdGlvbiBjYWxjdWxhdGVTZXR0bGVtZW50QW1vdW50KHNlc3Npb25EYXRhKSB7Cgljb25zdCBmZWVUeXBlID0gc2Vzc2lvbkRhdGEuYnV5ZXJfZmluZGVyX2ZlZXNfdHlwZSB8fCAicGVyY2VudC1hbm51YWxpemVkIjsKCWNvbnN0IGZlZVBlcmNlbnRhZ2UgPSBwYXJzZUZsb2F0KHNlc3Npb25EYXRhLmJ1eWVyX2ZpbmRlcl9mZWVzX3BlcmNlbnRhZ2UgfHwgIjAiKTsKCWNvbnN0IGZlZUFtb3VudCA9IHBhcnNlRmxvYXQoc2Vzc2lvbkRhdGEuYnV5ZXJfZmluZGVyX2ZlZXNfYW1vdW50IHx8ICIwIik7CgoJY29uc3QgcHJpbmNpcGFsQW1vdW50ID0gcGFyc2VGbG9hdChzZXNzaW9uRGF0YS5wcmluY2lwYWxfYW1vdW50IHx8ICIwIik7Cgljb25zdCB0b3RhbExvYW5BbW91bnQgPSBwYXJzZUZsb2F0KHNlc3Npb25EYXRhLnF1b3RlX3ByaWNlIHx8ICIwIik7Cgljb25zdCBsb2FuVGVybUlTTyA9IHNlc3Npb25EYXRhLmxvYW5fdGVybSB8fCAiUDEyTSI7Cgljb25zdCBsb2FuVGVybU1vbnRocyA9IHBhcnNlSVNPRHVyYXRpb25Ub01vbnRocyhsb2FuVGVybUlTTyk7CgoJY29uc29sZS5sb2coIltzZXR0bGVtZW50LXV0aWxzXSBDYWxjdWxhdGluZyBTRVRUTEVNRU5UX0FNT1VOVCB3aXRoOiIsIHsKCQlmZWVUeXBlLAoJCWZlZVBlcmNlbnRhZ2UsCgkJZmVlQW1vdW50LAoJCXByaW5jaXBhbEFtb3VudCwKCQl0b3RhbExvYW5BbW91bnQsCgkJbG9hblRlcm1JU08sCgkJbG9hblRlcm1Nb250aHMsCgl9KTsKCglsZXQgc2V0dGxlbWVudEFtb3VudCA9IDA7CgoJc3dpdGNoIChmZWVUeXBlKSB7CgkJY2FzZSAiYW1vdW50IjoKCQkJc2V0dGxlbWVudEFtb3VudCA9IGZlZUFtb3VudDsKCQkJY29uc29sZS5sb2coYFtzZXR0bGVtZW50LXV0aWxzXSBhbW91bnQgdHlwZSDihpIgJHtzZXR0bGVtZW50QW1vdW50fWApOwoJCQlicmVhazsKCgkJY2FzZSAicGVyY2VudCI6CgkJCXNldHRsZW1lbnRBbW91bnQgPSAoZmVlUGVyY2VudGFnZSAvIDEwMCkgKiB0b3RhbExvYW5BbW91bnQ7CgkJCWNvbnNvbGUubG9nKAoJCQkJYFtzZXR0bGVtZW50LXV0aWxzXSBwZXJjZW50IHR5cGUg4oaSICR7ZmVlUGVyY2VudGFnZX0lIMOXICR7dG90YWxMb2FuQW1vdW50fSA9ICR7c2V0dGxlbWVudEFtb3VudH1gCgkJCSk7CgkJCWJyZWFrOwoKCQljYXNlICJwZXJjZW50LWFubnVhbGl6ZWQiOgoJCWRlZmF1bHQ6CgkJCXNldHRsZW1lbnRBbW91bnQgPQoJCQkJKGZlZVBlcmNlbnRhZ2UgLyAxMDApICoKCQkJCShsb2FuVGVybU1vbnRocyAvIDEyKSAqCgkJCQlwcmluY2lwYWxBbW91bnQ7CgkJCWNvbnNvbGUubG9nKAoJCQkJYFtzZXR0bGVtZW50LXV0aWxzXSBwZXJjZW50LWFubnVhbGl6ZWQgdHlwZSDihpIgJHtmZWVQZXJjZW50YWdlfSUgw5cgKCR7bG9hblRlcm1Nb250aHN9LzEyKSDDlyAke3ByaW5jaXBhbEFtb3VudH0gPSAke3NldHRsZW1lbnRBbW91bnR9YAoJCQkpOwoJCQlicmVhazsKCX0KCgljb25zdCByZXN1bHQgPSBTdHJpbmcoTWF0aC5yb3VuZChzZXR0bGVtZW50QW1vdW50KSk7Cgljb25zb2xlLmxvZyhgW3NldHRsZW1lbnQtdXRpbHNdIEZpbmFsIFNFVFRMRU1FTlRfQU1PVU5UID0gJHtyZXN1bHR9YCk7CglyZXR1cm4gcmVzdWx0Owp9CmZ1bmN0aW9uIGluamVjdFNldHRsZW1lbnRBbW91bnQoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7Cgljb25zdCBzZXR0bGVtZW50QW1vdW50ID0KCQlzZXNzaW9uRGF0YS5zZXR0bGVtZW50X2Ftb3VudCA/PyBjYWxjdWxhdGVTZXR0bGVtZW50QW1vdW50KHNlc3Npb25EYXRhKTsKCgljb25zdCBwYXltZW50cyA9IGRlZmF1bHRQYXlsb2FkPy5tZXNzYWdlPy5vcmRlcj8ucGF5bWVudHMgfHwgW107CgoJcGF5bWVudHMuZm9yRWFjaCgocGF5bWVudCkgPT4gewoJCWlmICghQXJyYXkuaXNBcnJheShwYXltZW50Py50YWdzKSkgcmV0dXJuOwoKCQlwYXltZW50LnRhZ3MuZm9yRWFjaCgodGFnKSA9PiB7CgkJCWlmIChBcnJheS5pc0FycmF5KHRhZz8ubGlzdCkpIHsKCQkJCWNvbnN0IGl0ZW0gPSB0YWcubGlzdC5maW5kKAoJCQkJCShpKSA9PiBpPy5kZXNjcmlwdG9yPy5jb2RlID09PSAiU0VUVExFTUVOVF9BTU9VTlQiCgkJCQkpOwoJCQkJaWYgKGl0ZW0pIHsKCQkJCQlpdGVtLnZhbHVlID0gc2V0dGxlbWVudEFtb3VudDsKCQkJCQljb25zb2xlLmxvZygKCQkJCQkJYFtzZXR0bGVtZW50LXV0aWxzXSBJbmplY3RlZCBTRVRUTEVNRU5UX0FNT1VOVCA9ICR7c2V0dGxlbWVudEFtb3VudH1gCgkJCQkJKTsKCQkJCX0KCQkJfQoJCX0pOwoJfSk7CgoJcmV0dXJuIHNldHRsZW1lbnRBbW91bnQ7Cn0KCmZ1bmN0aW9uIHVwZGF0ZU1pc3NlZEVNSVN0YXR1cyhwYXltZW50cywgY29udGV4dFRpbWVzdGFtcCkgewoJaWYgKCFBcnJheS5pc0FycmF5KHBheW1lbnRzKSkgcmV0dXJuOwoKCWNvbnN0IGNvbnRleHREYXRlID0gbmV3IERhdGUoY29udGV4dFRpbWVzdGFtcCk7Cgljb25zdCBjb250ZXh0TW9udGggPSBjb250ZXh0RGF0ZS5nZXRVVENNb250aCgpOwoJY29uc3QgY29udGV4dFllYXIgPSBjb250ZXh0RGF0ZS5nZXRVVENGdWxsWWVhcigpOwoJcGF5bWVudHMuZm9yRWFjaChwYXltZW50ID0+IHsKCQlpZiAocGF5bWVudC50aW1lPy5sYWJlbCA9PT0gJ0lOU1RBTExNRU5UJyAmJiBwYXltZW50LnR5cGUgPT09ICdQT1NUX0ZVTEZJTExNRU5UJyAmJiBwYXltZW50LnRpbWU/LnJhbmdlPy5zdGFydCkgewoJCQljb25zdCBwYXltZW50RGF0ZSA9IG5ldyBEYXRlKHBheW1lbnQudGltZS5yYW5nZS5zdGFydCk7CgkJCWNvbnN0IHBheW1lbnRNb250aCA9IHBheW1lbnREYXRlLmdldFVUQ01vbnRoKCk7CgkJCWNvbnN0IHBheW1lbnRZZWFyID0gcGF5bWVudERhdGUuZ2V0VVRDRnVsbFllYXIoKTsKCgkJCWlmIChwYXltZW50TW9udGggPT09IGNvbnRleHRNb250aCAmJiBwYXltZW50WWVhciA9PT0gY29udGV4dFllYXIpIHsKCQkJCXBheW1lbnQuc3RhdHVzID0gJ1BBSUQnOwoJCQl9CgkJfQoJfSk7Cn0KCmZ1bmN0aW9uIHVwZGF0ZVByZVBhcnRQYXltZW50U3RhdHVzKHBheW1lbnRzLCBjb250ZXh0VGltZXN0YW1wKSB7CglpZiAoIUFycmF5LmlzQXJyYXkocGF5bWVudHMpKSByZXR1cm47CgoJY29uc3QgY29udGV4dERhdGUgPSBuZXcgRGF0ZShjb250ZXh0VGltZXN0YW1wKTsKCWNvbnN0IGNvbnRleHRNb250aCA9IGNvbnRleHREYXRlLmdldFVUQ01vbnRoKCk7Cgljb25zdCBjb250ZXh0WWVhciA9IGNvbnRleHREYXRlLmdldFVUQ0Z1bGxZZWFyKCk7CgoJbGV0IHBhaWRDb3VudCA9IDA7CglsZXQgZGVmZXJyZWRDb3VudCA9IDA7CgoJcGF5bWVudHMuZm9yRWFjaChwYXltZW50ID0+IHsKCQlpZiAocGF5bWVudC50aW1lPy5sYWJlbCA9PT0gJ0lOU1RBTExNRU5UJyAmJiBwYXltZW50LnR5cGUgPT09ICdQT1NUX0ZVTEZJTExNRU5UJyAmJiBwYXltZW50LnRpbWU/LnJhbmdlPy5zdGFydCkgewoJCQljb25zdCBwYXltZW50RGF0ZSA9IG5ldyBEYXRlKHBheW1lbnQudGltZS5yYW5nZS5zdGFydCk7CgkJCWNvbnN0IHBheW1lbnRNb250aCA9IHBheW1lbnREYXRlLmdldFVUQ01vbnRoKCk7CgkJCWNvbnN0IHBheW1lbnRZZWFyID0gcGF5bWVudERhdGUuZ2V0VVRDRnVsbFllYXIoKTsKCgkJCWlmIChwYXltZW50TW9udGggPj0gY29udGV4dE1vbnRoICYmIHBheW1lbnRNb250aCA8PSBjb250ZXh0TW9udGggKyAyICYmIHBheW1lbnRZZWFyID09PSBjb250ZXh0WWVhciAmJiBwYWlkQ291bnQgPCAzKSB7CgkJCQlwYXltZW50LnN0YXR1cyA9ICdQQUlEJzsKCQkJCXBhaWRDb3VudCsrOwoJCQl9CgkJCWVsc2UgaWYgKHBheW1lbnRNb250aCA+IGNvbnRleHRNb250aCArIDIgJiYgcGF5bWVudE1vbnRoIDw9IGNvbnRleHRNb250aCArIDQgJiYgcGF5bWVudFllYXIgPT09IGNvbnRleHRZZWFyICYmIGRlZmVycmVkQ291bnQgPCAyKSB7CgkJCQlwYXltZW50LnN0YXR1cyA9ICdERUZFUlJFRCc7CgkJCQlkZWZlcnJlZENvdW50Kys7CgkJCX0KCQl9Cgl9KTsKfQoKCmZ1bmN0aW9uIHVwZGF0ZUZvcmVjbG9zdXJlUGF5bWVudFN0YXR1cyhwYXltZW50cykgewoJaWYgKCFBcnJheS5pc0FycmF5KHBheW1lbnRzKSkgcmV0dXJuOwoKCXBheW1lbnRzLmZvckVhY2gocGF5bWVudCA9PiB7CgkJaWYgKHBheW1lbnQudGltZT8ubGFiZWwgPT09ICdJTlNUQUxMTUVOVCcgJiYgcGF5bWVudC50eXBlID09PSAnUE9TVF9GVUxGSUxMTUVOVCcpIHsKCQkJaWYgKHBheW1lbnQuc3RhdHVzICE9PSAnUEFJRCcpIHsKCQkJCXBheW1lbnQuc3RhdHVzID0gJ05PVC1QQUlEJzsKCQkJfQoJCX0KCX0pOwp9CgpmdW5jdGlvbiB1cHNlcnRCcmVha3VwKG9yZGVyLCB0aXRsZSwgdmFsdWUsIGN1cnJlbmN5ID0gJ0lOUicpIHsKCW9yZGVyLnF1b3RlID0gb3JkZXIucXVvdGUgfHwgeyBwcmljZTogeyBjdXJyZW5jeTogJ0lOUicsIHZhbHVlOiAnMCcgfSwgYnJlYWt1cDogW10gfTsKCW9yZGVyLnF1b3RlLmJyZWFrdXAgPSBBcnJheS5pc0FycmF5KG9yZGVyLnF1b3RlLmJyZWFrdXApID8gb3JkZXIucXVvdGUuYnJlYWt1cCA6IFtdOwoJY29uc3QgaWR4ID0gb3JkZXIucXVvdGUuYnJlYWt1cC5maW5kSW5kZXgoKGIpID0+IChiLnRpdGxlIHx8ICcnKS50b1VwcGVyQ2FzZSgpID09PSB0aXRsZS50b1VwcGVyQ2FzZSgpKTsKCWNvbnN0IHJvdyA9IHsgdGl0bGUsIHByaWNlOiB7IHZhbHVlLCBjdXJyZW5jeSB9IH07CglpZiAoaWR4ID49IDApIG9yZGVyLnF1b3RlLmJyZWFrdXBbaWR4XSA9IHJvdzsgZWxzZSBvcmRlci5xdW90ZS5icmVha3VwLnB1c2gocm93KTsKfQ==
+extra_steps:
+  steps:
+    - api: status
+      action_id: status2_finance
+      owner: BAP
+      responseFor: null
+      unsolicited: false
+      description: The borrower request for order status
+      mock:
+        generate: >-
+          LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UucmVmX2lkID0gc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZFswXQogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
+        validate: >-
+          LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+        requirements: >-
+          LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+        defaultPayload:
+          context:
+            domain: 'ONDC:FIS12'
+            action: status
+            timestamp: '2026-08-20T13:59:19.236Z'
+            transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
+            message_id: cdf6fc9d-fd49-49e8-a800-f1ad19fed727
+            bap_id: bap.example.com
+            bap_uri: 'https://bap.example.com'
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: 'https://bpp.example.com'
+            version: 2.2.1
+            location:
+              country:
+                code: IND
+              city:
+                code: '*'
+          message: {}
+        saveData:
+          transactionId: $.context.transaction_id
+          extraStepMessageId: $.context.message_id
+          latestTimestamp: $.context.timestamp
+          bapId: $.context.bap_id
+          bapUri: $.context.bap_uri
+          bppId: $.context.bpp_id
+          bppUri: $.context.bpp_uri
+          city_code: $.context.location.city.code
+        inputs: {}
+      examples:
+        - name: example for status
+          payload:
+            context:
+              domain: 'ONDC:FIS12'
+              action: status
+              timestamp: '2026-08-21T08:04:12.634Z'
+              transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
+              message_id: 8d29207a-1169-4a83-a54b-f71adf701c2b
+              bap_id: bap.example.com
+              bap_uri: 'https://bap.example.com'
+              ttl: PT30S
+              bpp_id: bpp.example.com
+              bpp_uri: 'https://bpp.example.com'
+              version: 2.2.1
+              location:
+                country:
+                  code: IND
+                city:
+                  code: '*'
+            message:
+              ref_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
+          type: request
+          description: The borrower request for order status
+    - api: on_status
+      action_id: on_status2_finance
+      owner: BPP
+      responseFor: status2_finance
+      unsolicited: false
+      description: please add relevant description
+      mock:
+        generate: >-
+          ZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgbGF0ZXN0T3JkZXIgPSBzZXNzaW9uRGF0YS5vcmRlclswXTsKCiAgaWYgKCFsYXRlc3RPcmRlcikgewogICAgdGhyb3cgbmV3IEVycm9yKCJObyBsYXRlc3Qgb3JkZXIgZm91bmQgaW4gc2Vzc2lvbiIpOwogIH0KCiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlciA9IGxhdGVzdE9yZGVyCmNvbnN0IGV4dHJhU3RlcE1lc3NhZ2VJZCA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGEuZXh0cmFTdGVwTWVzc2FnZUlkKQogID8gc2Vzc2lvbkRhdGEuZXh0cmFTdGVwTWVzc2FnZUlkWzBdCiAgOiBzZXNzaW9uRGF0YS5leHRyYVN0ZXBNZXNzYWdlSWQ7CgppZiAoZXh0cmFTdGVwTWVzc2FnZUlkKSB7CiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gZXh0cmFTdGVwTWVzc2FnZUlkCnNlc3Npb25EYXRhLmV4dHJhU3RlcE1lc3NhZ2VJZCA9IG51bGwKfWVsc2V7CiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gYCR7dXVpZHY0KCl9YAp9CgogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
+        validate: >-
+          LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+        requirements: >-
+          LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+        defaultPayload:
+          context:
+            domain: 'ONDC:FIS12'
+            action: on_status
+            timestamp: '2026-04-10T07:45:44.863Z'
+            transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
+            message_id: 124261b0-6c67-491b-b921-80fbdf290d72
+            bap_id: bap.example.com
+            bap_uri: 'https://bap.example.com'
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: 'https://bpp.example.com'
+            version: 2.2.1
+            location:
+              country:
+                code: IND
+              city:
+                code: '*'
+          message:
+            order:
+              provider:
+                id: P1
+                descriptor:
+                  images:
+                    - url: >-
+                        https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
+                      size_type: sm
+                  name: ICICI Bank
+                  short_desc: ICICI Bank Ltd
+                  long_desc: 'ICICI Bank Ltd, India.'
+                tags:
+                  - descriptor:
+                      code: CONTACT_INFO
+                      name: Contact Info
+                    list:
+                      - descriptor:
+                          code: GRO_NAME
+                          name: Gro name
+                        value: ICICI
+                      - descriptor:
+                          code: GRO_EMAIL
+                          name: Gro email
+                        value: lifeline@iciciprulife.com
+                      - descriptor:
+                          code: GRO_CONTACT_NUMBER
+                          name: Gro contact number
+                        value: 1860 266 7766
+                      - descriptor:
+                          code: CUSTOMER_SUPPORT_LINK
+                          name: Customer support link
+                        value: >-
+                          https://buy.iciciprulife.com/buy/GrievanceRedStep.htm?execution=e1s1
+                      - descriptor:
+                          code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                          name: Customer support contact number
+                        value: 1800 1080
+                      - descriptor:
+                          code: CUSTOMER_SUPPORT_EMAIL
+                          name: Customer support email
+                        value: customer.care@icicibank.com
+                  - descriptor:
+                      code: LSP_INFO
+                      name: Lsp Info
+                    list:
+                      - descriptor:
+                          code: LSP_NAME
+                          name: Lsp name
+                        value: ICICI_LSP
+                      - descriptor:
+                          code: LSP_EMAIL
+                          name: Lsp email
+                        value: lsp@iciciprulife.com
+                      - descriptor:
+                          code: LSP_CONTACT_NUMBER
+                          name: Lsp contact number
+                        value: 1860 266 7766
+                      - descriptor:
+                          code: LSP_ADDRESS
+                          name: Lsp Address
+                        value: >-
+                          One Indiabulls centre, Tower 1, 18th Floor Jupiter
+                          mill compound 841, Senapati Bapat Marg, Elphinstone
+                          Road, Mumbai 400013
+              items:
+                - id: CHILD_ITEM_ID_I1
+                  parent_item_id: ITEM_ID_ELECTRONICS
+                  descriptor:
+                    code: LOAN
+                    name: Loan
+                  category_ids:
+                    - '101123'
+                    - '101125'
+                  price:
+                    currency: INR
+                    value: '70000'
+                  tags:
+                    - descriptor:
+                        code: INFO
+                        name: Information
+                      list:
+                        - descriptor:
+                            code: INTEREST_RATE
+                            name: Interest Rate
+                            short_desc: Loans starting from 12% (p.a)
+                          value: 12 %
+                        - descriptor:
+                            code: TERM
+                            name: Loan Term
+                            short_desc: Loans Duration 5 months
+                          value: P5M
+                        - descriptor:
+                            code: INTEREST_RATE_TYPE
+                            name: Interest rate type
+                            short_desc: Fixed Interest type
+                          value: FIXED
+                        - descriptor:
+                            code: APPLICATION_FEE
+                            name: Application Fees
+                          value: '0'
+                        - descriptor:
+                            code: FORECLOSURE_FEE
+                            name: Foreclosure Penalty
+                            short_desc: Loan Foreclosure Penalty
+                          value: 0.5 %
+                        - descriptor:
+                            code: INTEREST_RATE_CONVERSION_CHARGE
+                            name: interest rate conversion charges
+                          value: '0'
+                        - descriptor:
+                            code: DELAY_PENALTY_FEE
+                            name: Delayed payments penalty
+                            short_desc: Delayed payments penalty
+                          value: 5 %
+                        - descriptor:
+                            code: OTHER_PENALTY_FEE
+                            name: Other Penal Charges
+                            short_desc: Other Penal Charges
+                          value: 1 %
+                        - descriptor:
+                            code: ANNUAL_PERCENTAGE_RATE
+                            name: Annual Percentage Rate
+                            short_desc: >-
+                              Effective annualized interest rate in percentage
+                              computed on net disbursed amount using IRR
+                              approach and reducing balance method
+                          value: 5 %
+                        - descriptor:
+                            code: REPAYMENT_FREQUENCY
+                            name: Repayment Frequency
+                            short_desc: Repayment Frequency by borrower
+                          value: P1M
+                        - descriptor:
+                            code: NUMBER_OF_INSTALLMENTS
+                            name: Number of installments of repayment
+                            short_desc: >-
+                              Number of installments borrower has to make to
+                              payback the loan
+                          value: '7'
+                        - descriptor:
+                            code: TNC_LINK
+                            name: Terms & Conditions
+                            short_desc: Terms and Conditions
+                          value: 'https://icicibank.com/loan/tnc.html'
+                        - descriptor:
+                            code: COOL_OFF_PERIOD
+                            name: cool off period
+                            short_desc: >-
+                              Cooling off/look-up period during which borrower
+                              shall not be charged any penalty
+                          value: P30D
+                        - descriptor:
+                            code: INSTALLMENT_AMOUNT
+                            name: Installment amount
+                            short_desc: Each installment amount of repayment
+                          value: 10000 INR
+                        - descriptor:
+                            code: MINIMUM_DOWNPAYMENT
+                            name: Minimum Downpayment Required
+                          value: 1000 INR
+                        - descriptor:
+                            code: SUBVENTION_RATE
+                            name: Subvention Rate
+                          value: 5 %
+                        - descriptor:
+                            code: SELLER_SUBVENTION_RATE
+                            name: Subvention Rate
+                          value: 2 %
+                      display: true
+                    - descriptor:
+                        name: Checklists
+                        code: CHECKLISTS
+                      display: true
+                      list:
+                        - descriptor:
+                            name: Set Loan Amount
+                            code: SET_DOWN_PAYMENT
+                          value: COMPLETED
+                        - descriptor:
+                            name: KYC
+                            code: KYC
+                          value: COMPLETED
+                        - descriptor:
+                            name: Emandate
+                            code: EMANDATE
+                          value: PENDING
+                        - descriptor:
+                            name: Esign
+                            code: ESIGN
+                          value: PENDING
+                  xinput:
+                    form:
+                      id: F04
+                    form_response:
+                      status: SUCCESS
+                      submission_id: F04_SUBMISSION_ID
+              quote:
+                id: 993f4b87-bc33-4242-aa8c-6d1806030c3c
+                price:
+                  currency: INR
+                  value: '70000'
+                breakup:
+                  - title: PRINCIPAL_AMOUNT
+                    price:
+                      value: '65000'
+                      currency: INR
+                  - title: INTEREST_AMOUNT
+                    price:
+                      value: '4000'
+                      currency: INR
+                  - title: PROCESSING_FEE
+                    price:
+                      value: '500'
+                      currency: INR
+                  - title: OTHER_UPFRONT_CHARGES
+                    price:
+                      value: '0'
+                      currency: INR
+                  - title: INSURANCE_CHARGES
+                    price:
+                      value: '500'
+                      currency: INR
+                  - title: NET_DISBURSED_AMOUNT
+                    price:
+                      value: '64000'
+                      currency: INR
+                  - title: OTHER_CHARGES
+                    price:
+                      value: '0'
+                      currency: INR
+                ttl: P15D
+        saveData:
+          transactionId: $.context.transaction_id
+          extraStepMessageId: $.context.random_key
+          latestTimestamp: $.context.timestamp
+          bapId: $.context.bap_id
+          bapUri: $.context.bap_uri
+          bppId: $.context.bpp_id
+          bppUri: $.context.bpp_uri
+          city_code: $.context.location.city.code
+          order: $.message.order
+        inputs: {}
+      examples:
+        - name: example for on_status
+          payload:
+            context:
+              domain: 'ONDC:FIS12'
+              action: on_status
+              timestamp: '2026-08-21T08:04:12.678Z'
+              transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
+              message_id: 8d29207a-1169-4a83-a54b-f71adf701c2b
+              bap_id: bap.example.com
+              bap_uri: 'https://bap.example.com'
+              ttl: PT30S
+              bpp_id: bpp.example.com
+              bpp_uri: 'https://bpp.example.com'
+              version: 2.2.1
+              location:
+                country:
+                  code: IND
+                city:
+                  code: '*'
+            message:
+              order:
+                provider:
+                  id: P1
+                  descriptor:
+                    images:
+                      - url: >-
+                          https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
+                        size_type: sm
+                    name: ICICI Bank
+                    short_desc: ICICI Bank Ltd
+                    long_desc: 'ICICI Bank Ltd, India.'
+                  tags:
+                    - descriptor:
+                        code: CONTACT_INFO
+                        name: Contact Info
+                      list:
+                        - descriptor:
+                            code: GRO_NAME
+                            name: Gro name
+                          value: ICICI
+                        - descriptor:
+                            code: GRO_EMAIL
+                            name: Gro email
+                          value: lifeline@iciciprulife.com
+                        - descriptor:
+                            code: GRO_CONTACT_NUMBER
+                            name: Gro contact number
+                          value: 1860 266 7766
+                        - descriptor:
+                            code: CUSTOMER_SUPPORT_LINK
+                            name: Customer support link
+                          value: >-
+                            https://buy.iciciprulife.com/buy/GrievanceRedStep.htm?execution=e1s1
+                        - descriptor:
+                            code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                            name: Customer support contact number
+                          value: 1800 1080
+                        - descriptor:
+                            code: CUSTOMER_SUPPORT_EMAIL
+                            name: Customer support email
+                          value: customer.care@icicibank.com
+                    - descriptor:
+                        code: LSP_INFO
+                        name: Lsp Info
+                      list:
+                        - descriptor:
+                            code: LSP_NAME
+                            name: Lsp name
+                          value: ICICI_LSP
+                        - descriptor:
+                            code: LSP_EMAIL
+                            name: Lsp email
+                          value: lsp@iciciprulife.com
+                        - descriptor:
+                            code: LSP_CONTACT_NUMBER
+                            name: Lsp contact number
+                          value: 1860 266 7766
+                        - descriptor:
+                            code: LSP_ADDRESS
+                            name: Lsp Address
+                          value: >-
+                            One Indiabulls centre, Tower 1, 18th Floor Jupiter
+                            mill compound 841, Senapati Bapat Marg, Elphinstone
+                            Road, Mumbai 400013
+                items:
+                  - id: CHILD_ITEM_ID_I1
+                    parent_item_id: ITEM_ID_AGRI
+                    descriptor:
+                      code: LOAN
+                      name: Loan
+                    category_ids:
+                      - '101123'
+                      - '101124'
+                    price:
+                      currency: INR
+                      value: '70000'
+                    tags:
+                      - descriptor:
+                          code: INFO
+                          name: Information
+                        list:
+                          - descriptor:
+                              code: INTEREST_RATE
+                              name: Interest Rate
+                              short_desc: Loans starting from 12% (p.a)
+                            value: 12 %
+                          - descriptor:
+                              code: TERM
+                              name: Loan Term
+                              short_desc: Loans Duration 5 months
+                            value: P5M
+                          - descriptor:
+                              code: INTEREST_RATE_TYPE
+                              name: Interest rate type
+                              short_desc: Fixed Interest type
+                            value: FIXED
+                          - descriptor:
+                              code: APPLICATION_FEE
+                              name: Application Fees
+                            value: 1000 INR
+                          - descriptor:
+                              code: FORECLOSURE_FEE
+                              name: Foreclosure Penalty
+                              short_desc: Loan Foreclosure Penalty
+                            value: 0.5 %
+                          - descriptor:
+                              code: INTEREST_RATE_CONVERSION_CHARGE
+                              name: interest rate conversion charges
+                            value: 1000 INR
+                          - descriptor:
+                              code: DELAY_PENALTY_FEE
+                              name: Delayed payments penalty
+                              short_desc: Delayed payments penalty
+                            value: 5 %
+                          - descriptor:
+                              code: OTHER_PENALTY_FEE
+                              name: Other Penal Charges
+                              short_desc: Other Penal Charges
+                            value: 1 %
+                          - descriptor:
+                              code: ANNUAL_PERCENTAGE_RATE
+                              name: Annual Percentage Rate
+                              short_desc: >-
+                                Effective annualized interest rate in percentage
+                                computed on net disbursed amount using IRR
+                                approach and reducing balance method
+                            value: 5 %
+                          - descriptor:
+                              code: REPAYMENT_FREQUENCY
+                              name: Repayment Frequency
+                              short_desc: Repayment Frequency by borrower
+                            value: P1M
+                          - descriptor:
+                              code: NUMBER_OF_INSTALLMENTS
+                              name: Number of installments of repayment
+                              short_desc: >-
+                                Number of installments borrower has to make to
+                                payback the loan
+                            value: '5'
+                          - descriptor:
+                              code: TNC_LINK
+                              name: Terms & Conditions
+                              short_desc: Terms and Conditions
+                            value: 'https://icicibank.com/loan/tnc.html'
+                          - descriptor:
+                              code: COOL_OFF_PERIOD
+                              name: cool off period
+                              short_desc: >-
+                                Cooling off/look-up period during which borrower
+                                shall not be charged any penalty
+                            value: P30D
+                          - descriptor:
+                              code: INSTALLMENT_AMOUNT
+                              name: Installment amount
+                              short_desc: Each installment amount of repayment
+                            value: 14423 INR
+                          - descriptor:
+                              code: PRINCIPAL_AMOUNT
+                              name: Principal
+                              short_desc: Loan Principal
+                            value: 70000 INR
+                          - descriptor:
+                              code: INTEREST_AMOUNT
+                              name: Interest
+                              short_desc: Loan Interest
+                            value: 2115 INR
+                          - descriptor:
+                              code: PROCESSING_FEE
+                              name: Processing Fee
+                              short_desc: Processing Fee
+                            value: 500 INR
+                          - descriptor:
+                              code: OTHER_UPFRONT_CHARGES
+                              name: other upfront charges
+                              short_desc: other upfront charges
+                            value: 0 INR
+                          - descriptor:
+                              code: INSURANCE_CHARGES
+                              name: Insurance Charges
+                              short_desc: Insurance Charges
+                            value: 500 INR
+                          - descriptor:
+                              code: NET_DISBURSED_AMOUNT
+                              name: net disbursed amount
+                              short_desc: net disbursed amount
+                            value: 69000 INR
+                          - descriptor:
+                              code: OTHER_CHARGES
+                              name: other charges
+                              short_desc: other charges
+                            value: 0 INR
+                          - descriptor:
+                              code: OFFER_VALIDITY
+                              name: Offer validity
+                              short_desc: Describes the offer validity
+                            value: P15D
+                          - descriptor:
+                              code: MINIMUM_DOWNPAYMENT
+                              name: Minimum Downpayment
+                            value: 0 INR
+                          - descriptor:
+                              code: SUBVENTION_RATE
+                              name: Subvention Rate
+                            value: 5 %
+                          - descriptor:
+                              code: SELLER_SUBVENTION_RATE
+                              name: Subvention Rate
+                            value: 2 %
+                        display: true
+                      - display: true
+                        descriptor:
+                          name: Checklists
+                          code: CHECKLISTS
+                        list:
+                          - descriptor:
+                              name: Set Loan Amount
+                              code: SET_DOWN_PAYMENT
+                            value: COMPLETED
+                          - descriptor:
+                              name: 'KYC, enach, esign'
+                              code: KYC_ENACH_ESIGN
+                            value: COMPLETED
+                    xinput:
+                      form:
+                        id: Ekyc_details_verification_status
+                      form_response:
+                        status: COMPLETED
+                        submission_id: bba69465-a1e8-482e-89d0-2853e4018468
+                quote:
+                  id: 993f4b87-bc33-4242-aa8c-6d1806030c3c
+                  price:
+                    currency: INR
+                    value: '73115'
+                  breakup:
+                    - title: PRINCIPAL_AMOUNT
+                      price:
+                        value: '70000'
+                        currency: INR
+                    - title: INTEREST_AMOUNT
+                      price:
+                        value: '2115'
+                        currency: INR
+                    - title: PROCESSING_FEE
+                      price:
+                        value: '500'
+                        currency: INR
+                    - title: OTHER_UPFRONT_CHARGES
+                      price:
+                        value: '0'
+                        currency: INR
+                    - title: INSURANCE_CHARGES
+                      price:
+                        value: '500'
+                        currency: INR
+                    - title: NET_DISBURSED_AMOUNT
+                      price:
+                        value: '69000'
+                        currency: INR
+                    - title: OTHER_CHARGES
+                      price:
+                        value: '0'
+                        currency: INR
+                  ttl: P15D
+          type: request
+          description: please add relevant description

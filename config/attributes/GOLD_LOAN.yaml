@@ -9244,6 +9244,134 @@ attribute_set:
         info: (empty)
         owner: BPP
         type: object
+  issue_status:
+    context:
+      domain:
+        _description:
+          required: true
+          usage: ONDC:FIS12
+          info: Domain code identifying which ONDC service domain governs this transaction. The BPP declares this value during the issue action to specify the applicable regulatory and service domain for the financial product.
+          owner: BAP
+          type: string
+      action:
+        _description:
+          required: true
+          usage: issue
+          info: The BAP sets this field to the protocol action identifier being invoked; the value is persisted in the session and validated by the BPP in subsequent steps for flow correlation.
+          owner: BAP
+          type: string
+      timestamp:
+        _description:
+          required: true
+          usage: 2026-04-10T07:45:41.029Z
+          info: RFC3339 timestamp indicating when the BAP generated the loan-issue request.
+          owner: BAP
+          type: date-time
+      transaction_id:
+        _description:
+          required: true
+          usage: 56e6fd6e-c61a-4229-b6f7-0ad881a4634c
+          info: Unique identifier minted by the BAP on the search request to indicate an active user session; it persists across all API calls from search through confirm, enabling BPPs to correlate requests and deliver personalized recommendations and dynamic offerings despite not knowing the user on the BAP.
+          owner: BAP
+          type: string
+      message_id:
+        _description:
+          required: true
+          usage: 0b23f2b9-a7bd-4f28-8173-230ea4b5ed11
+          info: Unique identifier the BAP generates for this request to enable the BPP to correlate the asynchronous response callback and deduplicate retried messages; generate a fresh message_id for each new interaction.
+          owner: BAP
+          type: string
+      bap_id:
+        _description:
+          required: true
+          usage: bap.example.com
+          info: Subscriber ID of the BAP within the ONDC network. The BAP sets this at transaction start and the value persists across all subsequent steps to maintain transaction continuity and enable response routing.
+          owner: BAP
+          type: string
+      bap_uri:
+        _description:
+          required: true
+          usage: https://bap.example.com
+          info: The BPP sends callbacks and updates to this URL throughout the transaction to notify the BAP of fulfillment status and other asynchronous events.
+          owner: BAP
+          type: string
+      ttl:
+        _description:
+          required: true
+          usage: PT30S
+          info: ISO8601 duration specifying how long after the timestamp this message holds valid. The sender sets this on issue to establish the validity window.
+          owner: BAP
+          type: string
+      bpp_id:
+        _description:
+          required: true
+          usage: bpp.example.com
+          info: The BAP provides the BPP's subscriber identifier to specify which BPP the grievance is against. This value persists in the session and is reused by subsequent issue-handling steps.
+          owner: BAP
+          type: string
+      bpp_uri:
+        _description:
+          required: true
+          usage: https://bpp.example.com
+          info: The BPP returns its subscriber URL in the issue response so the BAP can route all subsequent requests to this endpoint.
+          owner: BAP
+          type: string
+      version:
+        _description:
+          required: true
+          usage: 2.0.3
+          info: Version of the protocol the sender declares when filing an issue, enabling recipients to correctly interpret the message.
+          owner: BAP
+          type: string
+      location:
+        country:
+          code:
+            _description:
+              required: true
+              usage: IND
+              info: Country code in ISO 3166-1 and ISO 3166-2 format identifying the location context of the issue. The BAP includes it in the issue request; the BPP validates it in the response.
+              owner: BAP
+              type: string
+          _description:
+            required: true
+            usage: ""
+            info: The BAP specifies the country in the location context of a search request to define the geographical jurisdiction for service discovery.
+            owner: BAP
+            type: object
+        city:
+          code:
+            _description:
+              required: true
+              usage: "*"
+              info: City code indicating the location for the loan being issued; the BAP provides this value in the request.
+              owner: BAP
+              type: string
+          _description:
+            required: true
+            usage: ""
+            info: The BAP specifies the city location in the search request to indicate where the transaction is intended to be completed.
+            owner: BAP
+            type: object
+        _description:
+          required: true
+          usage: ""
+          info: The BAP specifies where the transaction is intended to be fulfilled in the search request; the BPP echoes this location in on_search.
+          owner: BAP
+          type: object
+      _description:
+        required: true
+        usage: ""
+        info: The BAP sets context on search with demographic, addressing, protocol, and transaction information that uniquely identifies and frames this transaction for all subsequent interactions.
+        owner: BAP
+        type: object
+    message:
+      issue_id:
+        _description:
+          required: true
+          usage: I1
+          info: Unique complaint identifier minted by the initiating application and held immutable throughout the issue lifecycle. Enables correlation and traversal of the complaint across systems and related cascaded issues.
+          owner: BAP
+          type: string    
   on_issue_status:
     context:
       domain:
