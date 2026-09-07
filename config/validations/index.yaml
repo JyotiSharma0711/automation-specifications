@@ -576,10 +576,12 @@ _TESTS_:
           attr: $.message.order.payments[?(@.type=='ON_ORDER')].params.virtual_payment_address
           _RETURN_: attr are present
     - _NAME_: REQUIRED_INIT_PRE_ORDER_PAYMENT
-      attr: $.message.order.payments[?(@.type=='PRE_ORDER')].id
+      attr: $.message.order.payments[*].type
+      enumList:
+        - PRE_ORDER
       xinputPresent: $.message.order.items[*].xinput
       _CONTINUE_: "!(xinputPresent are present)"
-      _RETURN_: attr are present
+      _RETURN_: attr any in enumList
     - _NAME_: INIT_PAYMENT_TAGS
       _RETURN_:
         - _NAME_: REQUIRED_BAP_TERMS_TAG
@@ -814,8 +816,10 @@ _TESTS_:
           attr: $.message.order.payments[?(@.type=='PRE_ORDER')].params.amount
           _RETURN_: attr are present
     - _NAME_: REQUIRED_CONFIRM_PRE_ORDER_PAYMENT
-      attr: $.message.order.payments[?(@.type=='PRE_ORDER')].id
-      _RETURN_: attr are present
+      attr: $.message.order.payments[*].type
+      enumList:
+        - PRE_ORDER
+      _RETURN_: attr any in enumList
     # - _NAME_: CONFIRM_PAYMENT_TAGS
     #   _RETURN_:
     #     - _NAME_: REQUIRED_BAP_TERMS_TAG
