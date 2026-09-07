@@ -1,5 +1,4 @@
-import { injectSettlementAmount } from "../settlement-utils";
-
+import { injectSettlementAmount, injectBuyerFinderFees } from "../settlement-utils";
 export async function onStatusUnsolicitedGenerator(existingPayload: any, sessionData: any) {
   if (existingPayload.context) {
     existingPayload.context.timestamp = new Date().toISOString();
@@ -100,5 +99,6 @@ export async function onStatusUnsolicitedGenerator(existingPayload: any, session
   injectSettlementAmount(existingPayload, sessionData);
   // ─────────────────────────────────────────────────────────────────────────
 
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 }

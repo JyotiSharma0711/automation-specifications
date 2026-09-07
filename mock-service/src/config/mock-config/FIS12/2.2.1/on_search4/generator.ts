@@ -1,3 +1,4 @@
+import { injectBuyerFinderFees } from "../settlement-utils";
 export async function onSearchDefaultGenerator(existingPayload: any, sessionData: any) {
 
   // Set payment_collected_by if present in session data
@@ -36,5 +37,6 @@ export async function onSearchDefaultGenerator(existingPayload: any, sessionData
   }
 
   console.log("session data of on_search", sessionData);
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 } 

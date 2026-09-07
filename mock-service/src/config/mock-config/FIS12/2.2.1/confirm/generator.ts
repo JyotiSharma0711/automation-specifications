@@ -1,7 +1,6 @@
 
 import { loadMockSessionData } from "../../../../../services/data-services";
-import { injectLoanDetails, injectSettlementAmount } from "../settlement-utils";
-
+import { injectLoanDetails, injectSettlementAmount, injectBuyerFinderFees } from "../settlement-utils";
 export async function confirmDefaultGenerator(existingPayload: any, sessionData: any) {
   console.log("sessionData for confirm", sessionData);
 
@@ -44,5 +43,6 @@ export async function confirmDefaultGenerator(existingPayload: any, sessionData:
   injectSettlementAmount(existingPayload, sessionData);
   // ─────────────────────────────────────────────────────────────────────────
 
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 }

@@ -1,6 +1,5 @@
 import { loadMockSessionData } from "../../../../../services/data-services";
-import { generateInstallmentPayments, injectLoanDetails, injectSettlementAmount } from "../settlement-utils";
-
+import { generateInstallmentPayments, injectLoanDetails, injectSettlementAmount, injectBuyerFinderFees } from "../settlement-utils";
 function generateTimeRangeFromContext(contextTimestamp: string) {
   const contextDate = new Date(contextTimestamp);
   const year = contextDate.getUTCFullYear();
@@ -131,5 +130,6 @@ export async function onInitDefaultGenerator(existingPayload: any, sessionData: 
 
   // ── Dynamic Installment Payments (POST_FULFILLMENT) ─────────────────────────
   generateInstallmentPayments(existingPayload, sessionData);
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 }

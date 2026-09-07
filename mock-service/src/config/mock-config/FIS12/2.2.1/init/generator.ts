@@ -1,7 +1,6 @@
 
 import { loadMockSessionData } from "../../../../../services/data-services";
-import { calculateSettlementAmount, injectSettlementAmount, injectLoanDetails } from "../settlement-utils";
-
+import { calculateSettlementAmount, injectSettlementAmount, injectLoanDetails, injectBuyerFinderFees } from "../settlement-utils";
 export async function initDefaultGenerator(existingPayload: any, sessionData: any) {
   console.log("sessionData for init", sessionData);
 
@@ -80,6 +79,7 @@ export async function initDefaultGenerator(existingPayload: any, sessionData: an
   // if (sessionData?.flow_id?.includes("Single_Redirection")) {
   delete item?.xinput
   // }
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 }
 

@@ -1,8 +1,7 @@
 
 import { randomUUID } from "node:crypto";
 import { loadMockSessionData } from "../../../../../services/data-services";
-import { injectSettlementAmount, injectLoanDetails, generateInstallmentPayments } from "../settlement-utils";
-
+import { injectSettlementAmount, injectLoanDetails, generateInstallmentPayments, injectBuyerFinderFees } from "../settlement-utils";
 export async function onInitDefaultGenerator(existingPayload: any, sessionData: any) {
   console.log("sessionData for on_init", sessionData);
 
@@ -128,5 +127,6 @@ export async function onInitDefaultGenerator(existingPayload: any, sessionData: 
     existingPayload.message.order.payments[1].status = "PAID"
     existingPayload.message.order.payments[1].params.transaction_id = "3b5a664d-077e-47f0-96d1-06e68d397c78"
   }
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 }

@@ -1,3 +1,4 @@
+import { injectBuyerFinderFees } from "../settlement-utils";
 import axios from "axios";
 
 export async function onSearchDefaultGenerator(existingPayload: any, sessionData: any) {
@@ -154,6 +155,7 @@ export async function onSearchDefaultGenerator(existingPayload: any, sessionData
   //   console.warn("⚠️ No contact number found in session data - skipping Finvu AA integration");
   //   console.log("Available form data:", sessionData.form_data);
   // }
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 } 
 

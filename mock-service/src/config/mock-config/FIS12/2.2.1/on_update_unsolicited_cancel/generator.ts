@@ -1,3 +1,4 @@
+import { injectBuyerFinderFees } from "../settlement-utils";
 import { randomUUID } from "node:crypto";
 
 export async function onUpdateUnsolicitedDefaultGenerator(existingPayload: any, sessionData: any) {
@@ -41,5 +42,6 @@ export async function onUpdateUnsolicitedDefaultGenerator(existingPayload: any, 
     existingPayload.message.order.updated_at = currentDate;
 
   }
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 }
