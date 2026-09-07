@@ -579,7 +579,7 @@ _TESTS_:
       attr: $.message.order.payments[*].type
       enumList:
         - PRE_ORDER
-      xinputPresent: $.message.order.items[*].xinput
+      xinputPresent: $.message.order.items[*].xinput.form.id
       _CONTINUE_: "!(xinputPresent are present)"
       _RETURN_: attr any in enumList
     - _NAME_: INIT_PAYMENT_TAGS
