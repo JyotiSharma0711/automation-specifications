@@ -575,13 +575,6 @@ _TESTS_:
         - _NAME_: REQUIRED_PAYMENT_PARAMS_VPA
           attr: $.message.order.payments[?(@.type=='ON_ORDER')].params.virtual_payment_address
           _RETURN_: attr are present
-    - _NAME_: REQUIRED_INIT_PRE_ORDER_PAYMENT
-      attr: $.message.order.payments[*].type
-      enumList:
-        - PRE_ORDER
-      xinputPresent: $.message.order.items[*].xinput.form.id
-      _CONTINUE_: "!(xinputPresent are present)"
-      _RETURN_: attr any in enumList
     - _NAME_: INIT_PAYMENT_TAGS
       _RETURN_:
         - _NAME_: REQUIRED_BAP_TERMS_TAG
