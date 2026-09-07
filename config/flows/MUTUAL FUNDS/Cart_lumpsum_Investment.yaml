@@ -14,7 +14,6 @@ transaction_data:
   bpp_id: bpp.example.com
   bpp_uri: https://bpp.example.com
 steps:
-steps:
   - api: select
     action_id: select
     owner: BAP
