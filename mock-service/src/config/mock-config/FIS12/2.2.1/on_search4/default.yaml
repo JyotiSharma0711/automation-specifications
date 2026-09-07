@@ -318,7 +318,7 @@ catalog:
               list:
                 - descriptor:
                     code: "BUYER_FINDER_FEES_TYPE"
-                  value: "PERCENT_ANNUALIZED"
+                  value: "percent-annualized"
                 - descriptor:
                     code: "BUYER_FINDER_FEES_PERCENTAGE"
                   value: "1"

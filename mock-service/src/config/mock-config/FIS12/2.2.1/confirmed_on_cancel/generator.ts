@@ -1,6 +1,5 @@
 
-import { injectSettlementAmount } from "../settlement-utils";
-
+import { injectSettlementAmount, injectBuyerFinderFees } from "../settlement-utils";
 export async function onCancelDefaultGenerator(existingPayload: any, sessionData: any) {
   // Update context timestamp
   if (existingPayload.context) {
@@ -25,5 +24,6 @@ export async function onCancelDefaultGenerator(existingPayload: any, sessionData
 
   }
 
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload
 }

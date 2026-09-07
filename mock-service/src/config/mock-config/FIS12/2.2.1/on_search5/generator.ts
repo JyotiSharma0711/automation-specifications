@@ -1,3 +1,4 @@
+import { injectBuyerFinderFees } from "../settlement-utils";
 import axios from "axios";
 import { loadMockSessionData } from "../../../../../services/data-services";
 import { randomUUID } from "node:crypto";
@@ -213,5 +214,6 @@ export async function onSearchDefaultGenerator(existingPayload: any, sessionData
   }
 
   console.log("session data of on_search", sessionData);
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 } 

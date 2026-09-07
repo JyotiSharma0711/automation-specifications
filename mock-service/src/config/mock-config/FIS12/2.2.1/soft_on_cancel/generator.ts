@@ -1,3 +1,4 @@
+import { injectBuyerFinderFees } from "../settlement-utils";
 import { loadMockSessionData } from "../../../../../services/data-services";
 
 export async function onCancelDefaultGenerator(existingPayload: any, sessionData: any) {
@@ -75,5 +76,6 @@ export async function onCancelDefaultGenerator(existingPayload: any, sessionData
     const downPaymentEntered = sessionData?.form_data?.down_payment_form?.updateDownpayment;
     existingPayload.message.order.payments[0].params.amount = downPaymentEntered
   }
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 }

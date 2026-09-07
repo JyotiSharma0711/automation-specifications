@@ -149,6 +149,24 @@ _TESTS_:
                 - OFFLINE_CONTRACT
               _CONTINUE_: "!(subTags are present)"
               _RETURN_: subTags all in validValues
+            - _NAME_: REQUIRED_BAP_TERMS_ALL_PRESENT
+              _SCOPE_: $.message.intent.payment.tags[?(@.descriptor.code=='BAP_TERMS')]
+              subTags: $.list[*].descriptor.code
+              validValues:
+                - BUYER_FINDER_FEES_TYPE
+                - BUYER_FINDER_FEES_PERCENTAGE
+                - DELAY_INTEREST
+                - STATIC_TERMS
+                - OFFLINE_CONTRACT
+              _CONTINUE_: "!(subTags are present)"
+              _RETURN_: validValues all in subTags
+            - _NAME_: FORBIDDEN_BAP_TERMS_SETTLEMENT_TERMS
+              _SCOPE_: $.message.intent.payment.tags[?(@.descriptor.code=='BAP_TERMS')]
+              subTags: $.list[*].descriptor.code
+              forbiddenValues:
+                - SETTLEMENT_TERMS
+              _CONTINUE_: "!(subTags are present)"
+              _RETURN_: subTags none in forbiddenValues
             - _NAME_: VALID_BUYER_FINDER_FEES_TYPE_VALUE
               _SCOPE_: $.message.intent.payment.tags[?(@.descriptor.code=='BAP_TERMS')].list[?(@.descriptor.code=='BUYER_FINDER_FEES_TYPE')]
               attr: $.value
@@ -557,6 +575,11 @@ _TESTS_:
         - _NAME_: REQUIRED_PAYMENT_PARAMS_VPA
           attr: $.message.order.payments[?(@.type=='ON_ORDER')].params.virtual_payment_address
           _RETURN_: attr are present
+    - _NAME_: REQUIRED_INIT_PRE_ORDER_PAYMENT
+      attr: $.message.order.payments[?(@.type=='PRE_ORDER')].id
+      xinputPresent: $.message.order.items[*].xinput
+      _CONTINUE_: "!(xinputPresent are present)"
+      _RETURN_: attr are present
     - _NAME_: INIT_PAYMENT_TAGS
       _RETURN_:
         - _NAME_: REQUIRED_BAP_TERMS_TAG
@@ -790,6 +813,9 @@ _TESTS_:
         - _NAME_: REQUIRED_PRE_ORDER_AMOUNT
           attr: $.message.order.payments[?(@.type=='PRE_ORDER')].params.amount
           _RETURN_: attr are present
+    - _NAME_: REQUIRED_CONFIRM_PRE_ORDER_PAYMENT
+      attr: $.message.order.payments[?(@.type=='PRE_ORDER')].id
+      _RETURN_: attr are present
     # - _NAME_: CONFIRM_PAYMENT_TAGS
     #   _RETURN_:
     #     - _NAME_: REQUIRED_BAP_TERMS_TAG

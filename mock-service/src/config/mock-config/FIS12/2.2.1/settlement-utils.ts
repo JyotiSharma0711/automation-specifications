@@ -120,6 +120,36 @@ export function injectSettlementAmount(existingPayload: any, sessionData: any): 
     return settlementAmount;
 }
 
+export function injectBuyerFinderFees(existingPayload: any, sessionData: any): void {
+    const feeType = sessionData?.buyer_finder_fees_type;
+    const feePercentage = sessionData?.buyer_finder_fees_percentage;
+    if (!feeType && feePercentage === undefined) return;
+
+    const paymentGroups: any[] = [
+        ...((existingPayload?.message?.catalog?.providers || []).flatMap((p: any) => p?.payments || [])),
+        ...(existingPayload?.message?.order?.payments || []),
+    ];
+
+    paymentGroups.forEach((payment: any) => {
+        if (!Array.isArray(payment?.tags)) return;
+
+        payment.tags.forEach((tag: any) => {
+            if (!Array.isArray(tag?.list)) return;
+
+            tag.list.forEach((item: any) => {
+                if (item?.descriptor?.code === "BUYER_FINDER_FEES_TYPE" && feeType) {
+                    item.value = feeType;
+                }
+                if (item?.descriptor?.code === "BUYER_FINDER_FEES_PERCENTAGE" && feePercentage !== undefined) {
+                    item.value = String(feePercentage);
+                }
+            });
+        });
+    });
+
+    console.log("[settlement-utils] Injected BUYER_FINDER_FEES_TYPE/PERCENTAGE from session:", { feeType, feePercentage });
+}
+
 export function extractInfoTagValue(existingPayload: any, code: string): string | undefined {
     const tags: any[] = existingPayload?.message?.order?.items?.[0]?.tags || [];
     for (const tag of tags) {

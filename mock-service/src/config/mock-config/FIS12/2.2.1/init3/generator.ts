@@ -9,8 +9,7 @@
  */
 
 import { loadMockSessionData } from "../../../../../services/data-services";
-import { injectLoanDetails, injectSettlementAmount } from "../settlement-utils";
-
+import { injectLoanDetails, injectSettlementAmount, injectBuyerFinderFees } from "../settlement-utils";
 export async function initDefaultGenerator(existingPayload: any, sessionData: any) {
   console.log("sessionData for init", sessionData);
 
@@ -75,5 +74,6 @@ export async function initDefaultGenerator(existingPayload: any, sessionData: an
   injectSettlementAmount(existingPayload, sessionData);
   // ─────────────────────────────────────────────────────────────────────────
 
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 }
