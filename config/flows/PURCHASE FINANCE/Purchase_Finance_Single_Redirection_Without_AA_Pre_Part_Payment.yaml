@@ -5961,9 +5961,12 @@ steps:
     owner: BAP
     responseFor: null
     unsolicited: false
-    description: The BAP sends an update to revise the confirmed order’s payment details for the purchase finance journey, conveying the target component and the corresponding time-based payment amount and currency for the pre-part payment adjustment.
+    description: The BAP sends an update to revise the confirmed order’s payment
+      details for the purchase finance journey, conveying the target component
+      and the corresponding time-based payment amount and currency for the
+      pre-part payment adjustment.
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgLy8gTG9hZCBvcmRlcl9pZCBpbnRvIG9yZGVyLmlkIChzdHJ1Y3R1cmUgdXNlcyBvcmRlci5pZCkKICBpZiAoc2Vzc2lvbkRhdGEub3JkZXJfaWQgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2UpIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyID0gZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIgfHwge30KICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF0KICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQKfQ==
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgLy8gTG9hZCBvcmRlcl9pZCBpbnRvIG9yZGVyLmlkIChzdHJ1Y3R1cmUgdXNlcyBvcmRlci5pZCkKICBpZiAoc2Vzc2lvbkRhdGEub3JkZXJfaWQgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2UpIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyID0gZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIgfHwge30KICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF0KICB9CgogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnRzWzBdID0gewogICAgICAgIHRpbWU6IHsKICAgICAgICAgIGxhYmVsOiAiUFJFX1BBUlRfUEFZTUVOVCIKICAgICAgICB9LAogICAgICAgIHBhcmFtczogewogICAgICAgICAgYW1vdW50OiBTdHJpbmcoc2Vzc2lvbkRhdGE/LnVzZXJfaW5wdXRzPy5wcmVfcGFydF9wYXltZW50KSAsCiAgICAgICAgICBjdXJyZW5jeTonSU5SJwogICAgICAgIH0KICAgICAgfTsKCiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZAp9
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CnJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKCn0=
       defaultPayload:
@@ -6011,15 +6014,52 @@ steps:
         update_amount: $.message.order.payments[0].params.amount
         update_currency: $.message.order.payments[0].params.currency
       inputs:
-        oldInputs:
-          - name: pre_part_payment
-            label: Select Pre Part Payment Amount
-            type: text
-            values:
-              - "20000"
-            default: "20000"
-        id: old_inputs
-    examples: []
+        id: ExampleInputId
+        jsonSchema:
+          $schema: http://json-schema.org/draft-07/schema#
+          type: object
+          properties:
+            pre_part_payment:
+              type: string
+              default: "19714"
+              readOnly: true
+          additionalProperties: true
+          default: {}
+    examples:
+      - name: example for update
+        payload:
+          context:
+            domain: ONDC:FIS12
+            action: update
+            timestamp: 2026-09-08T11:30:31.158Z
+            transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
+            message_id: b951b183-5228-4228-bb19-85b5616995d1
+            bap_id: bap.example.com
+            bap_uri: https://bap.example.com
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: https://bpp.example.com
+            version: 2.2.1
+            location:
+              country:
+                code: IND
+              city:
+                code: "*"
+          message:
+            update_target: payments
+            order:
+              id: ORDER-9b460ea2-ee6c-43ad-94eb-b97b27322efd
+              payments:
+                - time:
+                    label: PRE_PART_PAYMENT
+                  params:
+                    amount: "19714"
+                    currency: INR
+        type: request
+        description: The BAP sends an update to revise the confirmed order’s payment
+          details for the purchase finance journey, conveying the target
+          component and the corresponding time-based payment amount and currency
+          for the pre-part payment adjustment.
   - api: on_update
     action_id: on_update_prepart
     owner: BPP
