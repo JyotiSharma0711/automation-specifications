@@ -335,6 +335,8 @@ _TESTS_:
           attr: $.value
           enumList:
             - percent-annualized
+            - percent
+            - amount
           _RETURN_: attr all in enumList
         - _NAME_: VALID_SETTLEMENT_BASIS_VALUE
           _SCOPE_: $.message.catalog.providers[*].payments[*].tags[?(@.descriptor.code=='BPP_TERMS')].list[?(@.descriptor.code=='SETTLEMENT_BASIS')]
