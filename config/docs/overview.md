@@ -1,34 +1,24 @@
-# Personal Loans — ONDC FIS12 - Credit - 2.0.3
+# Personal Loans & Gold Loans — ONDC FIS12 - Credit
 
 ## On this page
 
-- [Overview & Use Case Brief](#overview--use-case-brief)
-- [Participants](#participants)
-- [The User Journey](#the-user-journey)
-  - [1. Loan Application and Discovery](#1-loan-application-and-discovery)
-  - [2. Loan Offers](#2-loan-offers)
-  - [3. Offer Selection](#3-offer-selection)
-  - [4. Lender Onboarding and Verification](#4-lender-onboarding-and-verification)
-  - [5. Final Underwriting and Loan Offer](#5-final-underwriting-and-loan-offer)
-  - [6. Application Status and Processing](#6-application-status-and-processing)
-  - [7. Offline Processing](#7-offline-processing)
-  - [8. Loan Confirmation and Disbursement](#8-loan-confirmation-and-disbursement)
-- [Additional Scenarios](#additional-scenarios)
-  - [1. Loan Servicing and Repayment](#1-loan-servicing-and-repayment)
-  - [2. Missed EMI Payment](#2-missed-emi-payment)
-  - [3. Part-Prepayment](#3-part-prepayment)
-  - [4. Loan Foreclosure](#4-loan-foreclosure)
-  - [5. Loan Status After Repayment](#5-loan-status-after-repayment)
-- [Issue and Grievance Management](#issue-and-grievance-management)
-- [Detailed Technical Protocol Flows](#detailed-technical-protocol-flows)
-  - [Flow 1: Personal Loan – Single Redirection Journey](#flow-1-personal-loan--single-redirection-journey)
-  - [Flow 2: Personal Loan – Offline Journey](#flow-2-personal-loan--offline-journey)
-  - [Flow 3: Personal Loan – Dedupe Check](#flow-3-personal-loan--dedupe-check)
-  - [Flow 4: Personal Loan – Loan Foreclosure (Full Repayment)](#flow-4-personal-loan--loan-foreclosure-full-repayment)
-  - [Flow 5: Personal Loan – Pre-Part Payment](#flow-5-personal-loan--pre-part-payment)
-  - [Flow 6: Personal Loan – Missed EMI Payment (Late Payment)](#flow-6-personal-loan--missed-emi-payment-late-payment)
+- [Personal Loans (ONDC FIS12 - Credit - 2.0.3)](#personal-loans--ondc-fis12---credit---203)
+  - [Overview & Use Case Brief](#overview--use-case-brief)
+  - [Participants](#participants)
+  - [The User Journey](#the-user-journey)
+  - [Additional Scenarios](#additional-scenarios)
+  - [Issue and Grievance Management](#issue-and-grievance-management)
+  - [Detailed Technical Protocol Flows](#detailed-technical-protocol-flows)
+- [Gold Loans (ONDC FIS12 - Credit)](#gold-loans--ondc-fis12---credit)
+  - [Overview](#gold-loan-overview)
+  - [Participants](#gold-loan-participants)
+  - [The User Journey](#gold-loan-user-journey)
+  - [Additional Scenarios](#gold-loan-additional-scenarios)
+  - [Issue and Grievance Management](#gold-loan-issue-and-grievance-management)
 
 ---
+
+# Personal Loans — ONDC FIS12 - Credit - 2.0.3
 
 ## Overview & Use Case Brief
 
@@ -251,16 +241,6 @@ A borrower can raise a grievance through the LSP for issues related to their loa
 
 The lender is responsible for investigating and resolving the grievance. The lender communicates the grievance status and resolution to the LSP, which makes the relevant information available to the borrower.
 
-The grievance process can include:
-
-- **Grievance Registration** — The borrower raises an issue through the LSP.
-- **Grievance Routing** — The LSP routes the grievance to the relevant lender.
-- **Resolution** — The lender investigates the issue and takes the required action.
-- **Status Updates** — The lender communicates progress and resolution status to the LSP.
-- **Closure** — The LSP communicates the resolution to the borrower and closes the grievance when appropriate.
-
-The lender and LSP remain responsible for complying with applicable grievance redressal requirements. RBI guidance provides for grievance redressal mechanisms for digital lending and identifies the lender/LSP's designated grievance channels.
-
 ---
 
 ## Detailed Technical Protocol Flows
@@ -357,3 +337,118 @@ The Missed EMI Payment Flow allows borrowers to manually repay overdue EMIs when
 - **`/update` (BAP $\rightarrow$ BPP)**: The BAP initiates a retrieval request for a past-due loan account. It passes a servicing payload with transaction tags set specifically to `LATE_PAYMENT` to request the outstanding overdue balance.
 - **`/on_update` / `/on_status` (BPP $\rightarrow$ BAP)**: The lender's billing systems calculate the total outstanding balance. The response returns an explicit cost breakdown containing the original missed EMI amount, any late payment penalties, and account bounce fees. This includes an active payment gateway link, allowing the BAP to show the full breakdown before routing the user to complete the payment.
 - **`/on_status` [Remittance Resolution] (BPP $\rightarrow$ BAP)**: Fired immediately after the payment clears through the designated gateway. The lender updates its internal ledgers, marks the past-due balance as settled, resets the account status to current, and returns the updated payment confirmation reference to the parent app.
+
+---
+---
+
+# Gold Loans — ONDC FIS12 - Credit
+
+## <a id="gold-loan-overview"></a>Overview
+
+A Gold Loan lets a borrower pledge physical gold ornaments or coins as collateral for a loan. The digital front door is the same as a Personal Loan — a borrower searches, compares offers, and applies online through a Loan Service Provider (LSP). The difference is what happens next: because the collateral is physical gold, it has to be appraised in person, so everything after offer selection — verification, valuation, and underwriting — happens offline at the lender's branch, with the lender pushing periodic status updates back to the LSP until final approval or rejection.
+
+Each lender independently manages its own Gold Loan products, appraisal process, pricing, and servicing. ONDC enables these lenders and lending apps to connect through a common, open protocol instead of building separate integrations with each other.
+
+---
+
+## <a id="gold-loan-participants"></a>Participants
+
+| Participant | What This Means |
+|---|---|
+| **Lender** | An RBI-regulated lending institution that offers Gold Loan products on the network. Responsible for the branch network where gold is appraised, the appraisal and underwriting process itself, sanction, disbursal, and servicing. |
+| **Lending App (Loan Service Provider)** | A buyer application that offers Gold Loan products to its users by connecting with participating lenders through the ONDC network. The LSP handles applicant intake, offer comparison, branch selection, and relays offline verification status to the borrower until a decision is reached. |
+| **Borrower** | An individual pledging physical gold as collateral for a loan. Unlike a fully digital product, the borrower needs to physically visit the chosen branch at some point in the journey for gold appraisal. |
+
+---
+
+## <a id="gold-loan-user-journey"></a>The User Journey
+
+The Gold Loan journey enables a borrower to discover offers, choose a lender and branch, and receive a loan once the lender has physically appraised the pledged gold. The journey consists of the following stages:
+
+### 1. Product Discovery
+
+The LSP searches the network for available Gold Loan services.
+
+**Network interaction:**
+
+- **`/search`**: The LSP sends a discovery request tagged with the `GOLD_LOAN` category — and, distinctively for this product, an `OFFLINE_CONTRACT` tag set to `true`, signaling upfront that this journey resolves offline rather than end-to-end digitally.
+- **`/on_search`**: Each lender returns a static catalogue of its loan types, including Gold Loans.
+
+### 2. Application Form and Bureau Offer Selection
+
+The borrower fills in an application form (`formId: FO1`) with:
+- **User Type**: Individual or Non-Individual
+- **Identity & Demographics**: PAN, Full Name, Constitution (for non-individual entities), Gender, Employment type (Salaried or Self Employment), Date of Birth
+- **Financials & Contact**: Annual Income, Contact number, Email, Address, Pincode, City, State
+- **Jewellery & Collateral**: Jewellery (gms) and Purity (`24K`, `22K`, `21K`, `18K`, `14K`, or `9K`) — the pledged gold itself, unique to this product
+- **End Use**: Marriage, Family Functions, Medical Treatment and Emergencies, Travel/Education Expenses, Business Expansion, Agriculture and Farm-Related Needs, Purchase of Equipment, or Others
+- **Bureau Consent**: Consent checkbox
+
+> **Note on Account Aggregator**: The form's markup still has a commented-out Account Aggregator ID field. It's present in the DOM but disabled, not deleted — consistent with this being the "without AA" journey rather than AA never having been considered for Gold Loan. Don't build against it unless it's explicitly re-enabled.
+
+**Network interaction:**
+
+- **`/select`**: The LSP submits the completed form's submission ID, choosing the bureau-based loan item.
+- **`/on_select`**: The lender responds with the list of branch locations where this Gold Loan service is available — a step unique to Gold Loan, since the borrower will need to pick a branch for the physical part of the journey.
+
+### 3. Branch Selection and Final Offer
+
+The borrower picks their preferred location from the list.
+
+**Network interaction:**
+
+- **`/select`**: The LSP sends the borrower's chosen location.
+- **`/on_select`**: The lender returns the available loan offer(s) for that specific location, along with the next application form (KYC).
+
+### 4. Offline Verification and Underwriting
+
+This is where the Gold Loan journey diverges from a Personal Loan. There's no `/init` / `/on_init` redirection cycle here — instead, once the KYC form is submitted, the LSP tracks progress through repeated, lender-initiated status pushes while the borrower's gold is physically appraised and underwriting is completed at the branch.
+
+**Network interaction:**
+
+- **`/status`**: The LSP requests the current state of the application.
+- **`/on_status`**: The lender responds — and continues to push further unsolicited `/on_status` updates as appraisal and underwriting progress. During this period, the status is reported as `OFFLINE_PENDING`; once verification and underwriting conclude, the lender sends a final `/on_status` marked `COMPLETED`.
+
+> **Status Tracking**: Because this stage can span multiple branch visits and manual steps, expect several `OFFLINE_PENDING` pushes in sequence rather than a single wait-then-resolve call. The LSP's borrower-facing messaging should reflect "in appraisal/verification" as its own state — this is a normal, expected part of a Gold Loan application, not a stalled or failed one.
+
+### 5. Loan Confirmation
+
+Once the lender's `/on_status` reports `COMPLETED`, the LSP confirms the booking.
+
+**Network interaction:**
+
+- **`/confirm`**: The LSP confirms the Gold Loan request.
+- **`/on_confirm`**: The lender confirms the order and shares final loan details.
+
+---
+
+## <a id="gold-loan-additional-scenarios"></a>Additional Scenarios
+
+Once the loan is confirmed and disbursed, Gold Loan servicing follows the same single-order pattern as a Personal Loan — there's no base-order/child-order split here, since a Gold Loan is a single term facility rather than a revolving line.
+
+### <a id="1-missed-emi-payment-gold"></a>1. Missed EMI Payment
+
+**Network interaction:**
+
+- **`/update`**: The borrower requests missed-EMI payment details, referencing the order ID.
+- **`/on_update`**: The lender returns the payment details, and — once paid — confirms success.
+
+### <a id="2-part-payment-gold"></a>2. Part-Payment
+
+**Network interaction:**
+
+- **`/update`**: The borrower requests to make a partial prepayment, referencing the order ID.
+- **`/on_update`**: The lender returns the payment details, and — once paid — confirms success.
+
+### <a id="3-foreclosure-gold"></a>3. Foreclosure
+
+**Network interaction:**
+
+- **`/update`**: The borrower requests full foreclosure of the loan, referencing the order ID.
+- **`/on_update`**: The lender returns the foreclosure payment details, and — once paid — confirms success, at which point the pledged gold is released back to the borrower.
+
+---
+
+## <a id="gold-loan-issue-and-grievance-management"></a>Issue and Grievance Management
+
+IGM handling is standardized across FIS12, so an LSP or lender that has already implemented IGM for another FIS12 lending product should be able to reuse that implementation for Gold Loan rather than building a separate grievance pipeline.
