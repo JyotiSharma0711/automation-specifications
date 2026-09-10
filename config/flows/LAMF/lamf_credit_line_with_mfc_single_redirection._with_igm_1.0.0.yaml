@@ -23,7 +23,7 @@ steps:
     responseFor: null
     unsolicited: false
     description: The BAP initiates a search for LAMF credit line offerings within a
-      specified Geographic location and financial services domain, establishing
+      specified geographic location and financial services domain, establishing
       the transaction identity and routing parameters for the credit discovery
       process.
     mock:
@@ -56,6 +56,8 @@ steps:
         bppId: $.context.bpp_id
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
+        provider_id: $.message.intent.provider.id
+        item_id: $.message.intent.provider.items[*].id
       inputs:
         id: ExampleInputId
         jsonSchema:
@@ -65,7 +67,7 @@ steps:
             item_id:
               type: string
               description: Enter item id
-              default: I1
+              default: ITEM_ID_LAMF_5
             provider_id:
               type: string
               description: Enter provider id
@@ -182,9 +184,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: search
-            timestamp: 2026-08-24T13:25:11.151Z
+            timestamp: 2026-09-02T10:38:15.075Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: 61981be5-56a2-4e84-b214-c788d5075e16
+            message_id: 92dd2ac3-5073-43ab-a4ce-79a5d3c30c82
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -201,7 +203,7 @@ steps:
               provider:
                 id: P1
                 items:
-                  - id: I1
+                  - id: ITEM_ID_LAMF_5
                     xinput:
                       head:
                         descriptor:
@@ -276,7 +278,7 @@ steps:
       available credit product offerings matched to the specified location and
       domain context.
     mock:
-      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBpdGVtX2lkPSBzZXNzaW9uRGF0YS5pdGVtX2lkWzBdOwogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5jYXRhbG9nLnByb3ZpZGVyc1swXT8uaXRlbXMuZm9yRWFjaChpdGVtPT57CiAgICAgICAgIGlmKCFpdGVtPy5wYXJlbnRfaXRlbV9pZCl7CiAgICAgICAgICAgICBpdGVtLmlkPWl0ZW1faWQ7CiAgICAgICAgIH1lbHNlewogICAgICAgICAgaXRlbS5wYXJlbnRfaXRlbV9pZD1pdGVtX2lkOwogICAgICAgICB9CiAgICB9KQogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5jYXRhbG9nLnByb3ZpZGVyc1swXS5pZD0gc2Vzc2lvbkRhdGE/LnByb3ZpZGVyX2lkWzBdOwogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
@@ -662,9 +664,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: on_search
-            timestamp: 2026-08-24T13:25:11.199Z
+            timestamp: 2026-09-02T10:38:15.119Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: 61981be5-56a2-4e84-b214-c788d5075e16
+            message_id: 92dd2ac3-5073-43ab-a4ce-79a5d3c30c82
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -681,7 +683,7 @@ steps:
               descriptor:
                 name: ICICI Bank
               providers:
-                - id: PROVIDER_ID
+                - id: P1
                   descriptor:
                     images:
                       - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1093,9 +1095,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: select
-            timestamp: 2026-08-24T13:25:13.299Z
+            timestamp: 2026-09-02T10:38:16.970Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: 6e0bd948-bdc8-4f70-8892-f2e18f425ab0
+            message_id: 178eb9ee-cce6-4ad3-ba49-5b8d27d29f48
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1110,7 +1112,7 @@ steps:
           message:
             order:
               provider:
-                id: PROVIDER_ID
+                id: P1
               items:
                 - id: CHILD_ITEM_ID_LAMF_1
                   parent_item_id: ITEM_ID_LAMF_5
@@ -1207,9 +1209,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: on_select
-            timestamp: 2026-08-24T13:25:13.339Z
+            timestamp: 2026-09-02T10:38:16.997Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: 6e0bd948-bdc8-4f70-8892-f2e18f425ab0
+            message_id: 178eb9ee-cce6-4ad3-ba49-5b8d27d29f48
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1224,7 +1226,7 @@ steps:
           message:
             order:
               provider:
-                id: PROVIDER_ID
+                id: P1
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1633,9 +1635,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: on_status
-            timestamp: 2026-08-24T13:25:13.369Z
+            timestamp: 2026-09-02T10:38:17.093Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: ada62e06-7ac9-4d69-b1c6-445ff967c914
+            message_id: 6f251c07-1c13-4116-8891-4dde36dd0568
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -1650,7 +1652,7 @@ steps:
           message:
             order:
               provider:
-                id: PROVIDER_ID
+                id: P1
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -1888,7 +1890,7 @@ steps:
                       id: single_redirection
                     form_response:
                       status: PENDING
-                      submission_id: 67df43cd-cc7e-47fb-b1bc-51e9fd2ea800
+                      submission_id: 536c7acc-d756-4613-b6a8-f64ca87956af
               fulfillments:
                 - customer:
                     person:
@@ -2040,9 +2042,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: on_status
-            timestamp: 2026-08-24T13:25:13.413Z
+            timestamp: 2026-09-02T10:38:17.241Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: 5e3e153c-23f2-42a0-8641-3644fb87dcf9
+            message_id: 50d6409e-972e-4d5e-925a-69b5df62bbf9
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2057,7 +2059,7 @@ steps:
           message:
             order:
               provider:
-                id: PROVIDER_ID
+                id: P1
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -2295,7 +2297,7 @@ steps:
                       id: single_redirection
                     form_response:
                       status: PENDING
-                      submission_id: 67df43cd-cc7e-47fb-b1bc-51e9fd2ea800
+                      submission_id: 536c7acc-d756-4613-b6a8-f64ca87956af
               fulfillments:
                 - id: F18
                   type: ONLINE
@@ -2427,9 +2429,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: on_status
-            timestamp: 2026-08-24T13:25:13.459Z
+            timestamp: 2026-09-02T10:38:17.370Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: 5d23235b-6251-4133-a33e-9726b5a35039
+            message_id: 0471b6af-f18d-43eb-a951-94f55bf3858d
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2444,7 +2446,7 @@ steps:
           message:
             order:
               provider:
-                id: PROVIDER_ID
+                id: P1
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -2682,7 +2684,7 @@ steps:
                       id: single_redirection
                     form_response:
                       status: PENDING
-                      submission_id: 67df43cd-cc7e-47fb-b1bc-51e9fd2ea800
+                      submission_id: 536c7acc-d756-4613-b6a8-f64ca87956af
               fulfillments:
                 - id: F18
                   type: ONLINE
@@ -2816,9 +2818,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: on_status
-            timestamp: 2026-08-24T13:25:13.495Z
+            timestamp: 2026-09-02T10:38:17.572Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: f1e5e3f8-f894-4618-9ca1-a9bb59580482
+            message_id: f4c0f57c-e8cb-41ed-a4dc-e4b2d3d7b361
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -2833,7 +2835,7 @@ steps:
           message:
             order:
               provider:
-                id: PROVIDER_ID
+                id: P1
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
@@ -3071,7 +3073,7 @@ steps:
                       id: single_redirection
                     form_response:
                       status: COMPLETED
-                      submission_id: 67df43cd-cc7e-47fb-b1bc-51e9fd2ea800
+                      submission_id: 536c7acc-d756-4613-b6a8-f64ca87956af
               fulfillments:
                 - id: F18
                   type: ONLINE
@@ -3199,8 +3201,8 @@ steps:
       by re-selecting the item with form_response status SUCCESS and the
       submission_id captured from the final on_status (E-Sign).
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgYXdhaXQgZ2VuZXJhdGVQYXlsb2FkKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSk7CiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9Cgphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZVBheWxvYWQoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgeyBpdGVtcywgcHJvdmlkZXIsICBmdWxmaWxsbWVudHN9ID0gc2Vzc2lvbkRhdGE/LmFjdGlvbl9vcmRlclswXTsKCgogIGNvbnN0IG9yZGVyUGF5bG9hZCA9IHsKICAgIHByb3ZpZGVyOiB7CiAgICAgIGlkOiBwcm92aWRlcj8uaWQKICAgIH0sCiAgICBpdGVtczogWwogICAgICB7CiAgICAgICAgaWQ6IGl0ZW1zWzBdLmlkLAogICAgICAgIHBhcmVudF9pdGVtX2lkOiBpdGVtc1swXS5wYXJlbnRfaXRlbV9pZCwKICAgICAgICB4aW5wdXQ6IHsKICAgICAgICAgIGhlYWQ6IHsKICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgIG5hbWU6ICJTaW5nbGUgUmVkaXJlY3Rpb24iLAogICAgICAgICAgICAgIGNvZGU6ICJTSU5HTEVfUkVESVJFQ1RJT04iCiAgICAgICAgICAgIH0KICAgICAgICAgIH0sCiAgICAgICAgICBmb3JtOiB7CiAgICAgICAgICAgIGlkOiBzZXNzaW9uRGF0YT8uZm9ybV9pZD8uWzBdCiAgICAgICAgICB9LAogICAgICAgICAgZm9ybV9yZXNwb25zZTogewogICAgICAgICAgICBzdGF0dXM6ICJTVUNDRVNTIiwKICAgICAgICAgICAgc3VibWlzc2lvbl9pZDogc2Vzc2lvbkRhdGE/LnNpbmdsZV9yZWRpcmVjdGlvbl9zdWJtaXNzaW9uX2lkPy5bMF0KICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgLy8gdGFnczogcGxlZGdlVGFnIC8vIAogICAgICB9CiAgICBdLAogICAgZnVsZmlsbG1lbnRzOiBbCiAgICAgIHsKICAgICAgICBpZDogZnVsZmlsbG1lbnRzWzBdLmlkCiAgICAgIH0KICAgIF0KICB9OwoKICAvLyBVcGRhdGUgcGF5bG9hZAogIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7CiAgICBvcmRlcjogb3JkZXJQYXlsb2FkCiAgfTsKCiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
-      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgYXdhaXQgZ2VuZXJhdGVQYXlsb2FkKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSk7CiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9Cgphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZVBheWxvYWQoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgeyBpdGVtcywgcHJvdmlkZXIsICBmdWxmaWxsbWVudHN9ID0gc2Vzc2lvbkRhdGE/LmFjdGlvbl9vcmRlclswXTsKCgogIGNvbnN0IG9yZGVyUGF5bG9hZCA9IHsKICAgIHByb3ZpZGVyOiB7CiAgICAgIGlkOiBwcm92aWRlcj8uaWQKICAgIH0sCiAgICBpdGVtczogWwogICAgICB7CiAgICAgICAgaWQ6IGl0ZW1zWzBdLmlkLAogICAgICAgIHBhcmVudF9pdGVtX2lkOiBpdGVtc1swXS5wYXJlbnRfaXRlbV9pZCwKICAgICAgICB4aW5wdXQ6IHsKICAgICAgICAgIGhlYWQ6IHsKICAgICAgICAgICAgZGVzY3JpcHRvcjogewogICAgICAgICAgICAgIG5hbWU6ICJTaW5nbGUgUmVkaXJlY3Rpb24iLAogICAgICAgICAgICAgIGNvZGU6ICJTSU5HTEVfUkVESVJFQ1RJT04iCiAgICAgICAgICAgIH0KICAgICAgICAgIH0sCiAgICAgICAgICBmb3JtOiB7CiAgICAgICAgICAgIGlkOiBzZXNzaW9uRGF0YT8uZm9ybV9pZD8uWzBdCiAgICAgICAgICB9LAogICAgICAgICAgZm9ybV9yZXNwb25zZTogewogICAgICAgICAgICBzdGF0dXM6ICJTVUNDRVNTIiwKICAgICAgICAgICAgc3VibWlzc2lvbl9pZDogc2Vzc2lvbkRhdGE/LnNpbmdsZV9yZWRpcmVjdGlvbl9zdWJtaXNzaW9uX2lkPy5bMF0KICAgICAgICAgIH0KICAgICAgICB9CiAgICAgIH0KICAgIF0sCiAgICBmdWxmaWxsbWVudHM6IFsKICAgICAgewogICAgICAgIGlkOiBmdWxmaWxsbWVudHNbMF0uaWQKICAgICAgfQogICAgXQogIH07CgogIC8vIFVwZGF0ZSBwYXlsb2FkCiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZSA9IHsKICAgIG9yZGVyOiBvcmRlclBheWxvYWQKICB9OwoKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICoKICogQHBhcmFtIHtPYmplY3R9IHRhcmdldFBheWxvYWQgLSBUaGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIHRvIHZhbGlkYXRlLgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gdmFsaWRhdGUodGFyZ2V0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyOwoKICBpZiAob3JkZXIucHJvdmlkZXI/LmlkICE9PSBzZXNzaW9uRGF0YT8ub3JkZXJfcGF5bG9hZD8uWzBdPy5wcm92aWRlci5pZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiSW52YWxpZCBwcm92aWRlciBpZCIKICAgIH07CiAgfQoKCiAgaWYgKCFBcnJheS5pc0FycmF5KG9yZGVyLml0ZW1zKSB8fCBvcmRlci5pdGVtcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjogIkF0IGxlYXN0IG9uZSBpdGVtIGlzIHJlcXVpcmVkIgogICAgfTsKICB9CgogIGZvciAoY29uc3Qgc2VsZWN0ZWRJdGVtIG9mIG9yZGVyLml0ZW1zKSB7CiAgICBjb25zdCB4aW5wdXQgPSBzZWxlY3RlZEl0ZW0/LnhpbnB1dDsKCiAgICBpZiAoIXhpbnB1dCkgewogICAgICByZXR1cm4gewogICAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgICBjb2RlOiA0MDAsCiAgICAgICAgZGVzY3JpcHRpb246ICJ4aW5wdXQgaXMgcmVxdWlyZWQgZm9yIHNlbGVjdGVkIGl0ZW0iCiAgICAgIH07CiAgICB9CgogICAgY29uc3QgdmFsaWRJdGVtID0gc2Vzc2lvbkRhdGE/LmNhdGFsb2dbMF0/LnByb3ZpZGVyc1swXS5pdGVtcz8uZmluZCgKICAgICAgKGl0ZW0pID0+CiAgICAgICAgaXRlbT8uaWQgPT09IHNlbGVjdGVkSXRlbT8ucGFyZW50X2l0ZW1faWQgfHwKICAgICAgICBpdGVtPy5pZCA9PT0gc2VsZWN0ZWRJdGVtPy5pZAogICAgKTsKCiAgICBpZiAoIXZhbGlkSXRlbSkgewogICAgICByZXR1cm4gewogICAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgICBjb2RlOiA0MDAsCiAgICAgICAgZGVzY3JpcHRpb246ICJTZWxlY3RlZCBpdGVtIGlzIG5vdCBwcmVzZW50IGluIE9uIFNlYXJjaCBpdGVtcyIKICAgICAgfTsKICAgIH0KCiAgICBpZiAoCiAgICAgIHNlbGVjdGVkSXRlbT8ucGFyZW50X2l0ZW1faWQgJiYKICAgICAgIXNlc3Npb25EYXRhPy5jYXRhbG9nWzBdPy5wcm92aWRlcnNbMF0/Lml0ZW1zPy5zb21lKAogICAgICAgIChpdGVtKSA9PgogICAgICAgICAgaXRlbT8uaWQgPT09IHNlbGVjdGVkSXRlbT8ucGFyZW50X2l0ZW1faWQKICAgICAgKQogICAgKSB7CiAgICAgIHJldHVybiB7CiAgICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICAgIGNvZGU6IDQwMCwKICAgICAgICBkZXNjcmlwdGlvbjogIkludmFsaWQgcGFyZW50IGl0ZW0gaWQiCiAgICAgIH07CiAgICB9CgogICAgaWYgKCF4aW5wdXQ/LmZvcm0/LmlkKSB7CiAgICAgIHJldHVybiB7CiAgICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICAgIGNvZGU6IDQwMCwKICAgICAgICBkZXNjcmlwdGlvbjogInhpbnB1dCBmb3JtIGlkIGlzIHJlcXVpcmVkIgogICAgICB9OwogICAgfQoKICAgIGlmICgKICAgICAgeGlucHV0LmZvcm0uaWQgIT09CiAgICAgIHNlc3Npb25EYXRhPy5mb3JtX2lkPy5bMF0KICAgICkgewogICAgICByZXR1cm4gewogICAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgICBjb2RlOiA0MDAsCiAgICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgICAieGlucHV0IGZvcm0gaWQgZG9lcyBub3QgbWF0Y2ggdGhlIGV4cGVjdGVkIGZvcm0gaWQiCiAgICAgIH07CiAgICB9CgogICAgaWYgKAogICAgICB4aW5wdXQ/LmZvcm1fcmVzcG9uc2U/LnN0YXR1cyAhPT0KICAgICAgIlNVQ0NFU1MiCiAgICApIHsKICAgICAgcmV0dXJuIHsKICAgICAgICB2YWxpZDogZmFsc2UsCiAgICAgICAgY29kZTogNDAwLAogICAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgICAgInhpbnB1dCBmb3JtIHJlc3BvbnNlIHN0YXR1cyBtdXN0IGJlIFNVQ0NFU1MiCiAgICAgIH07CiAgICB9CgogICAgaWYgKCF4aW5wdXQ/LmZvcm1fcmVzcG9uc2U/LnN1Ym1pc3Npb25faWQpIHsKICAgICAgcmV0dXJuIHsKICAgICAgICB2YWxpZDogZmFsc2UsCiAgICAgICAgY29kZTogNDAwLAogICAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgICAgInhpbnB1dCBzdWJtaXNzaW9uIGlkIGlzIHJlcXVpcmVkIgogICAgICB9OwogICAgfQoKICAgIGlmICgKICAgICAgeGlucHV0LmZvcm1fcmVzcG9uc2Uuc3VibWlzc2lvbl9pZCAhPT0KICAgICAgc2Vzc2lvbkRhdGE/LnNpbmdsZV9yZWRpcmVjdGlvbl9zdWJtaXNzaW9uX2lkPy5bMF0KICAgICkgewogICAgICByZXR1cm4gewogICAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgICBjb2RlOiA0MDAsCiAgICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgICAieGlucHV0IHN1Ym1pc3Npb24gaWQgZG9lcyBub3QgbWF0Y2ggdGhlIGV4cGVjdGVkIHN1Ym1pc3Npb24gaWQiCiAgICAgIH07CiAgICB9CiAgfQoKICByZXR1cm4gewogICAgdmFsaWQ6IHRydWUsCiAgICBjb2RlOiAyMDAsCiAgICBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiCiAgfTsKfQ==
       requirements: LyoqCiAqIENoZWNrcyBpZiB0aGUgcmVxdWlyZW1lbnRzIGZvciBwcm9jZWVkaW5nIHdpdGggdGhlIEFQSSBjYWxsIGFyZSBtZXQuCiAqIAogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiAKICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
       defaultPayload:
         context:
@@ -3237,9 +3239,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: select
-            timestamp: 2026-08-24T13:25:21.802Z
+            timestamp: 2026-09-02T10:38:29.100Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: 922e7e4a-30cd-401a-a008-3755afefc35c
+            message_id: 7c2dca4f-1e68-4f73-9f56-63a79bb7b41f
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3254,7 +3256,7 @@ steps:
           message:
             order:
               provider:
-                id: PROVIDER_ID
+                id: P1
               items:
                 - id: CHILD_ITEM_ID_LAMF_1
                   parent_item_id: ITEM_ID_LAMF_5
@@ -3267,7 +3269,7 @@ steps:
                       id: single_redirection
                     form_response:
                       status: SUCCESS
-                      submission_id: 67df43cd-cc7e-47fb-b1bc-51e9fd2ea800
+                      submission_id: 536c7acc-d756-4613-b6a8-f64ca87956af
               fulfillments:
                 - id: F18
         type: request
@@ -3321,9 +3323,9 @@ steps:
           context:
             domain: ONDC:FIS12:SL
             action: on_select
-            timestamp: 2026-08-24T13:25:21.829Z
+            timestamp: 2026-09-02T10:38:29.193Z
             transaction_id: c751921f-ca28-4de5-b4e9-192cf3a38e43
-            message_id: 922e7e4a-30cd-401a-a008-3755afefc35c
+            message_id: 7c2dca4f-1e68-4f73-9f56-63a79bb7b41f
             bap_id: bap.example.com
             bap_uri: https://bap.example.com
             ttl: PT30S
@@ -3338,7 +3340,7 @@ steps:
           message:
             order:
               provider:
-                id: PROVIDER_ID
+                id: P1
                 descriptor:
                   images:
                     - url: https://www.icicibank.com/content/dam/icicibank/india/assets/images/header/logo.png
