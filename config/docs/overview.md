@@ -15,6 +15,7 @@
   - [The User Journey](#gold-loan-user-journey)
   - [Additional Scenarios](#gold-loan-additional-scenarios)
   - [Issue and Grievance Management](#gold-loan-issue-and-grievance-management)
+- [XInput Form Specifications & Payload Examples](#xinput-form-specifications--payload-examples)
 
 ---
 
@@ -452,3 +453,163 @@ Once the loan is confirmed and disbursed, Gold Loan servicing follows the same s
 ## <a id="gold-loan-issue-and-grievance-management"></a>Issue and Grievance Management
 
 IGM handling is standardized across FIS12, so an LSP or lender that has already implemented IGM for another FIS12 lending product should be able to reuse that implementation for Gold Loan rather than building a separate grievance pipeline.
+
+---
+
+## <a id="xinput-form-specifications--payload-examples"></a>XInput Form Specifications & Payload Examples
+
+The `xinput` mechanism enables the dynamic exchange of structured application forms between Buyer Apps (BAP) and Seller Apps (BPP). Below is an interactive comparison of form definitions and buyer responses for **Personal Loan Information** vs. **Gold Loan Information**.
+
+````carousel
+### Tab 1: Personal Loan Information (`PERSONAL_INFORMATION`)
+
+#### Seller-Side Form Definition (`/search` or `/on_search`)
+```json
+{
+  "xinput": {
+    "head": {
+      "descriptor": {
+        "name": "Personal Loan Application Form",
+        "code": "PERSONAL_INFORMATION"
+      },
+      "index": {
+        "min": 0,
+        "cur": 0,
+        "max": 1
+      },
+      "headings": ["PERSONAL_INFORMATION", "CONSENT_APPROVAL"]
+    },
+    "form": {
+      "id": "F01",
+      "mime_type": "none",
+      "data": {
+        "pan": { "type": "string" },
+        "fullName": { "type": "string" },
+        "dob": { "type": "string" },
+        "gender": { "type": "string" },
+        "contactNumber": { "type": "string" },
+        "income": { "type": "string" },
+        "companyName": { "type": "string" },
+        "employmentType": { "type": "string" },
+        "pincode": { "type": "string" },
+        "bureauConsent": { "type": "boolean" }
+      },
+      "multiple_submissions": false
+    },
+    "required": true
+  }
+}
+```
+
+#### Buyer-Side Form Response Payload (`/select`)
+```json
+{
+  "xinput": {
+    "form_response": {
+      "status": "SUCCESSFUL",
+      "submission_id": "sub_pl_884920412"
+    },
+    "form": {
+      "id": "F01",
+      "data": {
+        "pan": "ABCDE1234F",
+        "fullName": "Rahul Sharma",
+        "dob": "1992-05-15",
+        "gender": "MALE",
+        "contactNumber": "9876543210",
+        "income": "850000",
+        "companyName": "Acme Tech Pvt Ltd",
+        "employmentType": "SALARIED",
+        "pincode": "560001",
+        "bureauConsent": true
+      }
+    }
+  }
+}
+```
+
+<!-- slide -->
+
+### Tab 2: Gold Loan Information (`PERSONAL_INFORMATION_GOLD`)
+
+#### Seller-Side Form Definition (`/search` or `/on_search`)
+```json
+{
+  "xinput": {
+    "head": {
+      "descriptor": {
+        "name": "Gold Loan Application Form",
+        "code": "PERSONAL_INFORMATION_GOLD"
+      },
+      "index": {
+        "min": 0,
+        "cur": 0,
+        "max": 1
+      },
+      "headings": ["PERSONAL_INFORMATION_GOLD", "BRANCH_SELECTION"]
+    },
+    "form": {
+      "id": "FO1",
+      "mime_type": "none",
+      "data": {
+        "userType": { "type": "string" },
+        "pan": { "type": "string" },
+        "fullName": { "type": "string" },
+        "constitution": { "type": "string" },
+        "gender": { "type": "string" },
+        "dob": { "type": "string" },
+        "employmentType": { "type": "string" },
+        "annualIncome": { "type": "string" },
+        "contactNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "pincode": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "jewellery": { "type": "string" },
+        "purity": { "type": "string" },
+        "endUse": { "type": "string" },
+        "bureauConsent": { "type": "boolean" }
+      },
+      "multiple_submissions": false
+    },
+    "required": true
+  }
+}
+```
+
+#### Buyer-Side Form Response Payload (`/select`)
+```json
+{
+  "xinput": {
+    "form_response": {
+      "status": "SUCCESSFUL",
+      "submission_id": "sub_gl_992104812"
+    },
+    "form": {
+      "id": "FO1",
+      "data": {
+        "userType": "INDIVIDUAL",
+        "pan": "XYZPK9876L",
+        "fullName": "Priya Verma",
+        "gender": "FEMALE",
+        "dob": "1988-11-20",
+        "employmentType": "SELF_EMPLOYED",
+        "annualIncome": "1200000",
+        "contactNumber": "9812345678",
+        "email": "priya.verma@example.com",
+        "address": "42 MG Road, Indiranagar",
+        "pincode": "560038",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "jewellery": "150",
+        "purity": "22K",
+        "endUse": "BUSINESS_EXPANSION",
+        "bureauConsent": true
+      }
+    }
+  }
+}
+```
+````
+
