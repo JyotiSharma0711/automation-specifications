@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: ONDC Specification
-  domain: ONDC:FIS12
+  domain: ONDC:FIS12:BL
   description: ONDC Specification
   version: 2.3.0
   x-usecases:
@@ -12,7 +12,7 @@ info:
       status: DRAFT
     - use_case: LAMF LOAN
       status: DRAFT
-  x-branch-name: draft-FIS12-2.3.0
+  x-branch-name: draft-FIS12BL-2.3.0
   x-reporting: true
 security: 
   - SubscriberAuth: []

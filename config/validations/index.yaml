@@ -283,7 +283,7 @@ _TESTS_:
         - search
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: 
@@ -343,7 +343,7 @@ _TESTS_:
               attr: $.context.domain
               enumList:
                 - ONDC:FIS12
-                - ONDC:FIS12:PF
+                - ONDC:FIS12:BL
               _CONTINUE_: '!(attr are present)'
               _RETURN_: attr all in enumList
         - _NAME_: CONTEXT_REGEX
@@ -807,7 +807,7 @@ _TESTS_:
         - on_search
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: &COMMON_CONTEXT
@@ -863,7 +863,7 @@ _TESTS_:
               attr: $.context.domain
               enumList:
                 - ONDC:FIS12
-                - ONDC:FIS12:PF
+                - ONDC:FIS12:BL
               _CONTINUE_: '!(attr are present)'
               _RETURN_: attr all in enumList
         - _NAME_: CONTEXT_REGEX
@@ -1519,7 +1519,7 @@ _TESTS_:
         - select
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
@@ -1659,7 +1659,7 @@ _TESTS_:
         - select
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
@@ -1969,7 +1969,7 @@ _TESTS_:
         - init
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
@@ -2121,7 +2121,7 @@ _TESTS_:
         - on_init
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
@@ -2398,7 +2398,7 @@ _TESTS_:
         - confirm
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
@@ -2451,7 +2451,7 @@ _TESTS_:
         - on_confirm
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
@@ -2560,7 +2560,7 @@ _TESTS_:
         - update
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
@@ -2584,7 +2584,7 @@ _TESTS_:
         - on_update
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
@@ -2616,7 +2616,7 @@ _TESTS_:
         - status
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
@@ -2639,7 +2639,7 @@ _TESTS_:
         - on_status
       domain:
         - ONDC:FIS12
-        - ONDC:FIS12:PF
+        - ONDC:FIS12:BL
       version:
         - 2.3.0
       _RETURN_: *COMMON_CONTEXT
