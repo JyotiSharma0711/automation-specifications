@@ -27,6 +27,5 @@ x-supported-actions:
   $ref: ./actions/index.yaml
 x-flows:
   $ref: ./flows/index.yaml#/flows
-x-figma: https://www.figma.com/board/bnGeMUQUOasD4Y9fu4dSoP/Purchase-Finance?node-id=0-1
 x-docs:
   $ref: ./docs
