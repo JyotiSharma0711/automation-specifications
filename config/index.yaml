@@ -30,5 +30,6 @@ x-supported-actions:
   $ref: ./actions/index.yaml
 x-flows:
   $ref: ./flows/index.yaml#/flows
+x-figma: https://www.figma.com/file/TS8ghV1vPnZ9iod3ApVIKp/Credit
 x-docs:
   $ref: ./docs
