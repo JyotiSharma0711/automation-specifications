@@ -14,6 +14,7 @@ info:
       status: DRAFT
   x-branch-name: draft-FIS12-2.0.3
   x-reporting: true
+  x-figma: https://www.figma.com/file/TS8ghV1vPnZ9iod3ApVIKp/Credit
 security:
   - SubscriberAuth: []
 paths:
