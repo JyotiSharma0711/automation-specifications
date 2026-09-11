@@ -31,6 +31,7 @@ x-supported-actions:
   $ref: ./actions/index.yaml
 x-flows:
   $ref: ./flows/index.yaml#/flows
-x-figma: https://www.figma.com/design/pF6i0CqlqkBheLtQTYNBW6/Untitled?node-id=0-1&p=f
+x-figma: 
+  $ref: https://www.figma.com/design/pF6i0CqlqkBheLtQTYNBW6/Untitled?node-id=0-1&p=f
 x-docs:
   $ref: ./docs
