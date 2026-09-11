@@ -1,3 +1,4 @@
+import { injectBuyerFinderFees } from "../settlement-utils";
 export async function onSearchDefaultGenerator(existingPayload: any, sessionData: any) {
   console.log("existingPayload on search", existingPayload);
 
@@ -38,5 +39,6 @@ export async function onSearchDefaultGenerator(existingPayload: any, sessionData
   }
 
   console.log("session data of on_search", sessionData);
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 } 

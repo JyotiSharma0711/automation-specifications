@@ -99,6 +99,7 @@ supportedActions:
     - on_issue_status
     - update
     - status
+
   on_issue:
     - issue
     - on_issue
@@ -106,14 +107,24 @@ supportedActions:
     - on_issue_status
     - update
     - on_update
+    - issue_status
     - status
+
   on_issue_status:
     - on_issue
     - issue
     - on_update
-    - update  
-    - status  
+    - update
+    - issue_status
+    - on_issue_status
     - on_status
+    - status
+
+  issue_status:
+    - on_issue 
+    - on_issue_status
+    - on_status
+    - status
 apiProperties:
   search:
     async_predecessor: null
@@ -205,6 +216,9 @@ apiProperties:
   on_issue:
     async_predecessor: null
     transaction_partner: []  
+  issue_status:
+    async_predecessor: null
+    transaction_partner: []   
   on_issue_status:
     async_predecessor: null
     transaction_partner: []     

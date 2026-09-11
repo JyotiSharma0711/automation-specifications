@@ -1,7 +1,6 @@
 
 import { loadMockSessionData } from "../../../../../services/data-services";
-import { generateInstallmentPayments, injectLoanDetails, injectSettlementAmount } from "../settlement-utils";
-
+import { generateInstallmentPayments, injectLoanDetails, injectSettlementAmount, injectBuyerFinderFees } from "../settlement-utils";
 export async function onUpdateUnsolicitedDefaultGenerator(existingPayload: any, sessionData: any) {
   if (existingPayload.context) {
     existingPayload.context.timestamp = new Date().toISOString();
@@ -292,5 +291,6 @@ export async function onUpdateUnsolicitedDefaultGenerator(existingPayload: any, 
   // ── Dynamic SETTLEMENT_AMOUNT: inject pre-calculated value from session ──
   injectSettlementAmount(existingPayload, sessionData);
   // ─────────────────────────────────────────────────────────────────────────
+  injectBuyerFinderFees(existingPayload, sessionData);
   return existingPayload;
 }
