@@ -1,6 +1,5 @@
 # Purchase Finance
 
-On this page
 
 - [Overview](#overview)
 - [Participants](#participants)
