@@ -5,9 +5,9 @@ info:
   description: ONDC Specification
   version: 2.3.0
   x-usecases:  
-    - PURCHASE FINANCE
+    - SOLAR PURCHASE FINANCE
   x-status:
-    - use_case: PURCHASE FINANCE
+    - use_case: SOLAR PURCHASE FINANCE
       status: DRAFT
   x-branch-name: draft-FIS12-PF-2.3.0
   x-reporting: true
