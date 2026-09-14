@@ -2,7 +2,7 @@
 
 ## Loan Against Mutual Funds (LAMF)
 
-### On this page
+
 
 - [Overview](#overview)
 - [Participants](#participants)
@@ -32,9 +32,6 @@ A Loan Against Mutual Funds lets an investor borrow against their mutual fund ho
 
 Each lender independently manages its loan products, underwriting, eligible-unit logic, pricing, and servicing. ONDC enables these lenders and lending apps to connect through a common, open protocol instead of building separate integrations with each other. A lending app integrates with the ONDC network as a Loan Service Provider (LSP) and can discover and offer LAMF products from participating lenders. Lenders integrate once with the network to make their LAMF products available to participating lending apps.
 
-**Scale Context**: LAMF is currently roughly a ₹40,000 Cr market against a total MF AUM base of over ₹70 lakh Cr — meaning the addressable headroom is large relative to current penetration, and growing MF adoption directly grows the eligible borrower pool.
-
-> ⚠️ **Key Risk to Design Around — Margin Calls**: Because the collateral is market-linked, its value can fall after the loan is disbursed, which is structurally different from a fixed-collateral secured loan. Every part of this guide that touches valuation, drawdown, or servicing should treat margin risk as a live concern, not an edge case.
 
 This guide explains the LAMF use case and end-to-end journey from a business and product perspective, before covering the corresponding technical specifications and API flows. Network interactions in this guide reference the `ONDC:FIS12:SL` domain, version 2.3.0 (`draft-FIS12-2.3.0-SL`).
 
