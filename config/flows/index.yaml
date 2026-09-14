@@ -3,7 +3,7 @@ flows:
     id: master_search
     meta:
       order: 0
-    usecase: PURCHASE FINANCE
+    usecase: SOLAR PURCHASE FINANCE
     tags:
       - WORKBENCH
       - MANDATORY
@@ -15,7 +15,7 @@ flows:
     id: solar_purchase_finance_single_redirection
     meta:
       order: 1
-    usecase: PURCHASE FINANCE
+    usecase: SOLAR PURCHASE FINANCE
     tags:
       - WORKBENCH
       - MANDATORY
