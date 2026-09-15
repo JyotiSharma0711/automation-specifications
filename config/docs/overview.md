@@ -1,5 +1,3 @@
-# Loan Against Mutual Funds (LAMF) on ONDC — Developer Guide
-
 ## Loan Against Mutual Funds (LAMF)
 
 
