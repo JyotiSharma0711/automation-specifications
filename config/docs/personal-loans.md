@@ -1,8 +1,5 @@
-# Personal Loans on ONDC — Developer Guide
+## Personal Loans 
 
-## Personal Loans (ONDC FIS12 - Credit - 2.0.3)
-
-## On this page
 
 - [Overview](#overview)
 - [Participants](#participants)

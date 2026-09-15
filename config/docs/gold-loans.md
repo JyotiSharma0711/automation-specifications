@@ -1,8 +1,5 @@
-# Gold Loans on ONDC — Developer Guide
+## Gold Loan 
 
-## Gold Loan (ONDC FIS12 - Credit)
-
-## On this page
 
 - [Overview](#overview)
 - [Participants](#participants)
