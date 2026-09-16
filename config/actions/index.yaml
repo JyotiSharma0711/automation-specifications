@@ -54,6 +54,7 @@ supportedActions:
     - update
     - confirm
     - issue
+    - select
   issue:
     - on_issue
     - issue
