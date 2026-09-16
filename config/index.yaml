@@ -5,9 +5,9 @@ info:
   description: ONDC Specification
   version: 2.3.0
   x-usecases:
-    - LAMF LOAN
+    - LOAN AGAINST MUTUAL FUNDS
   x-status:
-    - use_case: LAMF LOAN
+    - use_case: LOAN AGAINST MUTUAL FUNDS
       status: DRAFT
   x-branch-name: draft-FIS12SL-2.3.0
   x-reporting: true
