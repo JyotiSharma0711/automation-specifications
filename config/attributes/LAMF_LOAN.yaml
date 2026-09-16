@@ -1,5 +1,5 @@
 meta:
-  use_case_id: LAMF LOAN
+  use_case_id: LOAN AGAINST MUTUAL FUNDS
 attribute_set:
   search:
     context:

@@ -3,7 +3,7 @@ flows:
     id: master_search
     meta:
       order: 0
-    usecase: LAMF LOAN
+    usecase: LOAN AGAINST MUTUAL FUNDS
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -14,7 +14,7 @@ flows:
   #   id: lamf_credit_line_with_mfc_offline_journey
   #   meta:
   #     order: 1
-  #   usecase: LAMF LOAN
+  #   usecase: LOAN AGAINST MUTUAL FUNDS
   #   tags:
   #     - WORKBENCH
   #     - REPORTABLE
@@ -25,7 +25,7 @@ flows:
     id: lamf_credit_line_with_mfc_single_redirection
     meta:
       order: 2
-    usecase: LAMF LOAN
+    usecase: LOAN AGAINST MUTUAL FUNDS
     tags:
       - WORKBENCH
       - Mandatory
@@ -38,7 +38,7 @@ flows:
     id: lamf_credit_line_with_mfc_single_redirection_with_igm_1.0.0
     meta:
       order: 3
-    usecase: LAMF LOAN
+    usecase: LOAN AGAINST MUTUAL FUNDS
     tags:
       - WORKBENCH
       - Mandatory
@@ -50,7 +50,7 @@ flows:
   #   id: lamf_credit_line_with_mfc
   #   meta:
   #     order: 3
-  #   usecase: LAMF LOAN
+  #   usecase: LOAN AGAINST MUTUAL FUNDS
   #   tags:
   #     - WORKBENCH
   #     - REPORTABLE
@@ -62,7 +62,7 @@ flows:
   #   id: lamf_credit_line_with_mfc_offline_journey_drawdown
   #   meta:
   #     order: 4
-  #   usecase: LAMF LOAN
+  #   usecase: LOAN AGAINST MUTUAL FUNDS
   #   tags:
   #     - WORKBENCH
   #     - REPORTABLE
@@ -73,7 +73,7 @@ flows:
   #   id: lamf_credit_line_with_mfc_offline_journey_drawdown_foreclosure
   #   meta:
   #     order: 5
-  #   usecase: LAMF LOAN
+  #   usecase: LOAN AGAINST MUTUAL FUNDS
   #   tags:
   #     - WORKBENCH
   #     - REPORTABLE
@@ -84,7 +84,7 @@ flows:
   #   id: lamf_credit_line_with_mfc_offline_journey_drawdown_missed_emi
   #   meta:
   #     order: 6
-  #   usecase: LAMF LOAN
+  #   usecase: LOAN AGAINST MUTUAL FUNDS
   #   tags:
   #     - WORKBENCH
   #     - REPORTABLE
@@ -95,7 +95,7 @@ flows:
   #   id: lamf_credit_line_with_mfc_offline_journey_drawdown_pre_part
   #   meta:
   #     order: 7
-  #   usecase: LAMF LOAN
+  #   usecase: LOAN AGAINST MUTUAL FUNDS
   #   tags:
   #     - WORKBENCH
   #     - REPORTABLE
