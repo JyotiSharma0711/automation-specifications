@@ -7,7 +7,7 @@ info:
   x-usecases:
     - LAMF LOAN
   x-status:
-    - use_case: LAMF LOAN
+    - use_case: LOAN AGAINST MUTUAL FUNDS
       status: DRAFT
   x-branch-name: draft-FIS12SL-2.3.0
   x-reporting: true
