@@ -885,8 +885,6 @@ steps:
                   unit: INR
             fulfillment_ids:
             - ff_123
-            payment_ids:
-            - pmt_123
             tags:
             - display: true
               descriptor:
@@ -1010,45 +1008,6 @@ steps:
                   name: Cumulative Amount Minimum
                   code: CUMULATIVE_AMOUNT_MIN
                 value: '30000'
-          xinput:
-            form:
-              id: form_3
-            form_response:
-              status: SUCCESS
-              submission_id: 8745-1247-6587-8647
-          payments:
-          - id: pmt_123
-            collected_by: BPP
-            status: NOT-PAID
-            params:
-              amount: '0'
-              currency: INR
-              source_bank_code: icic0000047
-              source_bank_account_number: '004701563111'
-              source_bank_account_name: harish gupta
-            type: PRE_FULFILLMENT
-            tags:
-            - descriptor:
-                name: Source bank account
-                code: SOURCE_BANK_ACCOUNT
-              list:
-              - descriptor:
-                  name: Account Type
-                  code: ACCOUNT_TYPE
-                value: SAVINGS
-            - descriptor:
-                name: Payment Method
-                code: PAYMENT_METHOD
-              list:
-              - descriptor:
-                  code: MODE
-                value: NACH
-              - descriptor:
-                  code: AUTH
-                value: NETBANKING
-              - descriptor:
-                  code: MANDATE_LIMIT
-                value: '50000'
           tags:
           - display: false
             descriptor:
@@ -1124,8 +1083,6 @@ steps:
                   unit: INR
             fulfillment_ids:
             - ff_123
-            payment_ids:
-            - pmt_123
             tags:
             - display: true
               descriptor:
@@ -1222,45 +1179,6 @@ steps:
                   name: Identifier
                   code: IDENTIFIER
                 value: ba_369823523564
-          xinput:
-            form:
-              id: form_3
-            form_response:
-              status: SUCCESS
-              submission_id: 8745-1247-6587-8647
-          payments:
-          - id: pmt_fa46314c-cc37-4132-ac71-54a0b88181db
-            collected_by: BPP
-            status: NOT-PAID
-            params:
-              amount: '0'
-              currency: INR
-              source_bank_code: icic0000047
-              source_bank_account_number: '004701563111'
-              source_bank_account_name: harish gupta
-            type: PRE_FULFILLMENT
-            tags:
-            - descriptor:
-                name: Source bank account
-                code: SOURCE_BANK_ACCOUNT
-              list:
-              - descriptor:
-                  name: Account Type
-                  code: ACCOUNT_TYPE
-                value: SAVINGS
-            - descriptor:
-                name: Payment Method
-                code: PAYMENT_METHOD
-              list:
-              - descriptor:
-                  code: MODE
-                value: NACH
-              - descriptor:
-                  code: AUTH
-                value: NETBANKING
-              - descriptor:
-                  code: MANDATE_LIMIT
-                value: '50000'
           tags:
           - display: false
             descriptor:
