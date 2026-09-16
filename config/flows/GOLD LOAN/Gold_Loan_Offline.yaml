@@ -2525,7 +2525,6 @@ steps:
         items: $.message.order.items[*]
         order: $.message.order
         selected_items_xinput: $.message.order.items[0].xinput
-        order: $.message.order
       inputs: {}
     examples:
       - name: example for on_status
