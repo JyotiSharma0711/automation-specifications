@@ -1,7 +1,7 @@
 meta:
   domain: ONDC:FIS12
   version: 2.0.3
-  flowId: Credit_Card_Offline
+  flowId: Credit_Card
   config_version: 0.0.0001
   description: 'A borrower discovers, applies for, and confirms a credit card offline journey: searching the network for available cards, completing a personal-information application form, selecting a card, completing a KYC form, polling for KYC completion status, initiating and confirming the credit card request, and tracking the final application status.'
   use_case_id: CREDIT CARD
