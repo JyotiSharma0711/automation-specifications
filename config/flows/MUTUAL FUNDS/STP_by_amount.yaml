@@ -1616,7 +1616,203 @@ steps:
                 type: STP_OUT
                 customer:
                   person:
-                    id: p
+                    id: pan:arrpp7771n
+                    creds:
+                      - id: 78953432/32
+                        type: FOLIO
+                      - id: 115.245.207.90
+                        type: IP_ADDRESS
+                  contact:
+                    phone: "9916599123"
+                agent:
+                  person:
+                    id: euin:E52432
+                  organization:
+                    creds:
+                      - id: ARN-124567
+                        type: ARN
+                      - id: ARN-123456
+                        type: SUB_BROKER_ARN
+                stops:
+                  - time:
+                      schedule:
+                        frequency: R6/2024-05-15/P1M
+              - id: ff_124
+                type: STP_IN
+                customer:
+                  person:
+                    id: pan:arrpp7771n
+                    creds:
+                      - id: 78953432/32
+                        type: FOLIO
+                      - id: 115.245.207.90
+                        type: IP_ADDRESS
+                  contact:
+                    phone: "9916599123"
+                agent:
+                  person:
+                    id: euin:E52432
+                  organization:
+                    creds:
+                      - id: ARN-124567
+                        type: ARN
+                      - id: ARN-123456
+                        type: SUB_BROKER_ARN
+            tags:
+              - display: false
+                descriptor:
+                  name: BAP Terms of Engagement
+                  code: BAP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+              - display: false
+                descriptor:
+                  name: BPP Terms of Engagement
+                  code: BPP_TERMS
+                list:
+                  - descriptor:
+                      name: Static Terms (Transaction Level)
+                      code: STATIC_TERMS
+                    value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                  - descriptor:
+                      name: Offline Contract
+                      code: OFFLINE_CONTRACT
+                    value: "true"
+      saveData:
+        selected_items: $.message.order.items[*]
+        selected_fulfillments: $.message.order.fulfillments[*]
+        selected_provider: $.message.order.provider
+        tags: $.message.order.tags[*]
+        order_id: $.message.order.id
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        city_code: $.context.location.city.code
+      inputs: {}
+    examples:
+      - name: example for confirm
+        payload:
+          context:
+            domain: ONDC:FIS14
+            action: confirm
+            timestamp: 2026-07-13T06:55:14.234Z
+            transaction_id: c811550d-effb-435b-a62b-6eb30e355fb7
+            message_id: a069d68d-f7ca-4cd1-9087-e734e3ca537c
+            bap_id: bap.example.com
+            bap_uri: https://bap.example.com
+            ttl: PT30S
+            bpp_id: bpp.example.com
+            bpp_uri: https://bpp.example.com
+            version: 2.1.0
+            location:
+              country:
+                code: IND
+              city:
+                code: "*"
+          message:
+            order:
+              id: mfsp_213adf123af
+              provider:
+                id: sellerapp_id
+              items:
+                - id: "12391"
+                  quantity:
+                    selected:
+                      measure:
+                        value: "3000"
+                        unit: INR
+                  fulfillment_ids:
+                    - ff_789
+                - id: "15031"
+                  fulfillment_ids:
+                    - ff_124
+              fulfillments:
+                - id: ff_789
+                  type: STP_OUT
+                  customer:
+                    person:
+                      id: pan:arrpp7771n
+                      creds:
+                        - id: 78953432/32
+                          type: FOLIO
+                        - id: 115.245.207.90
+                          type: IP_ADDRESS
+                    contact:
+                      phone: "9916599123"
+                  agent:
+                    person:
+                      id: euin:E52432
+                    organization:
+                      creds:
+                        - id: ARN-124567
+                          type: ARN
+                        - id: ARN-123456
+                          type: SUB_BROKER_ARN
+                  stops:
+                    - time:
+                        schedule:
+                          frequency: R6/2024-05-15/P1M
+                - id: ff_124
+                  type: STP_IN
+                  customer:
+                    person:
+                      id: pan:arrpp7771n
+                      creds:
+                        - id: 78953432/32
+                          type: FOLIO
+                        - id: 115.245.207.90
+                          type: IP_ADDRESS
+                    contact:
+                      phone: "9916599123"
+                  agent:
+                    person:
+                      id: euin:E52432
+                    organization:
+                      creds:
+                        - id: ARN-124567
+                          type: ARN
+                        - id: ARN-123456
+                          type: SUB_BROKER_ARN
+              tags:
+                - display: false
+                  descriptor:
+                    name: BAP Terms of Engagement
+                    code: BAP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://buyerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+                - display: false
+                  descriptor:
+                    name: BPP Terms of Engagement
+                    code: BPP_TERMS
+                  list:
+                    - descriptor:
+                        name: Static Terms (Transaction Level)
+                        code: STATIC_TERMS
+                      value: https://sellerapp.com/legal/ondc:fis14/static_terms?v=0.1
+                    - descriptor:
+                        name: Offline Contract
+                        code: OFFLINE_CONTRACT
+                      value: "true"
+        type: request
+        description: please add relevant description
 transaction_history: []
 validationLib: ""
 helperLib: LyoKCUN1c3RvbSBoZWxwZXIgZnVuY3Rpb25zIGF2YWlsYWJsZSBpbiBhbGwgbW9jayBnZW5lcmF0aW9uIGZ1bmN0aW9ucy4KCXRoZXNlIGFyZSBhcHBlbmRlZCBiZWxvdyB0aGUgZ2VuZXJhdGUgZnVuY3Rpb24gZm9yIGVhY2ggc3RlcC4KKi8KCmNvbnN0IGNyZWF0ZUZvcm1VUkwgPSAoZG9tYWluLGZvcm1JZCwgc2Vzc2lvbkRhdGEpID0+IHsKCWNvbnN0IGJhc2VVUkwgPSBzZXNzaW9uRGF0YS5tb2NrQmFzZVVybDsKCWNvbnN0IHRyYW5zYWN0aW9uSWQgPSBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkWzBdOwoJY29uc3Qgc2Vzc2lvbklkID0gc2Vzc2lvbkRhdGEuc2Vzc2lvbklkOwoJcmV0dXJuIGAke2Jhc2VVUkx9L2Zvcm1zLyR7ZG9tYWlufS8ke2Zvcm1JZH0vP3RyYW5zYWN0aW9uX2lkPSR7dHJhbnNhY3Rpb25JZH0mc2Vzc2lvbl9pZD0ke3Nlc3Npb25JZH1gOwp9CgovLyBHZW5lcmF0ZXMgYSBVVUlEIHY0CmZ1bmN0aW9uIHV1aWR2NCgpIHsKCXJldHVybiAneHh4eHh4eHgteHh4eC00eHh4LXl4eHgteHh4eHh4eHh4eHh4Jy5yZXBsYWNlKC9beHldL2csIGZ1bmN0aW9uIChjKSB7CgkgIGNvbnN0IHIgPSBNYXRoLnJhbmRvbSgpICogMTYgfCAwOwoJICBjb25zdCB2ID0gYyA9PT0gJ3gnID8gciA6IChyICYgMHgzIHwgMHg4KTsKCSAgcmV0dXJuIHYudG9TdHJpbmcoMTYpOwoJfSk7Cn0KCi8vIEdlbmVyYXRlIGEgNiBkaWdpdCBzdHJpbmcgSUQKZnVuY3Rpb24gZ2VuZXJhdGU2RGlnaXRJZCgpIHsKCXJldHVybiBNYXRoLmZsb29yKDEwMDAwMCArIE1hdGgucmFuZG9tKCkgKiA5MDAwMDApLnRvU3RyaW5nKCk7Cn0KCi8vIFJldHVybnMgdGhlIGN1cnJlbnQgSVNPIHRpbWVzdGFtcApmdW5jdGlvbiBjdXJyZW50VGltZXN0YW1wKCkgewoJcmV0dXJuIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKfQoKLy8gQ29udmVydHMgSVNPIDg2MDEgZHVyYXRpb24gc3RyaW5nIHRvIHRvdGFsIHNlY29uZHMKY29uc3QgaXNvRHVyVG9TZWMgPSAoZHVyYXRpb24pID0+IHsKICBjb25zdCBkdXJSRSA9IC9QKChkKylZKT8oKGQrKU0pPygoZCspVyk/KChkKylEKT9UPygoZCspSCk/KChkKylNKT8oKGQrKVMpPy87CiAgY29uc3QgcyA9IGR1clJFLmV4ZWMoZHVyYXRpb24pOwogIGlmICghcykgcmV0dXJuIDA7CiAgCiAgcmV0dXJuIChOdW1iZXIocz8uWzJdKSB8fCAwKSAqIDMxNTM2MDAwICsKCShOdW1iZXIocz8uWzRdKSB8fCAwKSAqIDI2MjgyODggKwoJKE51bWJlcihzPy5bNl0pIHx8IDApICogNjA0ODAwICsKCShOdW1iZXIocz8uWzhdKSB8fCAwKSAqIDg2NDAwICsKCShOdW1iZXIocz8uWzEwXSkgfHwgMCkgKiAzNjAwICsKCShOdW1iZXIocz8uWzEyXSkgfHwgMCkgKiA2MCArCgkoTnVtYmVyKHM/LlsxNF0pIHx8IDApOwp9OwoKY29uc3Qgc2V0Q2l0eUZyb21JbnB1dHMgPSAocGF5bG9hZCwgaW5wdXRzKSA9PiB7CglpZiAoIWlucHV0cykgcmV0dXJuICIqIjsKCWxldCB2ZXJzaW9uID0gcGF5bG9hZC5jb250ZXh0LnZlcnNpb24gfHwgcGF5bG9hZC5jb250ZXh0LmNvcmVfdmVyc2lvbiB8fCAiMi4wLjAiOwoJaWYgKHZlcnNpb24uc3RhcnRzV2l0aCgiMSIpKSB7CgkJcGF5bG9hZC5jb250ZXh0LmNpdHkgPSBpbnB1dHMuY2l0eV9jb2RlID8/ICIqIjsKCX0gZWxzZSB7CgkJcGF5bG9hZC5jb250ZXh0LmxvY2F0aW9uLmNpdHkuY29kZSA9IGlucHV0cy5jaXR5X2NvZGUgPz8gIioiOwoJfQp9CgpmdW5jdGlvbiB1cGRhdGVDaGVja2xpc3Qob3JkZXIsIHVwZGF0ZXMpIHsKCWlmICghb3JkZXI/Lml0ZW1zKSByZXR1cm4gb3JkZXIKCglvcmRlci5pdGVtcy5mb3JFYWNoKGl0ZW0gPT4gewoJCWNvbnN0IGNoZWNrbGlzdFRhZyA9IGl0ZW0udGFncz8uZmluZCgKCQkJdGFnID0+IHRhZy5kZXNjcmlwdG9yPy5jb2RlID09PSAiQ0hFQ0tMSVNUUyIKCQkpCgoJCWlmIChjaGVja2xpc3RUYWc/Lmxpc3QpIHsKCQkJY2hlY2tsaXN0VGFnLmxpc3QuZm9yRWFjaChlbnRyeSA9PiB7CgkJCQljb25zdCBjb2RlID0gZW50cnkuZGVzY3JpcHRvcj8uY29kZQoKCQkJCWlmIChjb2RlICYmIHVwZGF0ZXNbY29kZV0pIHsKCQkJCQllbnRyeS52YWx1ZSA9IHVwZGF0ZXNbY29kZV0KCQkJCX0KCQkJfSkKCQl9Cgl9KQoKCXJldHVybiBvcmRlcgp9CgoKZnVuY3Rpb24gbWVyZ2VDYW5vbmljYWwoYmFzZSwgY2Fub25pY2FsKSB7CglpZiAoIWNhbm9uaWNhbCkgcmV0dXJuIGJhc2U7CglpZiAoQXJyYXkuaXNBcnJheShiYXNlKSAmJiBBcnJheS5pc0FycmF5KGNhbm9uaWNhbCkpIHsKCQlyZXR1cm4gYmFzZS5tYXAoKGIsIGkpID0+IChjYW5vbmljYWxbaV0gPyB7IC4uLmIsIC4uLmNhbm9uaWNhbFtpXSB9IDogYikpOwoJfQoJcmV0dXJuIHsgLi4uYmFzZSwgLi4uY2Fub25pY2FsIH07Cn0KCmZ1bmN0aW9uIHN5bmNGdWxmaWxsbWVudElkcyhleGlzdGluZ1BheWxvYWQpIHsKCWNvbnN0IG9yZGVyID0gZXhpc3RpbmdQYXlsb2FkPy5tZXNzYWdlPy5vcmRlcjsKCWNvbnN0IGZ1bGZpbGxtZW50cyA9IG9yZGVyPy5mdWxmaWxsbWVudHM7CglpZiAoIUFycmF5LmlzQXJyYXkoZnVsZmlsbG1lbnRzKSB8fCBmdWxmaWxsbWVudHMubGVuZ3RoICE9PSAxKSByZXR1cm47Cgljb25zdCBmaWQgPSBmdWxmaWxsbWVudHNbMF0/LmlkOwoJaWYgKCFmaWQpIHJldHVybjsKCShvcmRlci5pdGVtcyB8fCBbXSkuZm9yRWFjaCgoaXRlbSkgPT4geyBpdGVtLmZ1bGZpbGxtZW50X2lkcyA9IFtmaWRdOyB9KTsKCW9yZGVyLnF1b3RlPy5icmVha3VwPy5mb3JFYWNoKChiKSA9PiB7IGlmIChiLml0ZW0pIGIuaXRlbS5mdWxmaWxsbWVudF9pZHMgPSBbZmlkXTsgfSk7Cn0KCmZ1bmN0aW9uIGNhcnJ5Rm9yd2FyZE9yZGVyKGV4aXN0aW5nUGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKCWNvbnN0IG9yZGVyID0gZXhpc3RpbmdQYXlsb2FkPy5tZXNzYWdlPy5vcmRlcjsKCWlmICghb3JkZXIpIHJldHVybiBleGlzdGluZ1BheWxvYWQ7CgoJY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlcj8uWzBdOwoJaWYgKHByb3ZpZGVyICYmIG9yZGVyLnByb3ZpZGVyKSB7CgkJb3JkZXIucHJvdmlkZXIuaWQgPSB0eXBlb2YgcHJvdmlkZXIgPT09ICJzdHJpbmciID8gcHJvdmlkZXIgOiBwcm92aWRlci5pZDsKCX0KCgljb25zdCBpdGVtID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXM/LlswXSB8fCBzZXNzaW9uRGF0YS5pdGVtPy5bMF07CglpZiAoaXRlbSAmJiBvcmRlci5pdGVtcz8uWzBdKSB7CgkJb3JkZXIuaXRlbXNbMF0uaWQgPSB0eXBlb2YgaXRlbSA9PT0gInN0cmluZyIgPyBpdGVtIDogaXRlbS5pZDsKCX0KCgljb25zdCBtZWFzdXJlID0gc2Vzc2lvbkRhdGEuc2lwX21lYXN1cmU/LlswXTsKCWlmIChtZWFzdXJlICYmIG9yZGVyLml0ZW1zPy5bMF0pIHsKCQlpZiAoIW9yZGVyLml0ZW1zWzBdLnF1YW50aXR5KSBvcmRlci5pdGVtc1swXS5xdWFudGl0eSA9IHt9OwoJCW9yZGVyLml0ZW1zWzBdLnF1YW50aXR5LnNlbGVjdGVkID0geyBtZWFzdXJlIH07Cgl9CgoJY29uc3QgZnVsZmlsbG1lbnQgPSBzZXNzaW9uRGF0YS5zZWxlY3RlZF9mdWxmaWxsbWVudHM/LlswXSB8fCBzZXNzaW9uRGF0YS5zaXBfZnVsZmlsbG1lbnQ/LlswXTsKCWlmIChmdWxmaWxsbWVudCAmJiBvcmRlci5mdWxmaWxsbWVudHM/LlswXSkgewoJCW9yZGVyLmZ1bGZpbGxtZW50c1swXSA9IG1lcmdlQ2Fub25pY2FsKG9yZGVyLmZ1bGZpbGxtZW50c1swXSwgZnVsZmlsbG1lbnQpOwoJfQoKCWlmIChzZXNzaW9uRGF0YS5xdW90ZV9pZD8uWzBdICYmIG9yZGVyLnF1b3RlKSBvcmRlci5xdW90ZS5pZCA9IHNlc3Npb25EYXRhLnF1b3RlX2lkWzBdOwoJaWYgKHNlc3Npb25EYXRhLnBhcmVudF9pdGVtX2lkPy5bMF0gJiYgb3JkZXIuaXRlbXM/LlswXSkgb3JkZXIuaXRlbXNbMF0ucGFyZW50X2l0ZW1faWQgPSBzZXNzaW9uRGF0YS5wYXJlbnRfaXRlbV9pZFswXTsKCWlmIChzZXNzaW9uRGF0YS5vcmRlcl9pZD8uWzBdKSBvcmRlci5pZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkWzBdOwoKCXN5bmNGdWxmaWxsbWVudElkcyhleGlzdGluZ1BheWxvYWQpOwoJcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
