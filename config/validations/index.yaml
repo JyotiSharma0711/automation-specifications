@@ -629,6 +629,7 @@ _TESTS_:
           _RETURN_: attr all in enumList
         - _NAME_: REQUIRED_ITEM_CREATOR
           attr: $.message.order.items[*].creator.descriptor.name
+          _CONTINUE_: "!(attr are present)"
           _RETURN_: attr are present
         - _NAME_: REQUIRED_ITEM_FULFILLMENT_IDS
           attr: $.message.order.items[*].fulfillment_ids[*]
@@ -867,6 +868,7 @@ _TESTS_:
           _RETURN_: attr all in enumList
         - _NAME_: REQUIRED_ITEM_CREATOR
           attr: $.message.order.items[*].creator.descriptor.name
+          _CONTINUE_: "!(attr are present)"
           _RETURN_: attr are present
         - _NAME_: REQUIRED_ITEM_QUANTITY
           attr: $.message.order.items[*].quantity.selected.measure.value

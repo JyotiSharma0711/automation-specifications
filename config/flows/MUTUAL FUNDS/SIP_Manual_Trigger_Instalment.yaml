@@ -148,7 +148,7 @@ steps:
         type: request
         description: please add relevant description
   - api: on_select
-    action_id: on_select_1_new_folio
+    action_id: on_select_1
     owner: BPP
     responseFor: select
     unsolicited: false
@@ -805,7 +805,7 @@ steps:
         type: request
         description: please add relevant description
   - api: on_select
-    action_id: on_select_2_new_folio
+    action_id: on_select_2
     owner: BPP
     responseFor: select_2
     unsolicited: false
@@ -1721,7 +1721,7 @@ steps:
         type: request
         description: please add relevant description
   - api: on_init
-    action_id: on_init_new_folio
+    action_id: on_init
     owner: BPP
     responseFor: init
     unsolicited: false
@@ -2389,7 +2389,7 @@ steps:
         type: request
         description: please add relevant description
   - api: on_confirm
-    action_id: on_confirm_new_folio
+    action_id: on_confirm
     owner: BPP
     responseFor: confirm
     unsolicited: false
