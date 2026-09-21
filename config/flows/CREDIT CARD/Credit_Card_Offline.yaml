@@ -1,0 +1,2484 @@
+meta:
+  domain: ONDC:FIS12
+  version: 2.0.3
+  flowId: Credit_Card_Offline
+  config_version: 0.0.0001
+  description: 'A borrower discovers, applies for, and confirms a credit card offline journey: searching the network for available cards, completing a personal-information application form, selecting a card, completing a KYC form, polling for KYC completion status, initiating and confirming the credit card request, and tracking the final application status.'
+  use_case_id: CREDIT CARD
+  flowName: Credit Card Offline
+transaction_data:
+  transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+  latest_timestamp: '1970-01-01T00:00:00.000Z'
+  bap_id: pramaan.ondc.org
+  bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+  bpp_id: hdfc-cc.refo.dev
+  bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+steps:
+- api: search
+  action_id: search
+  owner: BAP
+  responseFor: null
+  unsolicited: false
+  description: The borrower searches the network for available credit card offerings, scoping the intent to the CREDIT_CARD category and declaring the buyer's terms of engagement.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgc2VhcmNoIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0gVGhlIGdlbmVyYXRlZCBwYXlsb2FkIG9iamVjdCB0byBiZSBzZW50IGluIHRoZSBBUEkgcmVxdWVzdC4KICovCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgc2VhcmNoIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgY29udGV4dCA9IHRhcmdldFBheWxvYWQgJiYgdGFyZ2V0UGF5bG9hZC5jb250ZXh0OwogIGlmICghY29udGV4dCB8fCBjb250ZXh0LmFjdGlvbiAhPT0gInNlYXJjaCIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNvbnRleHQuYWN0aW9uIG11c3QgYmUgc2VhcmNoIiB9OwogIH0KICBjb25zdCBpbnRlbnQgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2UgJiYgdGFyZ2V0UGF5bG9hZC5tZXNzYWdlLmludGVudDsKICBpZiAoIWludGVudCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5pbnRlbnQgaXMgcmVxdWlyZWQiIH07CiAgfQogIGNvbnN0IGNhdENvZGUgPSBpbnRlbnQuY2F0ZWdvcnkgJiYgaW50ZW50LmNhdGVnb3J5LmRlc2NyaXB0b3IgJiYgaW50ZW50LmNhdGVnb3J5LmRlc2NyaXB0b3IuY29kZTsKICBpZiAoY2F0Q29kZSAhPT0gIkNSRURJVF9DQVJEIikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5pbnRlbnQuY2F0ZWdvcnkuZGVzY3JpcHRvci5jb2RlIG11c3QgYmUgQ1JFRElUX0NBUkQiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBzZWFyY2ggY2FsbCBhcmUgbWV0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: search
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 89df9a22-04ee-4399-8a7b-0182cd2b66df
+        timestamp: '2025-08-18T14:20:10.420Z'
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        bap_id: pramaan.ondc.org
+        ttl: PT10M
+      message:
+        intent:
+          category:
+            descriptor:
+              code: CREDIT_CARD
+          tags:
+          - descriptor:
+              code: BAP_TERMS
+              name: BAP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+    inputs: {}
+  examples:
+  - name: example for search
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: search
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 89df9a22-04ee-4399-8a7b-0182cd2b66df
+        timestamp: '2025-08-18T14:20:10.420Z'
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        bap_id: pramaan.ondc.org
+        ttl: PT10M
+      message:
+        intent:
+          category:
+            descriptor:
+              code: CREDIT_CARD
+          tags:
+          - descriptor:
+              code: BAP_TERMS
+              name: BAP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+    type: request
+    description: please add relevant description
+- api: on_search
+  action_id: on_search
+  owner: BPP
+  responseFor: search
+  unsolicited: false
+  description: The lender responds to the borrower's search with a catalog of eligible credit card products, including item-level benefits, application form references, and provider grievance/support contact details.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgb25fc2VhcmNoIGNhbGwuCiAqIEFzc2lnbnMgYSBmcmVzaCBwcm92aWRlci9pdGVtIGlkIHBlciBzZXNzaW9uIGFuZCB3aXJlcyB0aGUgcGVyc29uYWwKICogaW5mb3JtYXRpb24gZm9ybSdzIHhpbnB1dC5mb3JtLmlkL3VybCB1c2luZyBjcmVhdGVGb3JtVVJMLCBzbyB0aGUKICogYm9ycm93ZXIncyBicm93c2VyIGlzIHJvdXRlZCB0byB0aGlzIGZsb3cncyBvd24gY3JlZGl0X2NhcmRfaW5mb3JtYXRpb25fZm9ybSBzdGVwLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBwcm92aWRlciA9IGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgJiYgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5jYXRhbG9nICYmIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UuY2F0YWxvZy5wcm92aWRlcnMgJiYgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5jYXRhbG9nLnByb3ZpZGVyc1swXTsKICBpZiAoIXByb3ZpZGVyKSB7CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfQoKICBwcm92aWRlci5pZCA9IGBwcm92aWRlcl8ke3V1aWR2NCgpfWA7CgogIGlmIChBcnJheS5pc0FycmF5KHByb3ZpZGVyLml0ZW1zKSkgewogICAgcHJvdmlkZXIuaXRlbXMuZm9yRWFjaCgoaXRlbSkgPT4gewogICAgICBpdGVtLmlkID0gYGl0ZW1fJHt1dWlkdjQoKX1gOwogICAgICBpZiAoaXRlbS54aW5wdXQgJiYgaXRlbS54aW5wdXQuZm9ybSkgewogICAgICAgIGl0ZW0ueGlucHV0LmZvcm0uaWQgPSBgY3JlZGl0X2NhcmRfaW5mb3JtYXRpb25fZm9ybV8ke3V1aWR2NCgpfWA7CiAgICAgICAgaXRlbS54aW5wdXQuZm9ybS51cmwgPSBjcmVhdGVGb3JtVVJMKCJPTkRDOkZJUzEyIiwgImNyZWRpdF9jYXJkX2luZm9ybWF0aW9uX2Zvcm0iLCBzZXNzaW9uRGF0YSk7CiAgICAgIH0KICAgIH0pOwogIH0KCiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgb25fc2VhcmNoIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgY29udGV4dCA9IHRhcmdldFBheWxvYWQgJiYgdGFyZ2V0UGF5bG9hZC5jb250ZXh0OwogIGlmICghY29udGV4dCB8fCBjb250ZXh0LmFjdGlvbiAhPT0gIm9uX3NlYXJjaCIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNvbnRleHQuYWN0aW9uIG11c3QgYmUgb25fc2VhcmNoIiB9OwogIH0KICBjb25zdCBleHBlY3RlZFR4SWQgPSBzZXNzaW9uRGF0YSAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkICYmIHNlc3Npb25EYXRhLnRyYW5zYWN0aW9uSWRbMF07CiAgaWYgKGV4cGVjdGVkVHhJZCAmJiBjb250ZXh0LnRyYW5zYWN0aW9uX2lkICE9PSBleHBlY3RlZFR4SWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNvbnRleHQudHJhbnNhY3Rpb25faWQgZG9lcyBub3QgbWF0Y2ggc2Vzc2lvbiB0cmFuc2FjdGlvbklkIiB9OwogIH0KICBjb25zdCBjYXRhbG9nID0gdGFyZ2V0UGF5bG9hZC5tZXNzYWdlICYmIHRhcmdldFBheWxvYWQubWVzc2FnZS5jYXRhbG9nOwogIGlmICghY2F0YWxvZyB8fCAhY2F0YWxvZy5wcm92aWRlcnMgfHwgIWNhdGFsb2cucHJvdmlkZXJzLmxlbmd0aCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5jYXRhbG9nLnByb3ZpZGVycyBpcyBtaXNzaW5nIG9yIGVtcHR5IiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBvbl9zZWFyY2ggY2FsbCBhcmUgbWV0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhIHx8ICFzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkIHx8IHNlc3Npb25EYXRhLnRyYW5zYWN0aW9uSWQubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaCBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_search
+        ttl: PT5M
+        timestamp: '2025-08-18T14:20:11.983Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 89df9a22-04ee-4399-8a7b-0182cd2b66df
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        catalog:
+          descriptor:
+            name: HDFC Bank Limited
+          providers:
+          - id: '101'
+            descriptor:
+              name: HDFC Bank Limited
+              images:
+              - url: https://url.com/hdfc/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/hdfc-lg.png
+                size_type: lg
+              short_desc: HDFC Bank Limited
+              long_desc: HDFC Bank Limited
+            categories:
+            - id: '10004'
+              descriptor:
+                code: CARD
+                name: Card
+            - id: '1000'
+              parent_category_id: '10004'
+              descriptor:
+                code: CREDIT_CARD
+                name: Credit Card
+            - id: '1001'
+              descriptor:
+                name: Premium Cards
+                code: PREMIUIM_CARDS
+              parent_category_id: '1000'
+            - id: '1002'
+              descriptor:
+                name: Travel Cards
+                code: TRAVEL_CARDS
+              parent_category_id: '1000'
+            - id: '1003'
+              descriptor:
+                name: Rewards Cards
+                code: REWARDS_CARDS
+              parent_category_id: '1000'
+            - id: '4'
+              descriptor:
+                name: Lifestyle Cards
+                code: LIFESTYLE_CARDS
+              parent_category_id: '1000'
+            items:
+            - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+              descriptor:
+                code: CARD
+                name: HDFC Gold Credit Card
+                short_desc: Experience the Golden Side Of Life
+                images:
+                - url: https://url.com/hdfc/cards/hdfc-sm.png
+                  size_type: sm
+                - url: https://url.com/hdfc/cards/hdfc-md.png
+                  size_type: md
+                - url: https://url.com/hdfc/cards/hdfc-lg.png
+                  size_type: lg
+              category_ids:
+              - '1001'
+              tags:
+              - descriptor:
+                  name: General Information
+                  code: GENERAL_INFO
+                list:
+                - descriptor:
+                    code: WELCOME_BENEFIT
+                    name: Welcome Benefit
+                    short_desc: Welcome Benefit
+                  value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+                - descriptor:
+                    code: ANNUAL_FEE
+                    name: Annual Fee
+                    short_desc: Annual membership fee
+                  value: 1000 INR
+                - descriptor:
+                    code: JOINING_FEE
+                    name: Joining Fee
+                    short_desc: One-time joining fee
+                  value: 500 INR
+                - descriptor:
+                    code: REWARDS
+                    name: Rewards
+                    short_desc: Reward points earned on spent
+                  value: 2 Points per ₹150 spent
+                - descriptor:
+                    code: TRAVEL_BENEFITS
+                    name: Travel Benefits
+                    short_desc: Travel Benefits
+                  value: 2 Points per ₹150 spent
+                - descriptor:
+                    code: LIFESTYLE_BENEFITS
+                    name: Lifestyle Benefits
+                    short_desc: Lifestyle Benefits
+                  value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+                - descriptor:
+                    code: EVERYDAY_BENEFITS
+                    name: Everyday Benefits
+                    short_desc: 1% fuel surcharge waiver on transactions
+                  value: Up to ₹250 per billing cycle
+                - descriptor:
+                    code: TNC_LINK
+                    name: Terms & Conditions
+                    short_desc: Terms and Conditions
+                  value: https://hdfcbank.com/cc/tnc.html
+                display: true
+              matched: true
+              recommended: true
+              xinput:
+                head:
+                  descriptor:
+                    name: Personal Information
+                  index:
+                    min: 0
+                    cur: 0
+                    max: 0
+                  headings:
+                  - PERSONAL_INFORMATION
+                form:
+                  id: 0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
+                  url: https://hdfc-cc.refo.dev/cc/form/0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
+                  mime_type: text/html
+                  resubmit: false
+                  multiple_sumbissions: false
+                required: true
+            - id: 418693c9-9e49-4ec2-8af9-5255f5d693fa
+              descriptor:
+                name: IndianOil HDFC Bank Credit Card
+                code: CARD
+                short_desc: Earn up to 50 Liters of Free fuel annually
+                images:
+                - url: https://url.com/hdfc/cards/hdfc-sm.png
+                  size_type: sm
+                - url: https://url.com/hdfc/cards/hdfc-md.png
+                  size_type: md
+                - url: https://url.com/hdfc/cards/hdfc-lg.png
+                  size_type: lg
+              category_ids:
+              - '1002'
+              tags:
+              - descriptor:
+                  name: General Information
+                  code: GENERAL_INFO
+                list:
+                - descriptor:
+                    code: WELCOME_BENEFIT
+                    name: Welcome Benefit
+                    short_desc: Welcome Benefit
+                  value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+                - descriptor:
+                    code: ANNUAL_FEE
+                    name: Annual Fee
+                    short_desc: Annual membership fee
+                  value: 1000 INR
+                - descriptor:
+                    code: JOINING_FEE
+                    name: Joining Fee
+                    short_desc: One-time joining fee
+                  value: 500 INR
+                - descriptor:
+                    code: APR
+                    name: Annual Percentage Rate
+                    short_desc: Annual Percentage Rate
+                  value: 20%
+                - descriptor:
+                    code: REWARDS
+                    name: Rewards
+                    short_desc: Reward points earned on spent
+                  value: 2 Points per ₹150 spent
+                - descriptor:
+                    code: TRAVEL_BENEFITS
+                    name: Travel Benefits
+                    short_desc: Travel Benefits
+                  value: 2 Points per ₹150 spent
+                - descriptor:
+                    code: LIFESTYLE_BENEFITS
+                    name: Lifestyle Benefits
+                    short_desc: Lifestyle Benefits
+                  value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+                - descriptor:
+                    code: EVERYDAY_BENEFITS
+                    name: Everyday Benefits
+                    short_desc: 1% fuel surcharge waiver on transactions
+                  value: Up to ₹250 per billing cycle
+                - descriptor:
+                    code: TNC_LINK
+                    name: Terms & Conditions
+                    short_desc: Terms and Conditions
+                  value: https://hdfcbank.com/cc/tnc.html
+                display: true
+              matched: true
+              recommended: true
+              xinput:
+                head:
+                  descriptor:
+                    name: Personal Information
+                  index:
+                    min: 0
+                    cur: 0
+                    max: 0
+                  headings:
+                  - PERSONAL_INFORMATION
+                form:
+                  id: 0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
+                  url: https://hdfc-cc.refo.dev/cc/form/0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
+                  mime_type: text/html
+                  resubmit: false
+                  multiple_sumbissions: false
+                required: true
+            tags:
+            - descriptor:
+                code: CONTACT_INFO
+                name: Contact Info
+              list:
+              - descriptor:
+                  code: GRO_NAME
+                  name: Gro name
+                value: Rishav Singh
+              - descriptor:
+                  code: GRO_EMAIL
+                  name: Gro email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: GRO_CONTACT_NUMBER
+                  name: Gro contact number
+                value: '18001600'
+              - descriptor:
+                  code: GRO_DESIGNATION
+                  name: Gro Designation
+                value: Grievance Redressal Officer
+              - descriptor:
+                  code: GRO_ADDRESS
+                  name: Gro Address
+                value: Mumbai Maharashtra 400013
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_LINK
+                  name: Customer support link
+                value: https://www.hdfcbank.com/personal/need-help/contact-us
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                  name: Customer support contact number
+                value: '18001600'
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_EMAIL
+                  name: Customer support email
+                value: loansupport@example.com
+            - descriptor:
+                code: LSP_INFO
+                name: Lsp Info
+              list:
+              - descriptor:
+                  code: LSP_NAME
+                  name: Lsp name
+                value: HDFC BANK LIMITED
+              - descriptor:
+                  code: LSP_EMAIL
+                  name: Lsp email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: LSP_CONTACT_NUMBER
+                  name: Lsp contact number
+                value: '18001600'
+              - descriptor:
+                  code: LSP_ADDRESS
+                  name: Lsp Address
+                value: Mumbai Maharashtra 400013
+          tags:
+          - descriptor:
+              code: BPP_TERMS
+              name: BPP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+      catalog: $.message.catalog
+      provider_id: $.message.catalog.providers[0].id
+      item_id: $.message.catalog.providers[0].items[0].id
+      form_id: $.message.catalog.providers[0].items[0].xinput.form.id
+      credit_card_information_form: $.message.catalog.providers[0].items[0].xinput.form.url
+    inputs: {}
+  examples:
+  - name: example for on_search
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_search
+        ttl: PT5M
+        timestamp: '2025-08-18T14:20:11.983Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 89df9a22-04ee-4399-8a7b-0182cd2b66df
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        catalog:
+          descriptor:
+            name: HDFC Bank Limited
+          providers:
+          - id: '101'
+            descriptor:
+              name: HDFC Bank Limited
+              images:
+              - url: https://url.com/hdfc/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/hdfc-lg.png
+                size_type: lg
+              short_desc: HDFC Bank Limited
+              long_desc: HDFC Bank Limited
+            categories:
+            - id: '10004'
+              descriptor:
+                code: CARD
+                name: Card
+            - id: '1000'
+              parent_category_id: '10004'
+              descriptor:
+                code: CREDIT_CARD
+                name: Credit Card
+            - id: '1001'
+              descriptor:
+                name: Premium Cards
+                code: PREMIUIM_CARDS
+              parent_category_id: '1000'
+            - id: '1002'
+              descriptor:
+                name: Travel Cards
+                code: TRAVEL_CARDS
+              parent_category_id: '1000'
+            - id: '1003'
+              descriptor:
+                name: Rewards Cards
+                code: REWARDS_CARDS
+              parent_category_id: '1000'
+            - id: '4'
+              descriptor:
+                name: Lifestyle Cards
+                code: LIFESTYLE_CARDS
+              parent_category_id: '1000'
+            items:
+            - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+              descriptor:
+                code: CARD
+                name: HDFC Gold Credit Card
+                short_desc: Experience the Golden Side Of Life
+                images:
+                - url: https://url.com/hdfc/cards/hdfc-sm.png
+                  size_type: sm
+                - url: https://url.com/hdfc/cards/hdfc-md.png
+                  size_type: md
+                - url: https://url.com/hdfc/cards/hdfc-lg.png
+                  size_type: lg
+              category_ids:
+              - '1001'
+              tags:
+              - descriptor:
+                  name: General Information
+                  code: GENERAL_INFO
+                list:
+                - descriptor:
+                    code: WELCOME_BENEFIT
+                    name: Welcome Benefit
+                    short_desc: Welcome Benefit
+                  value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+                - descriptor:
+                    code: ANNUAL_FEE
+                    name: Annual Fee
+                    short_desc: Annual membership fee
+                  value: 1000 INR
+                - descriptor:
+                    code: JOINING_FEE
+                    name: Joining Fee
+                    short_desc: One-time joining fee
+                  value: 500 INR
+                - descriptor:
+                    code: REWARDS
+                    name: Rewards
+                    short_desc: Reward points earned on spent
+                  value: 2 Points per ₹150 spent
+                - descriptor:
+                    code: TRAVEL_BENEFITS
+                    name: Travel Benefits
+                    short_desc: Travel Benefits
+                  value: 2 Points per ₹150 spent
+                - descriptor:
+                    code: LIFESTYLE_BENEFITS
+                    name: Lifestyle Benefits
+                    short_desc: Lifestyle Benefits
+                  value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+                - descriptor:
+                    code: EVERYDAY_BENEFITS
+                    name: Everyday Benefits
+                    short_desc: 1% fuel surcharge waiver on transactions
+                  value: Up to ₹250 per billing cycle
+                - descriptor:
+                    code: TNC_LINK
+                    name: Terms & Conditions
+                    short_desc: Terms and Conditions
+                  value: https://hdfcbank.com/cc/tnc.html
+                display: true
+              matched: true
+              recommended: true
+              xinput:
+                head:
+                  descriptor:
+                    name: Personal Information
+                  index:
+                    min: 0
+                    cur: 0
+                    max: 0
+                  headings:
+                  - PERSONAL_INFORMATION
+                form:
+                  id: 0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
+                  url: https://hdfc-cc.refo.dev/cc/form/0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
+                  mime_type: text/html
+                  resubmit: false
+                  multiple_sumbissions: false
+                required: true
+            - id: 418693c9-9e49-4ec2-8af9-5255f5d693fa
+              descriptor:
+                name: IndianOil HDFC Bank Credit Card
+                code: CARD
+                short_desc: Earn up to 50 Liters of Free fuel annually
+                images:
+                - url: https://url.com/hdfc/cards/hdfc-sm.png
+                  size_type: sm
+                - url: https://url.com/hdfc/cards/hdfc-md.png
+                  size_type: md
+                - url: https://url.com/hdfc/cards/hdfc-lg.png
+                  size_type: lg
+              category_ids:
+              - '1002'
+              tags:
+              - descriptor:
+                  name: General Information
+                  code: GENERAL_INFO
+                list:
+                - descriptor:
+                    code: WELCOME_BENEFIT
+                    name: Welcome Benefit
+                    short_desc: Welcome Benefit
+                  value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+                - descriptor:
+                    code: ANNUAL_FEE
+                    name: Annual Fee
+                    short_desc: Annual membership fee
+                  value: 1000 INR
+                - descriptor:
+                    code: JOINING_FEE
+                    name: Joining Fee
+                    short_desc: One-time joining fee
+                  value: 500 INR
+                - descriptor:
+                    code: APR
+                    name: Annual Percentage Rate
+                    short_desc: Annual Percentage Rate
+                  value: 20%
+                - descriptor:
+                    code: REWARDS
+                    name: Rewards
+                    short_desc: Reward points earned on spent
+                  value: 2 Points per ₹150 spent
+                - descriptor:
+                    code: TRAVEL_BENEFITS
+                    name: Travel Benefits
+                    short_desc: Travel Benefits
+                  value: 2 Points per ₹150 spent
+                - descriptor:
+                    code: LIFESTYLE_BENEFITS
+                    name: Lifestyle Benefits
+                    short_desc: Lifestyle Benefits
+                  value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+                - descriptor:
+                    code: EVERYDAY_BENEFITS
+                    name: Everyday Benefits
+                    short_desc: 1% fuel surcharge waiver on transactions
+                  value: Up to ₹250 per billing cycle
+                - descriptor:
+                    code: TNC_LINK
+                    name: Terms & Conditions
+                    short_desc: Terms and Conditions
+                  value: https://hdfcbank.com/cc/tnc.html
+                display: true
+              matched: true
+              recommended: true
+              xinput:
+                head:
+                  descriptor:
+                    name: Personal Information
+                  index:
+                    min: 0
+                    cur: 0
+                    max: 0
+                  headings:
+                  - PERSONAL_INFORMATION
+                form:
+                  id: 0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
+                  url: https://hdfc-cc.refo.dev/cc/form/0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
+                  mime_type: text/html
+                  resubmit: false
+                  multiple_sumbissions: false
+                required: true
+            tags:
+            - descriptor:
+                code: CONTACT_INFO
+                name: Contact Info
+              list:
+              - descriptor:
+                  code: GRO_NAME
+                  name: Gro name
+                value: Rishav Singh
+              - descriptor:
+                  code: GRO_EMAIL
+                  name: Gro email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: GRO_CONTACT_NUMBER
+                  name: Gro contact number
+                value: '18001600'
+              - descriptor:
+                  code: GRO_DESIGNATION
+                  name: Gro Designation
+                value: Grievance Redressal Officer
+              - descriptor:
+                  code: GRO_ADDRESS
+                  name: Gro Address
+                value: Mumbai Maharashtra 400013
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_LINK
+                  name: Customer support link
+                value: https://www.hdfcbank.com/personal/need-help/contact-us
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                  name: Customer support contact number
+                value: '18001600'
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_EMAIL
+                  name: Customer support email
+                value: loansupport@example.com
+            - descriptor:
+                code: LSP_INFO
+                name: Lsp Info
+              list:
+              - descriptor:
+                  code: LSP_NAME
+                  name: Lsp name
+                value: HDFC BANK LIMITED
+              - descriptor:
+                  code: LSP_EMAIL
+                  name: Lsp email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: LSP_CONTACT_NUMBER
+                  name: Lsp contact number
+                value: '18001600'
+              - descriptor:
+                  code: LSP_ADDRESS
+                  name: Lsp Address
+                value: Mumbai Maharashtra 400013
+          tags:
+          - descriptor:
+              code: BPP_TERMS
+              name: BPP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+    type: request
+    description: please add relevant description
+- api: html_form
+  action_id: credit_card_information_form
+  owner: BPP
+  responseFor: null
+  unsolicited: false
+  description: The applicant receives the credit card application form from the lender after providing details such as PAN, mobile number, name, address, date of birth, salary, employment type, and company name.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgY3JlZGl0X2NhcmRfaW5mb3JtYXRpb25fZm9ybSBzdGVwLgogKiBUaGlzIGlzIGFuIGh0bWxfZm9ybSBzdGVwOiB0aGUgYm9ycm93ZXIgZmlsbHMgdGhlIGxlbmRlcidzIGhvc3RlZCBwZXJzb25hbAogKiBpbmZvcm1hdGlvbiBmb3JtIChQQU4sIERPQiwgZW1wbG95bWVudCwgYWRkcmVzcywgYnVyZWF1IGNvbnNlbnQsIGV0Yy4pLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0gVGhlIGdlbmVyYXRlZCBwYXlsb2FkIG9iamVjdC4KICovCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgY3JlZGl0X2NhcmRfaW5mb3JtYXRpb25fZm9ybSBzdGVwLgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBjcmVkaXRfY2FyZF9pbmZvcm1hdGlvbl9mb3JtIHN0ZXAgYXJlIG1ldC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgaWYgKCFzZXNzaW9uRGF0YSB8fCAhc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZCB8fCBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkLmxlbmd0aCA9PT0gMCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAidHJhbnNhY3Rpb25JZCBpcyBtaXNzaW5nIOKAlCBzZWFyY2ggaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
+    defaultPayload: {}
+    saveData: {}
+    inputs:
+      oldInputs:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: HTML_FORM
+        reference: $.reference_data.credit_card_information_form
+    formHtml: PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KCjxoZWFkPgogIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgPHRpdGxlPlVzZXIgRGV0YWlsczwvdGl0bGU+CjwvaGVhZD4KCjxib2R5PgogIDxmb3JtIGlkPSJjcmVkaXRfY2FyZF9pbmZvcm1hdGlvbl9mb3JtIiBtZXRob2Q9IlBPU1QiIGFjdGlvbj0iPCU9IGFjdGlvblVybCAlPiI+CiAgICA8bGFiZWwgZm9yPSJwYW5OYW1lIj5OYW1lIGFzIFBlciBQQU48L2xhYmVsPgogICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJwYW5OYW1lIiBuYW1lPSJwYW5OYW1lIiByZXF1aXJlZCAvPgogICAgPGxhYmVsIGZvcj0icGVyc29uYWxlbWFpbCI+UGVyc29uYWwgRW1haWw8L2xhYmVsPgogICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJlbWFpbCIgbmFtZT0icGVyc29uYWxlbWFpbCIgLz4KICAgIDxsYWJlbCBmb3I9Im9mZmljaWFsZW1haWwiPk9mZmljaWFsIEVtYWlsPC9sYWJlbD4KICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBpZD0ib2ZmaWNpYWxFbWFpbCIgbmFtZT0ib2ZmaWNpYWxlbWFpbCIgLz4KICAgIDxsYWJlbCBmb3I9ImRvYiI+RGF0ZSBvZiBCaXJ0aDwvbGFiZWw+CiAgICA8aW5wdXQgdHlwZT0iZGF0ZSIgaWQ9ImRvYiIgbmFtZT0iZG9iIiByZXF1aXJlZCAvPgogICAgPGxhYmVsIGZvcj0iZ2VuZGVyIj5HZW5kZXI8L2xhYmVsPgogICAgPHNlbGVjdCBuYW1lPSJnZW5kZXIiIGlkPSJnZW5kZXIiIHJlcXVpcmVkPgogICAgICA8b3B0aW9uIHZhbHVlPSJtYWxlIj5NYWxlPC9vcHRpb24+CiAgICAgIDxvcHRpb24gdmFsdWU9ImZlbWFsZSI+RmVtYWxlPC9vcHRpb24+CiAgICAgIDxvcHRpb24gdmFsdWU9InRyYW5zZ2VuZGVyIj5UcmFuc2dlbmRlcjwvb3B0aW9uPgogICAgPC9zZWxlY3Q+CiAgICA8bGFiZWwgZm9yPSJwYW4iPlBBTjwvbGFiZWw+CiAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9InBhbiIgbmFtZT0icGFuIiByZXF1aXJlZCAvPgogICAgPGxhYmVsIGZvcj0iY29udGFjdE51bWJlciI+Y29udGFjdCBudW1iZXI8L2xhYmVsPgogICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJjb250YWN0TnVtYmVyIiBuYW1lPSJjb250YWN0TnVtYmVyIiByZXF1aXJlZCAvPgogICAgPGxhYmVsIGZvcj0iZW1wbG95bWVudFR5cGUiPkVtcGxveW1lbnQgdHlwZTwvbGFiZWw+CiAgICA8c2VsZWN0IG5hbWU9ImVtcGxveW1lbnRUeXBlIiBpZD0iZW1wbG95bWVudFR5cGUiIHJlcXVpcmVkPgogICAgICA8b3B0aW9uIHZhbHVlPSJzYWxhcmllZCI+U2FsYXJpZWQ8L29wdGlvbj4KICAgICAgPG9wdGlvbiB2YWx1ZT0ic2VsZkVtcGxveWVkIj5TZWxmIEVtcGxveW1lbnQ8L29wdGlvbj4KICAgIDwvc2VsZWN0PgogICAgPGxhYmVsIGZvcj0iaW5jb21lIj5JbmNvbWU8L2xhYmVsPgogICAgPGlucHV0IHR5cGU9Im51bWJlciIgaWQ9ImluY29tZSIgbmFtZT0iaW5jb21lIiByZXF1aXJlZCAvPgogICAgPGxhYmVsIGZvcj0iY29tcGFueU5hbWUiPkNvbXBhbnkgTmFtZTwvbGFiZWw+CiAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9ImNvbXBhbnlOYW1lIiBuYW1lPSJjb21wYW55TmFtZSIgcmVxdWlyZWQgLz4KICAgIDxsYWJlbCBmb3I9ImFkZHJlc3NMMSI+QWRkcmVzcyBMaW5lIDE8L2xhYmVsPgogICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJhZGRyZXNzTDEiIG5hbWU9ImFkZHJlc3NMMSIgLz4KICAgIDxsYWJlbCBmb3I9ImFkZHJlc3NMMiI+QWRkcmVzcyBMaW5lIDI8L2xhYmVsPgogICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJhZGRyZXNzTDIiIG5hbWU9ImFkZHJlc3NMMiIgLz4KICAgIDxsYWJlbCBmb3I9ImNpdHkiPkNpdHk8L2xhYmVsPgogICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJjaXR5IiBuYW1lPSJjaXR5IiAvPgogICAgPGxhYmVsIGZvcj0ic3RhdGUiPlN0YXRlPC9sYWJlbD4KICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBpZD0ic3RhdGUiIG5hbWU9InN0YXRlIiAvPgogICAgPGxhYmVsIGZvcj0icGluY29kZSI+UGluIENvZGU8L2xhYmVsPgogICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJwaW5jb2RlIiBuYW1lPSJwaW5jb2RlIiAvPgogICAgPGxhYmVsIGZvcj0iYnVyZWF1Q29uc2VudCI+QnVyZWF1IENvbnNlbnQ8L2xhYmVsPgogICAgPGlucHV0IHR5cGU9ImNoZWNrYm94IiBpZD0iYnVyZWF1Q29uc2VudCIgbmFtZT0iYnVyZWF1Q29uc2VudCIgcmVxdWlyZWQvPgoKICAgIDxsYWJlbCBmb3I9ImRlcml2ZWREYXRhIj5EZXJpdmVkIERhdGE8L2xhYmVsPgogICAgPGlucHV0IG5hbWU9ImRlcml2ZWREYXRhIiBuYW1lPSJkZXJpdmVkRGF0YSIgdHlwZT0iZmlsZSIgYWNjZXB0PSIuanNvbiIgLz4KCiAgICA8aW5wdXQgdHlwZT0iaGlkZGVuIiBpZD0iZm9ybUlkIiBuYW1lPSJmb3JtSWQiIHZhbHVlPSJGTzEiPgogICAgPGlucHV0IHR5cGU9InN1Ym1pdCIgdmFsdWU9IlN1Ym1pdCI+CiAgPC9mb3JtPgo8L2JvZHk+Cgo8L2h0bWw+
+  examples:
+  - name: example for html_form
+    payload:
+      panName: Sourabh Saini
+      personalemail: sourabh.saini@ondc.org
+      officialemail: sourabh.saini@ondc.org
+      dob: '2026-09-09'
+      gender: male
+      pan: GFJEI3243R
+      contactNumber: '9876543212'
+      employmentType: salaried
+      income: '121212'
+      companyName: XYZ
+      addressL1: ''
+      addressL2: ''
+      city: ''
+      state: ''
+      pincode: '121223'
+      bureauConsent: 'on'
+      derivedData: {}
+      formId: <%= formId %>
+      transactionId: <%= JSON.parse(submissionData).transaction_id %>
+    type: request
+    description: The lender platform sends the application form for the credit card to the applicant.
+- api: select
+  action_id: select
+  owner: BAP
+  responseFor: null
+  unsolicited: false
+  description: The borrower selects the specific credit card service they are interested in, submitting the personal-information form's submission id for lender verification.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgc2VsZWN0IGNhbGwuCiAqIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgaXMge30gLSB0aGlzIGZ1bmN0aW9uIGlzIHRoZSBzb2xlIGF1dGhvciBvZgogKiBtZXNzYWdlLm9yZGVyLCBidWlsdCBlbnRpcmVseSBmcm9tIHNlc3Npb25EYXRhIHNhdmVkIGJ5IG9uX3NlYXJjaAogKiAocHJvdmlkZXJfaWQvaXRlbV9pZC9mb3JtX2lkKSBhbmQgdGhlIGNyZWRpdF9jYXJkX2luZm9ybWF0aW9uX2Zvcm0KICogc3RlcCdzIHN1Ym1pc3Npb24gaWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0gVGhlIGdlbmVyYXRlZCBwYXlsb2FkIG9iamVjdC4KICovCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICBjb25zdCBwcm92aWRlcklkID0gc2Vzc2lvbkRhdGEucHJvdmlkZXJfaWQgJiYgc2Vzc2lvbkRhdGEucHJvdmlkZXJfaWRbMF07CiAgICBjb25zdCBpdGVtSWQgPSBzZXNzaW9uRGF0YS5pdGVtX2lkICYmIHNlc3Npb25EYXRhLml0ZW1faWRbMF07CiAgICBjb25zdCBmb3JtSWQgPSBzZXNzaW9uRGF0YS5mb3JtX2lkICYmIHNlc3Npb25EYXRhLmZvcm1faWRbMF07CiAgICBjb25zdCBzdWJtaXNzaW9uSWQgPSBzZXNzaW9uRGF0YS5jcmVkaXRfY2FyZF9pbmZvcm1hdGlvbl9mb3JtOwoKICAgIGlmICghcHJvdmlkZXJJZCkgewogICAgICB0aHJvdyBuZXcgRXJyb3IoInByb3ZpZGVyX2lkIG1pc3NpbmcgaW4gc2Vzc2lvbkRhdGEg4oCUIG9uX3NlYXJjaCBoYXMgbm90IGNvbXBsZXRlZCIpOwogICAgfQogICAgaWYgKCFpdGVtSWQpIHsKICAgICAgdGhyb3cgbmV3IEVycm9yKCJpdGVtX2lkIG1pc3NpbmcgaW4gc2Vzc2lvbkRhdGEg4oCUIG9uX3NlYXJjaCBoYXMgbm90IGNvbXBsZXRlZCIpOwogICAgfQoKICAgIGNvbnN0IGl0ZW0gPSB7IGlkOiBpdGVtSWQgfTsKICAgIGlmIChmb3JtSWQgJiYgc3VibWlzc2lvbklkKSB7CiAgICAgIGl0ZW0ueGlucHV0ID0gewogICAgICAgIGZvcm06IHsgaWQ6IGZvcm1JZCB9LAogICAgICAgIGZvcm1fcmVzcG9uc2U6IHsgc3RhdHVzOiAiU1VDQ0VTUyIsIHN1Ym1pc3Npb25faWQ6IHN1Ym1pc3Npb25JZCB9LAogICAgICB9OwogICAgfQoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7CiAgICAgIG9yZGVyOiB7CiAgICAgICAgcHJvdmlkZXI6IHsgaWQ6IHByb3ZpZGVySWQgfSwKICAgICAgICBpdGVtczogW2l0ZW1dLAogICAgICB9LAogICAgfTsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0KfQ==
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgc2VsZWN0IGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgY29udGV4dCA9IHRhcmdldFBheWxvYWQgJiYgdGFyZ2V0UGF5bG9hZC5jb250ZXh0OwogIGlmICghY29udGV4dCB8fCBjb250ZXh0LmFjdGlvbiAhPT0gInNlbGVjdCIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNvbnRleHQuYWN0aW9uIG11c3QgYmUgc2VsZWN0IiB9OwogIH0KICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZSAmJiB0YXJnZXRQYXlsb2FkLm1lc3NhZ2Uub3JkZXI7CiAgaWYgKCFvcmRlciB8fCAhb3JkZXIucHJvdmlkZXIgfHwgIW9yZGVyLnByb3ZpZGVyLmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkIGlzIHJlcXVpcmVkIiB9OwogIH0KICBpZiAoIUFycmF5LmlzQXJyYXkob3JkZXIuaXRlbXMpIHx8IG9yZGVyLml0ZW1zLmxlbmd0aCA9PT0gMCB8fCAhb3JkZXIuaXRlbXNbMF0uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0uaWQgaXMgcmVxdWlyZWQiIH07CiAgfQogIGNvbnN0IGV4cGVjdGVkUHJvdmlkZXJJZCA9IHNlc3Npb25EYXRhICYmIHNlc3Npb25EYXRhLnByb3ZpZGVyX2lkICYmIHNlc3Npb25EYXRhLnByb3ZpZGVyX2lkWzBdOwogIGlmIChleHBlY3RlZFByb3ZpZGVySWQgJiYgb3JkZXIucHJvdmlkZXIuaWQgIT09IGV4cGVjdGVkUHJvdmlkZXJJZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiBgb3JkZXIucHJvdmlkZXIuaWQgIiR7b3JkZXIucHJvdmlkZXIuaWR9IiBkb2VzIG5vdCBtYXRjaCB0aGUgcHJvdmlkZXIgcmV0dXJuZWQgaW4gb25fc2VhcmNoICgiJHtleHBlY3RlZFByb3ZpZGVySWR9IilgIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBzZWxlY3QgY2FsbCBhcmUgbWV0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhIHx8ICFzZXNzaW9uRGF0YS5wcm92aWRlcl9pZCB8fCAhc2Vzc2lvbkRhdGEucHJvdmlkZXJfaWQubGVuZ3RoKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHByb3ZpZGVyX2lkIGluIHNlc3Npb25EYXRhIOKAlCBvbl9zZWFyY2ggaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgfQogIGlmICghc2Vzc2lvbkRhdGEuY3JlZGl0X2NhcmRfaW5mb3JtYXRpb25fZm9ybSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBjcmVkaXRfY2FyZF9pbmZvcm1hdGlvbl9mb3JtIHN1Ym1pc3Npb24gaWQgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: select
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+      provider_id: $.message.order.provider.id
+      item_id: $.message.order.items[0].id
+    inputs: {}
+  examples:
+  - name: example for select
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: select
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          provider:
+            id: '101'
+          items:
+          - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+            xinput:
+              form:
+                id: 0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
+              form_response:
+                status: SUCCESS
+                submission_id: f27ab737-bd34-48c2-af73-7efe6062087f
+    type: request
+    description: please add relevant description
+- api: on_select
+  action_id: on_select
+  owner: BPP
+  responseFor: select
+  unsolicited: false
+  description: The lender platform responds with detailed information about the selected credit card and the KYC form required to proceed.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgb25fc2VsZWN0IGNhbGwuCiAqIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgaXMge30gLSB0aGlzIGZ1bmN0aW9uIHJlYXNzZW1ibGVzIHRoZSBwcm92aWRlci9pdGVtCiAqIGVjaG9lZCBmcm9tIHRoZSBvbl9zZWFyY2ggY2F0YWxvZyAoc2Vzc2lvbiBjaHVuayksIGFuZCBhdHRhY2hlcyB0aGUgb25seQogKiBnZW51aW5lbHkgbmV3IGNvbnRlbnQgYXQgdGhpcyBzdGVwOiB0aGUgS1lDIGZvcm0ncyB4aW5wdXQuZm9ybS9oZWFkIGJsb2NrLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgY2F0YWxvZyA9IHNlc3Npb25EYXRhLmNhdGFsb2cgJiYgc2Vzc2lvbkRhdGEuY2F0YWxvZ1swXTsKICAgIGNvbnN0IHByb3ZpZGVySWQgPSBzZXNzaW9uRGF0YS5wcm92aWRlcl9pZCAmJiBzZXNzaW9uRGF0YS5wcm92aWRlcl9pZFswXTsKICAgIGNvbnN0IGl0ZW1JZCA9IHNlc3Npb25EYXRhLml0ZW1faWQgJiYgc2Vzc2lvbkRhdGEuaXRlbV9pZFswXTsKCiAgICBjb25zdCBjYXRhbG9nUHJvdmlkZXIgPSBjYXRhbG9nICYmIEFycmF5LmlzQXJyYXkoY2F0YWxvZy5wcm92aWRlcnMpICYmIGNhdGFsb2cucHJvdmlkZXJzLmZpbmQoKHApID0+IHAuaWQgPT09IHByb3ZpZGVySWQpOwogICAgaWYgKCFjYXRhbG9nUHJvdmlkZXIpIHsKICAgICAgdGhyb3cgbmV3IEVycm9yKCJwcm92aWRlciBub3QgZm91bmQgaW4gc2Vzc2lvbiBjYXRhbG9nIOKAlCBvbl9zZWFyY2ggaGFzIG5vdCBjb21wbGV0ZWQiKTsKICAgIH0KICAgIGNvbnN0IGNhdGFsb2dJdGVtID0gQXJyYXkuaXNBcnJheShjYXRhbG9nUHJvdmlkZXIuaXRlbXMpICYmIGNhdGFsb2dQcm92aWRlci5pdGVtcy5maW5kKChpKSA9PiBpLmlkID09PSBpdGVtSWQpOwogICAgaWYgKCFjYXRhbG9nSXRlbSkgewogICAgICB0aHJvdyBuZXcgRXJyb3IoIml0ZW0gbm90IGZvdW5kIGluIHNlc3Npb24gY2F0YWxvZyDigJQgb25fc2VhcmNoIGhhcyBub3QgY29tcGxldGVkIik7CiAgICB9CgogICAgY29uc3QgaXRlbSA9IHsKICAgICAgaWQ6IGNhdGFsb2dJdGVtLmlkLAogICAgICBkZXNjcmlwdG9yOiBjYXRhbG9nSXRlbS5kZXNjcmlwdG9yLAogICAgICBjYXRlZ29yeV9pZHM6IGNhdGFsb2dJdGVtLmNhdGVnb3J5X2lkcywKICAgICAgdGFnczogY2F0YWxvZ0l0ZW0udGFncywKICAgICAgbWF0Y2hlZDogdHJ1ZSwKICAgICAgcmVjb21tZW5kZWQ6IHRydWUsCiAgICAgIHhpbnB1dDogewogICAgICAgIGhlYWQ6IHsKICAgICAgICAgIGRlc2NyaXB0b3I6IHsgbmFtZTogIktub3cgeW91ciBDdXN0b21lciIgfSwKICAgICAgICAgIGluZGV4OiB7IG1pbjogMCwgY3VyOiAwLCBtYXg6IDAgfSwKICAgICAgICAgIGhlYWRpbmdzOiBbIkpPVVJORVlfT0ZGTElORSJdLAogICAgICAgIH0sCiAgICAgICAgZm9ybTogewogICAgICAgICAgaWQ6IGBreWNfZm9ybV8ke3V1aWR2NCgpfWAsCiAgICAgICAgICBtaW1lX3R5cGU6ICJhcHBsaWNhdGlvbi9odG1sIiwKICAgICAgICAgIHVybDogY3JlYXRlRm9ybVVSTCgiT05EQzpGSVMxMiIsICJreWNfZm9ybSIsIHNlc3Npb25EYXRhKSArCiAgICAgICAgICAgICImYmFwX3VyaT0iICsgZW5jb2RlVVJJQ29tcG9uZW50KChkZWZhdWx0UGF5bG9hZC5jb250ZXh0ICYmIGRlZmF1bHRQYXlsb2FkLmNvbnRleHQuYmFwX3VyaSkgfHwgIiIpLAogICAgICAgICAgcmVzdWJtaXQ6IGZhbHNlLAogICAgICAgICAgbXVsdGlwbGVfc3VtYmlzc2lvbnM6IGZhbHNlLAogICAgICAgIH0sCiAgICAgICAgcmVxdWlyZWQ6IHRydWUsCiAgICAgIH0sCiAgICB9OwoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7CiAgICAgIG9yZGVyOiB7CiAgICAgICAgcHJvdmlkZXI6IHsKICAgICAgICAgIGlkOiBjYXRhbG9nUHJvdmlkZXIuaWQsCiAgICAgICAgICBkZXNjcmlwdG9yOiBjYXRhbG9nUHJvdmlkZXIuZGVzY3JpcHRvciwKICAgICAgICAgIHRhZ3M6IGNhdGFsb2dQcm92aWRlci50YWdzLAogICAgICAgIH0sCiAgICAgICAgaXRlbXM6IFtpdGVtXSwKICAgICAgfSwKICAgIH07CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9Cn0=
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgb25fc2VsZWN0IGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgY29udGV4dCA9IHRhcmdldFBheWxvYWQgJiYgdGFyZ2V0UGF5bG9hZC5jb250ZXh0OwogIGlmICghY29udGV4dCB8fCBjb250ZXh0LmFjdGlvbiAhPT0gIm9uX3NlbGVjdCIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNvbnRleHQuYWN0aW9uIG11c3QgYmUgb25fc2VsZWN0IiB9OwogIH0KICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZSAmJiB0YXJnZXRQYXlsb2FkLm1lc3NhZ2Uub3JkZXI7CiAgaWYgKCFvcmRlciB8fCAhb3JkZXIucHJvdmlkZXIgfHwgIW9yZGVyLnByb3ZpZGVyLmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkIGlzIHJlcXVpcmVkIiB9OwogIH0KICBpZiAoIUFycmF5LmlzQXJyYXkob3JkZXIuaXRlbXMpIHx8IG9yZGVyLml0ZW1zLmxlbmd0aCA9PT0gMCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5pdGVtcyBtdXN0IGJlIGEgbm9uLWVtcHR5IGFycmF5IiB9OwogIH0KICBjb25zdCBmb3JtID0gb3JkZXIuaXRlbXNbMF0ueGlucHV0ICYmIG9yZGVyLml0ZW1zWzBdLnhpbnB1dC5mb3JtOwogIGlmICghZm9ybSB8fCAhZm9ybS5pZCB8fCAhZm9ybS51cmwpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm0uaWQvdXJsIGlzIHJlcXVpcmVkIiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBvbl9zZWxlY3QgY2FsbCBhcmUgbWV0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhIHx8ICFzZXNzaW9uRGF0YS5jYXRhbG9nIHx8ICFzZXNzaW9uRGF0YS5jYXRhbG9nLmxlbmd0aCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBjYXRhbG9nIGluIHNlc3Npb25EYXRhIOKAlCBvbl9zZWFyY2ggaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgfQogIGlmICghc2Vzc2lvbkRhdGEucHJvdmlkZXJfaWQgfHwgIXNlc3Npb25EYXRhLnByb3ZpZGVyX2lkLmxlbmd0aCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwcm92aWRlcl9pZCBpbiBzZXNzaW9uRGF0YSDigJQgc2VsZWN0IGhhcyBub3QgY29tcGxldGVkIiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_select
+        ttl: PT15M
+        timestamp: '2025-08-18T14:20:14.368Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+      provider: $.message.order.provider
+      items: $.message.order.items
+      kyc_form: $.message.order.items[0].xinput.form.url
+    inputs: {}
+  examples:
+  - name: example for on_select
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_select
+        ttl: PT15M
+        timestamp: '2025-08-18T14:20:14.368Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          provider:
+            id: '101'
+            descriptor:
+              images:
+              - url: https://url.com/hdfc/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/hdfc-lg.png
+                size_type: lg
+              name: HDFC Bank Limited
+              short_desc: HDFC Bank Limited
+              long_desc: HDFC Bank Limited
+            tags:
+            - descriptor:
+                code: CONTACT_INFO
+                name: Contact Info
+              list:
+              - descriptor:
+                  code: GRO_NAME
+                  name: Gro name
+                value: Rishav Singh
+              - descriptor:
+                  code: GRO_EMAIL
+                  name: Gro email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: GRO_CONTACT_NUMBER
+                  name: Gro contact number
+                value: '18001600'
+              - descriptor:
+                  code: GRO_DESIGNATION
+                  name: Gro Designation
+                value: Grievance Redressal Officer
+              - descriptor:
+                  code: GRO_ADDRESS
+                  name: Gro Address
+                value: Mumbai Maharashtra 400013
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_LINK
+                  name: Customer support link
+                value: https://www.hdfcbank.com/personal/need-help/contact-us
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                  name: Customer support contact number
+                value: '18001600'
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_EMAIL
+                  name: Customer support email
+                value: loansupport@example.com
+            - descriptor:
+                code: LSP_INFO
+                name: Lsp Info
+              list:
+              - descriptor:
+                  code: LSP_NAME
+                  name: Lsp name
+                value: HDFC BANK LIMITED
+              - descriptor:
+                  code: LSP_EMAIL
+                  name: Lsp email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: LSP_CONTACT_NUMBER
+                  name: Lsp contact number
+                value: '18001600'
+              - descriptor:
+                  code: LSP_ADDRESS
+                  name: Lsp Address
+                value: Mumbai Maharashtra 400013
+          items:
+          - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+            descriptor:
+              code: CARD
+              name: HDFC Gold Credit Card
+              short_desc: Experience the Golden Side Of Life
+              images:
+              - url: https://url.com/hdfc/cards/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/cards/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/cards/hdfc-lg.png
+                size_type: lg
+            tags:
+            - descriptor:
+                name: General Information
+                code: GENERAL_INFO
+              list:
+              - descriptor:
+                  code: WELCOME_BENEFIT
+                  name: Welcome Benefit
+                  short_desc: Welcome Benefit
+                value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+              - descriptor:
+                  code: ANNUAL_FEE
+                  name: Annual Fee
+                  short_desc: Annual membership fee
+                value: 1000 INR
+              - descriptor:
+                  code: JOINING_FEE
+                  name: Joining Fee
+                  short_desc: One-time joining fee
+                value: 500 INR
+              - descriptor:
+                  code: REWARDS
+                  name: Rewards
+                  short_desc: Reward points earned on spent
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: TRAVEL_BENEFITS
+                  name: Travel Benefits
+                  short_desc: Travel Benefits
+                value: "- 2 Points per ₹150 spent on MMT, \n - 2 Points per ₹150 spent on others"
+              - descriptor:
+                  code: LIFESTYLE_BENEFITS
+                  name: Lifestyle Benefits
+                  short_desc: Lifestyle Benefits
+                value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+              - descriptor:
+                  code: EVERYDAY_BENEFITS
+                  name: Everyday Benefits
+                  short_desc: 1% fuel surcharge waiver on transactions
+                value: Up to ₹250 per billing cycle
+              - descriptor:
+                  code: TNC_LINK
+                  name: Terms & Conditions
+                  short_desc: Terms and Conditions
+                value: https://hdfcbank.com/cc/tnc.html
+              display: true
+            matched: true
+            recommended: true
+            xinput:
+              head:
+                descriptor:
+                  name: Know your Customer
+                index:
+                  min: 0
+                  cur: 0
+                  max: 0
+                headings:
+                - JOURNEY_OFFLINE
+              form:
+                id: c0e857f6-15b6-4b4d-a7da-ad63b4b2e52b
+                mime_type: application/html
+                url: https://hdfc-cc.refo.dev/cc/form/c0e857f6-15b6-4b4d-a7da-ad63b4b2e52b
+                resubmit: false
+                multiple_sumbissions: false
+              required: true
+    type: request
+    description: please add relevant description
+- api: dynamic_form
+  action_id: kyc_form
+  owner: BPP
+  responseFor: null
+  unsolicited: false
+  description: The lender provides the relevant KYC form to the borrower. In the upstream ONDC spec this form is modeled as an externally-hosted redirect page; here it is represented as a dynamic_form step (a manual control confirming KYC verification status) rather than an inline HTML field form like the earlier credit_card_information_form step.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUga3ljX2Zvcm0gc3RlcC4KICogVGhpcyBpcyBhbiBodG1sX2Zvcm0gc3RlcDogdGhlIGJvcnJvd2VyIGNvbXBsZXRlcyB0aGUgbGVuZGVyJ3MgS1lDCiAqIGZvcm0gcmVmZXJlbmNlZCBpbiBvbl9zZWxlY3QncyB4aW5wdXQuCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSBUaGUgZ2VuZXJhdGVkIHBheWxvYWQgb2JqZWN0LgogKi8KYXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUga3ljX2Zvcm0gc3RlcC4KICogQHBhcmFtIHtPYmplY3R9IHRhcmdldFBheWxvYWQgLSBUaGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIHRvIHZhbGlkYXRlLgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gdmFsaWRhdGUodGFyZ2V0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBreWNfZm9ybSBzdGVwIGFyZSBtZXQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiBtZWV0c1JlcXVpcmVtZW50cyhzZXNzaW9uRGF0YSkgewogIGlmICghc2Vzc2lvbkRhdGEgfHwgIXNlc3Npb25EYXRhLmt5Y19mb3JtX2lkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGt5Y19mb3JtX2lkIGluIHNlc3Npb25EYXRhIOKAlCBvbl9zZWxlY3QgaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
+    defaultPayload: {}
+    saveData: {}
+    inputs:
+      oldInputs:
+      - name: form_submission_id
+        label: Enter Form Submission id
+        type: DYNAMIC_FORM
+        payloadField: form_submission_id
+        reference: $.reference_data.kyc_form
+    formHtml: PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KCjxoZWFkPgogIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgPHRpdGxlPktZQyBWZXJpZmljYXRpb24gU3RhdHVzPC90aXRsZT4KPC9oZWFkPgoKPGJvZHk+CiAgPGZvcm0gaWQ9Imt5Y19mb3JtIiBtZXRob2Q9IlBPU1QiIGFjdGlvbj0iPCU9IGFjdGlvblVybCAlPiI+CiAgICA8bGFiZWwgZm9yPSJreWNTdGF0dXMiPktZQyBWZXJpZmljYXRpb24gU3RhdHVzPC9sYWJlbD4KICAgIDxzZWxlY3QgbmFtZT0ia3ljU3RhdHVzIiBpZD0ia3ljU3RhdHVzIiByZXF1aXJlZD4KICAgICAgPG9wdGlvbiB2YWx1ZT0iIj5TZWxlY3QgU3RhdHVzPC9vcHRpb24+CiAgICAgIDxvcHRpb24gdmFsdWU9Ik9GRkxJTkVfUEVORElORyI+UGVuZGluZzwvb3B0aW9uPgogICAgICA8b3B0aW9uIHZhbHVlPSJDT01QTEVURUQiPkNvbXBsZXRlZDwvb3B0aW9uPgogICAgPC9zZWxlY3Q+CgogICAgPGlucHV0IHR5cGU9ImhpZGRlbiIgaWQ9ImZvcm1JZCIgbmFtZT0iZm9ybUlkIiB2YWx1ZT0iPCU9IGZvcm1JZCAlPiI+CiAgICA8aW5wdXQgdHlwZT0iaGlkZGVuIiBpZD0idHJhbnNhY3Rpb25JZCIgbmFtZT0idHJhbnNhY3Rpb25JZCIgdmFsdWU9IjwlPSBKU09OLnBhcnNlKHN1Ym1pc3Npb25EYXRhKS50cmFuc2FjdGlvbl9pZCAlPiI+CiAgICA8aW5wdXQgdHlwZT0ic3VibWl0IiB2YWx1ZT0iU3VibWl0Ij4KICA8L2Zvcm0+CjwvYm9keT4KCjwvaHRtbD4K
+  examples:
+  - name: example for dynamic_form
+    payload:
+      kycStatus: COMPLETED
+      formId: <%= formId %>
+      transactionId: <%= JSON.parse(submissionData).transaction_id %>
+    type: request
+    description: The lender platform sends a form to collect Know Your Customer (KYC) details from the borrower.
+- api: on_status
+  action_id: on_status_unsolicited
+  owner: BPP
+  responseFor: null
+  unsolicited: true
+  description: The lender sends the form status, indicating that the borrower's KYC form completion is still pending.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgdW5zb2xpY2l0ZWQgb25fc3RhdHVzIGNhbGwgdGhlIGxlbmRlcgogKiBzZW5kcyB3aGlsZSB0aGUgYm9ycm93ZXIncyBLWUMgZm9ybSBpcyBzdGlsbCBwZW5kaW5nIGNvbXBsZXRpb24uCiAqIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgaXMge30gLSBwcm92aWRlci9pdGVtIGFyZSBlY2hvZWQgZnJvbSB0aGUKICogcHJvdmlkZXIvaXRlbXMgc2Vzc2lvbiBjaHVua3Mgc2F2ZWQgYnkgb25fc2VsZWN0OyBvbmx5IHRoZSBmb3JtX3Jlc3BvbnNlCiAqIHN0YXR1cyB2YWx1ZSBpcyBuZXcgYXQgdGhpcyBzdGVwLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlciAmJiBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKICAgIGNvbnN0IGl0ZW1zID0gc2Vzc2lvbkRhdGEuaXRlbXMgJiYgc2Vzc2lvbkRhdGEuaXRlbXNbMF07CiAgICBpZiAoIXByb3ZpZGVyIHx8ICFpdGVtcyB8fCAhaXRlbXMubGVuZ3RoKSB7CiAgICAgIHRocm93IG5ldyBFcnJvcigicHJvdmlkZXIvaXRlbXMgY2h1bmsgbWlzc2luZyBpbiBzZXNzaW9uRGF0YSDigJQgb25fc2VsZWN0IGhhcyBub3QgY29tcGxldGVkIik7CiAgICB9CgogICAgY29uc3QgaXRlbSA9IEpTT04ucGFyc2UoSlNPTi5zdHJpbmdpZnkoaXRlbXNbMF0pKTsKICAgIGl0ZW0ueGlucHV0ID0gaXRlbS54aW5wdXQgfHwge307CiAgICBpdGVtLnhpbnB1dC5mb3JtX3Jlc3BvbnNlID0geyBzdGF0dXM6ICJPRkZMSU5FX1BFTkRJTkciLCBzdWJtaXNzaW9uX2lkOiBzZXNzaW9uRGF0YS5reWNfZm9ybSB9OwoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7IG9yZGVyOiB7IHByb3ZpZGVyLCBpdGVtczogW2l0ZW1dIH0gfTsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0KfQ==
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgdW5zb2xpY2l0ZWQgb25fc3RhdHVzIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgY29udGV4dCA9IHRhcmdldFBheWxvYWQgJiYgdGFyZ2V0UGF5bG9hZC5jb250ZXh0OwogIGlmICghY29udGV4dCB8fCBjb250ZXh0LmFjdGlvbiAhPT0gIm9uX3N0YXR1cyIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNvbnRleHQuYWN0aW9uIG11c3QgYmUgb25fc3RhdHVzIiB9OwogIH0KICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZSAmJiB0YXJnZXRQYXlsb2FkLm1lc3NhZ2Uub3JkZXI7CiAgaWYgKCFvcmRlciB8fCAhQXJyYXkuaXNBcnJheShvcmRlci5pdGVtcykgfHwgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLml0ZW1zIG11c3QgYmUgYSBub24tZW1wdHkgYXJyYXkiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSB1bnNvbGljaXRlZCBvbl9zdGF0dXMgY2FsbCBhcmUgbWV0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhIHx8ICFzZXNzaW9uRGF0YS5wcm92aWRlciB8fCAhc2Vzc2lvbkRhdGEucHJvdmlkZXIubGVuZ3RoKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHByb3ZpZGVyIGluIHNlc3Npb25EYXRhIOKAlCBvbl9zZWxlY3QgaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_status
+        ttl: PT15M
+        timestamp: '2025-08-18T14:20:14.368Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+    inputs: {}
+  examples:
+  - name: example for on_status
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_status
+        ttl: PT15M
+        timestamp: '2025-08-18T14:20:14.368Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          provider:
+            id: '101'
+            descriptor:
+              images:
+              - url: https://url.com/hdfc/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/hdfc-lg.png
+                size_type: lg
+              name: HDFC Bank Limited
+              short_desc: HDFC Bank Limited
+              long_desc: HDFC Bank Limited
+            tags:
+            - descriptor:
+                code: CONTACT_INFO
+                name: Contact Info
+              list:
+              - descriptor:
+                  code: GRO_NAME
+                  name: Gro name
+                value: Rishav Singh
+              - descriptor:
+                  code: GRO_EMAIL
+                  name: Gro email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: GRO_CONTACT_NUMBER
+                  name: Gro contact number
+                value: '18001600'
+              - descriptor:
+                  code: GRO_DESIGNATION
+                  name: Gro Designation
+                value: Grievance Redressal Officer
+              - descriptor:
+                  code: GRO_ADDRESS
+                  name: Gro Address
+                value: Mumbai Maharashtra 400013
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_LINK
+                  name: Customer support link
+                value: https://www.hdfcbank.com/personal/need-help/contact-us
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                  name: Customer support contact number
+                value: '18001600'
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_EMAIL
+                  name: Customer support email
+                value: loansupport@example.com
+            - descriptor:
+                code: LSP_INFO
+                name: Lsp Info
+              list:
+              - descriptor:
+                  code: LSP_NAME
+                  name: Lsp name
+                value: HDFC BANK LIMITED
+              - descriptor:
+                  code: LSP_EMAIL
+                  name: Lsp email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: LSP_CONTACT_NUMBER
+                  name: Lsp contact number
+                value: '18001600'
+              - descriptor:
+                  code: LSP_ADDRESS
+                  name: Lsp Address
+                value: Mumbai Maharashtra 400013
+          items:
+          - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+            descriptor:
+              code: CARD
+              name: HDFC Gold Credit Card
+              short_desc: Experience the Golden Side Of Life
+              images:
+              - url: https://url.com/hdfc/cards/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/cards/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/cards/hdfc-lg.png
+                size_type: lg
+            tags:
+            - descriptor:
+                name: General Information
+                code: GENERAL_INFO
+              list:
+              - descriptor:
+                  code: WELCOME_BENEFIT
+                  name: Welcome Benefit
+                  short_desc: Welcome Benefit
+                value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+              - descriptor:
+                  code: ANNUAL_FEE
+                  name: Annual Fee
+                  short_desc: Annual membership fee
+                value: 1000 INR
+              - descriptor:
+                  code: JOINING_FEE
+                  name: Joining Fee
+                  short_desc: One-time joining fee
+                value: 500 INR
+              - descriptor:
+                  code: REWARDS
+                  name: Rewards
+                  short_desc: Reward points earned on spent
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: TRAVEL_BENEFITS
+                  name: Travel Benefits
+                  short_desc: Travel Benefits
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: LIFESTYLE_BENEFITS
+                  name: Lifestyle Benefits
+                  short_desc: Lifestyle Benefits
+                value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+              - descriptor:
+                  code: EVERYDAY_BENEFITS
+                  name: Everyday Benefits
+                  short_desc: 1% fuel surcharge waiver on transactions
+                value: Up to ₹250 per billing cycle
+              - descriptor:
+                  code: TNC_LINK
+                  name: Terms & Conditions
+                  short_desc: Terms and Conditions
+                value: https://icicibank.com/loan/tnc.html
+              display: true
+            xinput:
+              form:
+                id: c0e857f6-15b6-4b4d-a7da-ad63b4b2e52b
+              form_response:
+                status: OFFLINE_PENDING
+                submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
+    type: request
+    description: please add relevant description
+- api: status
+  action_id: status_1
+  owner: BAP
+  responseFor: null
+  unsolicited: false
+  description: The borrower requests the order status to check whether the KYC form has been completed.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgbWlkLWZsb3cgc3RhdHVzIGNhbGwsIHVzZWQgYnkgdGhlCiAqIGJvcnJvd2VyIHRvIHBvbGwgdGhlIGxlbmRlciBmb3IgdGhlIEtZQyBmb3JtIGNvbXBsZXRpb24gc3RhdHVzLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCB0cmFuc2FjdGlvbklkID0gc2Vzc2lvbkRhdGEgJiYgc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZCAmJiBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkWzBdOwogIGlmICh0cmFuc2FjdGlvbklkKSB7CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLnJlZl9pZCA9IHRyYW5zYWN0aW9uSWQ7CiAgfQogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgbWlkLWZsb3cgc3RhdHVzIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgY29udGV4dCA9IHRhcmdldFBheWxvYWQgJiYgdGFyZ2V0UGF5bG9hZC5jb250ZXh0OwogIGlmICghY29udGV4dCB8fCBjb250ZXh0LmFjdGlvbiAhPT0gInN0YXR1cyIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNvbnRleHQuYWN0aW9uIG11c3QgYmUgc3RhdHVzIiB9OwogIH0KICBpZiAoIXRhcmdldFBheWxvYWQubWVzc2FnZSB8fCAhdGFyZ2V0UGF5bG9hZC5tZXNzYWdlLnJlZl9pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5yZWZfaWQgaXMgcmVxdWlyZWQiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBtaWQtZmxvdyBzdGF0dXMgY2FsbCBhcmUgbWV0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhIHx8ICFzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkIHx8IHNlc3Npb25EYXRhLnRyYW5zYWN0aW9uSWQubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHNlYXJjaCBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: status
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+    inputs: {}
+  examples:
+  - name: example for status
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: status
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        ref_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+    type: request
+    description: please add relevant description
+- api: on_status
+  action_id: on_status_1
+  owner: BPP
+  responseFor: status_1
+  unsolicited: false
+  description: The lender sends the latest order status, confirming the KYC form has been completed.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgb25fc3RhdHVzIGNhbGwgcmVzcG9uZGluZyB0byB0aGUKICogbWlkLWZsb3cgc3RhdHVzIGNoZWNrLCByZXBvcnRpbmcgdGhlIEtZQyBmb3JtIGFzIGNvbXBsZXRlZC4KICogZGVmYXVsdFBheWxvYWQubWVzc2FnZSBpcyB7fSAtIHByb3ZpZGVyL2l0ZW0gYXJlIGVjaG9lZCBmcm9tIHRoZQogKiBwcm92aWRlci9pdGVtcyBzZXNzaW9uIGNodW5rczsgb25seSB0aGUgZm9ybV9yZXNwb25zZSBzdGF0dXMgdmFsdWUgaXMgbmV3LgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlciAmJiBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKICAgIGNvbnN0IGl0ZW1zID0gc2Vzc2lvbkRhdGEuaXRlbXMgJiYgc2Vzc2lvbkRhdGEuaXRlbXNbMF07CiAgICBpZiAoIXByb3ZpZGVyIHx8ICFpdGVtcyB8fCAhaXRlbXMubGVuZ3RoKSB7CiAgICAgIHRocm93IG5ldyBFcnJvcigicHJvdmlkZXIvaXRlbXMgY2h1bmsgbWlzc2luZyBpbiBzZXNzaW9uRGF0YSDigJQgb25fc2VsZWN0IGhhcyBub3QgY29tcGxldGVkIik7CiAgICB9CgogICAgY29uc3QgaXRlbSA9IEpTT04ucGFyc2UoSlNPTi5zdHJpbmdpZnkoaXRlbXNbMF0pKTsKICAgIGl0ZW0ueGlucHV0ID0gaXRlbS54aW5wdXQgfHwge307CiAgICBpdGVtLnhpbnB1dC5mb3JtX3Jlc3BvbnNlID0geyBzdGF0dXM6ICJDT01QTEVURUQiLCBzdWJtaXNzaW9uX2lkOiBzZXNzaW9uRGF0YS5reWNfZm9ybSB9OwoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7IG9yZGVyOiB7IHByb3ZpZGVyLCBpdGVtczogW2l0ZW1dIH0gfTsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0KfQ==
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgb25fc3RhdHVzIGNhbGwgcmVzcG9uZGluZwogKiB0byB0aGUgbWlkLWZsb3cgc3RhdHVzIGNoZWNrLgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IGNvbnRleHQgPSB0YXJnZXRQYXlsb2FkICYmIHRhcmdldFBheWxvYWQuY29udGV4dDsKICBpZiAoIWNvbnRleHQgfHwgY29udGV4dC5hY3Rpb24gIT09ICJvbl9zdGF0dXMiKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJjb250ZXh0LmFjdGlvbiBtdXN0IGJlIG9uX3N0YXR1cyIgfTsKICB9CiAgY29uc3Qgb3JkZXIgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2UgJiYgdGFyZ2V0UGF5bG9hZC5tZXNzYWdlLm9yZGVyOwogIGlmICghb3JkZXIgfHwgIUFycmF5LmlzQXJyYXkob3JkZXIuaXRlbXMpIHx8IG9yZGVyLml0ZW1zLmxlbmd0aCA9PT0gMCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5pdGVtcyBtdXN0IGJlIGEgbm9uLWVtcHR5IGFycmF5IiB9OwogIH0KICBjb25zdCBmb3JtUmVzcG9uc2UgPSBvcmRlci5pdGVtc1swXS54aW5wdXQgJiYgb3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2U7CiAgaWYgKCFmb3JtUmVzcG9uc2UgfHwgZm9ybVJlc3BvbnNlLnN0YXR1cyAhPT0gIkNPTVBMRVRFRCIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3RhdHVzIG11c3QgYmUgQ09NUExFVEVEIiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBvbl9zdGF0dXMgY2FsbCBhcmUgbWV0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhIHx8ICFzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkIHx8IHNlc3Npb25EYXRhLnRyYW5zYWN0aW9uSWQubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJ0cmFuc2FjdGlvbklkIGlzIG1pc3Npbmcg4oCUIHN0YXR1cyBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_status
+        ttl: PT15M
+        timestamp: '2025-08-18T14:20:14.368Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+    inputs: {}
+  examples:
+  - name: example for on_status
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_status
+        ttl: PT15M
+        timestamp: '2025-08-18T14:20:14.368Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          provider:
+            id: '101'
+            descriptor:
+              images:
+              - url: https://url.com/hdfc/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/hdfc-lg.png
+                size_type: lg
+              name: HDFC Bank Limited
+              short_desc: HDFC Bank Limited
+              long_desc: HDFC Bank Limited
+            tags:
+            - descriptor:
+                code: CONTACT_INFO
+                name: Contact Info
+              list:
+              - descriptor:
+                  code: GRO_NAME
+                  name: Gro name
+                value: Rishav Singh
+              - descriptor:
+                  code: GRO_EMAIL
+                  name: Gro email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: GRO_CONTACT_NUMBER
+                  name: Gro contact number
+                value: '18001600'
+              - descriptor:
+                  code: GRO_DESIGNATION
+                  name: Gro Designation
+                value: Grievance Redressal Officer
+              - descriptor:
+                  code: GRO_ADDRESS
+                  name: Gro Address
+                value: Mumbai Maharashtra 400013
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_LINK
+                  name: Customer support link
+                value: https://www.hdfcbank.com/personal/need-help/contact-us
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                  name: Customer support contact number
+                value: '18001600'
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_EMAIL
+                  name: Customer support email
+                value: loansupport@example.com
+            - descriptor:
+                code: LSP_INFO
+                name: Lsp Info
+              list:
+              - descriptor:
+                  code: LSP_NAME
+                  name: Lsp name
+                value: HDFC BANK LIMITED
+              - descriptor:
+                  code: LSP_EMAIL
+                  name: Lsp email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: LSP_CONTACT_NUMBER
+                  name: Lsp contact number
+                value: '18001600'
+              - descriptor:
+                  code: LSP_ADDRESS
+                  name: Lsp Address
+                value: Mumbai Maharashtra 400013
+          items:
+          - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+            descriptor:
+              code: CARD
+              name: HDFC Gold Credit Card
+              short_desc: Experience the Golden Side Of Life
+              images:
+              - url: https://url.com/hdfc/cards/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/cards/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/cards/hdfc-lg.png
+                size_type: lg
+            tags:
+            - descriptor:
+                name: General Information
+                code: GENERAL_INFO
+              list:
+              - descriptor:
+                  code: WELCOME_BENEFIT
+                  name: Welcome Benefit
+                  short_desc: Welcome Benefit
+                value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+              - descriptor:
+                  code: ANNUAL_FEE
+                  name: Annual Fee
+                  short_desc: Annual membership fee
+                value: 1000 INR
+              - descriptor:
+                  code: JOINING_FEE
+                  name: Joining Fee
+                  short_desc: One-time joining fee
+                value: 500 INR
+              - descriptor:
+                  code: REWARDS
+                  name: Rewards
+                  short_desc: Reward points earned on spent
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: TRAVEL_BENEFITS
+                  name: Travel Benefits
+                  short_desc: Travel Benefits
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: LIFESTYLE_BENEFITS
+                  name: Lifestyle Benefits
+                  short_desc: Lifestyle Benefits
+                value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+              - descriptor:
+                  code: EVERYDAY_BENEFITS
+                  name: Everyday Benefits
+                  short_desc: 1% fuel surcharge waiver on transactions
+                value: Up to ₹250 per billing cycle
+              display: true
+            xinput:
+              form:
+                id: c0e857f6-15b6-4b4d-a7da-ad63b4b2e52b
+              form_response:
+                status: COMPLETED
+                submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
+    type: request
+    description: please add relevant description
+- api: init
+  action_id: init
+  owner: BAP
+  responseFor: null
+  unsolicited: false
+  description: The borrower initiates the credit card request by filling the KYC form and submitting the completed submission id.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgaW5pdCBjYWxsLgogKiBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlIGlzIHt9IC0gcHJvdmlkZXIvaXRlbSBpZHMgYXJlIGVjaG9lZCBmcm9tIHRoZQogKiBwcm92aWRlci9pdGVtcyBzZXNzaW9uIGNodW5rcywgdGhlIGl0ZW0ncyB4aW5wdXQuZm9ybV9yZXNwb25zZSBpcyByZWJ1aWx0CiAqIGZyb20gdGhlIEtZQyBmb3JtIHN1Ym1pc3Npb24gaWQsIGFuZCB0aGUgb25seSBnZW51aW5lbHkgbmV3IGNvbnRlbnQgYXQKICogdGhpcyBzdGVwIChvcmRlci50YWdzIC8gQkFQX1RFUk1TKSBpcyBhdXRob3JlZCBoZXJlLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlciAmJiBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKICAgIGNvbnN0IGl0ZW1zID0gc2Vzc2lvbkRhdGEuaXRlbXMgJiYgc2Vzc2lvbkRhdGEuaXRlbXNbMF07CiAgICBjb25zdCBzdWJtaXNzaW9uSWQgPSBzZXNzaW9uRGF0YS5reWNfZm9ybTsKICAgIGlmICghcHJvdmlkZXIgfHwgIWl0ZW1zIHx8ICFpdGVtcy5sZW5ndGgpIHsKICAgICAgdGhyb3cgbmV3IEVycm9yKCJwcm92aWRlci9pdGVtcyBjaHVuayBtaXNzaW5nIGluIHNlc3Npb25EYXRhIOKAlCBvbl9zZWxlY3QgaGFzIG5vdCBjb21wbGV0ZWQiKTsKICAgIH0KICAgIGlmICghc3VibWlzc2lvbklkKSB7CiAgICAgIHRocm93IG5ldyBFcnJvcigia3ljX2Zvcm0gc3VibWlzc2lvbiBpZCBtaXNzaW5nIGluIHNlc3Npb25EYXRhIik7CiAgICB9CgogICAgY29uc3QgZm9ybUlkID0gaXRlbXNbMF0ueGlucHV0ICYmIGl0ZW1zWzBdLnhpbnB1dC5mb3JtICYmIGl0ZW1zWzBdLnhpbnB1dC5mb3JtLmlkOwogICAgY29uc3QgaXRlbSA9IHsKICAgICAgaWQ6IGl0ZW1zWzBdLmlkLAogICAgICB4aW5wdXQ6IHsKICAgICAgICBmb3JtOiB7IGlkOiBmb3JtSWQgfSwKICAgICAgICBmb3JtX3Jlc3BvbnNlOiB7IHN0YXR1czogIlNVQ0NFU1MiLCBzdWJtaXNzaW9uX2lkOiBzdWJtaXNzaW9uSWQgfSwKICAgICAgfSwKICAgIH07CgogICAgY29uc3QgdGFncyA9IFsKICAgICAgewogICAgICAgIGRlc2NyaXB0b3I6IHsgY29kZTogIkJBUF9URVJNUyIsIG5hbWU6ICJCQVAgVGVybXMgb2YgRW5nYWdlbWVudCIgfSwKICAgICAgICBkaXNwbGF5OiBmYWxzZSwKICAgICAgICBsaXN0OiBbCiAgICAgICAgICB7IGRlc2NyaXB0b3I6IHsgY29kZTogIlNUQVRJQ19URVJNUyIgfSwgdmFsdWU6ICJodHRwczovL2JhcC5jcmVkaXQuYmVja25wcm90b2NvbC5pby9wZXJzb25hbC1iYW5raW5nL2xvYW5zL3BlcnNvbmFsLWxvYW4iIH0sCiAgICAgICAgICB7IGRlc2NyaXB0b3I6IHsgY29kZTogIk9GRkxJTkVfQ09OVFJBQ1QiIH0sIHZhbHVlOiAidHJ1ZSIgfSwKICAgICAgICBdLAogICAgICB9LAogICAgXTsKCiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlID0gewogICAgICBvcmRlcjogewogICAgICAgIHByb3ZpZGVyOiB7IGlkOiBwcm92aWRlci5pZCB9LAogICAgICAgIGl0ZW1zOiBbaXRlbV0sCiAgICAgICAgdGFncywKICAgICAgfSwKICAgIH07CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9Cn0=
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgaW5pdCBjYWxsLgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IGNvbnRleHQgPSB0YXJnZXRQYXlsb2FkICYmIHRhcmdldFBheWxvYWQuY29udGV4dDsKICBpZiAoIWNvbnRleHQgfHwgY29udGV4dC5hY3Rpb24gIT09ICJpbml0IikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiY29udGV4dC5hY3Rpb24gbXVzdCBiZSBpbml0IiB9OwogIH0KICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZSAmJiB0YXJnZXRQYXlsb2FkLm1lc3NhZ2Uub3JkZXI7CiAgaWYgKCFvcmRlciB8fCAhb3JkZXIucHJvdmlkZXIgfHwgIW9yZGVyLnByb3ZpZGVyLmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkIGlzIHJlcXVpcmVkIiB9OwogIH0KICBpZiAoIUFycmF5LmlzQXJyYXkob3JkZXIuaXRlbXMpIHx8IG9yZGVyLml0ZW1zLmxlbmd0aCA9PT0gMCB8fCAhb3JkZXIuaXRlbXNbMF0uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0uaWQgaXMgcmVxdWlyZWQiIH07CiAgfQogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci50YWdzKSB8fCBvcmRlci50YWdzLmxlbmd0aCA9PT0gMCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci50YWdzIGlzIHJlcXVpcmVkIiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBpbml0IGNhbGwgYXJlIG1ldC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgaWYgKCFzZXNzaW9uRGF0YSB8fCAhc2Vzc2lvbkRhdGEucHJvdmlkZXIgfHwgIXNlc3Npb25EYXRhLnByb3ZpZGVyLmxlbmd0aCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwcm92aWRlciBpbiBzZXNzaW9uRGF0YSDigJQgb25fc2VsZWN0IGhhcyBub3QgY29tcGxldGVkIiB9OwogIH0KICBpZiAoIXNlc3Npb25EYXRhLmt5Y19mb3JtKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGt5Y19mb3JtIHN1Ym1pc3Npb24gaWQgaW4gc2Vzc2lvbkRhdGEiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: init
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+      tags: $.message.order.tags
+    inputs: {}
+  examples:
+  - name: example for init
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: init
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          provider:
+            id: '101'
+          items:
+          - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+            xinput:
+              form:
+                id: c0e857f6-15b6-4b4d-a7da-ad63b4b2e52b
+              form_response:
+                status: SUCCESS
+                submission_id: 79850933-4e41-4c76-bbe6-c5a392481226
+          tags:
+          - descriptor:
+              code: BAP_TERMS
+              name: BAP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+    type: request
+    description: please add relevant description
+- api: on_init
+  action_id: on_init
+  owner: BPP
+  responseFor: init
+  unsolicited: false
+  description: The lender accepts the credit card request, displays the card details, benefits, and terms of engagement.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgb25faW5pdCBjYWxsLgogKiBQcm92aWRlci9pdGVtIGFyZSBlY2hvZWQgZnJvbSB0aGUgcHJvdmlkZXIvaXRlbXMgc2Vzc2lvbiBjaHVua3M7IHRoZQogKiBvbmx5IGdlbnVpbmVseSBuZXcgY29udGVudCBhdCB0aGlzIHN0ZXAgLSBvcmRlci5mdWxmaWxsbWVudHMgLSBoYXMgbm8KICogc2Vzc2lvbiBwcmVjZWRlbnQsIHNvIGl0IGlzIHJlYWQgZnJvbSBkZWZhdWx0UGF5bG9hZCdzIGhhbmQtYXV0aG9yZWQKICogdGVtcGxhdGUgKHRoZSBvbmUgZXhjZXB0aW9uLCBtaXJyb3JpbmcgR2lmdCBDYXJkJ3Mgb25faW5pdC5wYXltZW50cykuCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0gVGhlIGdlbmVyYXRlZCBwYXlsb2FkIG9iamVjdC4KICovCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICBjb25zdCBwcm92aWRlciA9IHNlc3Npb25EYXRhLnByb3ZpZGVyICYmIHNlc3Npb25EYXRhLnByb3ZpZGVyWzBdOwogICAgY29uc3QgaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcyAmJiBzZXNzaW9uRGF0YS5pdGVtc1swXTsKICAgIGlmICghcHJvdmlkZXIgfHwgIWl0ZW1zIHx8ICFpdGVtcy5sZW5ndGgpIHsKICAgICAgdGhyb3cgbmV3IEVycm9yKCJwcm92aWRlci9pdGVtcyBjaHVuayBtaXNzaW5nIGluIHNlc3Npb25EYXRhIOKAlCBvbl9zZWxlY3QgaGFzIG5vdCBjb21wbGV0ZWQiKTsKICAgIH0KCiAgICAvLyBTdGF0aWMgdGVtcGxhdGUgLSBjb21lcyBmcm9tIGRlZmF1bHRQYXlsb2FkLCBub3Qgc2Vzc2lvbkRhdGEKICAgIGNvbnN0IGZ1bGZpbGxtZW50cyA9IGRlZmF1bHRQYXlsb2FkPy5tZXNzYWdlPy5vcmRlcj8uZnVsZmlsbG1lbnRzIHx8IFtdOwoKICAgIGNvbnN0IGl0ZW0gPSB7CiAgICAgIGlkOiBpdGVtc1swXS5pZCwKICAgICAgZGVzY3JpcHRvcjogaXRlbXNbMF0uZGVzY3JpcHRvciwKICAgICAgdGFnczogaXRlbXNbMF0udGFncywKICAgIH07CgogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZSA9IHsKICAgICAgb3JkZXI6IHsKICAgICAgICBwcm92aWRlcjogewogICAgICAgICAgaWQ6IHByb3ZpZGVyLmlkLAogICAgICAgICAgZGVzY3JpcHRvcjogcHJvdmlkZXIuZGVzY3JpcHRvciwKICAgICAgICAgIHRhZ3M6IHByb3ZpZGVyLnRhZ3MsCiAgICAgICAgfSwKICAgICAgICBpdGVtczogW2l0ZW1dLAogICAgICAgIGZ1bGZpbGxtZW50cywKICAgICAgfSwKICAgIH07CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9Cn0=
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgb25faW5pdCBjYWxsLgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IGNvbnRleHQgPSB0YXJnZXRQYXlsb2FkICYmIHRhcmdldFBheWxvYWQuY29udGV4dDsKICBpZiAoIWNvbnRleHQgfHwgY29udGV4dC5hY3Rpb24gIT09ICJvbl9pbml0IikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiY29udGV4dC5hY3Rpb24gbXVzdCBiZSBvbl9pbml0IiB9OwogIH0KICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZSAmJiB0YXJnZXRQYXlsb2FkLm1lc3NhZ2Uub3JkZXI7CiAgaWYgKCFvcmRlciB8fCAhb3JkZXIucHJvdmlkZXIgfHwgIW9yZGVyLnByb3ZpZGVyLmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkIGlzIHJlcXVpcmVkIiB9OwogIH0KICBpZiAoIUFycmF5LmlzQXJyYXkob3JkZXIuZnVsZmlsbG1lbnRzKSB8fCBvcmRlci5mdWxmaWxsbWVudHMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cyBtdXN0IGJlIGEgbm9uLWVtcHR5IGFycmF5IiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBvbl9pbml0IGNhbGwgYXJlIG1ldC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgaWYgKCFzZXNzaW9uRGF0YSB8fCAhc2Vzc2lvbkRhdGEucHJvdmlkZXIgfHwgIXNlc3Npb25EYXRhLnByb3ZpZGVyLmxlbmd0aCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwcm92aWRlciBpbiBzZXNzaW9uRGF0YSDigJQgaW5pdCBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_init
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          fulfillments:
+          - id: F1
+            customer:
+              person:
+                name: John Doe
+              contact:
+                phone: +91-9999999999
+                email: john.doe@example.com
+            state:
+              descriptor:
+                code: INITIATED
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+      fulfillments: $.message.order.fulfillments
+    inputs: {}
+  examples:
+  - name: example for on_init
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_init
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          provider:
+            id: '101'
+            descriptor:
+              images:
+              - url: https://url.com/hdfc/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/hdfc-lg.png
+                size_type: lg
+              name: HDFC Bank Limited
+              short_desc: HDFC Bank Limited
+              long_desc: HDFC Bank Limited
+            tags:
+            - descriptor:
+                code: CONTACT_INFO
+                name: Contact Info
+              list:
+              - descriptor:
+                  code: GRO_NAME
+                  name: Gro name
+                value: Rishav Singh
+              - descriptor:
+                  code: GRO_EMAIL
+                  name: Gro email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: GRO_CONTACT_NUMBER
+                  name: Gro contact number
+                value: '18001600'
+              - descriptor:
+                  code: GRO_DESIGNATION
+                  name: Gro Designation
+                value: Grievance Redressal Officer
+              - descriptor:
+                  code: GRO_ADDRESS
+                  name: Gro Address
+                value: Mumbai Maharashtra 400013
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_LINK
+                  name: Customer support link
+                value: https://www.hdfcbank.com/personal/need-help/contact-us
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                  name: Customer support contact number
+                value: '18001600'
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_EMAIL
+                  name: Customer support email
+                value: loansupport@example.com
+            - descriptor:
+                code: LSP_INFO
+                name: Lsp Info
+              list:
+              - descriptor:
+                  code: LSP_NAME
+                  name: Lsp name
+                value: HDFC BANK LIMITED
+              - descriptor:
+                  code: LSP_EMAIL
+                  name: Lsp email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: LSP_CONTACT_NUMBER
+                  name: Lsp contact number
+                value: '18001600'
+              - descriptor:
+                  code: LSP_ADDRESS
+                  name: Lsp Address
+                value: Mumbai Maharashtra 400013
+          items:
+          - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+            descriptor:
+              code: CARD
+              name: HDFC Gold Credit Card
+              short_desc: Experience the Golden Side Of Life
+              images:
+              - url: https://url.com/hdfc/cards/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/cards/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/cards/hdfc-lg.png
+                size_type: lg
+            tags:
+            - descriptor:
+                name: General Information
+                code: GENERAL_INFO
+              list:
+              - descriptor:
+                  code: WELCOME_BENEFIT
+                  name: Welcome Benefit
+                  short_desc: Welcome Benefit
+                value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+              - descriptor:
+                  code: ANNUAL_FEE
+                  name: Annual Fee
+                  short_desc: Annual membership fee
+                value: 1000 INR
+              - descriptor:
+                  code: JOINING_FEE
+                  name: Joining Fee
+                  short_desc: One-time joining fee
+                value: 500 INR
+              - descriptor:
+                  code: REWARDS
+                  name: Rewards
+                  short_desc: Reward points earned on spent
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: TRAVEL_BENEFITS
+                  name: Travel Benefits
+                  short_desc: Travel Benefits
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: LIFESTYLE_BENEFITS
+                  name: Lifestyle Benefits
+                  short_desc: Lifestyle Benefits
+                value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+              - descriptor:
+                  code: EVERYDAY_BENEFITS
+                  name: Everyday Benefits
+                  short_desc: 1% fuel surcharge waiver on transactions
+                value: Up to ₹250 per billing cycle
+              display: true
+          fulfillments:
+          - id: F1
+            customer:
+              person:
+                name: John Doe
+              contact:
+                phone: +91-9999999999
+                email: john.doe@example.com
+            state:
+              descriptor:
+                code: INITIATED
+          tags:
+          - descriptor:
+              code: BPP_TERMS
+              name: BPP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+    type: request
+    description: please add relevant description
+- api: confirm
+  action_id: confirm
+  owner: BAP
+  responseFor: null
+  unsolicited: false
+  description: The borrower confirms the credit card request by providing all the necessary information as per the terms.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgY29uZmlybSBjYWxsLgogKiBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlIGlzIHt9IC0gcHJvdmlkZXIvaXRlbSBpZHMgYXJlIGVjaG9lZCBmcm9tIHRoZQogKiBwcm92aWRlci9pdGVtcyBzZXNzaW9uIGNodW5rczsgdGhlIG9ubHkgbmV3IGNvbnRlbnQgYXQgdGhpcyBzdGVwIGlzIHRoZQogKiBCUFBfVEVSTVMgdGFnLCBtZXJnZWQgYWxvbmdzaWRlIHRoZSBCQVBfVEVSTVMgdGFnIHNhdmVkIGJ5IGluaXQuCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0gVGhlIGdlbmVyYXRlZCBwYXlsb2FkIG9iamVjdC4KICovCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICBjb25zdCBwcm92aWRlciA9IHNlc3Npb25EYXRhLnByb3ZpZGVyICYmIHNlc3Npb25EYXRhLnByb3ZpZGVyWzBdOwogICAgY29uc3QgaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcyAmJiBzZXNzaW9uRGF0YS5pdGVtc1swXTsKICAgIGNvbnN0IGJhc2VUYWdzID0gKHNlc3Npb25EYXRhLnRhZ3MgJiYgc2Vzc2lvbkRhdGEudGFnc1swXSkgfHwgW107CiAgICBpZiAoIXByb3ZpZGVyIHx8ICFpdGVtcyB8fCAhaXRlbXMubGVuZ3RoKSB7CiAgICAgIHRocm93IG5ldyBFcnJvcigicHJvdmlkZXIvaXRlbXMgY2h1bmsgbWlzc2luZyBpbiBzZXNzaW9uRGF0YSDigJQgb25fc2VsZWN0IGhhcyBub3QgY29tcGxldGVkIik7CiAgICB9CgogICAgY29uc3QgYnBwVGVybXNUYWcgPSB7CiAgICAgIGRlc2NyaXB0b3I6IHsgY29kZTogIkJQUF9URVJNUyIsIG5hbWU6ICJCUFAgVGVybXMgb2YgRW5nYWdlbWVudCIgfSwKICAgICAgZGlzcGxheTogZmFsc2UsCiAgICAgIGxpc3Q6IFsKICAgICAgICB7IGRlc2NyaXB0b3I6IHsgY29kZTogIlNUQVRJQ19URVJNUyIgfSwgdmFsdWU6ICJodHRwczovL2JwcC5jcmVkaXQuYmVja25wcm90b2NvbC5vcmcvcGVyc29uYWwtYmFua2luZy9sb2Fucy9wZXJzb25hbC1sb2FuIiB9LAogICAgICAgIHsgZGVzY3JpcHRvcjogeyBjb2RlOiAiT0ZGTElORV9DT05UUkFDVCIgfSwgdmFsdWU6ICJ0cnVlIiB9LAogICAgICBdLAogICAgfTsKCiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlID0gewogICAgICBvcmRlcjogewogICAgICAgIHByb3ZpZGVyOiB7IGlkOiBwcm92aWRlci5pZCB9LAogICAgICAgIGl0ZW1zOiBbeyBpZDogaXRlbXNbMF0uaWQgfV0sCiAgICAgICAgdGFnczogWy4uLmJhc2VUYWdzLCBicHBUZXJtc1RhZ10sCiAgICAgIH0sCiAgICB9OwogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfQp9
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgY29uZmlybSBjYWxsLgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IGNvbnRleHQgPSB0YXJnZXRQYXlsb2FkICYmIHRhcmdldFBheWxvYWQuY29udGV4dDsKICBpZiAoIWNvbnRleHQgfHwgY29udGV4dC5hY3Rpb24gIT09ICJjb25maXJtIikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiY29udGV4dC5hY3Rpb24gbXVzdCBiZSBjb25maXJtIiB9OwogIH0KICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZSAmJiB0YXJnZXRQYXlsb2FkLm1lc3NhZ2Uub3JkZXI7CiAgaWYgKCFvcmRlciB8fCAhb3JkZXIucHJvdmlkZXIgfHwgIW9yZGVyLnByb3ZpZGVyLmlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkIGlzIHJlcXVpcmVkIiB9OwogIH0KICBpZiAoIUFycmF5LmlzQXJyYXkob3JkZXIuaXRlbXMpIHx8IG9yZGVyLml0ZW1zLmxlbmd0aCA9PT0gMCB8fCAhb3JkZXIuaXRlbXNbMF0uaWQpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0uaWQgaXMgcmVxdWlyZWQiIH07CiAgfQogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci50YWdzKSB8fCAhb3JkZXIudGFncy5zb21lKCh0KSA9PiB0LmRlc2NyaXB0b3IgJiYgdC5kZXNjcmlwdG9yLmNvZGUgPT09ICJCUFBfVEVSTVMiKSkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci50YWdzIG11c3QgaW5jbHVkZSBhIEJQUF9URVJNUyBlbnRyeSIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBjb25maXJtIGNhbGwgYXJlIG1ldC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgaWYgKCFzZXNzaW9uRGF0YSB8fCAhc2Vzc2lvbkRhdGEucHJvdmlkZXIgfHwgIXNlc3Npb25EYXRhLnByb3ZpZGVyLmxlbmd0aCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwcm92aWRlciBpbiBzZXNzaW9uRGF0YSDigJQgb25faW5pdCBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: confirm
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+      tags: $.message.order.tags
+    inputs: {}
+  examples:
+  - name: example for confirm
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: confirm
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          provider:
+            id: '101'
+          items:
+          - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+          tags:
+          - descriptor:
+              code: BAP_TERMS
+              name: BAP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+          - descriptor:
+              code: BPP_TERMS
+              name: BPP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+    type: request
+    description: please add relevant description
+- api: on_confirm
+  action_id: on_confirm
+  owner: BPP
+  responseFor: confirm
+  unsolicited: false
+  description: The lender confirms the credit card order and provides the final confirmation details.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgb25fY29uZmlybSBjYWxsLgogKiBQcm92aWRlci9pdGVtL3RhZ3MgYXJlIGVjaG9lZCBmcm9tIHNlc3Npb24gY2h1bmtzLiBOZXcgY29udGVudCBtaW50ZWQgYXQKICogdGhpcyBzdGVwOiBvcmRlci5pZC9zdGF0dXMvdGltZXN0YW1wcyAobm8gc2Vzc2lvbiBwcmVjZWRlbnQgLSB0aGUgbGVuZGVyCiAqIGFzc2lnbnMgdGhlIHJlZmVyZW5jZSBudW1iZXIgaGVyZSksIGFuZCB0aGUgU0hJUFBJTkdfREVUQUlMUyB0YWcgKwogKiBESVNQQVRDSEVEIHN0YXRlIG1lcmdlZCBvbnRvIHRoZSBmdWxmaWxsbWVudHMgY2h1bmsgZnJvbSBvbl9pbml0LgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlciAmJiBzZXNzaW9uRGF0YS5wcm92aWRlclswXTsKICAgIGNvbnN0IGl0ZW1zID0gc2Vzc2lvbkRhdGEuaXRlbXMgJiYgc2Vzc2lvbkRhdGEuaXRlbXNbMF07CiAgICBjb25zdCB0YWdzID0gKHNlc3Npb25EYXRhLnRhZ3MgJiYgc2Vzc2lvbkRhdGEudGFnc1swXSkgfHwgW107CiAgICBjb25zdCBiYXNlRnVsZmlsbG1lbnRzID0gc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzICYmIHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50c1swXTsKICAgIGlmICghcHJvdmlkZXIgfHwgIWl0ZW1zIHx8ICFpdGVtcy5sZW5ndGgpIHsKICAgICAgdGhyb3cgbmV3IEVycm9yKCJwcm92aWRlci9pdGVtcyBjaHVuayBtaXNzaW5nIGluIHNlc3Npb25EYXRhIOKAlCBvbl9zZWxlY3QgaGFzIG5vdCBjb21wbGV0ZWQiKTsKICAgIH0KICAgIGlmICghYmFzZUZ1bGZpbGxtZW50cyB8fCAhYmFzZUZ1bGZpbGxtZW50cy5sZW5ndGgpIHsKICAgICAgdGhyb3cgbmV3IEVycm9yKCJmdWxmaWxsbWVudHMgY2h1bmsgbWlzc2luZyBpbiBzZXNzaW9uRGF0YSDigJQgb25faW5pdCBoYXMgbm90IGNvbXBsZXRlZCIpOwogICAgfQoKICAgIGNvbnN0IHNoaXBwaW5nRGV0YWlsc1RhZyA9IHsKICAgICAgZGVzY3JpcHRvcjogeyBjb2RlOiAiU0hJUFBJTkdfREVUQUlMUyIsIG5hbWU6ICJTSElQUElORyBERVRBSUxTIiB9LAogICAgICBsaXN0OiBbCiAgICAgICAgeyBkZXNjcmlwdG9yOiB7IGNvZGU6ICJBV0JfTk8iLCBuYW1lOiAiQVdCIE5vIiB9LCB2YWx1ZTogIjMzOTQzNjc3MDkwOTgiIH0sCiAgICAgICAgeyBkZXNjcmlwdG9yOiB7IGNvZGU6ICJTSElQUElOR19QQVJUTkVSIiwgbmFtZTogIlNoaXBwaW5nIFBhcnRuZXIiIH0sIHZhbHVlOiAiRWNvbUV4cHJlc3MiIH0sCiAgICAgICAgeyBkZXNjcmlwdG9yOiB7IGNvZGU6ICJTSElQUElOR19BRERSRVNTIiwgbmFtZTogIlNoaXBwaW5nIEFkZHJlc3MiIH0sIHZhbHVlOiAiMTAyLCBOZXcgQ29sb255IE5hdmkgTXVtYmFpIDQwMDA4MSIgfSwKICAgICAgXSwKICAgIH07CgogICAgY29uc3QgZnVsZmlsbG1lbnRzID0gYmFzZUZ1bGZpbGxtZW50cy5tYXAoKGZ1bGZpbGxtZW50KSA9PiAoewogICAgICAuLi5mdWxmaWxsbWVudCwKICAgICAgc3RhdGU6IHsgZGVzY3JpcHRvcjogeyBjb2RlOiAiRElTUEFUQ0hFRCIgfSB9LAogICAgICB0YWdzOiBbc2hpcHBpbmdEZXRhaWxzVGFnXSwKICAgIH0pKTsKCiAgICBjb25zdCBpdGVtID0geyBpZDogaXRlbXNbMF0uaWQsIGRlc2NyaXB0b3I6IGl0ZW1zWzBdLmRlc2NyaXB0b3IsIHRhZ3M6IGl0ZW1zWzBdLnRhZ3MgfTsKICAgIGNvbnN0IG9yZGVySWQgPSBgb3JkZXJfJHt1dWlkdjQoKX1gOwogICAgY29uc3QgdGltZXN0YW1wID0gY3VycmVudFRpbWVzdGFtcCgpOwoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7CiAgICAgIG9yZGVyOiB7CiAgICAgICAgaWQ6IG9yZGVySWQsCiAgICAgICAgc3RhdHVzOiAiQUNUSVZFIiwKICAgICAgICBwcm92aWRlcjogeyBpZDogcHJvdmlkZXIuaWQsIGRlc2NyaXB0b3I6IHByb3ZpZGVyLmRlc2NyaXB0b3IsIHRhZ3M6IHByb3ZpZGVyLnRhZ3MgfSwKICAgICAgICBpdGVtczogW2l0ZW1dLAogICAgICAgIGZ1bGZpbGxtZW50cywKICAgICAgICB0YWdzLAogICAgICAgIGNyZWF0ZWRfYXQ6IHRpbWVzdGFtcCwKICAgICAgICB1cGRhdGVkX2F0OiB0aW1lc3RhbXAsCiAgICAgIH0sCiAgICB9OwogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfQp9
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgb25fY29uZmlybSBjYWxsLgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IGNvbnRleHQgPSB0YXJnZXRQYXlsb2FkICYmIHRhcmdldFBheWxvYWQuY29udGV4dDsKICBpZiAoIWNvbnRleHQgfHwgY29udGV4dC5hY3Rpb24gIT09ICJvbl9jb25maXJtIikgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiY29udGV4dC5hY3Rpb24gbXVzdCBiZSBvbl9jb25maXJtIiB9OwogIH0KICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZSAmJiB0YXJnZXRQYXlsb2FkLm1lc3NhZ2Uub3JkZXI7CiAgaWYgKCFvcmRlciB8fCAhb3JkZXIuaWQgfHwgIW9yZGVyLnN0YXR1cykgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5pZCBhbmQgbWVzc2FnZS5vcmRlci5zdGF0dXMgYXJlIHJlcXVpcmVkIiB9OwogIH0KICBpZiAoIUFycmF5LmlzQXJyYXkob3JkZXIuZnVsZmlsbG1lbnRzKSB8fCBvcmRlci5mdWxmaWxsbWVudHMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cyBtdXN0IGJlIGEgbm9uLWVtcHR5IGFycmF5IiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBvbl9jb25maXJtIGNhbGwgYXJlIG1ldC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIG1lZXRzUmVxdWlyZW1lbnRzKHNlc3Npb25EYXRhKSB7CiAgaWYgKCFzZXNzaW9uRGF0YSB8fCAhc2Vzc2lvbkRhdGEuZnVsZmlsbG1lbnRzIHx8ICFzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHMubGVuZ3RoKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIGZ1bGZpbGxtZW50cyBpbiBzZXNzaW9uRGF0YSDigJQgb25faW5pdCBoYXMgbm90IGNvbXBsZXRlZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IiB9Owp9
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_confirm
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+      orderId: $.message.order.id
+      createdAt: $.message.order.created_at
+      fulfillments: $.message.order.fulfillments
+      tags: $.message.order.tags
+    inputs: {}
+  examples:
+  - name: example for on_confirm
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_confirm
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          id: REFERENCE_NO
+          status: ACTIVE
+          provider:
+            id: '101'
+            descriptor:
+              images:
+              - url: https://url.com/hdfc/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/hdfc-lg.png
+                size_type: lg
+              name: HDFC Bank Limited
+              short_desc: HDFC Bank Limited
+              long_desc: HDFC Bank Limited
+            tags:
+            - descriptor:
+                code: CONTACT_INFO
+                name: Contact Info
+              list:
+              - descriptor:
+                  code: GRO_NAME
+                  name: Gro name
+                value: Rishav Singh
+              - descriptor:
+                  code: GRO_EMAIL
+                  name: Gro email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: GRO_CONTACT_NUMBER
+                  name: Gro contact number
+                value: '18001600'
+              - descriptor:
+                  code: GRO_DESIGNATION
+                  name: Gro Designation
+                value: Grievance Redressal Officer
+              - descriptor:
+                  code: GRO_ADDRESS
+                  name: Gro Address
+                value: Mumbai Maharashtra 400013
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_LINK
+                  name: Customer support link
+                value: https://www.hdfcbank.com/personal/need-help/contact-us
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                  name: Customer support contact number
+                value: '18001600'
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_EMAIL
+                  name: Customer support email
+                value: loansupport@example.com
+            - descriptor:
+                code: LSP_INFO
+                name: Lsp Info
+              list:
+              - descriptor:
+                  code: LSP_NAME
+                  name: Lsp name
+                value: HDFC BANK LIMITED
+              - descriptor:
+                  code: LSP_EMAIL
+                  name: Lsp email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: LSP_CONTACT_NUMBER
+                  name: Lsp contact number
+                value: '18001600'
+              - descriptor:
+                  code: LSP_ADDRESS
+                  name: Lsp Address
+                value: Mumbai Maharashtra 400013
+          items:
+          - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+            descriptor:
+              code: CARD
+              name: HDFC Gold Credit Card
+              short_desc: Experience the Golden Side Of Life
+              images:
+              - url: https://url.com/hdfc/cards/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/cards/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/cards/hdfc-lg.png
+                size_type: lg
+            tags:
+            - descriptor:
+                name: General Information
+                code: GENERAL_INFO
+              list:
+              - descriptor:
+                  code: WELCOME_BENEFIT
+                  name: Welcome Benefit
+                  short_desc: Welcome Benefit
+                value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+              - descriptor:
+                  code: ANNUAL_FEE
+                  name: Annual Fee
+                  short_desc: Annual membership fee
+                value: 1000 INR
+              - descriptor:
+                  code: JOINING_FEE
+                  name: Joining Fee
+                  short_desc: One-time joining fee
+                value: 500 INR
+              - descriptor:
+                  code: REWARDS
+                  name: Rewards
+                  short_desc: Reward points earned on spent
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: TRAVEL_BENEFITS
+                  name: Travel Benefits
+                  short_desc: Travel Benefits
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: LIFESTYLE_BENEFITS
+                  name: Lifestyle Benefits
+                  short_desc: Lifestyle Benefits
+                value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+              - descriptor:
+                  code: EVERYDAY_BENEFITS
+                  name: Everyday Benefits
+                  short_desc: 1% fuel surcharge waiver on transactions
+                value: Up to ₹250 per billing cycle
+              display: true
+          fulfillments:
+          - id: F1
+            customer:
+              person:
+                name: John Doe
+              contact:
+                phone: +91-9999999999
+                email: john.doe@example.com
+            state:
+              descriptor:
+                code: DISPATCHED
+            tags:
+            - descriptor:
+                code: SHIPPING_DETAILS
+                name: SHIPPING DETAILS
+              list:
+              - descriptor:
+                  code: AWB_NO
+                  name: AWB No
+                value: '3394367709098'
+              - descriptor:
+                  code: SHIPPING_PARTNER
+                  name: Shipping Partner
+                value: EcomExpress
+              - descriptor:
+                  code: SHIPPING_ADDRESS
+                  name: Shipping Address
+                value: 102, New Colony Navi Mumbai 400081
+          tags:
+          - descriptor:
+              code: BAP_TERMS
+              name: BAP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+          - descriptor:
+              code: BPP_TERMS
+              name: BPP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+          created_at: '2025-09-06T04:19:20.443Z'
+          updated_at: '2025-09-06T04:19:20.443Z'
+    type: request
+    description: please add relevant description
+- api: status
+  action_id: status_2
+  owner: BAP
+  responseFor: null
+  unsolicited: false
+  description: The borrower seeks the most recent status update on the credit card application.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgZmluYWwgc3RhdHVzIGNhbGwsIHVzZWQgYnkgdGhlCiAqIGJvcnJvd2VyIHRvIHJlcXVlc3QgdGhlIGxhdGVzdCBjcmVkaXQgY2FyZCBhcHBsaWNhdGlvbiBzdGF0dXMuCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0gVGhlIGdlbmVyYXRlZCBwYXlsb2FkIG9iamVjdC4KICovCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IG9yZGVySWQgPSBzZXNzaW9uRGF0YS5vcmRlcklkICYmIHNlc3Npb25EYXRhLm9yZGVySWRbMF07CiAgY29uc3QgdHJhbnNhY3Rpb25JZCA9IHNlc3Npb25EYXRhLnRyYW5zYWN0aW9uSWQgJiYgc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZFswXTsKICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLnJlZl9pZCA9IG9yZGVySWQgfHwgdHJhbnNhY3Rpb25JZDsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgZmluYWwgc3RhdHVzIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgY29udGV4dCA9IHRhcmdldFBheWxvYWQgJiYgdGFyZ2V0UGF5bG9hZC5jb250ZXh0OwogIGlmICghY29udGV4dCB8fCBjb250ZXh0LmFjdGlvbiAhPT0gInN0YXR1cyIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNvbnRleHQuYWN0aW9uIG11c3QgYmUgc3RhdHVzIiB9OwogIH0KICBpZiAoIXRhcmdldFBheWxvYWQubWVzc2FnZSB8fCAhdGFyZ2V0UGF5bG9hZC5tZXNzYWdlLnJlZl9pZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5yZWZfaWQgaXMgcmVxdWlyZWQiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBmaW5hbCBzdGF0dXMgY2FsbCBhcmUgbWV0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhIHx8ICFzZXNzaW9uRGF0YS5vcmRlcklkIHx8ICFzZXNzaW9uRGF0YS5vcmRlcklkLmxlbmd0aCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBvcmRlcklkIGluIHNlc3Npb25EYXRhIOKAlCBvbl9jb25maXJtIGhhcyBub3QgY29tcGxldGVkIiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: status
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+    inputs: {}
+  examples:
+  - name: example for status
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: status
+        ttl: PT10M
+        timestamp: '2025-08-18T14:20:14.148Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        ref_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+    type: request
+    description: please add relevant description
+- api: on_status
+  action_id: on_status_2
+  owner: BPP
+  responseFor: status_2
+  unsolicited: false
+  description: The lender shares the latest card application status with the borrower, including fulfillment/shipping details.
+  mock:
+    generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgZmluYWwgb25fc3RhdHVzIGNhbGwsIHJlcG9ydGluZyB0aGUKICogbGF0ZXN0IGNyZWRpdCBjYXJkIGFwcGxpY2F0aW9uL2Z1bGZpbGxtZW50IHN0YXR1cyB0byB0aGUgYm9ycm93ZXIuCiAqIFB1cmUgcmUtZWNobyBvZiB0aGUgY29uZmlybWVkIG9yZGVyIC0gbm8gbmV3IGNvbnRlbnQsIGVudGlyZWx5CiAqIHJlY29uc3RydWN0ZWQgZnJvbSBzZXNzaW9uIGNodW5rcyBzYXZlZCBieSBvbl9jb25maXJtLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3Qgb3JkZXJJZCA9IHNlc3Npb25EYXRhLm9yZGVySWQgJiYgc2Vzc2lvbkRhdGEub3JkZXJJZFswXTsKICAgIGNvbnN0IGNyZWF0ZWRBdCA9IHNlc3Npb25EYXRhLmNyZWF0ZWRBdCAmJiBzZXNzaW9uRGF0YS5jcmVhdGVkQXRbMF07CiAgICBjb25zdCBwcm92aWRlciA9IHNlc3Npb25EYXRhLnByb3ZpZGVyICYmIHNlc3Npb25EYXRhLnByb3ZpZGVyWzBdOwogICAgY29uc3QgaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcyAmJiBzZXNzaW9uRGF0YS5pdGVtc1swXTsKICAgIGNvbnN0IHRhZ3MgPSAoc2Vzc2lvbkRhdGEudGFncyAmJiBzZXNzaW9uRGF0YS50YWdzWzBdKSB8fCBbXTsKICAgIGNvbnN0IGZ1bGZpbGxtZW50cyA9IHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50cyAmJiBzZXNzaW9uRGF0YS5mdWxmaWxsbWVudHNbMF07CiAgICBpZiAoIW9yZGVySWQpIHsKICAgICAgdGhyb3cgbmV3IEVycm9yKCJvcmRlcklkIG1pc3NpbmcgaW4gc2Vzc2lvbkRhdGEg4oCUIG9uX2NvbmZpcm0gaGFzIG5vdCBjb21wbGV0ZWQiKTsKICAgIH0KICAgIGlmICghZnVsZmlsbG1lbnRzIHx8ICFmdWxmaWxsbWVudHMubGVuZ3RoKSB7CiAgICAgIHRocm93IG5ldyBFcnJvcigiZnVsZmlsbG1lbnRzIGNodW5rIG1pc3NpbmcgaW4gc2Vzc2lvbkRhdGEg4oCUIG9uX2NvbmZpcm0gaGFzIG5vdCBjb21wbGV0ZWQiKTsKICAgIH0KCiAgICBjb25zdCBpdGVtID0geyBpZDogaXRlbXNbMF0uaWQsIGRlc2NyaXB0b3I6IGl0ZW1zWzBdLmRlc2NyaXB0b3IsIHRhZ3M6IGl0ZW1zWzBdLnRhZ3MgfTsKICAgIGNvbnN0IHRpbWVzdGFtcCA9IGN1cnJlbnRUaW1lc3RhbXAoKTsKCiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlID0gewogICAgICBvcmRlcjogewogICAgICAgIGlkOiBvcmRlcklkLAogICAgICAgIHN0YXR1czogIkFDVElWRSIsCiAgICAgICAgcHJvdmlkZXI6IHsgaWQ6IHByb3ZpZGVyLmlkLCBkZXNjcmlwdG9yOiBwcm92aWRlci5kZXNjcmlwdG9yLCB0YWdzOiBwcm92aWRlci50YWdzIH0sCiAgICAgICAgaXRlbXM6IFtpdGVtXSwKICAgICAgICBmdWxmaWxsbWVudHMsCiAgICAgICAgdGFncywKICAgICAgICBjcmVhdGVkX2F0OiBjcmVhdGVkQXQgfHwgdGltZXN0YW1wLAogICAgICAgIHVwZGF0ZWRfYXQ6IHRpbWVzdGFtcCwKICAgICAgfSwKICAgIH07CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9Cn0=
+    validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgZmluYWwgb25fc3RhdHVzIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgY29udGV4dCA9IHRhcmdldFBheWxvYWQgJiYgdGFyZ2V0UGF5bG9hZC5jb250ZXh0OwogIGlmICghY29udGV4dCB8fCBjb250ZXh0LmFjdGlvbiAhPT0gIm9uX3N0YXR1cyIpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogImNvbnRleHQuYWN0aW9uIG11c3QgYmUgb25fc3RhdHVzIiB9OwogIH0KICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZSAmJiB0YXJnZXRQYXlsb2FkLm1lc3NhZ2Uub3JkZXI7CiAgaWYgKCFvcmRlciB8fCAhb3JkZXIuaWQgfHwgIW9yZGVyLnN0YXR1cykgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5pZCBhbmQgbWVzc2FnZS5vcmRlci5zdGF0dXMgYXJlIHJlcXVpcmVkIiB9OwogIH0KICBpZiAoIUFycmF5LmlzQXJyYXkob3JkZXIuZnVsZmlsbG1lbnRzKSB8fCBvcmRlci5mdWxmaWxsbWVudHMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50cyBtdXN0IGJlIGEgbm9uLWVtcHR5IGFycmF5IiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
+    requirements: Ly8gcmVxdWlyZW1lbnRzLmpzCi8qKgogKiBDaGVja3MgaWYgdGhlIHJlcXVpcmVtZW50cyBmb3IgcHJvY2VlZGluZyB3aXRoIHRoZSBmaW5hbCBvbl9zdGF0dXMgY2FsbCBhcmUgbWV0LgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhIHx8ICFzZXNzaW9uRGF0YS5vcmRlcklkIHx8ICFzZXNzaW9uRGF0YS5vcmRlcklkLmxlbmd0aCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBvcmRlcklkIGluIHNlc3Npb25EYXRhIOKAlCBzdGF0dXMgaGFzIG5vdCBjb21wbGV0ZWQiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
+    defaultPayload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_status
+        ttl: PT15M
+        timestamp: '2025-08-18T14:20:14.368Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message: {}
+    saveData:
+      transactionId: $.context.transaction_id
+      latestMessage_id: $.context.message_id
+      latestTimestamp: $.context.timestamp
+      bapId: $.context.bap_id
+      bapUri: $.context.bap_uri
+      bppId: $.context.bpp_id
+      bppUri: $.context.bpp_uri
+    inputs: {}
+  examples:
+  - name: example for on_status
+    payload:
+      context:
+        domain: ONDC:FIS12
+        location:
+          country:
+            code: IND
+          city:
+            code: '*'
+        version: 2.0.3
+        action: on_status
+        ttl: PT15M
+        timestamp: '2025-08-18T14:20:14.368Z'
+        bap_id: pramaan.ondc.org
+        bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
+        transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
+        message_id: 67849eb5-b6eb-4065-b096-094cdfc03590
+        bpp_id: hdfc-cc.refo.dev
+        bpp_uri: https://hdfc-cc.refo.dev/app/ondc/seller
+      message:
+        order:
+          id: REFERENCE_NO
+          status: ACTIVE
+          provider:
+            id: '101'
+            descriptor:
+              images:
+              - url: https://url.com/hdfc/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/hdfc-lg.png
+                size_type: lg
+              name: HDFC Bank Limited
+              short_desc: HDFC Bank Limited
+              long_desc: HDFC Bank Limited
+            tags:
+            - descriptor:
+                code: CONTACT_INFO
+                name: Contact Info
+              list:
+              - descriptor:
+                  code: GRO_NAME
+                  name: Gro name
+                value: Rishav Singh
+              - descriptor:
+                  code: GRO_EMAIL
+                  name: Gro email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: GRO_CONTACT_NUMBER
+                  name: Gro contact number
+                value: '18001600'
+              - descriptor:
+                  code: GRO_DESIGNATION
+                  name: Gro Designation
+                value: Grievance Redressal Officer
+              - descriptor:
+                  code: GRO_ADDRESS
+                  name: Gro Address
+                value: Mumbai Maharashtra 400013
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_LINK
+                  name: Customer support link
+                value: https://www.hdfcbank.com/personal/need-help/contact-us
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_CONTACT_NUMBER
+                  name: Customer support contact number
+                value: '18001600'
+              - descriptor:
+                  code: CUSTOMER_SUPPORT_EMAIL
+                  name: Customer support email
+                value: loansupport@example.com
+            - descriptor:
+                code: LSP_INFO
+                name: Lsp Info
+              list:
+              - descriptor:
+                  code: LSP_NAME
+                  name: Lsp name
+                value: HDFC BANK LIMITED
+              - descriptor:
+                  code: LSP_EMAIL
+                  name: Lsp email
+                value: support@hdfcbank.com
+              - descriptor:
+                  code: LSP_CONTACT_NUMBER
+                  name: Lsp contact number
+                value: '18001600'
+              - descriptor:
+                  code: LSP_ADDRESS
+                  name: Lsp Address
+                value: Mumbai Maharashtra 400013
+          items:
+          - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+            descriptor:
+              code: CARD
+              name: HDFC Gold Credit Card
+              short_desc: Experience the Golden Side Of Life
+              images:
+              - url: https://url.com/hdfc/cards/hdfc-sm.png
+                size_type: sm
+              - url: https://url.com/hdfc/cards/hdfc-md.png
+                size_type: md
+              - url: https://url.com/hdfc/cards/hdfc-lg.png
+                size_type: lg
+            tags:
+            - descriptor:
+                name: General Information
+                code: GENERAL_INFO
+              list:
+              - descriptor:
+                  code: WELCOME_BENEFIT
+                  name: Welcome Benefit
+                  short_desc: Welcome Benefit
+                value: Complimentary Swiggy One and MMT Black Gold membership as Welcome benefits
+              - descriptor:
+                  code: ANNUAL_FEE
+                  name: Annual Fee
+                  short_desc: Annual membership fee
+                value: 1000 INR
+              - descriptor:
+                  code: JOINING_FEE
+                  name: Joining Fee
+                  short_desc: One-time joining fee
+                value: 500 INR
+              - descriptor:
+                  code: REWARDS
+                  name: Rewards
+                  short_desc: Reward points earned on spent
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: TRAVEL_BENEFITS
+                  name: Travel Benefits
+                  short_desc: Travel Benefits
+                value: 2 Points per ₹150 spent
+              - descriptor:
+                  code: LIFESTYLE_BENEFITS
+                  name: Lifestyle Benefits
+                  short_desc: Lifestyle Benefits
+                value: 'Enjoy the exclusive 24/7 Concierge Services on your HDFC Bank Regalia Gold Credit Card. Simply call us: toll-free on 1860 425 1188 (India) / Email ID: regaliagold.support@smartbuyoffers.co'
+              - descriptor:
+                  code: EVERYDAY_BENEFITS
+                  name: Everyday Benefits
+                  short_desc: 1% fuel surcharge waiver on transactions
+                value: Up to ₹250 per billing cycle
+              display: true
+          fulfillments:
+          - id: F1
+            customer:
+              person:
+                name: John Doe
+              contact:
+                phone: +91-9999999999
+                email: john.doe@example.com
+            state:
+              descriptor:
+                code: DISPATCHED
+            tags:
+            - descriptor:
+                code: SHIPPING_DETAILS
+                name: SHIPPING DETAILS
+              list:
+              - descriptor:
+                  code: AWB_NO
+                  name: AWB No
+                value: '3394367709098'
+              - descriptor:
+                  code: SHIPPING_PARTNER
+                  name: Shipping Partner
+                value: EcomExpress
+              - descriptor:
+                  code: SHIPPING_ADDRESS
+                  name: Shipping Address
+                value: 102, New Colony Navi Mumbai 400081
+          tags:
+          - descriptor:
+              code: BAP_TERMS
+              name: BAP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+          - descriptor:
+              code: BPP_TERMS
+              name: BPP Terms of Engagement
+            display: false
+            list:
+            - descriptor:
+                code: STATIC_TERMS
+              value: https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan
+            - descriptor:
+                code: OFFLINE_CONTRACT
+              value: 'true'
+          created_at: '2024-05-06T04:19:20.443Z'
+          updated_at: '2024-05-06T04:19:20.443Z'
+    type: request
+    description: please add relevant description
+helperLib: LyoKCUN1c3RvbSBoZWxwZXIgZnVuY3Rpb25zIGF2YWlsYWJsZSBpbiBhbGwgbW9jayBnZW5lcmF0aW9uIGZ1bmN0aW9ucy4KCXRoZXNlIGFyZSBhcHBlbmRlZCBiZWxvdyB0aGUgZ2VuZXJhdGUgZnVuY3Rpb24gZm9yIGVhY2ggc3RlcC4KKi8KCmNvbnN0IGNyZWF0ZUZvcm1VUkwgPSAoZG9tYWluLCBmb3JtSWQsIHNlc3Npb25EYXRhKSA9PiB7Cgljb25zdCBiYXNlVVJMID0gc2Vzc2lvbkRhdGEubW9ja0Jhc2VVcmw7Cgljb25zdCB0cmFuc2FjdGlvbklkID0gc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZFswXTsKCWNvbnN0IHNlc3Npb25JZCA9IHNlc3Npb25EYXRhLnNlc3Npb25JZDsKCXJldHVybiBgJHtiYXNlVVJMfS9mb3Jtcy8ke2RvbWFpbn0vJHtmb3JtSWR9Lz90cmFuc2FjdGlvbl9pZD0ke3RyYW5zYWN0aW9uSWR9JnNlc3Npb25faWQ9JHtzZXNzaW9uSWR9YDsKfQoKLy8gR2VuZXJhdGVzIGEgVVVJRCB2NApmdW5jdGlvbiB1dWlkdjQoKSB7CglyZXR1cm4gJ3h4eHh4eHh4LXh4eHgtNHh4eC15eHh4LXh4eHh4eHh4eHh4eCcucmVwbGFjZSgvW3h5XS9nLCBmdW5jdGlvbiAoYykgewoJCWNvbnN0IHIgPSBNYXRoLnJhbmRvbSgpICogMTYgfCAwOwoJCWNvbnN0IHYgPSBjID09PSAneCcgPyByIDogKHIgJiAweDMgfCAweDgpOwoJCXJldHVybiB2LnRvU3RyaW5nKDE2KTsKCX0pOwp9CgpmdW5jdGlvbiBjdXJyZW50VGltZXN0YW1wKCkgewoJcmV0dXJuIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKfQo=
