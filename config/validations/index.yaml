@@ -526,6 +526,7 @@ _TESTS_:
           attr: $.message.order.items[*].descriptor.code
           enumList: &a12
             - LOAN
+            - CARD
             - PERSONAL_LOAN
             - CREDIT_CARD
             - PRE_QUALIFIER
