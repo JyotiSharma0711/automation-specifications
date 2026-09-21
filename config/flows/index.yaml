@@ -148,4 +148,13 @@ flows:
     description: A borrower initiates a partial prepayment of their personal loan principal outside the regular EMI schedule to reduce outstanding debt, with the lender validating the prepayment amount, recalculating revised repayment terms and associated charges, and updating the loan account status upon successful payment completion.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Pre_Part_Payment_Single_Redirection.yaml
+  - type: playground
+    id: Credit_Card
+    usecase: CREDIT CARD
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "A borrower discovers, applies for, and confirms a credit card  journey: searching the network for available cards, completing a personal-information application form, selecting a card, completing a KYC form, polling for KYC completion status, initiating and confirming the credit card request, and tracking the final application status."
+    config:
+      $ref: ./CREDIT CARD/Credit_Card.yaml
 

@@ -7,10 +7,13 @@ info:
   x-usecases:
     - GOLD LOAN
     - PERSONAL LOAN
+    - CREDIT CARD
   x-status:
     - use_case: GOLD LOAN
       status: DRAFT
     - use_case: PERSONAL LOAN
+      status: DRAFT
+    - use_case: CREDIT CARD
       status: DRAFT
   x-branch-name: draft-FIS12-2.0.3
   x-reporting: true
