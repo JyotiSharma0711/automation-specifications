@@ -36,7 +36,7 @@ The protocol supports purchase financing across multiple retail categories:
 - **Upcoming**:
   - **Insurance Premium Finance**
 
-This guide explains the Purchase Finance use case and end-to-end journey from a business and product perspective, before covering the corresponding technical specifications and API flows. Network interactions in this guide reference the ONDC:FIS12 domain, version 2.2.1 (release-FIS12-2.2.1).
+This guide explains the Purchase Finance use case and end-to-end journey from a business and product perspective, before covering the corresponding technical specifications and API flows.
 
 ## Participants
 
