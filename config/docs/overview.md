@@ -3,6 +3,7 @@
 
 
 - [Overview](#overview)
+  - [Supported Product Categories](#supported-product-categories)
 - [Participants](#participants)
 - [The User Journey](#the-user-journey)
   - [1. Loan Offer Discovery](#1-loan-offer-discovery)
@@ -19,18 +20,21 @@
 
 ## Overview
 
-Purchase Finance is ONDC's version of what the market already knows as checkout finance or Buy Now, Pay Later (BNPL) - the same mechanic behind buying an iPhone "on EMI" at a retailer or e-commerce checkout instead of paying the full price upfront. A customer discovers a loan offer within a buyer app, mostly at checkout (though some buyer apps surface it earlier, during product browsing), and converts a purchase into EMIs on the spot rather than applying for credit separately.
+Purchase Finance is an independent protocol that works for commerce occurring both on the ONDC network and off the network (such as external e-commerce platforms or physical retail checkouts). It is ONDC's version of what the market knows as checkout finance or Buy Now, Pay Later (BNPL) - the same mechanic behind buying an iPhone "on EMI" at a retailer or e-commerce checkout instead of paying the full price upfront. A customer discovers a loan offer within a buyer app, mostly at checkout (though some buyer apps surface it earlier, during product browsing), and converts a purchase into EMIs on the spot rather than applying for credit separately.
 
 One market-standard variant worth calling out by name: No-Cost EMI, where the brand or seller funds the interest cost as a discount, so the customer's total repayment equals the sticker price rather than sticker-price-plus-interest. This is exactly what the protocol calls seller subvention - the retail seller declaring how much of the interest it's willing to absorb, expressed as a percentage of the product's selling price. Whether an offer looks like a standard interest-bearing EMI or a No-Cost EMI to the customer depends entirely on how much subvention the seller is willing to fund, the underlying loan mechanics are identical either way.
 
-Purchase Finance on ONDC supports two participation scenarios, differing in who shares the seller's bank account details for loan disbursal:
-
-| # | Scenario Description | Seller's Bank A/C Details Shared By |
-|---|---------------------|-------------------------------------|
-| 1 | The Credit Buyer App and Retail Buyer App are the same entity | Retail Seller Application on the ONDC Network |
-| 2 | The Credit Buyer App and Retail Buyer App are different entities | Retail Seller Application on the ONDC Network, or a Payment Gateway with a valid PA-PG license |
-
 Each lender independently manages its own purchase finance products, underwriting, and servicing. ONDC enables these lenders and credit buyer apps to connect through a common, open protocol instead of building separate integrations with each other.
+
+### Supported Product Categories
+
+The protocol supports purchase financing across multiple retail categories:
+
+- **Currently Supported**:
+  - **Electronics** (e.g., smartphones, laptops, appliances)
+  - **Residential Solar Rooftop** (Resi Solar Rooftop)
+- **Upcoming**:
+  - **Insurance Premium Finance**
 
 This guide explains the Purchase Finance use case and end-to-end journey from a business and product perspective, before covering the corresponding technical specifications and API flows. Network interactions in this guide reference the ONDC:FIS12 domain, version 2.2.1 (release-FIS12-2.2.1).
 
@@ -40,8 +44,8 @@ This guide explains the Purchase Finance use case and end-to-end journey from a 
 |-------------|-----------------|
 | Lender (Credit Seller) | An RBI-registered Regulated Entity - Scheduled Commercial Bank, NBFC, Primary (Urban) Co-operative Bank, or Regional Rural Bank - offering purchase finance credit on the network. |
 | Credit Buyer App | The application through which the borrower discovers and applies for the loan offer. Can be any application adhering to prevailing RBI guidelines. |
-| Retail Buyer App | The aggregator of buyers for the retail/commerce product itself, live on the ONDC network. Note: the Retail Buyer and Credit Buyer roles can be played by the same application. |
-| Retail Seller App | The aggregator of sellers of the retail/commerce product, live on the ONDC network. |
+| Retail Buyer App | The application or aggregator facilitating the purchase of the retail/commerce product itself, operating either on the ONDC network or off-network. In several scenarios (such as e-commerce marketplaces conducting commerce outside ONDC), the Retail Buyer App and the Credit Buyer App can be the same entity. |
+| Retail Seller App | The aggregator or platform representing sellers of the retail/commerce product, operating either on the ONDC network or off-network. |
 | Account Aggregator (AA) | RBI-licensed AAs let borrowers share bank statements electronically with lenders. Invocation is optional and left to the Credit Buyer App's discretion based on product type and price. |
 | KYC & Credit Bureau Providers | UIDAI and DigiLocker for eKYC, RBI-regulated Credit Information Companies for the borrower's credit history. |
 
