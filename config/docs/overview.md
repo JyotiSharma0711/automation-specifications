@@ -1,189 +1,183 @@
-# Purchase Finance
-
-
-- [Overview](#overview)
-- [Participants](#participants)
-- [The User Journey](#the-user-journey)
-  - [1. Loan Offer Discovery](#1-loan-offer-discovery)
-  - [2. Offer Selection, KYC & Seller Account Validation](#2-offer-selection-kyc--seller-account-validation)
-  - [3. Loan Agreement Signing & Disbursal Setup](#3-loan-agreement-signing--disbursal-setup)
-  - [4. Disbursal](#4-disbursal)
-- [Additional Scenarios](#additional-scenarios)
-  - [1. Cancellation Before Disbursal](#1-cancellation-before-disbursal)
-  - [2. Product Returns After Disbursal](#2-product-returns-after-disbursal)
-  - [3. Partial Cancellation in a Multi-Cart Order](#3-partial-cancellation-in-a-multi-cart-order)
-  - [4. Loan Pre-Payment and Late Payment](#4-loan-pre-payment-and-late-payment)
-- [Loan States](#loan-states)
-- [Issue and Grievance Management](#issue-and-grievance-management)
+# Solar Purchase Finance
 
 ## Overview
 
-Purchase Finance is ONDC's version of what the market already knows as checkout finance or Buy Now, Pay Later (BNPL) - the same mechanic behind buying an iPhone "on EMI" at a retailer or e-commerce checkout instead of paying the full price upfront. A customer discovers a loan offer within a buyer app, mostly at checkout (though some buyer apps surface it earlier, during product browsing), and converts a purchase into EMIs on the spot rather than applying for credit separately.
+Solar Purchase Finance is an asset-linked, secured variant of Purchase Finance on ONDC (referencing the `ONDC:FIS12` domain, version 2.3.0). Consumers purchasing rooftop solar systems often face high upfront equipment and installation costs (typically ₹1–3L post-subsidy). Without embedded, standardized point-of-sale financing, solar dealers and OEMs lose conversions at checkout. 
 
-One market-standard variant worth calling out by name: No-Cost EMI, where the brand or seller funds the interest cost as a discount, so the customer's total repayment equals the sticker price rather than sticker-price-plus-interest. This is exactly what the protocol calls seller subvention - the retail seller declaring how much of the interest it's willing to absorb, expressed as a percentage of the product's selling price. Whether an offer looks like a standard interest-bearing EMI or a No-Cost EMI to the customer depends entirely on how much subvention the seller is willing to fund, the underlying loan mechanics are identical either way.
+Today, solar financing is fragmented across bilateral lender–OEM partnerships. ONDC standardizes this by enabling an open, interoperable protocol where any buyer application (BAP) can discover, compare, and execute solar loan offers from any participating regulated lender (BPP) with zero bilateral integrations.
 
-Purchase Finance on ONDC supports two participation scenarios, differing in who shares the seller's bank account details for loan disbursal:
+### Key Constructs
 
-| # | Scenario Description | Seller's Bank A/C Details Shared By |
-|---|---------------------|-------------------------------------|
-| 1 | The Credit Buyer App and Retail Buyer App are the same entity | Retail Seller Application on the ONDC Network |
-| 2 | The Credit Buyer App and Retail Buyer App are different entities | Retail Seller Application on the ONDC Network, or a Payment Gateway with a valid PA-PG license |
-
-Each lender independently manages its own purchase finance products, underwriting, and servicing. ONDC enables these lenders and credit buyer apps to connect through a common, open protocol instead of building separate integrations with each other.
-
-This guide explains the Purchase Finance use case and end-to-end journey from a business and product perspective, before covering the corresponding technical specifications and API flows. Network interactions in this guide reference the ONDC:FIS12 domain, version 2.2.1 (release-FIS12-2.2.1).
+- **Asset-Linked Disbursal Gate**: Unlike unsecured purchase loans, loan disbursement for solar systems is strictly contingent upon installation completion. The lender pauses disbursement in a `PENDING_INSTALLATION` state until the buyer app verifies and attests to successful physical installation.
+- **Merchant Subvention as a Pricing Construct**: Solar merchants/OEMs can fund interest costs as subvention (No-Cost or Low-Cost EMI) by declaring a maximum subvention percentage in the catalog, which lenders apply directly to reduce customer interest rates in binding offers.
+- **Supported Solar Categories**: The protocol supports various rooftop solar configurations including **On-grid**, **Off-grid**, and **Hybrid** rooftop solar systems.
+- **Standardized Onboarding**: Standardizes merchant identity (PAN/GST), disbursal destination bank accounts, and product specifications so lenders can underwrite both the merchant and the asset seamlessly.
 
 ## Participants
 
-| Participant | What This Means |
-|-------------|-----------------|
-| Lender (Credit Seller) | An RBI-registered Regulated Entity - Scheduled Commercial Bank, NBFC, Primary (Urban) Co-operative Bank, or Regional Rural Bank - offering purchase finance credit on the network. |
-| Credit Buyer App | The application through which the borrower discovers and applies for the loan offer. Can be any application adhering to prevailing RBI guidelines. |
-| Retail Buyer App | The aggregator of buyers for the retail/commerce product itself, live on the ONDC network. Note: the Retail Buyer and Credit Buyer roles can be played by the same application. |
-| Retail Seller App | The aggregator of sellers of the retail/commerce product, live on the ONDC network. |
-| Account Aggregator (AA) | RBI-licensed AAs let borrowers share bank statements electronically with lenders. Invocation is optional and left to the Credit Buyer App's discretion based on product type and price. |
-| KYC & Credit Bureau Providers | UIDAI and DigiLocker for eKYC, RBI-regulated Credit Information Companies for the borrower's credit history. |
+| Participant | Role in Solar Purchase Finance |
+|-------------|--------------------------------|
+| **Borrower (Buyer)** | Consumer purchasing a residential or commercial rooftop solar system on credit. |
+| **Buyer App (BAP)** | Merchant-side, solar aggregator, or marketplace application surfacing loan offers at checkout and providing post-sanction installation attestation. |
+| **Lender (BPP / Credit Seller)** | RBI-registered Regulated Entity (Scheduled Commercial Bank or NBFC) providing the solar purchase finance credit product and managing underwriting. |
+| **Merchant / Solar Installer** | Solar OEM, authorized dealer, or EPC installer who receives the loan disbursal in their verified bank account upon installation completion. |
+| **Account Aggregator (AA)** | RBI-licensed AA enabling electronic sharing of borrower bank statements for income verification. |
+| **KYC & Verification Providers** | UIDAI / DigiLocker for Aadhaar eKYC, CKYC registries, and Credit Information Companies (CIEs) for credit assessment. |
 
 ## The User Journey
 
-The Purchase Finance journey enables a borrower to discover a loan offer at the point of buying a product, get approved, and have the lender disburse funds directly to the seller - rather than to the borrower. The journey consists of the following stages:
+The Solar Purchase Finance lifecycle is divided into five core stages:
 
-### 1. Loan Offer Discovery
+```
+[ Discovery ] ──> [ Offer Generation ] ──> [ Loan Processing ] ──> [ Confirmation & Installation ] ──> [ Disbursal & Servicing ]
+```
 
-The Retail Buyer App gauges the retail seller's intent to participate in purchase finance for a specific product (if the customer wants it), and whether the seller will fund interest as subvention - and if so, the maximum subvention as a percentage of the product's selling price. It shares product details, the seller's (or seller aggregator's) PAN, bank account number, and maximum seller subvention with the Credit Buyer App.
+---
 
-The Credit Buyer App then captures:
+### 1. Discovery
 
-- Product information - category, brand, SKU number, price net of discount
-- Borrower details - phone number, PAN number, address
-- Loan tenure preference (in multiples of 3 months) and the downpayment amount the borrower is willing to pay
-- Seller's subvention % - the lever behind a No-Cost EMI–style offer: the more interest the seller subsidizes here, the closer the customer's total repayment gets to the plain sticker price
+The Buyer App (BAP) declares the use case as `SOLAR_PURCHASE_FINANCE` and broadcasts product and merchant parameters to lenders on the network.
 
-...and broadcasts this as one packet to multiple lenders on the network. The Credit Buyer App also prompts the borrower for AA-based financial-data consent - this is optional, invoked at the Credit Buyer App's discretion depending on product type and price.
+#### Protocol Interaction
+- **`/search`**: BAP broadcasts search intent containing merchant identifiers, verified disbursal bank account, product attributes, and maximum seller subvention percentage.
+- **`/on_search`**: Lenders return their eligible solar purchase finance loan catalogs and underwriting criteria.
 
-Network interaction:
+#### Discovery Parameters
 
-| API | Description |
-|-----|-------------|
-| `/search` | The Credit Buyer App queries the network for available Purchase Loan services. |
-| `/on_search` | Each lender returns its static catalogue of loan types, including Purchase Loans. |
+| Group | Field | Type | Mandatory | Notes |
+|-------|-------|------|-----------|-------|
+| **Category** | Use-case code | Enum | Yes | `SOLAR_PURCHASE_FINANCE` |
+| **Merchant Details** | PAN | String | Yes | Merchant entity PAN |
+| | GST | String | Yes | GSTIN |
+| **Merchant Bank Account** | Account Number | String | Yes | Disbursal destination account |
+| | IFSC | String | Yes | Bank branch IFSC |
+| | Account Holder Name | String | Yes | Must match penny-drop verification at lender |
+| **Product Details** | Product Category | Enum | Yes | `On-grid`, `Off-grid`, or `Hybrid` rooftop system |
+| | Brand | String | Yes | Solar OEM / Brand name (e.g., TATA Solar) |
+| | Model | String | Yes | System model designation |
+| | SKU ID | String | Yes | Unique catalog SKU identifier |
+| | Price | Decimal (INR) | Yes | Total system cost to be financed (pre-downpayment) |
+| | Max Seller Subvention (%) | Decimal | No | Ceiling of interest subsidy funded by the merchant |
 
-This is followed by two further `/search`/`/on_search` rounds, each carrying a lender-supplied form submission:
+---
 
-- A merchant & product details form - seller/seller-aggregator PAN and GST, bank account holder name/number/IFSC, product brand/category/model/price/SKU/return period, and whether financing applies to this product.
-- A personal details form - the borrower's PAN, name, DOB, gender, employment type, income, contact and email, address, city, state, tenure, downpayment, end use, UDYAM number (where applicable), and bureau consent.
+### 2. Offer Generation & Selection
 
-Each lender processes this within a defined duration and returns an offer including: Maximum Loan Amount, Offer Type (an array of tenures and corresponding downpayment requirements), standard KFS terms, and any subvention discount. The Credit Buyer App displays all offers received, showing all key parameters per RBI's digital lending guidelines (per KFS) and any subvention discount.
+The borrower provides personal, professional, and loan configuration preferences (downpayment and tenure) alongside explicit bureau consent. Lenders evaluate creditworthiness and return personalized, binding loan offers.
 
-### 2. Offer Selection, KYC & Seller Account Validation
+#### Protocol Interaction
+- **`/select`**: BAP submits borrower details, selected downpayment, requested tenure, bureau consent, and optional property details via lender-provided forms.
+- **`/on_select`**: Lenders return binding Key Fact Statement (KFS) offers including sanctioned-in-principle loan amount, net interest rate (incorporating subvention), EMI schedule, processing fees, and offer TTL.
 
-Upon offer selection, the lender triggers one of two workflows: Straight-Through Processing (if the customer already has a relationship with the lender and KYC isn't required), or KYC Initiation (eKYC, video KYC, cKYC, etc., chosen by the lender depending on loan ticket size).
+#### Offer Configuration Fields
 
-The Credit Buyer App shares the seller's (or seller aggregator's) disbursal bank account with the lender, which validates it and confirms success before disbursal proceeds. Key parameters validated:
+| Group | Field | Type | Mandatory | Description / Notes |
+|-------|-------|------|-----------|---------------------|
+| **Personal** | Name | String | Yes | As per PAN; baseline for KYC matching |
+| | Personal Email | Email | Yes | Primary email contact |
+| | Official Email | Email | Conditional | Mandatory if Employment Type = `SALARIED` |
+| | Date of Birth | Date | Yes | Standard `YYYY-MM-DD` |
+| | Gender | Enum | Yes | `MALE`, `FEMALE`, `OTHER` |
+| | PAN | String | Yes | Borrower PAN number |
+| | Contact Number | String | Yes | 10-digit mobile number |
+| | Address (Pincode) | String | Yes | Installation / residential pincode |
+| **Employment** | Employment Type | Enum | Yes | `SALARIED` or `SELF_EMPLOYED` |
+| | Monthly Income | Decimal (INR) | Yes | Net monthly income |
+| | Employer Name | String | No | Company / Business name |
+| | Years of Experience | String | No | Professional vintage |
+| **Loan Structure** | Downpayment | Decimal (INR) | Yes | Initial payment borne by borrower |
+| | Tenure | Integer | Yes | Loan duration in months |
+| **Consent** | Bureau Consent | Boolean | Yes | Explicit checkbox consent for credit bureau pull |
 
-- Mandatory: Seller's/Seller Aggregator's Name, Account Number, and PAN/GST Number
-- Optional: the seller's fraud history (as maintained by the lender), and ONDC Rating & Badges (e.g., an authorized brand dealer)
+#### Optional Offer-Widening Parameters
+Alongside mandatory fields, the protocol allows optional parameters such as **Property Details** (Property Ownership Status, Property Type, Installation Site Address).
+- Skipping optional fields never blocks the journey; the borrower receives offers from all lenders whose mandatory criteria are satisfied.
+- When provided, lenders with specific asset/property underwriting requirements return offers in the same `/on_select` cycle without requiring a new search.
 
-Network interaction:
+---
 
-| API | Description |
-|-----|-------------|
-| `/select` | The Credit Buyer App notifies the lender of the offer chosen. |
-| `/on_select` | The lender responds, and - across further `/select`/`/on_select` rounds - may present a form to adjust the loan amount/tenure, and then the KYC form where required. |
+### 3. Loan Processing & Agreement Signing
 
-### 3. Loan Agreement Signing & Disbursal Setup
+Once an offer is selected, the lender guides the borrower through sequential fulfillment steps.
 
-Once KYC and seller account validation succeed, the lender sends a success acknowledgment. The borrower then sets up a repayment mandate on their repayment bank account, the lender shares the loan agreement for digital signature, and the Credit Buyer App prompts the borrower to pay the downpayment via the lender's payment gateway.
+#### Protocol Interaction
+- **`/init`**: BAP submits underwriting documents, completed KYC details, e-mandate setup, and repayment account details.
+- **`/on_init`**: Lender presents forms/redirection URLs for e-mandate registration, repayment bank account verification (penny drop), loan agreement eSign (LBA eSign), and downpayment collection.
 
-Network interaction:
+#### Sequential Fulfillment Steps
+1. **Document Verification**: Upload or reference of mandatory underwriting documents:
+   - **Electricity Bill Number (e-bill no.)**: Establishes installation site ownership/residency and historical consumption baseline.
+   - **Bank Statement / Financial Data**: Sourced via Account Aggregator (AA) or document upload for income verification.
+2. **KYC Verification**: Completed via Aadhaar OTP, Central KYC (CKYC), or Video KYC (VKYC) per lender policy.
+3. **eMandate Setup**: Borrower registers auto-debit repayment mandate (NACH / UPI Autopay).
+4. **Repayment Bank Account Verification**: Penny-drop / name-match confirmation of borrower's account.
+5. **Loan Agreement Execution (LBA eSign)**: Borrower digitally signs the loan agreement via Aadhaar eSign.
+6. **Downpayment Collection**: Downpayment is paid by the borrower via the lender's payment gateway (a hard gate before order confirmation).
 
-| API | Description |
-|-----|-------------|
-| `/init` | The Credit Buyer App submits the KYC form and, in a further round, the e-mandate/account-details form. |
-| `/on_init` | The lender provides the e-mandate form - the downpayment is collected as part of the same mandate redirection flow - and subsequently the e-sign form for the loan agreement. |
-| `/confirm` | The Credit Buyer App submits the signed agreement. |
-| `/on_confirm` | The lender confirms the Purchase Loan order. |
+---
 
-A confirmation of the downpayment being completed by the customer is necessarily required before disbursement can proceed - this is a hard gate, not a formality.
+### 4. Order Confirmation & Installation-Gated Disbursal
 
-### 4. Disbursal
+In Solar Purchase Finance, loan sanction is decoupled from loan disbursal to ensure funds are released only when the solar system is physically delivered and installed.
 
-The loan amount is disbursed to the seller's (or seller aggregator's) account only once all of the following are satisfied, as applicable:
+```
+INITIATED ──> SANCTIONED (LOAN_SANCTIONED)
+                 │
+                 ▼
+          PENDING_INSTALLATION
+                 │ (BAP Installation Attestation)
+                 ▼
+          INSTALLATION_CONFIRMED
+                 │
+                 ▼
+          DISBURSED (Funds sent to Merchant Account)
+```
 
-- Successful confirmation of product delivery by the retail seller (or logistics service provider)
-- Successful sharing of the Serial Number/IMEI with the lender (for electronics purchases)
-- Confirmation of the product return period having lapsed - where the Credit Buyer App has shared the product's return window with the lender
+#### Protocol Interaction
+- **`/confirm`**: BAP submits confirmation with downpayment receipt and executed loan agreement.
+- **`/on_confirm`**: Lender transitions order to `LOAN_SANCTIONED`, confirms loan ID, and places disbursal in `PENDING_INSTALLATION` state.
+- **`/update`**: Once physical solar installation is completed at the site, the BAP sends an update carrying the installation-confirmed fulfillment state (including timestamp and attestation reference).
+- **`/on_update` / `on_status`**: Lender acknowledges attestation, transitions state to `INSTALLATION_CONFIRMED`, triggers loan disbursal directly to the merchant's bank account, and emits unsolicited `on_status` with the disbursal UTR (Unique Transaction Reference).
 
-Network interaction:
+---
 
-| API | Description |
-|-----|-------------|
-| `/update` | The Credit Buyer App notifies the lender as each disbursal condition (delivery, serial/IMEI, return-window) is satisfied. |
-| `/on_update` | The lender updates the order's fulfillment state accordingly and, once disbursed, sends a further unsolicited `/on_update` sharing the UTR (Unique Transaction Reference) of the disbursal. The Credit Buyer App relays this UTR to the Retail Seller App. |
+### 5. Post-Disbursal Servicing
+
+Borrowers can manage active loans directly through the BAP using the standard FIS12 servicing capabilities:
+
+- **EMI Schedule & Payment Status**: Real-time retrieval of upcoming instalments and past payment history via `/status`.
+- **Pre-Part Payment & Foreclosure**: Borrower can request partial prepayment or full loan foreclosure via `/update`; lender returns exact payment links and charges in `/on_update`.
+- **Missed EMI Handling**: Automated penalty and overdue disclosures with direct payment links.
 
 ## Additional Scenarios
 
-### 1. Cancellation Before Disbursal
+### 1. Cancellation Before Installation & Disbursal
+If the order is cancelled prior to installation:
+- The BAP notifies the lender via `/update` (order cancellation).
+- The lender voids the sanctioned loan agreement and initiates a refund of the borrower's downpayment.
 
-If the customer cancels the commerce order before receiving the product: the Credit Buyer App receives a cancel order-status update from the Retail Buyer App, and passes this on to the lender.
+### 2. Product Returns or Installation Failures
+If installation cannot be completed due to structural or technical infeasibility:
+- The BAP notifies the lender before installation attestation is submitted.
+- The loan is voided without disbursing funds to the merchant, and any collected downpayment is refunded net of applicable inspection charges per policy.
 
-Network interaction:
-
-| API | Description |
-|-----|-------------|
-| `/update` | The Credit Buyer App notifies the lender of the commerce-side cancellation. |
-| `/on_update` | The lender voids the loan disbursal (the signed loan agreement is cancelled) and refunds the downpayment collected from the customer. |
-
-### 2. Product Returns After Disbursal
-
-Three sub-scenarios apply once the borrower has received the product:
-
-- Exact replacement - the Credit Buyer App and lender aren't involved at all.
-- Different replacement product - not a supported scenario for purchase-finance-enabled products, seller aggregators must convey this to retail buyer applications as part of their retail agreements.
-- Refund - handled differently depending on whether disbursal has already happened:
-  - Before the lender has disbursed the loan amount: the loan is voided by the lender, shared with the Credit Buyer App, and the downpayment is refunded by the buyer app/lender.
-  - After the lender has disbursed the loan amount:
-
-Network interaction:
-
-| API | Description |
-|-----|-------------|
-| `/cancel` - soft cancel | The Credit Buyer App requests cancellation. |
-| `/on_cancel` - SOFT_CANCEL | The lender acknowledges, sharing cancellation terms including any applicable cancellation/foreclosure fee. |
-| `/cancel` - confirm cancel | The Credit Buyer App confirms the cancellation. |
-| `/on_cancel` - CANCELLED | The lender confirms the loan is cancelled. |
-| `/on_update` (unsolicited) | The lender shares the updated payment status - the downpayment refund (net of any deducted charges) appears as its own payment entry. |
-
-Money movement for this scenario: Any foreclosure charges/penalties (per the loan agreement) are collected from the borrower either via a separate payment link or by deduction from the refunded downpayment. The lender separately collects back the disbursed loan amount from the seller aggregator/seller. Any interest/principal already paid is settled with the borrower per the lender's policy. The seller aggregator's collection of cancellation/refund charges from the buyer application (per their own retail agreement).
-
-### 3. Partial Cancellation in a Multi-Cart Order
-
-Purchase finance for a multi-cart scenario is supported only when the same seller sold every product in the purchase-financing cart. The lender receives a product-wise cancellation flag from the Credit Buyer App and can proceed with partial loan cancellation - voiding just that portion of the loan. Any downpayment collected for the cancelled product is refunded after deducting applicable foreclosure/cancellation charges.
-
-### 4. Loan Pre-Payment and Late Payment
-
-The Credit Buyer App lets borrowers view active and inactive loans and, for active loans, take three actions: late payment, part-prepayment, or full repayment (foreclosure).
-
-Network interaction:
-
-| API | Description |
-|-----|-------------|
-| `/update` | The Credit Buyer App notifies the lender of the selected action. |
-| `/on_update` | The lender generates a payment link and returns the amount, charges, and payment link - in absolute values, not percentages - for the borrower to review. The lender returns an error if the operation isn't supported or the request is invalid. |
-
-The Credit Buyer App displays the breakup to the borrower before redirecting them to the lender's payment gateway URL.
+### 3. Loan Pre-Payment & Late Payments
+- **Late Payments**: Lenders communicate overdue amounts and generate on-demand payment links.
+- **Pre-Payment / Foreclosure**: Lenders return absolute fee breakdowns (principal, accrued interest, foreclosure charges) before redirecting to the payment gateway.
 
 ## Loan States
 
 | # | Loan State | Description |
-|---|-----------|-------------|
-| 1 | Sanctioned | The loan amount requested has been sanctioned for the purchase. |
-| 2 | Sanctioned & Downpayment Collected | Sanctioned, and the downpayment has been successfully collected by the lender/buyer app. |
-| 3 | Disbursed to Seller | The full amount (product price net of seller discounts, if any) has been disbursed to the seller/seller aggregator. Can only be invoked after sanction. |
-| 4 | Void post Sanction | The sanctioned loan stands void. Can only be invoked before disbursal to the seller. |
-| 5 | Cancelled | The disbursed loan stands cancelled. Can only be invoked after disbursal to the seller. |
-| 6 | Pre-Paid | The disbursed loan has been prepaid before the defined tenure. Can only be invoked after disbursal to the seller. |
+|---|------------|-------------|
+| 1 | **Sanctioned** | Loan amount approved and sanctioned for the solar rooftop system. |
+| 2 | **Sanctioned & Downpayment Collected** | Sanctioned, and downpayment confirmed via payment gateway. |
+| 3 | **Pending Installation** | Disbursal held pending BAP site installation verification. |
+| 4 | **Installation Confirmed** | BAP installation attestation received and verified by lender. |
+| 5 | **Disbursed to Merchant** | Loan funds disbursed directly to the solar installer/merchant account. |
+| 6 | **Void post Sanction** | Sanctioned loan voided prior to installation/disbursal. |
+| 7 | **Cancelled** | Disbursed loan closed/cancelled following formal return/cancellation process. |
+| 8 | **Pre-Paid / Closed** | Loan fully repaid prior to tenure completion or closed upon maturity. |
 
 ## Issue and Grievance Management
 
-IGM handling is standardized across FIS12, so a Credit Buyer App or lender that has already implemented IGM for another FIS12 lending product should be able to reuse that implementation for Purchase Finance rather than building a separate grievance pipeline.
+IGM handling in Solar Purchase Finance follows standard FIS12 protocols, allowing buyer apps and lenders to utilize unified grievance mechanisms for transaction disputes, installation delays, and servicing requests.
