@@ -228,12 +228,12 @@ steps:
                               code: REWARDS
                               name: Rewards
                               short_desc: Reward points earned on spent
-                            value: "2 Points per â¹150 spent"
+                            value: "2 Points per ₹150 spent"
                           - descriptor:
                               code: TRAVEL_BENEFITS
                               name: Travel Benefits
                               short_desc: Travel Benefits
-                            value: "2 Points per â¹150 spent"
+                            value: "2 Points per ₹150 spent"
                           - descriptor:
                               code: LIFESTYLE_BENEFITS
                               name: Lifestyle Benefits
@@ -246,7 +246,7 @@ steps:
                               code: EVERYDAY_BENEFITS
                               name: Everyday Benefits
                               short_desc: 1% fuel surcharge waiver on transactions
-                            value: "Up to â¹250 per billing cycle"
+                            value: "Up to ₹250 per billing cycle"
                           - descriptor:
                               code: TNC_LINK
                               name: Terms & Conditions
@@ -316,12 +316,12 @@ steps:
                               code: REWARDS
                               name: Rewards
                               short_desc: Reward points earned on spent
-                            value: "2 Points per â¹150 spent"
+                            value: "2 Points per ₹150 spent"
                           - descriptor:
                               code: TRAVEL_BENEFITS
                               name: Travel Benefits
                               short_desc: Travel Benefits
-                            value: "2 Points per â¹150 spent"
+                            value: "2 Points per ₹150 spent"
                           - descriptor:
                               code: LIFESTYLE_BENEFITS
                               name: Lifestyle Benefits
@@ -334,7 +334,7 @@ steps:
                               code: EVERYDAY_BENEFITS
                               name: Everyday Benefits
                               short_desc: 1% fuel surcharge waiver on transactions
-                            value: "Up to â¹250 per billing cycle"
+                            value: "Up to ₹250 per billing cycle"
                           - descriptor:
                               code: TNC_LINK
                               name: Terms & Conditions
@@ -550,12 +550,12 @@ steps:
                                 code: REWARDS
                                 name: Rewards
                                 short_desc: Reward points earned on spent
-                              value: "2 Points per â¹150 spent"
+                              value: "2 Points per ₹150 spent"
                             - descriptor:
                                 code: TRAVEL_BENEFITS
                                 name: Travel Benefits
                                 short_desc: Travel Benefits
-                              value: "2 Points per â¹150 spent"
+                              value: "2 Points per ₹150 spent"
                             - descriptor:
                                 code: LIFESTYLE_BENEFITS
                                 name: Lifestyle Benefits
@@ -568,7 +568,7 @@ steps:
                                 code: EVERYDAY_BENEFITS
                                 name: Everyday Benefits
                                 short_desc: 1% fuel surcharge waiver on transactions
-                              value: "Up to â¹250 per billing cycle"
+                              value: "Up to ₹250 per billing cycle"
                             - descriptor:
                                 code: TNC_LINK
                                 name: Terms & Conditions
@@ -638,12 +638,12 @@ steps:
                                 code: REWARDS
                                 name: Rewards
                                 short_desc: Reward points earned on spent
-                              value: "2 Points per â¹150 spent"
+                              value: "2 Points per ₹150 spent"
                             - descriptor:
                                 code: TRAVEL_BENEFITS
                                 name: Travel Benefits
                                 short_desc: Travel Benefits
-                              value: "2 Points per â¹150 spent"
+                              value: "2 Points per ₹150 spent"
                             - descriptor:
                                 code: LIFESTYLE_BENEFITS
                                 name: Lifestyle Benefits
@@ -656,7 +656,7 @@ steps:
                                 code: EVERYDAY_BENEFITS
                                 name: Everyday Benefits
                                 short_desc: 1% fuel surcharge waiver on transactions
-                              value: "Up to â¹250 per billing cycle"
+                              value: "Up to ₹250 per billing cycle"
                             - descriptor:
                                 code: TNC_LINK
                                 name: Terms & Conditions
@@ -1124,12 +1124,12 @@ steps:
                             code: REWARDS
                             name: Rewards
                             short_desc: Reward points earned on spent
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: TRAVEL_BENEFITS
                             name: Travel Benefits
                             short_desc: Travel Benefits
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: LIFESTYLE_BENEFITS
                             name: Lifestyle Benefits
@@ -1142,7 +1142,7 @@ steps:
                             code: EVERYDAY_BENEFITS
                             name: Everyday Benefits
                             short_desc: 1% fuel surcharge waiver on transactions
-                          value: "Up to â¹250 per billing cycle"
+                          value: "Up to ₹250 per billing cycle"
                         - descriptor:
                             code: TNC_LINK
                             name: Terms & Conditions
@@ -1378,12 +1378,12 @@ steps:
                             code: REWARDS
                             name: Rewards
                             short_desc: Reward points earned on spent
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: TRAVEL_BENEFITS
                             name: Travel Benefits
                             short_desc: Travel Benefits
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: LIFESTYLE_BENEFITS
                             name: Lifestyle Benefits
@@ -1396,7 +1396,7 @@ steps:
                             code: EVERYDAY_BENEFITS
                             name: Everyday Benefits
                             short_desc: 1% fuel surcharge waiver on transactions
-                          value: "Up to â¹250 per billing cycle"
+                          value: "Up to ₹250 per billing cycle"
                         - descriptor:
                             code: TNC_LINK
                             name: Terms & Conditions
@@ -1663,12 +1663,12 @@ steps:
                             code: REWARDS
                             name: Rewards
                             short_desc: Reward points earned on spent
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: TRAVEL_BENEFITS
                             name: Travel Benefits
                             short_desc: Travel Benefits
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: LIFESTYLE_BENEFITS
                             name: Lifestyle Benefits
@@ -1681,7 +1681,7 @@ steps:
                             code: EVERYDAY_BENEFITS
                             name: Everyday Benefits
                             short_desc: 1% fuel surcharge waiver on transactions
-                          value: "Up to â¹250 per billing cycle"
+                          value: "Up to ₹250 per billing cycle"
                         - descriptor:
                             code: TNC_LINK
                             name: Terms & Conditions
@@ -1982,12 +1982,12 @@ steps:
                             code: REWARDS
                             name: Rewards
                             short_desc: Reward points earned on spent
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: TRAVEL_BENEFITS
                             name: Travel Benefits
                             short_desc: Travel Benefits
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: LIFESTYLE_BENEFITS
                             name: Lifestyle Benefits
@@ -2000,7 +2000,7 @@ steps:
                             code: EVERYDAY_BENEFITS
                             name: Everyday Benefits
                             short_desc: 1% fuel surcharge waiver on transactions
-                          value: "Up to â¹250 per billing cycle"
+                          value: "Up to ₹250 per billing cycle"
                         - descriptor:
                             code: TNC_LINK
                             name: Terms & Conditions
@@ -2288,12 +2288,12 @@ steps:
                             code: REWARDS
                             name: Rewards
                             short_desc: Reward points earned on spent
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: TRAVEL_BENEFITS
                             name: Travel Benefits
                             short_desc: Travel Benefits
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: LIFESTYLE_BENEFITS
                             name: Lifestyle Benefits
@@ -2306,7 +2306,7 @@ steps:
                             code: EVERYDAY_BENEFITS
                             name: Everyday Benefits
                             short_desc: 1% fuel surcharge waiver on transactions
-                          value: "Up to â¹250 per billing cycle"
+                          value: "Up to ₹250 per billing cycle"
                         - descriptor:
                             code: TNC_LINK
                             name: Terms & Conditions
@@ -2604,12 +2604,12 @@ steps:
                             code: REWARDS
                             name: Rewards
                             short_desc: Reward points earned on spent
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: TRAVEL_BENEFITS
                             name: Travel Benefits
                             short_desc: Travel Benefits
-                          value: "2 Points per â¹150 spent"
+                          value: "2 Points per ₹150 spent"
                         - descriptor:
                             code: LIFESTYLE_BENEFITS
                             name: Lifestyle Benefits
@@ -2622,7 +2622,7 @@ steps:
                             code: EVERYDAY_BENEFITS
                             name: Everyday Benefits
                             short_desc: 1% fuel surcharge waiver on transactions
-                          value: "Up to â¹250 per billing cycle"
+                          value: "Up to ₹250 per billing cycle"
                         - descriptor:
                             code: TNC_LINK
                             name: Terms & Conditions
