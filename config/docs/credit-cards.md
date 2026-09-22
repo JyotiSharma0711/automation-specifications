@@ -1,104 +1,169 @@
-# Credit Card
+# ONDC Credit Card Applications: Consumer Cards for Individuals
 
-- [Overview](#overview)
+- [Scope](#scope)
 - [Participants](#participants)
-- [The User Journey](#the-user-journey)
-  - [1. Product Discovery](#1-product-discovery)
-  - [2. Personal Information Application Form](#2-personal-information-application-form)
-  - [3. Card Selection and KYC Form](#3-card-selection-and-kyc-form)
-  - [4. KYC Verification and Status Polling](#4-kyc-verification-and-status-polling)
-  - [5. Application Initiation](#5-application-initiation)
-  - [6. Confirmation and Dispatch](#6-confirmation-and-dispatch)
-  - [7. Final Status Tracking](#7-final-status-tracking)
-- [Issue and Grievance Management](#issue-and-grievance-management)
+- [Requirements](#requirements)
+  - [1 – Registration and Onboarding](#1--registration-and-onboarding)
+  - [2 – Fetching Preliminary Information for Underwriting](#2--fetching-preliminary-information-for-underwriting)
+    - [2.1 – Preliminary Applicant Information for Card Underwriting](#21--preliminary-applicant-information-for-card-underwriting)
+    - [2.2 – Consent to Share Applicant's Information with Issuers](#22--consent-to-share-applicants-information-with-issuers)
+    - [2.3 – Broadcasting Applicant's Information to Issuers](#23--broadcasting-applicants-information-to-issuers)
+  - [3 – Consumer Card Underwriting and Making the Offer](#3--consumer-card-underwriting-and-making-the-offer)
+  - [4 – Selecting a Consumer Card](#4--selecting-a-consumer-card)
+    - [4.1 – Eligible and Satisfied with Card Offerings](#41--eligible-and-satisfied-with-card-offerings)
+    - [4.2 – Eligible but Not Satisfied with Card Offerings](#42--eligible-but-not-satisfied-with-card-offerings)
+    - [4.3 – Not Eligible for Any Card Offerings](#43--not-eligible-for-any-card-offerings)
+  - [5 – Card Application: KYC Verification](#5--card-application-kyc-verification)
+    - [5.1 – KYC Documentations](#51--kyc-documentations)
+    - [5.2 – Other KYC Steps](#52--other-kyc-steps)
+  - [6 – Card Application Completion](#6--card-application-completion)
+    - [6.1 – Consumer Card Agreement](#61--consumer-card-agreement)
+    - [6.2 – Consumer Card Fulfilment](#62--consumer-card-fulfilment)
+    - [6.3 – Consumer Card Management](#63--consumer-card-management)
 
 ---
 
-## Overview
+## Scope
 
-A Credit Card journey lets a borrower discover, apply for, and receive a credit card entirely through the ONDC network — from browsing a lender's card catalogue to tracking the physical card's dispatch. Unlike Gold Loan, there's no branch visit required: card selection, KYC verification, and confirmation all happen through hosted forms and network calls, with the lender only pushing offline-style status updates while the applicant's KYC is being verified.
+The scope of this document is to create API specifications for the ONDC Financial Services network, focusing on consumer credit products, specifically consumer card applications. This will provide applicants access to a pre-approved credit line and the convenience of making payments.
 
-Each lender independently manages its own credit card products, benefits, fees, and KYC/underwriting process. ONDC enables these lenders and lending apps to connect through a common, open protocol instead of building separate integrations with each other.
+The primary use cases are:
+
+1. Supporting the fetching of all documents required for a consumer card application and applying to issuers.
+2. Enabling issuers to offer attractive consumer cards for applicant acknowledgement and agreement.
 
 ---
 
 ## Participants
 
-| Participant | What This Means |
+| Participant | Description/Role |
 |---|---|
-| **Lender** | An RBI-regulated bank or NBFC that offers credit card products on the network (e.g. HDFC Bank in the reference catalogue). Responsible for the card catalogue, benefit terms, KYC verification, sanction, and physical card dispatch. |
-| **Lending App (BAP)** | A buyer application that offers credit card products to its users by connecting with participating lenders through the ONDC network. Handles applicant intake, hosts the application/KYC forms, and relays status updates to the borrower until the card is dispatched. |
-| **Borrower / Applicant** | An individual applying for a credit card. Completes two hosted forms during the journey — a personal-information application form and a KYC verification step — but never needs to visit a branch in person. |
+| **Issuers** | RBI-registered 'Regulated Entities', such as Scheduled Commercial Banks (SCBs), Non-Banking Financial Companies (NBFCs), Primary (Urban) Co-operative Banks (UCBs), and Regional Rural Banks (RRBs). |
+| **Buyer Apps** | Any application that adheres to prevailing guidelines issued by RBI. |
+| **Applicant** | Individuals looking to apply for a consumer credit card. |
+| **Third Party Data Providers** | Data providers who provide derived or direct data from sources such as MCA. |
+| **Account Aggregators (AA) or equivalent bank data providers** | Data providers who have secure means of collecting, analyzing and transmitting key banking indicators. Examples include Perfios and Corpository. |
+| **RBI regulated Credit Information Companies** | To provide applicant's credit history. An example is TransUnion CIBIL. |
 
 ---
 
-## The User Journey
+## Requirements
 
-The Credit Card journey enables a borrower to discover card offers, apply with personal and KYC details, and track the application through to card dispatch. The journey consists of the following stages:
+### 1 – Registration and Onboarding
 
-### 1. Product Discovery
+Primary users of the buyer application (referred to as "buyer app") are applicants seeking consumer cards. The applicant registers on the buyer app by entering the following details:
 
-The BAP searches the network for available credit card offerings.
+1. Email
+2. First and last name
+3. Mobile number, validated with an OTP, and on every new login
 
-**Network interaction:**
+The buyer app then presents the applicant with various financial services and products. For this use case, we focus on consumer card applications.
 
-- **`/search`**: The BAP sends a discovery request scoped to the `CREDIT_CARD` category, along with its `BAP_TERMS` tag (terms-of-engagement URL and an `OFFLINE_CONTRACT` flag).
-- **`/on_search`**: The lender returns its catalogue — provider details, categories (`CARD` → `CREDIT_CARD` → e.g. `PREMIUM_CARDS`/`TRAVEL_CARDS`/`REWARDS_CARDS`/`LIFESTYLE_CARDS`), and one or more card items. Each item carries a `GENERAL_INFO` tag list describing its welcome benefit, joining/annual fee, rewards rate, APR (where applicable), travel/lifestyle/everyday benefits, and terms-and-conditions link, plus the provider's own `CONTACT_INFO`/`LSP_INFO` tags (grievance officer, customer support, LSP details). Each item also carries an `xinput` block pointing the BAP at the personal-information application form it must collect next.
+When the applicant opts to explore consumer cards, the buyer app sends a search request to the ONDC Gateway to lookup the list of issuers offering consumer cards. The ONDC Gateway queries the relevant registry of card issuers and forwards the search request to each issuer. Each interested issuer then sends their static catalog to the buyer app endpoint.
 
-### 2. Personal Information Application Form
+### 2 – Fetching Preliminary Information for Underwriting
 
-The applicant fills out the hosted application form referenced by the selected item's `xinput.form.url` from `on_search`.
+The buyer app requests the applicant for:
 
-**Form fields:** Name as per PAN, personal/official email, date of birth, gender, PAN, contact number, employment type, income, company name, address (line 1/2, city, state, pin code), a derived-data file upload, and bureau consent.
+- Applicant's preliminary information required for basic card underwriting (see [2.1](#21--preliminary-applicant-information-for-card-underwriting))
+- Consent to retrieve the applicant's information from a third-party provider (see [2.2](#22--consent-to-share-applicants-information-with-issuers))
 
-### 3. Card Selection and KYC Form
+The information collected are as follows:
 
-The BAP submits the completed application form's submission ID against the chosen card, and the lender responds with the next form the applicant needs — this time for KYC.
+- Personal details: PAN, first name, last name, sex, date of birth
+- Contact information: mobile number, email, residential address
+- Employment details: employment status, gross annual income
+- Declarations: political exposed persons, conflicts of interest
+- Data pull consent: bureau consent
 
-**Network interaction:**
+#### 2.1 – Preliminary Applicant Information for Card Underwriting
 
-- **`/select`**: The BAP echoes the chosen provider and item, attaching the personal-information form's `xinput.form_response` (status + submission ID).
-- **`/on_select`**: The lender confirms the selected card and attaches a new `xinput` block — a "Know your Customer" navigation head plus a fresh form reference — pointing the BAP at the KYC verification step.
+This can be collected via:
 
-### 4. KYC Verification and Status Polling
+**a. Pre-filling standardized form via bureau pull**
 
-Because KYC verification can take time, the lender models progress the same way Gold Loan does its offline appraisal: the applicant completes the KYC step, and the lender pushes status updates until verification concludes.
+1. The applicant shares their PAN and mobile number on the buyer app.
+2. The buyer app obtains consent to retrieve the applicant's bureau data via a soft pull and subsequently share the information retrieved to issuers.
+3. The buyer app verifies the mobile number with an OTP and obtains data and credit history access authorization from the bureau (e.g. TransUnion CIBIL) through OTP verification on the number linked to the PAN.
+4. The buyer app retrieves information required via the soft pull and displays it to the applicant for confirmation.
+5. If retrieval from a third-party provider is not possible or there are gaps in the information, the applicant manually inputs the missing information into the form.
 
-**Network interaction:**
+**b. Manually filling up standardized form and obtaining bureau pull consent**
 
-- The applicant completes the KYC verification form.
-- **`/on_status`** (unsolicited): The lender pushes the item's `xinput.form_response.status` as `OFFLINE_PENDING` while KYC is still being verified.
-- **`/status`** → **`/on_status`**: The BAP can also poll directly; once verification concludes, the lender responds with `xinput.form_response.status` set to `COMPLETED`.
+Alternatively, the buyer app prompts the applicant to complete a standardized form that includes consent for a bureau pull. This consent is then forwarded to issuers to complete the consumer card underwriting process.
 
-### 5. Application Initiation
+#### 2.2 – Consent to Share Applicant's Information with Issuers
 
-Once KYC is confirmed complete, the BAP initiates the credit card request.
+Due to the importance of data security, the buyer app must obtain explicit consent from the applicant to collect and share their information with issuers to generate consumer card offers.
 
-**Network interaction:**
+#### 2.3 – Broadcasting Applicant's Information to Issuers
 
-- **`/init`**: The BAP submits the order carrying the completed KYC form's submission ID (`xinput.form_response.status: SUCCESS`) along with its `BAP_TERMS` tag.
-- **`/on_init`**: The lender accepts the request, echoing the card's benefit details and introducing fulfillment tracking — a customer contact record with an initial `INITIATED` state.
+The buyer app broadcasts the applicant's information to each issuer that responded to the initial search request, using the endpoints provided in their static catalog.
 
-### 6. Confirmation and Dispatch
+### 3 – Consumer Card Underwriting and Making the Offer
 
-The BAP confirms the application, and the lender finalizes the order and ships the physical card.
+Each issuer evaluates the applicant's profile using their business rules and returns a catalog of relevant consumer card offers to the buyer app. A maximum of two card offers may be produced by issuers in any single offer catalog. The buyer app then collates and displays all offers to the applicant.
 
-**Network interaction:**
+### 4 – Selecting a Consumer Card
 
-- **`/confirm`**: The BAP confirms the request, now carrying both `BAP_TERMS` and `BPP_TERMS` tags.
-- **`/on_confirm`**: The lender mints the order ID, sets order status to `ACTIVE`, and moves the fulfillment to `DISPATCHED`, attaching shipping details (AWB number, shipping partner, delivery address).
+#### 4.1 – Eligible and Satisfied with Card Offerings
 
-### 7. Final Status Tracking
+The applicant browses the list and reviews the card features and terms and conditions. Card highlights include joining and annual fee, rewards scheme and card benefits. They can click on each card for more details. The applicant then selects their desired consumer card and submits the applications request.
 
-The BAP can check the latest application/dispatch status at any point after confirmation.
+#### 4.2 – Eligible but Not Satisfied with Card Offerings
 
-**Network interaction:**
+If unsatisfied with the card offerings, the applicant may choose to regenerate offers by providing additional documentation to prove creditworthiness. (Refer to steps below for collecting bank statements.) After submitting the required documents, the applicant can click to regenerate offers. This repeats the process of sending their information to each interested issuer (see [2](#2--fetching-preliminary-information-for-underwriting)), consumer card underwriting and offer generation (see [3](#3--consumer-card-underwriting-and-making-the-offer)).
 
-- **`/status`**: The BAP requests the current state of the order, referencing the order ID.
-- **`/on_status`**: The lender responds with the full confirmed order — provider, item, fulfillment (including shipping details), and terms tags.
+**a. Obtain bank statements via account aggregators (AAs)**
 
----
+1. The buyer app requests the applicant to select their primary bank, enabling the selection of supported account aggregators (AAs) from a comprehensive list.
+2. The buyer app requests the applicant to create consent requests at the account aggregator, providing the AA identifier (AA ID) of the applicant in the format of `{mobile_number}@{aa_name}`.
+3. The applicant responds with consent handles, a unique ID identifying a particular consent at the AA.
+4. The buyer app redirects the applicant to the chosen AA, where they can review and either approve or decline the consent requests.
+5. Once the applicant approves the data pull consent, the AA notifies the issuer(s), who can then retrieve the applicant's bank account statements.
 
-## Issue and Grievance Management
+**b. Manual upload of required documents**
 
-IGM handling is standardized across FIS12, so a lending app or lender that has already implemented IGM for another FIS12 lending product should be able to reuse that implementation for Credit Card rather than building a separate grievance pipeline.
+The buyer app includes an option for applicants to securely upload their bank statements.
+
+#### 4.3 – Not Eligible for Any Card Offerings
+
+However, if the applicant is not eligible for any card variant, the buyer app can suggest and redirect them to collateral-based card applications.
+
+### 5 – Card Application: KYC Verification
+
+Upon receiving offer acceptance from the buyer app, the issuer initiates the KYC process if required. The buyer app presents available options to complete the KYC.
+
+#### 5.1 – KYC Documentations
+
+The buyer app must allow document uploads and provide options for applicants to retrieve their documents via third-party providers (e.g., AAs). KYC documents typically expected include:
+
+- Proof of identity: PAN card, Aadhaar card, or passport
+- Proof of address: Aadhar card, or recent utility bill
+- Proof of income: income tax return (ITR), or pay slip (if applicant is a salaried employee)
+
+#### 5.2 – Other KYC Steps
+
+The buyer app should facilitate the completion of digital KYC steps (e.g., video KYC) within its interface by integrating the issuer's KYC link to provide an in-app experience. This enables a seamless consumer card application process.
+
+Any non-digital KYC steps will be completed separately and out-of-band.
+
+### 6 – Card Application Completion
+
+#### 6.1 – Consumer Card Agreement
+
+The issuer shares the consumer card agreement with the applicant through the buyer app. The applicant signs it using either clickwrap OTP or Aadhar eSign. The consumer card application is then complete.
+
+#### 6.2 – Consumer Card Fulfilment
+
+The issuer is responsible for card fulfillment, including delivering the physical card or providing card information for digitization. During this process, the status of card fulfillment should be reflected on the buyer app, along with other details such as the expected delivery date.
+
+#### 6.3 – Consumer Card Management
+
+After the consumer card is delivered and activated, the buyer app displays relevant card information, including:
+
+- Available credit limit: available cash advance limit and overall credit limit
+- Payment details: outstanding balance, statement balance, statement date, minimum amount payable and payment due date
+- Card details: card name, card number and expiry date
+
+The buyer app also provides steps for applicants to repay their credit dues through a payment link.
