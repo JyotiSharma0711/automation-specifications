@@ -1,1 +1,1 @@
-https://www.figma.com/design/pF6i0CqlqkBheLtQTYNBW6/Untitled?node-id=0-1&p=f
+https://www.figma.com/board/TS8ghV1vPnZ9iod3ApVIKp/Credit?node-id=0-1&p=f
