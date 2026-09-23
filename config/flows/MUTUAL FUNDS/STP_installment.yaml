@@ -104,7 +104,9 @@ steps:
         bppId: $.context.bpp_id
         bppUri: $.context.bpp_uri
         city_code: $.context.location.city.code
-      inputs: {}
+      inputs:
+        id: fis14_mf_sip_select
+        jsonSchema: {}
     examples:
       - name: example for select
         payload:
