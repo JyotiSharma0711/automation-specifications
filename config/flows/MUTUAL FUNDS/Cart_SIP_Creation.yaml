@@ -2517,6 +2517,15 @@ steps:
             updated_at: 2023-05-25T05:23:03.443Z
       saveData:
         message_id: $.context.message_id
+        order_id: $.message.order.id
+        transactionId: $.context.transaction_id
+        latestMessage_id: $.context.message_id
+        latestTimestamp: $.context.timestamp
+        bapId: $.context.bap_id
+        bapUri: $.context.bap_uri
+        bppId: $.context.bpp_id
+        bppUri: $.context.bpp_uri
+        city_code: $.context.location.city.code
       inputs: {}
     examples:
       - name: example for on_update
