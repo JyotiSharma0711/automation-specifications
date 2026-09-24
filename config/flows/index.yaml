@@ -103,8 +103,6 @@ flows:
         - on_issue_status_processing_100
         - on_issue_resolved_100
         - issue_close_100
-        - status2_finance
-        - on_status2_finance
     usecase: GOLD LOAN
     tags:
       - WORKBENCH
@@ -139,8 +137,6 @@ flows:
         - on_update_foreclosure_pl
         - payment_url_form
         - on_update_foreclosure_unsolicitated
-        - status2_finance
-        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -173,8 +169,6 @@ flows:
         - on_update_missed_emi_pl
         - payment_url_form
         - on_update_missed_emi_unsolicitated
-        - status2_finance
-        - on_status2_finance
     usecase: PERSONAL LOAN
     tags:
       - WORKBENCH
@@ -209,8 +203,6 @@ flows:
         - on_update_pre_part_payment_pl
         - payment_url_form
         - on_update_unsolicitated
-        - status2_finance
-        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -248,8 +240,6 @@ flows:
         - on_issue_status_processing_100
         - on_issue_resolved_100
         - issue_close_100
-        - status2_finance
-        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -286,8 +276,6 @@ flows:
         - on_issue_status_processing_100
         - on_issue_resolved_100
         - issue_close_100
-        - status2_finance
-        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -322,8 +310,6 @@ flows:
         - on_update_foreclosure_pl
         - payment_url_form
         - on_update_foreclosure_unsolicitated
-        - status2_finance
-        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -358,8 +344,6 @@ flows:
         - on_update_missed_emi_pl
         - payment_url_form
         - on_update_missed_emi_unsolicitated
-        - status2_finance
-        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -394,8 +378,6 @@ flows:
         - on_update_pre_part_payment_pl
         - payment_url_form
         - on_update_unsolicitated
-        - status2_finance
-        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
