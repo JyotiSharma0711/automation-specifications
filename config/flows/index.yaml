@@ -46,6 +46,42 @@ flows:
     description: LAMF Credit Line with MFC With IGM 1.0.0
     config:
       $ref:  "./LAMF/lamf_credit_line_with_mfc_single_redirection._with_igm_1.0.0.yaml"    
+
+  - type: playground
+    id: lamf_credit_line_drawdown_with_mfc_single_redirection
+    meta:
+      order: 4
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "Drawdown - LAMF Credit Line with MFC"
+    config:
+      $ref:  "./LAMF/lamf_credit_line_drawdown_with_mfc_single_redirection.yaml"
+
+  - type: playground
+    id: lamf_credit_line_prepart_with_mfc_single_redirection
+    meta:
+      order: 5
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "Pre-Part Payment - LAMF Credit Line with MFC"
+    config:
+      $ref:  "./LAMF/lamf_credit_line_prepart_with_mfc_single_redirection.yaml"
+
+  - type: playground
+    id: lamf_credit_line_foreclosure_with_mfc_single_redirection
+    meta:
+      order: 6
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "Foreclosure - LAMF Credit Line with MFC"
+    config:
+      $ref:  "./LAMF/lamf_credit_line_foreclosure_with_mfc_single_redirection.yaml"
   # - type: playground
   #   id: lamf_credit_line_with_mfc
   #   meta:
