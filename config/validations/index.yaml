@@ -45,10 +45,12 @@ enums:
       - &SEMI_ONLINE SEMI_ONLINE
       - &BASE_ORDER BASE_ORDER
       - &DEDUPE DEDUPE
+      - &DRAWDOWN DRAWDOWN
     stopsCode: &stopsCode
       - PENDING
       - COMPLETED
       - IN_PROGRESS
+      - APPROVED
 
     state: &fulfillmentState
       - INITIATED
@@ -148,8 +150,12 @@ tags:
 
     breakupDetails: &breakupDetails
       - PRINCIPAL_AMOUNT
-      - INTEREST_AMOUNT  
+      - INTEREST_AMOUNT
       - FORECLOSURE_CHARGES
+      - PRE_PAYMENT_CHARGE
+      - PROCESSING_FEE
+      - INSURANCE_CHARGES
+      - OTHER_CHARGES
       - LATE_FEE_AMOUNT
 
   items:
@@ -1696,7 +1702,9 @@ _TESTS_:
           fulfillmentType: $.message.order.fulfillments[*].type
           dedupeFulfillmentType:
             - DEDUPE
-          _CONTINUE_: '(fulfillmentType any in dedupeFulfillmentType)'
+          # skip for drawdown child orders (ref_order_ids): provider carries no tags
+          usecaseRef: $.message.order.ref_order_ids[*]
+          _CONTINUE_: '(fulfillmentType any in dedupeFulfillmentType) || (usecaseRef are present)'
           _RETURN_: tagPath all in validTags
 
         - _NAME_: REQUIRED_CONTACT_INFO
@@ -2106,6 +2114,9 @@ _TESTS_:
           validTags: *paymentTagGroups
           tagPath: $.message.order.tags[*].descriptor.code
           # _CONTINUE_: '!(tagPath are present)'
+          # skip for drawdown on a base order (ref_order_ids): no order tags
+          usecaseRef: $.message.order.ref_order_ids[*]
+          _CONTINUE_: '(usecaseRef are present)'
           _RETURN_: tagPath all in validTags
 
         - &REQUIRED_BAP_TERMS
@@ -2383,6 +2394,9 @@ _TESTS_:
           validTags: *paymentTagGroups
           tagPath: $.message.order.tags[*].descriptor.code
           # _CONTINUE_: '!(tagPath are present)'
+          # skip for drawdown child orders (ref_order_ids): no order tags
+          usecaseRef: $.message.order.ref_order_ids[*]
+          _CONTINUE_: '(usecaseRef are present)'
           _RETURN_: tagPath all in validTags
 
         - &REQUIRED_BPP_TERMS
@@ -2604,7 +2618,12 @@ _TESTS_:
     - *ON_ACTION_FULFILLMENTS
     - *COMMON_QUOTE_ITEMS
 
-    - *ON_INIT_PAYMENTS
+    # base-order on_update after a drawdown carries no payments
+    - _NAME_: ON_UPDATE_PAYMENTS
+      updatePayments: $.message.order.payments[*].id
+      _CONTINUE_: '!(updatePayments are present)'
+      _RETURN_:
+        - *ON_INIT_PAYMENTS
     - *ON_INIT_PAYMENT_TAGS
     - *ON_INIT_CANCELLATION_TERMS
     - *BAP_BPP_TERMS

@@ -46,6 +46,90 @@ flows:
     description: LAMF Credit Line with MFC With IGM 1.0.0
     config:
       $ref:  "./LAMF/lamf_credit_line_with_mfc_single_redirection._with_igm_1.0.0.yaml"    
+
+  - type: playground
+    id: lamf_credit_line_drawdown_with_mfc_single_redirection
+    meta:
+      order: 4
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "Drawdown - LAMF Credit Line with MFC"
+    config:
+      $ref:  "./LAMF/lamf_credit_line_drawdown_with_mfc_single_redirection.yaml"
+
+  - type: playground
+    id: lamf_credit_line_prepart_with_mfc_single_redirection
+    meta:
+      order: 5
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "Pre-Part Payment - LAMF Credit Line with MFC"
+    config:
+      $ref:  "./LAMF/lamf_credit_line_prepart_with_mfc_single_redirection.yaml"
+
+  - type: playground
+    id: lamf_credit_line_foreclosure_with_mfc_single_redirection
+    meta:
+      order: 6
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "Foreclosure - LAMF Credit Line with MFC"
+    config:
+      $ref:  "./LAMF/lamf_credit_line_foreclosure_with_mfc_single_redirection.yaml"
+
+  - type: playground
+    id: lamf_term_loan_with_mfc_single_redirection
+    meta:
+      order: 7
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "LAMF Term Loan with MFC"
+    config:
+      $ref:  "./LAMF/lamf_term_loan_with_mfc_single_redirection.yaml"
+
+  - type: playground
+    id: lamf_term_loan_foreclosure_with_mfc_single_redirection
+    meta:
+      order: 8
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "Foreclosure - LAMF Term Loan with MFC"
+    config:
+      $ref:  "./LAMF/lamf_term_loan_foreclosure_with_mfc_single_redirection.yaml"
+
+  - type: playground
+    id: lamf_term_loan_prepart_with_mfc_single_redirection
+    meta:
+      order: 9
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "Pre-Part Payment - LAMF Term Loan with MFC"
+    config:
+      $ref:  "./LAMF/lamf_term_loan_prepart_with_mfc_single_redirection.yaml"
+
+  - type: playground
+    id: lamf_term_loan_missed_emi_with_mfc_single_redirection
+    meta:
+      order: 10
+    usecase: LOAN AGAINST MUTUAL FUNDS
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "Missed EMI - LAMF Term Loan with MFC"
+    config:
+      $ref:  "./LAMF/lamf_term_loan_missed_emi_with_mfc_single_redirection.yaml"
   # - type: playground
   #   id: lamf_credit_line_with_mfc
   #   meta:
