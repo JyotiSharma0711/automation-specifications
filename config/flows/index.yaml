@@ -2,7 +2,13 @@ flows:
   - type: playground
     id: Personal_Loan_Offline
     meta:
+      type: PRIMARY
       order: 1
+      secondary_flows:
+        - Personal_Loan_Foreclosure_Offline
+        - Personal_Loan_missed_emi_payment_Offline
+        - Personal_Loan_Pre_Part_Payment_Offline
+        - Personal_Loan_Offline_With_IGM(v-1.0.0)
     usecase: PERSONAL LOAN
     tags:
       - WORKBENCH
@@ -14,7 +20,13 @@ flows:
   - type: playground
     id: Personal_Loan_Single_Redirection
     meta:
+      type: PRIMARY
       order: 2
+      secondary_flows:
+        - Personal_Loan_Single_Redirection_With_IGM(v-1.0.0)
+        - Personal_Loan_Foreclosure_Single_Redirection
+        - Personal_Loan_Missed_EMI_Single_Redirection
+        - Personal_Loan_Pre_Part_Payment_Single_Redirection
     usecase: PERSONAL LOAN
     tags:
       - WORKBENCH
@@ -26,6 +38,7 @@ flows:
   - type: playground
     id: Personal_Loan_Dedupe_Check
     meta:
+      type: PRIMARY
       order: 3
     usecase: PERSONAL LOAN
     tags:
@@ -38,6 +51,9 @@ flows:
   - type: playground
     id: Gold_Loan_Offline
     meta:
+      type: PRIMARY
+      secondary_flows:
+        - Gold_Loan_Offline_with_igm_1.0.0
     usecase: GOLD LOAN
     tags:
       - WORKBENCH
@@ -46,67 +62,49 @@ flows:
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Offline.yaml
 
-  # _________IGM 1.0.0 for GOLD LOAN________  
+  - type: playground
+    id: Credit_Card
+    meta:
+      type: PRIMARY
+    usecase: CREDIT CARD
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: "A borrower discovers, applies for, and confirms a credit card  journey: searching the network for available cards, completing a personal-information application form, selecting a card, completing a KYC form, polling for KYC completion status, initiating and confirming the credit card request, and tracking the final application status."
+    config:
+      $ref: ./CREDIT CARD/Credit_Card.yaml
+
+  # _________IGM 1.0.0 for GOLD LOAN________
   - type: playground
     id: Gold_Loan_Offline_with_igm_1.0.0
     meta:
+      type: SECONDARY
       secondary_of: Gold_Loan_Offline
-      secondary_start:
+      hide_actions:
+        - search_gold_loan
+        - on_search_gold_loan_3
+        - gold_loan_information_form
+        - select_1
+        - on_select_1
+        - select_2
+        - on_select_2
+        - Ekyc_details_verification_status
+        - on_status_kyc_verification
+        - status_gold_loan_3
+        - on_status_gold_loan_3
+        - on_status_gold_loan_3_order_update
+        - confirm_gold_loan_3
+        - on_confirm_gold_loan_3
+        - on_status_installment_1
+      visible_actions:
         - issue_open_100
-  - type: playground
-    id: Personal_Loan_Offline
-    meta:
-      order: 1
-    usecase: PERSONAL LOAN
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A personal loan origination flow enabling borrowers to search, apply, and track their application while lenders perform offline verification and underwriting to deliver a lending decision.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Offline.yaml
-
-  - type: playground
-    id: Personal_Loan_Single_Redirection
-    meta:
-      order: 2
-    usecase: PERSONAL LOAN
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A borrower discovers and selects a personal loan offer within an ONDC marketplace, then completes the full loan origination process—including KYC verification, account validation, mandate setup, and documentation—through seamless single-platform redirection with continuous status updates throughout the application lifecycle.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Single_Redirection.yaml
-
-  - type: playground
-    id: Personal_Loan_Dedupe_Check
-    meta:
-      order: 3
-    usecase: PERSONAL LOAN
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A borrower searches for and selects a personal loan product while the system verifies against existing loan records to prevent duplicate submissions. This deduplication check ensures efficient loan origination by identifying and filtering redundant applications during the intake workflow.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Dedupe_Check.yaml
-
-  - type: playground
-    id: Gold_Loan_Offline
-    meta:
-    usecase: GOLD LOAN
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A gold loan application flow where customers digitally search for loan products, configure their terms, and submit applications online, while lenders conduct offline verification and underwriting with periodic status updates to borrowers until final approval or rejection.
-    config:
-      $ref: ./GOLD LOAN/Gold_Loan_Offline.yaml
-
-  # _________IGM 1.0.0 for GOLD LOAN________  
-  - type: playground
-    id: Gold_Loan_Offline_with_igm_1.0.0
-    meta:
-      secondary_of: Gold_Loan_Offline
-      secondary_start:
-        - issue_open_100
+        - on_issue_processing_100
+        - issue_status_processing_100
+        - on_issue_status_processing_100
+        - on_issue_resolved_100
+        - issue_close_100
+        - status2_finance
+        - on_status2_finance
     usecase: GOLD LOAN
     tags:
       - WORKBENCH
@@ -119,10 +117,30 @@ flows:
     id: Personal_Loan_Foreclosure_Offline
     usecase: PERSONAL LOAN
     meta:
+      type: SECONDARY
       order: 4
       secondary_of: Personal_Loan_Offline
-      secondary_start:
+      hide_actions:
+        - search_personal_loan_3
+        - on_search_personal_loan_3
+        - personal_loan_information_form
+        - select_3_personal_loan_3
+        - on_select_3_personal_loan_3
+        - on_status_kyc_verification
+        - on_status_personal_loan_2
+        - on_status_personal_loan_3_order_update
+        - Ekyc_details_verification_status
+        - status_personal_loan_3
+        - on_status_personal_loan_order_update
+        - confirm_personal_loan_3
+        - on_confirm_personal_loan_3
+      visible_actions:
         - update_personal_loan_3
+        - on_update_foreclosure_pl
+        - payment_url_form
+        - on_update_foreclosure_unsolicitated
+        - status2_finance
+        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -133,10 +151,30 @@ flows:
   - type: playground
     id: Personal_Loan_missed_emi_payment_Offline
     meta:
+      type: SECONDARY
       order: 6
       secondary_of: Personal_Loan_Offline
-      secondary_start:
+      hide_actions:
+        - search_personal_loan_3
+        - on_search_personal_loan_3
+        - personal_loan_information_form
+        - select_3_personal_loan_3
+        - on_select_3_personal_loan_3
+        - on_status_kyc_verification
+        - on_status_personal_loan_2
+        - on_status_personal_loan_3_order_update
+        - Ekyc_details_verification_status
+        - status_personal_loan_3
+        - on_status_personal_loan_order_update
+        - confirm_personal_loan_3
+        - on_confirm_personal_loan_3
+      visible_actions:
         - update_personal_loan_3
+        - on_update_missed_emi_pl
+        - payment_url_form
+        - on_update_missed_emi_unsolicitated
+        - status2_finance
+        - on_status2_finance
     usecase: PERSONAL LOAN
     tags:
       - WORKBENCH
@@ -149,10 +187,30 @@ flows:
     id: Personal_Loan_Pre_Part_Payment_Offline
     usecase: PERSONAL LOAN
     meta:
+      type: SECONDARY
       order: 5
       secondary_of: Personal_Loan_Offline
-      secondary_start:
+      hide_actions:
+        - search_personal_loan_3
+        - on_search_personal_loan_3
+        - personal_loan_information_form
+        - select_3_personal_loan_3
+        - on_select_3_personal_loan_3
+        - on_status_kyc_verification
+        - on_status_personal_loan_2
+        - on_status_personal_loan_3_order_update
+        - Ekyc_details_verification_status
+        - status_personal_loan_3
+        - on_status_personal_loan_order_update
+        - confirm_personal_loan_3
+        - on_confirm_personal_loan_3
+      visible_actions:
         - update_personal_loan_3
+        - on_update_pre_part_payment_pl
+        - payment_url_form
+        - on_update_unsolicitated
+        - status2_finance
+        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -166,10 +224,32 @@ flows:
     id: Personal_Loan_Offline_With_IGM(v-1.0.0)
     usecase: PERSONAL LOAN
     meta:
+      type: SECONDARY
       order: 7
       secondary_of: Personal_Loan_Offline
-      secondary_start:
+      hide_actions:
+        - search_personal_loan_3
+        - on_search_personal_loan_3
+        - personal_loan_information_form
+        - select_3_personal_loan_3
+        - on_select_3_personal_loan_3
+        - on_status_kyc_verification
+        - on_status_personal_loan_2
+        - on_status_personal_loan_3_order_update
+        - Ekyc_details_verification_status
+        - status_personal_loan_3
+        - on_status_personal_loan_order_update
+        - confirm_personal_loan_3
+        - on_confirm_personal_loan_3
+      visible_actions:
         - issue_open_100
+        - on_issue_processing_100
+        - issue_status_processing_100
+        - on_issue_status_processing_100
+        - on_issue_resolved_100
+        - issue_close_100
+        - status2_finance
+        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -181,10 +261,33 @@ flows:
     id: Personal_Loan_Single_Redirection_With_IGM(v-1.0.0)
     usecase: PERSONAL LOAN
     meta:
+      type: SECONDARY
       order: 8
       secondary_of: Personal_Loan_Single_Redirection
-      secondary_start:
+      hide_actions:
+        - search_personal_loan_3
+        - on_search_personal_loan_3
+        - personal_loan_information_form
+        - select_3_personal_loan_3
+        - on_select_3_personal_loan_3
+        - on_status_kyc_verification
+        - on_status_latest_order_status
+        - on_status_updated_checklists
+        - on_status_order_status_checklists
+        - Ekyc_details_verification_status
+        - status_personal_loan_3
+        - on_status_personal_loan_3
+        - confirm_personal_loan_3
+        - on_confirm_personal_loan_3
+      visible_actions:
         - issue_open_100
+        - on_issue_processing_100
+        - issue_status_processing_100
+        - on_issue_status_processing_100
+        - on_issue_resolved_100
+        - issue_close_100
+        - status2_finance
+        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -196,10 +299,31 @@ flows:
     id: Personal_Loan_Foreclosure_Single_Redirection
     usecase: PERSONAL LOAN
     meta:
+      type: SECONDARY
       order: 9
       secondary_of: Personal_Loan_Single_Redirection
-      secondary_start:
+      hide_actions:
+        - search_personal_loan_3
+        - on_search_personal_loan_3
+        - personal_loan_information_form
+        - select_3_personal_loan_3
+        - on_select_3_personal_loan_3
+        - on_status_kyc_verification
+        - on_status_latest_order_status
+        - on_status_updated_checklists
+        - on_status_order_status_checklists
+        - Ekyc_details_verification_status
+        - status_personal_loan_3
+        - on_status_personal_loan_3
+        - confirm_personal_loan_3
+        - on_confirm_personal_loan_3
+      visible_actions:
         - update_personal_loan_3
+        - on_update_foreclosure_pl
+        - payment_url_form
+        - on_update_foreclosure_unsolicitated
+        - status2_finance
+        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -211,10 +335,31 @@ flows:
     id: Personal_Loan_Missed_EMI_Single_Redirection
     usecase: PERSONAL LOAN
     meta:
+      type: SECONDARY
       order: 10
       secondary_of: Personal_Loan_Single_Redirection
-      secondary_start:
+      hide_actions:
+        - search_personal_loan_3
+        - on_search_personal_loan_3
+        - personal_loan_information_form
+        - select_3_personal_loan_3
+        - on_select_3_personal_loan_3
+        - on_status_kyc_verification
+        - on_status_latest_order_status
+        - on_status_updated_checklists
+        - on_status_order_status_checklists
+        - Ekyc_details_verification_status
+        - status_personal_loan_3
+        - on_status_personal_loan_3
+        - confirm_personal_loan_3
+        - on_confirm_personal_loan_3
+      visible_actions:
         - update_personal_loan_3
+        - on_update_missed_emi_pl
+        - payment_url_form
+        - on_update_missed_emi_unsolicitated
+        - status2_finance
+        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
@@ -226,157 +371,34 @@ flows:
     id: Personal_Loan_Pre_Part_Payment_Single_Redirection
     usecase: PERSONAL LOAN
     meta:
+      type: SECONDARY
       order: 11
       secondary_of: Personal_Loan_Single_Redirection
-      secondary_start:
+      hide_actions:
+        - search_personal_loan_3
+        - on_search_personal_loan_3
+        - personal_loan_information_form
+        - select_3_personal_loan_3
+        - on_select_3_personal_loan_3
+        - on_status_kyc_verification
+        - on_status_latest_order_status
+        - on_status_updated_checklists
+        - on_status_order_status_checklists
+        - Ekyc_details_verification_status
+        - status_personal_loan_3
+        - on_status_personal_loan_3
+        - confirm_personal_loan_3
+        - on_confirm_personal_loan_3
+      visible_actions:
         - update_personal_loan_3
+        - on_update_pre_part_payment_pl
+        - payment_url_form
+        - on_update_unsolicitated
+        - status2_finance
+        - on_status2_finance
     tags:
       - WORKBENCH
       - REPORTABLE
     description: A borrower initiates a partial prepayment of their personal loan principal outside the regular EMI schedule to reduce outstanding debt, with the lender validating the prepayment amount, recalculating revised repayment terms and associated charges, and updating the loan account status upon successful payment completion.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Pre_Part_Payment_Single_Redirection.yaml
-
-  - type: playground
-    id: Credit_Card
-    meta:
-    usecase: CREDIT CARD
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: "A borrower discovers, applies for, and confirms a credit card  journey: searching the network for available cards, completing a personal-information application form, selecting a card, completing a KYC form, polling for KYC completion status, initiating and confirming the credit card request, and tracking the final application status."
-    config:
-      $ref: ./CREDIT CARD/Credit_Card.yaml
-
-  - type: playground
-    id: Personal_Loan_Foreclosure_Offline
-    usecase: PERSONAL LOAN
-    meta:
-      order: 4
-      secondary_of: Personal_Loan_Offline
-      secondary_start:
-        - update_personal_loan_3
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: Enables borrowers to request and process early settlement of a personal loan through offline channels, incorporating lender verification and official account closure.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Foreclosure_Offline.yaml
-
-  - type: playground
-    id: Personal_Loan_missed_emi_payment_Offline
-    meta:
-      order: 6
-      secondary_of: Personal_Loan_Offline
-      secondary_start:
-        - update_personal_loan_3
-    usecase: PERSONAL LOAN
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A borrower settles a missed personal loan EMI payment offline, including applicable penalties, while the lender validates the settlement and updates the loan account status.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Missed_EMI_Offline.yaml
-
-  - type: playground
-    id: Personal_Loan_Pre_Part_Payment_Offline
-    usecase: PERSONAL LOAN
-    meta:
-      order: 5
-      secondary_of: Personal_Loan_Offline
-      secondary_start:
-        - update_personal_loan_3
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A borrower initiates a partial prepayment of their personal loan principal outside the regular EMI schedule to reduce outstanding debt, with the lender validating the prepayment amount, recalculating revised repayment terms and associated charges, and updating the loan account status upon successful payment completion.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Pre_Part_Payment_Offline.yaml
-
-  #  __________IGM_FLOW________
-
-  - type: playground
-    id: Personal_Loan_Offline_With_IGM(v-1.0.0)
-    usecase: PERSONAL LOAN
-    meta:
-      order: 7
-      secondary_of: Personal_Loan_Offline
-      secondary_start:
-        - issue_open_100
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A personal loan origination flow enabling borrowers to search, apply, and track their application while lenders perform offline verification and underwriting to deliver a lending decision.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Offline_With_IGM_v-1_0_0_.yaml
-
-  - type: playground
-    id: Personal_Loan_Single_Redirection_With_IGM(v-1.0.0)
-    usecase: PERSONAL LOAN
-    meta:
-      order: 8
-      secondary_of: Personal_Loan_Single_Redirection
-      secondary_start:
-        - issue_open_100
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A borrower discovers and selects a personal loan offer within an ONDC marketplace, then completes the full loan origination process—including KYC verification, account validation, mandate setup, and documentation—through seamless single-platform redirection with continuous status updates throughout the application lifecycle.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Single_Redirection_With_IGM_v-1_0_0_.yaml
-
-  - type: playground
-    id: Personal_Loan_Foreclosure_Single_Redirection
-    usecase: PERSONAL LOAN
-    meta:
-      order: 9
-      secondary_of: Personal_Loan_Single_Redirection
-      secondary_start:
-        - update_personal_loan_3
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: Enables borrowers to request and process early settlement of a personal loan through online channels, incorporating lender verification and official account closure.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Foreclosure_Single_Redirection.yaml
-
-  - type: playground
-    id: Personal_Loan_Missed_EMI_Single_Redirection
-    usecase: PERSONAL LOAN
-    meta:
-      order: 10
-      secondary_of: Personal_Loan_Single_Redirection
-      secondary_start:
-        - update_personal_loan_3
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A borrower settles a missed personal loan EMI payment online, including applicable penalties, while the lender validates the settlement and updates the loan account status.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Missed_EMI_Single_Redirection.yaml
-
-  - type: playground
-    id: Personal_Loan_Pre_Part_Payment_Single_Redirection
-    usecase: PERSONAL LOAN
-    meta:
-      order: 11
-      secondary_of: Personal_Loan_Single_Redirection
-      secondary_start:
-        - update_personal_loan_3
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: A borrower initiates a partial prepayment of their personal loan principal outside the regular EMI schedule to reduce outstanding debt, with the lender validating the prepayment amount, recalculating revised repayment terms and associated charges, and updating the loan account status upon successful payment completion.
-    config:
-      $ref: ./PERSONAL LOAN/Personal_Loan_Pre_Part_Payment_Single_Redirection.yaml
-
-  - type: playground
-    id: Credit_Card
-    meta:
-    usecase: CREDIT CARD
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: "A borrower discovers, applies for, and confirms a credit card  journey: searching the network for available cards, completing a personal-information application form, selecting a card, completing a KYC form, polling for KYC completion status, initiating and confirming the credit card request, and tracking the final application status."
-    config:
-      $ref: ./CREDIT CARD/Credit_Card.yaml
