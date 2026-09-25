@@ -533,15 +533,15 @@ steps:
                           - descriptor:
                               code: ISIN
                               name: ISIN
-                            value: IN123214324
+                            value: IN123233324
                           - descriptor:
                               code: RTA_IDENTIFIER
                               name: RTA Identifier
-                            value: 02BZ
+                            value: 01BZ
                           - descriptor:
                               code: AMFI_IDENTIFIER
                               name: AMFI Identifier
-                            value: "125487"
+                            value: "123487"
                       - descriptor:
                           code: PLAN_OPTIONS
                           name: Plan Options
