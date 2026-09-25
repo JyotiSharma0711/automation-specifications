@@ -8,7 +8,6 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-      - PREREQUISITE
     description: Master Search
     config:
       $ref: "./LAMF/master_search.yaml"
@@ -50,7 +49,6 @@ flows:
     meta:
       type: SECONDARY
       order: 3
-      secondary_of: lamf_credit_line_with_mfc_single_redirection
       hide_actions:
         - search_1
         - on_search_1
@@ -84,7 +82,6 @@ flows:
     meta:
       type: SECONDARY
       order: 4
-      secondary_of: lamf_credit_line_with_mfc_single_redirection
       hide_actions:
         - search_1
         - on_search_1
@@ -117,7 +114,6 @@ flows:
     meta:
       type: SECONDARY
       order: 5
-      secondary_of: lamf_credit_line_with_mfc_single_redirection
       hide_actions:
         - search_1
         - on_search_1
@@ -148,7 +144,6 @@ flows:
     meta:
       type: SECONDARY
       order: 6
-      secondary_of: lamf_credit_line_with_mfc_single_redirection
       hide_actions:
         - search_1
         - on_search_1
@@ -196,7 +191,6 @@ flows:
     meta:
       type: SECONDARY
       order: 8
-      secondary_of: lamf_term_loan_with_mfc_single_redirection
       hide_actions:
         - search_1
         - on_search_1
@@ -229,7 +223,6 @@ flows:
     meta:
       type: SECONDARY
       order: 9
-      secondary_of: lamf_term_loan_with_mfc_single_redirection
       hide_actions:
         - search_1
         - on_search_1
@@ -262,7 +255,6 @@ flows:
     meta:
       type: SECONDARY
       order: 10
-      secondary_of: lamf_term_loan_with_mfc_single_redirection
       hide_actions:
         - search_1
         - on_search_1
