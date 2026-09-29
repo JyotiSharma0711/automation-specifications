@@ -178,7 +178,7 @@ steps:
       bppId: $.context.bpp_id
       bppUri: $.context.bpp_uri
       city_code: $.context.location.city.code
-    generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogICAgY2FycnlGb3J3YXJkT3JkZXIoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkKICBpZiAoZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5wYXJlbnRfaXRlbV9pZCA9IHNlc3Npb25EYXRhLnBhcmVudF9pdGVtX2lkPy5bMF0gfHwgYHBhcmVudF8ke3V1aWR2NCgpfWAKICB9OwoKICAgIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnF1b3RlKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUuaWQgPSBzZXNzaW9uRGF0YS5xdW90ZV9pZD8uWzBdIHx8IHV1aWR2NCgpOwogICAgICAgIGNvbnN0IGFjdHVhbEl0ZW1JZCA9IGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zPy5bMF0/LmlkOwogICAgICAgIChleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5xdW90ZS5icmVha3VwIHx8IFtdKS5mb3JFYWNoKChiKSA9PiB7CiAgICAgICAgICAgIGlmIChiLml0ZW0gJiYgYWN0dWFsSXRlbUlkKSBiLml0ZW0uaWQgPSBhY3R1YWxJdGVtSWQ7CiAgICAgICAgfSk7CiAgICAgICAgc3luY0Z1bGZpbGxtZW50SWRzKGV4aXN0aW5nUGF5bG9hZCk7CiAgICB9CgogICAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZDsKfQo=
+    generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogICAgY2FycnlGb3J3YXJkT3JkZXIoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkKICBpZiAoZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5pdGVtc1swXS5wYXJlbnRfaXRlbV9pZCA9IHNlc3Npb25EYXRhLnBhcmVudF9pdGVtX2lkPy5bMF0gfHwgYHBhcmVudF8ke3V1aWR2NCgpfWAKICB9OwoKICAgIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnF1b3RlKSB7CiAgICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUuaWQgPSBzZXNzaW9uRGF0YS5xdW90ZV9pZD8uWzBdIHx8IHV1aWR2NCgpOwogICAgICAgIGNvbnN0IGFjdHVhbEl0ZW1JZCA9IGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zPy5bMF0/LmlkOwoKICAgICAgICBjb25zdCByZWRlbXB0aW9uQW1vdW50ID0gTnVtYmVyKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zPy5bMF0/LnF1YW50aXR5Py5zZWxlY3RlZD8ubWVhc3VyZT8udmFsdWUpOwogICAgICAgIGlmICghaXNOYU4ocmVkZW1wdGlvbkFtb3VudCkgJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUucHJpY2UpIHsKICAgICAgICAgICAgY29uc3Qgc3R0QW1vdW50ID0gLShyZWRlbXB0aW9uQW1vdW50ICogMC4wMDAyNSk7CiAgICAgICAgICAgIChleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5xdW90ZS5icmVha3VwIHx8IFtdKS5mb3JFYWNoKChiKSA9PiB7CiAgICAgICAgICAgICAgICBpZiAoYi50aXRsZSA9PT0gJ1JFREVNUFRJT04nICYmIGIucHJpY2UpIGIucHJpY2UudmFsdWUgPSByZWRlbXB0aW9uQW1vdW50LnRvRml4ZWQoMik7CiAgICAgICAgICAgICAgICBpZiAoYi50aXRsZSA9PT0gJ1NFQ1VSSVRJRVNfVFJBTlNBQ1RJT05fVEFYJyAmJiBiLnByaWNlKSBiLnByaWNlLnZhbHVlID0gc3R0QW1vdW50LnRvRml4ZWQoMik7CiAgICAgICAgICAgIH0pOwogICAgICAgICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5xdW90ZS5wcmljZS52YWx1ZSA9IChyZWRlbXB0aW9uQW1vdW50ICsgc3R0QW1vdW50KS50b0ZpeGVkKDIpOwogICAgICAgIH0KCiAgICAgICAgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnF1b3RlLmJyZWFrdXAgfHwgW10pLmZvckVhY2goKGIpID0+IHsKICAgICAgICAgICAgaWYgKGIuaXRlbSAmJiBhY3R1YWxJdGVtSWQpIGIuaXRlbS5pZCA9IGFjdHVhbEl0ZW1JZDsKICAgICAgICB9KTsKICAgICAgICBzeW5jRnVsZmlsbG1lbnRJZHMoZXhpc3RpbmdQYXlsb2FkKTsKICAgIH0KCiAgICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkOwp9Cg==
     validate: LyoqCiAqIFZhbGlkYXRlcyBwcm92aWRlci9pdGVtL2Z1bGZpbGxtZW50L3F1b3RlIElEcyBpbiBvdXRnb2luZyBvbl9zZWxlY3QgcGF5bG9hZCBhZ2FpbnN0IHNlc3Npb24gZGF0YS4KICoKICogQHBhcmFtIHtPYmplY3R9IHRhcmdldFBheWxvYWQgLSBPdXRnb2luZyBvbl9zZWxlY3QgcGF5bG9hZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3Qgb3JkZXIgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2Uub3JkZXI7CiAgY29uc3QgZXh0cmFjdElkID0gKHYpID0+ICh2ID09IG51bGwgPyB1bmRlZmluZWQgOiAodHlwZW9mIHYgPT09ICJzdHJpbmciID8gdiA6IHYuaWQpKTsKCgogIGNvbnN0IHNlc3Npb25Qcm92aWRlcklkID0gZXh0cmFjdElkKHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0pIHx8IHNlc3Npb25EYXRhLnByb3ZpZGVyX2lkPy5bMF07CiAgY29uc3QgcGF5bG9hZFByb3ZpZGVySWQgPSBvcmRlci5wcm92aWRlcj8uaWQ7CiAgaWYgKHNlc3Npb25Qcm92aWRlcklkKSB7CiAgICBpZiAocGF5bG9hZFByb3ZpZGVySWQgIT09IHNlc3Npb25Qcm92aWRlcklkKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogYHByb3ZpZGVyLmlkIG1pc21hdGNoOiBwYXlsb2FkIGhhcyAiJHtwYXlsb2FkUHJvdmlkZXJJZH0iLCBzZXNzaW9uIGhhcyAiJHtzZXNzaW9uUHJvdmlkZXJJZH0iYCB9OwogICAgfQogIH0KCiAgY29uc3Qgc2Vzc2lvbkZ1bGZpbGxtZW50SWQgPSBleHRyYWN0SWQoc2Vzc2lvbkRhdGEuc2lwX2Z1bGZpbGxtZW50Py5bMF0pIHx8IGV4dHJhY3RJZChzZXNzaW9uRGF0YS5yZWRlbXB0aW9uX2Z1bGZpbGxtZW50Py5bMF0pIHx8IGV4dHJhY3RJZChzZXNzaW9uRGF0YS5zZWxlY3RlZF9mdWxmaWxsbWVudHM/LlswXSkgfHwgZXh0cmFjdElkKHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50Py5bMF0pOwogIGlmIChzZXNzaW9uRnVsZmlsbG1lbnRJZCAmJiBvcmRlci5mdWxmaWxsbWVudHNbMF0uaWQgIT09IHNlc3Npb25GdWxmaWxsbWVudElkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246IGBmdWxmaWxsbWVudHNbMF0uaWQgbWlzbWF0Y2g6IHBheWxvYWQgaGFzICIke29yZGVyLmZ1bGZpbGxtZW50c1swXS5pZH0iLCBzZXNzaW9uIGhhcyAiJHtzZXNzaW9uRnVsZmlsbG1lbnRJZH0iYCB9OwogIH0KCiAgY29uc3Qgc2Vzc2lvblF1b3RlSWQgPSBzZXNzaW9uRGF0YS5xdW90ZV9pZD8uWzBdIHx8IGV4dHJhY3RJZChzZXNzaW9uRGF0YS5xdW90ZT8uWzBdKTsKICBpZiAoc2Vzc2lvblF1b3RlSWQgJiYgb3JkZXIucXVvdGUuaWQgIT09IHNlc3Npb25RdW90ZUlkKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246IGBxdW90ZS5pZCBtaXNtYXRjaDogcGF5bG9hZCBoYXMgIiR7b3JkZXIucXVvdGUuaWR9Iiwgc2Vzc2lvbiBoYXMgIiR7c2Vzc2lvblF1b3RlSWR9ImAgfTsKICB9CgogIGNvbnN0IHBheWxvYWRGdWxmaWxsbWVudElkID0gb3JkZXIuZnVsZmlsbG1lbnRzWzBdLmlkOwogIGlmIChvcmRlci5pdGVtc1swXS5mdWxmaWxsbWVudF9pZHMgJiYgIW9yZGVyLml0ZW1zWzBdLmZ1bGZpbGxtZW50X2lkcy5pbmNsdWRlcyhwYXlsb2FkRnVsZmlsbG1lbnRJZCkpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogYGl0ZW1zWzBdLmZ1bGZpbGxtZW50X2lkcyAke0pTT04uc3RyaW5naWZ5KG9yZGVyLml0ZW1zWzBdLmZ1bGZpbGxtZW50X2lkcyl9IGRvZXMgbm90IGluY2x1ZGUgZnVsZmlsbG1lbnRzWzBdLmlkICIke3BheWxvYWRGdWxmaWxsbWVudElkfSJgIH07CiAgfQogIGlmIChvcmRlci5xdW90ZS5icmVha3VwKSB7CiAgICBmb3IgKGNvbnN0IGIgb2Ygb3JkZXIucXVvdGUuYnJlYWt1cCkgewogICAgICBpZiAoYi5pdGVtPy5mdWxmaWxsbWVudF9pZHMgJiYgIWIuaXRlbS5mdWxmaWxsbWVudF9pZHMuaW5jbHVkZXMocGF5bG9hZEZ1bGZpbGxtZW50SWQpKSB7CiAgICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiBgcXVvdGUuYnJlYWt1cCBpdGVtLmZ1bGZpbGxtZW50X2lkcyAke0pTT04uc3RyaW5naWZ5KGIuaXRlbS5mdWxmaWxsbWVudF9pZHMpfSBkb2VzIG5vdCBpbmNsdWRlIGZ1bGZpbGxtZW50c1swXS5pZCAiJHtwYXlsb2FkRnVsZmlsbG1lbnRJZH0iYCB9OwogICAgICB9CiAgICB9CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
     requirements: LyoqCiAqIENoZWNrcyB0aGF0IHNlc3Npb24gZGF0YSByZXF1aXJlZCBmb3Igb25fc2VsZWN0IGlzIHByZXNlbnQgYmVmb3JlIHRoaXMgc3RlcCBydW5zLgogKgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyPy5sZW5ndGggJiYgIXNlc3Npb25EYXRhLnByb3ZpZGVyX2lkPy5sZW5ndGgpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcHJvdmlkZXJfaWQgaW4gc2Vzc2lvbiBkYXRhIiB9OwogIH0KICBpZiAoIXNlc3Npb25EYXRhLnNlbGVjdGVkX2l0ZW1faWQ/Lmxlbmd0aCAmJiAhc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXM/Lmxlbmd0aCAmJiAhc2Vzc2lvbkRhdGEuaXRlbT8ubGVuZ3RoKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX2l0ZW1faWQgaW4gc2Vzc2lvbiBkYXRhIiB9OwogIH0KICBpZiAoIXNlc3Npb25EYXRhLnJlZGVtcHRpb25fZnVsZmlsbG1lbnQ/Lmxlbmd0aCAmJiAhc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfZnVsZmlsbG1lbnRzPy5sZW5ndGggJiYgIXNlc3Npb25EYXRhLmZ1bGZpbGxtZW50Py5sZW5ndGgpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3NpbmcgcmVkZW1wdGlvbl9mdWxmaWxsbWVudCBpbiBzZXNzaW9uIGRhdGEiIH07CiAgfQogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIgfTsKfQ==
     defaultPayload:
@@ -884,7 +884,7 @@ steps:
                   value: '3000'
                   unit: INR
             fulfillment_ids:
-            - ff_123
+            - ff_789
             tags:
             - display: true
               descriptor:
@@ -947,12 +947,14 @@ steps:
                   code: ESIGN
                 value: 8745-1247-6587-8647
           fulfillments:
-          - id: ff_123
-            type: SIP
+          - id: ff_789
+            type: REDEMPTION
             customer:
               person:
                 id: pan:arrpp7771n
                 creds:
+                - id: 1562162434/45
+                  type: FOLIO
                 - id: 115.245.207.90
                   type: IP_ADDRESS
               contact:
@@ -966,48 +968,15 @@ steps:
                   type: ARN
                 - id: ARN-123456
                   type: SUB_BROKER_ARN
-            stops:
-            - time:
-                schedule:
-                  frequency: R6/2024-05-15/P1M
             tags:
-            - display: true
-              descriptor:
-                name: Thresholds
-                code: THRESHOLDS
+            - descriptor:
+                name: Payout Bank Account
+                code: PAYOUT_BANK_ACCOUNT
               list:
               - descriptor:
-                  name: Frequency
-                  code: FREQUENCY
-                value: P1M
-              - descriptor:
-                  name: Frequency Dates
-                  code: FREQUENCY_DATES
-                value: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
-              - descriptor:
-                  name: Amount Minimum
-                  code: AMOUNT_MIN
-                value: '5000'
-              - descriptor:
-                  name: Amount Maximum
-                  code: AMOUNT_MAX
-                value: '50000'
-              - descriptor:
-                  name: Amount Multiples
-                  code: AMOUNT_MULTIPLES
-                value: '1'
-              - descriptor:
-                  name: Installments Count Minimum
-                  code: INSTALMENTS_COUNT_MIN
-                value: '6'
-              - descriptor:
-                  name: Installments Count Maximum
-                  code: INSTALMENTS_COUNT_MAX
-                value: '12'
-              - descriptor:
-                  name: Cumulative Amount Minimum
-                  code: CUMULATIVE_AMOUNT_MIN
-                value: '30000'
+                  name: Identifier
+                  code: IDENTIFIER
+                value: ba_369823523564
           tags:
           - display: false
             descriptor:
@@ -1026,16 +995,24 @@ steps:
             id: q1
             price:
               currency: INR
-              value: '0'
+              value: '2999.25'
             breakup:
             - item:
                 id: '12391'
                 fulfillment_ids:
-                - ff_123
-              title: SIP
+                - ff_789
+              title: REDEMPTION
               price:
                 currency: INR
-                value: '0'
+                value: '3000'
+            - item:
+                id: '12391'
+                fulfillment_ids:
+                - ff_789
+              title: SECURITIES_TRANSACTION_TAX
+              price:
+                currency: INR
+                value: '-0.75'
           created_at: 2023-05-25 05:23:03.443000+00:00
           updated_at: 2023-05-25 05:23:03.443000+00:00
     inputs: {}
