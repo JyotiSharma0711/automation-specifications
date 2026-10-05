@@ -98,7 +98,8 @@ The borrower selects a loan offer through the LSP.
 - **`/select`**: The LSP sends the selected loan product.
 - **`/on_select`**: The lender responds with the applicable loan quote, including APR, processing fees, EMI details, and other applicable charges or terms and the link to continue the loan processing journey.
 
-### 4. Lender Onboarding and Verification
+### 4. Lender Onboarding and Verification**`/select`**: The LSP sends the selected loan product.
+- **`/on_select`**: The lender responds with the applicable loan quote, including APR, processing fees, EMI details, and other applicable charges or terms and the link to continue the loan processing journey.
 
 After the borrower selects an offer, the borrower proceeds to the lender's onboarding journey, which is rendered within the LSP experience (app-in-app experience).
 
