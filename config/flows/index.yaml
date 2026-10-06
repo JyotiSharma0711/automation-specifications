@@ -44,7 +44,7 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description:  
+    description: The Dedupe Check is used to verify whether a borrower already has an existing loan application with a lender.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Dedupe_Check.yaml
 
