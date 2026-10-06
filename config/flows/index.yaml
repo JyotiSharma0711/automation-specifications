@@ -44,7 +44,7 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description:
+    description:  
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Dedupe_Check.yaml
 
