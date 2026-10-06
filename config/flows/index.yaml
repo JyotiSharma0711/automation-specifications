@@ -23,10 +23,10 @@ flows:
       type: PRIMARY
       order: 2
       secondary_flows:
-        - Personal_Loan_Single_Redirection_With_IGM(v-1.0.0)
         - Personal_Loan_Foreclosure_Single_Redirection
         - Personal_Loan_Missed_EMI_Single_Redirection
         - Personal_Loan_Pre_Part_Payment_Single_Redirection
+        - Personal_Loan_Single_Redirection_With_IGM(v-1.0.0)
     usecase: Personal Loan
     tags:
       - WORKBENCH
