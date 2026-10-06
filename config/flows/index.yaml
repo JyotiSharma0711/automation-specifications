@@ -44,7 +44,7 @@ flows:
     tags:
       - WORKBENCH
       - REPORTABLE
-    description: A borrower searches for and selects a personal loan product while the system verifies against existing loan records to prevent duplicate submissions. This deduplication check ensures efficient loan origination by identifying and filtering redundant applications during the intake workflow.
+    description: The LSP selects the PRE_QUALIFIER item from a lender's /on_search catalogue and sends the borrower's basic details — PAN, date of birth, phone and email — in a fulfillment of type DEDUPE. The lender uses these to check whether an application for this borrower already exists with it, including one submitted through another LSP. The LSP sends this /select to each lender that listed a PRE_QUALIFIER item.
     config:
       $ref: ./PERSONAL LOAN/Personal_Loan_Dedupe_Check.yaml
 
