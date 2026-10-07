@@ -82,18 +82,6 @@ flows:
     meta:
       type: SECONDARY
       order: 4
-      hide_actions:
-        - search_1
-        - on_search_1
-        - select_1
-        - on_select_1
-        - on_status_1
-        - on_status_2
-        - on_status_3
-        - on_status_4
-        - single_redirection
-        - select_2
-        - on_select_2
       visible_actions:
         - init_1
         - on_init_1
