@@ -83,7 +83,6 @@ steps:
           - provider_id
           - ref_order_id
           - drawdown_amount
-          - currency
           additionalProperties: false
     examples:
     - name: example for init
