@@ -3733,10 +3733,10 @@ steps:
                     value: '1100000'
                   - descriptor:
                       code: UTILISED_AMOUNT
-                    value: '250000'
+                    value: '0'
                   - descriptor:
                       code: AVAILABLE_LIMIT
-                    value: '850000'
+                    value: '1100000'
                   - descriptor:
                       code: OVERDUE_AMOUNT
                     value: '0'
@@ -4179,10 +4179,10 @@ steps:
                       value: '1100000'
                     - descriptor:
                         code: UTILISED_AMOUNT
-                      value: '250000'
+                      value: '0'
                     - descriptor:
                         code: AVAILABLE_LIMIT
-                      value: '850000'
+                      value: '1100000'
                     - descriptor:
                         code: OVERDUE_AMOUNT
                       value: '0'
