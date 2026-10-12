@@ -1,20 +1,6 @@
 # Gold Loan 
 
 
-- [Overview](#overview)
-- [Participants](#participants)
-- [The User Journey](#the-user-journey)
-  - [1. Product Discovery](#1-product-discovery)
-  - [2. Application Form and Bureau Offer Selection](#2-application-form-and-bureau-offer-selection)
-  - [3. Branch Selection and Final Offer](#3-branch-selection-and-final-offer)
-  - [4. Offline Verification and Underwriting](#4-offline-verification-and-underwriting)
-  - [5. Loan Confirmation](#5-loan-confirmation)
-- [Additional Scenarios](#additional-scenarios)
-  - [1. Missed EMI Payment](#1-missed-emi-payment)
-  - [2. Part-Payment](#2-part-payment)
-  - [3. Foreclosure](#3-foreclosure)
-- [Issue and Grievance Management](#issue-and-grievance-management)
-
 ---
 
 ## Overview
