@@ -1,25 +1,5 @@
 # Business Loans 
 
-
-
-- [Overview](#overview)
-- [Participants](#participants)
-- [The User Journey](#the-user-journey)
-  - [1. Product Discovery](#1-product-discovery)
-  - [2. Data Collection & Consent](#2-data-collection--consent)
-  - [3. Application Broadcast & Underwriting](#3-application-broadcast--underwriting)
-  - [4. Offer Generation](#4-offer-generation)
-  - [5. Offer Selection, KYC & Verification](#5-offer-selection-kyc--verification)
-  - [6. Loan Finalisation & Disbursal Setup](#6-loan-finalisation--disbursal-setup)
-- [Additional Scenarios](#additional-scenarios)
-  - [1. Loan & Limit Visibility](#1-loan--limit-visibility)
-  - [2. Utilisation & Drawdown (Credit Lines)](#2-utilisation--drawdown-credit-lines)
-  - [3. Repayment, Prepayment & Missed-Payment Servicing](#3-repayment-prepayment--missed-payment-servicing)
-  - [4. Foreclosure](#4-foreclosure)
-  - [5. Credit Line Cancellation](#5-credit-line-cancellation)
-  - [6. Loan Closure & Lifecycle Events](#6-loan-closure--lifecycle-events)
-- [Issue and Grievance Management](#issue-and-grievance-management)
-
 ---
 
 ## Overview
