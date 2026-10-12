@@ -2,22 +2,6 @@
 
 
 
-- [Overview](#overview)
-  - [Supported Product Categories](#supported-product-categories)
-- [Participants](#participants)
-- [The User Journey](#the-user-journey)
-  - [1. Loan Offer Discovery](#1-loan-offer-discovery)
-  - [2. Offer Selection, KYC & Seller Account Validation](#2-offer-selection-kyc--seller-account-validation)
-  - [3. Loan Agreement Signing & Disbursal Setup](#3-loan-agreement-signing--disbursal-setup)
-  - [4. Disbursal](#4-disbursal)
-- [Additional Scenarios](#additional-scenarios)
-  - [1. Cancellation Before Disbursal](#1-cancellation-before-disbursal)
-  - [2. Product Returns After Disbursal](#2-product-returns-after-disbursal)
-  - [3. Partial Cancellation in a Multi-Cart Order](#3-partial-cancellation-in-a-multi-cart-order)
-  - [4. Loan Pre-Payment and Late Payment](#4-loan-pre-payment-and-late-payment)
-- [Loan States](#loan-states)
-- [Issue and Grievance Management](#issue-and-grievance-management)
-
 ## Overview
 
 Purchase Finance is an independent protocol that works for commerce occurring both on the ONDC network and off the network (such as external e-commerce platforms or physical retail checkouts). It is ONDC's version of what the market knows as checkout finance or Buy Now, Pay Later (BNPL) - the same mechanic behind buying an iPhone "on EMI" at a retailer or e-commerce checkout instead of paying the full price upfront. A customer discovers a loan offer within a buyer app, mostly at checkout (though some buyer apps surface it earlier, during product browsing), and converts a purchase into EMIs on the spot rather than applying for credit separately.
