@@ -1,32 +1,6 @@
 # Personal Loans 
 
 
-- [Overview](#overview)
-- [Participants](#participants)
-- [The User Journey](#the-user-journey)
-  - [1. Loan Application and Discovery](#1-loan-application-and-discovery)
-  - [2. Loan Offers](#2-loan-offers)
-  - [3. Offer Selection](#3-offer-selection)
-  - [4. Lender Onboarding and Verification](#4-lender-onboarding-and-verification)
-  - [5. Final Underwriting and Loan Offer](#5-final-underwriting-and-loan-offer)
-  - [6. Application Status and Processing](#6-application-status-and-processing)
-  - [7. Offline Processing](#7-offline-processing)
-  - [8. Loan Confirmation and Disbursement](#8-loan-confirmation-and-disbursement)
-- [Additional Scenarios](#additional-scenarios)
-  - [1. Loan Servicing and Repayment](#1-loan-servicing-and-repayment)
-  - [2. Missed EMI Payment](#2-missed-emi-payment)
-  - [3. Part-Prepayment](#3-part-prepayment)
-  - [4. Loan Foreclosure](#4-loan-foreclosure)
-  - [5. Loan Status After Repayment](#5-loan-status-after-repayment)
-- [Issue and Grievance Management](#issue-and-grievance-management)
-- [Detailed Protocol Flows](#detailed-protocol-flows)
-  - [Flow 1: Personal Loan – Single Redirection Journey](#flow-1-personal-loan--single-redirection-journey)
-  - [Flow 2: Personal Loan – Offline Journey](#flow-2-personal-loan--offline-journey)
-  - [Flow 3: Personal Loan – Dedupe Check](#flow-3-personal-loan--dedupe-check)
-  - [Flow 4: Personal Loan – Loan Foreclosure (Full Repayment)](#flow-4-personal-loan--loan-foreclosure-full-repayment)
-  - [Flow 5: Personal Loan – Pre-Part Payment](#flow-5-personal-loan--pre-part-payment)
-  - [Flow 6: Personal Loan – Missed EMI Payment (Late Payment)](#flow-6-personal-loan--missed-emi-payment-late-payment)
-
 ---
 
 ## Overview
