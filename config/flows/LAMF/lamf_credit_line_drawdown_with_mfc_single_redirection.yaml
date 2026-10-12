@@ -22,7 +22,7 @@ transaction_data:
 steps:
   - api: init
     action_id: init_1
-    owner: BAP
+    owner: LSP
     responseFor: null
     unsolicited: false
     description: The borrower initiates a drawdown request on the active LAMF credit line, referencing the base order id and the requested drawdown amount.
@@ -120,7 +120,7 @@ steps:
       description: The borrower initiates a drawdown request on the active LAMF credit line, referencing the base order id and the requested drawdown amount.
   - api: on_init
     action_id: on_init_1
-    owner: BPP
+    owner: Lender
     responseFor: init_1
     unsolicited: false
     description: The lender returns approved drawdown terms and requests borrower consent.
@@ -276,7 +276,7 @@ steps:
       description: The lender returns approved drawdown terms and requests borrower consent.
   - api: confirm
     action_id: confirm_1
-    owner: BAP
+    owner: LSP
     responseFor: null
     unsolicited: false
     description: The borrower provides consent for the drawdown.
@@ -357,7 +357,7 @@ steps:
       description: The borrower provides consent for the drawdown.
   - api: on_confirm
     action_id: on_confirm_1
-    owner: BPP
+    owner: Lender
     responseFor: confirm_1
     unsolicited: false
     description: The lender acknowledges the borrower's consent and creates the child drawdown order for disbursal.
@@ -519,7 +519,7 @@ steps:
       description: The lender acknowledges the borrower's consent and creates the child drawdown order for disbursal.
   - api: on_update
     action_id: on_update_1
-    owner: BPP
+    owner: Lender
     responseFor: null
     unsolicited: true
     description: The lender sends the completion of disbursal on the child drawdown order through an unsolicited on_update call.
@@ -680,7 +680,7 @@ steps:
       description: The lender sends the completion of disbursal on the child drawdown order through an unsolicited on_update call.
   - api: on_update
     action_id: on_update_2
-    owner: BPP
+    owner: Lender
     responseFor: null
     unsolicited: true
     description: The lender updates the base credit line order (current utilization) after a successful drawdown through an unsolicited on_update call.

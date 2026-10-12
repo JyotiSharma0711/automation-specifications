@@ -19,10 +19,10 @@ transaction_data:
 steps:
   - api: search
     action_id: search_1
-    owner: BAP
+    owner: LSP
     responseFor: null
     unsolicited: false
-    description: The BAP initiates a search for LAMF credit line offerings within a
+    description: The LSP initiates a search for LAMF credit line offerings within a
       specified geographic location and financial services domain, establishing
       the transaction identity and routing parameters for the credit discovery
       process.
@@ -265,16 +265,16 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
         type: request
-        description: The BAP initiates a search for LAMF credit line offerings within a
+        description: The LSP initiates a search for LAMF credit line offerings within a
           specified geographic location and financial services domain,
           establishing the transaction identity and routing parameters for the
           credit discovery process.
   - api: on_search
     action_id: on_search_1
-    owner: BPP
+    owner: Lender
     responseFor: search_1
     unsolicited: false
-    description: The BPP responds to the BAP's search inquiry with a catalog of
+    description: The Lender responds to the LSP's search inquiry with a catalog of
       available credit product offerings matched to the specified location and
       domain context.
     mock:
@@ -1026,15 +1026,15 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
         type: request
-        description: The BPP responds to the BAP's search inquiry with a catalog of
+        description: The Lender responds to the LSP's search inquiry with a catalog of
           available credit product offerings matched to the specified location
           and domain context.
   - api: select
     action_id: select_1
-    owner: BAP
+    owner: LSP
     responseFor: null
     unsolicited: false
-    description: BAP selects a credit product from the BPP's catalog, confirming the
+    description: LSP selects a credit product from the Lender's catalog, confirming the
       customer's chosen offering and establishing the transaction parameters
       including location context for the credit line origination journey.
     mock:
@@ -1156,15 +1156,15 @@ steps:
               fulfillments:
                 - id: F18
         type: request
-        description: BAP selects a credit product from the BPP's catalog, confirming the
+        description: LSP selects a credit product from the Lender's catalog, confirming the
           customer's chosen offering and establishing the transaction parameters
           including location context for the credit line origination journey.
   - api: on_select
     action_id: on_select_1
-    owner: BPP
+    owner: Lender
     responseFor: select_1
     unsolicited: false
-    description: BPP confirms the customer's selected credit product and furnishes
+    description: Lender confirms the customer's selected credit product and furnishes
       the order containing offer terms and application parameters for the
       customer to review and confirm.
     mock:
@@ -1550,15 +1550,15 @@ steps:
                       currency: INR
                 ttl: P15D
         type: request
-        description: BPP confirms the customer's selected credit product and furnishes
+        description: Lender confirms the customer's selected credit product and furnishes
           the order containing offer terms and application parameters for the
           customer to review and confirm.
   - api: on_status
     action_id: on_status_1
-    owner: BPP
+    owner: Lender
     responseFor: null
     unsolicited: true
-    description: The BPP proactively notifies the BAP with unsolicited status
+    description: The Lender proactively notifies the LSP with unsolicited status
       updates on the credit application's progress during the offline
       verification journey(KYC)
     mock:
@@ -1991,16 +1991,16 @@ steps:
                   cancellation_fee:
                     percentage: 5%
         type: request
-        description: The BPP proactively notifies the BAP with unsolicited status
+        description: The Lender proactively notifies the LSP with unsolicited status
           updates on the credit application's progress during the offline
           verification journey(KYC)
     manual: true
   - api: on_status
     action_id: on_status_2
-    owner: BPP
+    owner: Lender
     responseFor: null
     unsolicited: true
-    description: The BPP proactively notifies the BAP with unsolicited status
+    description: The Lender proactively notifies the LSP with unsolicited status
       updates on the credit application's progress during the offline
       verification journey(EMANDATE)
     mock:
@@ -2378,16 +2378,16 @@ steps:
                       currency: INR
                 ttl: P15D
         type: request
-        description: The BPP proactively notifies the BAP with unsolicited status
+        description: The Lender proactively notifies the LSP with unsolicited status
           updates on the credit application's progress during the offline
           verification journey(EMANDATE)
     manual: true
   - api: on_status
     action_id: on_status_3
-    owner: BPP
+    owner: Lender
     responseFor: null
     unsolicited: true
-    description: The BPP proactively notifies the BAP with unsolicited status
+    description: The Lender proactively notifies the LSP with unsolicited status
       updates on the credit application's progress during the offline
       verification journey(LIEN_MARKING)
     mock:
@@ -2765,16 +2765,16 @@ steps:
                       currency: INR
                 ttl: P15D
         type: request
-        description: The BPP proactively notifies the BAP with unsolicited status
+        description: The Lender proactively notifies the LSP with unsolicited status
           updates on the credit application's progress during the offline
           verification journey(LIEN_MARKING)
     manual: true
   - api: on_status
     action_id: on_status_4
-    owner: BPP
+    owner: Lender
     responseFor: null
     unsolicited: true
-    description: The BPP proactively notifies the BAP with unsolicited status
+    description: The Lender proactively notifies the LSP with unsolicited status
       updates on the credit application's progress during the offline
       verification journey(ESIGN)
     mock:
@@ -3154,13 +3154,13 @@ steps:
                       currency: INR
                 ttl: P15D
         type: request
-        description: The BPP proactively notifies the BAP with unsolicited status
+        description: The Lender proactively notifies the LSP with unsolicited status
           updates on the credit application's progress during the offline
           verification journey(ESIGN)
     manual: true
   - api: dynamic_form
     action_id: single_redirection
-    owner: BPP
+    owner: Lender
     responseFor: null
     unsolicited: false
     description: Multi-step verification wizard opened manually by the buyer (URL
@@ -3194,10 +3194,10 @@ steps:
           this step, and sends the completion callback to the subscriber.
   - api: select
     action_id: select_2
-    owner: BAP
+    owner: LSP
     responseFor: null
     unsolicited: false
-    description: The BAP acknowledges completion of the single-redirection journey
+    description: The LSP acknowledges completion of the single-redirection journey
       by re-selecting the item with form_response status SUCCESS and the
       submission_id captured from the final on_status (E-Sign).
     mock:
@@ -3273,15 +3273,15 @@ steps:
               fulfillments:
                 - id: F18
         type: request
-        description: The BAP acknowledges completion of the single-redirection journey
+        description: The LSP acknowledges completion of the single-redirection journey
           by re-selecting the item with form_response status SUCCESS and the
           submission_id captured from the final on_status (E-Sign).
   - api: on_select
     action_id: on_select_2
-    owner: BPP
+    owner: Lender
     responseFor: select_2
     unsolicited: false
-    description: The BPP returns the finalized order with all verification steps
+    description: The Lender returns the finalized order with all verification steps
       complete and the xinput removed, indicating no further forms are pending
       before confirmation.
     mock:
@@ -3653,16 +3653,16 @@ steps:
                       currency: INR
                 ttl: P15D
         type: request
-        description: The BPP returns the finalized order with all verification steps
+        description: The Lender returns the finalized order with all verification steps
           complete and the xinput removed, indicating no further forms are
           pending before confirmation.
   - api: on_confirm
     action_id: on_confirm_1
-    owner: BPP
+    owner: Lender
     responseFor: null
     unsolicited: true
-    description: The BPP confirms the customer's credit line application and returns
-      the finalized transaction details and confirmation status to the BAP.
+    description: The Lender confirms the customer's credit line application and returns
+      the finalized transaction details and confirmation status to the LSP.
     mock:
       generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgdHJ5IHsKICAgIGNvbnN0IG9yZGVyUGF5bG9hZCA9IHNlc3Npb25EYXRhPy5vcmRlcl9wYXlsb2FkPy5bMF07CiAgICBjb25zdCBvcmRlciA9IGRlZmF1bHRQYXlsb2FkPy5tZXNzYWdlPy5vcmRlcjsKICAgIGlmICghb3JkZXJQYXlsb2FkKSB7CiAgICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICAgIH0KCiAgICBjb25zdCBjbGVhbmVkT3JkZXIgPSBKU09OLnBhcnNlKEpTT04uc3RyaW5naWZ5KG9yZGVyUGF5bG9hZCkpOwoKICAgIC8vID09PT09PT09PT09PT09PT09PT09PT09PT0KICAgIC8vIFVwZGF0ZSBJdGVtcyAoeGlucHV0IG9ubHkpCiAgICAvLyA9PT09PT09PT09PT09PT09PT09PT09PT09CiAgICBpZiAoQXJyYXkuaXNBcnJheShjbGVhbmVkT3JkZXIuaXRlbXMpKSB7CiAgICAgIGNsZWFuZWRPcmRlci5pdGVtcyA9IGNsZWFuZWRPcmRlci5pdGVtcy5tYXAoKGl0ZW0pID0+IHsKICAgICAgICBjb25zdCBuZXdJdGVtID0geyAuLi5pdGVtIH07CgogICAgICAgIGRlbGV0ZSBuZXdJdGVtLnhpbnB1dDsKCiAgICAgICAgLy8gbmV3SXRlbS54aW5wdXQgPSB7CiAgICAgICAgLy8gICBmb3JtOiB7CiAgICAgICAgLy8gICAgIGlkOiBzZXNzaW9uRGF0YT8uam91cm5leV9vZmZsaW5lX2Zvcm1faWQ/LlswXSB8fCAiRjA1IgogICAgICAgIC8vICAgfSwKICAgICAgICAvLyAgIGZvcm1fcmVzcG9uc2U6IHsKICAgICAgICAvLyAgICAgc3RhdHVzOiAiU1VDQ0VTUyIsCiAgICAgICAgLy8gICAgIHN1Ym1pc3Npb25faWQ6IHV1aWR2NCgpCiAgICAgICAgLy8gICB9CiAgICAgICAgLy8gfTsKCiAgICAgICAgcmV0dXJuIG5ld0l0ZW07CiAgICAgIH0pOwogICAgfQoKICAgIC8vID09PT09PT09PT09PT09PT09PT09PT09PT0KICAgIC8vIEluamVjdCBQYXltZW50cwogICAgLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQogICAgaWYgKAogICAgICBBcnJheS5pc0FycmF5KHNlc3Npb25EYXRhPy5wYXltZW50cykgJiYKICAgICAgc2Vzc2lvbkRhdGEucGF5bWVudHMubGVuZ3RoCiAgICApIHsKICAgICAgY2xlYW5lZE9yZGVyLnBheW1lbnRzID0gc2Vzc2lvbkRhdGEucGF5bWVudHNbMF07CiAgICB9CgogICAgLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQogICAgLy8gQWRkIGNhbmNlbGxhdGlvbl90ZXJtcwogICAgLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQogICAgY29uc3QgZGVmYXVsdENhbmNlbGxhdGlvblRlcm1zID0KICAgICAgZGVmYXVsdFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyPy5jYW5jZWxsYXRpb25fdGVybXM7CgogICAgaWYgKEFycmF5LmlzQXJyYXkoZGVmYXVsdENhbmNlbGxhdGlvblRlcm1zKSkgewogICAgICBjbGVhbmVkT3JkZXIuY2FuY2VsbGF0aW9uX3Rlcm1zID0gZGVmYXVsdENhbmNlbGxhdGlvblRlcm1zOwogICAgfQoKICAgIGNvbnN0IGRlZmF1bHREb2N1bWVudHMgPQogICAgICBkZWZhdWx0UGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI/LmRvY3VtZW50czsKCiAgICBpZiAoQXJyYXkuaXNBcnJheShkZWZhdWx0RG9jdW1lbnRzKSkgewogICAgICBjbGVhbmVkT3JkZXIuZG9jdW1lbnRzID0KICAgICAgICBkZWZhdWx0RG9jdW1lbnRzOwogICAgfSAKCiAgICAvLyA9PT09PT09PT09PT09PT09PT09PT09PT09CiAgICAvLyBVcGRhdGUgRnVsZmlsbG1lbnRzICsgQ2hlY2tsaXN0CiAgICAvLyA9PT09PT09PT09PT09PT09PT09PT09PT09CiAgICBjb25zdCBkZWZhdWx0RnVsZmlsbG1lbnRzID0KICAgICAgZGVmYXVsdFBheWxvYWQ/Lm1lc3NhZ2U/Lm9yZGVyPy5mdWxmaWxsbWVudHMgfHwgW107CgogICAgaWYgKEFycmF5LmlzQXJyYXkoY2xlYW5lZE9yZGVyLmZ1bGZpbGxtZW50cykpIHsKICAgICAgY2xlYW5lZE9yZGVyLmZ1bGZpbGxtZW50cyA9IGNsZWFuZWRPcmRlci5mdWxmaWxsbWVudHMubWFwKAogICAgICAgIChmdWxmaWxsbWVudCwgaW5kZXgpID0+IHsKICAgICAgICAgIGNvbnN0IGJhc2UgPSBkZWZhdWx0RnVsZmlsbG1lbnRzW2luZGV4XSB8fCB7fTsKCiAgICAgICAgICBjb25zdCB1cGRhdGVkRnVsZmlsbG1lbnQgPSB7CiAgICAgICAgICAgIC4uLmJhc2UsCiAgICAgICAgICAgIC4uLmZ1bGZpbGxtZW50LAogICAgICAgICAgICBzdGF0ZTogewogICAgICAgICAgICAgIGRlc2NyaXB0b3I6IHsKICAgICAgICAgICAgICAgIGNvZGU6ICJTQU5DVElPTkVEIgogICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgfTsKCiAgICAgICAgICAvLyBDaGVja2xpc3QgdXBkYXRlCiAgICAgICAgICAvLyBpZiAoQXJyYXkuaXNBcnJheSh1cGRhdGVkRnVsZmlsbG1lbnQudGFncykpIHsKICAgICAgICAgIC8vICAgdXBkYXRlZEZ1bGZpbGxtZW50LnRhZ3MuZm9yRWFjaCgodGFnKSA9PiB7CiAgICAgICAgICAvLyAgICAgaWYgKHRhZy5kZXNjcmlwdG9yPy5jb2RlID09PSAiQ0hFQ0tMSVNUUyIpIHsKICAgICAgICAgIC8vICAgICAgIHRhZy5saXN0Py5mb3JFYWNoKChlbnRyeSkgPT4gewogICAgICAgICAgLy8gICAgICAgICBjb25zdCBjaGVja2xpc3RDb2RlID0KICAgICAgICAgIC8vICAgICAgICAgICBlbnRyeT8uZGVzY3JpcHRvcj8uY29kZTsKCiAgICAgICAgICAvLyAgICAgICAgIC8vID09PT09PT09PT09PT09PT09PT09PT09PT0KICAgICAgICAgIC8vICAgICAgICAgLy8gVXBkYXRlIGNoZWNrbGlzdCBzdGF0dXNlcwogICAgICAgICAgLy8gICAgICAgICAvLyA9PT09PT09PT09PT09PT09PT09PT09PT09CiAgICAgICAgICAvLyAgICAgICAgIGlmICgKICAgICAgICAgIC8vICAgICAgICAgICBjaGVja2xpc3RDb2RlID09PQogICAgICAgICAgLy8gICAgICAgICAgICJQRVJTT05BTF9JTkZPUk1BVElPTl9MQU1GIgogICAgICAgICAgLy8gICAgICAgICApIHsKICAgICAgICAgIC8vICAgICAgICAgICBlbnRyeS52YWx1ZSA9ICJDT01QTEVURUQiOwogICAgICAgICAgLy8gICAgICAgICB9IGVsc2UgaWYgKAogICAgICAgICAgLy8gICAgICAgICAgIGNoZWNrbGlzdENvZGUgPT09CiAgICAgICAgICAvLyAgICAgICAgICAgIlNJTkdMRV9SRURJUkVDVElPTiIKICAgICAgICAgIC8vICAgICAgICAgKSB7CiAgICAgICAgICAvLyAgICAgICAgICAgZW50cnkudmFsdWUgPSAiQ09NUExFVEVEIjsKICAgICAgICAgIC8vICAgICAgICAgfSBlbHNlIGlmICgKICAgICAgICAgIC8vICAgICAgICAgICBjaGVja2xpc3RDb2RlID09PQogICAgICAgICAgLy8gICAgICAgICAgICJLWUMiIHx8IGNoZWNrbGlzdENvZGUgPT09CiAgICAgICAgICAvLyAgICAgICAgICAgIkxJRU5fTUFSS0lORyIgfHwgY2hlY2tsaXN0Q29kZSA9PT0gIkVNQU5EQVRFIgogICAgICAgICAgLy8gICAgICAgICApIHsKICAgICAgICAgIC8vICAgICAgICAgICBlbnRyeS52YWx1ZSA9ICJDT01QTEVURUQiOwogICAgICAgICAgLy8gICAgICAgICB9IGVsc2UgewogICAgICAgICAgLy8gICAgICAgICAgIGVudHJ5LnZhbHVlID0gIlBFTkRJTkciOwogICAgICAgICAgLy8gICAgICAgICB9CiAgICAgICAgICAvLyAgICAgICB9KTsKICAgICAgICAgIC8vICAgICB9CiAgICAgICAgICAvLyAgIH0pOwogICAgICAgICAgLy8gfQogICAgICAgICAgaWYgKEFycmF5LmlzQXJyYXkodXBkYXRlZEZ1bGZpbGxtZW50LnN0b3BzKSkgewogICAgICAgICAgICB1cGRhdGVkRnVsZmlsbG1lbnQuc3RvcHMuZm9yRWFjaCgoc3RvcCkgPT4gewogICAgICAgICAgICAgIGlmIChzdG9wLnR5cGUgPT09ICJLWUMiIHx8IHN0b3AudHlwZSA9PT0gIkVNQU5EQVRFIiB8fAogICAgICAgICAgICAgICAgc3RvcC50eXBlID09PSAiTElFTl9NQVJLSU5HIiB8fCBzdG9wLnR5cGUgPT09ICJFU0lHTiIgfHwKICAgICAgICAgICAgICAgIHN0b3AudHlwZSA9PT0gIlNJTkdMRV9SRURJUkVDVElPTiIpIHsKICAgICAgICAgICAgICAgIHN0b3AuaW5zdHJ1Y3Rpb25zID0gewogICAgICAgICAgICAgICAgICAuLi5zdG9wLmluc3RydWN0aW9ucywKICAgICAgICAgICAgICAgICAgY29kZTogIkNPTVBMRVRFRCIKICAgICAgICAgICAgICAgIH07CiAgICAgICAgICAgICAgfQogICAgICAgICAgICB9KTsKICAgICAgICAgIH0KCiAgICAgICAgICByZXR1cm4gdXBkYXRlZEZ1bGZpbGxtZW50OwogICAgICAgIH0KICAgICAgKTsKICAgIH0KCiAgICAvLyA9PT09PT09PT09PT09PT09PT09PT09PT09CiAgICAvLyBPcmRlciBsZXZlbCB0YWdzCiAgICAvLyA9PT09PT09PT09PT09PT09PT09PT09PT09CiAgICBjb25zdCBjYXRhbG9nVGFncyA9IHNlc3Npb25EYXRhPy5jYXRhbG9nPy5bMF0/LnRhZ3M7CiAgICBpZiAoQXJyYXkuaXNBcnJheShjYXRhbG9nVGFncykpIHsKICAgICAgY2xlYW5lZE9yZGVyLnRhZ3MgPSBjYXRhbG9nVGFnczsKICAgIH0KCiAgICBjb25zdCBub3cgPSBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCk7CiAgICBjbGVhbmVkT3JkZXIuc3RhdHVzID0gb3JkZXIuc3RhdHVzCiAgICBjbGVhbmVkT3JkZXIuaWQgPSBvcmRlci5pZAogICAgY2xlYW5lZE9yZGVyLmNyZWF0ZWRfYXQgPSBub3cKICAgIGNsZWFuZWRPcmRlci51cGRhdGVkX2F0ID0gbm93CgogICAgLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQogICAgLy8gRmluYWwgYXNzaWdubWVudAogICAgLy8gPT09PT09PT09PT09PT09PT09PT09PT09PQogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZSA9IGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgfHwge307CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyID0gY2xlYW5lZE9yZGVyOwoKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKCiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIGNvbnNvbGUuZXJyb3IoIkVycm9yIGluIGdlbmVyYXRlKCk6IiwgZXJyb3IpOwogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0KfQ==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
@@ -4227,14 +4227,14 @@ steps:
               created_at: 2026-09-02T10:38:29.398Z
               updated_at: 2026-09-02T10:38:29.398Z
         type: request
-        description: The BPP confirms the customer's credit line application and returns
-          the finalized transaction details and confirmation status to the BAP.
+        description: The Lender confirms the customer's credit line application and returns
+          the finalized transaction details and confirmation status to the LSP.
   - api: issue
     action_id: issue_open_100
-    owner: BAP
+    owner: LSP
     responseFor: null
     unsolicited: false
-    description: The BAP submits an issue to the BPP to report a complaint or
+    description: The LSP submits an issue to the Lender to report a complaint or
       problem with the order, establishing the issue for tracking and
       resolution.
     mock:
@@ -4362,15 +4362,15 @@ steps:
               status: OPEN
               issue_type: ISSUE
         type: request
-        description: The BAP submits an issue to the BPP to report a complaint or
+        description: The LSP submits an issue to the Lender to report a complaint or
           problem with the order, establishing the issue for tracking and
           resolution.
   - api: on_issue
     action_id: on_issue_processing_100
-    owner: BPP
+    owner: Lender
     responseFor: issue_open_100
     unsolicited: false
-    description: The BPP responds to a grievance opened by the BAP with the issue
+    description: The Lender responds to a grievance opened by the LSP with the issue
       details, available actions, and resolution options.
     mock:
       generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gb25Jc3N1ZVN0YXR1c0dlbmVyYXRvcl8xMDAoCiAgICAgIGRlZmF1bHRQYXlsb2FkLAogICAgICB7CiAgICAgICAgLi4uc2Vzc2lvbkRhdGEsCiAgICAgICAgaWdtX2FjdGlvbjogIm9uX2lzc3VlX3Byb2Nlc3NpbmciLAogICAgICB9LAogICAgICBzZXNzaW9uRGF0YT8udXNlcl9pbnB1dHMKICAgICk7Cn0=
@@ -4453,14 +4453,14 @@ steps:
               created_at: 2026-08-27T12:12:48.910Z
               updated_at: 2026-08-27T12:12:48.942Z
         type: request
-        description: The BPP responds to a grievance opened by the BAP with the issue
+        description: The Lender responds to a grievance opened by the LSP with the issue
           details, available actions, and resolution options.
   - api: issue_status
     action_id: issue_status_processing_100
-    owner: BAP
+    owner: LSP
     responseFor: null
     unsolicited: false
-    description: The BAP submits an issue to the BPP to report a complaint or
+    description: The LSP submits an issue to the Lender to report a complaint or
       problem with the order, establishing the issue for tracking and
       resolution.
     mock:
@@ -4521,15 +4521,15 @@ steps:
           message:
             issue_id: 575a7b04-cc83-415f-9e77-fde01dd43c18
         type: request
-        description: The BAP submits an issue to the BPP to report a complaint or
+        description: The LSP submits an issue to the Lender to report a complaint or
           problem with the order, establishing the issue for tracking and
           resolution.
   - api: on_issue_status
     action_id: on_issue_status_processing_100
-    owner: BPP
+    owner: Lender
     responseFor: issue_status_processing_100
     unsolicited: false
-    description: The BPP responds to a grievance opened by the BAP with the issue
+    description: The Lender responds to a grievance opened by the LSP with the issue
       details, available actions, and resolution options.
     mock:
       generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gb25Jc3N1ZVN0YXR1c0dlbmVyYXRvcl8xMDAoCiAgICAgIGRlZmF1bHRQYXlsb2FkLAogICAgICB7CiAgICAgICAgLi4uc2Vzc2lvbkRhdGEsCiAgICAgICAgaWdtX2FjdGlvbjogIm9uX2lzc3VlX3N0YXR1c19wcm9jZXNzaW5nXzEwMCIsCiAgICAgIH0sCiAgICAgIHNlc3Npb25EYXRhPy51c2VyX2lucHV0cwogICAgKTsKfQ==
@@ -4606,14 +4606,14 @@ steps:
               created_at: 2026-08-27T12:12:48.910Z
               updated_at: 2026-08-27T12:12:49.027Z
         type: request
-        description: The BPP responds to a grievance opened by the BAP with the issue
+        description: The Lender responds to a grievance opened by the LSP with the issue
           details, available actions, and resolution options.
   - api: on_issue_status
     action_id: on_issue_resolved_100
-    owner: BPP
+    owner: Lender
     responseFor: null
     unsolicited: true
-    description: The BPP sends an unsolicited issue status callback to the BAP with
+    description: The Lender sends an unsolicited issue status callback to the LSP with
       grievance resolution actions and status updates for the ride transaction.
     mock:
       generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gb25Jc3N1ZVN0YXR1c0dlbmVyYXRvcl8xMDAoCiAgICAgIGRlZmF1bHRQYXlsb2FkLAogICAgICB7CiAgICAgICAgLi4uc2Vzc2lvbkRhdGEsCiAgICAgICAgaWdtX2FjdGlvbjogIm9uX2lzc3VlX3Jlc29sdmVkIiwKICAgICAgfSwKICAgICAgc2Vzc2lvbkRhdGE/LnVzZXJfaW5wdXRzCiAgICApOwp9
@@ -4735,15 +4735,15 @@ steps:
               created_at: 2026-08-27T12:12:48.910Z
               updated_at: 2026-08-27T12:12:49.064Z
         type: request
-        description: The BPP sends an unsolicited issue status callback to the BAP with
+        description: The Lender sends an unsolicited issue status callback to the LSP with
           grievance resolution actions and status updates for the ride
           transaction.
   - api: issue
     action_id: issue_close_100
-    owner: BAP
+    owner: LSP
     responseFor: null
     unsolicited: false
-    description: The BAP reports an issue to the BPP regarding the confirmed ride
+    description: The LSP reports an issue to the Lender regarding the confirmed ride
       order, creating a formal grievance record with problem details, expected
       response timelines, and resolution expectations.
     mock:
@@ -4865,7 +4865,7 @@ steps:
                       person:
                         name: John Doe
         type: request
-        description: The BAP reports an issue to the BPP regarding the confirmed ride
+        description: The LSP reports an issue to the Lender regarding the confirmed ride
           order, creating a formal grievance record with problem details,
           expected response timelines, and resolution expectations.
 transaction_history: []
