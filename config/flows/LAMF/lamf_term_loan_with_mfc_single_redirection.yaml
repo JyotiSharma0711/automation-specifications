@@ -15,7 +15,7 @@ transaction_data:
 steps:
 - api: search
   action_id: search_1
-  owner: LSP
+  owner: BAP
   responseFor: null
   unsolicited: false
   description: The LSP initiates a search for LAMF term loan offerings within a specified geographic location and financial services domain, establishing the transaction identity and routing parameters for the credit discovery process.
@@ -261,7 +261,7 @@ steps:
     description: The LSP initiates a search for LAMF term loan offerings within a specified geographic location and financial services domain, establishing the transaction identity and routing parameters for the credit discovery process.
 - api: on_search
   action_id: on_search_1
-  owner: Lender
+  owner: BPP
   responseFor: search_1
   unsolicited: false
   description: The Lender responds to the LSP's search inquiry with a catalog of available credit product offerings matched to the specified location and domain context.
@@ -1049,7 +1049,7 @@ steps:
     description: The Lender responds to the LSP's search inquiry with a catalog of available credit product offerings matched to the specified location and domain context.
 - api: select
   action_id: select_1
-  owner: LSP
+  owner: BAP
   responseFor: null
   unsolicited: false
   description: LSP selects a credit product from the Lender's catalog, confirming the customer's chosen offering and establishing the transaction parameters including location context for the term loan origination journey.
@@ -1175,7 +1175,7 @@ steps:
     description: LSP selects a credit product from the Lender's catalog, confirming the customer's chosen offering and establishing the transaction parameters including location context for the term loan origination journey.
 - api: on_select
   action_id: on_select_1
-  owner: Lender
+  owner: BPP
   responseFor: select_1
   unsolicited: false
   description: Lender confirms the customer's selected credit product and furnishes the order containing offer terms and application parameters for the customer to review and confirm.
@@ -1612,7 +1612,7 @@ steps:
     description: Lender confirms the customer's selected credit product and furnishes the order containing offer terms and application parameters for the customer to review and confirm.
 - api: on_status
   action_id: on_status_1
-  owner: Lender
+  owner: BPP
   responseFor: null
   unsolicited: true
   description: The Lender proactively notifies the LSP with unsolicited status updates on the credit application's progress during the offline verification journey(KYC)
@@ -2097,7 +2097,7 @@ steps:
   manual: true
 - api: on_status
   action_id: on_status_2
-  owner: Lender
+  owner: BPP
   responseFor: null
   unsolicited: true
   description: The Lender proactively notifies the LSP with unsolicited status updates on the credit application's progress during the offline verification journey(EMANDATE)
@@ -2541,7 +2541,7 @@ steps:
   manual: true
 - api: on_status
   action_id: on_status_3
-  owner: Lender
+  owner: BPP
   responseFor: null
   unsolicited: true
   description: The Lender proactively notifies the LSP with unsolicited status updates on the credit application's progress during the offline verification journey(LIEN_MARKING)
@@ -2985,7 +2985,7 @@ steps:
   manual: true
 - api: on_status
   action_id: on_status_4
-  owner: Lender
+  owner: BPP
   responseFor: null
   unsolicited: true
   description: The Lender proactively notifies the LSP with unsolicited status updates on the credit application's progress during the offline verification journey(ESIGN)
@@ -3431,7 +3431,7 @@ steps:
   manual: true
 - api: dynamic_form
   action_id: single_redirection
-  owner: Lender
+  owner: BPP
   responseFor: null
   unsolicited: false
   description: Multi-step verification wizard opened manually by the buyer (URL copied from on_select). Each of the first three steps (KYC, E-Mandate, Lien Marking) triggers an unsolicited on_status via flows/proceed; the final E-Sign step submits the form, which fires on_status_4, completes this step, and sends the completion callback to the subscriber.
@@ -3457,7 +3457,7 @@ steps:
     description: Multi-step verification wizard opened manually by the buyer (URL copied from on_select). Each of the first three steps (KYC, E-Mandate, Lien Marking) triggers an unsolicited on_status via flows/proceed; the final E-Sign step submits the form, which fires on_status_4, completes this step, and sends the completion callback to the subscriber.
 - api: select
   action_id: select_2
-  owner: LSP
+  owner: BAP
   responseFor: null
   unsolicited: false
   description: The LSP acknowledges completion of the single-redirection journey by re-selecting the item with form_response status SUCCESS and the submission_id captured from the final on_status (E-Sign).
@@ -3536,7 +3536,7 @@ steps:
     description: The LSP acknowledges completion of the single-redirection journey by re-selecting the item with form_response status SUCCESS and the submission_id captured from the final on_status (E-Sign).
 - api: on_select
   action_id: on_select_2
-  owner: Lender
+  owner: BPP
   responseFor: select_2
   unsolicited: false
   description: The Lender returns the finalized order with all verification steps complete and the xinput removed, indicating no further forms are pending before confirmation.
@@ -3956,7 +3956,7 @@ steps:
     description: The Lender returns the finalized order with all verification steps complete and the xinput removed, indicating no further forms are pending before confirmation.
 - api: on_confirm
   action_id: on_confirm_1
-  owner: Lender
+  owner: BPP
   responseFor: null
   unsolicited: true
   description: The Lender confirms the customer's term loan application and returns the finalized transaction details and confirmation status to the LSP.
@@ -4645,7 +4645,7 @@ steps:
     description: The Lender confirms the customer's term loan application and returns the finalized transaction details and confirmation status to the LSP.
 - api: on_update
   action_id: on_update_1
-  owner: Lender
+  owner: BPP
   responseFor: null
   unsolicited: true
   description: The lender disburses the term loan and updates the order once after disbursement.

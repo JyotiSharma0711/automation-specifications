@@ -19,7 +19,7 @@ transaction_data:
 steps:
   - api: search
     action_id: search_1
-    owner: LSP
+    owner: BAP
     responseFor: null
     unsolicited: false
     description: The LSP initiates a search for LAMF credit line offerings within a
@@ -271,7 +271,7 @@ steps:
           credit discovery process.
   - api: on_search
     action_id: on_search_1
-    owner: Lender
+    owner: BPP
     responseFor: search_1
     unsolicited: false
     description: The Lender responds to the LSP's search inquiry with a catalog of
@@ -1031,7 +1031,7 @@ steps:
           and domain context.
   - api: select
     action_id: select_1
-    owner: LSP
+    owner: BAP
     responseFor: null
     unsolicited: false
     description: LSP selects a credit product from the Lender's catalog, confirming the
@@ -1161,7 +1161,7 @@ steps:
           including location context for the credit line origination journey.
   - api: on_select
     action_id: on_select_1
-    owner: Lender
+    owner: BPP
     responseFor: select_1
     unsolicited: false
     description: Lender confirms the customer's selected credit product and furnishes
@@ -1555,7 +1555,7 @@ steps:
           customer to review and confirm.
   - api: on_status
     action_id: on_status_1
-    owner: Lender
+    owner: BPP
     responseFor: null
     unsolicited: true
     description: The Lender proactively notifies the LSP with unsolicited status
@@ -1997,7 +1997,7 @@ steps:
     manual: true
   - api: on_status
     action_id: on_status_2
-    owner: Lender
+    owner: BPP
     responseFor: null
     unsolicited: true
     description: The Lender proactively notifies the LSP with unsolicited status
@@ -2384,7 +2384,7 @@ steps:
     manual: true
   - api: on_status
     action_id: on_status_3
-    owner: Lender
+    owner: BPP
     responseFor: null
     unsolicited: true
     description: The Lender proactively notifies the LSP with unsolicited status
@@ -2771,7 +2771,7 @@ steps:
     manual: true
   - api: on_status
     action_id: on_status_4
-    owner: Lender
+    owner: BPP
     responseFor: null
     unsolicited: true
     description: The Lender proactively notifies the LSP with unsolicited status
@@ -3160,7 +3160,7 @@ steps:
     manual: true
   - api: dynamic_form
     action_id: single_redirection
-    owner: Lender
+    owner: BPP
     responseFor: null
     unsolicited: false
     description: Multi-step verification wizard opened manually by the buyer (URL
@@ -3194,7 +3194,7 @@ steps:
           this step, and sends the completion callback to the subscriber.
   - api: select
     action_id: select_2
-    owner: LSP
+    owner: BAP
     responseFor: null
     unsolicited: false
     description: The LSP acknowledges completion of the single-redirection journey
@@ -3278,7 +3278,7 @@ steps:
           submission_id captured from the final on_status (E-Sign).
   - api: on_select
     action_id: on_select_2
-    owner: Lender
+    owner: BPP
     responseFor: select_2
     unsolicited: false
     description: The Lender returns the finalized order with all verification steps
@@ -3658,7 +3658,7 @@ steps:
           pending before confirmation.
   - api: on_confirm
     action_id: on_confirm_1
-    owner: Lender
+    owner: BPP
     responseFor: null
     unsolicited: true
     description: The Lender confirms the customer's credit line application and returns
@@ -4231,7 +4231,7 @@ steps:
           the finalized transaction details and confirmation status to the LSP.
   - api: issue
     action_id: issue_open_100
-    owner: LSP
+    owner: BAP
     responseFor: null
     unsolicited: false
     description: The LSP submits an issue to the Lender to report a complaint or
@@ -4367,7 +4367,7 @@ steps:
           resolution.
   - api: on_issue
     action_id: on_issue_processing_100
-    owner: Lender
+    owner: BPP
     responseFor: issue_open_100
     unsolicited: false
     description: The Lender responds to a grievance opened by the LSP with the issue
@@ -4457,7 +4457,7 @@ steps:
           details, available actions, and resolution options.
   - api: issue_status
     action_id: issue_status_processing_100
-    owner: LSP
+    owner: BAP
     responseFor: null
     unsolicited: false
     description: The LSP submits an issue to the Lender to report a complaint or
@@ -4526,7 +4526,7 @@ steps:
           resolution.
   - api: on_issue_status
     action_id: on_issue_status_processing_100
-    owner: Lender
+    owner: BPP
     responseFor: issue_status_processing_100
     unsolicited: false
     description: The Lender responds to a grievance opened by the LSP with the issue
@@ -4610,7 +4610,7 @@ steps:
           details, available actions, and resolution options.
   - api: on_issue_status
     action_id: on_issue_resolved_100
-    owner: Lender
+    owner: BPP
     responseFor: null
     unsolicited: true
     description: The Lender sends an unsolicited issue status callback to the LSP with
@@ -4740,7 +4740,7 @@ steps:
           transaction.
   - api: issue
     action_id: issue_close_100
-    owner: LSP
+    owner: BAP
     responseFor: null
     unsolicited: false
     description: The LSP reports an issue to the Lender regarding the confirmed ride

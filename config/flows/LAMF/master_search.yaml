@@ -15,7 +15,7 @@ transaction_data:
 steps:
   - api: search
     action_id: search_1
-    owner: LSP
+    owner: BAP
     responseFor: null
     unsolicited: false
     description: please add relevant description
@@ -91,7 +91,7 @@ steps:
         description: please add relevant description
   - api: on_search
     action_id: on_Search_1
-    owner: Lender
+    owner: BPP
     responseFor: search_1
     unsolicited: false
     description: please add relevant description
