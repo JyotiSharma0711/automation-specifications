@@ -15579,7 +15579,7 @@ extra_steps:
       owner: BAP
       responseFor: null
       unsolicited: false
-      description: The borrower request for order status
+      description: "The borrower request for order status. Loan state here follows a fixed lifecycle -- sanctioned, downpayment collected, disbursed, void, cancelled, or pre-paid -- and several of these states can only be reached from specific prior states (e.g. cancellation is only valid post-disbursal), so the LSP should not treat them as freely interchangeable."
       mock:
         generate: >-
           LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UucmVmX2lkID0gc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZFswXQogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
@@ -15639,13 +15639,13 @@ extra_steps:
             message:
               ref_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
           type: request
-          description: The borrower request for order status
+          description: "The borrower request for order status. Loan state here follows a fixed lifecycle -- sanctioned, downpayment collected, disbursed, void, cancelled, or pre-paid -- and several of these states can only be reached from specific prior states (e.g. cancellation is only valid post-disbursal), so the LSP should not treat them as freely interchangeable."
     - api: on_status
       action_id: on_status2_finance
       owner: BPP
       responseFor: status2_finance
       unsolicited: false
-      description: "The Lender responds to the LSP's status request with the Purchase Loan order's current state (e.g. sanctioned, downpayment collected, disbursed, pre-paid, or void) and any associated charges, so the LSP can keep the borrower's loan dashboard current without polling for every change."
+      description: "The Lender responds to the LSP's status request with the Purchase Loan order's current state (e.g. sanctioned, downpayment collected, disbursed, pre-paid, or void) and any associated charges, so the LSP can keep the borrower's loan dashboard current without polling for every change. Downpayment collection is a hard gate -- disbursal to the seller must not proceed until the Credit Buyer App confirms the downpayment has actually been paid via the Lender's payment gateway, not merely initiated."
       mock:
         generate: >-
           ZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgbGF0ZXN0T3JkZXIgPSBzZXNzaW9uRGF0YS5vcmRlclswXTsKCiAgaWYgKCFsYXRlc3RPcmRlcikgewogICAgdGhyb3cgbmV3IEVycm9yKCJObyBsYXRlc3Qgb3JkZXIgZm91bmQgaW4gc2Vzc2lvbiIpOwogIH0KCiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlciA9IGxhdGVzdE9yZGVyCiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
@@ -16198,4 +16198,4 @@ extra_steps:
                         currency: INR
                   ttl: P15D
           type: request
-          description: "The Lender responds to the LSP's status request with the Purchase Loan order's current state (e.g. sanctioned, downpayment collected, disbursed, pre-paid, or void) and any associated charges, so the LSP can keep the borrower's loan dashboard current without polling for every change."
+          description: "The Lender responds to the LSP's status request with the Purchase Loan order's current state (e.g. sanctioned, downpayment collected, disbursed, pre-paid, or void) and any associated charges, so the LSP can keep the borrower's loan dashboard current without polling for every change. Downpayment collection is a hard gate -- disbursal to the seller must not proceed until the Credit Buyer App confirms the downpayment has actually been paid via the Lender's payment gateway, not merely initiated."
