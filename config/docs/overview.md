@@ -2,26 +2,6 @@
 
 
 
-- [Overview](#overview)
-- [Participants](#participants)
-- [The User Journey](#the-user-journey)
-  - [1. Loan Application and Portfolio Discovery](#1-loan-application-and-portfolio-discovery)
-  - [2. Loan Offers](#2-loan-offers)
-  - [3. Offer Selection and Pledge Adjustment](#3-offer-selection-and-pledge-adjustment)
-  - [4. Lender Onboarding, Mandate Setup, and Pledge (Lien Marking)](#4-lender-onboarding-mandate-setup-and-pledge-lien-marking)
-  - [5. Loan Confirmation, Disbursal, and Limit Setup](#5-loan-confirmation-disbursal-and-limit-setup)
-  - [6. Application Status and Offline Processing](#6-application-status-and-offline-processing)
-- [Additional Scenarios](#additional-scenarios)
-  - [1. Dashboard Retrieval](#1-dashboard-retrieval)
-  - [2. Processing Fee (PF) Deduction](#2-processing-fee-pf-deduction)
-  - [3. Drawdown](#3-drawdown)
-  - [4. Limit Enhancement](#4-limit-enhancement)
-  - [5. Interest / EMI Payment and Missed-Interest Payment](#5-interest--emi-payment-and-missed-interest-payment)
-  - [6. Part-Payment (Partial Principal)](#6-part-payment-partial-principal)
-  - [7. Foreclosure (Full Loan Closure)](#7-foreclosure-full-loan-closure)
-  - [8. Margin Calls and Liquidation](#8-margin-calls-and-liquidation)
-- [Issue and Grievance Management](#issue-and-grievance-management)
-
 ---
 
 ## Overview
