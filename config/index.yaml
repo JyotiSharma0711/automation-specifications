@@ -8,7 +8,7 @@ info:
     - Business Loan
   x-status:
     - use_case: Business Loan
-      status: DRAFT
+      status: RELEASED
   x-branch-name: draft-FIS12BL-2.3.0
   x-reporting: true
 security: 
