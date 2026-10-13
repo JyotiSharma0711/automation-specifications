@@ -7,7 +7,7 @@ meta:
     coverage, where a customer discovers and selects a financing option,
     completes loan initiation and confirmation, and the lender/merchant handle a
     missed EMI payment through status and update callbacks.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_Without_AA_Missed_EMI_Payment
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

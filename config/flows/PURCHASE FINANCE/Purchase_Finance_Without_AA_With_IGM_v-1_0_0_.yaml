@@ -7,7 +7,7 @@ meta:
     buyer discovers financing offers, selects a lender, completes form-based
     eligibility and KYC capture, initiates the loan, and confirms the financed
     purchase through to post-order updates.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase Finance Without AA
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

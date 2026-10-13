@@ -8,7 +8,7 @@ meta:
     completes lender-side forms and underwriting, and proceeds through loan
     initiation, confirmation, and status updates including foreclosure-related
     processing.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_Without_AA_Loan_Foreclosure_playground
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

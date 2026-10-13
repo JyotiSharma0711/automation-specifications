@@ -7,7 +7,7 @@ meta:
     consented financial data to assess eligibility, originate the loan, and
     complete disbursal, followed by foreclosure of an existing loan as part of
     the financed purchase workflow.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_With_AA_Loan_Foreclosure
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

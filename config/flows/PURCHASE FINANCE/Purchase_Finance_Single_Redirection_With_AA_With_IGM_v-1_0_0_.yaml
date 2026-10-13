@@ -8,7 +8,7 @@ meta:
     financing options, is redirected once to an Account Aggregator for consent
     and data sharing, and then completes lender selection, onboarding, loan
     initiation, confirmation, and subsequent status updates end to end.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_Single_Redirection_With_AA
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

@@ -9,7 +9,7 @@ meta:
     selection, dynamic form capture, init, confirm, and post-confirmation
     updates. It exercises a reportable purchase finance transaction from
     discovery to fulfillment and status tracking.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_Single_Redirection_Without_AA
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

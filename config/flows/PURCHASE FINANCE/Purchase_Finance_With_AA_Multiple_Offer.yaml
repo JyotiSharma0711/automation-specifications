@@ -4,7 +4,7 @@ meta:
   flowId: Purchase_Finance_With_AA_Multiple_Offer
   config_version: 0.0.0001
   description: An end-to-end purchase finance journey where a buyer uses Account Aggregator consent and data sharing to discover, compare, and select among multiple financing offers before completing the loan-assisted purchase. The flow exercises the full transaction lifecycle from search and offer discovery through document capture, loan initiation, confirmation, and post-confirmation updates.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_With_AA_Multiple_Offer
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
