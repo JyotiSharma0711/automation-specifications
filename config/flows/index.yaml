@@ -1,28 +1,80 @@
 flows:
   - type: playground
     id: Purchase_Finance_Single_Redirection_With_AA
+    meta:
+      type: PRIMARY
+      order: 1
+      secondary_flows:
+        - Purchase_Finance_Single_Redirection_With_AA_With_IGM(v-1.0.0)
     usecase: Purchase Finance
     tags:
       - WORKBENCH
       - WITH_AA
       - REPORTABLE
-      
     description: A buyer-side purchase finance journey where the participant discovers financing options, is redirected once to an Account Aggregator for consent and data sharing, and then completes lender selection, onboarding, loan initiation, confirmation, and subsequent status updates end to end.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Single_Redirection_With_AA.yaml
+
   - type: playground
     id: Purchase_Finance_Single_Redirection_Without_AA
+    meta:
+      type: PRIMARY
+      order: 2
+      secondary_flows:
+        - Purchase_Finance_Single_Redirection_Without_AA_Cancellation
+        - Purchase_Finance_Single_Redirection_Without_AA_Loan_Foreclosure
+        - Purchase_Finance_Single_Redirection_Without_AA_Missed_EMI_Payment
+        - Purchase_Finance_Single_Redirection_Without_AA_Pre_Part_Payment
+        - Purchase_Finance_Single_Redirection_Without_AA_With_IGM(v-1.0.0)
     usecase: Purchase Finance
     tags:
       - WORKBENCH
       - WITHOUT_AA
       - SINGLE_REDIRECTION
       - REPORTABLE
-    description: End-to-end purchase finance journey without Account Aggregator, where the buyer searches and compares financing offers, completes the lender’s single redirection application flow, and proceeds through selection, dynamic form capture, init, confirm, and post-confirmation updates. It exercises a reportable purchase finance transaction from discovery to fulfillment and status tracking.
+    description: End-to-end purchase finance journey without Account Aggregator, where the buyer searches and compares financing offers, completes the lender's single redirection application flow, and proceeds through selection, dynamic form capture, init, confirm, and post-confirmation updates. It exercises a reportable purchase finance transaction from discovery to fulfillment and status tracking.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Single_Redirection_Without_AA.yaml
+
   - type: playground
     id: Purchase_Finance_Single_Redirection_Without_AA_Cancellation
+    meta:
+      type: SECONDARY
+      order: 3
+      secondary_of: Purchase_Finance_Single_Redirection_Without_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search3_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - status1_finance
+        - on_status1_finance
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - soft_cancel_purchase_finance
+        - soft_on_cancel_purchase_finance
+        - confirmed_cancel_purchase_finance
+        - confirmed_on_cancel_purchase_finance
+        - on_update_unsolicited_cancel
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -31,8 +83,45 @@ flows:
     description: An end-to-end purchase finance flow where a buyer discovers, selects, and applies for financing through a single redirection journey without Account Aggregator access, including form capture, order confirmation, status tracking, and post-confirmation updates. It also exercises cancellation handling and the corresponding cancellation and status update callbacks across the transaction lifecycle.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Single_Redirection_Without_AA_Cancellation.yaml
+
   - type: playground
     id: Purchase_Finance_Single_Redirection_Without_AA_Loan_Foreclosure
+    meta:
+      type: SECONDARY
+      order: 4
+      secondary_of: Purchase_Finance_Single_Redirection_Without_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search3_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - status1_finance
+        - on_status1_finance
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - update_foreclosure
+        - on_update_foreclosure
+        - payment_url_form
+        - on_update_unsolicited_foreclosure
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -41,8 +130,45 @@ flows:
     description: End-to-end Purchase Finance journey without Account Aggregator, where a buyer discovers a finance offer through single redirection, completes lender-side forms and underwriting, and proceeds through loan initiation, confirmation, and status updates including foreclosure-related processing.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Single_Redirection_Without_AA_Loan_Foreclosure.yaml
+
   - type: playground
     id: Purchase_Finance_Single_Redirection_Without_AA_Missed_EMI_Payment
+    meta:
+      type: SECONDARY
+      order: 5
+      secondary_of: Purchase_Finance_Single_Redirection_Without_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search3_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - status1_finance
+        - on_status1_finance
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - update_missed_Emi
+        - on_update_missed_Emi
+        - payment_url_form
+        - on_update_unsolicited_missed_Emi
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -51,18 +177,66 @@ flows:
     description: End-to-end Purchase Finance journey for a missed EMI payment, where the buyer discovers, selects, and repays the overdue installment through a single redirection flow without Account Aggregator consent. It covers offer discovery, form-based intake, loan selection, order initiation and confirmation, and subsequent status and update handling through settlement.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Single_Redirection_Without_AA_Missed_EMI_Payment.yaml
+
   - type: playground
     id: Purchase_Finance_Single_Redirection_Without_AA_Pre_Part_Payment
+    meta:
+      type: SECONDARY
+      order: 6
+      secondary_of: Purchase_Finance_Single_Redirection_Without_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search3_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - status1_finance
+        - on_status1_finance
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - update_prepart
+        - on_update_prepart
+        - payment_url_form
+        - on_update_unsolicited_prepart
     usecase: Purchase Finance
     tags:
       - WORKBENCH
       - SINGLE_REDIRECTION
       - REPORTABLE
-    description: End-to-end purchase finance flow where a buyer is redirected once to the lender’s journey without Account Aggregator consent, browses and selects a financing offer, completes the required forms, and proceeds through loan initiation and confirmation. It also covers post-confirmation servicing updates, including dynamic status handling and a pre-part-payment scenario within the purchase finance lifecycle.
+    description: End-to-end purchase finance flow where a buyer is redirected once to the lender's journey without Account Aggregator consent, browses and selects a financing offer, completes the required forms, and proceeds through loan initiation and confirmation. It also covers post-confirmation servicing updates, including dynamic status handling and a pre-part-payment scenario within the purchase finance lifecycle.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Single_Redirection_Without_AA_Pre_Part_Payment.yaml
+
   - type: playground
     id: Purchase_Finance_With_AA
+    meta:
+      type: PRIMARY
+      order: 7
+      secondary_flows:
+        - Purchase_Finance_With_AA_Cancellation
+        - Purchase_Finance_With_AA_Loan_Foreclosure
+        - Purchase_Finance_With_AA_Missed_EMI_Payment
+        - Purchase_Finance_With_AA_Multiple_Offer
+        - Purchase_Finance_With_AA_Pre_Part_Payment
+        - Purchase_Finance_With_AA_With_IGM(v-1.0.0)
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -71,8 +245,54 @@ flows:
     description: End-to-end purchase finance journey where a buyer discovers financing options, completes Account Aggregator consent and financial data sharing, selects a lender, and initiates the financing against a purchase. The flow exercises offer discovery, form capture, loan initiation, confirmation, and subsequent status updates through fulfillment.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_With_AA.yaml
+
   - type: playground
     id: Purchase_Finance_With_AA_Cancellation
+    meta:
+      type: SECONDARY
+      order: 8
+      secondary_of: Purchase_Finance_With_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search5_purchase_finance
+        - search4_purchase_finance
+        - on_search6_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - Emanadate_verification_status
+        - on_status_emandate_unsolicited
+        - init2_purchase_finance
+        - on_init2_purchase_finance
+        - E_sign_verification_status
+        - on_status_esign_unsolicited
+        - init3_purchase_finance
+        - on_init3_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - soft_cancel_purchase_finance
+        - soft_on_cancel_purchase_finance
+        - confirmed_cancel_purchase_finance
+        - confirmed_on_cancel_purchase_finance
+        - on_update_unsolicited_cancel
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -81,8 +301,53 @@ flows:
     description: Purchase finance journey with Account Aggregator consent, discovery, selection, initiation, confirmation, and status updates, exercising the full end-to-end financing workflow for a purchase. Includes cancellation handling after the financing contract has progressed through the transaction lifecycle.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_With_AA_Cancellation.yaml
+
   - type: playground
     id: Purchase_Finance_With_AA_Loan_Foreclosure
+    meta:
+      type: SECONDARY
+      order: 9
+      secondary_of: Purchase_Finance_With_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search5_purchase_finance
+        - search4_purchase_finance
+        - on_search6_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - Emanadate_verification_status
+        - on_status_emandate_unsolicited
+        - init2_purchase_finance
+        - on_init2_purchase_finance
+        - E_sign_verification_status
+        - on_status_esign_unsolicited
+        - init3_purchase_finance
+        - on_init3_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - update_foreclosure
+        - on_update_foreclosure
+        - payment_url_form
+        - on_update_unsolicited_foreclosure
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -91,8 +356,53 @@ flows:
     description: End-to-end purchase finance journey using Account Aggregator consented financial data to assess eligibility, originate the loan, and complete disbursal, followed by foreclosure of an existing loan as part of the financed purchase workflow.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_With_AA_Loan_Foreclosure.yaml
+
   - type: playground
     id: Purchase_Finance_With_AA_Missed_EMI_Payment
+    meta:
+      type: SECONDARY
+      order: 10
+      secondary_of: Purchase_Finance_With_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search5_purchase_finance
+        - search4_purchase_finance
+        - on_search6_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - Emanadate_verification_status
+        - on_status_emandate_unsolicited
+        - init2_purchase_finance
+        - on_init2_purchase_finance
+        - E_sign_verification_status
+        - on_status_esign_unsolicited
+        - init3_purchase_finance
+        - on_init3_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - update_missed_Emi
+        - on_update_missed_Emi
+        - payment_url_form
+        - on_update_unsolicited_missed_Emi
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -101,8 +411,13 @@ flows:
     description: A purchase finance journey using Account Aggregator consent and data access to evaluate a borrower for financing, create the loan, and manage the post-disbursal lifecycle. This flow specifically exercises the handling of a missed EMI payment through status updates, repayment-related updates, and subsequent financing workflow actions end to end.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_With_AA_Missed_EMI_Payment.yaml
+
   - type: playground
     id: Purchase_Finance_With_AA_Multiple_Offer
+    meta:
+      type: SECONDARY
+      order: 11
+      secondary_of: Purchase_Finance_With_AA
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -111,8 +426,53 @@ flows:
     description: An end-to-end purchase finance journey where a buyer uses Account Aggregator consent and data sharing to discover, compare, and select among multiple financing offers before completing the loan-assisted purchase. The flow exercises the full transaction lifecycle from search and offer discovery through document capture, loan initiation, confirmation, and post-confirmation updates.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_With_AA_Multiple_Offer.yaml
+
   - type: playground
     id: Purchase_Finance_With_AA_Pre_Part_Payment
+    meta:
+      type: SECONDARY
+      order: 12
+      secondary_of: Purchase_Finance_With_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search5_purchase_finance
+        - search4_purchase_finance
+        - on_search6_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - Emanadate_verification_status
+        - on_status_emandate_unsolicited
+        - init2_purchase_finance
+        - on_init2_purchase_finance
+        - E_sign_verification_status
+        - on_status_esign_unsolicited
+        - init3_purchase_finance
+        - on_init3_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - update_prepart
+        - on_update_prepart
+        - payment_url_form
+        - on_update_unsolicited_prepart
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -121,8 +481,19 @@ flows:
     description: End-to-end purchase finance journey where a buyer discovers a financing offer, completes Account Aggregator consent and eligibility checks, initiates and confirms the loan for a purchase, and then performs pre-part payment updates against the financed amount.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_With_AA_Pre_Part_Payment.yaml
+
   - type: playground
     id: Purchase_Finance_Without_AA
+    meta:
+      type: PRIMARY
+      order: 13
+      secondary_flows:
+        - Purchase_Finance_Without_AA_Cancellation
+        - Purchase_Finance_Without_AA_Loan_Foreclosure
+        - Purchase_Finance_Without_AA_Missed_EMI_Payment
+        - Purchase_Finance_Without_AA_Multiple_Offer
+        - Purchase_Finance_Without_AA_Pre_Part_Payment
+        - Purchase_Finance_Without_AA_With_IGM(v-1.0.0)
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -131,8 +502,52 @@ flows:
     description: A purchase finance journey without Account Aggregator, where the buyer discovers financing offers, selects a lender, completes form-based eligibility and KYC capture, initiates the loan, and confirms the financed purchase through to post-order updates.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Without_AA.yaml
+
   - type: playground
     id: Purchase_Finance_Without_AA_Cancellation
+    meta:
+      type: SECONDARY
+      order: 14
+      secondary_of: Purchase_Finance_Without_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search3_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - Emanadate_verification_status
+        - on_status_emandate_unsolicited
+        - init2_purchase_finance
+        - on_init2_purchase_finance
+        - E_sign_verification_status
+        - on_status_esign_unsolicited
+        - init3_purchase_finance
+        - on_init3_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - soft_cancel_purchase_finance
+        - soft_on_cancel_purchase_finance
+        - confirmed_cancel_purchase_finance
+        - confirmed_on_cancel_purchase_finance
+        - on_update_unsolicited_cancel
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -141,8 +556,51 @@ flows:
     description: End-to-end purchase finance journey without Account Aggregator consent, covering lender discovery, borrower selection, eligibility and document capture, financing initiation, confirmation, servicing updates, and cancellation handling.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Without_AA_Cancellation.yaml
+
   - type: playground
     id: Purchase_Finance_Without_AA_Loan_Foreclosure
+    meta:
+      type: SECONDARY
+      order: 15
+      secondary_of: Purchase_Finance_Without_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search3_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - Emanadate_verification_status
+        - on_status_emandate_unsolicited
+        - init2_purchase_finance
+        - on_init2_purchase_finance
+        - E_sign_verification_status
+        - on_status_esign_unsolicited
+        - init3_purchase_finance
+        - on_init3_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - update_foreclosure
+        - on_update_foreclosure
+        - payment_url_form
+        - on_update_unsolicited_foreclosure
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -151,8 +609,51 @@ flows:
     description: End-to-end purchase finance flow for foreclosing an outstanding loan without Account Aggregator access, covering lender discovery, loan selection, initiation, confirmation, status tracking, and final closure updates.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Without_AA_Loan_Foreclosure.yaml
+
   - type: playground
     id: Purchase_Finance_Without_AA_Missed_EMI_Payment
+    meta:
+      type: SECONDARY
+      order: 16
+      secondary_of: Purchase_Finance_Without_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search3_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - Emanadate_verification_status
+        - on_status_emandate_unsolicited
+        - init2_purchase_finance
+        - on_init2_purchase_finance
+        - E_sign_verification_status
+        - on_status_esign_unsolicited
+        - init3_purchase_finance
+        - on_init3_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - update_missed_Emi
+        - on_update_missed_Emi
+        - payment_url_form
+        - on_update_unsolicited_missed_Emi
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -161,8 +662,13 @@ flows:
     description: End-to-end purchase finance flow without Account Aggregator coverage, where a customer discovers and selects a financing option, completes loan initiation and confirmation, and the lender/merchant handle a missed EMI payment through status and update callbacks.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Without_AA_Missed_EMI_Payment.yaml
+
   - type: playground
     id: Purchase_Finance_Without_AA_Multiple_Offer
+    meta:
+      type: SECONDARY
+      order: 17
+      secondary_of: Purchase_Finance_Without_AA
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -171,8 +677,51 @@ flows:
     description: End-to-end purchase finance flow without Account Aggregator, where a buyer searches for financing offers against a purchase, reviews multiple lender options, completes required forms, and proceeds through selection, initiation, confirmation, and post-confirmation updates. It exercises offer discovery and fulfillment for a reportable purchase-finance transaction with multiple offers and lender-specific onboarding.
     config:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Without_AA_Multiple_Offer.yaml
+
   - type: playground
     id: Purchase_Finance_Without_AA_Pre_Part_Payment
+    meta:
+      type: SECONDARY
+      order: 18
+      secondary_of: Purchase_Finance_Without_AA
+      hide_actions:
+        - search1_purchase_finance
+        - on_search1_purchase_finance
+        - product_details_form
+        - search2_purchase_finance
+        - on_search2_purchase_finance
+        - personal_details_information_form
+        - search3_purchase_finance
+        - on_search3_purchase_finance
+        - select_purchase_finance
+        - on_select_purchase_finance
+        - down_payment_form
+        - select1_purchase_finance
+        - on_select1_purchase_finance
+        - Ekyc_details_verification_status
+        - on_status_unsolicited
+        - select2_purchase_finance
+        - on_select2_purchase_finance
+        - init1_purchase_finance
+        - on_init1_purchase_finance
+        - Emanadate_verification_status
+        - on_status_emandate_unsolicited
+        - init2_purchase_finance
+        - on_init2_purchase_finance
+        - E_sign_verification_status
+        - on_status_esign_unsolicited
+        - init3_purchase_finance
+        - on_init3_purchase_finance
+        - confirm_purchase_finance
+        - on_confirm_purchase_finance
+        - update_purchase_finance
+        - on_update_purchase_finance
+        - on_update1_unsolicited_purchase_finance
+      visible_actions:
+        - update_prepart
+        - on_update_prepart
+        - payment_url_form
+        - on_update_unsolicited_prepart
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -183,10 +732,14 @@ flows:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Without_AA_Pre_Part_Payment.yaml
 
 
-  #  ____________IGM(1.0.0)__________ 
+  #  ____________IGM(1.0.0)__________
 
   - type: playground
     id: Purchase_Finance_With_AA_With_IGM(v-1.0.0)
+    meta:
+      type: SECONDARY
+      order: 19
+      secondary_of: Purchase_Finance_With_AA
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -198,6 +751,10 @@ flows:
 
   - type: playground
     id: Purchase_Finance_Without_AA_With_IGM(v-1.0.0)
+    meta:
+      type: SECONDARY
+      order: 20
+      secondary_of: Purchase_Finance_Without_AA
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -209,6 +766,10 @@ flows:
 
   - type: playground
     id: Purchase_Finance_Single_Redirection_With_AA_With_IGM(v-1.0.0)
+    meta:
+      type: SECONDARY
+      order: 21
+      secondary_of: Purchase_Finance_Single_Redirection_With_AA
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -220,6 +781,10 @@ flows:
 
   - type: playground
     id: Purchase_Finance_Single_Redirection_Without_AA_With_IGM(v-1.0.0)
+    meta:
+      type: SECONDARY
+      order: 22
+      secondary_of: Purchase_Finance_Single_Redirection_Without_AA
     usecase: Purchase Finance
     tags:
       - WORKBENCH

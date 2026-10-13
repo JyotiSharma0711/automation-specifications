@@ -4,7 +4,7 @@ meta:
   flowId: Purchase_Finance_Without_AA_Cancellation
   config_version: 0.0.0001
   description: Purchase finance journey with Account Aggregator consent, discovery, selection, initiation, confirmation, and status updates, exercising the full end-to-end financing workflow for a purchase. Includes cancellation handling after the financing contract has progressed through the transaction lifecycle.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_Without_AA_Cancellation
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

@@ -4,7 +4,7 @@ meta:
   flowId: Purchase_Finance_Without_AA_Cancellation_playground_flow
   config_version: 0.0.0001
   description: An end-to-end purchase finance flow where a buyer discovers, selects, and applies for financing through a single redirection journey without Account Aggregator access, including form capture, order confirmation, status tracking, and post-confirmation updates. It also exercises cancellation handling and the corresponding cancellation and status update callbacks across the transaction lifecycle.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_Without_AA_Cancellation_playground_flow
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

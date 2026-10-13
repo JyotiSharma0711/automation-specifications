@@ -4,7 +4,7 @@ meta:
   flowId: Purchase_Finance_Without_AA_Multiple_Offer
   config_version: 0.0.0001
   description: End-to-end purchase finance flow without Account Aggregator, where a buyer searches for financing offers against a purchase, reviews multiple lender options, completes required forms, and proceeds through selection, initiation, confirmation, and post-confirmation updates. It exercises offer discovery and fulfillment for a reportable purchase-finance transaction with multiple offers and lender-specific onboarding.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_Without_AA_Multiple_Offer
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

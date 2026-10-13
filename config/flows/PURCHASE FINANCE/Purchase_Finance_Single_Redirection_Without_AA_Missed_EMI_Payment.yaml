@@ -4,7 +4,7 @@ meta:
   flowId: Purchase_Finance_Without_AA_Missed_EMI_Payment_playground_flow
   config_version: 0.0.0001
   description: End-to-end Purchase Finance journey for a missed EMI payment, where the buyer discovers, selects, and repays the overdue installment through a single redirection flow without Account Aggregator consent. It covers offer discovery, form-based intake, loan selection, order initiation and confirmation, and subsequent status and update handling through settlement.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_Without_AA_Missed_EMI_Payment_playground_flow
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

@@ -4,7 +4,7 @@ meta:
   flowId: Purchase_Finance_With_AA_Pre_Part_Payment
   config_version: 0.0.0001
   description: End-to-end purchase finance journey where a buyer discovers a financing offer, completes Account Aggregator consent and eligibility checks, initiates and confirms the loan for a purchase, and then performs pre-part payment updates against the financed amount.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_With_AA_Pre_Part_Payment
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd

@@ -8,7 +8,7 @@ meta:
     manage the post-disbursal lifecycle. This flow specifically exercises the
     handling of a missed EMI payment through status updates, repayment-related
     updates, and subsequent financing workflow actions end to end.
-  use_case_id: PURCHASE FINANCE
+  use_case_id: Purchase Finance
   flowName: Purchase_Finance_With_AA_Missed_EMI_Payment
 transaction_data:
   transaction_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
