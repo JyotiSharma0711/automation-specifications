@@ -5,9 +5,9 @@ info:
   description: ONDC Specification
   version: 2.2.1
   x-usecases:
-    - PURCHASE FINANCE
+    - Purchase Finance
   x-status:
-    - use_case: PURCHASE FINANCE
+    - use_case: Purchase Finance
       status: RELEASED
   x-branch-name: draft-FIS12-PF-2.2.1
   x-reporting: true
