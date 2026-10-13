@@ -10,11 +10,11 @@ info:
     - Credit Card
   x-status:
     - use_case: Gold Loan
-      status: DRAFT
+      status: RELEASED
     - use_case: Personal Loan
-      status: DRAFT
+      status: RELEASED
     - use_case: Credit Card
-      status: DRAFT
+      status: RELEASED
   x-branch-name: draft-FIS12-2.0.3
   x-reporting: true
 security:
