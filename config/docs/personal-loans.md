@@ -3,6 +3,12 @@
 
 ---
 
+## Figma
+
+[View Figma Board](https://www.figma.com/board/TS8ghV1vPnZ9iod3ApVIKp/Credit?node-id=0-1&p=f)
+
+---
+
 ## Overview
 
 Personal loans are unsecured, collateral-free loans offered by banks and NBFCs based on factors such as the borrower’s income, credit profile, and eligibility. Each lender independently manages its loan products, underwriting, pricing, terms, application process, and servicing.

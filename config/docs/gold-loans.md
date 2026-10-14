@@ -3,6 +3,12 @@
 
 ---
 
+## Figma
+
+[View Figma Board](https://www.figma.com/board/TS8ghV1vPnZ9iod3ApVIKp/Credit?node-id=0-1&p=f)
+
+---
+
 ## Overview
 
 A Gold Loan lets a borrower pledge physical gold ornaments or coins as collateral for a loan. The digital front door is the same as a Personal Loan — a borrower searches, compares offers, and applies online through a Loan Service Provider (LSP). The difference is what happens next: because the collateral is physical gold, it has to be appraised in person, so everything after offer selection — verification, valuation, and underwriting — happens offline at the lender's branch, with the lender pushing periodic status updates back to the LSP until final approval or rejection.

@@ -2,6 +2,12 @@
 
 ---
 
+## Figma
+
+[View Figma Board](https://www.figma.com/board/TS8ghV1vPnZ9iod3ApVIKp/Credit?node-id=0-1&p=f)
+
+---
+
 ## Scope
 
 The scope of this document is to create API specifications for the ONDC Financial Services network, focusing on consumer credit products, specifically consumer card applications. This will provide applicants access to a pre-approved credit line and the convenience of making payments.
