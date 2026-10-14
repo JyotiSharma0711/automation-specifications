@@ -4,6 +4,12 @@
 
 ---
 
+## Figma
+
+[View Figma Board](https://www.figma.com/design/pF6i0CqlqkBheLtQTYNBW6/Untitled?node-id=0-1&p=f)
+
+---
+
 ## Overview
 
 A Loan Against Mutual Funds lets an investor borrow against their mutual fund holdings without selling them. Because the units stay in the borrower's name (merely lien-marked, not transferred), the borrower keeps earning dividends/growth and avoids triggering capital gains tax or exit loads that a redemption would cause. It sits between "sell your investments" and "take an unsecured loan" — cheaper and faster than a personal loan or credit card for the borrower, and a secured, historically low-NPA asset for the lender.
