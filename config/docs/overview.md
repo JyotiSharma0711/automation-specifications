@@ -1,7 +1,5 @@
 # Loan Against Mutual Funds (LAMF)
 
-
-
 ---
 
 ## Overview
@@ -204,3 +202,9 @@ A borrower can raise a grievance through the LSP for issues related to their loa
 IGM handling is standardized across FIS12, so an LSP or lender that has already implemented IGM for another FIS12 lending product should be able to reuse that implementation for LAMF rather than building a separate grievance pipeline.
 
 Given that the margin-call/liquidation flow is the most likely source of borrower disputes, the IGM integration should be tested specifically against that scenario — e.g., "units were liquidated but I didn't receive or see the margin call in time" — rather than only against generic servicing complaints.
+
+---
+
+## Figma
+
+[View Figma Board](https://www.figma.com/design/pF6i0CqlqkBheLtQTYNBW6/Untitled?node-id=0-1&p=f)
