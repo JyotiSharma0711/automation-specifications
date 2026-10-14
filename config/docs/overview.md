@@ -1,6 +1,6 @@
 # Purchase Finance
 
-
+---
 
 ## Overview
 
@@ -176,3 +176,9 @@ The Credit Buyer App displays the breakup to the borrower before redirecting the
 ## Issue and Grievance Management
 
 IGM handling is standardized across FIS12, so a Credit Buyer App or lender that has already implemented IGM for another FIS12 lending product should be able to reuse that implementation for Purchase Finance rather than building a separate grievance pipeline.
+
+---
+
+## Figma
+
+[View Figma Board](https://www.figma.com/board/bnGeMUQUOasD4Y9fu4dSoP/Purchase-Finance?node-id=0-1)
