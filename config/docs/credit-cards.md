@@ -1,26 +1,5 @@
 # ONDC Credit Card Applications: Consumer Cards for Individuals
 
-- [Scope](#scope)
-- [Participants](#participants)
-- [Requirements](#requirements)
-  - [1 – Registration and Onboarding](#1--registration-and-onboarding)
-  - [2 – Fetching Preliminary Information for Underwriting](#2--fetching-preliminary-information-for-underwriting)
-    - [2.1 – Preliminary Applicant Information for Card Underwriting](#21--preliminary-applicant-information-for-card-underwriting)
-    - [2.2 – Consent to Share Applicant's Information with Issuers](#22--consent-to-share-applicants-information-with-issuers)
-    - [2.3 – Broadcasting Applicant's Information to Issuers](#23--broadcasting-applicants-information-to-issuers)
-  - [3 – Consumer Card Underwriting and Making the Offer](#3--consumer-card-underwriting-and-making-the-offer)
-  - [4 – Selecting a Consumer Card](#4--selecting-a-consumer-card)
-    - [4.1 – Eligible and Satisfied with Card Offerings](#41--eligible-and-satisfied-with-card-offerings)
-    - [4.2 – Eligible but Not Satisfied with Card Offerings](#42--eligible-but-not-satisfied-with-card-offerings)
-    - [4.3 – Not Eligible for Any Card Offerings](#43--not-eligible-for-any-card-offerings)
-  - [5 – Card Application: KYC Verification](#5--card-application-kyc-verification)
-    - [5.1 – KYC Documentations](#51--kyc-documentations)
-    - [5.2 – Other KYC Steps](#52--other-kyc-steps)
-  - [6 – Card Application Completion](#6--card-application-completion)
-    - [6.1 – Consumer Card Agreement](#61--consumer-card-agreement)
-    - [6.2 – Consumer Card Fulfilment](#62--consumer-card-fulfilment)
-    - [6.3 – Consumer Card Management](#63--consumer-card-management)
-
 ---
 
 ## Scope

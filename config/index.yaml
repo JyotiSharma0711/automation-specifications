@@ -5,16 +5,16 @@ info:
   description: ONDC Specification
   version: 2.0.3
   x-usecases:
-    - GOLD LOAN
-    - PERSONAL LOAN
-    - CREDIT CARD
+    - Gold Loan
+    - Personal Loan
+    - Credit Card
   x-status:
-    - use_case: GOLD LOAN
-      status: DRAFT
-    - use_case: PERSONAL LOAN
-      status: DRAFT
-    - use_case: CREDIT CARD
-      status: DRAFT
+    - use_case: Gold Loan
+      status: RELEASED
+    - use_case: Personal Loan
+      status: RELEASED
+    - use_case: Credit Card
+      status: RELEASED
   x-branch-name: draft-FIS12-2.0.3
   x-reporting: true
 security:

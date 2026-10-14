@@ -8,7 +8,7 @@ meta:
     personal-information application form, selecting a card, completing a KYC
     form, polling for KYC completion status, initiating and confirming the
     credit card request, and tracking the final application status."
-  use_case_id: CREDIT CARD
+  use_case_id: Credit Card
   flowName: Credit Card
 transaction_data:
   transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
@@ -23,9 +23,7 @@ steps:
     owner: BAP
     responseFor: null
     unsolicited: false
-    description: The borrower searches the network for available credit card
-      offerings, scoping the intent to the CREDIT_CARD category and declaring
-      the buyer's terms of engagement.
+    description: "The borrower searches the network for available credit card offerings, scoping the intent to the CREDIT_CARD category and declaring the buyer's terms of engagement. An Issuer may return up to two card offers per catalog response -- the Buyer App should collate and display all offers received across issuers rather than surfacing only the first one back."
     mock:
       generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
       validate: ZnVuY3Rpb24gdmFsaWRhdGUodGFyZ2V0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBpbnRlbnQgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2U/LmludGVudDsKICBjb25zdCBjYXRDb2RlID0gaW50ZW50LmNhdGVnb3J5Py5kZXNjcmlwdG9yPy5jb2RlOwogIGlmIChjYXRDb2RlICE9PSAiQ1JFRElUX0NBUkQiKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJtZXNzYWdlLmludGVudC5jYXRlZ29yeS5kZXNjcmlwdG9yLmNvZGUgbXVzdCBiZSBDUkVESVRfQ0FSRCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
@@ -78,9 +76,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: search
-            timestamp: 2026-09-23T18:02:28.849Z
+            timestamp: 2026-09-24T13:15:10.513Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: cdbf7aaf-9f54-4717-94d6-e04b9c2b1687
+            message_id: 0425fb5d-858d-42e3-ba96-5ad3be448b72
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -108,17 +106,13 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
         type: request
-        description: The borrower searches the network for available credit card
-          offerings, scoping the intent to the CREDIT_CARD category and
-          declaring the buyer's terms of engagement.
+        description: "The borrower searches the network for available credit card offerings, scoping the intent to the CREDIT_CARD category and declaring the buyer's terms of engagement. An Issuer may return up to two card offers per catalog response -- the Buyer App should collate and display all offers received across issuers rather than surfacing only the first one back."
   - api: on_search
     action_id: on_search
     owner: BPP
     responseFor: search
     unsolicited: false
-    description: The lender responds to the borrower's search with a catalog of
-      eligible credit card products, including item-level benefits, application
-      form references, and provider grievance/support contact details.
+    description: "The lender responds to the borrower's search with a catalog of eligible credit card products, including item-level benefits, application form references, and provider grievance/support contact details. An Issuer may return up to two card offers per catalog response -- the Buyer App should collate and display all offers received across issuers rather than surfacing only the first one back."
     mock:
       generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgb25fc2VhcmNoIGNhbGwuCiAqIEFzc2lnbnMgYSBmcmVzaCBwcm92aWRlci9pdGVtIGlkIHBlciBzZXNzaW9uIGFuZCB3aXJlcyB0aGUgcGVyc29uYWwKICogaW5mb3JtYXRpb24gZm9ybSdzIHhpbnB1dC5mb3JtLmlkL3VybCB1c2luZyBjcmVhdGVGb3JtVVJMLCBzbyB0aGUKICogYm9ycm93ZXIncyBicm93c2VyIGlzIHJvdXRlZCB0byB0aGlzIGZsb3cncyBvd24gY3JlZGl0X2NhcmRfaW5mb3JtYXRpb25fZm9ybSBzdGVwLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCBwcm92aWRlciA9IGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2U/LmNhdGFsb2c/LnByb3ZpZGVycz8uWzBdOwogCiAgcHJvdmlkZXIuaXRlbXMKICAgIC5maWx0ZXIoKGl0ZW0pID0+IGl0ZW0ueGlucHV0Py5mb3JtKQogICAgLmZvckVhY2goKGl0ZW0pID0+IHsKICAgICAgaXRlbS54aW5wdXQuZm9ybS5pZCA9IGBjcmVkaXRfY2FyZF9pbmZvcm1hdGlvbl9mb3JtXyR7dXVpZHY0KCl9YDsKICAgICAgaXRlbS54aW5wdXQuZm9ybS51cmwgPSBjcmVhdGVGb3JtVVJMKCJPTkRDOkZJUzEyIiwgImNyZWRpdF9jYXJkX2luZm9ybWF0aW9uX2Zvcm0iLCBzZXNzaW9uRGF0YSk7CiAgICB9KTsKCiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
       validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgb25fc2VhcmNoIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
@@ -449,9 +443,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_search
-            timestamp: 2026-09-23T18:02:28.864Z
+            timestamp: 2026-09-24T13:15:10.539Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: cdbf7aaf-9f54-4717-94d6-e04b9c2b1687
+            message_id: 0425fb5d-858d-42e3-ba96-5ad3be448b72
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -588,7 +582,7 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: credit_card_information_form_bc626f7c-0fbe-46bc-a985-089de6e6d392
+                          id: credit_card_information_form_4d499b5b-7746-48ba-9278-907fb36bc1c0
                           url: undefined/forms/ONDC:FIS12/credit_card_information_form/?transaction_id=04b2dc1f-1e96-43e9-8ea6-604bbf489560&session_id=undefined
                           mime_type: text/html
                           resubmit: false
@@ -676,7 +670,7 @@ steps:
                           headings:
                             - PERSONAL_INFORMATION
                         form:
-                          id: credit_card_information_form_6fd7ffc6-8085-4ab1-ab73-689ca9919a18
+                          id: credit_card_information_form_5f83fbe7-397f-442a-8fa1-698683484d14
                           url: undefined/forms/ONDC:FIS12/credit_card_information_form/?transaction_id=04b2dc1f-1e96-43e9-8ea6-604bbf489560&session_id=undefined
                           mime_type: text/html
                           resubmit: false
@@ -752,10 +746,7 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
         type: request
-        description: The lender responds to the borrower's search with a catalog of
-          eligible credit card products, including item-level benefits,
-          application form references, and provider grievance/support contact
-          details.
+        description: "The lender responds to the borrower's search with a catalog of eligible credit card products, including item-level benefits, application form references, and provider grievance/support contact details. An Issuer may return up to two card offers per catalog response -- the Buyer App should collate and display all offers received across issuers rather than surfacing only the first one back."
   - api: html_form
     action_id: credit_card_information_form
     owner: BPP
@@ -783,12 +774,12 @@ steps:
           panName: Parneet Kaur
           personalemail: superadmin@gmail.com
           officialemail: superadmin@gmail.com
-          dob: 2026-09-16
-          gender: female
+          dob: 2026-09-18
+          gender: transgender
           pan: ABCDE1234F
-          contactNumber: "09988740119"
-          employmentType: selfEmployed
-          income: "2"
+          contactNumber: "9988740119"
+          employmentType: salaried
+          income: "1"
           companyName: vgh
           addressL1: test
           addressL2: cghdfg
@@ -808,9 +799,7 @@ steps:
     owner: BAP
     responseFor: null
     unsolicited: false
-    description: The borrower selects the specific credit card service they are
-      interested in, submitting the personal-information form's submission id
-      for lender verification.
+    description: "The borrower selects the specific credit card service they are interested in, submitting the personal-information form's submission id for lender verification. Selecting a card commits the applicant to that Issuer's own KYC and agreement path -- an applicant unsatisfied with their offers should regenerate offers via additional documentation rather than the Buyer App silently resubmitting the same data."
     mock:
       generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgc2VsZWN0IGNhbGwuCiAqIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgaXMge30gLSB0aGlzIGZ1bmN0aW9uIGlzIHRoZSBzb2xlIGF1dGhvciBvZgogKiBtZXNzYWdlLm9yZGVyLCBidWlsdCBlbnRpcmVseSBmcm9tIHNlc3Npb25EYXRhIHNhdmVkIGJ5IG9uX3NlYXJjaAogKiAocHJvdmlkZXJfaWQvaXRlbV9pZC9mb3JtX2lkKSBhbmQgdGhlIGNyZWRpdF9jYXJkX2luZm9ybWF0aW9uX2Zvcm0KICogc3RlcCdzIHN1Ym1pc3Npb24gaWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0gVGhlIGdlbmVyYXRlZCBwYXlsb2FkIG9iamVjdC4KICovCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICBjb25zdCBvcmRlciA9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzOwogICAgY29uc3QgZm9ybUlkID0gc2Vzc2lvbkRhdGEuZm9ybV9pZD8uWzBdOwogICAgY29uc3Qgc3VibWlzc2lvbklkID0gc2Vzc2lvbkRhdGEuY3JlZGl0X2NhcmRfaW5mb3JtYXRpb25fZm9ybTsKCiAgICBpZiAoZm9ybUlkICYmIHN1Ym1pc3Npb25JZCkgewogICAgICBvcmRlci5pdGVtc1swXS54aW5wdXQgPSB7CiAgICAgICAgZm9ybTogeyBpZDogZm9ybUlkIH0sCiAgICAgICAgZm9ybV9yZXNwb25zZTogeyBzdGF0dXM6ICJTVUNDRVNTIiwgc3VibWlzc2lvbl9pZDogc3VibWlzc2lvbklkIH0sCiAgICAgIH07CiAgICB9CgogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZSA9IHsKICAgICAgb3JkZXIsCiAgICB9OwogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfQp9
       validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgRklTMTIgc2VsZWN0IGNhbGwuCiAqCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CgogIGNvbnN0IG9yZGVyID0gdGFyZ2V0UGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgY29uc3QgaXRlbSA9IG9yZGVyLml0ZW1zWzBdOwogIAogIGNvbnN0IGV4cGVjdGVkUHJvdmlkZXJJZCA9IHNlc3Npb25EYXRhPy5wcm92aWRlcl9pZD8uWzBdOwoKICBpZiAob3JkZXIucHJvdmlkZXIuaWQgIT09IGV4cGVjdGVkUHJvdmlkZXJJZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgIGBvcmRlci5wcm92aWRlci5pZCAiJHtvcmRlci5wcm92aWRlci5pZH0iIGRvZXMgbm90IG1hdGNoIHRoZSBwcm92aWRlciByZXR1cm5lZCBpbiBvbl9zZWFyY2ggKCIke2V4cGVjdGVkUHJvdmlkZXJJZH0iKWAKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSBpdGVtIGFnYWluc3QgaXRlbSByZXR1cm5lZCBpbiBvbl9zZWFyY2gKICBjb25zdCBleHBlY3RlZEl0ZW1JZCA9IHNlc3Npb25EYXRhPy5pdGVtX2lkPy5bMF07CgogIGlmIChpdGVtLmlkICE9PSBleHBlY3RlZEl0ZW1JZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgIGBvcmRlci5pdGVtc1swXS5pZCAiJHtpdGVtLmlkfSIgZG9lcyBub3QgbWF0Y2ggdGhlIGl0ZW0gcmV0dXJuZWQgaW4gb25fc2VhcmNoICgiJHtleHBlY3RlZEl0ZW1JZH0iKWAKICAgIH07CiAgfQoKICByZXR1cm4gewogICAgdmFsaWQ6IHRydWUsCiAgICBjb2RlOiAyMDAsCiAgICBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiCiAgfTsKfQ==
@@ -864,51 +853,17 @@ steps:
             items:
               type: array
               description: Selected provider items
+              default:
+                - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
+              minItems: 1
               items:
                 type: object
                 properties:
                   id:
                     type: string
-                    default: d9eb81e2-96b5-477f-98dc-8518ad60d72e
                     description: Item ID
-                  xinput:
-                    type: object
-                    description: XInput details
-                    properties:
-                      form:
-                        type: object
-                        description: Form details
-                        properties:
-                          id:
-                            type: string
-                            default: 0e4b4a09-d1ae-4234-8512-3f1cf31f8bc3
-                            description: Form ID
-                        required:
-                          - id
-                        additionalProperties: false
-                      form_response:
-                        type: object
-                        description: Form submission response
-                        properties:
-                          status:
-                            type: string
-                            default: SUCCESS
-                            description: Form submission status
-                          submission_id:
-                            type: string
-                            default: f27ab737-bd34-48c2-af73-7efe6062087f
-                            description: Form submission UUID
-                        required:
-                          - status
-                          - submission_id
-                        additionalProperties: false
-                    required:
-                      - form
-                      - form_response
-                    additionalProperties: false
                 required:
                   - id
-                  - xinput
                 additionalProperties: false
           required:
             - provider
@@ -920,9 +875,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: select
-            timestamp: 2026-09-23T18:02:47.132Z
+            timestamp: 2026-09-24T13:15:33.293Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: 8a1d2263-4c0d-41dd-9639-79a4d3003764
+            message_id: 787c3cdb-e33e-4f27-9f56-4e1555fa2c21
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -942,23 +897,20 @@ steps:
                 - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
                   xinput:
                     form:
-                      id: credit_card_information_form_bc626f7c-0fbe-46bc-a985-089de6e6d392
+                      id: credit_card_information_form_4d499b5b-7746-48ba-9278-907fb36bc1c0
                     form_response:
                       status: SUCCESS
-                      submission_id: 3deada43-125e-499c-b171-03eecd39007c
+                      submission_id: 7584d884-a87c-41b3-84ec-8e79c75bc276
         type: request
-        description: The borrower selects the specific credit card service they are
-          interested in, submitting the personal-information form's submission
-          id for lender verification.
+        description: "The borrower selects the specific credit card service they are interested in, submitting the personal-information form's submission id for lender verification. Selecting a card commits the applicant to that Issuer's own KYC and agreement path -- an applicant unsatisfied with their offers should regenerate offers via additional documentation rather than the Buyer App silently resubmitting the same data."
   - api: on_select
     action_id: on_select
     owner: BPP
     responseFor: select
     unsolicited: false
-    description: The lender platform responds with detailed information about the
-      selected credit card and the KYC form required to proceed.
+    description: "The lender platform responds with detailed information about the selected credit card and the KYC form required to proceed. Selecting a card commits the applicant to that Issuer's own KYC and agreement path -- an applicant unsatisfied with their offers should regenerate offers via additional documentation rather than the Buyer App silently resubmitting the same data."
     mock:
-      generate: CmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICBjb25zdCBjYXRhbG9nID0gc2Vzc2lvbkRhdGEuY2F0YWxvZz8uWzBdOwogICAgY29uc3QgcHJvdmlkZXJJZCA9IHNlc3Npb25EYXRhLnByb3ZpZGVyX2lkPy5bMF07CiAgICBjb25zdCBpdGVtSWQgPSBzZXNzaW9uRGF0YS5pdGVtX2lkPy5bMF07CgogICAgY29uc3QgY2F0YWxvZ1Byb3ZpZGVyID0gY2F0YWxvZz8ucHJvdmlkZXJzPy5maW5kKChwKSA9PiBwLmlkID09PSBwcm92aWRlcklkKTsKICAgIGlmICghY2F0YWxvZ1Byb3ZpZGVyKSB7CiAgICAgIGNvbnNvbGUud2FybigicHJvdmlkZXIgbm90IGZvdW5kIGluIHNlc3Npb24gY2F0YWxvZyDigJQgb25fc2VhcmNoIGhhcyBub3QgY29tcGxldGVkIik7CiAgICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICAgIH0KICAgIGNvbnN0IGNhdGFsb2dJdGVtID0gQXJyYXkuaXNBcnJheShjYXRhbG9nUHJvdmlkZXIuaXRlbXMpICYmIGNhdGFsb2dQcm92aWRlci5pdGVtcy5maW5kKChpKSA9PiBpLmlkID09PSBpdGVtSWQpOwogICAgaWYgKCFjYXRhbG9nSXRlbSkgewogICAgICBjb25zb2xlLndhcm4oIml0ZW0gbm90IGZvdW5kIGluIHNlc3Npb24gY2F0YWxvZyDigJQgb25fc2VhcmNoIGhhcyBub3QgY29tcGxldGVkIik7CiAgICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICAgIH0KCiAgICBjb25zdCBpdGVtID0gewogICAgICBpZDogY2F0YWxvZ0l0ZW0uaWQsCiAgICAgIGRlc2NyaXB0b3I6IGNhdGFsb2dJdGVtLmRlc2NyaXB0b3IsCiAgICAgIGNhdGVnb3J5X2lkczogY2F0YWxvZ0l0ZW0uY2F0ZWdvcnlfaWRzLAogICAgICB0YWdzOiBjYXRhbG9nSXRlbS50YWdzLAogICAgICBtYXRjaGVkOiB0cnVlLAogICAgICByZWNvbW1lbmRlZDogdHJ1ZSwKICAgICAgeGlucHV0OiB7CiAgICAgICAgaGVhZDogewogICAgICAgICAgZGVzY3JpcHRvcjogeyBuYW1lOiAiS25vdyB5b3VyIEN1c3RvbWVyIiB9LAogICAgICAgICAgaW5kZXg6IHsgbWluOiAwLCBjdXI6IDAsIG1heDogMCB9LAogICAgICAgICAgaGVhZGluZ3M6IFsiSk9VUk5FWV9PRkZMSU5FIl0sCiAgICAgICAgfSwKICAgICAgICBmb3JtOiB7CiAgICAgICAgICBpZDogYEVreWNfZGV0YWlsc19mb3JtX2NjXyR7dXVpZHY0KCl9YCwKICAgICAgICAgIG1pbWVfdHlwZTogImFwcGxpY2F0aW9uL2h0bWwiLAogICAgICAgICAgdXJsOiBjcmVhdGVGb3JtVVJMKCJPTkRDOkZJUzEyIiwgIkVreWNfZGV0YWlsc19mb3JtX2NjIiwgc2Vzc2lvbkRhdGEpICsKICAgICAgICAgICAgIiZiYXBfdXJpPSIgKyBlbmNvZGVVUklDb21wb25lbnQoZGVmYXVsdFBheWxvYWQuY29udGV4dD8uYmFwX3VyaSA/PyAiIiksCiAgICAgICAgICByZXN1Ym1pdDogZmFsc2UsCiAgICAgICAgICBtdWx0aXBsZV9zdW1iaXNzaW9uczogZmFsc2UsCiAgICAgICAgfSwKICAgICAgICByZXF1aXJlZDogdHJ1ZSwKICAgICAgfSwKICAgIH07CgogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZSA9IHsKICAgICAgb3JkZXI6IHsKICAgICAgICBwcm92aWRlcjogewogICAgICAgICAgaWQ6IGNhdGFsb2dQcm92aWRlci5pZCwKICAgICAgICAgIGRlc2NyaXB0b3I6IGNhdGFsb2dQcm92aWRlci5kZXNjcmlwdG9yLAogICAgICAgICAgdGFnczogY2F0YWxvZ1Byb3ZpZGVyLnRhZ3MsCiAgICAgICAgfSwKICAgICAgICBpdGVtczogW2l0ZW1dLAogICAgICB9LAogICAgfTsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0KfQ==
+      generate: CmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICBjb25zdCBjYXRhbG9nID0gc2Vzc2lvbkRhdGEuY2F0YWxvZz8uWzBdOwogICAgY29uc3QgcHJvdmlkZXJJZCA9IHNlc3Npb25EYXRhLnByb3ZpZGVyX2lkPy5bMF07CiAgICBjb25zdCBpdGVtSWQgPSBzZXNzaW9uRGF0YS5pdGVtX2lkPy5bMF07CgogICAgY29uc3QgY2F0YWxvZ1Byb3ZpZGVyID0gY2F0YWxvZz8ucHJvdmlkZXJzPy5maW5kKChwKSA9PiBwLmlkID09PSBwcm92aWRlcklkKTsKICAgIGlmICghY2F0YWxvZ1Byb3ZpZGVyKSB7CiAgICAgIGNvbnNvbGUud2FybigicHJvdmlkZXIgbm90IGZvdW5kIGluIHNlc3Npb24gY2F0YWxvZyDigJQgb25fc2VhcmNoIGhhcyBub3QgY29tcGxldGVkIik7CiAgICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICAgIH0KICAgIGNvbnN0IGNhdGFsb2dJdGVtID0gQXJyYXkuaXNBcnJheShjYXRhbG9nUHJvdmlkZXIuaXRlbXMpICYmIGNhdGFsb2dQcm92aWRlci5pdGVtcy5maW5kKChpKSA9PiBpLmlkID09PSBpdGVtSWQpOwogICAgaWYgKCFjYXRhbG9nSXRlbSkgewogICAgICBjb25zb2xlLndhcm4oIml0ZW0gbm90IGZvdW5kIGluIHNlc3Npb24gY2F0YWxvZyDigJQgb25fc2VhcmNoIGhhcyBub3QgY29tcGxldGVkIik7CiAgICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICAgIH0KCiAgICBjb25zdCBpdGVtID0gewogICAgICBpZDogY2F0YWxvZ0l0ZW0uaWQsCiAgICAgIGRlc2NyaXB0b3I6IGNhdGFsb2dJdGVtLmRlc2NyaXB0b3IsCiAgICAgIHRhZ3M6IGNhdGFsb2dJdGVtLnRhZ3MsCiAgICAgIG1hdGNoZWQ6IHRydWUsCiAgICAgIHJlY29tbWVuZGVkOiB0cnVlLAogICAgICB4aW5wdXQ6IHsKICAgICAgICBoZWFkOiB7CiAgICAgICAgICBkZXNjcmlwdG9yOiB7IG5hbWU6ICJLbm93IHlvdXIgQ3VzdG9tZXIiIH0sCiAgICAgICAgICBpbmRleDogeyBtaW46IDAsIGN1cjogMCwgbWF4OiAwIH0sCiAgICAgICAgICBoZWFkaW5nczogWyJKT1VSTkVZX09GRkxJTkUiXSwKICAgICAgICB9LAogICAgICAgIGZvcm06IHsKICAgICAgICAgIGlkOiBgRWt5Y19kZXRhaWxzX2Zvcm1fY2NfJHt1dWlkdjQoKX1gLAogICAgICAgICAgbWltZV90eXBlOiAiYXBwbGljYXRpb24vaHRtbCIsCiAgICAgICAgICB1cmw6IGNyZWF0ZUZvcm1VUkwoIk9OREM6RklTMTIiLCAiRWt5Y19kZXRhaWxzX2Zvcm1fY2MiLCBzZXNzaW9uRGF0YSkgKwogICAgICAgICAgICAiJmJhcF91cmk9IiArIGVuY29kZVVSSUNvbXBvbmVudChkZWZhdWx0UGF5bG9hZC5jb250ZXh0Py5iYXBfdXJpID8/ICIiKSwKICAgICAgICAgIHJlc3VibWl0OiBmYWxzZSwKICAgICAgICAgIG11bHRpcGxlX3N1bWJpc3Npb25zOiBmYWxzZSwKICAgICAgICB9LAogICAgICAgIHJlcXVpcmVkOiB0cnVlLAogICAgICB9LAogICAgfTsKCiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlID0gewogICAgICBvcmRlcjogewogICAgICAgIHByb3ZpZGVyOiB7CiAgICAgICAgICBpZDogY2F0YWxvZ1Byb3ZpZGVyLmlkLAogICAgICAgICAgZGVzY3JpcHRvcjogY2F0YWxvZ1Byb3ZpZGVyLmRlc2NyaXB0b3IsCiAgICAgICAgICB0YWdzOiBjYXRhbG9nUHJvdmlkZXIudGFncywKICAgICAgICB9LAogICAgICAgIGl0ZW1zOiBbaXRlbV0sCiAgICAgIH0sCiAgICB9OwogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfQp9
       validate: IC8vIHZhbGlkYXRlLmpzCi8qKgogKiBWYWxpZGF0ZXMgdGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCBmb3IgdGhlIG9uX3NlbGVjdCBjYWxsLgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IG9yZGVyID0gdGFyZ2V0UGF5bG9hZC5tZXNzYWdlPy5vcmRlcjsKICBjb25zdCBpdGVtID0gb3JkZXIuaXRlbXNbMF07CiAgY29uc3QgZXhwZWN0ZWRQcm92aWRlcklkID0gc2Vzc2lvbkRhdGE/LnByb3ZpZGVyX2lkPy5bMF07CgogIGlmIChvcmRlci5wcm92aWRlci5pZCAhPT0gZXhwZWN0ZWRQcm92aWRlcklkKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgYG9yZGVyLnByb3ZpZGVyLmlkICIke29yZGVyLnByb3ZpZGVyLmlkfSIgZG9lcyBub3QgbWF0Y2ggdGhlIHByb3ZpZGVyIHJldHVybmVkIGluIG9uX3NlYXJjaCAoIiR7ZXhwZWN0ZWRQcm92aWRlcklkfSIpYAogICAgfTsKICB9CgogIGNvbnN0IGV4cGVjdGVkSXRlbUlkID0gc2Vzc2lvbkRhdGE/Lml0ZW1faWQ/LlswXTsKCiAgaWYgKGl0ZW0uaWQgIT09IGV4cGVjdGVkSXRlbUlkKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgYG9yZGVyLml0ZW1zWzBdLmlkICIke2l0ZW0uaWR9IiBkb2VzIG5vdCBtYXRjaCB0aGUgaXRlbSByZXR1cm5lZCBpbiBvbl9zZWFyY2ggKCIke2V4cGVjdGVkSXRlbUlkfSIpYAogICAgfTsKICB9CgogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGNvZGU6IDIwMCwKICAgIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIKICB9Owp9
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKCiAgaWYgKCFzZXNzaW9uRGF0YT8uY2F0YWxvZz8ubGVuZ3RoKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246ICJNaXNzaW5nIGNhdGFsb2cgaW4gc2Vzc2lvbkRhdGEiCiAgICB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YS5wcm92aWRlcl9pZD8ubGVuZ3RoKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246ICJNaXNzaW5nIHByb3ZpZGVyX2lkIGluIHNlc3Npb25EYXRhIgogICAgfTsKICB9CgogIGlmICghc2Vzc2lvbkRhdGEuaXRlbV9pZD8ubGVuZ3RoKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246ICJNaXNzaW5nIGl0ZW1faWQgaW4gc2Vzc2lvbkRhdGEiCiAgICB9OwogIH0KCiAgcmV0dXJuIHsKICAgIHZhbGlkOiB0cnVlLAogICAgY29kZTogMjAwLAogICAgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IgogIH07Cn0=
       defaultPayload:
@@ -998,9 +950,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_select
-            timestamp: 2026-09-23T18:02:47.146Z
+            timestamp: 2026-09-24T13:15:33.307Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: 8a1d2263-4c0d-41dd-9639-79a4d3003764
+            message_id: 787c3cdb-e33e-4f27-9f56-4e1555fa2c21
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -1097,8 +1049,6 @@ steps:
                         size_type: md
                       - url: https://url.com/hdfc/cards/hdfc-lg.png
                         size_type: lg
-                  category_ids:
-                    - "1001"
                   tags:
                     - descriptor:
                         name: General Information
@@ -1162,25 +1112,20 @@ steps:
                       headings:
                         - JOURNEY_OFFLINE
                     form:
-                      id: Ekyc_details_form_cc_9db886a3-d2cd-4d30-a0ed-36e03a26ad21
+                      id: Ekyc_details_form_cc_3cbc70e7-9367-40f6-b3f1-bb3f6063a213
                       mime_type: application/html
                       url: undefined/forms/ONDC:FIS12/Ekyc_details_form_cc/?transaction_id=04b2dc1f-1e96-43e9-8ea6-604bbf489560&session_id=undefined&bap_uri=https%3A%2F%2Fpramaan.ondc.org%2Fbeta%2Fstaging%2Fmock%2Fbuyer
                       resubmit: false
                       multiple_sumbissions: false
                     required: true
         type: request
-        description: The lender platform responds with detailed information about the
-          selected credit card and the KYC form required to proceed.
+        description: "The lender platform responds with detailed information about the selected credit card and the KYC form required to proceed. Selecting a card commits the applicant to that Issuer's own KYC and agreement path -- an applicant unsatisfied with their offers should regenerate offers via additional documentation rather than the Buyer App silently resubmitting the same data."
   - api: dynamic_form
     action_id: Ekyc_details_form_cc
     owner: BPP
     responseFor: null
     unsolicited: false
-    description: The lender provides the relevant KYC form to the borrower. In the
-      upstream ONDC spec this form is modeled as an externally-hosted redirect
-      page; here it is represented as a dynamic_form step (a manual control
-      confirming KYC verification status) rather than an inline HTML field form
-      like the earlier credit_card_information_form step.
+    description: "The lender provides the relevant KYC form to the borrower. In the upstream ONDC spec this form is modeled as an externally-hosted redirect page; here it is represented as a dynamic_form step (a manual control confirming KYC verification status) rather than an inline HTML field form like the earlier credit_card_information_form step. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
     mock:
       generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgRWt5Y19kZXRhaWxzX2Zvcm1fY2Mgc3RlcC4KICogVGhpcyBpcyBhIGR5bmFtaWNfZm9ybSBzdGVwOiB0aGUgYm9ycm93ZXIgY29uZmlybXMgdGhlIGxlbmRlcidzIEtZQwogKiB2ZXJpZmljYXRpb24gc3RhdHVzIHZpYSB0aGUgZm9ybSByZWZlcmVuY2VkIGluIG9uX3NlbGVjdCdzIHhpbnB1dC4KICogQHBhcmFtIHtPYmplY3R9IGRlZmF1bHRQYXlsb2FkIC0gVGhlIGJhc2UgcGF5bG9hZCBvYmplY3QuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
       validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgRWt5Y19kZXRhaWxzX2Zvcm1fY2Mgc3RlcC4KICogQHBhcmFtIHtPYmplY3R9IHRhcmdldFBheWxvYWQgLSBUaGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIHRvIHZhbGlkYXRlLgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gdmFsaWRhdGUodGFyZ2V0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
@@ -1202,21 +1147,16 @@ steps:
           formId: <%= formId %>
           transactionId: <%= JSON.parse(submissionData).transaction_id %>
         type: request
-        description: The lender provides the relevant KYC form to the borrower. In the
-          upstream ONDC spec this form is modeled as an externally-hosted
-          redirect page; here it is represented as a dynamic_form step (a manual
-          control confirming KYC verification status) rather than an inline HTML
-          field form like the earlier credit_card_information_form step.
+        description: "The lender provides the relevant KYC form to the borrower. In the upstream ONDC spec this form is modeled as an externally-hosted redirect page; here it is represented as a dynamic_form step (a manual control confirming KYC verification status) rather than an inline HTML field form like the earlier credit_card_information_form step. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
   - api: on_status
     action_id: on_status_unsolicited
     owner: BPP
     responseFor: null
     unsolicited: true
-    description: The lender sends the form status, indicating that the borrower's
-      KYC form completion is still pending.
+    description: "The lender sends the form status, indicating that the borrower's KYC form completion is still pending. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
     mock:
-      generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgdW5zb2xpY2l0ZWQgb25fc3RhdHVzIGNhbGwgdGhlIGxlbmRlcgogKiBzZW5kcyB3aGlsZSB0aGUgYm9ycm93ZXIncyBLWUMgZm9ybSBpcyBzdGlsbCBwZW5kaW5nIGNvbXBsZXRpb24uCiAqIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgaXMge30gLSBwcm92aWRlci9pdGVtIGFyZSBlY2hvZWQgZnJvbSB0aGUKICogcHJvdmlkZXIvaXRlbXMgc2Vzc2lvbiBjaHVua3Mgc2F2ZWQgYnkgb25fc2VsZWN0OyBvbmx5IHRoZSBmb3JtX3Jlc3BvbnNlCiAqIHN0YXR1cyB2YWx1ZSBpcyBuZXcgYXQgdGhpcyBzdGVwLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlcj8uWzBdOwogICAgY29uc3QgaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcz8uWzBdOwoKICAgIGNvbnN0IGl0ZW0gPSBpdGVtc1swXTsKICAgIGl0ZW0ueGlucHV0ID0gaXRlbS54aW5wdXQgPz8ge307CiAgICBpdGVtLnhpbnB1dC5mb3JtX3Jlc3BvbnNlID0geyBzdGF0dXM6ICJPRkZMSU5FX1BFTkRJTkciLCBzdWJtaXNzaW9uX2lkOiBzZXNzaW9uRGF0YS5Fa3ljX2RldGFpbHNfZm9ybV9jYyB9OwoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7IG9yZGVyOiB7IHByb3ZpZGVyLCBpdGVtczogW2l0ZW1dIH0gfTsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0KfQ==
-      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgdW5zb2xpY2l0ZWQgb25fc3RhdHVzIGNhbGwuCiAqCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CgogIC8vIFZhbGlkYXRlIGNvbnRleHQKICBjb25zdCBjb250ZXh0ID0gdGFyZ2V0UGF5bG9hZD8uY29udGV4dDsKCiAgaWYgKCFjb250ZXh0IHx8IGNvbnRleHQuYWN0aW9uICE9PSAib25fc3RhdHVzIikgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiY29udGV4dC5hY3Rpb24gbXVzdCBiZSBvbl9zdGF0dXMiCiAgICB9OwogIH0KCiAgLy8gVmFsaWRhdGUgb3JkZXIKICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZT8ub3JkZXI7CgogIGlmICghb3JkZXIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIgaXMgcmVxdWlyZWQiCiAgICB9OwogIH0KCiAgLy8gVmFsaWRhdGUgcHJvdmlkZXIKICBpZiAoIW9yZGVyLnByb3ZpZGVyPy5pZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5wcm92aWRlci5pZCBpcyByZXF1aXJlZCIKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSBpdGVtcwogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci5pdGVtcykgfHwgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLml0ZW1zIG11c3QgYmUgYSBub24tZW1wdHkgYXJyYXkiCiAgICB9OwogIH0KCiAgY29uc3QgaXRlbSA9IG9yZGVyLml0ZW1zWzBdOwoKICAvLyBWYWxpZGF0ZSBpdGVtIElECiAgaWYgKCFpdGVtPy5pZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCBpcyByZXF1aXJlZCIKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSB4aW5wdXQKICBpZiAoIWl0ZW0ueGlucHV0KSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnhpbnB1dCBpcyByZXF1aXJlZCIKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSBmb3JtCiAgY29uc3QgZm9ybSA9IGl0ZW0ueGlucHV0LmZvcm07CgogIGlmICghZm9ybSkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybSBpcyByZXF1aXJlZCIKICAgIH07CiAgfQoKICBpZiAoIWZvcm0uaWQpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm0uaWQgaXMgcmVxdWlyZWQiCiAgICB9OwogIH0KCiAgaWYgKCFmb3JtLnVybCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybS51cmwgaXMgcmVxdWlyZWQiCiAgICB9OwogIH0KCiAgLy8gVmFsaWRhdGUgZm9ybSByZXNwb25zZQogIGNvbnN0IGZvcm1SZXNwb25zZSA9IGl0ZW0ueGlucHV0LmZvcm1fcmVzcG9uc2U7CgogIGlmICghZm9ybVJlc3BvbnNlKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2UgaXMgcmVxdWlyZWQiCiAgICB9OwogIH0KCiAgaWYgKCFmb3JtUmVzcG9uc2Uuc3RhdHVzKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3RhdHVzIGlzIHJlcXVpcmVkIgogICAgfTsKICB9CgogIGlmICghZm9ybVJlc3BvbnNlLnN1Ym1pc3Npb25faWQpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjoKICAgICAgICAibWVzc2FnZS5vcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybV9yZXNwb25zZS5zdWJtaXNzaW9uX2lkIGlzIHJlcXVpcmVkIgogICAgfTsKICB9CgogIC8vIFZhbGlkYXRlIHByb3ZpZGVyIGFnYWluc3Qgc2Vzc2lvbiBkYXRhLCBpZiBhdmFpbGFibGUKICBjb25zdCBleHBlY3RlZFByb3ZpZGVySWQgPSBzZXNzaW9uRGF0YT8ucHJvdmlkZXJfaWQ/LlswXTsKCiAgaWYgKGV4cGVjdGVkUHJvdmlkZXJJZCAmJiBvcmRlci5wcm92aWRlci5pZCAhPT0gZXhwZWN0ZWRQcm92aWRlcklkKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgYG9yZGVyLnByb3ZpZGVyLmlkICIke29yZGVyLnByb3ZpZGVyLmlkfSIgZG9lcyBub3QgbWF0Y2ggdGhlIHByb3ZpZGVyIHJldHVybmVkIGluIG9uX3NlYXJjaCAoIiR7ZXhwZWN0ZWRQcm92aWRlcklkfSIpYAogICAgfTsKICB9CgogIC8vIFZhbGlkYXRlIGl0ZW0gYWdhaW5zdCBzZXNzaW9uIGRhdGEsIGlmIGF2YWlsYWJsZQogIGNvbnN0IGV4cGVjdGVkSXRlbUlkID0gc2Vzc2lvbkRhdGE/Lml0ZW1faWQ/LlswXTsKCiAgaWYgKGV4cGVjdGVkSXRlbUlkICYmIGl0ZW0uaWQgIT09IGV4cGVjdGVkSXRlbUlkKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgYG9yZGVyLml0ZW1zWzBdLmlkICIke2l0ZW0uaWR9IiBkb2VzIG5vdCBtYXRjaCB0aGUgaXRlbSByZXR1cm5lZCBpbiBvbl9zZWFyY2ggKCIke2V4cGVjdGVkSXRlbUlkfSIpYAogICAgfTsKICB9CgogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGNvZGU6IDIwMCwKICAgIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIKICB9Owp9
+      generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgdW5zb2xpY2l0ZWQgb25fc3RhdHVzIGNhbGwgdGhlIGxlbmRlcgogKiBzZW5kcyB3aGlsZSB0aGUgYm9ycm93ZXIncyBLWUMgZm9ybSBpcyBzdGlsbCBwZW5kaW5nIGNvbXBsZXRpb24uCiAqIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgaXMge30gLSBwcm92aWRlci9pdGVtIGFyZSBlY2hvZWQgZnJvbSB0aGUKICogcHJvdmlkZXIvaXRlbXMgc2Vzc2lvbiBjaHVua3Mgc2F2ZWQgYnkgb25fc2VsZWN0OyBvbmx5IHRoZSBmb3JtX3Jlc3BvbnNlCiAqIHN0YXR1cyB2YWx1ZSBpcyBuZXcgYXQgdGhpcyBzdGVwLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlcj8uWzBdOwogICAgY29uc3QgaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcz8uWzBdOwoKICAgIGNvbnN0IGl0ZW0gPSBpdGVtc1swXTsKICAgIGNvbnN0IGZvcm1JZCA9IGl0ZW1zWzBdLnhpbnB1dD8uZm9ybT8uaWQ7CgogICAgaXRlbS54aW5wdXQgPSAKICAgIHsKICAgICAgZm9ybTogeyBpZDogZm9ybUlkIH0sCiAgICAgIGZvcm1fcmVzcG9uc2UgOiB7IHN0YXR1czogIk9GRkxJTkVfUEVORElORyIsIHN1Ym1pc3Npb25faWQ6IHNlc3Npb25EYXRhLkVreWNfZGV0YWlsc19mb3JtX2NjIH19OwoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7IG9yZGVyOiB7IHByb3ZpZGVyLCBpdGVtczogW2l0ZW1dIH0gfTsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0KfQ==
+      validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgdW5zb2xpY2l0ZWQgb25fc3RhdHVzIGNhbGwuCiAqCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CgogIC8vIFZhbGlkYXRlIGNvbnRleHQKICBjb25zdCBjb250ZXh0ID0gdGFyZ2V0UGF5bG9hZD8uY29udGV4dDsKCiAgaWYgKCFjb250ZXh0IHx8IGNvbnRleHQuYWN0aW9uICE9PSAib25fc3RhdHVzIikgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiY29udGV4dC5hY3Rpb24gbXVzdCBiZSBvbl9zdGF0dXMiCiAgICB9OwogIH0KCiAgLy8gVmFsaWRhdGUgb3JkZXIKICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZT8ub3JkZXI7CgogIGlmICghb3JkZXIpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIgaXMgcmVxdWlyZWQiCiAgICB9OwogIH0KCiAgLy8gVmFsaWRhdGUgcHJvdmlkZXIKICBpZiAoIW9yZGVyLnByb3ZpZGVyPy5pZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5wcm92aWRlci5pZCBpcyByZXF1aXJlZCIKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSBpdGVtcwogIGlmICghQXJyYXkuaXNBcnJheShvcmRlci5pdGVtcykgfHwgb3JkZXIuaXRlbXMubGVuZ3RoID09PSAwKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLml0ZW1zIG11c3QgYmUgYSBub24tZW1wdHkgYXJyYXkiCiAgICB9OwogIH0KCiAgY29uc3QgaXRlbSA9IG9yZGVyLml0ZW1zWzBdOwoKICAvLyBWYWxpZGF0ZSBpdGVtIElECiAgaWYgKCFpdGVtPy5pZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5pdGVtc1swXS5pZCBpcyByZXF1aXJlZCIKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSB4aW5wdXQKICBpZiAoIWl0ZW0ueGlucHV0KSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246ICJtZXNzYWdlLm9yZGVyLml0ZW1zWzBdLnhpbnB1dCBpcyByZXF1aXJlZCIKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSBmb3JtCiAgY29uc3QgZm9ybSA9IGl0ZW0ueGlucHV0LmZvcm07CgogIGlmICghZm9ybSkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAibWVzc2FnZS5vcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybSBpcyByZXF1aXJlZCIKICAgIH07CiAgfQoKICBpZiAoIWZvcm0uaWQpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjogIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm0uaWQgaXMgcmVxdWlyZWQiCiAgICB9OwogIH0KCiAgLy8gVmFsaWRhdGUgZm9ybSByZXNwb25zZQogIGNvbnN0IGZvcm1SZXNwb25zZSA9IGl0ZW0ueGlucHV0LmZvcm1fcmVzcG9uc2U7CgogIGlmICghZm9ybVJlc3BvbnNlKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2UgaXMgcmVxdWlyZWQiCiAgICB9OwogIH0KCiAgaWYgKCFmb3JtUmVzcG9uc2Uuc3RhdHVzKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgIm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0ueGlucHV0LmZvcm1fcmVzcG9uc2Uuc3RhdHVzIGlzIHJlcXVpcmVkIgogICAgfTsKICB9CgogIGlmICghZm9ybVJlc3BvbnNlLnN1Ym1pc3Npb25faWQpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjoKICAgICAgICAibWVzc2FnZS5vcmRlci5pdGVtc1swXS54aW5wdXQuZm9ybV9yZXNwb25zZS5zdWJtaXNzaW9uX2lkIGlzIHJlcXVpcmVkIgogICAgfTsKICB9CgogIC8vIFZhbGlkYXRlIHByb3ZpZGVyIGFnYWluc3Qgc2Vzc2lvbiBkYXRhLCBpZiBhdmFpbGFibGUKICBjb25zdCBleHBlY3RlZFByb3ZpZGVySWQgPSBzZXNzaW9uRGF0YT8ucHJvdmlkZXJfaWQ/LlswXTsKCiAgaWYgKGV4cGVjdGVkUHJvdmlkZXJJZCAmJiBvcmRlci5wcm92aWRlci5pZCAhPT0gZXhwZWN0ZWRQcm92aWRlcklkKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgYG9yZGVyLnByb3ZpZGVyLmlkICIke29yZGVyLnByb3ZpZGVyLmlkfSIgZG9lcyBub3QgbWF0Y2ggdGhlIHByb3ZpZGVyIHJldHVybmVkIGluIG9uX3NlYXJjaCAoIiR7ZXhwZWN0ZWRQcm92aWRlcklkfSIpYAogICAgfTsKICB9CgogIC8vIFZhbGlkYXRlIGl0ZW0gYWdhaW5zdCBzZXNzaW9uIGRhdGEsIGlmIGF2YWlsYWJsZQogIGNvbnN0IGV4cGVjdGVkSXRlbUlkID0gc2Vzc2lvbkRhdGE/Lml0ZW1faWQ/LlswXTsKCiAgaWYgKGV4cGVjdGVkSXRlbUlkICYmIGl0ZW0uaWQgIT09IGV4cGVjdGVkSXRlbUlkKSB7CiAgICByZXR1cm4gewogICAgICB2YWxpZDogZmFsc2UsCiAgICAgIGNvZGU6IDQwMCwKICAgICAgZGVzY3JpcHRpb246CiAgICAgICAgYG9yZGVyLml0ZW1zWzBdLmlkICIke2l0ZW0uaWR9IiBkb2VzIG5vdCBtYXRjaCB0aGUgaXRlbSByZXR1cm5lZCBpbiBvbl9zZWFyY2ggKCIke2V4cGVjdGVkSXRlbUlkfSIpYAogICAgfTsKICB9CgogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGNvZGU6IDIwMCwKICAgIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIKICB9Owp9
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKCiAgaWYgKCFzZXNzaW9uRGF0YT8ucHJvdmlkZXI/Lmxlbmd0aCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwcm92aWRlciBpbiBzZXNzaW9uRGF0YSIKICAgIH07CiAgfQoKICBpZiAoIXNlc3Npb25EYXRhLml0ZW1zPy5sZW5ndGgpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjogIk1pc3NpbmcgaXRlbXMgaW4gc2Vzc2lvbkRhdGEiCiAgICB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YS5Fa3ljX2RldGFpbHNfZm9ybV9jYykgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBFa3ljX2RldGFpbHNfZm9ybV9jYyBzdWJtaXNzaW9uIGlkIGluIHNlc3Npb25EYXRhIgogICAgfTsKICB9CgogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGNvZGU6IDIwMCwKICAgIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIKICB9Owp9
       defaultPayload:
         context:
@@ -1252,9 +1192,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-23T18:02:49.393Z
+            timestamp: 2026-09-24T13:15:35.991Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: fc4c526b-48a5-4766-8a10-050d3f9ec368
+            message_id: 75c302e7-ef09-4234-8cda-e2ce4c637469
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -1351,8 +1291,6 @@ steps:
                         size_type: md
                       - url: https://url.com/hdfc/cards/hdfc-lg.png
                         size_type: lg
-                  category_ids:
-                    - "1001"
                   tags:
                     - descriptor:
                         name: General Information
@@ -1406,35 +1344,19 @@ steps:
                   matched: true
                   recommended: true
                   xinput:
-                    head:
-                      descriptor:
-                        name: Know your Customer
-                      index:
-                        min: 0
-                        cur: 0
-                        max: 0
-                      headings:
-                        - JOURNEY_OFFLINE
                     form:
-                      id: Ekyc_details_form_cc_9db886a3-d2cd-4d30-a0ed-36e03a26ad21
-                      mime_type: application/html
-                      url: undefined/forms/ONDC:FIS12/Ekyc_details_form_cc/?transaction_id=04b2dc1f-1e96-43e9-8ea6-604bbf489560&session_id=undefined&bap_uri=https%3A%2F%2Fpramaan.ondc.org%2Fbeta%2Fstaging%2Fmock%2Fbuyer
-                      resubmit: false
-                      multiple_sumbissions: false
-                    required: true
+                      id: Ekyc_details_form_cc_3cbc70e7-9367-40f6-b3f1-bb3f6063a213
                     form_response:
                       status: OFFLINE_PENDING
-                      submission_id: f8fd159b-6bca-4d90-ba64-0ffc1e9a2982
+                      submission_id: 73b60851-44d4-497e-ab85-255f1edcde46
         type: request
-        description: The lender sends the form status, indicating that the borrower's
-          KYC form completion is still pending.
+        description: "The lender sends the form status, indicating that the borrower's KYC form completion is still pending. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
   - api: status
     action_id: status_1
     owner: BAP
     responseFor: null
     unsolicited: false
-    description: The borrower requests the order status to check whether the KYC
-      form has been completed.
+    description: "The borrower requests the order status to check whether the KYC form has been completed. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
     mock:
       generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgbWlkLWZsb3cgc3RhdHVzIGNhbGwsIHVzZWQgYnkgdGhlCiAqIGJvcnJvd2VyIHRvIHBvbGwgdGhlIGxlbmRlciBmb3IgdGhlIEtZQyBmb3JtIGNvbXBsZXRpb24gc3RhdHVzLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICBjb25zdCB0cmFuc2FjdGlvbklkID0gc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZFswXTsKICBpZiAodHJhbnNhY3Rpb25JZCkgewogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5yZWZfaWQgPSB0cmFuc2FjdGlvbklkOwogIH0KICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7Cn0=
       validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgbWlkLWZsb3cgc3RhdHVzIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgaWYgKHRhcmdldFBheWxvYWQubWVzc2FnZS5yZWZfaWQgIT09IHNlc3Npb25EYXRhLnRyYW5zYWN0aW9uSWRbMF0pIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIm1lc3NhZ2UucmVmX2lkIGlzIG5vdCB2YWxpZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
@@ -1473,9 +1395,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: status
-            timestamp: 2026-09-23T18:02:49.406Z
+            timestamp: 2026-09-24T13:15:36.008Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: 04fc8d7f-14a6-4487-a0fc-aeea31388a05
+            message_id: 15ae0ec2-5d14-4c57-afc0-ab43b07ade82
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -1490,17 +1412,15 @@ steps:
           message:
             ref_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
         type: request
-        description: The borrower requests the order status to check whether the KYC
-          form has been completed.
+        description: "The borrower requests the order status to check whether the KYC form has been completed. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
   - api: on_status
     action_id: on_status_1
     owner: BPP
     responseFor: status_1
     unsolicited: false
-    description: The lender sends the latest order status, confirming the KYC form
-      has been completed.
+    description: "The lender sends the latest order status, confirming the KYC form has been completed. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
     mock:
-      generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgb25fc3RhdHVzIGNhbGwgcmVzcG9uZGluZyB0byB0aGUKICogbWlkLWZsb3cgc3RhdHVzIGNoZWNrLCByZXBvcnRpbmcgdGhlIEtZQyBmb3JtIGFzIGNvbXBsZXRlZC4KICogZGVmYXVsdFBheWxvYWQubWVzc2FnZSBpcyB7fSAtIHByb3ZpZGVyL2l0ZW0gYXJlIGVjaG9lZCBmcm9tIHRoZQogKiBwcm92aWRlci9pdGVtcyBzZXNzaW9uIGNodW5rczsgb25seSB0aGUgZm9ybV9yZXNwb25zZSBzdGF0dXMgdmFsdWUgaXMgbmV3LgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlcj8uWzBdOwogICAgY29uc3QgaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcz8uWzBdOwogICAgY29uc3QgaXRlbSA9aXRlbXNbMF07CiAgICBpdGVtLnhpbnB1dCA9IGl0ZW0ueGlucHV0ID8/IHt9OwogICAgaXRlbS54aW5wdXQuZm9ybV9yZXNwb25zZSA9IHsgc3RhdHVzOiAiQ09NUExFVEVEIiwgc3VibWlzc2lvbl9pZDogc2Vzc2lvbkRhdGEuRWt5Y19kZXRhaWxzX2Zvcm1fY2MgfTsKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7IG9yZGVyOiB7IHByb3ZpZGVyLCBpdGVtczogW2l0ZW1dIH0gfTsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0KfQ==
+      generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgb25fc3RhdHVzIGNhbGwgcmVzcG9uZGluZyB0byB0aGUKICogbWlkLWZsb3cgc3RhdHVzIGNoZWNrLCByZXBvcnRpbmcgdGhlIEtZQyBmb3JtIGFzIGNvbXBsZXRlZC4KICogZGVmYXVsdFBheWxvYWQubWVzc2FnZSBpcyB7fSAtIHByb3ZpZGVyL2l0ZW0gYXJlIGVjaG9lZCBmcm9tIHRoZQogKiBwcm92aWRlci9pdGVtcyBzZXNzaW9uIGNodW5rczsgb25seSB0aGUgZm9ybV9yZXNwb25zZSBzdGF0dXMgdmFsdWUgaXMgbmV3LgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlcj8uWzBdOwogICAgY29uc3QgaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcz8uWzBdOwogICAgY29uc3QgaXRlbSA9IGl0ZW1zWzBdOwogICAgY29uc3QgZm9ybUlkID0gaXRlbXNbMF0ueGlucHV0Py5mb3JtPy5pZDsKCiAgICBpdGVtLnhpbnB1dCA9CiAgICB7CiAgICAgIGZvcm06IHsgaWQ6IGZvcm1JZCB9LAogICAgICBmb3JtX3Jlc3BvbnNlOiB7IHN0YXR1czogIkNPTVBMRVRFRCIsIHN1Ym1pc3Npb25faWQ6IHNlc3Npb25EYXRhLkVreWNfZGV0YWlsc19mb3JtX2NjIH0KICAgIH07CiAgICBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlID0geyBvcmRlcjogeyBwcm92aWRlciwgaXRlbXM6IFtpdGVtXSB9IH07CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9Cn0=
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgb25fc3RhdHVzIGNhbGwgcmVzcG9uZGluZwogKiB0byB0aGUgbWlkLWZsb3cgc3RhdHVzIGNoZWNrLgogKgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IG9yZGVyID0gdGFyZ2V0UGF5bG9hZC5tZXNzYWdlPy5vcmRlcjsKICBjb25zdCBpdGVtID0gb3JkZXIuaXRlbXNbMF07CgogIC8vIFZhbGlkYXRlIHByb3ZpZGVyIGFnYWluc3Qgc2Vzc2lvbiBkYXRhLCBpZiBhdmFpbGFibGUKICBjb25zdCBleHBlY3RlZFByb3ZpZGVySWQgPSBzZXNzaW9uRGF0YT8ucHJvdmlkZXJfaWQ/LlswXTsKCiAgaWYgKG9yZGVyPy5wcm92aWRlcj8uaWQgIT09IGV4cGVjdGVkUHJvdmlkZXJJZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgIGBvcmRlci5wcm92aWRlci5pZCAiJHtvcmRlci5wcm92aWRlci5pZH0iIGRvZXMgbm90IG1hdGNoIHRoZSBwcm92aWRlciByZXR1cm5lZCBpbiBvbl9zZWFyY2ggKCIke2V4cGVjdGVkUHJvdmlkZXJJZH0iKWAKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSBpdGVtIGFnYWluc3Qgc2Vzc2lvbiBkYXRhLCBpZiBhdmFpbGFibGUKICBjb25zdCBleHBlY3RlZEl0ZW1JZCA9IHNlc3Npb25EYXRhPy5pdGVtX2lkPy5bMF07CgogIGlmIChpdGVtLmlkICE9PSBleHBlY3RlZEl0ZW1JZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgIGBvcmRlci5pdGVtc1swXS5pZCAiJHtpdGVtLmlkfSIgZG9lcyBub3QgbWF0Y2ggdGhlIGl0ZW0gcmV0dXJuZWQgaW4gb25fc2VhcmNoICgiJHtleHBlY3RlZEl0ZW1JZH0iKWAKICAgIH07CiAgfQoKICByZXR1cm4gewogICAgdmFsaWQ6IHRydWUsCiAgICBjb2RlOiAyMDAsCiAgICBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiCiAgfTsKfQ==
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKCiAgaWYgKCFzZXNzaW9uRGF0YT8ucHJvdmlkZXI/Lmxlbmd0aCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwcm92aWRlciBpbiBzZXNzaW9uRGF0YSIKICAgIH07CiAgfQoKICBpZiAoIXNlc3Npb25EYXRhLml0ZW1zPy5sZW5ndGgpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjogIk1pc3NpbmcgaXRlbXMgaW4gc2Vzc2lvbkRhdGEiCiAgICB9OwogIH0KCiAgaWYgKCFzZXNzaW9uRGF0YS5Fa3ljX2RldGFpbHNfZm9ybV9jYykgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBFa3ljX2RldGFpbHNfZm9ybV9jYyBzdWJtaXNzaW9uIGlkIGluIHNlc3Npb25EYXRhIgogICAgfTsKICB9CgogIHJldHVybiB7CiAgICB2YWxpZDogdHJ1ZSwKICAgIGNvZGU6IDIwMCwKICAgIGRlc2NyaXB0aW9uOiAiUmVxdWlyZW1lbnRzIG1ldCIKICB9Owp9
       defaultPayload:
@@ -1537,9 +1457,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-23T18:02:49.437Z
+            timestamp: 2026-09-24T13:15:36.049Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: 04fc8d7f-14a6-4487-a0fc-aeea31388a05
+            message_id: 15ae0ec2-5d14-4c57-afc0-ab43b07ade82
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -1636,8 +1556,6 @@ steps:
                         size_type: md
                       - url: https://url.com/hdfc/cards/hdfc-lg.png
                         size_type: lg
-                  category_ids:
-                    - "1001"
                   tags:
                     - descriptor:
                         name: General Information
@@ -1691,35 +1609,19 @@ steps:
                   matched: true
                   recommended: true
                   xinput:
-                    head:
-                      descriptor:
-                        name: Know your Customer
-                      index:
-                        min: 0
-                        cur: 0
-                        max: 0
-                      headings:
-                        - JOURNEY_OFFLINE
                     form:
-                      id: Ekyc_details_form_cc_9db886a3-d2cd-4d30-a0ed-36e03a26ad21
-                      mime_type: application/html
-                      url: undefined/forms/ONDC:FIS12/Ekyc_details_form_cc/?transaction_id=04b2dc1f-1e96-43e9-8ea6-604bbf489560&session_id=undefined&bap_uri=https%3A%2F%2Fpramaan.ondc.org%2Fbeta%2Fstaging%2Fmock%2Fbuyer
-                      resubmit: false
-                      multiple_sumbissions: false
-                    required: true
+                      id: Ekyc_details_form_cc_3cbc70e7-9367-40f6-b3f1-bb3f6063a213
                     form_response:
                       status: COMPLETED
-                      submission_id: 9d99e303-f3a2-4a42-88a0-3f6d183190a7
+                      submission_id: c25623b2-ded4-4ea7-b68f-c8606e1400d5
         type: request
-        description: The lender sends the latest order status, confirming the KYC form
-          has been completed.
+        description: "The lender sends the latest order status, confirming the KYC form has been completed. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
   - api: init
     action_id: init
     owner: BAP
     responseFor: null
     unsolicited: false
-    description: The borrower initiates the credit card request by filling the KYC
-      form and submitting the completed submission id.
+    description: "The borrower initiates the credit card request by filling the KYC form and submitting the completed submission id. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
     mock:
       generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgaW5pdCBjYWxsLgogKiBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlIGlzIHt9IC0gcHJvdmlkZXIvaXRlbSBpZHMgYXJlIGVjaG9lZCBmcm9tIHRoZQogKiBwcm92aWRlci9pdGVtcyBzZXNzaW9uIGNodW5rcywgdGhlIGl0ZW0ncyB4aW5wdXQuZm9ybV9yZXNwb25zZSBpcyByZWJ1aWx0CiAqIGZyb20gdGhlIEtZQyBmb3JtIHN1Ym1pc3Npb24gaWQsIGFuZCB0aGUgb25seSBnZW51aW5lbHkgbmV3IGNvbnRlbnQgYXQKICogdGhpcyBzdGVwIChvcmRlci50YWdzIC8gQkFQX1RFUk1TKSBpcyBhdXRob3JlZCBoZXJlLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlcj8uWzBdOwogICAgY29uc3QgaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcz8uWzBdOwogICAgY29uc3Qgc3VibWlzc2lvbklkID0gc2Vzc2lvbkRhdGEuRWt5Y19kZXRhaWxzX2Zvcm1fY2M7CiAgIAogICAgY29uc3QgZm9ybUlkID0gaXRlbXNbMF0ueGlucHV0Py5mb3JtPy5pZDsKICAgIGNvbnN0IGl0ZW0gPSB7CiAgICAgIGlkOiBpdGVtc1swXS5pZCwKICAgICAgeGlucHV0OiB7CiAgICAgICAgZm9ybTogeyBpZDogZm9ybUlkIH0sCiAgICAgICAgZm9ybV9yZXNwb25zZTogeyBzdGF0dXM6ICJTVUNDRVNTIiwgc3VibWlzc2lvbl9pZDogc3VibWlzc2lvbklkIH0sCiAgICAgIH0sCiAgICB9OwoKICAgIGNvbnN0IHRhZ3MgPSBbCiAgICAgIHsKICAgICAgICBkZXNjcmlwdG9yOiB7IGNvZGU6ICJCQVBfVEVSTVMiLCBuYW1lOiAiQkFQIFRlcm1zIG9mIEVuZ2FnZW1lbnQiIH0sCiAgICAgICAgZGlzcGxheTogZmFsc2UsCiAgICAgICAgbGlzdDogWwogICAgICAgICAgeyBkZXNjcmlwdG9yOiB7IGNvZGU6ICJTVEFUSUNfVEVSTVMiIH0sIHZhbHVlOiAiaHR0cHM6Ly9iYXAuY3JlZGl0LmJlY2tucHJvdG9jb2wuaW8vcGVyc29uYWwtYmFua2luZy9sb2Fucy9wZXJzb25hbC1sb2FuIiB9LAogICAgICAgICAgeyBkZXNjcmlwdG9yOiB7IGNvZGU6ICJPRkZMSU5FX0NPTlRSQUNUIiB9LCB2YWx1ZTogInRydWUiIH0sCiAgICAgICAgXSwKICAgICAgfSwKICAgIF07CgogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZSA9IHsKICAgICAgb3JkZXI6IHsKICAgICAgICBwcm92aWRlcjogeyBpZDogcHJvdmlkZXIuaWQgfSwKICAgICAgICBpdGVtczogW2l0ZW1dLAogICAgICAgIHRhZ3MsCiAgICAgIH0sCiAgICB9OwogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfQp9
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgaW5pdCBjYWxsLgogKgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IG9yZGVyID0gdGFyZ2V0UGF5bG9hZC5tZXNzYWdlPy5vcmRlcjsKICBjb25zdCBpdGVtID0gb3JkZXIuaXRlbXNbMF07CiAgLy8gVmFsaWRhdGUgcHJvdmlkZXIgYWdhaW5zdCBzZXNzaW9uIGRhdGEsIGlmIGF2YWlsYWJsZQogIGNvbnN0IGV4cGVjdGVkUHJvdmlkZXJJZCA9IHNlc3Npb25EYXRhPy5wcm92aWRlcl9pZD8uWzBdOwoKICBpZiAob3JkZXIucHJvdmlkZXIuaWQgIT09IGV4cGVjdGVkUHJvdmlkZXJJZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgIGBvcmRlci5wcm92aWRlci5pZCAiJHtvcmRlci5wcm92aWRlci5pZH0iIGRvZXMgbm90IG1hdGNoIHRoZSBwcm92aWRlciByZXR1cm5lZCBpbiBvbl9zZWFyY2ggKCIke2V4cGVjdGVkUHJvdmlkZXJJZH0iKWAKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSBpdGVtIGFnYWluc3Qgc2Vzc2lvbiBkYXRhLCBpZiBhdmFpbGFibGUKICBjb25zdCBleHBlY3RlZEl0ZW1JZCA9IHNlc3Npb25EYXRhPy5pdGVtX2lkPy5bMF07CgogIGlmIChpdGVtLmlkICE9PSBleHBlY3RlZEl0ZW1JZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgIGBvcmRlci5pdGVtc1swXS5pZCAiJHtpdGVtLmlkfSIgZG9lcyBub3QgbWF0Y2ggdGhlIGl0ZW0gcmV0dXJuZWQgaW4gb25fc2VhcmNoICgiJHtleHBlY3RlZEl0ZW1JZH0iKWAKICAgIH07CiAgfQoKICByZXR1cm4gewogICAgdmFsaWQ6IHRydWUsCiAgICBjb2RlOiAyMDAsCiAgICBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiCiAgfTsKfQ==
@@ -1759,9 +1661,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: init
-            timestamp: 2026-09-23T18:02:49.453Z
+            timestamp: 2026-09-24T13:15:36.089Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: 9d563de2-a3a5-4966-8db1-8e9f4bfef842
+            message_id: 8452946f-bad2-494d-a967-1a0455bb0abe
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -1781,10 +1683,10 @@ steps:
                 - id: d9eb81e2-96b5-477f-98dc-8518ad60d72e
                   xinput:
                     form:
-                      id: Ekyc_details_form_cc_9db886a3-d2cd-4d30-a0ed-36e03a26ad21
+                      id: Ekyc_details_form_cc_3cbc70e7-9367-40f6-b3f1-bb3f6063a213
                     form_response:
                       status: SUCCESS
-                      submission_id: 2c4a1378-f29e-4708-9ba6-df7d6db1d537
+                      submission_id: 33f53b5b-77a5-4a05-8734-90eff90578c3
               tags:
                 - descriptor:
                     code: BAP_TERMS
@@ -1798,8 +1700,7 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
         type: request
-        description: The borrower initiates the credit card request by filling the KYC
-          form and submitting the completed submission id.
+        description: "The borrower initiates the credit card request by filling the KYC form and submitting the completed submission id. KYC method and documentation requirements are Issuer-specific -- some steps may require out-of-band, non-digital completion, so the Buyer App should not assume every KYC step resolves inside its own interface."
   - api: on_init
     action_id: on_init
     owner: BPP
@@ -1808,7 +1709,7 @@ steps:
     description: The lender accepts the credit card request, displays the card
       details, benefits, and terms of engagement.
     mock:
-      generate: CmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICBjb25zdCBwcm92aWRlciA9IHNlc3Npb25EYXRhLnByb3ZpZGVyPy5bMF07CiAgICBjb25zdCBpdGVtcyA9IHNlc3Npb25EYXRhLml0ZW1zPy5bMF07CgogICAgY29uc3QgZnVsZmlsbG1lbnRzID0gZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMKCiAgICBjb25zdCBpdGVtID0gewogICAgICBpZDogaXRlbXNbMF0uaWQsCiAgICAgIGRlc2NyaXB0b3I6IGl0ZW1zWzBdLmRlc2NyaXB0b3IsCiAgICAgIHRhZ3M6IGl0ZW1zWzBdLnRhZ3MsCiAgICB9OwoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7CiAgICAgIG9yZGVyOiB7CiAgICAgICAgcHJvdmlkZXI6IHsKICAgICAgICAgIGlkOiBwcm92aWRlci5pZCwKICAgICAgICAgIGRlc2NyaXB0b3I6IHByb3ZpZGVyLmRlc2NyaXB0b3IsCiAgICAgICAgICB0YWdzOiBwcm92aWRlci50YWdzLAogICAgICAgIH0sCiAgICAgICAgaXRlbXM6IFtpdGVtXSwKICAgICAgICBmdWxmaWxsbWVudHMsCiAgICAgIH0sCiAgICB9OwogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfQp9
+      generate: CmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHRyeSB7CiAgICBjb25zdCBwcm92aWRlciA9IHNlc3Npb25EYXRhLnByb3ZpZGVyPy5bMF07CiAgICBjb25zdCBpdGVtcyA9IHNlc3Npb25EYXRhLml0ZW1zPy5bMF07CgogICAgY29uc3QgZnVsZmlsbG1lbnRzID0gZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlci5mdWxmaWxsbWVudHMKICAgIGNvbnN0IHRhZ3MgPSBkZWZhdWx0UGF5bG9hZC5tZXNzYWdlLm9yZGVyLnRhZ3MKCiAgICBjb25zdCBpdGVtID0gewogICAgICBpZDogaXRlbXNbMF0uaWQsCiAgICAgIGRlc2NyaXB0b3I6IGl0ZW1zWzBdLmRlc2NyaXB0b3IsCiAgICAgIHRhZ3M6IGl0ZW1zWzBdLnRhZ3MsCiAgICB9OwoKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UgPSB7CiAgICAgIG9yZGVyOiB7CiAgICAgICAgcHJvdmlkZXI6IHsKICAgICAgICAgIGlkOiBwcm92aWRlci5pZCwKICAgICAgICAgIGRlc2NyaXB0b3I6IHByb3ZpZGVyLmRlc2NyaXB0b3IsCiAgICAgICAgICB0YWdzOiBwcm92aWRlci50YWdzLAogICAgICAgIH0sCiAgICAgICAgaXRlbXM6IFtpdGVtXSwKICAgICAgICBmdWxmaWxsbWVudHMsCiAgICAgICAgdGFncwogICAgICB9LAogICAgfTsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9IGNhdGNoIChlcnJvcikgewogICAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwogIH0KfQ==
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgb25faW5pdCBjYWxsLgogKgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBpbmNvbWluZyByZXF1ZXN0IHBheWxvYWQgdG8gdmFsaWRhdGUuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIC8vIFZhbGlkYXRlIG9yZGVyCiAgY29uc3Qgb3JkZXIgPSB0YXJnZXRQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyOwogIGNvbnN0IGl0ZW0gPSBvcmRlci5pdGVtc1swXTsKCiAgLy8gVmFsaWRhdGUgcHJvdmlkZXIgYWdhaW5zdCBzZXNzaW9uIGRhdGEsIGlmIGF2YWlsYWJsZQogIGNvbnN0IGV4cGVjdGVkUHJvdmlkZXJJZCA9IHNlc3Npb25EYXRhPy5wcm92aWRlcl9pZD8uWzBdOwoKICBpZiAob3JkZXIucHJvdmlkZXIuaWQgIT09IGV4cGVjdGVkUHJvdmlkZXJJZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgIGBvcmRlci5wcm92aWRlci5pZCAiJHtvcmRlci5wcm92aWRlci5pZH0iIGRvZXMgbm90IG1hdGNoIHRoZSBwcm92aWRlciByZXR1cm5lZCBpbiBvbl9zZWFyY2ggKCIke2V4cGVjdGVkUHJvdmlkZXJJZH0iKWAKICAgIH07CiAgfQoKICAvLyBWYWxpZGF0ZSBpdGVtIGFnYWluc3Qgc2Vzc2lvbiBkYXRhLCBpZiBhdmFpbGFibGUKICBjb25zdCBleHBlY3RlZEl0ZW1JZCA9IHNlc3Npb25EYXRhPy5pdGVtX2lkPy5bMF07CgogIGlmIChpdGVtLmlkICE9PSBleHBlY3RlZEl0ZW1JZCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOgogICAgICAgIGBvcmRlci5pdGVtc1swXS5pZCAiJHtpdGVtLmlkfSIgZG9lcyBub3QgbWF0Y2ggdGhlIGl0ZW0gcmV0dXJuZWQgaW4gb25fc2VhcmNoICgiJHtleHBlY3RlZEl0ZW1JZH0iKWAKICAgIH07CiAgfQoKCiAgcmV0dXJuIHsKICAgIHZhbGlkOiB0cnVlLAogICAgY29kZTogMjAwLAogICAgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IgogIH07Cn0=
       requirements: ZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKCiAgaWYgKCFzZXNzaW9uRGF0YT8ucHJvdmlkZXI/Lmxlbmd0aCkgewogICAgcmV0dXJuIHsKICAgICAgdmFsaWQ6IGZhbHNlLAogICAgICBjb2RlOiA0MDAsCiAgICAgIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBwcm92aWRlciBpbiBzZXNzaW9uRGF0YSIKICAgIH07CiAgfQoKICBpZiAoIXNlc3Npb25EYXRhLml0ZW1zPy5sZW5ndGgpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjogIk1pc3NpbmcgaXRlbXMgaW4gc2Vzc2lvbkRhdGEiCiAgICB9OwogIH0KCiAgcmV0dXJuIHsKICAgIHZhbGlkOiB0cnVlLAogICAgY29kZTogMjAwLAogICAgZGVzY3JpcHRpb246ICJSZXF1aXJlbWVudHMgbWV0IgogIH07Cn0=
       defaultPayload:
@@ -1842,6 +1743,18 @@ steps:
                 state:
                   descriptor:
                     code: INITIATED
+            tags:
+              - descriptor:
+                  code: BPP_TERMS
+                  name: BPP Terms of Engagement
+                display: false
+                list:
+                  - descriptor:
+                      code: STATIC_TERMS
+                    value: https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan
+                  - descriptor:
+                      code: OFFLINE_CONTRACT
+                    value: "true"
       saveData:
         transactionId: $.context.transaction_id
         latestMessage_id: $.context.message_id
@@ -1858,9 +1771,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_init
-            timestamp: 2026-09-23T18:02:49.478Z
+            timestamp: 2026-09-24T13:15:36.161Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: 9d563de2-a3a5-4966-8db1-8e9f4bfef842
+            message_id: 8452946f-bad2-494d-a967-1a0455bb0abe
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -2018,6 +1931,18 @@ steps:
                   state:
                     descriptor:
                       code: INITIATED
+              tags:
+                - descriptor:
+                    code: BPP_TERMS
+                    name: BPP Terms of Engagement
+                  display: false
+                  list:
+                    - descriptor:
+                        code: STATIC_TERMS
+                      value: https://bpp.credit.becknprotocol.org/personal-banking/loans/personal-loan
+                    - descriptor:
+                        code: OFFLINE_CONTRACT
+                      value: "true"
         type: request
         description: The lender accepts the credit card request, displays the card
           details, benefits, and terms of engagement.
@@ -2067,9 +1992,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: confirm
-            timestamp: 2026-09-23T18:02:49.493Z
+            timestamp: 2026-09-24T13:15:36.198Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: 99441902-85ad-4b1b-83c4-2a38da795aa7
+            message_id: 6c4ad5a9-f5bc-4750-bb1e-323173d2f648
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -2162,9 +2087,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_confirm
-            timestamp: 2026-09-23T18:02:49.514Z
+            timestamp: 2026-09-24T13:15:36.235Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: 99441902-85ad-4b1b-83c4-2a38da795aa7
+            message_id: 6c4ad5a9-f5bc-4750-bb1e-323173d2f648
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -2178,7 +2103,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: order_b999f6f6-74cb-4c34-ad4c-0b8e3d9d742d
+              id: order_9f29e61b-6e48-4f07-bca6-2fbaaa1722ae
               status: ACTIVE
               provider:
                 id: P1
@@ -2364,8 +2289,8 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-09-23T18:02:49.515Z
-              updated_at: 2026-09-23T18:02:49.515Z
+              created_at: 2026-09-24T13:15:36.236Z
+              updated_at: 2026-09-24T13:15:36.236Z
         type: request
         description: The lender confirms the credit card order and provides the final
           confirmation details.
@@ -2374,8 +2299,7 @@ steps:
     owner: BAP
     responseFor: null
     unsolicited: false
-    description: The borrower seeks the most recent status update on the credit card
-      application.
+    description: "The borrower seeks the most recent status update on the credit card application. Status pushes here track discrete application milestones that can complete out of order depending on the Issuer's own process -- the Buyer App should track each independently rather than assuming a fixed sequence."
     mock:
       generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgZmluYWwgc3RhdHVzIGNhbGwsIHVzZWQgYnkgdGhlCiAqIGJvcnJvd2VyIHRvIHJlcXVlc3QgdGhlIGxhdGVzdCBjcmVkaXQgY2FyZCBhcHBsaWNhdGlvbiBzdGF0dXMuCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0gVGhlIGdlbmVyYXRlZCBwYXlsb2FkIG9iamVjdC4KICovCmFzeW5jIGZ1bmN0aW9uIGdlbmVyYXRlKGRlZmF1bHRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IG9yZGVySWQgPSBzZXNzaW9uRGF0YS5vcmRlcklkWzBdOwogIGNvbnN0IHRyYW5zYWN0aW9uSWQgPSBzZXNzaW9uRGF0YS50cmFuc2FjdGlvbklkICYmIHNlc3Npb25EYXRhLnRyYW5zYWN0aW9uSWRbMF07CiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5yZWZfaWQgPSBvcmRlcklkIHx8IHRyYW5zYWN0aW9uSWQ7CiAgcmV0dXJuIGRlZmF1bHRQYXlsb2FkOwp9
       validate: Ly8gdmFsaWRhdGUuanMKLyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciB0aGUgZmluYWwgc3RhdHVzIGNhbGwuCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHJldHVybnMge09iamVjdH0geyB2YWxpZDogYm9vbGVhbiwgY29kZTogbnVtYmVyLCBkZXNjcmlwdGlvbjogc3RyaW5nIH0KICovCmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
@@ -2414,9 +2338,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: status
-            timestamp: 2026-09-23T18:02:49.540Z
+            timestamp: 2026-09-24T13:15:36.280Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: f47c8b44-57fb-415a-bc92-80a33869b693
+            message_id: 8546c74f-aa4b-44ff-9304-705e8e1e5f6f
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -2429,17 +2353,15 @@ steps:
               city:
                 code: "*"
           message:
-            ref_id: order_b999f6f6-74cb-4c34-ad4c-0b8e3d9d742d
+            ref_id: order_9f29e61b-6e48-4f07-bca6-2fbaaa1722ae
         type: request
-        description: The borrower seeks the most recent status update on the credit card
-          application.
+        description: "The borrower seeks the most recent status update on the credit card application. Status pushes here track discrete application milestones that can complete out of order depending on the Issuer's own process -- the Buyer App should track each independently rather than assuming a fixed sequence."
   - api: on_status
     action_id: on_status_2
     owner: BPP
     responseFor: status_2
     unsolicited: false
-    description: The lender shares the latest card application status with the
-      borrower, including fulfillment/shipping details.
+    description: "The lender shares the latest card application status with the borrower, including fulfillment/shipping details. Card fulfilment status and expected delivery date should be reflected to the applicant as their own tracked state, distinct from application approval, since approval and physical/digital card issuance happen on different timelines."
     mock:
       generate: Ly8gZ2VuZXJhdGUuanMKLyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciB0aGUgZmluYWwgb25fc3RhdHVzIGNhbGwsIHJlcG9ydGluZyB0aGUKICogbGF0ZXN0IGNyZWRpdCBjYXJkIGFwcGxpY2F0aW9uL2Z1bGZpbGxtZW50IHN0YXR1cyB0byB0aGUgYm9ycm93ZXIuCiAqIFB1cmUgcmUtZWNobyBvZiB0aGUgY29uZmlybWVkIG9yZGVyIC0gbm8gbmV3IGNvbnRlbnQsIGVudGlyZWx5CiAqIHJlY29uc3RydWN0ZWQgZnJvbSBzZXNzaW9uIGNodW5rcyBzYXZlZCBieSBvbl9jb25maXJtLgogKiBAcGFyYW0ge09iamVjdH0gZGVmYXVsdFBheWxvYWQgLSBUaGUgYmFzZSBwYXlsb2FkIG9iamVjdCB3aXRoIGNvbnRleHQgYWxyZWFkeSBwb3B1bGF0ZWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICB0cnkgewogICAgY29uc3Qgb3JkZXJJZCA9IHNlc3Npb25EYXRhLm9yZGVySWQ/LlswXTsKICAgIGNvbnN0IGNyZWF0ZWRBdCA9IHNlc3Npb25EYXRhLmNyZWF0ZWRBdD8uWzBdOwogICAgY29uc3QgcHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlcj8uWzBdOwogICAgY29uc3QgaXRlbXMgPSBzZXNzaW9uRGF0YS5pdGVtcz8uWzBdOwogICAgY29uc3QgdGFncyA9IHNlc3Npb25EYXRhLnRhZ3M/LlswXSA/PyBbXTsKICAgIGNvbnN0IGZ1bGZpbGxtZW50cyA9IHNlc3Npb25EYXRhLmZ1bGZpbGxtZW50cz8uWzBdOwogICAgY29uc3QgaXRlbSA9IHsgaWQ6IGl0ZW1zWzBdLmlkLCBkZXNjcmlwdG9yOiBpdGVtc1swXS5kZXNjcmlwdG9yLCB0YWdzOiBpdGVtc1swXS50YWdzIH07CiAgICBjb25zdCB0aW1lc3RhbXAgPSBjdXJyZW50VGltZXN0YW1wKCk7CgogICAgZGVmYXVsdFBheWxvYWQubWVzc2FnZSA9IHsKICAgICAgb3JkZXI6IHsKICAgICAgICBpZDogb3JkZXJJZCwKICAgICAgICBzdGF0dXM6ICJBQ1RJVkUiLAogICAgICAgIHByb3ZpZGVyOiB7IGlkOiBwcm92aWRlci5pZCwgZGVzY3JpcHRvcjogcHJvdmlkZXIuZGVzY3JpcHRvciwgdGFnczogcHJvdmlkZXIudGFncyB9LAogICAgICAgIGl0ZW1zOiBbaXRlbV0sCiAgICAgICAgZnVsZmlsbG1lbnRzLAogICAgICAgIHRhZ3MsCiAgICAgICAgY3JlYXRlZF9hdDogY3JlYXRlZEF0LAogICAgICAgIHVwZGF0ZWRfYXQ6IHRpbWVzdGFtcCwKICAgICAgfSwKICAgIH07CiAgICByZXR1cm4gZGVmYXVsdFBheWxvYWQ7CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKICB9Cn0=
       validate: CmZ1bmN0aW9uIHZhbGlkYXRlKHRhcmdldFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgLy8gVmFsaWRhdGUgb3JkZXIKICBjb25zdCBvcmRlciA9IHRhcmdldFBheWxvYWQubWVzc2FnZT8ub3JkZXI7CiAgY29uc3QgaXRlbSA9IG9yZGVyLml0ZW1zWzBdOwogIGNvbnN0IGZ1bGZpbGxtZW50ID0gb3JkZXIuZnVsZmlsbG1lbnRzPy5bMF07CgogIC8vIFZhbGlkYXRlIHByb3ZpZGVyIGFnYWluc3Qgc2Vzc2lvbiBkYXRhLCBpZiBhdmFpbGFibGUKICBjb25zdCBleHBlY3RlZFByb3ZpZGVySWQgPSBzZXNzaW9uRGF0YT8ucHJvdmlkZXJfaWQ/LlswXTsKCiAgaWYgKG9yZGVyLnByb3ZpZGVyLmlkICE9PSBleHBlY3RlZFByb3ZpZGVySWQpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjoKICAgICAgICBgb3JkZXIucHJvdmlkZXIuaWQgIiR7b3JkZXIucHJvdmlkZXIuaWR9IiBkb2VzIG5vdCBtYXRjaCB0aGUgcHJvdmlkZXIgcmV0dXJuZWQgaW4gb25fc2VhcmNoICgiJHtleHBlY3RlZFByb3ZpZGVySWR9IilgCiAgICB9OwogIH0KCiAgLy8gVmFsaWRhdGUgaXRlbSBhZ2FpbnN0IHNlc3Npb24gZGF0YSwgaWYgYXZhaWxhYmxlCiAgY29uc3QgZXhwZWN0ZWRJdGVtSWQgPSBzZXNzaW9uRGF0YT8uaXRlbV9pZD8uWzBdOwoKICBpZiAoaXRlbS5pZCAhPT0gZXhwZWN0ZWRJdGVtSWQpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjoKICAgICAgICBgb3JkZXIuaXRlbXNbMF0uaWQgIiR7aXRlbS5pZH0iIGRvZXMgbm90IG1hdGNoIHRoZSBpdGVtIHJldHVybmVkIGluIG9uX3NlYXJjaCAoIiR7ZXhwZWN0ZWRJdGVtSWR9IilgCiAgICB9OwogIH0KCiAgLy8gVmFsaWRhdGUgb3JkZXIgSUQgYWdhaW5zdCB0aGUgb3JkZXIgY3JlYXRlZCBpbiBvbl9jb25maXJtCiAgY29uc3QgZXhwZWN0ZWRPcmRlcklkID0gc2Vzc2lvbkRhdGE/Lm9yZGVySWQ/LlswXTsKCiAgaWYgKG9yZGVyLmlkICE9PSBleHBlY3RlZE9yZGVySWQpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjoKICAgICAgICBgb3JkZXIuaWQgIiR7b3JkZXIuaWR9IiBkb2VzIG5vdCBtYXRjaCB0aGUgb3JkZXIgcmV0dXJuZWQgaW4gb25fY29uZmlybSAoIiR7ZXhwZWN0ZWRPcmRlcklkfSIpYAogICAgfTsKICB9CgogIC8vIFZhbGlkYXRlIGZ1bGZpbGxtZW50IElEIGFnYWluc3QgdGhlIGZ1bGZpbGxtZW50cyByZS1zYXZlZCBieSBvbl9jb25maXJtCiAgY29uc3QgZXhwZWN0ZWRGdWxmaWxsbWVudElkID0gc2Vzc2lvbkRhdGE/LmZ1bGZpbGxtZW50cz8uWzBdPy5bMF0/LmlkOwoKICBpZiAoZnVsZmlsbG1lbnQ/LmlkICE9PSBleHBlY3RlZEZ1bGZpbGxtZW50SWQpIHsKICAgIHJldHVybiB7CiAgICAgIHZhbGlkOiBmYWxzZSwKICAgICAgY29kZTogNDAwLAogICAgICBkZXNjcmlwdGlvbjoKICAgICAgICBgb3JkZXIuZnVsZmlsbG1lbnRzWzBdLmlkICIke2Z1bGZpbGxtZW50Py5pZH0iIGRvZXMgbm90IG1hdGNoIHRoZSBmdWxmaWxsbWVudCByZXR1cm5lZCBpbiBvbl9jb25maXJtICgiJHtleHBlY3RlZEZ1bGZpbGxtZW50SWR9IilgCiAgICB9OwogIH0KCiAgcmV0dXJuIHsKICAgIHZhbGlkOiB0cnVlLAogICAgY29kZTogMjAwLAogICAgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IgogIH07Cn0=
@@ -2478,9 +2400,9 @@ steps:
           context:
             domain: ONDC:FIS12
             action: on_status
-            timestamp: 2026-09-23T18:02:49.560Z
+            timestamp: 2026-09-24T13:15:36.317Z
             transaction_id: 04b2dc1f-1e96-43e9-8ea6-604bbf489560
-            message_id: f47c8b44-57fb-415a-bc92-80a33869b693
+            message_id: 8546c74f-aa4b-44ff-9304-705e8e1e5f6f
             bap_id: pramaan.ondc.org
             bap_uri: https://pramaan.ondc.org/beta/staging/mock/buyer
             ttl: PT30S
@@ -2494,7 +2416,7 @@ steps:
                 code: "*"
           message:
             order:
-              id: order_b999f6f6-74cb-4c34-ad4c-0b8e3d9d742d
+              id: order_9f29e61b-6e48-4f07-bca6-2fbaaa1722ae
               status: ACTIVE
               provider:
                 id: P1
@@ -2680,11 +2602,10 @@ steps:
                     - descriptor:
                         code: OFFLINE_CONTRACT
                       value: "true"
-              created_at: 2026-09-23T18:02:49.515Z
-              updated_at: 2026-09-23T18:02:49.560Z
+              created_at: 2026-09-24T13:15:36.236Z
+              updated_at: 2026-09-24T13:15:36.317Z
         type: request
-        description: The lender shares the latest card application status with the
-          borrower, including fulfillment/shipping details.
+        description: "The lender shares the latest card application status with the borrower, including fulfillment/shipping details. Card fulfilment status and expected delivery date should be reflected to the applicant as their own tracked state, distinct from application approval, since approval and physical/digital card issuance happen on different timelines."
 transaction_history: []
 validationLib: ""
 helperLib: LyoKCUN1c3RvbSBoZWxwZXIgZnVuY3Rpb25zIGF2YWlsYWJsZSBpbiBhbGwgbW9jayBnZW5lcmF0aW9uIGZ1bmN0aW9ucy4KCXRoZXNlIGFyZSBhcHBlbmRlZCBiZWxvdyB0aGUgZ2VuZXJhdGUgZnVuY3Rpb24gZm9yIGVhY2ggc3RlcC4KKi8KCmNvbnN0IGNyZWF0ZUZvcm1VUkwgPSAoZG9tYWluLCBmb3JtSWQsIHNlc3Npb25EYXRhKSA9PiB7Cgljb25zdCBiYXNlVVJMID0gc2Vzc2lvbkRhdGEubW9ja0Jhc2VVcmw7Cgljb25zdCB0cmFuc2FjdGlvbklkID0gc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZFswXTsKCWNvbnN0IHNlc3Npb25JZCA9IHNlc3Npb25EYXRhLnNlc3Npb25JZDsKCXJldHVybiBgJHtiYXNlVVJMfS9mb3Jtcy8ke2RvbWFpbn0vJHtmb3JtSWR9Lz90cmFuc2FjdGlvbl9pZD0ke3RyYW5zYWN0aW9uSWR9JnNlc3Npb25faWQ9JHtzZXNzaW9uSWR9YDsKfQoKLy8gR2VuZXJhdGVzIGEgVVVJRCB2NApmdW5jdGlvbiB1dWlkdjQoKSB7CglyZXR1cm4gJ3h4eHh4eHh4LXh4eHgtNHh4eC15eHh4LXh4eHh4eHh4eHh4eCcucmVwbGFjZSgvW3h5XS9nLCBmdW5jdGlvbiAoYykgewoJCWNvbnN0IHIgPSBNYXRoLnJhbmRvbSgpICogMTYgfCAwOwoJCWNvbnN0IHYgPSBjID09PSAneCcgPyByIDogKHIgJiAweDMgfCAweDgpOwoJCXJldHVybiB2LnRvU3RyaW5nKDE2KTsKCX0pOwp9CgpmdW5jdGlvbiBjdXJyZW50VGltZXN0YW1wKCkgewoJcmV0dXJuIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKTsKfQo=
@@ -2695,7 +2616,7 @@ extra_steps:
       owner: BAP
       responseFor: null
       unsolicited: false
-      description: The borrower request for order status
+      description: "The borrower request for order status. Status pushes here track discrete application milestones that can complete out of order depending on the Issuer's own process -- the Buyer App should track each independently rather than assuming a fixed sequence."
       mock:
         generate: LyoqCiAqIEdlbmVyYXRlcyB0aGUgbW9jayBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogVGhpcyBmdW5jdGlvbiBhbGxvd3MgY3VzdG9taXphdGlvbiBvZiB0aGUgZGVmYXVsdCBwYXlsb2FkIHVzaW5nIHNlc3Npb24gZGF0YQogKiBmcm9tIHByZXZpb3VzIHN0ZXBzIGFuZCB1c2VyIGlucHV0cy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSBkZWZhdWx0UGF5bG9hZCAtIFRoZSBiYXNlIHBheWxvYWQgb2JqZWN0IHdpdGggY29udGV4dCBhbHJlYWR5IHBvcHVsYXRlZC4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhLnVzZXJfaW5wdXRzIC0gVXNlci1wcm92aWRlZCBpbnB1dCB2YWx1ZXMgZm9yIHRoaXMgc3RlcC4KICogQHBhcmFtIHsqfSBzZXNzaW9uRGF0YS5ba2V5XSAtIEFueSBzYXZlZCBkYXRhIGZyb20gcHJldmlvdXMgc3RlcHMgKGRlZmluZWQgaW4gc2F2ZURhdGEgY29uZmlnKS4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IFRoZSBnZW5lcmF0ZWQgcGF5bG9hZCBvYmplY3QgdG8gYmUgc2VudCBpbiB0aGUgQVBJIHJlcXVlc3QuCiAqLwphc3luYyBmdW5jdGlvbiBnZW5lcmF0ZShkZWZhdWx0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICAgIGRlZmF1bHRQYXlsb2FkLm1lc3NhZ2UucmVmX2lkID0gc2Vzc2lvbkRhdGEudHJhbnNhY3Rpb25JZFswXQogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
         validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
@@ -2753,13 +2674,13 @@ extra_steps:
             message:
               ref_id: 9b460ea2-ee6c-43ad-94eb-b97b27322efd
           type: request
-          description: The borrower request for order status
+          description: "The borrower request for order status. Status pushes here track discrete application milestones that can complete out of order depending on the Issuer's own process -- the Buyer App should track each independently rather than assuming a fixed sequence."
     - api: on_status
       action_id: on_status2_finance
       owner: BPP
       responseFor: status2_finance
       unsolicited: false
-      description: please add relevant description
+      description: "The Issuer proactively notifies the Buyer App with an unsolicited status update on the card application's progress, so the Buyer App can keep the applicant informed without polling."
       mock:
         generate: ZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CiAgY29uc3QgbGF0ZXN0T3JkZXIgPSBzZXNzaW9uRGF0YS5vcmRlclswXTsKCiAgaWYgKCFsYXRlc3RPcmRlcikgewogICAgdGhyb3cgbmV3IEVycm9yKCJObyBsYXRlc3Qgb3JkZXIgZm91bmQgaW4gc2Vzc2lvbiIpOwogIH0KCiAgZGVmYXVsdFBheWxvYWQubWVzc2FnZS5vcmRlciA9IGxhdGVzdE9yZGVyCmNvbnN0IGV4dHJhU3RlcE1lc3NhZ2VJZCA9IEFycmF5LmlzQXJyYXkoc2Vzc2lvbkRhdGEuZXh0cmFTdGVwTWVzc2FnZUlkKQogID8gc2Vzc2lvbkRhdGEuZXh0cmFTdGVwTWVzc2FnZUlkWzBdCiAgOiBzZXNzaW9uRGF0YS5leHRyYVN0ZXBNZXNzYWdlSWQ7CgppZiAoZXh0cmFTdGVwTWVzc2FnZUlkKSB7CiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gZXh0cmFTdGVwTWVzc2FnZUlkCnNlc3Npb25EYXRhLmV4dHJhU3RlcE1lc3NhZ2VJZCA9IG51bGwKfWVsc2V7CiAgZGVmYXVsdFBheWxvYWQuY29udGV4dC5tZXNzYWdlX2lkID0gYCR7dXVpZHY0KCl9YAp9CgogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
         validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIHJldHVybiB7IHZhbGlkOiB0cnVlLCBjb2RlOiAyMDAsIGRlc2NyaXB0aW9uOiAiVmFsaWQgcmVxdWVzdCIgfTsKfQ==
