@@ -1,6 +1,12 @@
 # Purchase Finance
 
+---
 
+## Figma
+
+[View Figma Board](https://www.figma.com/board/bnGeMUQUOasD4Y9fu4dSoP/Purchase-Finance?node-id=0-1)
+
+---
 
 ## Overview
 
