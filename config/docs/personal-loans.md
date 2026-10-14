@@ -330,3 +330,9 @@ The Missed EMI Payment Flow allows borrowers to manually repay overdue EMIs when
 - **`/update` (BAP -> BPP)**: The BAP initiates a retrieval request for a past-due loan account. It passes a servicing payload with transaction tags set specifically to `LATE_PAYMENT` to request the outstanding overdue balance.
 - **`/on_update` / `/on_status` (BPP -> BAP)**: The lender's billing systems calculate the total outstanding balance. The response returns an explicit cost breakdown containing the original missed EMI amount, any late payment penalties, and account bounce fees. This includes an active payment gateway link, allowing the BAP to show the full breakdown before routing the user to complete the payment.
 - **`/on_status` [Remittance Resolution] (BPP -> BAP)**: Fired immediately after the payment clears through the designated gateway. The lender updates its internal ledgers, marks the past-due balance as settled, resets the account status to current, and returns the updated payment confirmation reference to the parent app.
+
+---
+
+## Figma
+
+[View Figma Board](https://www.figma.com/board/TS8ghV1vPnZ9iod3ApVIKp/Credit?node-id=0-1&p=f)

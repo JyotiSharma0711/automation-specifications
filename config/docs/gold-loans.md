@@ -115,3 +115,9 @@ Once the loan is confirmed and disbursed, Gold Loan servicing follows the same s
 ## Issue and Grievance Management
 
 IGM handling is standardized across FIS12, so an LSP or lender that has already implemented IGM for another FIS12 lending product should be able to reuse that implementation for Gold Loan rather than building a separate grievance pipeline.
+
+---
+
+## Figma
+
+[View Figma Board](https://www.figma.com/board/TS8ghV1vPnZ9iod3ApVIKp/Credit?node-id=0-1&p=f)
