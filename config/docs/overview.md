@@ -2,12 +2,6 @@
 
 ---
 
-## Figma
-
-[View Figma Board](https://www.figma.com/board/bnGeMUQUOasD4Y9fu4dSoP/Purchase-Finance?node-id=0-1)
-
----
-
 ## Overview
 
 Purchase Finance is an independent protocol that works for commerce occurring both on the ONDC network and off the network (such as external e-commerce platforms or physical retail checkouts). It is ONDC's version of what the market knows as checkout finance or Buy Now, Pay Later (BNPL) - the same mechanic behind buying an iPhone "on EMI" at a retailer or e-commerce checkout instead of paying the full price upfront. A customer discovers a loan offer within a buyer app, mostly at checkout (though some buyer apps surface it earlier, during product browsing), and converts a purchase into EMIs on the spot rather than applying for credit separately.
@@ -182,3 +176,9 @@ The Credit Buyer App displays the breakup to the borrower before redirecting the
 ## Issue and Grievance Management
 
 IGM handling is standardized across FIS12, so a Credit Buyer App or lender that has already implemented IGM for another FIS12 lending product should be able to reuse that implementation for Purchase Finance rather than building a separate grievance pipeline.
+
+---
+
+## Figma
+
+[View Figma Board](https://www.figma.com/board/bnGeMUQUOasD4Y9fu4dSoP/Purchase-Finance?node-id=0-1)
