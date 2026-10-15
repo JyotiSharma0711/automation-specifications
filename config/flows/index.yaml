@@ -8,6 +8,10 @@ flows:
     meta:
       type: PREREQUISITE
       order: 0
+      display:
+        actions:
+          search_1: Search for Business Loan products
+          on_Search_1: Receive Business Loan product catalogue
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -27,6 +31,32 @@ flows:
         - business_term_loan_with_offline_online_missed_emi
         - business_term_loan_with_offline_online_pre_part
         - business_term_loan_without_aa_with_igm_1.0.0
+      display:
+        preferred: true
+        sections:
+          - name: Application Submission
+            actions:
+              search_1: Search for Business Loan products
+              on_search_1: Receive Business Loan product catalogue
+          - name: Offer Selection
+            actions:
+              select_1: Select a Business Loan offer
+              on_select_1: Receive the Business Loan offer quote
+          - name: Status Updates
+            actions:
+              on_status_1: Receive loan processing status update
+              on_status_2: Receive loan processing status update
+              on_status_3: Receive loan processing status update
+          - name: Loan Processing (Single Redirection)
+            actions:
+              single_redirection: App-in-App Experience
+          - name: Additional Step Required
+            actions:
+              select_2: Provide additional details for loan processing
+              on_select_2: Receive updated loan terms
+          - name: Loan Confirmation
+            actions:
+              on_confirm_1: Receive the confirmed Business Loan order
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -46,6 +76,31 @@ flows:
         - business_term_loan_with_offline_online_missed_emi
         - business_term_loan_with_offline_online_pre_part
         - business_term_loan_with_file_upload_with_igm_1.0.0
+      display:
+        sections:
+          - name: Application Submission
+            actions:
+              search_1: Search for Business Loan products
+              on_search_1: Receive Business Loan product catalogue
+          - name: Offer Selection
+            actions:
+              select_1: Select a Business Loan offer
+              on_select_1: Receive the Business Loan offer quote
+          - name: Status Updates
+            actions:
+              on_status_1: Receive loan processing status update
+              on_status_2: Receive loan processing status update
+              on_status_3: Receive loan processing status update
+          - name: Loan Processing (Single Redirection)
+            actions:
+              single_redirection: App-in-App Experience
+          - name: Additional Step Required
+            actions:
+              select_2: Provide additional details for loan processing
+              on_select_2: Receive updated loan terms
+          - name: Loan Confirmation
+            actions:
+              on_confirm_1: Receive the confirmed Business Loan order
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -65,6 +120,41 @@ flows:
         - business_term_loan_with_offline_online_missed_emi
         - business_term_loan_with_offline_online_pre_part
         - business_term_loan_with_aa_with_igm_1.0.0
+      display:
+        sections:
+          - name: Application Submission
+            actions:
+              search_1: Search for Business Loan products
+              on_search_1: Receive Business Loan product catalogue
+          - name: Consent Handler for AA
+            actions:
+              search_2: Search with Account Aggregator consent
+              on_search_2: Receive offers using Account Aggregator data
+          - name: Offer Selection
+            actions:
+              select_1: Select a Business Loan offer
+              on_select_1: Receive the Business Loan offer quote
+          - name: Status Updates
+            actions:
+              on_status_1: Receive loan processing status update
+              on_status_2: Receive loan processing status update
+              on_status_3: Receive loan processing status update
+          - name: Loan Processing (Single Redirection)
+            actions:
+              single_redirection: App-in-App Experience
+          - name: Additional Step Required
+            actions:
+              select_2: Provide additional details for loan processing
+              on_select_2: Receive updated loan terms
+          - name: Loan Confirmation
+            actions:
+              on_confirm_1: Receive the confirmed Business Loan order
+          - name: Post-Confirmation Status Updates
+            actions:
+              on_status_4: Receive loan processing status update
+              on_status_5: Receive loan processing status update
+              on_status_6: Receive loan processing status update
+              on_status_7: Receive loan processing status update
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -79,6 +169,10 @@ flows:
     meta:
       type: PRIMARY
       order: 4
+      display:
+        actions:
+          select_1: Share borrower details for the dedupe check
+          on_select_1: Receive the dedupe check outcome
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -120,6 +214,12 @@ flows:
       visible_actions:
         - on_update_1
         - update_1
+      display:
+        # Only on_update_1/update_1 are in visible_actions, so only those get labels
+        # here even though the underlying flow file has more update/on_update steps.
+        actions:
+          on_update_1: Receive foreclosure settlement amount
+          update_1: Request foreclosure of the Business Loan
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -156,6 +256,10 @@ flows:
       visible_actions:
         - on_update_1
         - update_1
+      display:
+        actions:
+          on_update_1: Receive missed EMI penalty details
+          update_1: Request of missed EMI
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -192,6 +296,10 @@ flows:
       visible_actions:
         - on_update_1
         - update_1
+      display:
+        actions:
+          on_update_1: Receive prepayment settlement amount
+          update_1: Request a partial prepayment of the Business Loan
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -229,6 +337,14 @@ flows:
         - on_issue_status_processing_100
         - on_issue_resolved_100
         - issue_close_100
+      display:
+        actions:
+          issue_open_100: Raise an issue or grievance
+          on_issue_processing_100: Receive issue raised acknowledgement
+          issue_status_processing_100: Check the issue resolution status
+          on_issue_status_processing_100: Receive the issue status update
+          on_issue_resolved_100: Receive the issue resolution and closure
+          issue_close_100: Close the issue
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -262,6 +378,14 @@ flows:
         - on_issue_status_processing_100
         - on_issue_resolved_100
         - issue_close_100
+      display:
+        actions:
+          issue_open_100: Raise an issue or grievance
+          on_issue_processing_100: Receive issue raised acknowledgement
+          issue_status_processing_100: Check the issue resolution status
+          on_issue_status_processing_100: Receive the issue status update
+          on_issue_resolved_100: Receive the issue resolution and closure
+          issue_close_100: Close the issue
     usecase: Business Loan
     tags:
       - WORKBENCH
@@ -301,6 +425,14 @@ flows:
         - on_issue_status_processing_100
         - on_issue_resolved_100
         - issue_close_100
+      display:
+        actions:
+          issue_open_100: Raise an issue or grievance
+          on_issue_processing_100: Receive issue raised acknowledgement
+          issue_status_processing_100: Check the issue resolution status
+          on_issue_status_processing_100: Receive the issue status update
+          on_issue_resolved_100: Receive the issue resolution and closure
+          issue_close_100: Close the issue
     usecase: Business Loan
     tags:
       - WORKBENCH
