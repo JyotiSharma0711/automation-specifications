@@ -55,6 +55,9 @@ flows:
         - Personal_Loan_Pre_Part_Payment_Single_Redirection
         - "Personal_Loan_Single_Redirection_With_IGM(v-1.0.0)"
       display:
+        # Personal_Loan_Offline is order: 1 (listed first), but this is the
+        # variant that should actually load by default.
+        preferred: true
         sections:
           - name: Product Discovery
             actions:
