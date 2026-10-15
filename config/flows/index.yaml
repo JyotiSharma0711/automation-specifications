@@ -6,6 +6,68 @@ flows:
       order: 1
       secondary_flows:
         - Purchase_Finance_Single_Redirection_With_AA_With_IGM(v-1.0.0)
+      display:
+        sections:
+          - name: Product Discovery
+            actions:
+              search1_purchase_finance: Search for Purchase Finance products
+              on_search1_purchase_finance: Receive Purchase Finance product catalogue
+          - name: Merchant and Product Details Form
+            actions:
+              product_details_form: Submit merchant and product details
+          - name: Generic Offer Generation
+            actions:
+              search2_purchase_finance: Request a generic Purchase Finance offer
+              on_search2_purchase_finance: Receive the generic Purchase Finance offer
+          - name: Personal Details Form
+            actions:
+              personal_details_information_form: Submit personal details
+          - name: Personalized Offer Generation
+            actions:
+              search3_purchase_finance: Request a personalized Purchase Finance offer
+              on_search5_purchase_finance: Receive the personalized Purchase Finance offer
+          - name: Consent Handler for AA
+            actions:
+              search4_purchase_finance: Search with Account Aggregator consent
+              on_search6_purchase_finance: Receive offers using Account Aggregator data
+          - name: Offer Selection
+            actions:
+              select_purchase_finance: Select a Purchase Finance offer
+              on_select_purchase_finance: Receive the Purchase Finance offer quote
+          - name: Update Downpayment
+            actions:
+              down_payment_form: Update the downpayment amount
+          - name: Final Offer Selection
+            actions:
+              select1_purchase_finance: Confirm the final Purchase Finance offer
+              on_select1_purchase_finance: Receive the final offer confirmation
+          - name: Loan Processing (Single Redirection)
+            actions:
+              Ekyc_details_verification_status: App-in-App Experience
+          - name: Status Updates
+            actions:
+              on_status_unsolicited: Receive loan processing status update
+              status1_finance: Check the loan processing status
+              on_status1_finance: Receive the loan processing status update
+          - name: Additional Step Required
+            actions:
+              select2_purchase_finance: Provide additional details for loan processing
+              on_select2_purchase_finance: Receive updated loan terms
+          - name: Order Initialization
+            actions:
+              init1_purchase_finance: Initialize the Purchase Finance order
+              on_init1_purchase_finance: Receive order initialization confirmation
+          - name: Loan Confirmation and Sanctioned
+            actions:
+              confirm_purchase_finance: Confirm the Purchase Finance booking
+              on_confirm_purchase_finance: Receive the confirmed and sanctioned Purchase Finance order
+          - name: Product Delivery
+            actions:
+              update_purchase_finance: Update the product delivery status
+              on_update_purchase_finance: Receive product delivery confirmation
+          - name: Loan Disbursement in Merchant Account
+            actions:
+              on_update1_unsolicited_purchase_finance: Receive loan disbursement confirmation to the merchant account
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -26,6 +88,78 @@ flows:
         - Purchase_Finance_Single_Redirection_Without_AA_Missed_EMI_Payment
         - Purchase_Finance_Single_Redirection_Without_AA_Pre_Part_Payment
         - Purchase_Finance_Single_Redirection_Without_AA_With_IGM(v-1.0.0)
+      display:
+        preferred: true
+        inline:
+          - flow: Purchase_Finance_Without_AA
+            after_section: Final Offer Selection
+            label: Multi Redirection
+            skip_sections:
+              - Product Discovery
+              - Merchant and Product Details Form
+              - Generic Offer Generation
+              - Personal Details Form
+              - Personalized Offer Generation
+              - Offer Selection
+              - Update Downpayment
+              - Final Offer Selection
+        sections:
+          - name: Product Discovery
+            actions:
+              search1_purchase_finance: Search for Purchase Finance products
+              on_search1_purchase_finance: Receive Purchase Finance product catalogue
+          - name: Merchant and Product Details Form
+            actions:
+              product_details_form: Submit merchant and product details
+          - name: Generic Offer Generation
+            actions:
+              search2_purchase_finance: Request a generic Purchase Finance offer
+              on_search2_purchase_finance: Receive the generic Purchase Finance offer
+          - name: Personal Details Form
+            actions:
+              personal_details_information_form: Submit personal details
+          - name: Personalized Offer Generation
+            actions:
+              search3_purchase_finance: Request a personalized Purchase Finance offer
+              on_search3_purchase_finance: Receive the personalized Purchase Finance offer
+          - name: Offer Selection
+            actions:
+              select_purchase_finance: Select a Purchase Finance offer
+              on_select_purchase_finance: Receive the Purchase Finance offer quote
+          - name: Update Downpayment
+            actions:
+              down_payment_form: Update the downpayment amount
+          - name: Final Offer Selection
+            actions:
+              select1_purchase_finance: Confirm the final Purchase Finance offer
+              on_select1_purchase_finance: Receive the final offer confirmation
+          - name: Loan Processing (Single Redirection)
+            actions:
+              Ekyc_details_verification_status: App-in-App Experience
+          - name: Status Updates
+            actions:
+              on_status_unsolicited: Receive loan processing status update
+              status1_finance: Check the loan processing status
+              on_status1_finance: Receive the loan processing status update
+          - name: Additional Step Required
+            actions:
+              select2_purchase_finance: Provide additional details for loan processing
+              on_select2_purchase_finance: Receive updated loan terms
+          - name: Order Initialization
+            actions:
+              init1_purchase_finance: Initialize the Purchase Finance order
+              on_init1_purchase_finance: Receive order initialization confirmation
+          - name: Loan Confirmation and Sanctioned
+            actions:
+              confirm_purchase_finance: Confirm the Purchase Finance booking
+              on_confirm_purchase_finance: Receive the confirmed and sanctioned Purchase Finance order
+          - name: Product Delivery
+            actions:
+              update_purchase_finance: Update the product delivery status
+              on_update_purchase_finance: Receive product delivery confirmation
+          - name: Loan Disbursement in Merchant Account
+            actions:
+              on_update1_unsolicited_purchase_finance: Receive loan disbursement confirmation to the merchant account
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -75,6 +209,13 @@ flows:
         - confirmed_cancel_purchase_finance
         - confirmed_on_cancel_purchase_finance
         - on_update_unsolicited_cancel
+      display:
+        actions:
+          soft_cancel_purchase_finance: Request a soft cancellation of the order
+          soft_on_cancel_purchase_finance: Receive soft cancellation confirmation
+          confirmed_cancel_purchase_finance: Confirm the cancellation
+          confirmed_on_cancel_purchase_finance: Receive the confirmed cancellation
+          on_update_unsolicited_cancel: Receive cancellation status update
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -90,6 +231,12 @@ flows:
       type: SECONDARY
       order: 4
       secondary_of: Purchase_Finance_Single_Redirection_Without_AA
+      display:
+        actions:
+          update_foreclosure: Request foreclosure of the Purchase Finance loan
+          on_update_foreclosure: Receive foreclosure request with payment URL
+          payment_url_form: Payment Link Redirection
+          on_update_unsolicited_foreclosure: Receive foreclosure payment confirmation and loan closure status
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -137,6 +284,12 @@ flows:
       type: SECONDARY
       order: 5
       secondary_of: Purchase_Finance_Single_Redirection_Without_AA
+      display:
+        actions:
+          update_missed_Emi: Request settlement of the missed EMI
+          on_update_missed_Emi: Receive missed EMI payment request with payment URL
+          payment_url_form: Payment Link Redirection
+          on_update_unsolicited_missed_Emi: Receive missed EMI payment confirmation and account status
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -184,6 +337,12 @@ flows:
       type: SECONDARY
       order: 6
       secondary_of: Purchase_Finance_Single_Redirection_Without_AA
+      display:
+        actions:
+          update_prepart: Request a partial prepayment of the Purchase Finance loan
+          on_update_prepart: Receive prepayment request with payment URL
+          payment_url_form: Payment Link Redirection
+          on_update_unsolicited_prepart: Receive prepayment confirmation and revised terms status
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -237,6 +396,74 @@ flows:
         - Purchase_Finance_With_AA_Multiple_Offer
         - Purchase_Finance_With_AA_Pre_Part_Payment
         - Purchase_Finance_With_AA_With_IGM(v-1.0.0)
+      display:
+        sections:
+          - name: Product Discovery
+            actions:
+              search1_purchase_finance: Search for Purchase Finance products
+              on_search1_purchase_finance: Receive Purchase Finance product catalogue
+          - name: Merchant and Product Details Form
+            actions:
+              product_details_form: Submit merchant and product details
+          - name: Generic Offer Generation
+            actions:
+              search2_purchase_finance: Request a generic Purchase Finance offer
+              on_search2_purchase_finance: Receive the generic Purchase Finance offer
+          - name: Personal Details Form
+            actions:
+              personal_details_information_form: Submit personal details
+          - name: Personalized Offer Generation
+            actions:
+              search3_purchase_finance: Request a personalized Purchase Finance offer
+              on_search5_purchase_finance: Receive the personalized Purchase Finance offer
+          - name: Consent Handler for AA
+            actions:
+              search4_purchase_finance: Search with Account Aggregator consent
+              on_search6_purchase_finance: Receive offers using Account Aggregator data
+          - name: Offer Selection
+            actions:
+              select_purchase_finance: Select a Purchase Finance offer
+              on_select_purchase_finance: Receive the Purchase Finance offer quote
+          - name: Update Downpayment
+            actions:
+              down_payment_form: Update the downpayment amount
+          - name: Final Offer Selection
+            actions:
+              select1_purchase_finance: Confirm the final Purchase Finance offer
+              on_select1_purchase_finance: Receive the final offer confirmation
+          - name: KYC Step
+            actions:
+              Ekyc_details_verification_status: Redirection Form
+              on_status_unsolicited: Receive KYC processing status update
+              select2_purchase_finance: Confirm KYC completion
+              on_select2_purchase_finance: Receive KYC confirmation
+          - name: Order Initialization
+            actions:
+              init1_purchase_finance: Initialize the Purchase Finance order
+              on_init1_purchase_finance: Receive order initialization confirmation
+          - name: E-mandate Setup
+            actions:
+              Emanadate_verification_status: Redirection Form
+              on_status_emandate_unsolicited: Receive e-mandate processing status update
+              init2_purchase_finance: Set up the e-mandate
+              on_init2_purchase_finance: Receive e-mandate setup confirmation
+          - name: E-signing
+            actions:
+              E_sign_verification_status: Redirection Form
+              on_status_esign_unsolicited: Receive e-signing processing status update
+              init3_purchase_finance: Complete e-signing
+              on_init3_purchase_finance: Receive e-signing confirmation
+          - name: Loan Confirmation and Sanctioned
+            actions:
+              confirm_purchase_finance: Confirm the Purchase Finance booking
+              on_confirm_purchase_finance: Receive the confirmed and sanctioned Purchase Finance order
+          - name: Product Delivery
+            actions:
+              update_purchase_finance: Update the product delivery status
+              on_update_purchase_finance: Receive product delivery confirmation
+          - name: Loan Disbursement in Merchant Account
+            actions:
+              on_update1_unsolicited_purchase_finance: Receive loan disbursement confirmation to the merchant account
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -252,6 +479,13 @@ flows:
       type: SECONDARY
       order: 8
       secondary_of: Purchase_Finance_With_AA
+      display:
+        actions:
+          soft_cancel_purchase_finance: Request a soft cancellation of the order
+          soft_on_cancel_purchase_finance: Receive soft cancellation confirmation
+          confirmed_cancel_purchase_finance: Confirm the cancellation
+          confirmed_on_cancel_purchase_finance: Receive the confirmed cancellation
+          on_update_unsolicited_cancel: Receive cancellation status update
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -308,6 +542,12 @@ flows:
       type: SECONDARY
       order: 9
       secondary_of: Purchase_Finance_With_AA
+      display:
+        actions:
+          update_foreclosure: Request foreclosure of the Purchase Finance loan
+          on_update_foreclosure: Receive foreclosure request with payment URL
+          payment_url_form: Payment Link Redirection
+          on_update_unsolicited_foreclosure: Receive foreclosure payment confirmation and loan closure status
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -363,6 +603,12 @@ flows:
       type: SECONDARY
       order: 10
       secondary_of: Purchase_Finance_With_AA
+      display:
+        actions:
+          update_missed_Emi: Request settlement of the missed EMI
+          on_update_missed_Emi: Receive missed EMI payment request with payment URL
+          payment_url_form: Payment Link Redirection
+          on_update_unsolicited_missed_Emi: Receive missed EMI payment confirmation and account status
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -433,6 +679,12 @@ flows:
       type: SECONDARY
       order: 12
       secondary_of: Purchase_Finance_With_AA
+      display:
+        actions:
+          update_prepart: Request a partial prepayment of the Purchase Finance loan
+          on_update_prepart: Receive prepayment request with payment URL
+          payment_url_form: Payment Link Redirection
+          on_update_unsolicited_prepart: Receive prepayment confirmation and revised terms status
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -494,6 +746,70 @@ flows:
         - Purchase_Finance_Without_AA_Multiple_Offer
         - Purchase_Finance_Without_AA_Pre_Part_Payment
         - Purchase_Finance_Without_AA_With_IGM(v-1.0.0)
+      display:
+        sections:
+          - name: Product Discovery
+            actions:
+              search1_purchase_finance: Search for Purchase Finance products
+              on_search1_purchase_finance: Receive Purchase Finance product catalogue
+          - name: Merchant and Product Details Form
+            actions:
+              product_details_form: Submit merchant and product details
+          - name: Generic Offer Generation
+            actions:
+              search2_purchase_finance: Request a generic Purchase Finance offer
+              on_search2_purchase_finance: Receive the generic Purchase Finance offer
+          - name: Personal Details Form
+            actions:
+              personal_details_information_form: Submit personal details
+          - name: Personalized Offer Generation
+            actions:
+              search3_purchase_finance: Request a personalized Purchase Finance offer
+              on_search3_purchase_finance: Receive the personalized Purchase Finance offer
+          - name: Offer Selection
+            actions:
+              select_purchase_finance: Select a Purchase Finance offer
+              on_select_purchase_finance: Receive the Purchase Finance offer quote
+          - name: Update Downpayment
+            actions:
+              down_payment_form: Update the downpayment amount
+          - name: Final Offer Selection
+            actions:
+              select1_purchase_finance: Confirm the final Purchase Finance offer
+              on_select1_purchase_finance: Receive the final offer confirmation
+          - name: KYC Step
+            actions:
+              Ekyc_details_verification_status: Redirection Form
+              on_status_unsolicited: Receive KYC processing status update
+              select2_purchase_finance: Confirm KYC completion
+              on_select2_purchase_finance: Receive KYC confirmation
+          - name: Order Initialization
+            actions:
+              init1_purchase_finance: Initialize the Purchase Finance order
+              on_init1_purchase_finance: Receive order initialization confirmation
+          - name: E-mandate Setup
+            actions:
+              Emanadate_verification_status: Redirection Form
+              on_status_emandate_unsolicited: Receive e-mandate processing status update
+              init2_purchase_finance: Set up the e-mandate
+              on_init2_purchase_finance: Receive e-mandate setup confirmation
+          - name: E-signing
+            actions:
+              E_sign_verification_status: Redirection Form
+              on_status_esign_unsolicited: Receive e-signing processing status update
+              init3_purchase_finance: Complete e-signing
+              on_init3_purchase_finance: Receive e-signing confirmation
+          - name: Loan Confirmation and Sanctioned
+            actions:
+              confirm_purchase_finance: Confirm the Purchase Finance booking
+              on_confirm_purchase_finance: Receive the confirmed and sanctioned Purchase Finance order
+          - name: Product Delivery
+            actions:
+              update_purchase_finance: Update the product delivery status
+              on_update_purchase_finance: Receive product delivery confirmation
+          - name: Loan Disbursement in Merchant Account
+            actions:
+              on_update1_unsolicited_purchase_finance: Receive loan disbursement confirmation to the merchant account
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -509,6 +825,13 @@ flows:
       type: SECONDARY
       order: 14
       secondary_of: Purchase_Finance_Without_AA
+      display:
+        actions:
+          soft_cancel_purchase_finance: Request a soft cancellation of the order
+          soft_on_cancel_purchase_finance: Receive soft cancellation confirmation
+          confirmed_cancel_purchase_finance: Confirm the cancellation
+          confirmed_on_cancel_purchase_finance: Receive the confirmed cancellation
+          on_update_unsolicited_cancel: Receive cancellation status update
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -563,6 +886,12 @@ flows:
       type: SECONDARY
       order: 15
       secondary_of: Purchase_Finance_Without_AA
+      display:
+        actions:
+          update_foreclosure: Request foreclosure of the Purchase Finance loan
+          on_update_foreclosure: Receive foreclosure request with payment URL
+          payment_url_form: Payment Link Redirection
+          on_update_unsolicited_foreclosure: Receive foreclosure payment confirmation and loan closure status
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -616,6 +945,12 @@ flows:
       type: SECONDARY
       order: 16
       secondary_of: Purchase_Finance_Without_AA
+      display:
+        actions:
+          update_missed_Emi: Request settlement of the missed EMI
+          on_update_missed_Emi: Receive missed EMI payment request with payment URL
+          payment_url_form: Payment Link Redirection
+          on_update_unsolicited_missed_Emi: Receive missed EMI payment confirmation and account status
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -684,6 +1019,12 @@ flows:
       type: SECONDARY
       order: 18
       secondary_of: Purchase_Finance_Without_AA
+      display:
+        actions:
+          update_prepart: Request a partial prepayment of the Purchase Finance loan
+          on_update_prepart: Receive prepayment request with payment URL
+          payment_url_form: Payment Link Redirection
+          on_update_unsolicited_prepart: Receive prepayment confirmation and revised terms status
       hide_actions:
         - search1_purchase_finance
         - on_search1_purchase_finance
@@ -740,6 +1081,14 @@ flows:
       type: SECONDARY
       order: 19
       secondary_of: Purchase_Finance_With_AA
+      display:
+        actions:
+          issue_open_100: Raise an issue or grievance
+          on_issue_processing_100: Receive issue raised acknowledgement
+          issue_status_processing_100: Check the issue resolution status
+          on_issue_status_processing_100: Receive the issue status update
+          on_issue_resolved_100: Receive the issue resolution and closure
+          issue_close_100: Close the issue
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -755,6 +1104,14 @@ flows:
       type: SECONDARY
       order: 20
       secondary_of: Purchase_Finance_Without_AA
+      display:
+        actions:
+          issue_open_100: Raise an issue or grievance
+          on_issue_processing_100: Receive issue raised acknowledgement
+          issue_status_processing_100: Check the issue resolution status
+          on_issue_status_processing_100: Receive the issue status update
+          on_issue_resolved_100: Receive the issue resolution and closure
+          issue_close_100: Close the issue
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -770,6 +1127,14 @@ flows:
       type: SECONDARY
       order: 21
       secondary_of: Purchase_Finance_Single_Redirection_With_AA
+      display:
+        actions:
+          issue_open_100: Raise an issue or grievance
+          on_issue_processing_100: Receive issue raised acknowledgement
+          issue_status_processing_100: Check the issue resolution status
+          on_issue_status_processing_100: Receive the issue status update
+          on_issue_resolved_100: Receive the issue resolution and closure
+          issue_close_100: Close the issue
     usecase: Purchase Finance
     tags:
       - WORKBENCH
@@ -785,6 +1150,14 @@ flows:
       type: SECONDARY
       order: 22
       secondary_of: Purchase_Finance_Single_Redirection_Without_AA
+      display:
+        actions:
+          issue_open_100: Raise an issue or grievance
+          on_issue_processing_100: Receive issue raised acknowledgement
+          issue_status_processing_100: Check the issue resolution status
+          on_issue_status_processing_100: Receive the issue status update
+          on_issue_resolved_100: Receive the issue resolution and closure
+          issue_close_100: Close the issue
     usecase: Purchase Finance
     tags:
       - WORKBENCH
