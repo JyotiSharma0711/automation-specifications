@@ -363,6 +363,8 @@ flows:
     id: Credit_Card
     meta:
       type: PRIMARY
+      # Verified against Credit_Card.yaml's real api/action_id sequence (the
+      # previous version below used unverified generic api names).
       display:
         sections:
           - name: Product Discovery
@@ -371,19 +373,31 @@ flows:
               on_search: Receive Credit Card product catalogue
           - name: Application Submission
             actions:
-              html_form: Submit the Credit Card application form
+              credit_card_information_form: Submit the Credit Card application form
           - name: Offer Generation & Selection
             actions:
               select: Select a Credit Card offer
               on_select: Receive the Credit Card offer details
-          - name: Order Status Check
+          - name: Single Redirection
             actions:
-              status: Check the Credit Card application status
-              on_status: Receive the Credit Card application status update
+              Ekyc_details_form_cc: App-in-App Experience
+              on_status_unsolicited: Receive processing status update
+          - name: Check Order Status
+            actions:
+              status_1: Check the Credit Card order status
+              on_status_1: Receive the Credit Card order status update
+          - name: Order Initialization
+            actions:
+              init: Initialize the Credit Card order
+              on_init: Receive order initialization confirmation
           - name: Order Confirmation
             actions:
               confirm: Confirm the Credit Card order
               on_confirm: Receive the confirmed Credit Card order
+          - name: Card Delivery Status
+            actions:
+              status_2: Check the card delivery status
+              on_status_2: Receive the card delivery status update
     usecase: Credit Card
     tags: [WORKBENCH, REPORTABLE]
     description: "A borrower discovers, applies for, and confirms a credit card journey: searching the network for available cards, completing a personal-information application form, selecting a card, completing a KYC form, polling for KYC completion status, initiating and confirming the credit card request, and tracking the final application status."
