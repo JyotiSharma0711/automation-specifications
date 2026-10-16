@@ -1220,6 +1220,13 @@ flows:
       type: SECONDARY
       order: 19
       secondary_of: Purchase_Finance_With_AA
+      visible_actions:
+        - issue_open_100
+        - on_issue_processing_100
+        - issue_status_processing_100
+        - on_issue_status_processing_100
+        - on_issue_resolved_100
+        - issue_close_100
       display:
         actions:
           issue_open_100: Raise an issue or grievance
@@ -1243,6 +1250,13 @@ flows:
       type: SECONDARY
       order: 20
       secondary_of: Purchase_Finance_Without_AA
+      visible_actions:
+        - issue_open_100
+        - on_issue_processing_100
+        - issue_status_processing_100
+        - on_issue_status_processing_100
+        - on_issue_resolved_100
+        - issue_close_100
       display:
         actions:
           issue_open_100: Raise an issue or grievance
@@ -1266,6 +1280,13 @@ flows:
       type: SECONDARY
       order: 21
       secondary_of: Purchase_Finance_Single_Redirection_With_AA
+      visible_actions:
+        - issue_open_100
+        - on_issue_processing_100
+        - issue_status_processing_100
+        - on_issue_status_processing_100
+        - on_issue_resolved_100
+        - issue_close_100
       display:
         actions:
           issue_open_100: Raise an issue or grievance
@@ -1289,6 +1310,13 @@ flows:
       type: SECONDARY
       order: 22
       secondary_of: Purchase_Finance_Single_Redirection_Without_AA
+      visible_actions:
+        - issue_open_100
+        - on_issue_processing_100
+        - issue_status_processing_100
+        - on_issue_status_processing_100
+        - on_issue_resolved_100
+        - issue_close_100
       display:
         actions:
           issue_open_100: Raise an issue or grievance
