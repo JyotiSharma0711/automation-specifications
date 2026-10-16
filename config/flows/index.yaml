@@ -30,7 +30,7 @@ flows:
         - business_term_loan_with_offline_online_foreclosure
         - business_term_loan_with_offline_online_missed_emi
         - business_term_loan_with_offline_online_pre_part
-        - business_term_loan_without_aa_with_igm_1.0.0
+        - business_term_loan_without_aa_with_Issue_Grievance_and_Management_1.0.0
       display:
         preferred: true
         inline:
@@ -79,7 +79,7 @@ flows:
         - business_term_loan_with_offline_online_foreclosure
         - business_term_loan_with_offline_online_missed_emi
         - business_term_loan_with_offline_online_pre_part
-        - business_term_loan_with_file_upload_with_igm_1.0.0
+        - business_term_loan_with_file_upload_with_Issue_Grievance_and_Management_1.0.0
       display:
         inline:
           - flow: dedupe_check
@@ -127,7 +127,7 @@ flows:
         - business_term_loan_with_offline_online_foreclosure
         - business_term_loan_with_offline_online_missed_emi
         - business_term_loan_with_offline_online_pre_part
-        - business_term_loan_with_aa_with_igm_1.0.0
+        - business_term_loan_with_aa_with_Issue_Grievance_and_Management_1.0.0
       display:
         inline:
           - flow: dedupe_check
@@ -321,11 +321,11 @@ flows:
       $ref: "./BUSINESS_LOAN/business_term_loan_with_offline_online_pre_part.yaml"
 
   # ──────────────────────────────────────────────────────────────────
-  # Business Loan – IGM 1.0.0 Servicing Flows
+  # Business Loan – Issue Grievance and Management 1.0.0 Servicing Flows
   # ──────────────────────────────────────────────────────────────────
 
   - type: playground
-    id: business_term_loan_without_aa_with_igm_1.0.0
+    id: business_term_loan_without_aa_with_Issue_Grievance_and_Management_1.0.0
     meta:
       type: SECONDARY
       order: 8
@@ -361,12 +361,12 @@ flows:
     tags:
       - WORKBENCH
       - MANDATORY
-    description: BUSINESS Term Loan Without AA with IGM 1.0.0
+    description: BUSINESS Term Loan Without AA with Issue Grievance and Management 1.0.0
     config:
       $ref: "./BUSINESS_LOAN/business_term_loan_without_aa_with_igm_1.0.0.yaml"
 
   - type: playground
-    id: business_term_loan_with_file_upload_with_igm_1.0.0
+    id: business_term_loan_with_file_upload_with_Issue_Grievance_and_Management_1.0.0
     meta:
       type: SECONDARY
       order: 9
@@ -402,12 +402,12 @@ flows:
     tags:
       - WORKBENCH
       - MANDATORY
-    description: BUSINESS Term Loan With File Upload with IGM 1.0.0
+    description: BUSINESS Term Loan With File Upload with Issue Grievance and Management 1.0.0
     config:
       $ref: "./BUSINESS_LOAN/business_term_loan_with_file_upload_with_igm_1.0.0.yaml"
 
   - type: playground
-    id: business_term_loan_with_aa_with_igm_1.0.0
+    id: business_term_loan_with_aa_with_Issue_Grievance_and_Management_1.0.0
     meta:
       type: SECONDARY
       order: 10
@@ -449,6 +449,6 @@ flows:
     tags:
       - WORKBENCH
       - MANDATORY
-    description: BUSINESS Term Loan With AA with IGM 1.0.0
+    description: BUSINESS Term Loan With AA with Issue Grievance and Management 1.0.0
     config:
       $ref: "./BUSINESS_LOAN/business_term_loan_with_aa_with_igm_1.0.0.yaml"
