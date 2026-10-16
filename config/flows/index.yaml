@@ -359,7 +359,7 @@ flows:
       display: *igm_display
     usecase: Gold Loan
     tags: [WORKBENCH, REPORTABLE]
-    description: A gold loan application flow where customers digitally search for loan products, configure their terms, and submit applications online, while lenders conduct offline verification and underwriting with periodic status updates to borrowers until final approval or rejection with IGM 1.0.0.
+    description: A gold loan application flow where customers digitally search for loan products, configure their terms, and submit applications online, while lenders conduct offline verification and underwriting with periodic status updates to borrowers until final approval or rejection with Issue Grievance and Management 1.0.0.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Offline_with_igm_1.0.0.yaml
 
