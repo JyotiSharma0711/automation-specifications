@@ -110,12 +110,12 @@ flows:
         sections:
           - name: Product Discovery
             actions:
-              search: Search for Personal Loan products
-              on_search: Receive Personal Loan product catalogue
+              search_personal_loan_3: Search for Personal Loan products
+              on_search_personal_loan_3: Receive Personal Loan product catalogue
           - name: Dedupe Check
             actions:
-              select: Share borrower details for the dedupe check
-              on_select: Receive the dedupe check outcome
+              select_3_personal_loan_3: Share borrower details for the dedupe check
+              on_select_3_personal_loan_3: Receive the dedupe check outcome
     usecase: Personal Loan
     tags: [WORKBENCH, REPORTABLE]
     description: The Dedupe Check is used to verify whether a borrower already has an existing loan application with a lender.
