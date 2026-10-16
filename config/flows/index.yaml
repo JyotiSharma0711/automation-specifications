@@ -35,7 +35,7 @@ flows:
       type: PRIMARY
       order: 2
       secondary_flows:
-        - lamf_credit_line_with_mfc_single_redirection_with_igm_1.0.0
+        - lamf_credit_line_with_mfc_single_redirection_with_Issue_Grievance_and_Management_1.0.0
         - lamf_credit_line_drawdown_with_mfc_single_redirection
         - lamf_credit_line_prepart_with_mfc_single_redirection
         - lamf_credit_line_foreclosure_with_mfc_single_redirection
@@ -76,7 +76,7 @@ flows:
       $ref: "./LAMF/lamf_credit_line_with_mfc_single_redirection.yaml"
 
   - type: playground
-    id: lamf_credit_line_with_mfc_single_redirection_with_igm_1.0.0
+    id: lamf_credit_line_with_mfc_single_redirection_with_Issue_Grievance_and_Management_1.0.0
     meta:
       type: SECONDARY
       order: 3
@@ -112,7 +112,7 @@ flows:
     tags:
       - WORKBENCH
       - Mandatory
-    description: LAMF Credit Line with MFC With IGM 1.0.0
+    description: LAMF Credit Line with MFC With Issue Grievance and Management 1.0.0
     config:
       $ref: "./LAMF/lamf_credit_line_with_mfc_single_redirection._with_igm_1.0.0.yaml"
 
