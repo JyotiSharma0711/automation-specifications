@@ -28,14 +28,14 @@ flows:
               on_select_3_personal_loan_3: Receive the Personal Loan offer quote
           - name: Status Updates
             actions:
-              on_status_kyc_verification: Receive application processing status updates
-              on_status_personal_loan_2: Receive application processing status updates
-              on_status_personal_loan_3_order_update: Receive application processing status updates
+              on_status_kyc_verification: Receive KYC verification status update
+              on_status_personal_loan_2: Receive underwriting and verification progress update
+              on_status_personal_loan_3_order_update: Receive final approval status update
           - name: Loan Processing
             actions:
               Ekyc_details_verification_status: App-in-App Experience
               status_personal_loan_3: Fetching Status
-              on_status_personal_loan_order_update: Receive application processing status updates
+              on_status_personal_loan_order_update: Receive loan disbursement status update
           - name: Loan Confirmation And Disbursement
             actions:
               confirm_personal_loan_3: Confirm the Personal Loan booking
@@ -74,15 +74,15 @@ flows:
               on_select_3_personal_loan_3: Receive the Personal Loan offer quote
           - name: Status Updates
             actions:
-              on_status_kyc_verification: Receive application processing status updates
-              on_status_latest_order_status: Receive application processing status updates
-              on_status_updated_checklists: Receive application processing status updates
-              on_status_order_status_checklists: Receive application processing status updates
+              on_status_kyc_verification: Receive KYC verification status update
+              on_status_latest_order_status: Receive Bank Account Verification status update
+              on_status_updated_checklists: Receive Repayment and Loan Agreement setup status update
+              on_status_order_status_checklists: Receive final approval status update
           - name: Single Redirection (app-in-app experience)
             actions:
               Ekyc_details_verification_status: App-in-App Experience
               status_personal_loan_3: Fetching Status
-              on_status_personal_loan_3: Receive application processing status updates
+              on_status_personal_loan_3: Receive loan disbursement status update
           - name: Loan Confirmation And Disbursement
             actions:
               confirm_personal_loan_3: Confirm the Personal Loan booking
