@@ -46,15 +46,15 @@ flows:
             actions:
               select_1: Select a Solar Purchase Finance offer
               on_select_1: Receive the Solar Purchase Finance offer quote
-          - name: Loan Processing (Single Redirection)
-            actions:
-              single_redirection: App-in-App Experience
           - name: Status Updates
             actions:
               on_status_1: Receive loan processing status update
               on_status_2: Receive loan processing status update
               on_status_3: Receive loan processing status update
               on_status_4: Receive loan processing status update
+          - name: Loan Processing (Single Redirection)
+            actions:
+              single_redirection: App-in-App Experience
           - name: Additional Step Required
             actions:
               select_2: Provide additional details for loan processing
