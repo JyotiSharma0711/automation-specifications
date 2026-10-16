@@ -33,6 +33,10 @@ flows:
         - business_term_loan_without_aa_with_igm_1.0.0
       display:
         preferred: true
+        inline:
+          - flow: dedupe_check
+            after_section: Application Submission
+            label: Dedupe Check
         sections:
           - name: Application Submission
             actions:
@@ -77,6 +81,10 @@ flows:
         - business_term_loan_with_offline_online_pre_part
         - business_term_loan_with_file_upload_with_igm_1.0.0
       display:
+        inline:
+          - flow: dedupe_check
+            after_section: Application Submission
+            label: Dedupe Check
         sections:
           - name: Application Submission
             actions:
@@ -121,6 +129,10 @@ flows:
         - business_term_loan_with_offline_online_pre_part
         - business_term_loan_with_aa_with_igm_1.0.0
       display:
+        inline:
+          - flow: dedupe_check
+            after_section: Application Submission
+            label: Dedupe Check
         sections:
           - name: Application Submission
             actions:
