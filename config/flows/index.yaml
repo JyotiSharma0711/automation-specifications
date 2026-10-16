@@ -5,7 +5,7 @@ flows:
       type: PRIMARY
       order: 1
       secondary_flows:
-        - Purchase_Finance_Single_Redirection_With_AA_With_IGM(v-1.0.0)
+        - Purchase_Finance_Single_Redirection_With_AA_With_Issue_Grievance_and_Management(v-1.0.0)
       display:
         sections:
           - name: Product Discovery
@@ -87,7 +87,7 @@ flows:
         - Purchase_Finance_Single_Redirection_Without_AA_Loan_Foreclosure
         - Purchase_Finance_Single_Redirection_Without_AA_Missed_EMI_Payment
         - Purchase_Finance_Single_Redirection_Without_AA_Pre_Part_Payment
-        - Purchase_Finance_Single_Redirection_Without_AA_With_IGM(v-1.0.0)
+        - Purchase_Finance_Single_Redirection_Without_AA_With_Issue_Grievance_and_Management(v-1.0.0)
       display:
         preferred: true
         inline:
@@ -395,7 +395,7 @@ flows:
         - Purchase_Finance_With_AA_Missed_EMI_Payment
         - Purchase_Finance_With_AA_Multiple_Offer
         - Purchase_Finance_With_AA_Pre_Part_Payment
-        - Purchase_Finance_With_AA_With_IGM(v-1.0.0)
+        - Purchase_Finance_With_AA_With_Issue_Grievance_and_Management(v-1.0.0)
       display:
         sections:
           - name: Product Discovery
@@ -817,7 +817,7 @@ flows:
         - Purchase_Finance_Without_AA_Missed_EMI_Payment
         - Purchase_Finance_Without_AA_Multiple_Offer
         - Purchase_Finance_Without_AA_Pre_Part_Payment
-        - Purchase_Finance_Without_AA_With_IGM(v-1.0.0)
+        - Purchase_Finance_Without_AA_With_Issue_Grievance_and_Management(v-1.0.0)
       display:
         sections:
           - name: Product Discovery
@@ -1212,10 +1212,10 @@ flows:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Without_AA_Pre_Part_Payment.yaml
 
 
-  #  ____________IGM(1.0.0)__________
+  #  ____________Issue Grievance and Management (1.0.0)__________
 
   - type: playground
-    id: Purchase_Finance_With_AA_With_IGM(v-1.0.0)
+    id: Purchase_Finance_With_AA_With_Issue_Grievance_and_Management(v-1.0.0)
     meta:
       type: SECONDARY
       order: 19
@@ -1238,7 +1238,7 @@ flows:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_With_AA_With_IGM_v-1_0_0_.yaml
 
   - type: playground
-    id: Purchase_Finance_Without_AA_With_IGM(v-1.0.0)
+    id: Purchase_Finance_Without_AA_With_Issue_Grievance_and_Management(v-1.0.0)
     meta:
       type: SECONDARY
       order: 20
@@ -1261,7 +1261,7 @@ flows:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Without_AA_With_IGM_v-1_0_0_.yaml
 
   - type: playground
-    id: Purchase_Finance_Single_Redirection_With_AA_With_IGM(v-1.0.0)
+    id: Purchase_Finance_Single_Redirection_With_AA_With_Issue_Grievance_and_Management(v-1.0.0)
     meta:
       type: SECONDARY
       order: 21
@@ -1284,7 +1284,7 @@ flows:
       $ref: ./PURCHASE FINANCE/Purchase_Finance_Single_Redirection_With_AA_With_IGM_v-1_0_0_.yaml
 
   - type: playground
-    id: Purchase_Finance_Single_Redirection_Without_AA_With_IGM(v-1.0.0)
+    id: Purchase_Finance_Single_Redirection_Without_AA_With_Issue_Grievance_and_Management(v-1.0.0)
     meta:
       type: SECONDARY
       order: 22
