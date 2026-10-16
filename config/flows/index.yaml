@@ -31,7 +31,9 @@ flows:
               on_status_kyc_verification: Receive application processing status updates
               on_status_personal_loan_2: Receive application processing status updates
               on_status_personal_loan_3_order_update: Receive application processing status updates
-          - name: Loan Processing (Single Redirection)
+              status_personal_loan_3: Fetching Status
+              on_status_personal_loan_order_update: Receive application processing status updates
+          - name: Loan Processing
             actions:
               Ekyc_details_verification_status: App-in-App Experience
           - name: Loan Confirmation And Disbursement
@@ -79,6 +81,8 @@ flows:
               on_status_latest_order_status: Receive application processing status updates
               on_status_updated_checklists: Receive application processing status updates
               on_status_order_status_checklists: Receive application processing status updates
+              status_personal_loan_3: Fetching Status
+              on_status_personal_loan_3: Receive application processing status updates
           - name: Loan Confirmation And Disbursement
             actions:
               confirm_personal_loan_3: Confirm the Personal Loan booking
@@ -324,12 +328,13 @@ flows:
             actions:
               select_2: Select a branch for loan processing
               on_select_2: Receive branch selection confirmation
-          - name: Loan Processing (Single Redirection)
+          - name: Loan Processing
             actions:
               Ekyc_details_verification_status: App-in-App Experience
           - name: Status Updates
             actions:
               on_status_kyc_verification: Receive the Gold Loan order status update
+              status_gold_loan_3: Fetching Status
               on_status_gold_loan_3: Receive the Gold Loan order status update
               on_status_gold_loan_3_order_update: Receive the Gold Loan order status update
           - name: Loan Confirmation
@@ -354,7 +359,7 @@ flows:
       display: *igm_display
     usecase: Gold Loan
     tags: [WORKBENCH, REPORTABLE]
-    description: A gold loan application flow where customers digitally search for loan products, configure their terms, and submit applications online, while lenders conduct offline verification and underwriting with periodic status updates to borrowers until final approval or rejection with IGM 1.0.0.
+    description: A gold loan application flow where customers digitally search for loan products, configure their terms, and submit applications online, while lenders conduct offline verification and underwriting with periodic status updates to borrowers until final approval or rejection with Issue Grievance and Management 1.0.0.
     config:
       $ref: ./GOLD LOAN/Gold_Loan_Offline_with_igm_1.0.0.yaml
 
