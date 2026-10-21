@@ -22,14 +22,14 @@ flows:
           - name: Personal Details Form
             actions:
               personal_details_information_form: Submit personal details
-          - name: Personalized Offer Generation
-            actions:
-              search3_purchase_finance: Request a personalized Purchase Finance offer
-              on_search5_purchase_finance: Receive the personalized Purchase Finance offer
           - name: Consent Handler for AA
             actions:
               search4_purchase_finance: Search with Account Aggregator consent
               on_search6_purchase_finance: Receive offers using Account Aggregator data
+          - name: Personalized Offer Generation
+            actions:
+              search3_purchase_finance: Request a personalized Purchase Finance offer
+              on_search5_purchase_finance: Receive the personalized Purchase Finance offer
           - name: Offer Selection
             actions:
               select_purchase_finance: Select a Purchase Finance offer
@@ -412,14 +412,14 @@ flows:
           - name: Personal Details Form
             actions:
               personal_details_information_form: Submit personal details
-          - name: Personalized Offer Generation
-            actions:
-              search3_purchase_finance: Request a personalized Purchase Finance offer
-              on_search5_purchase_finance: Receive the personalized Purchase Finance offer
           - name: Consent Handler for AA
             actions:
               search4_purchase_finance: Search with Account Aggregator consent
               on_search6_purchase_finance: Receive offers using Account Aggregator data
+          - name: Personalized Offer Generation
+            actions:
+              search3_purchase_finance: Request a personalized Purchase Finance offer
+              on_search5_purchase_finance: Receive the personalized Purchase Finance offer
           - name: Offer Selection
             actions:
               select_purchase_finance: Select a Purchase Finance offer
@@ -684,14 +684,14 @@ flows:
           - name: Personal Details Form
             actions:
               personal_details_information_form: Submit personal details
-          - name: Personalized Offer Generation
-            actions:
-              search3_purchase_finance: Request a personalized Purchase Finance offer
-              on_search5_purchase_finance: Receive the personalized Purchase Finance offer
           - name: Consent Handler for AA
             actions:
               search4_purchase_finance: Search with Account Aggregator consent
               on_search4_purchase_finance: Receive offers using Account Aggregator data
+          - name: Personalized Offer Generation
+            actions:
+              search3_purchase_finance: Request a personalized Purchase Finance offer
+              on_search5_purchase_finance: Receive the personalized Purchase Finance offer
           - name: Offer Selection
             actions:
               select_purchase_finance: Select a Purchase Finance offer
