@@ -108,7 +108,7 @@ flows:
   - type: playground
     id: Personal_Loan_Dedupe_Check
     meta:
-      type: PRIMARY
+      type: OPTIONAL
       order: 3
       display:
         sections:
