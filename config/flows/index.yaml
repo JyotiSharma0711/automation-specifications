@@ -402,6 +402,25 @@ flows:
         - Purchase_Finance_With_AA_Pre_Part_Payment
         - Purchase_Finance_With_AA_With_IGM(v-1.0.0)
       display:
+        inline:
+          - flow: Purchase_Finance_Single_Redirection_With_AA
+            after_section: Final Offer Selection
+            label: Single Redirection
+            kind: alternative
+            skip_sections:
+              - Product Discovery
+              - Merchant and Product Details Form
+              - Generic Offer Generation
+              - Personal Details Form
+              - Consent Handler for AA
+              - Personalized Offer Generation
+              - Offer Selection
+              - Update Downpayment
+              - Final Offer Selection
+              - Order Initialization
+              - Loan Confirmation and Sanctioned
+              - Product Delivery
+              - Loan Disbursement in Merchant Account
         sections:
           - name: Product Discovery
             actions:
