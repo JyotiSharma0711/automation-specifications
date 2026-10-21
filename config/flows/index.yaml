@@ -103,6 +103,10 @@ flows:
               - Offer Selection
               - Update Downpayment
               - Final Offer Selection
+              - Order Initialization
+              - Loan Confirmation and Sanctioned
+              - Product Delivery
+              - Loan Disbursement in Merchant Account
         sections:
           - name: Product Discovery
             actions:
