@@ -110,6 +110,7 @@ flows:
     meta:
       type: OPTIONAL
       order: 3
+      secondary_of: Personal_Loan_Single_Redirection
       display:
         sections:
           - name: Product Discovery
