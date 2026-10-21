@@ -179,7 +179,7 @@ flows:
   - type: playground
     id: dedupe_check
     meta:
-      type: PRIMARY
+      type: OPTIONAL
       order: 4
       display:
         actions:
