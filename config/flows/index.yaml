@@ -181,6 +181,7 @@ flows:
     meta:
       type: OPTIONAL
       order: 4
+      secondary_of: business_term_loan_without_aa
       display:
         actions:
           select_1: Share borrower details for the dedupe check
