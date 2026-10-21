@@ -94,6 +94,7 @@ flows:
           - flow: Purchase_Finance_Without_AA
             after_section: Final Offer Selection
             label: Multi Redirection
+            kind: alternative
             skip_sections:
               - Product Discovery
               - Merchant and Product Details Form
@@ -103,6 +104,10 @@ flows:
               - Offer Selection
               - Update Downpayment
               - Final Offer Selection
+              - Order Initialization
+              - Loan Confirmation and Sanctioned
+              - Product Delivery
+              - Loan Disbursement in Merchant Account
         sections:
           - name: Product Discovery
             actions:
