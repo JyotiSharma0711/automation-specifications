@@ -41,15 +41,15 @@ flows:
             actions:
               select1_purchase_finance: Confirm the final Purchase Finance offer
               on_select1_purchase_finance: Receive the final offer confirmation
-          - name: Loan Processing (Single Redirection)
+          - name: Loan Processing (Single Redirection) - With AA
             actions:
               Ekyc_details_verification_status: App-in-App Experience
-          - name: Status Updates
+          - name: Status Updates - With AA
             actions:
               on_status_unsolicited: Receive loan processing status update
               status1_finance: Check the loan processing status
               on_status1_finance: Receive the loan processing status update
-          - name: Additional Step Required
+          - name: Additional Step Required - With AA
             actions:
               select2_purchase_finance: Provide additional details for loan processing
               on_select2_purchase_finance: Receive updated loan terms
