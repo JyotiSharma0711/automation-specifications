@@ -33,7 +33,7 @@ flows:
               on_status_personal_loan_3_order_update: Receive loan processing status update
           - name: Loan Processing
             actions:
-              Ekyc_details_verification_status: App-in-App Experience
+              Ekyc_details_verification_status: App-in-App Experience (/callback Handling)
               status_personal_loan_3: Fetching Status
               on_status_personal_loan_order_update: Receive loan processing status update
           - name: Loan Confirmation And Disbursement
@@ -80,7 +80,7 @@ flows:
               on_status_order_status_checklists: Receive loan processing status update
           - name: Single Redirection (app-in-app experience)
             actions:
-              Ekyc_details_verification_status: App-in-App Experience
+              Ekyc_details_verification_status: App-in-App Experience (/callback Handling)
               status_personal_loan_3: Fetching Status
               on_status_personal_loan_3: Receive loan processing status update
           - name: Loan Confirmation And Disbursement
@@ -331,7 +331,7 @@ flows:
               on_select_2: Receive branch selection confirmation
           - name: Loan Processing
             actions:
-              Ekyc_details_verification_status: App-in-App Experience
+              Ekyc_details_verification_status: App-in-App Experience (/callback Handling)
           - name: Status Updates
             actions:
               on_status_kyc_verification: Receive the Gold Loan order status update
@@ -389,7 +389,7 @@ flows:
               on_select: Receive the Credit Card offer details
           - name: Single Redirection
             actions:
-              Ekyc_details_form_cc: App-in-App Experience
+              Ekyc_details_form_cc: App-in-App Experience (/callback Handling)
               on_status_unsolicited: Receive processing status update
           - name: Check Order Status
             actions:
