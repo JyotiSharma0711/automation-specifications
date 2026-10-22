@@ -108,25 +108,6 @@ flows:
               - Loan Confirmation and Sanctioned
               - Product Delivery
               - Loan Disbursement in Merchant Account
-          - flow: Purchase_Finance_Single_Redirection_With_AA
-            after_section: Final Offer Selection
-            label: Single Redirection
-            kind: alternative
-            skip_sections:
-              - Product Discovery
-              - Merchant and Product Details Form
-              - Generic Offer Generation
-              - Personal Details Form
-              - Consent Handler for AA
-              - Personalized Offer Generation
-              - Offer Selection
-              - Update Downpayment
-              - Final Offer Selection
-              - Order Initialization
-              - Loan Confirmation and Sanctioned
-              - Product Delivery
-              - Loan Disbursement in Merchant Account
-
         sections:
           - name: Product Discovery
             actions:
