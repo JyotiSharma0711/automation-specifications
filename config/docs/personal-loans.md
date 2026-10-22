@@ -26,30 +26,41 @@ This guide explains the personal loan use case and end-to-end journey from a bus
 
 ## The User Journey
 
-The personal loan journey enables a borrower to discover loan offers, select a lender, complete the lender's onboarding and verification process, and receive the loan. The journey consists of the following stages:
+The personal loan journey enables a borrower to discover loan offers, select a lender, complete the lender's underwriting and loan processing steps, and receive the loan. The journey consists of the following stages:
 
 ### 1. Loan Application and Discovery
 
-The borrower provides their basic information through the Lending App (LSP), including:
+Through the Lending App (LSP), the borrower provides the details lenders need for underwriting and loan processing:
 
-- PAN
-- Mobile number
-- Name
-- Pincode
-- Date of birth
-- Employment type — salaried or self-employed
-- Income
-- Employer name
-- UDYAM number, where applicable for self-employed borrowers
-- Bureau consent
+| Category | Field | Key | Mandatory | Type / Values |
+|---|---|---|---|---|
+| Identity | Name as per PAN | `panName` | Yes | Text |
+| | PAN | `pan` | Yes | Text |
+| | Date of birth | `dob` | Yes | Date |
+| | Gender | `gender` | Yes | ENUM |
+| Contact | Contact number | `contactNumber` | Yes | Text |
+| | Personal email | `personalemail` | No | Text |
+| | Official email | `officialemail` | No | Text |
+| Employment and income | Employment type | `employmentType` | Yes | ENUM |
+| | Annual income | `income` | Yes | Number (₹, annual) |
+| | Company name | `companyName` | Conditional: mandatory when `employmentType` is salaried | Text |
+| | UDYAM number | `udyamNumber` | No | Text; applies to self-employed borrowers |
+| Address | Address line 1 | `addressL1` | No | Text |
+| | Address line 2 | `addressL2` | No | Text |
+| | City | `city` | No | Text |
+| | State | `state` | No | Text |
+| | Pincode | `pincode` | No | Text |
+| Loan purpose | End use | `endUse` | Yes | ENUM |
+| Consent and data | Bureau consent | `bureauConsent` | Yes | Checkbox |
+| | Derived data | `derivedData` | No | JSON file with alternate data that supports lender underwriting, such as data from salary slips, bureau reports, or bank statements |
 
-The LSP verifies the borrower's mobile number through OTP and obtains the required consent to share the information with participating lenders and allow lenders to access the borrower's credit bureau information.
+The LSP verifies the borrower's contact number through OTP. It also gets the borrower's consent for two things: sharing these details with participating lenders, and letting lenders access the borrower's credit bureau information for underwriting.
 
 The LSP then sends the loan search request to participating lenders through the network.
 
 **Network interaction:**
 
-- **`/search`**: The LSP sends the borrower's loan requirements, including the requested loan amount, tenure, and personal loan category.
+- **`/search`**: The LSP does a search on the network gateway to discover lenders providing the personal loan product. The ONDC gateway broadcasts this call to all lenders registered on the ONDC Registry.
 - **`/on_search`**: Participating lenders respond with their available loan products and relevant parameters such as loan amount range, tenure, interest rate, processing fees, and applicable product attributes.
 
 ### 2. Loan Offers
