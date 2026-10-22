@@ -108,6 +108,26 @@ flows:
               - Loan Confirmation and Sanctioned
               - Product Delivery
               - Loan Disbursement in Merchant Account
+          - flow: Purchase_Finance_Single_Redirection_With_AA
+            after_section: Merchant and Product Details Form
+            label: Consent Handler for AA
+            kind: optional
+            skip_sections:
+              - Product Discovery
+              - Merchant and Product Details Form
+              - Generic Offer Generation
+              - Personal Details Form
+              - Personalized Offer Generation
+              - Offer Selection
+              - Update Downpayment
+              - Final Offer Selection
+              - Loan Processing (Single Redirection)
+              - Status Updates
+              - Additional Step Required
+              - Order Initialization
+              - Loan Confirmation and Sanctioned
+              - Product Delivery
+              - Loan Disbursement in Merchant Account
         sections:
           - name: Product Discovery
             actions:
@@ -843,6 +863,27 @@ flows:
         - Purchase_Finance_Without_AA_Pre_Part_Payment
         - Purchase_Finance_Without_AA_With_IGM(v-1.0.0)
       display:
+        inline:
+          - flow: Purchase_Finance_With_AA
+            after_section: Merchant and Product Details Form
+            label: Consent Handler for AA
+            kind: optional
+            skip_sections:
+              - Product Discovery
+              - Merchant and Product Details Form
+              - Generic Offer Generation
+              - Personal Details Form
+              - Personalized Offer Generation
+              - Offer Selection
+              - Update Downpayment
+              - Final Offer Selection
+              - KYC Step
+              - Order Initialization
+              - E-mandate Setup
+              - E-signing
+              - Loan Confirmation and Sanctioned
+              - Product Delivery
+              - Loan Disbursement in Merchant Account
         sections:
           - name: Product Discovery
             actions:
