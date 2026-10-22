@@ -186,8 +186,6 @@ flows:
       order: 4
       display:
         actions:
-          search_1: Search for Business Loan products
-          on_Search_1: Receive Business Loan product catalogue
           select_1: Share borrower details for the dedupe check
           on_select_1: Receive the dedupe check outcome
     usecase: Business Loan
