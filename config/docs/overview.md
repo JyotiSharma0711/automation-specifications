@@ -10,17 +10,6 @@ One market-standard variant worth calling out by name: No-Cost EMI, where the br
 
 Each lender independently manages its own purchase finance products, underwriting, and servicing. ONDC enables these lenders and credit buyer apps to connect through a common, open protocol instead of building separate integrations with each other.
 
-### Supported Product Categories
-
-The protocol supports purchase financing across multiple retail categories:
-
-- **Currently Supported**:
-  - **Electronics** (e.g., smartphones, laptops, appliances)
-  - **Residential Solar Rooftop** (Resi Solar Rooftop)
-- **Upcoming**:
-  - **Insurance Premium Finance**
-
-This guide explains the Purchase Finance use case and end-to-end journey from a business and product perspective, before covering the corresponding technical specifications and API flows.
 
 ## Participants
 

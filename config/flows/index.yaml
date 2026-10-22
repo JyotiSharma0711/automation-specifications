@@ -43,7 +43,7 @@ flows:
               on_select1_purchase_finance: Receive the final offer confirmation
           - name: Loan Processing (Single Redirection)
             actions:
-              Ekyc_details_verification_status: App-in-App Experience
+              Ekyc_details_verification_status: App-in-App Experience (/callback Handling)
           - name: Status Updates
             actions:
               on_status_unsolicited: Receive loan processing status update
@@ -160,7 +160,7 @@ flows:
               on_select1_purchase_finance: Receive the final offer confirmation
           - name: Loan Processing (Single Redirection)
             actions:
-              Ekyc_details_verification_status: App-in-App Experience
+              Ekyc_details_verification_status: App-in-App Experience (/callback Handling)
           - name: Status Updates
             actions:
               on_status_unsolicited: Receive loan processing status update
