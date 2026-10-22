@@ -65,7 +65,7 @@ flows:
               on_status_3: Receive loan processing status update
           - name: Loan Processing (Single Redirection)
             actions:
-              single_redirection: App-in-App Experience
+              single_redirection: App-in-App Experience (/callback Handling)
           - name: Additional Step Required
             actions:
               select_2: Provide additional details for loan processing
@@ -113,7 +113,7 @@ flows:
               on_status_3: Receive loan processing status update
           - name: Loan Processing (Single Redirection)
             actions:
-              single_redirection: App-in-App Experience
+              single_redirection: App-in-App Experience (/callback Handling)
           - name: Additional Step Required
             actions:
               select_2: Provide additional details for loan processing
@@ -165,7 +165,7 @@ flows:
               on_status_3: Receive loan processing status update
           - name: Loan Processing (Single Redirection)
             actions:
-              single_redirection: App-in-App Experience
+              single_redirection: App-in-App Experience (/callback Handling)
           - name: Additional Step Required
             actions:
               select_2: Provide additional details for loan processing
