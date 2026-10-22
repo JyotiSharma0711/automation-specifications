@@ -37,6 +37,18 @@ flows:
           - flow: dedupe_check
             after_section: Application Submission
             label: Dedupe Check
+          - flow: business_term_loan_with_aa
+            after_section: Application Submission
+            label: Consent Handler for AA
+            kind: optional
+            skip_sections:
+              - Application Submission
+              - Offer Selection
+              - Status Updates
+              - Loan Processing (Single Redirection)
+              - Additional Step Required
+              - Loan Confirmation
+              - Post-Confirmation Status Updates
         sections:
           - name: Application Submission
             actions:
