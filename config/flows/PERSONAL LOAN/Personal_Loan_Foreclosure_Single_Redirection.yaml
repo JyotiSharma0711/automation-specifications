@@ -21,7 +21,7 @@ steps:
     owner: BAP
     responseFor: null
     unsolicited: false
-    description: "The LSP sends the borrower's loan requirements, including the requested loan amount, tenure, and personal loan category."
+    description: "The LSP does a search on the network gateway to discover lenders providing the personal loan product. The ONDC gateway broadcasts this call to all lenders registered on the ONDC Registry."
     mock:
       generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZGVmYXVsdFBheWxvYWQsIHNlc3Npb25EYXRhKSB7CgogIHJldHVybiBkZWZhdWx0UGF5bG9hZDsKfQ==
       validate: ZnVuY3Rpb24gdmFsaWRhdGUodGFyZ2V0UGF5bG9hZCwgc2Vzc2lvbkRhdGEpIHsKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0K
@@ -109,7 +109,7 @@ steps:
                         code: OFFLINE_CONTRACT
                       value: "true"
         type: request
-        description: "The LSP sends the borrower's loan requirements, including the requested loan amount, tenure, and personal loan category."
+        description: "The LSP does a search on the network gateway to discover lenders providing the personal loan product. The ONDC gateway broadcasts this call to all lenders registered on the ONDC Registry."
   - api: on_search
     action_id: on_search_personal_loan_3
     owner: BPP
