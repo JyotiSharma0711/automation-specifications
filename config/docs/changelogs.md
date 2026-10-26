@@ -1,0 +1,102 @@
+### Change Logs:  Personal Loan API specs
+
+| Version                         | FIS12_2.0.3_240625 |
+| :------------------------------ | :----------------- |
+| Updates in API Specs on dev doc | 24th June 2025     |
+
+## Personal Loan:
+
+##### 18th Sep 2025
+    - Added enum values for form headings in xinput:
+        - PERSONAL_INFORMATION
+        - SET_LOAN_AMOUNT
+        - KYC
+        - ACCOUNT_INFORMATION
+        - EMANDATE
+        - LOAN_AGREEMENT
+##### 8th Oct 2025
+    * Added the missing tags in the tags section.
+    * Added the missing `created_at` & `updated_at` form on_confirm onwards
+
+##### 13th Oct 2025
+    * Added additional fields for sachet insurance in `SET_LOAN_AMOUNT` form.
+
+##### 17th March 2026
+    * Added missing tag `COOL_OFF_PERIOD` in on_select call.
+    * Updated incorrect value from PT30D to P30D for COOL_OFF_PERIOD.
+
+##### 13th May 2026
+  - Added a checklist tag as part of fulfillments.
+  - Added dedupe check flow.
+  - Removed the Set Loan Amount form.
+  - Added required unsolicited on_status calls after application/HTML forms
+
+##### 10th August 2026
+  - Removed the Account Aggregator field from the `PERSONAL_INFORMATION` form
+
+
+
+
+
+## Gold Loan:
+
+##### 17th Sep 2025
+
+    * Added `status/on_status `calls for offline journey
+    * Removed `set loan amount` form.
+
+##### 8th Oct 2025
+    * Added the missing tags in the tags section.
+    * Added the missing `created_at` & `updated_at` form on_confirm onwards  
+
+##### 24th Oct 2025
+ * Added `SET_LOAN_AMOUNT` form as part of on_select call.
+
+##### 3rd Nov 2025 
+  * Removed non-selected location_ids from the on_select payload (retained only user-selected ones).
+  * Added missing tag LTV_RATIO in the on_update call.
+
+##### 15th Nov 2025 
+  * Added missing `locations` data in the on_confirm call.
+
+##### 17th March 2026
+  * Updated fulfillment state from COMPLETE to COMPLETED
+
+##### 23rd March 2026  
+  * Removed insurance related fields from quote & `set loan amount form` for non-sachet insurance flows.
+
+##### 2nd April 2026
+   * Updated the on_status(after on_confirm call) API response to include only state changes, addition of new keys is not supported. Any new fields will be handled via the on_update call
+  
+##### 22nd May 2026
+  - Added a checklist tag as part of fulfillments.
+  - Added required unsolicited on_status calls after application/HTML forms
+  - Removed `SET_LOAN_AMOUNT` form.
+
+##### 2nd June 2026
+  - Added BAP_TERMS & BPP_TERMS.
+
+##### 3rd June 2026
+  - Introduced new fulfillment types
+      - ONLINE
+      - SEMI_ONLINE
+  - Removed the CHECKLISTS tag group.
+  - Migrated the checklist logic to the `STOPS` structure
+
+##### 5th June 2026
+  - Moved stops `BANK_ACCOUNT_VERIFICATION` before E-`MANDATE`
+  - Removed payment installments.
+
+##### 17th June 2026
+  - Added use-case Credit Card 
+
+##### 12th Aug 2026
+  - Added a new flow `Dedupe Check(Rejected)`.
+  - Updated the `Dedupe Check(Accepted)` flow with complete user journey
+
+##### 13th Aug 2026 (GOLD LOAN)
+- Removed the following stop types:
+  - `KYC`
+  - `BANK_ACCOUNT_VERIFICATION`
+  - `E-MANDATE`
+- Removed the Account Aggregator field from the PERSONAL_INFORMATION form.
