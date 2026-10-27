@@ -94,11 +94,6 @@ flows:
               on_status_installment_3: Receive EMI payment reminders and updates
               on_status_installment_4: Receive EMI payment reminders and updates
               on_status_installment_5: Receive EMI payment reminders and updates
-        inline:
-          - flow: Personal_Loan_Dedupe_Check
-            after_section: Product Discovery
-            label: Dedupe Check
-            skip_sections: [Product Discovery]
     usecase: Personal Loan
     tags: [WORKBENCH, REPORTABLE]
     description: A borrower discovers and selects a personal loan offer within an ONDC marketplace, then completes the full loan origination process—including KYC verification, account validation, mandate setup, and documentation—through seamless single-platform redirection with continuous status updates throughout the application lifecycle.
@@ -108,9 +103,9 @@ flows:
   - type: playground
     id: Personal_Loan_Dedupe_Check
     meta:
-      type: OPTIONAL
+      type: PREREQUISITE
+      prerequisite_kind: optional
       order: 3
-      secondary_of: Personal_Loan_Single_Redirection
       display:
         sections:
           - name: Product Discovery
