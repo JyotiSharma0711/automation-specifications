@@ -1059,6 +1059,15 @@ _TESTS_:
           attr: $.message.order.quote.breakup[*].title
           enumList: *a14
           _RETURN_: attr any in enumList
+    - _NAME_: ON_CONFIRM_QUOTE_GOLD_LOAN
+      _SCOPE_: $.message.order.items[?(@.descriptor.code=='LOAN')]
+      _RETURN_:
+        - _NAME_: REQUIRED_QUOTE_ID_GOLD_LOAN
+          attr: $.message.order.quote.id
+          _RETURN_: attr are present
+        - _NAME_: REQUIRED_QUOTE_PRICE_GOLD_LOAN
+          attr: $.message.order.quote.price.value
+          _RETURN_: attr are present
     - _NAME_: ON_CONFIRM_FULFILLMENTS
       _RETURN_:
         - _NAME_: REQUIRED_FULFILLMENT_TYPE
