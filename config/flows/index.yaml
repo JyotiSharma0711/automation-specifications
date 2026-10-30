@@ -364,7 +364,7 @@ flows:
     tags:
       - WORKBENCH
       - MANDATORY
-    description: BUSINESS Term Loan Without AA with IGM 1.0.0
+    description: BUSINESS Term Loan Without AA with Issue Grievance and Management 1.0.0
     config:
       $ref: "./BUSINESS_LOAN/business_term_loan_without_aa_with_igm_1.0.0.yaml"
 
@@ -405,7 +405,7 @@ flows:
     tags:
       - WORKBENCH
       - MANDATORY
-    description: BUSINESS Term Loan With File Upload with IGM 1.0.0
+    description: BUSINESS Term Loan With File Upload with Issue Grievance and Management 1.0.0
     config:
       $ref: "./BUSINESS_LOAN/business_term_loan_with_file_upload_with_igm_1.0.0.yaml"
 
@@ -452,6 +452,6 @@ flows:
     tags:
       - WORKBENCH
       - MANDATORY
-    description: BUSINESS Term Loan With AA with IGM 1.0.0
+    description: BUSINESS Term Loan With AA with Issue Grievance and Management 1.0.0
     config:
       $ref: "./BUSINESS_LOAN/business_term_loan_with_aa_with_igm_1.0.0.yaml"
