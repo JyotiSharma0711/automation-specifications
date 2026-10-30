@@ -7,7 +7,7 @@ flows:
     id: Personal_Loan_Offline
     meta:
       type: PRIMARY
-      order: 1
+      order: 2
       secondary_flows:
         - Personal_Loan_Foreclosure_Offline
         - Personal_Loan_missed_emi_payment_Offline
@@ -50,15 +50,15 @@ flows:
     id: Personal_Loan_Single_Redirection
     meta:
       type: PRIMARY
-      order: 2
+      order: 1
       secondary_flows:
         - Personal_Loan_Foreclosure_Single_Redirection
         - Personal_Loan_Missed_EMI_Single_Redirection
         - Personal_Loan_Pre_Part_Payment_Single_Redirection
         - "Personal_Loan_Single_Redirection_With_IGM(v-1.0.0)"
       display:
-        # Personal_Loan_Offline is order: 1 (listed first), but this is the
-        # variant that should actually load by default.
+        # Preferred variant — also kept first via order: 1 so it renders
+        # first in both the API Reference list and Journey View.
         preferred: true
         sections:
           - name: Product Discovery
