@@ -28,6 +28,20 @@ Three Tunnel capabilities are live for BL:
 | **Schema validation** | Every request and response is checked against the network specification before it is routed. A non-conforming message is rejected back to its sender and never reaches the counterparty. | Errors discovered late, inside the counterparty's system or mid-journey. |
 | **Real-time network observability dashboard** | Tunnel logs every message it routes and shows BL transaction health across the network in real time. | Participants sharing operational logs separately with Network Observability; visibility limited to each participant's own connections. |
 
+```mermaid
+flowchart LR
+    LSP([LSP sends a BL call]) --> Schema{Schema valid?}
+    subgraph Tunnel["ONDC Tunnel — logs every message to the real-time observability dashboard"]
+        Schema
+        Decl{Declarations allow the pair?}
+    end
+    Schema -- yes --> Decl
+    Schema -- no --> Rejected([Rejected to sender — counterparty never sees it])
+    Decl -- yes --> Lender([Lender receives it])
+    Decl -- no --> NotRouted([Not routed — lender never sees it])
+```
+*BL call path through Tunnel · 2 checks*
+
 A call that fails either check stops at Tunnel. Lender responses, including unsolicited status and servicing pushes, pass the same schema check on the way back to the LSP.
 
 Schema validation confirms that a message is well-formed and spec-conformant. It does not check business rules such as offer validity windows, mandate and eSign completion, or KYC outcomes — those stay with the LSP and the lender, as the journey stages below note.
