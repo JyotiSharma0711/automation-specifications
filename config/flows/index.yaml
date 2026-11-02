@@ -28,9 +28,9 @@ flows:
       type: PRIMARY
       order: 1
       secondary_flows:
-        - business_term_loan_with_offline_online_foreclosure
-        - business_term_loan_with_offline_online_missed_emi
-        - business_term_loan_with_offline_online_pre_part
+        # - business_term_loan_with_offline_online_foreclosure
+        # - business_term_loan_with_offline_online_missed_emi
+        # - business_term_loan_with_offline_online_pre_part
         - business_term_loan_without_aa_with_igm_1.0.0
       display:
         preferred: true
@@ -86,9 +86,9 @@ flows:
       type: PRIMARY
       order: 2
       secondary_flows:
-        - business_term_loan_with_offline_online_foreclosure
-        - business_term_loan_with_offline_online_missed_emi
-        - business_term_loan_with_offline_online_pre_part
+        # - business_term_loan_with_offline_online_foreclosure
+        # - business_term_loan_with_offline_online_missed_emi
+        # - business_term_loan_with_offline_online_pre_part
         - business_term_loan_with_file_upload_with_igm_1.0.0
       display:
         sections:
@@ -130,9 +130,9 @@ flows:
       type: PRIMARY
       order: 3
       secondary_flows:
-        - business_term_loan_with_offline_online_foreclosure
-        - business_term_loan_with_offline_online_missed_emi
-        - business_term_loan_with_offline_online_pre_part
+        # - business_term_loan_with_offline_online_foreclosure
+        # - business_term_loan_with_offline_online_missed_emi
+        # - business_term_loan_with_offline_online_pre_part
         - business_term_loan_with_aa_with_igm_1.0.0
       display:
         sections:
@@ -178,150 +178,150 @@ flows:
     config:
       $ref: "./BUSINESS_LOAN/business_term_loan_with_aa.yaml"
 
-  - type: playground
-    id: dedupe_check
-    meta:
-      type: PREREQUISITE
-      prerequisite_kind: optional
-      order: 4
-      display:
-        actions:
-          select_1: Share borrower details for the dedupe check
-          on_select_1: Receive the dedupe check outcome
-    usecase: Business Loan
-    tags:
-      - WORKBENCH
-      - MANDATORY
-      - REPORTABLE
-    description: Dedupe Check
-    config:
-      $ref: "./BUSINESS_LOAN/dedupe_check.yaml"
+  # - type: playground
+  #   id: dedupe_check
+  #   meta:
+  #     type: PREREQUISITE
+  #     prerequisite_kind: optional
+  #     order: 4
+  #     display:
+  #       actions:
+  #         select_1: Share borrower details for the dedupe check
+  #         on_select_1: Receive the dedupe check outcome
+  #   usecase: Business Loan
+  #   tags:
+  #     - WORKBENCH
+  #     - MANDATORY
+  #     - REPORTABLE
+  #   description: Dedupe Check
+  #   config:
+  #     $ref: "./BUSINESS_LOAN/dedupe_check.yaml"
 
   # ──────────────────────────────────────────────────────────────────
   # Business Loan – Servicing Flows
   # ──────────────────────────────────────────────────────────────────
 
-  - type: playground
-    id: business_term_loan_with_offline_online_foreclosure
-    meta:
-      type: SECONDARY
-      order: 5
-      secondary_of: business_term_loan_with_aa
-      hide_actions:
-        - search_1
-        - on_search_1
-        - select_1
-        - on_select_1
-        - select_2
-        - on_select_2
-        - init_1
-        - on_init_1
-        - kyc_form
-        - on_status_1
-        - init_2
-        - on_init_2
-        - loan_agreement
-        - on_status_2
-        - init_3
-        - on_init_3
-        - confirm_1
-        - on_confirm_1
-      visible_actions:
-        - on_update_1
-        - update_1
-      display:
-        # Only on_update_1/update_1 are in visible_actions, so only those get labels
-        # here even though the underlying flow file has more update/on_update steps.
-        actions:
-          on_update_1: Receive foreclosure settlement amount
-          update_1: Request foreclosure of the Business Loan
-    usecase: Business Loan
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: Business Loan – Term Loan Foreclosure (Offline & Online Journey)
-    config:
-      $ref: "./BUSINESS_LOAN/business_term_loan_with_offline_online_foreclosure.yaml"
+#   - type: playground
+#     id: business_term_loan_with_offline_online_foreclosure
+#     meta:
+#       type: SECONDARY
+#       order: 5
+#       secondary_of: business_term_loan_with_aa
+#       hide_actions:
+#         - search_1
+#         - on_search_1
+#         - select_1
+#         - on_select_1
+#         - select_2
+#         - on_select_2
+#         - init_1
+#         - on_init_1
+#         - kyc_form
+#         - on_status_1
+#         - init_2
+#         - on_init_2
+#         - loan_agreement
+#         - on_status_2
+#         - init_3
+#         - on_init_3
+#         - confirm_1
+#         - on_confirm_1
+#       visible_actions:
+#         - on_update_1
+#         - update_1
+#       display:
+#         # Only on_update_1/update_1 are in visible_actions, so only those get labels
+#         # here even though the underlying flow file has more update/on_update steps.
+#         actions:
+#           on_update_1: Receive foreclosure settlement amount
+#           update_1: Request foreclosure of the Business Loan
+#     usecase: Business Loan
+#     tags:
+#       - WORKBENCH
+#       - REPORTABLE
+#     description: Business Loan – Term Loan Foreclosure (Offline & Online Journey)
+#     config:
+#       $ref: "./BUSINESS_LOAN/business_term_loan_with_offline_online_foreclosure.yaml"
 
-  - type: playground
-    id: business_term_loan_with_offline_online_missed_emi
-    meta:
-      type: SECONDARY
-      order: 6
-      secondary_of: business_term_loan_with_aa
-      hide_actions:
-        - search_1
-        - on_search_1
-        - select_1
-        - on_select_1
-        - select_2
-        - on_select_2
-        - init_1
-        - on_init_1
-        - kyc_form
-        - on_status_1
-        - init_2
-        - on_init_2
-        - loan_agreement
-        - on_status_2
-        - init_3
-        - on_init_3
-        - confirm_1
-        - on_confirm_1
-      visible_actions:
-        - on_update_1
-        - update_1
-      display:
-        actions:
-          on_update_1: Receive missed EMI penalty details
-          update_1: Request of missed EMI
-    usecase: Business Loan
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: Business Loan – Term Loan Missed EMI (Offline & Online Journey)
-    config:
-      $ref: "./BUSINESS_LOAN/business_term_loan_with_offline_online_missed_emi.yaml"
+#   - type: playground
+#     id: business_term_loan_with_offline_online_missed_emi
+#     meta:
+#       type: SECONDARY
+#       order: 6
+#       secondary_of: business_term_loan_with_aa
+#       hide_actions:
+#         - search_1
+#         - on_search_1
+#         - select_1
+#         - on_select_1
+#         - select_2
+#         - on_select_2
+#         - init_1
+#         - on_init_1
+#         - kyc_form
+#         - on_status_1
+#         - init_2
+#         - on_init_2
+#         - loan_agreement
+#         - on_status_2
+#         - init_3
+#         - on_init_3
+#         - confirm_1
+#         - on_confirm_1
+#       visible_actions:
+#         - on_update_1
+#         - update_1
+#       display:
+#         actions:
+#           on_update_1: Receive missed EMI penalty details
+#           update_1: Request of missed EMI
+#     usecase: Business Loan
+#     tags:
+#       - WORKBENCH
+#       - REPORTABLE
+#     description: Business Loan – Term Loan Missed EMI (Offline & Online Journey)
+#     config:
+#       $ref: "./BUSINESS_LOAN/business_term_loan_with_offline_online_missed_emi.yaml"
 
-  - type: playground
-    id: business_term_loan_with_offline_online_pre_part
-    meta:
-      type: SECONDARY
-      order: 7
-      secondary_of: business_term_loan_with_aa
-      hide_actions:
-        - search_1
-        - on_search_1
-        - select_1
-        - on_select_1
-        - select_2
-        - on_select_2
-        - init_1
-        - on_init_1
-        - kyc_form
-        - on_status_1
-        - init_2
-        - on_init_2
-        - loan_agreement
-        - on_status_2
-        - init_3
-        - on_init_3
-        - confirm_1
-        - on_confirm_1
-      visible_actions:
-        - on_update_1
-        - update_1
-      display:
-        actions:
-          on_update_1: Receive prepayment settlement amount
-          update_1: Request a partial prepayment of the Business Loan
-    usecase: Business Loan
-    tags:
-      - WORKBENCH
-      - REPORTABLE
-    description: Business Loan – Term Loan Pre-Part Payment (Offline & Online Journey)
-    config:
-      $ref: "./BUSINESS_LOAN/business_term_loan_with_offline_online_pre_part.yaml"
+#   - type: playground
+#     id: business_term_loan_with_offline_online_pre_part
+#     meta:
+#       type: SECONDARY
+#       order: 7
+#       secondary_of: business_term_loan_with_aa
+#       hide_actions:
+#         - search_1
+#         - on_search_1
+#         - select_1
+#         - on_select_1
+#         - select_2
+#         - on_select_2
+#         - init_1
+#         - on_init_1
+#         - kyc_form
+#         - on_status_1
+#         - init_2
+#         - on_init_2
+#         - loan_agreement
+#         - on_status_2
+#         - init_3
+#         - on_init_3
+#         - confirm_1
+#         - on_confirm_1
+#       visible_actions:
+#         - on_update_1
+#         - update_1
+#       display:
+#         actions:
+#           on_update_1: Receive prepayment settlement amount
+#           update_1: Request a partial prepayment of the Business Loan
+#     usecase: Business Loan
+#     tags:
+#       - WORKBENCH
+#       - REPORTABLE
+#     description: Business Loan – Term Loan Pre-Part Payment (Offline & Online Journey)
+#     config:
+#       $ref: "./BUSINESS_LOAN/business_term_loan_with_offline_online_pre_part.yaml"
 
   # ──────────────────────────────────────────────────────────────────
   # Business Loan – IGM 1.0.0 Servicing Flows
