@@ -39,6 +39,9 @@ flowchart LR
     Schema -- no --> Rejected([Rejected to sender — counterparty never sees it])
     Decl -- yes --> Lender([Lender receives it])
     Decl -- no --> NotRouted([Not routed — lender never sees it])
+
+    classDef success fill:#e6f4fc,stroke:#0081cc,stroke-width:1.5px,color:#172b4d
+    class Lender success
 ```
 *BL call path through Tunnel · 2 checks*
 
