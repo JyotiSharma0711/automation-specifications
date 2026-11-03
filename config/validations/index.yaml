@@ -77,7 +77,10 @@ enums:
       - PRE_ORDER
     label: &paymentLabel
       - INSTALLMENT
-      - LOAN_DISBURSMENT    
+      - LOAN_DISBURSMENT
+      - PRE_PART_PAYMENT
+      - FORECLOSURE
+      - MISSED_EMI_PAYMENT
   items:  
     descriptorCode: &itemCode
       - LOAN
@@ -151,6 +154,7 @@ tags:
       - INTEREST_AMOUNT  
       - FORECLOSURE_CHARGES
       - LATE_FEE_AMOUNT
+      - PRE_PAYMENT_CHARGE
 
   items:
     tags: &itemTags
@@ -2301,7 +2305,7 @@ _TESTS_:
                     _RETURN_: attr are present    
 
             - _NAME_: REQUIRED_PAYMENT_URL
-              useCasePath1:  $.message.order.payments[*].url
+              useCasePath1:  $.message.order.payments[?(@.time.label!='PRE_PART_PAYMENT' && @.time.label!='FORECLOSURE' && @.time.label!='MISSED_EMI_PAYMENT')].url
               _CONTINUE_: '!(useCasePath1 are present)'
               _RETURN_: 
                 - _NAME_: REQUIRED_TIME_DURATION
