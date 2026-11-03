@@ -92,6 +92,9 @@ flows:
         # - business_term_loan_with_offline_online_foreclosure
         # - business_term_loan_with_offline_online_missed_emi
         # - business_term_loan_with_offline_online_pre_part
+        - business_term_loan_with_file_upload_pre_part_payment
+        - business_term_loan_with_file_upload_foreclosure
+        - business_term_loan_with_file_upload_missed_emi_payment
         - business_term_loan_with_file_upload_with_igm_1.0.0
       display:
         sections:
@@ -136,6 +139,9 @@ flows:
         # - business_term_loan_with_offline_online_foreclosure
         # - business_term_loan_with_offline_online_missed_emi
         # - business_term_loan_with_offline_online_pre_part
+        - business_term_loan_with_aa_pre_part_payment
+        - business_term_loan_with_aa_foreclosure
+        - business_term_loan_with_aa_missed_emi_payment
         - business_term_loan_with_aa_with_igm_1.0.0
       display:
         sections:
@@ -480,6 +486,230 @@ flows:
     description: Business Loan – Term Loan Missed EMI Payment
     config:
       $ref: "./BUSINESS_LOAN/business_term_loan_missed_emi_payment.yaml"
+
+  # ──────────────────────────────────────────────────────────────────
+  # Business Loan – Term Loan Servicing Flows (File Upload journey)
+  # ──────────────────────────────────────────────────────────────────
+
+  - type: playground
+    id: business_term_loan_with_file_upload_pre_part_payment
+    meta:
+      type: SECONDARY
+      order: 12
+      secondary_of: business_term_loan_with_file_upload
+      hide_actions:
+        - search_1
+        - on_search_1
+        - select_1
+        - on_select_1
+        - on_status_1
+        - on_status_2
+        - on_status_3
+        - single_redirection
+        - select_2
+        - on_select_2
+        - on_confirm_1
+      visible_actions:
+        - update_1
+        - on_update_1
+        - on_update_2
+      display:
+        actions:
+          update_1: Request a partial prepayment of the Business Loan
+          on_update_1: Receive the pre-part payment quote and payment link
+          on_update_2: Receive the verified pre-part payment confirmation
+    usecase: Business Loan
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Business Loan – Term Loan Pre-Part Payment (File Upload)
+    config:
+      $ref: "./BUSINESS_LOAN/business_term_loan_with_file_upload_pre_part_payment.yaml"
+
+  - type: playground
+    id: business_term_loan_with_file_upload_foreclosure
+    meta:
+      type: SECONDARY
+      order: 13
+      secondary_of: business_term_loan_with_file_upload
+      hide_actions:
+        - search_1
+        - on_search_1
+        - select_1
+        - on_select_1
+        - on_status_1
+        - on_status_2
+        - on_status_3
+        - single_redirection
+        - select_2
+        - on_select_2
+        - on_confirm_1
+      visible_actions:
+        - update_1
+        - on_update_1
+        - on_update_2
+      display:
+        actions:
+          update_1: Request foreclosure of the Business Loan
+          on_update_1: Receive the foreclosure quote and payment link
+          on_update_2: Receive the verified foreclosure confirmation
+    usecase: Business Loan
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Business Loan – Term Loan Foreclosure (File Upload)
+    config:
+      $ref: "./BUSINESS_LOAN/business_term_loan_with_file_upload_foreclosure.yaml"
+
+  - type: playground
+    id: business_term_loan_with_file_upload_missed_emi_payment
+    meta:
+      type: SECONDARY
+      order: 14
+      secondary_of: business_term_loan_with_file_upload
+      hide_actions:
+        - search_1
+        - on_search_1
+        - select_1
+        - on_select_1
+        - on_status_1
+        - on_status_2
+        - on_status_3
+        - single_redirection
+        - select_2
+        - on_select_2
+        - on_confirm_1
+      visible_actions:
+        - update_1
+        - on_update_1
+        - on_update_2
+      display:
+        actions:
+          update_1: Request payment of the missed EMI
+          on_update_1: Receive the missed EMI quote with late fee and payment link
+          on_update_2: Receive the verified missed EMI payment confirmation
+    usecase: Business Loan
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Business Loan – Term Loan Missed EMI Payment (File Upload)
+    config:
+      $ref: "./BUSINESS_LOAN/business_term_loan_with_file_upload_missed_emi_payment.yaml"
+
+  # ──────────────────────────────────────────────────────────────────
+  # Business Loan – Term Loan Servicing Flows (Account Aggregator journey)
+  # ──────────────────────────────────────────────────────────────────
+
+  - type: playground
+    id: business_term_loan_with_aa_pre_part_payment
+    meta:
+      type: SECONDARY
+      order: 15
+      secondary_of: business_term_loan_with_aa
+      hide_actions:
+        - search_1
+        - on_search_1
+        - search_2
+        - on_search_2
+        - select_1
+        - on_select_1
+        - on_status_1
+        - on_status_2
+        - on_status_3
+        - single_redirection
+        - select_2
+        - on_select_2
+        - on_confirm_1
+      visible_actions:
+        - update_1
+        - on_update_1
+        - on_update_2
+      display:
+        actions:
+          update_1: Request a partial prepayment of the Business Loan
+          on_update_1: Receive the pre-part payment quote and payment link
+          on_update_2: Receive the verified pre-part payment confirmation
+    usecase: Business Loan
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Business Loan – Term Loan Pre-Part Payment (Account Aggregator)
+    config:
+      $ref: "./BUSINESS_LOAN/business_term_loan_with_aa_pre_part_payment.yaml"
+
+  - type: playground
+    id: business_term_loan_with_aa_foreclosure
+    meta:
+      type: SECONDARY
+      order: 16
+      secondary_of: business_term_loan_with_aa
+      hide_actions:
+        - search_1
+        - on_search_1
+        - search_2
+        - on_search_2
+        - select_1
+        - on_select_1
+        - on_status_1
+        - on_status_2
+        - on_status_3
+        - single_redirection
+        - select_2
+        - on_select_2
+        - on_confirm_1
+      visible_actions:
+        - update_1
+        - on_update_1
+        - on_update_2
+      display:
+        actions:
+          update_1: Request foreclosure of the Business Loan
+          on_update_1: Receive the foreclosure quote and payment link
+          on_update_2: Receive the verified foreclosure confirmation
+    usecase: Business Loan
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Business Loan – Term Loan Foreclosure (Account Aggregator)
+    config:
+      $ref: "./BUSINESS_LOAN/business_term_loan_with_aa_foreclosure.yaml"
+
+  - type: playground
+    id: business_term_loan_with_aa_missed_emi_payment
+    meta:
+      type: SECONDARY
+      order: 17
+      secondary_of: business_term_loan_with_aa
+      hide_actions:
+        - search_1
+        - on_search_1
+        - search_2
+        - on_search_2
+        - select_1
+        - on_select_1
+        - on_status_1
+        - on_status_2
+        - on_status_3
+        - single_redirection
+        - select_2
+        - on_select_2
+        - on_confirm_1
+      visible_actions:
+        - update_1
+        - on_update_1
+        - on_update_2
+      display:
+        actions:
+          update_1: Request payment of the missed EMI
+          on_update_1: Receive the missed EMI quote with late fee and payment link
+          on_update_2: Receive the verified missed EMI payment confirmation
+    usecase: Business Loan
+    tags:
+      - WORKBENCH
+      - REPORTABLE
+    description: Business Loan – Term Loan Missed EMI Payment (Account Aggregator)
+    config:
+      $ref: "./BUSINESS_LOAN/business_term_loan_with_aa_missed_emi_payment.yaml"
 
   - type: playground
     id: business_term_loan_with_file_upload_with_igm_1.0.0
