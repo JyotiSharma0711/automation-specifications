@@ -32,15 +32,15 @@ Three Tunnel capabilities are live for BL:
 
 ```mermaid
 flowchart LR
-    LSP(["<b>LSP</b><br/><span style='font-weight:400;font-size:0.85em;color:#42526e'>sends a BL call</span>"]) --> Schema{Schema valid?}
+    LSP["<b>LSP</b><br/><span style='font-weight:400;font-size:0.85em;color:#42526e'>sends a BL call</span>"] --> Schema{Schema valid?}
     subgraph Tunnel["<b>ONDC Tunnel</b><br/><span style='font-weight:400;font-size:0.85em;color:#42526e'>Logs every message to the real-time observability dashboard</span>"]
         Schema
         Decl{Declarations allow the pair?}
     end
     Schema -- yes --> Decl
-    Schema -- no --> Rejected(["<b>Rejected to sender</b><br/><span style='font-weight:400;font-size:0.85em;color:#42526e'>counterparty never sees it</span>"])
-    Decl -- yes --> Lender(["<b>Lender</b><br/><span style='font-weight:400;font-size:0.85em'>receives it</span>"])
-    Decl -- no --> NotRouted(["<b>Not routed</b><br/><span style='font-weight:400;font-size:0.85em;color:#42526e'>lender never sees it</span>"])
+    Schema -- no --> Rejected["<b>Rejected to sender</b><br/><span style='font-weight:400;font-size:0.85em;color:#42526e'>counterparty never sees it</span>"]
+    Decl -- yes --> Lender["<b>Lender</b><br/><span style='font-weight:400;font-size:0.85em'>receives it</span>"]
+    Decl -- no --> NotRouted["<b>Not routed</b><br/><span style='font-weight:400;font-size:0.85em;color:#42526e'>lender never sees it</span>"]
 
     classDef success fill:#e6f4fc,stroke:#0081cc,stroke-width:1.5px,color:#172b4d
     class Lender success
