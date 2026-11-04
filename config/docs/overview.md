@@ -28,6 +28,8 @@ Three Tunnel capabilities are live for BL:
 | **Schema validation** | Every request and response is checked against the network specification before it is routed. A non-conforming message is rejected back to its sender and never reaches the counterparty. | Errors discovered late, inside the counterparty's system or mid-journey. |
 | **Real-time network observability dashboard** | Tunnel logs every message it routes and shows BL transaction health across the network in real time. | Participants sharing operational logs separately with Network Observability; visibility limited to each participant's own connections. |
 
+#### Tunnel checks every BL call before a counterparty sees it
+
 ```mermaid
 flowchart LR
     LSP([LSP sends a BL call]) --> Schema{Schema valid?}
