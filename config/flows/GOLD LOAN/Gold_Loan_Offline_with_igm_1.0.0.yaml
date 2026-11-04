@@ -2805,7 +2805,7 @@ steps:
     owner: BAP
     responseFor: null
     unsolicited: false
-    description: "The LSP requests the current status of the loan application. Status is reported as `OFFLINE_PENDING` through appraisal and underwriting, moving to `COMPLETED` once both conclude."
+    description: "The LSP requests the current status of the loan application."
     mock:
       generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoZXhpc3RpbmdQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewoKICBpZiAoZXhpc3RpbmdQYXlsb2FkLmNvbnRleHQ/LnRyYW5zYWN0aW9uX2lkKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5yZWZfaWQgPSBleGlzdGluZ1BheWxvYWQuY29udGV4dC50cmFuc2FjdGlvbl9pZDsKICB9CgogIHJldHVybiBleGlzdGluZ1BheWxvYWQ7Cn0=
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGUgaW5jb21pbmcgcmVxdWVzdCBwYXlsb2FkIGZvciBhbiBBUEkgY2FsbCBpbiB0aGUgdHJhbnNhY3Rpb24gZmxvdy4KICogCiAqIEBwYXJhbSB7T2JqZWN0fSB0YXJnZXRQYXlsb2FkIC0gVGhlIGluY29taW5nIHJlcXVlc3QgcGF5bG9hZCB0byB2YWxpZGF0ZS4KICogQHBhcmFtIHtPYmplY3R9IHNlc3Npb25EYXRhIC0gRGF0YSBjb2xsZWN0ZWQgZnJvbSBwcmV2aW91cyB0cmFuc2FjdGlvbiBzdGVwcy4KICogCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGlmICghdGFyZ2V0UGF5bG9hZCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyAgcGF5bG9hZCIgfTsKICB9CiAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9Owp9
@@ -2863,7 +2863,7 @@ steps:
           message:
             ref_id: 37495a18-da5d-42d2-ad74-db69a22618fe
         type: request
-        description: "The LSP requests the current status of the loan application. Status is reported as `OFFLINE_PENDING` through appraisal and underwriting, moving to `COMPLETED` once both conclude."
+        description: "The LSP requests the current status of the loan application."
   - api: on_status
     action_id: on_status_gold_loan_3
     owner: BPP
