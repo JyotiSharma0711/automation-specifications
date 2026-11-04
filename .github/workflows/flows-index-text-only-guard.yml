@@ -1,0 +1,40 @@
+name: Flows Index Text-Only Guard
+
+# Lets a non-engineer edit flow display labels/descriptions in
+# config/flows/index.yaml without an engineer reviewing the YAML structure
+# every time. Blocks the PR if anything beyond the allow-listed free-text
+# fields changed. See .claude/skills/journey-display-metadata for the schema
+# this enforces, and scripts/check_display_text_only.py for the check itself.
+#
+# This workflow only reports a status; it does not block merges by itself.
+# To make it a real gate, add it as a required status check under
+# Settings -> Branches -> Branch protection rules for each draft-* branch.
+
+on:
+  pull_request:
+    paths:
+      - "config/flows/index.yaml"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Check config/flows/index.yaml changed only allow-listed text fields
+        run: |
+          python3 scripts/check_display_text_only.py \
+            "${{ github.event.pull_request.base.sha }}" \
+            "${{ github.event.pull_request.head.sha }}"
