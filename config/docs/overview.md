@@ -35,7 +35,7 @@ flowchart LR
     LSP["<b>LSP</b><br/><span style='font-weight:400;color:#42526e'>sends a BL call</span>"] --> Schema{Schema valid?}
     subgraph Tunnel["<b>ONDC Tunnel</b><br/><span style='font-weight:400;color:#42526e'>Logs every message to the real-time observability dashboard</span>"]
         Schema
-        Decl{Declarations allow the pair?}
+        Decl{Pair allowed?}
     end
     Schema -- yes --> Decl
     Schema -- no --> Rejected["<b>Rejected to sender</b><br/><span style='font-weight:400;color:#42526e'>counterparty never sees it</span>"]
