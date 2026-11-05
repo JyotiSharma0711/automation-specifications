@@ -49,7 +49,7 @@ flowchart LR
 
 A call that fails either check stops at Tunnel. Lender responses, including unsolicited status and servicing pushes, pass the same schema check on the way back to the LSP.
 
-Schema validation confirms that a message is well-formed and spec-conformant. It does not check business rules such as offer validity windows, mandate and eSign completion, or KYC outcomes — those stay with the LSP and the lender, as the journey stages below note.
+Schema validation confirms that a message is well-formed and spec-conformant. It does not check business rules such as offer validity windows — those stay with the LSP and the lender.
 
 Running BL on Tunnel is a configuration exercise, not a rebuild. Each participant needs to:
 
@@ -75,7 +75,7 @@ Running BL on Tunnel is a configuration exercise, not a rebuild. Each participan
 
 ## The User Journey
 
-The BL journey enables a borrower to discover lenders, get evaluated by multiple lenders simultaneously, select an offer, complete KYC and sanction, and receive the loan. Every network interaction below passes through ONDC Tunnel. Steps inside the lender's environment (KYC, PD/FV, mandate, eSign) happen outside the network, so Tunnel sees them only through the status updates the lender sends. The journey consists of the following stages:
+The BL journey enables a borrower to discover lenders, get evaluated by multiple lenders simultaneously, and select an offer. Every network interaction below passes through ONDC Tunnel. The journey consists of the following stages:
 
 ### 1. Product Discovery
 
