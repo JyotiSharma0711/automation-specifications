@@ -140,25 +140,6 @@ Once an offer is selected, the other lenders' offers on that application are imp
 
 > **On Tunnel**: `/select` and `/on_select` are schema-validated, but validation does not catch selection of an expired offer. Expiry tracking stays with the LSP and lender.
 
-### 6. KYC, Verification & Loan Finalisation
-
-For term loans, KYC runs inside the `/init` / `/on_init` cycle, ahead of mandate setup and eSign. It covers the entity itself, its directors, and any co-applicants — in online or offline mode as required — plus Personal Discussion (PD) or Field Verification (FV) where the lender's policy requires it.
-
-With KYC and verification cleared, the LSP collects the borrower's disbursement account details, facilitates eNACH/standing-instruction mandate creation, and presents the loan agreement for eSign — all rendered within the LSP experience via the lender's forms.
-
-**Network interaction:**
-
-- **`/init`**: The LSP submits the forms the lender requests: KYC first, then mandate setup.
-- **`/on_init`**: The lender returns the next form required (KYC, then the e-mandate/payment link details, then the loan-agreement form), with `/on_status` pushes marking completion of each sub-step in between.
-- **`/confirm`**: The LSP submits the signed agreement and confirms.
-- **`/on_confirm`**: The lender confirms the booking and disburses funds to the borrower's account.
-
-PD/FV can introduce multi-day latency, so the LSP's status messaging should reflect "in verification" as distinct from "under review." KYC failure at the director or co-applicant level should be surfaced with enough specificity that the borrower knows what to remedy.
-
-Mandate and eSign completion are hard gates — disbursal shouldn't proceed on an incomplete mandate or unsigned agreement, even under pressure to move faster.
-
-> **On Tunnel**: `/init`, `/on_init`, `/confirm`, `/on_confirm`, and every `/on_status` pass through Tunnel; KYC, PD/FV, mandate, and eSign themselves happen in the lender's environment, outside the network. During multi-day PD/FV, the network observability dashboard shows only what the lender reports, so lenders should push `/on_status` at each completed step. Tunnel checks that `/confirm` is well-formed, not that the mandate is live or the agreement signed — those hard gates stay with the lender.
-
 ---
 
 ## Additional Scenarios
