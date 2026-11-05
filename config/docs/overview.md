@@ -26,17 +26,22 @@ Three Tunnel capabilities are live for LAMF:
 | **Schema validation** | Every request and response is checked against the network specification before it is routed. A non-conforming message is rejected back to its sender and never reaches the counterparty. | Errors discovered late, inside the counterparty's system or mid-journey. |
 | **Real-time network observability dashboard** | Tunnel logs every message it routes and shows LAMF transaction health across the network in real time. | Participants sharing operational logs separately with Network Observability; visibility limited to each participant's own connections. |
 
+#### Tunnel checks every LAMF call before a counterparty sees it
+
 ```mermaid
 flowchart LR
-    LSP([LSP sends a LAMF call]) --> Schema{Schema valid?}
-    subgraph Tunnel["ONDC Tunnel — logs every message to the real-time observability dashboard"]
+    LSP["<b>LSP</b><br/><span style='font-weight:400;color:#42526e'>sends a LAMF call</span>"] --> Schema{Schema valid?}
+    subgraph Tunnel["<b>ONDC Tunnel</b><br/><span style='font-weight:400;color:#42526e'>Logs every message to the real-time observability dashboard</span>"]
         Schema
-        Decl{Declarations allow the pair?}
+        Decl{Pair allowed?}
     end
     Schema -- yes --> Decl
-    Schema -- no --> Rejected([Rejected to sender — counterparty never sees it])
-    Decl -- yes --> Lender([Lender receives it])
-    Decl -- no --> NotRouted([Not routed — lender never sees it])
+    Schema -- no --> Rejected["<b>Rejected to sender</b><br/><span style='font-weight:400;color:#42526e'>counterparty never sees it</span>"]
+    Decl -- yes --> Lender["<b>Lender</b><br/><span style='font-weight:400'>receives it</span>"]
+    Decl -- no --> NotRouted["<b>Not routed</b><br/><span style='font-weight:400;color:#42526e'>lender never sees it</span>"]
+
+    classDef success fill:#e6f4fc,stroke:#0081cc,stroke-width:1.5px,color:#172b4d
+    class Lender success
 ```
 *LAMF call path through Tunnel · 2 checks*
 
