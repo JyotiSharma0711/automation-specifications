@@ -1,7 +1,7 @@
 meta:
   domain: ONDC:FIS14
   version: 2.1.0
-  flowId: SIP_update_new_payment_update.yaml
+  flowId: SIP_New_Payment_Update
   config_version: 0.0.0001
   description: SIP update new payment update
   use_case_id: MUTUAL FUNDS
@@ -2343,7 +2343,7 @@ steps:
     unsolicited: false
     description: please add relevant description
     mock:
-      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoCiAgZXhpc3RpbmdQYXlsb2FkLAogIHNlc3Npb25EYXRhCikgewogIAogIC8vIFVwZGF0ZSBvcmRlciBJRAogIGlmIChzZXNzaW9uRGF0YS5vcmRlcl9pZCAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXIpIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmlkID0gc2Vzc2lvbkRhdGEub3JkZXJfaWRbMF0KICB9CgogIC8vIENhcnJ5IGZvcndhcmQgcHJvdmlkZXIvaXRlbS9mdWxmaWxsbWVudCBpZHMgZnJvbSBzZXNzaW9uIC0tIHRoaXMgZnVuY3Rpb24KICAvLyBwcmV2aW91c2x5IG5ldmVyIHRvdWNoZWQgYW55IG9mIHRoZW0sIHNvIHRoZSBmaW5hbCB1bnNvbGljaXRlZCBwdXNoCiAgLy8gYWx3YXlzIGVjaG9lZCB0aGUgc3RhdGljIGRlZmF1bHRQYXlsb2FkIHBsYWNlaG9sZGVycyBpbnN0ZWFkIG9mIHRoZSByZWFsCiAgLy8gaWRzIGVzdGFibGlzaGVkIGVhcmxpZXIgaW4gdGhlIHRyYW5zYWN0aW9uLgogIGNvbnN0IHNlbGVjdGVkUHJvdmlkZXIgPSBzZXNzaW9uRGF0YS5wcm92aWRlcl9pZD8uWzBdIHx8IHNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyPy5bMF0KICBpZiAoc2VsZWN0ZWRQcm92aWRlciAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnByb3ZpZGVyKSB7CiAgICBpZiAodHlwZW9mIHNlbGVjdGVkUHJvdmlkZXIgPT09ICJzdHJpbmciKSB7CiAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkID0gc2VsZWN0ZWRQcm92aWRlcgogICAgfSBlbHNlIGlmIChzZWxlY3RlZFByb3ZpZGVyLmlkKSB7CiAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnByb3ZpZGVyLmlkID0gc2VsZWN0ZWRQcm92aWRlci5pZAogICAgfQogIH0KCiAgY29uc3Qgc2VsZWN0ZWRJdGVtID0gc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbV9pZD8uWzBdIHx8IHNlc3Npb25EYXRhLml0ZW0/LlswXQogIGlmIChzZWxlY3RlZEl0ZW0gJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5pdGVtcz8uWzBdKSB7CiAgICBpZiAodHlwZW9mIHNlbGVjdGVkSXRlbSA9PT0gInN0cmluZyIpIHsKICAgICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0uaWQgPSBzZWxlY3RlZEl0ZW0KICAgIH0gZWxzZSBpZiAoc2VsZWN0ZWRJdGVtLmlkKSB7CiAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLmlkID0gc2VsZWN0ZWRJdGVtLmlkCiAgICB9CiAgfQoKICBjb25zdCBzaXBGdWxmaWxsbWVudCA9IHNlc3Npb25EYXRhLnNpcF9mdWxmaWxsbWVudD8uWzBdCiAgaWYgKHNpcEZ1bGZpbGxtZW50ICYmIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8uZnVsZmlsbG1lbnRzPy5bMF0pIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLmZ1bGZpbGxtZW50c1swXSA9IHsKICAgICAgLi4uZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuZnVsZmlsbG1lbnRzWzBdLAogICAgICAuLi5zaXBGdWxmaWxsbWVudAogICAgfQogIH0KCiAgaWYgKHNlc3Npb25EYXRhLnF1b3RlX2lkPy5bMF0gJiYgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5xdW90ZSkgewogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIucXVvdGUuaWQgPSBzZXNzaW9uRGF0YS5xdW90ZV9pZFswXQogIH0KICBjb25zdCBhY3R1YWxGdWxmaWxsbWVudElkID0gZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2U/Lm9yZGVyPy5mdWxmaWxsbWVudHM/LlswXT8uaWQKICBpZiAoYWN0dWFsRnVsZmlsbG1lbnRJZCAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/Lml0ZW1zPy5bMF0pIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLml0ZW1zWzBdLmZ1bGZpbGxtZW50X2lkcyA9IFthY3R1YWxGdWxmaWxsbWVudElkXQogIH0KICBpZiAoYWN0dWFsRnVsZmlsbG1lbnRJZCAmJiBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnF1b3RlPy5icmVha3VwKSB7CiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5xdW90ZS5icmVha3VwLmZvckVhY2goKGIpID0+IHsKICAgICAgaWYgKGIuaXRlbSkgYi5pdGVtLmZ1bGZpbGxtZW50X2lkcyA9IFthY3R1YWxGdWxmaWxsbWVudElkXQogICAgfSkKICB9CgogIC8vIFVwZGF0ZSBmb2xpbyBudW1iZXIgZnJvbSBzZXNzaW9uCiAgaWYgKAogICAgc2Vzc2lvbkRhdGEuZm9saW9fbnVtYmVyICYmCiAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/Lml0ZW1zPy5bMF0/LnRhZ3MKICApIHsKICAgIGNvbnN0IGZvbGlvVGFnID0gZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuaXRlbXNbMF0udGFncy5maW5kKAogICAgICB0YWcgPT4gdGFnLmRlc2NyaXB0b3I/LmNvZGUgPT09ICJGT0xJT19JTkZPIgogICAgKQogICAgaWYgKGZvbGlvVGFnICYmIGZvbGlvVGFnLmxpc3QpIHsKICAgICAgY29uc3QgZm9saW9JdGVtID0gZm9saW9UYWcubGlzdC5maW5kKAogICAgICAgIGl0ZW0gPT4gaXRlbS5kZXNjcmlwdG9yPy5jb2RlID09PSAiRk9MSU9fTlVNQkVSIgogICAgICApCiAgICAgIGlmIChmb2xpb0l0ZW0pIHsKICAgICAgICBmb2xpb0l0ZW0udmFsdWUgPSBzZXNzaW9uRGF0YS5mb2xpb19udW1iZXJbMF0KICAgICAgfQogICAgfQogIH0KCiAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcikgewogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY3JlYXRlZF9hdCA9IHNlc3Npb25EYXRhLm9yZGVyPy5bMF0/LmNyZWF0ZWRfYXQgPz8gZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIuY3JlYXRlZF9hdAogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKQogIH0KCiAgY29uc3Qgc3VibWlzc2lvbl9pZCA9CiAgICBzZXNzaW9uRGF0YT8uZm9ybV9kYXRhPy5FX3NpZ25fdmVyaWZpY2F0aW9uX3N0YXR1cz8uZm9ybV9zdWJtaXNzaW9uX2lkIHx8CiAgICBzZXNzaW9uRGF0YT8uRV9zaWduX3ZlcmlmaWNhdGlvbl9zdGF0dXMKCiAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcj8ueGlucHV0Py5mb3JtX3Jlc3BvbnNlKSB7CiAgICBpZiAoc3VibWlzc2lvbl9pZCkgewogICAgICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci54aW5wdXQuZm9ybV9yZXNwb25zZS5zdGF0dXMgPSAiU1VDQ0VTUyIKCiAgICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN1Ym1pc3Npb25faWQgPSBzdWJtaXNzaW9uX2lkCiAgICAgIGNvbnNvbGUubG9nKCJVcGRhdGVkIGZvcm1fcmVzcG9uc2Ugd2l0aCBzdWJtaXNzaW9uX2lkOiIsIHN1Ym1pc3Npb25faWQpCiAgICB9IGVsc2UgewogICAgICBjb25zb2xlLndhcm4oIuKaoO+4jyBObyBzdWJtaXNzaW9uX2lkIGZvdW5kIGZvciBFX3NpZ25fdmVyaWZpY2F0aW9uX3N0YXR1cyIpCiAgICB9CiAgfQoKICAvLyBFbnN1cmUgZm9ybSBJRCBtYXRjaGVzIGZyb20gb25fc2VsZWN0CiAgY29uc3QgZm9ybUlkID0gc2Vzc2lvbkRhdGE/LmZvcm1faWQgfHwgIkVfc2lnbl92ZXJpZmljYXRpb25fc3RhdHVzIgogIGlmIChleGlzdGluZ1BheWxvYWQubWVzc2FnZT8ub3JkZXI/LnhpbnB1dD8uZm9ybSkgewogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIueGlucHV0LmZvcm0uaWQgPSBmb3JtSWQKICB9CgogIGNvbnN0IHVwZGF0ZXMgPSB7CiAgICBBUFBMSUNBVElPTl9GT1JNX1dJVEhfS1lDOiBzZXNzaW9uRGF0YT8uaW52ZXN0b3JfZGV0YWlsc19mb3JtIHx8ICIiLAogICAgS1lDOiBzZXNzaW9uRGF0YS52ZXJpZmljYXRpb25fc3RhdHVzIHx8ICIiLAogICAgRVNJR046IHNlc3Npb25EYXRhLkVfc2lnbl92ZXJpZmljYXRpb25fc3RhdHVzIHx8ICIiCiAgfQoKICBjb25zdCB1cGRhdGVkT3JkZXIgPSB1cGRhdGVDaGVja2xpc3QoZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIsIHVwZGF0ZXMpCiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIgPSB1cGRhdGVkT3JkZXIKICAvLyBPdmVycmlkZSBoYXJkY29kZWQgdXBkYXRlZF9hdCBmcm9tIGRlZmF1bHQueWFtbCB3aXRoIGEgZHluYW1pYyB2YWx1ZS4KICAvLyBjcmVhdGVkX2F0IGlzIGludGVudGlvbmFsbHkgbGVmdCB1bnRvdWNoZWQgLS0gY2FycmllZCBmb3J3YXJkIGZyb20KICAvLyBzZXNzaW9uIGFib3ZlOyB0aGlzIGJsb2NrIHVzZWQgdG8gdW5jb25kaXRpb25hbGx5IG92ZXJ3cml0ZSBpdCB3aXRoCiAgLy8gIm5vdyIgdG9vLCBzaWxlbnRseSByZWludHJvZHVjaW5nIGEgZnJlc2ggKHdyb25nKSBjcmVhdGVkX2F0IGV2ZXJ5IHB1c2guCiAgaWYgKGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcikgewogICAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKQogIH0KCiAgY29uc29sZS5sb2coIj09PSBvbl91cGRhdGVfdW5zb2xpY2l0ZWQgR2VuZXJhdG9yIEVuZCA9PT0iKQoKICBpZiAoZXhpc3RpbmdQYXlsb2FkPy5tZXNzYWdlPy5vcmRlcj8ucGF5bWVudHMpIHsKICAgIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLnBheW1lbnRzWzBdLnN0YXR1cyA9IHNlc3Npb25EYXRhPy5mb3JtX2RhdGEKICAgICAgPy5wYXltZW50X3VybF9mb3JtPy5pZFR5cGUKICAgICAgPyBzZXNzaW9uRGF0YT8uZm9ybV9kYXRhPy5wYXltZW50X3VybF9mb3JtPy5pZFR5cGUKICAgICAgOiAiUEFJRCIKICB9CiAgcmV0dXJuIGV4aXN0aW5nUGF5bG9hZAp9Cg==
+      generate: YXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGUoCiAgZXhpc3RpbmdQYXlsb2FkLAogIHNlc3Npb25EYXRhCikgewogIC8vIENhcnJ5IGZvcndhcmQgcHJvdmlkZXIvaXRlbS9mdWxmaWxsbWVudC9xdW90ZS9vcmRlciBpZHMgZXN0YWJsaXNoZWQKICAvLyBlYXJsaWVyIGluIHRoZSB0cmFuc2FjdGlvbi4KICBjYXJyeUZvcndhcmRPcmRlcihleGlzdGluZ1BheWxvYWQsIHNlc3Npb25EYXRhKQoKICBjb25zdCBvcmRlciA9IGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlPy5vcmRlcgogIGlmICghb3JkZXIpIHJldHVybiBleGlzdGluZ1BheWxvYWQKCiAgLy8gRm9saW8gbnVtYmVyIC0tIGFscmVhZHkgZXN0YWJsaXNoZWQgYXQgaW5pdCBmb3IgdGhpcyBleGlzdGluZy1mb2xpbyBmbG93LgogIGlmIChvcmRlci5pdGVtcz8uWzBdPy50YWdzKSB7CiAgICBjb25zdCBmb2xpb1RhZyA9IG9yZGVyLml0ZW1zWzBdLnRhZ3MuZmluZCgKICAgICAgdGFnID0+IHRhZy5kZXNjcmlwdG9yPy5jb2RlID09PSAiRk9MSU9fSU5GTyIKICAgICkKICAgIGlmIChmb2xpb1RhZz8ubGlzdCkgewogICAgICBjb25zdCBmb2xpb0l0ZW0gPSBmb2xpb1RhZy5saXN0LmZpbmQoCiAgICAgICAgaXRlbSA9PiBpdGVtLmRlc2NyaXB0b3I/LmNvZGUgPT09ICJGT0xJT19OVU1CRVIiCiAgICAgICkKICAgICAgaWYgKGZvbGlvSXRlbSAmJiBzZXNzaW9uRGF0YS5mb2xpb19udW1iZXI/LlswXSkgewogICAgICAgIGZvbGlvSXRlbS52YWx1ZSA9IHNlc3Npb25EYXRhLmZvbGlvX251bWJlclswXQogICAgICB9CiAgICB9CiAgfQoKICAvLyBOZXcgbWFuZGF0ZSBwYXltZW50IC0tIGVjaG8gd2hhdCB3YXMgYXNrZWQgZm9yIGluIGB1cGRhdGVgLCBnaXZpbmcgaXQKICAvLyB0aGUgcmVhbCBwYXltZW50LWNvbGxlY3Rpb24gVVJMIGluc3RlYWQgb2YgdGhlIHN0YXRpYyBkZWZhdWx0UGF5bG9hZCBvbmUuCiAgaWYgKG9yZGVyLnBheW1lbnRzPy5bMV0pIHsKICAgIG9yZGVyLnBheW1lbnRzWzFdLnVybCA9IGNyZWF0ZUZvcm1VUkwoIk9OREM6RklTMTQiLCAicGF5bWVudF91cmxfZm9ybSIsIHNlc3Npb25EYXRhKSArCiAgICAgICImYmFwX3VyaT0iICsgZW5jb2RlVVJJQ29tcG9uZW50KGV4aXN0aW5nUGF5bG9hZD8uY29udGV4dD8uYmFwX3VyaSB8fCAiIikKICB9CgogIGlmIChvcmRlci54aW5wdXQ/LmZvcm1fcmVzcG9uc2UpIHsKICAgIG9yZGVyLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN1Ym1pc3Npb25faWQgPQogICAgICBzZXNzaW9uRGF0YT8uaW52ZXN0b3JfZGV0YWlsc19mb3JtIHx8IG9yZGVyLnhpbnB1dC5mb3JtX3Jlc3BvbnNlLnN1Ym1pc3Npb25faWQKICB9CgogIGNvbnN0IHVwZGF0ZXMgPSB7CiAgICBBUFBMSUNBVElPTl9GT1JNOiBzZXNzaW9uRGF0YT8uaW52ZXN0b3JfZGV0YWlsc19mb3JtIHx8ICIiCiAgfQogIGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyID0gdXBkYXRlQ2hlY2tsaXN0KGV4aXN0aW5nUGF5bG9hZC5tZXNzYWdlLm9yZGVyLCB1cGRhdGVzKQoKICBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5jcmVhdGVkX2F0ID0gc2Vzc2lvbkRhdGEub3JkZXI/LlswXT8uY3JlYXRlZF9hdCA/PyBleGlzdGluZ1BheWxvYWQubWVzc2FnZS5vcmRlci5jcmVhdGVkX2F0CiAgZXhpc3RpbmdQYXlsb2FkLm1lc3NhZ2Uub3JkZXIudXBkYXRlZF9hdCA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKQoKICByZXR1cm4gZXhpc3RpbmdQYXlsb2FkCn0K
       validate: LyoqCiAqIFZhbGlkYXRlcyB0aGF0IHByb3ZpZGVyL2l0ZW0vZnVsZmlsbG1lbnQvcXVvdGUvb3JkZXIgaWRzIGluIHRoZQogKiBvdXRnb2luZyBwYXlsb2FkIGFyZSBjb25zaXN0ZW50IHdpdGggd2hhdCBzZXNzaW9uIGRhdGEgaGFzIGFscmVhZHkKICogZXN0YWJsaXNoZWQgZWFybGllciBpbiB0aGlzIHRyYW5zYWN0aW9uLgogKgogKiBAcGFyYW0ge09iamVjdH0gdGFyZ2V0UGF5bG9hZCAtIFRoZSBvdXRnb2luZyByZXF1ZXN0L3Jlc3BvbnNlIHBheWxvYWQuCiAqIEBwYXJhbSB7T2JqZWN0fSBzZXNzaW9uRGF0YSAtIERhdGEgY29sbGVjdGVkIGZyb20gcHJldmlvdXMgdHJhbnNhY3Rpb24gc3RlcHMuCiAqIEByZXR1cm5zIHtPYmplY3R9IHsgdmFsaWQ6IGJvb2xlYW4sIGNvZGU6IG51bWJlciwgZGVzY3JpcHRpb246IHN0cmluZyB9CiAqLwpmdW5jdGlvbiB2YWxpZGF0ZSh0YXJnZXRQYXlsb2FkLCBzZXNzaW9uRGF0YSkgewogIGNvbnN0IG9yZGVyID0gdGFyZ2V0UGF5bG9hZD8ubWVzc2FnZT8ub3JkZXI7CiAgaWYgKCFvcmRlcikgewogICAgcmV0dXJuIHsgdmFsaWQ6IHRydWUsIGNvZGU6IDIwMCwgZGVzY3JpcHRpb246ICJWYWxpZCByZXF1ZXN0IiB9OwogIH0KICBjb25zdCBleHRyYWN0SWQgPSAodikgPT4gKHYgPT0gbnVsbCA/IHVuZGVmaW5lZCA6ICh0eXBlb2YgdiA9PT0gInN0cmluZyIgPyB2IDogdi5pZCkpOwoKICBjb25zdCBzZXNzaW9uUHJvdmlkZXJJZCA9IGV4dHJhY3RJZChzZXNzaW9uRGF0YS5zZWxlY3RlZF9wcm92aWRlcj8uWzBdKSB8fCBzZXNzaW9uRGF0YS5wcm92aWRlcl9pZD8uWzBdOwogIGNvbnN0IHBheWxvYWRQcm92aWRlcklkID0gb3JkZXIucHJvdmlkZXI/LmlkOwogIGlmIChzZXNzaW9uUHJvdmlkZXJJZCkgewogICAgaWYgKHBheWxvYWRQcm92aWRlcklkICE9PSBzZXNzaW9uUHJvdmlkZXJJZCkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246IGBwcm92aWRlci5pZCBtaXNtYXRjaDogcGF5bG9hZCBoYXMgIiR7cGF5bG9hZFByb3ZpZGVySWR9Iiwgc2Vzc2lvbiBoYXMgIiR7c2Vzc2lvblByb3ZpZGVySWR9ImAgfTsKICAgIH0KICB9CgogIGNvbnN0IHNlc3Npb25JdGVtSWQgPSBleHRyYWN0SWQoc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbV9pZD8uWzBdKSB8fCBleHRyYWN0SWQoc2Vzc2lvbkRhdGEuaXRlbT8uWzBdKSB8fCBleHRyYWN0SWQoc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfaXRlbXM/LlswXT8uWzBdKTsKICBjb25zdCBwYXlsb2FkSXRlbUlkID0gb3JkZXIuaXRlbXM/LlswXT8uaWQ7CiAgaWYgKHNlc3Npb25JdGVtSWQpIHsKICAgIGlmIChwYXlsb2FkSXRlbUlkICE9PSBzZXNzaW9uSXRlbUlkKSB7CiAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogYGl0ZW1zWzBdLmlkIG1pc21hdGNoOiBwYXlsb2FkIGhhcyAiJHtwYXlsb2FkSXRlbUlkfSIsIHNlc3Npb24gaGFzICIke3Nlc3Npb25JdGVtSWR9ImAgfTsKICAgIH0KICB9CgogIGNvbnN0IHNlc3Npb25GdWxmaWxsbWVudElkID0gZXh0cmFjdElkKHNlc3Npb25EYXRhLnNpcF9mdWxmaWxsbWVudD8uWzBdKSB8fCBleHRyYWN0SWQoc2Vzc2lvbkRhdGEucmVkZW1wdGlvbl9mdWxmaWxsbWVudD8uWzBdKSB8fCBleHRyYWN0SWQoc2Vzc2lvbkRhdGEuc2VsZWN0ZWRfZnVsZmlsbG1lbnRzPy5bMF0pIHx8IGV4dHJhY3RJZChzZXNzaW9uRGF0YS5mdWxmaWxsbWVudD8uWzBdKTsKICBjb25zdCBwYXlsb2FkRnVsZmlsbG1lbnRJZCA9IG9yZGVyLmZ1bGZpbGxtZW50cz8uWzBdPy5pZDsKICBpZiAoc2Vzc2lvbkZ1bGZpbGxtZW50SWQpIHsKICAgIGlmIChwYXlsb2FkRnVsZmlsbG1lbnRJZCAhPT0gc2Vzc2lvbkZ1bGZpbGxtZW50SWQpIHsKICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiBgZnVsZmlsbG1lbnRzWzBdLmlkIG1pc21hdGNoOiBwYXlsb2FkIGhhcyAiJHtwYXlsb2FkRnVsZmlsbG1lbnRJZH0iLCBzZXNzaW9uIGhhcyAiJHtzZXNzaW9uRnVsZmlsbG1lbnRJZH0iYCB9OwogICAgfQogIH0KCiAgLy8gaXRlbXNbMF0uZnVsZmlsbG1lbnRfaWRzIC8gcXVvdGUuYnJlYWt1cCBpdGVtLmZ1bGZpbGxtZW50X2lkcyBtdXN0IGFsd2F5cyBhZ3JlZQogIC8vIHdpdGggZnVsZmlsbG1lbnRzWzBdLmlkIHdpdGhpbiB0aGUgc2FtZSBwYXlsb2FkIC0tIHRoaXMgaXMgdGhlIHNpbmdsZSBtb3N0CiAgLy8gY29tbW9uIGRyaWZ0IGJ1ZyBmb3VuZCBpbiB0aGlzIGZsb3cgZmFtaWx5LgogIGlmIChwYXlsb2FkRnVsZmlsbG1lbnRJZCAmJiBvcmRlci5pdGVtcz8uWzBdPy5mdWxmaWxsbWVudF9pZHMpIHsKICAgIGlmICghb3JkZXIuaXRlbXNbMF0uZnVsZmlsbG1lbnRfaWRzLmluY2x1ZGVzKHBheWxvYWRGdWxmaWxsbWVudElkKSkgewogICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246IGBpdGVtc1swXS5mdWxmaWxsbWVudF9pZHMgJHtKU09OLnN0cmluZ2lmeShvcmRlci5pdGVtc1swXS5mdWxmaWxsbWVudF9pZHMpfSBkb2VzIG5vdCBpbmNsdWRlIGZ1bGZpbGxtZW50c1swXS5pZCAiJHtwYXlsb2FkRnVsZmlsbG1lbnRJZH0iYCB9OwogICAgfQogIH0KICBpZiAocGF5bG9hZEZ1bGZpbGxtZW50SWQgJiYgb3JkZXIucXVvdGU/LmJyZWFrdXApIHsKICAgIGZvciAoY29uc3QgYiBvZiBvcmRlci5xdW90ZS5icmVha3VwKSB7CiAgICAgIGlmIChiLml0ZW0/LmZ1bGZpbGxtZW50X2lkcyAmJiAhYi5pdGVtLmZ1bGZpbGxtZW50X2lkcy5pbmNsdWRlcyhwYXlsb2FkRnVsZmlsbG1lbnRJZCkpIHsKICAgICAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246IGBxdW90ZS5icmVha3VwIGl0ZW0uZnVsZmlsbG1lbnRfaWRzICR7SlNPTi5zdHJpbmdpZnkoYi5pdGVtLmZ1bGZpbGxtZW50X2lkcyl9IGRvZXMgbm90IGluY2x1ZGUgZnVsZmlsbG1lbnRzWzBdLmlkICIke3BheWxvYWRGdWxmaWxsbWVudElkfSJgIH07CiAgICAgIH0KICAgIH0KICB9CgogIGlmIChvcmRlci5xdW90ZSkgewogICAgY29uc3Qgc2Vzc2lvblF1b3RlSWQgPSBzZXNzaW9uRGF0YS5xdW90ZV9pZD8uWzBdIHx8IGV4dHJhY3RJZChzZXNzaW9uRGF0YS5xdW90ZT8uWzBdKTsKICAgIGNvbnN0IHBheWxvYWRRdW90ZUlkID0gb3JkZXIucXVvdGUuaWQ7CiAgICBpZiAoc2Vzc2lvblF1b3RlSWQpIHsKICAgICAgaWYgKHBheWxvYWRRdW90ZUlkICE9PSBzZXNzaW9uUXVvdGVJZCkgewogICAgICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogYHF1b3RlLmlkIG1pc21hdGNoOiBwYXlsb2FkIGhhcyAiJHtwYXlsb2FkUXVvdGVJZH0iLCBzZXNzaW9uIGhhcyAiJHtzZXNzaW9uUXVvdGVJZH0iYCB9OwogICAgICB9CiAgICB9CiAgfQoKICBjb25zdCBzZXNzaW9uT3JkZXJJZCA9IHNlc3Npb25EYXRhLm9yZGVyX2lkPy5bMF07CiAgY29uc3QgcGF5bG9hZE9yZGVySWQgPSBvcmRlci5pZDsKICBpZiAoc2Vzc2lvbk9yZGVySWQpIHsKICAgIGlmIChwYXlsb2FkT3JkZXJJZCAhPT0gc2Vzc2lvbk9yZGVySWQpIHsKICAgICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiBgb3JkZXIuaWQgbWlzbWF0Y2g6IHBheWxvYWQgaGFzICIke3BheWxvYWRPcmRlcklkfSIsIHNlc3Npb24gaGFzICIke3Nlc3Npb25PcmRlcklkfSJgIH07CiAgICB9CiAgfQoKICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlZhbGlkIHJlcXVlc3QiIH07Cn0=
       requirements: LyoqCiAqIENoZWNrcyB0aGF0IHRoZSBzZXNzaW9uIGRhdGEgdGhpcyBzdGVwJ3MgZ2VuZXJhdGUoKSBkZXBlbmRzIG9uCiAqIChwcm92aWRlci9pdGVtL2Z1bGZpbGxtZW50L3F1b3RlL29yZGVyIGlkIGNhcnJ5LWZvcndhcmQpIGlzIHByZXNlbnQKICogYmVmb3JlIHRoaXMgc3RlcCBydW5zLgogKgogKiBAcGFyYW0ge09iamVjdH0gc2Vzc2lvbkRhdGEgLSBEYXRhIGNvbGxlY3RlZCBmcm9tIHByZXZpb3VzIHRyYW5zYWN0aW9uIHN0ZXBzLgogKiBAcmV0dXJucyB7T2JqZWN0fSB7IHZhbGlkOiBib29sZWFuLCBjb2RlOiBudW1iZXIsIGRlc2NyaXB0aW9uOiBzdHJpbmcgfQogKi8KZnVuY3Rpb24gbWVldHNSZXF1aXJlbWVudHMoc2Vzc2lvbkRhdGEpIHsKICBpZiAoIXNlc3Npb25EYXRhLnNlbGVjdGVkX3Byb3ZpZGVyPy5sZW5ndGggJiYgIXNlc3Npb25EYXRhLnByb3ZpZGVyX2lkPy5sZW5ndGgpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgc2VsZWN0ZWRfcHJvdmlkZXIvcHJvdmlkZXJfaWQgaW4gc2Vzc2lvbiBkYXRhIiB9OwogIH0KICBpZiAoIXNlc3Npb25EYXRhLnNlbGVjdGVkX2l0ZW1faWQ/Lmxlbmd0aCAmJiAhc2Vzc2lvbkRhdGEuaXRlbT8ubGVuZ3RoKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHNlbGVjdGVkX2l0ZW1faWQvaXRlbSBpbiBzZXNzaW9uIGRhdGEiIH07CiAgfQogIGlmICghc2Vzc2lvbkRhdGEuc2lwX2Z1bGZpbGxtZW50Py5sZW5ndGgpIHsKICAgIHJldHVybiB7IHZhbGlkOiBmYWxzZSwgY29kZTogNDAwLCBkZXNjcmlwdGlvbjogIk1pc3Npbmcgc2lwX2Z1bGZpbGxtZW50IGluIHNlc3Npb24gZGF0YSIgfTsKICB9CiAgaWYgKCFzZXNzaW9uRGF0YS5xdW90ZV9pZD8ubGVuZ3RoKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIHF1b3RlX2lkIGluIHNlc3Npb24gZGF0YSIgfTsKICB9CiAgaWYgKCFzZXNzaW9uRGF0YS5vcmRlcl9pZD8ubGVuZ3RoKSB7CiAgICByZXR1cm4geyB2YWxpZDogZmFsc2UsIGNvZGU6IDQwMCwgZGVzY3JpcHRpb246ICJNaXNzaW5nIG9yZGVyX2lkIGluIHNlc3Npb24gZGF0YSIgfTsKICB9CiAgaWYgKCFzZXNzaW9uRGF0YS5mb2xpb19udW1iZXI/Lmxlbmd0aCkgewogICAgcmV0dXJuIHsgdmFsaWQ6IGZhbHNlLCBjb2RlOiA0MDAsIGRlc2NyaXB0aW9uOiAiTWlzc2luZyBmb2xpb19udW1iZXIgaW4gc2Vzc2lvbiBkYXRhIiB9OwogIH0KICByZXR1cm4geyB2YWxpZDogdHJ1ZSwgY29kZTogMjAwLCBkZXNjcmlwdGlvbjogIlJlcXVpcmVtZW50cyBtZXQiIH07Cn0=
       defaultPayload:
@@ -2387,7 +2387,7 @@ steps:
                       value: "3000"
                       unit: INR
                 fulfillment_ids:
-                  - ff_789
+                  - ff_123
                 payment_ids:
                   - pmt_123
                 tags:
@@ -2434,8 +2434,17 @@ steps:
                           name: IDCW Option
                           code: IDCW_OPTION
                         value: PAYOUT
+                  - display: true
+                    descriptor:
+                      name: Checklists
+                      code: CHECKLISTS
+                    list:
+                      - descriptor:
+                          name: Application Form
+                          code: APPLICATION_FORM
+                        value: "6547-7456-7235-4386"
             fulfillments:
-              - id: ff_789
+              - id: ff_123
                 type: SIP
                 state:
                   descriptor:
@@ -2544,17 +2553,34 @@ steps:
                           name: Remaining Instalments
                           code: REMAINING_INSTALMENTS
                         value: "6"
+            xinput:
+              form:
+                id: form_1
+              form_response:
+                status: SUCCESS
+                submission_id: "6547-7456-7235-4386"
             payments:
+              - collected_by: BPP
+                type: PRE_FULFILLMENT
+                status: DEFERRED
+                tags:
+                  - descriptor:
+                      name: Payment Method
+                      code: PAYMENT_METHOD
+                    list:
+                      - descriptor:
+                          code: MODE
+                        value: SKIP_PAYMENT
               - id: pmt_123
                 collected_by: BPP
-                status: PAID
+                status: NOT-PAID
+                url: https://api.sellerapp.com/payment?k=abdafaf
                 params:
                   amount: "0"
                   currency: INR
                   source_bank_code: icic0000047
                   source_bank_account_number: "004701563111"
                   source_bank_account_name: harish gupta
-                  transaction_id: "243423324"
                 type: PRE_FULFILLMENT
                 tags:
                   - descriptor:
@@ -2578,18 +2604,6 @@ steps:
                       - descriptor:
                           code: MANDATE_LIMIT
                         value: "50000"
-                      - descriptor:
-                          code: MANDATE_IDENTIFIER
-                        value: "125487"
-                      - descriptor:
-                          code: MASKED_BANK_ACCOUNT_NUMBER
-                        value: "********3111"
-                      - descriptor:
-                          code: BANK_ACCOUNT_NAME
-                        value: Harish Gupta
-                      - descriptor:
-                          code: BANK_NAME
-                        value: ICICI Bank
             quote:
               id: q1
               price:
@@ -2599,7 +2613,7 @@ steps:
                 - item:
                     id: "12391"
                     fulfillment_ids:
-                      - ff_789
+                      - ff_123
                   title: SIP
                   price:
                     currency: INR
@@ -2692,7 +2706,7 @@ steps:
                         value: "3000"
                         unit: INR
                   fulfillment_ids:
-                    - ff_789
+                    - ff_123
                   payment_ids:
                     - pmt_123
                   tags:
@@ -2739,8 +2753,17 @@ steps:
                             name: IDCW Option
                             code: IDCW_OPTION
                           value: PAYOUT
+                    - display: true
+                      descriptor:
+                        name: Checklists
+                        code: CHECKLISTS
+                      list:
+                        - descriptor:
+                            name: Application Form
+                            code: APPLICATION_FORM
+                          value: "6547-7456-7235-4386"
               fulfillments:
-                - id: ff_789
+                - id: ff_123
                   type: SIP
                   state:
                     descriptor:
@@ -2849,17 +2872,34 @@ steps:
                             name: Remaining Instalments
                             code: REMAINING_INSTALMENTS
                           value: "6"
+              xinput:
+                form:
+                  id: form_1
+                form_response:
+                  status: SUCCESS
+                  submission_id: "6547-7456-7235-4386"
               payments:
+                - collected_by: BPP
+                  type: PRE_FULFILLMENT
+                  status: DEFERRED
+                  tags:
+                    - descriptor:
+                        name: Payment Method
+                        code: PAYMENT_METHOD
+                      list:
+                        - descriptor:
+                            code: MODE
+                          value: SKIP_PAYMENT
                 - id: pmt_123
                   collected_by: BPP
-                  status: PAID
+                  status: NOT-PAID
+                  url: https://api.sellerapp.com/payment?k=abdafaf
                   params:
                     amount: "0"
                     currency: INR
                     source_bank_code: icic0000047
                     source_bank_account_number: "004701563111"
                     source_bank_account_name: harish gupta
-                    transaction_id: "243423324"
                   type: PRE_FULFILLMENT
                   tags:
                     - descriptor:
@@ -2883,18 +2923,6 @@ steps:
                         - descriptor:
                             code: MANDATE_LIMIT
                           value: "50000"
-                        - descriptor:
-                            code: MANDATE_IDENTIFIER
-                          value: "125487"
-                        - descriptor:
-                            code: MASKED_BANK_ACCOUNT_NUMBER
-                          value: "********3111"
-                        - descriptor:
-                            code: BANK_ACCOUNT_NAME
-                          value: Harish Gupta
-                        - descriptor:
-                            code: BANK_NAME
-                          value: ICICI Bank
               quote:
                 id: q1
                 price:
@@ -2904,7 +2932,7 @@ steps:
                   - item:
                       id: "12391"
                       fulfillment_ids:
-                        - ff_789
+                        - ff_123
                     title: SIP
                     price:
                       currency: INR
