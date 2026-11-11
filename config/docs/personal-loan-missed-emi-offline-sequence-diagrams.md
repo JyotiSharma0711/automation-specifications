@@ -6,9 +6,7 @@ Brief / Additional Resources / Changelog tab lists and instead looks up the sect
 selected API call's `action_id` (the `##` heading below) to render that step's diagram.
 
 One `## <action_id>` heading per step of `Personal_Loan_Missed_EMI_Offline.yaml`, in that flow's own step order, each
-followed by its Mermaid `sequenceDiagram`. The `payment_url_form` (dynamic_form) step has no
-diagram in the source spec and is intentionally omitted — it shows the "not available" empty
-state in the UI.
+followed by its Mermaid `sequenceDiagram`.
 
 ## search_personal_loan_3
 
@@ -264,6 +262,24 @@ sequenceDiagram
    end
    Lender Platform (BPP)->>Borrower Platform (BAP):on_update - Update success
    Borrower Platform (BAP)-->>Lender Platform (BPP): ACK
+```
+
+## payment_url_form
+
+```mermaid
+sequenceDiagram
+  title Payment Redirection
+  participant Borrower Platform (BAP)
+  participant Lender Platform (BPP)
+  participant Payment Gateway
+  Lender Platform (BPP)->>Borrower Platform (BAP): on_update (order.payments[0].url)
+  Borrower Platform (BAP)-->>Lender Platform (BPP): ACK
+  rect rgb(191, 223, 255)
+  Borrower Platform (BAP)->>Payment Gateway: Redirect borrower using payment URL
+  Payment Gateway-->>Borrower Platform (BAP): Payment completed
+  end
+  Lender Platform (BPP)->>Borrower Platform (BAP): on_update - Update success
+  Borrower Platform (BAP)-->>Lender Platform (BPP): ACK
 ```
 
 ## on_update_missed_emi_unsolicitated
