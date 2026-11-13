@@ -12,32 +12,49 @@ followed by its Mermaid `sequenceDiagram`.
 
 ```mermaid
 sequenceDiagram
-  title Personal Loan Discovery
+  title Business Loan Discovery (via ONDC Tunnel)
+  participant Borrower Platform (BAP)
+  participant ONDC Tunnel
+  participant Lender Platform(BPP)
   rect rgb(191, 223, 255)
-  Borrower Platform (BAP)->>Gateway (BG): search
-  Gateway (BG) ->> Borrower Platform (BAP): ACK
-  Gateway (BG)->>Registry: Lookup Lender Platforms (lookup)
-  Registry->>Gateway (BG): List of Lender Platforms (200 OK)
-  Gateway (BG)->>Lender Platform(BPP): search
-  Lender Platform(BPP)->>Gateway (BG) : ACK
+  Borrower Platform (BAP)->>ONDC Tunnel: search
+  Note over ONDC Tunnel: Schema validation
+  alt Payload fails validation
+    ONDC Tunnel-->>Borrower Platform (BAP): NACK with error (reaches no lender, retryable)
+  else Payload valid
+    ONDC Tunnel->>Borrower Platform (BAP): ACK
+    Note over ONDC Tunnel: Forward only to lenders whose portal declarations permit this BAP
+    ONDC Tunnel->>Lender Platform(BPP): search
+    Lender Platform(BPP)->>ONDC Tunnel: ACK
   end
-  Lender Platform(BPP)->>Borrower Platform (BAP): Publish Catalog of Lender 1 (on_search)
-  Borrower Platform (BAP)->>Lender Platform(BPP): ACK
+  end
+  Lender Platform(BPP)->>ONDC Tunnel: Publish Catalog of Lender 1 (on_search)
+  ONDC Tunnel->>Borrower Platform (BAP): Publish Catalog of Lender 1 (on_search)
+  Borrower Platform (BAP)->>ONDC Tunnel: ACK
+  ONDC Tunnel->>Lender Platform(BPP): ACK
 ```
 
 ## on_Search_1
 
 ```mermaid
 sequenceDiagram
-  title Personal Loan Discovery
-  Borrower Platform (BAP)->>Gateway (BG): search
-  Gateway (BG) ->> Borrower Platform (BAP): ACK
-  Gateway (BG)->>Registry: Lookup Lender Platforms (lookup)
-  Registry->>Gateway (BG): List of Lender Platforms (200 OK)
-  Gateway (BG)->>Lender Platform(BPP): search
-  Lender Platform(BPP)->>Gateway (BG) : ACK
+  title Business Loan Discovery (via ONDC Tunnel)
+  participant Borrower Platform (BAP)
+  participant ONDC Tunnel
+  participant Lender Platform(BPP)
+  Borrower Platform (BAP)->>ONDC Tunnel: search
+  ONDC Tunnel->>Borrower Platform (BAP): ACK
+  ONDC Tunnel->>Lender Platform(BPP): search
+  Lender Platform(BPP)->>ONDC Tunnel: ACK
   rect rgb(191, 223, 255)
-  Lender Platform(BPP)->>Borrower Platform (BAP): Publish Catalog of Lender 1 (on_search)
-  Borrower Platform (BAP)->>Lender Platform(BPP): ACK
+  Lender Platform(BPP)->>ONDC Tunnel: Publish Catalog of Lender 1 (on_search)
+  Note over ONDC Tunnel: Schema validation
+  alt Catalog fails validation
+    ONDC Tunnel-->>Lender Platform(BPP): NACK with error (catalog not delivered to BAP)
+  else Catalog valid
+    ONDC Tunnel->>Borrower Platform (BAP): Publish Catalog of Lender 1 (on_search)
+    Borrower Platform (BAP)->>ONDC Tunnel: ACK
+    ONDC Tunnel->>Lender Platform(BPP): ACK
+  end
   end
 ```
