@@ -191,6 +191,8 @@ This specification supports both IGM versions:
 
 In the flows below, **[unsolicited]** marks a message the sender pushes on its own, not as a reply to a request.
 
+Sequence diagrams for each of these flows are in the **Flow Diagrams** tab.
+
 ---
 
 ## Detailed Protocol Flows
